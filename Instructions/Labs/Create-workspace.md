@@ -43,6 +43,30 @@
 
    ![Account-manager-start](./Images/ws/microsoftpage.png)
 
+3. On the Microsoft Fabric page, enter your **Email**(1) and click on **SUBMIT**(2). This will check if you need to create a new account.
+
+    ![](./Images/fabric-submit.png)
+
+4. Now let’s get started by signing into Microsoft Fabric. Click on **Sign In**.
+
+   ![](./Images/fabric-sign-in.png)
+
+5. Once you’ve clicked on Sign in, a new window will appear asking you to enter your **Password** and then click on **Sign In**.
+
+   ![](./Images/fabric-sign-in-pass.png)
+
+6. On the Stay Signed In window, click on **YES**.
+
+   ![](./Images/fabric-stay-sign-in.png)
+
+7. In the Create Your Account section, enter the required fields **(1)** & **(2)** and click on **GET STARTED**(3). 
+
+   ![](./Images/fabric-get-started.png)
+
+8. You have now successfully created your Microsoft Fabric account. Click on **GET STARTED**.
+
+   ![](./Images/fabric-get-started-01.png)
+
 #### Task 1.3: Create a workspace
 
 Here, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, the notebooks, Power BI datasets, and reports.

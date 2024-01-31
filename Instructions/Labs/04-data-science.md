@@ -241,7 +241,9 @@ After comparing machine learning models that you've trained across experiment ru
 
 1. Select the run with the highest accuracy. 
 
-1. Scroll right to see the Save as model option. Select **Save** in the **Save as model** box.
+1. Scroll right to see the Save as model option. Select **Save** in the **Save run as ML model** box.
+
+   ![](./Images/saverun_31-1.png)
 
 1. Select **Create a new model** in the newly opened pop-up window.
 

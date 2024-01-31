@@ -112,11 +112,11 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
    
     ![09](./Images/01/09.png)
 
-14. On the **Copy summary** page, review the details of your copy operation and then select **Review + Run**.
+14. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
 
     A new pipeline containing a **Copy Data** activity is created, as shown here:
 
-    ![Screenshot of a pipeline with a Copy Data activity.](./Images/copy-data-pipeline.png)
+    ![Screenshot of a pipeline with a Copy Data activity.](./Images/copy-data-pipeline1.png)
 
 15. When the pipeline starts to run, you can monitor its status in the **Output** pane under the pipeline designer. Use the **&#8635;** (*Refresh*) icon to refresh the status, and wait until it has succeeded.
 
@@ -125,6 +125,8 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 16. In the menu bar on the left, select your lakehouse.
 
 17. On the **Home** page, in the **Lakehouse explorer** pane, expand **Files** and select the **new_data** folder to verify that the **sales.csv** file has been copied.
+
+    >**Note**: If you dont see sales.csv try refreshing 
 
     ![10](./Images/01/10.png)
 
@@ -146,7 +148,7 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
 3. In the **...** menu for the cell (at its top-right) select **Toggle parameter cell**. This configures the cell so that the variables declared in it are treated as parameters when running the notebook from a pipeline.
 
-     ![12](./Images/01/12.png)
+     ![12](./Images/toggle.png)
 
 4. Under the parameters cell, use the **+ Code** button to add a new code cell. Then add the following code to it:
 
@@ -176,7 +178,7 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
 5. Verify that your notebooks looks similar to this, and then use the **&#9655; Run all** button on the toolbar to run all of the cells it contains.
 
-    ![Screenshot of a notebook with a parameters cell and code to transform data.](./Images/notebook.png)
+    ![Screenshot of a notebook with a parameters cell and code to transform data.](./Images/notebook1.png)
 
     > **Note**: Since this is the first time you've run any Spark code in this session, the Spark pool must be started. This means that the first cell can take a minute or so to complete.
 
@@ -209,11 +211,13 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
 When you create a lakehouse and define tables in it, a SQL endpoint is automatically created through which the tables can be queried using SQL `SELECT` statements.
 
-1. At the top-right of the Lakehouse page, switch from **Lakehouse** to **SQL endpoint**. Then wait a short time until the SQL query endpoint for your lakehouse opens in a visual interface from which you can query its tables, as shown here:
+1. Switch Back to the **Home** page and select your **Lakehouse**. 
 
-    ![Screenshot of the SQL endpoint page.](./Images/lakehouse-sql-endpoint.png)
+2. At the top-right of the Lakehouse page, switch from **Lakehouse** to **SQL endpoint**. Then wait a short time until the SQL query endpoint for your lakehouse opens in a visual interface from which you can query its tables, as shown here:
 
-2. Use the **New SQL query** button to open a new query editor, and enter the following SQL query:
+    ![Screenshot of the SQL endpoint page.](./Images/sql_31-1.png)
+
+3. Use the **New SQL query** button to open a new query editor, and enter the following SQL query:
 
     ```sql
    SELECT Item, SUM(Quantity * UnitPrice) AS Revenue
@@ -222,11 +226,11 @@ When you create a lakehouse and define tables in it, a SQL endpoint is automatic
    ORDER BY Revenue DESC;
     ```
 
-3. Use the **&#9655; Run** button to run the query and view the results, which should show the total revenue for each product.
+4. Use the **&#9655; Run** button to run the query and view the results, which should show the total revenue for each product.
 
-    ![Screenshot of a SQL query with results.](./Images/sql-query.png)
+    ![Screenshot of a SQL query with results.](./Images/sql-query1.png)
 
-## Create a visual query
+## Task 3 : Create a visual query
 
 While many data professionals are familiar with SQL, data analysts with Power BI experience can apply their Power Query skills to create visual queries.
 
@@ -234,11 +238,11 @@ While many data professionals are familiar with SQL, data analysts with Power BI
 
 2. Drag the **sales** table to the new visual query editor pane that opens to create a Power Query as shown here: 
 
-    ![Screenshot of a Visual query.](./Images/visual-query.png)
+    ![Screenshot of a Visual query.](./Images/visual-query1.png)
 
 3. In the **Manage columns** menu, select **Choose columns**. Then select only the **SalesOrderNumber** and **SalesOrderLineNumber** columns.
 
-    ![Screenshot of a Choose columns dialog box.](./Images/choose-columns.png)
+    ![Screenshot of a Choose columns dialog box.](./Images/choose-columns1.png)
 
 4. Click on **+ (1)** ,in the **Transform table** menu, select **Group by (2)**.
 
@@ -255,21 +259,21 @@ While many data professionals are familiar with SQL, data analysts with Power BI
 
 6. When you're done, the results pane under the visual query shows the number of line items for each sales order.
 
-    ![Screenshot of a Visual query with results.](./Images/visual-query-results.png)
+    ![Screenshot of a Visual query with results.](./Images/visual-query-results1.png)
 
-## Create a report
+## Task 4 : Create a report
 
 The tables in your lakehouse are automatically added to a default dataset that defines a data model for reporting with Power BI.
 
 1. At the bottom of the SQL Endpoint page, select the **Model** tab. The data model schema for the dataset is shown.
 
-    ![Screenshot of a data model.](./Images/data-model.png)
+    ![Screenshot of a data model.](./Images/data-model1.png)
 
     > **Note**: In this exercise, the data model consists of a single table. In a real-world scenario, you would likely create multiple tables in your lakehouse, each of which would be included in the model. You could then define relationships between these tables in the model.
 
 2. In the menu ribbon, select the **Reporting** tab. Then select **New report**. A new browser tab opens in which you can design your report.
 
-    ![Screenshot of the report designer.](./Images/report-designer.png)
+    ![Screenshot of the report designer.](./Images/report-designer1.png)
 
 3. In the **Data** pane on the right, expand the **sales** table. Then select the following fields:
     - **Item**
@@ -277,11 +281,11 @@ The tables in your lakehouse are automatically added to a default dataset that d
 
     A table visualization is added to the report:
 
-    ![Screenshot of a report containing a table.](./Images/table-visualization.png)
+    ![Screenshot of a report containing a table.](./Images/table-visualization1.png)
 
 4. Hide the **Data** and **Filters** panes to create more space. Then ensure the table visualization is selected and in the **Visualizations** pane, change the visualization to a **Clustered bar chart** and resize it as shown here.
 
-    ![Screenshot of a report containing a clustered bar chart.](./Images/clustered-bar-chart.png)
+    ![Screenshot of a report containing a clustered bar chart.](./Images/clustered-bar-chart11.png)
 
 5. On the **File** menu, select **Save**. Then save the report as **Item Sales Report** in the workspace you created previously.
 6. Close the browser tab containing the report to return to the SQL endpoint for your lakehouse. Then, in the hub menu bar on the left, select your workspace to verify that it contains the following items:

@@ -98,7 +98,7 @@ You can use your KQL Queryset as the basis for a Power BI report.
 
 4. On the report design canvas, select the table visualization that has been added and then in the **Visualizations** pane, select **Clustered bar chart**.
 
-    ![Screenshot of a report from a KQL query.](./Images/kql-report.png)
+    ![Screenshot of a report from a KQL query.](./Images/kql-report1.png)
 
 5. In the **Power BI** window, in the **File** menu, select **Save**. Then save the report as **Revenue by Item.pbix** in the workspace where your lakehouse and KQL database are defined using a **Non-Business** sensitivity label.
 
