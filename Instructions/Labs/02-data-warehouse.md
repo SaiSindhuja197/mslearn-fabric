@@ -151,14 +151,13 @@ Most queries in a relational data warehouse involve aggregating and grouping dat
 
 3. Run the modified query and review the results, which now include sales revenue aggregated by year, month, and sales region.
 
-## Create a view and Visualize your data
+## Create a view
 
 A data warehouse in Microsoft Fabric has many of the same capabilities you may be used to in relational databases. For example, you can create database objects like *views* and *stored procedures* to encapsulate SQL logic.
-You can easily visualize the data in either a single query, or in your data warehouse. Before you visualize, hide columns and/or tables that aren't friendly to report designers.
 
 1. Modify the query you created previously as follows to create a view (note that you need to remove the ORDER BY clause to create a view).
 
-    ```sql
+    ```SQL
    CREATE VIEW vSalesByRegion
    AS
    SELECT  d.[Year] AS CalendarYear,
@@ -181,10 +180,38 @@ You can easily visualize the data in either a single query, or in your data ware
    FROM vSalesByRegion
    ORDER BY CalendarYear, MonthOfYear, SalesRegion;
     ```
-4. In the **Explorer** pane, select the **Model** view. 
 
-5. Hide the following columns in your Fact and Dimension tables that are not necessary to create a report. Note that this does not remove the columns from the model, it simply hides them from view on the report canvas.
-   
+### Create a visual query
+
+Instead of writing SQL code, you can use the graphical query designer to query the tables in your data warehouse. This experience is similar to Power Query online, where you can create data transformation steps with no code. For more complex tasks, you can use Power Query's M (Mashup) language.
+
+1. On the **Home** menu, select **New visual query**.
+
+1. Drag **FactSalesOrder** onto the **canvas**. Notice that a preview of the table is displayed in the **Preview** pane below.
+
+1. Drag **DimProduct** onto the **canvas**. We now have two tables in our query.
+
+1. Use the **(+)** button on the **FactSalesOrder** table on the canvas to **Merge queries**.
+
+   ![Screenshot of the canvas with the FactSalesOrder table selected.](./Images/visual-query-merge.png)
+
+1. In the **Merge queries** window, select **DimProduct (1)** as the right table for merge. Select **ProductKey** in both queries, leave the default **Left outer** to join type, and click **OK (4)**.
+
+1. In the **Preview**, note that the new **DimProduct** column has been added to the FactSalesOrder table. Expand the column by clicking the arrow to the right of the column name. Select **ProductName** and click **OK**.
+
+   ![Screenshot of the preview pane with the DimProduct column expanded, with ProductName selected.](./Images/visual-query-preview.png)
+
+1. If you're interested in looking at data for a single product, per a manager's request, you can now use the **ProductName** column to filter the data in the query. Filter the **ProductName** column to look at **Cable Lock** data only.
+
+1. From here, you can analyze the results of this single query by selecting **Visualize results** or **Open in Excel**. You can now see exactly what the manager was asking for, so we don't need to analyze the results further.
+
+### Visualize your data
+
+You can easily visualize the data in either a single query or in your data warehouse. Before you visualize, hide columns and/or tables that aren't friendly to report designers.
+
+1. In the **Explorer** pane, select the **Model** view. 
+
+1. Hide the following columns in your Fact and Dimension tables that are not necessary to create a report. Note that this does not remove the columns from the model, it simply hides them from view on the report canvas.
    1. FactSalesOrder
       - **SalesOrderDateKey**
       - **CustomerKey**
