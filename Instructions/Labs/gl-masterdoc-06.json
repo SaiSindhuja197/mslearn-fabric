@@ -1,0 +1,15 @@
+[{
+    "Name": "Analyze data with Apache Spark",
+    "Language": "English",
+    "Files": [
+      {
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/fabric-capacity/Instructions/Labs/Getting-Started.md",
+        "Order": 1
+      }
+       {
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/fabric-capacity/Instructions/Labs/05-analyze-spark.md",
+        "Order": 2
+      }
+    ]
+  }]
+  
