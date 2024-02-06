@@ -1,0 +1,15 @@
+[{
+    "Name": "Ingest data with a pipeline in Microsoft Fabric",
+    "Language": "English",
+    "Files": [
+      {
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/fabric-capacity/Instructions/Labs/Getting-Started.md",
+        "Order": 1
+      },
+      {
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/fabric-capacity/Instructions/Labs/01-Data-Engineering.md",
+        "Order": 2
+      }
+    ]
+  }]
+  

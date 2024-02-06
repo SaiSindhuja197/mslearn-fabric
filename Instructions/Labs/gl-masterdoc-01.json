@@ -1,0 +1,15 @@
+[{
+    "Name": "Create a Fabric workspace",
+    "Language": "English",
+    "Files": [
+      {
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/fabric-capacity/Instructions/Labs/Getting-Started.md",
+        "Order": 1
+      },
+      {
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/fabric-capacity/Instructions/Labs/Create-workspace.md",
+        "Order": 2
+      }
+    ]
+  }]
+  
