@@ -240,7 +240,7 @@ While many data professionals are familiar with SQL, data analysts with Power BI
 
     ![Screenshot of a Visual query.](./Images/visual-query1.png)
 
-3. In the **Manage columns** menu, select **Choose columns**. Then select only the **SalesOrderNumber** and **SalesOrderLineNumber** columns.
+3. In the **Manage columns** menu, select **Choose columns**. Then select only the **SalesOrderNumber** and **SalesOrderLineNumber** columns and click on **OK**.
 
     ![Screenshot of a Choose columns dialog box.](./Images/choose-columns1.png)
 
@@ -248,7 +248,7 @@ While many data professionals are familiar with SQL, data analysts with Power BI
 
     ![Screenshot of a Visual query with results.](./Images/01/Pg3-VisQuery-S4.0.png)
 
-5. Then group the data by using the following **Basic** settings:
+5. Then group the data by using the following **Basic** settings and click on **OK**:
 
     - **Group by**: SalesOrderNumber
     - **New column name**: LineItems
