@@ -138,7 +138,7 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
     After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
 
-2. Select the existing cell in the notebook, which contains some simple code, and then replace the default code with the following variable declaration.
+2. Select the existing cell in the notebook, which contains some simple code, and then replace the default code with the following **variable declaration (1)** and click on **Run cell (2)**.
 
     ```python
    table_name = "sales"
