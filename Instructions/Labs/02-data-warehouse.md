@@ -235,6 +235,8 @@ You can easily visualize the data in either a single query or in your data wareh
 
 8. Select **SalesTotal**. This will add the column to the **Report canvas**. Because the column is a numeric value, the default visual is a **column chart**.
 
+ >**Note:**  Drag **SalesTotal** if its not getting added when selected.
+
 9. Ensure that the column chart on the canvas is active (with a gray border and handles), and then select **Category** from the **DimProduct** table to add a category to your column chart.
 
 10. In the **Visualizations** pane, change the chart type from a column chart to a **clustered bar chart**. Then resize the chart as necessary to ensure that the categories are readable.
