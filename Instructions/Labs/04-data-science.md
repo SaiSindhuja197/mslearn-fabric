@@ -47,7 +47,7 @@ To train a model, you can create a *notebook*. Notebooks provide an interactive 
 
 Now you're ready to run code to prepare data and train a model. To work with data, you'll use *dataframes*. Dataframes in Spark are similar to Pandas dataframes in Python, and provide a common structure for working with data in rows and columns.
 
-1. In the **Add lakehouse** pane, select **Add** to add a lakehouse.
+1. Selct Lakehouses from the left pane and in the **Add lakehouse** pane, select **Add** to add a lakehouse.
 
    ![](./Images/f-19.png)
    ![](./Images/Pg6-Edit-S4.png)
@@ -199,7 +199,7 @@ When you've trained and tracked models with MLflow, you can use the MLflow libra
 
     The output should resemble the following image:
 
-    ![Screenshot of the plotted evaluation metrics.](./Images/plotted-metrics.png)
+    ![Screenshot of the plotted evaluation metrics.](./Images/f-33.png)
 
 ## Explore your experiments
 
