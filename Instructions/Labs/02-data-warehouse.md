@@ -8,7 +8,7 @@ This lab will take approximately **30** minutes to complete.
 
 Now that you already have a workspace, it's time to switch to the *Data Warehouse* experience in the portal and create a data warehouse.
 
-1. At the bottom left of the Power BI portal, switch to the **Data Warehouse** experience.
+1. At the bottom left of the Data Engineering portal, switch to the **Data Warehouse** experience.
 
     The Data Warehouse home page includes a shortcut to create a new warehouse:
 
