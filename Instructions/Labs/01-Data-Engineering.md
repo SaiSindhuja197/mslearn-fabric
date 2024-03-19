@@ -6,8 +6,6 @@ Fabric also supports Apache Spark, enabling you to write and run code to process
 
 This lab will take approximately **60** minutes to complete.
 
-
-
 ## Create a Lakehouse
 
 Large-scale data analytics solutions have traditionally been built around a *data warehouse*, in which data is stored in relational tables and queried using SQL. The growth in "big data" (characterized by high *volumes*, *variety*, and *velocity* of new data assets) together with the availability of low-cost storage and cloud-scale distributed compute technologies has led to an alternative approach to analytical data storage; the *data lake*. In a data lake, data is stored as files without imposing a fixed schema for storage. Increasingly, data engineers and analysts seek to benefit from the best features of both of these approaches by combining them in a *data lakehouse*; in which data is stored in files in a data lake and a relational schema is applied to them as a metadata layer so that they can be queried using traditional SQL semantics.
@@ -21,17 +19,17 @@ Now that you have created a workspace in the previous step, it's time to switch 
 
    ![02](./Images/01/Pg3-T1-S1.png)
    
-2. In the **Data engineering** home page, create a new **Lakehouse**.
-
-    - **Name:** Enter **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>**.
+2. In the **Data engineering** home page, click on **Lakehouse**, name it as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** and click on **Create**.
 
    ![02](./Images/01/lakehouse.png)
+
+   ![02](./Images/f-3.png)
 
     After a minute or so, a new lakehouse with no **Tables** or **Files** will be created.
 
 4. On the **Lake view** tab in the pane on the left, in the **...** menu for the **Files** node, select **New subfolder** and create a subfolder named **new_data**.
 
-   ![02](./Images/01/01.png)
+   ![02](./Images/f-30.png)
 
 ## Explore shortcuts
 
@@ -49,11 +47,11 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
     ![03](./Images/01/datapipeline.png)
 
-2. Create a new data pipeline named **Ingest Sales Data Pipeline**. 
+2. Name it as **Ingest Sales Data Pipeline (1)** and click on **Create (2)**. 
    
    ![03](./Images/01/Pg3-TCreatePipeline-S1.1.png)
    
-3. If the **Copy Data** wizard doesn't open automatically, select **Copy Data** in the pipeline editor page.
+3. If the **Copy Data** wizard doesn't open automatically, select **Copy Data (1)** in the pipeline editor page.
 
    ![03](./Images/01/03.png)
 
@@ -61,15 +59,16 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
    ![Screenshot of the Choose data source page.](./Images/01/Pg3-TCreatePipeline-S3.png)
 
-5. Select **Next** and then select **Create new connection** and enter the following settings for the connection to your data source:
-    - **URL**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv`
-    - **Connection**: Create new connection
-    - **Connection name**: *Specify a unique name*
-    - **Authentication kind**: Basic (*Leave the username and password blank*)
+5. Select **Create new connection** and enter the following settings for the connection to your data source:
+    - **URL**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv` (1)
+    - **Connection**: Create new connection (2)
+    - **Connection name**: *Specify a unique name* (3)
+    - **Authentication kind**: Basic (*Leave the username and password blank*) (4)
+    -  Click on **Next** (5)
   
     ![04](./Images/01/04.png)
     
-6. Select **Next**. Then ensure the following settings are selected:
+6. Ensure the following settings are selected and select **Next (1)**:
     - **Relative URL**: *Leave blank*
     - **Request method**: GET
     - **Additional headers**: *Leave blank*
@@ -79,52 +78,53 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
   
     ![05](./Images/01/05.png)
    
-8. Select **Next**, and wait for the data to be sampled and then ensure that the following settings are selected:
-    - **File format**: DelimitedText
-    - **Column delimiter**: Comma (,)
-    - **Row delimiter**: Line feed (\n)
-    - **First row as header**: Selected
-    - **Compression type**: Leave default
-9. Select **Preview data** to see a sample of the data that will be ingested. Then close the data preview and select **Next**.
+7. Wait for the data to be sampled and then ensure that the following settings are selected:
+    - **File format**: DelimitedText (1)
+    - **Column delimiter**: Comma (,) (2)
+    - **Row delimiter**: Line feed (\n) (3)
+    - **First row as header**: Selected (4)
+    - **Compression type**: Leave default (5)
+    - Select **Preview data (6)** to see a sample of the data that will be ingested. Then close the data preview and
+    - Select **Next**. (7)
 
      ![06](./Images/01/06.png)
 
-10. On the **Choose data destination** page, select your existing lakehouse. Then select **Next**.
+8. On the **Choose data destination** page, select your existing lakehouse. Then select **Next**.
 
      ![07](./Images/01/07.png)
 
      ![07](./Images/01/connectdest02.png)
 
-12. Set the following data destination options, and then select **Next**:
-    - **Root folder**: Files
-    - **Folder path name**: new_data
-    - **File name**: sales.csv
-    - **Copy behavior**: Leave default
+9. Set the following data destination options, and then select **Next**:
+    - **Root folder**: Files (1)
+    - **Folder path name**: new_data (2)
+    - **File name**: sales.csv (3)
+    - **Copy behavior**: Leave default (4)
    
     ![08](./Images/01/08.png)
 
-13. Set the following file format options and then select **Next**:
-    - **File format**: DelimitedText
-    - **Column delimiter**: Comma (,)
-    - **Row delimiter**: Line feed (\n)
-    - **Add header to file**: Selected
-    - **Compression type**: Leave default
+10. Set the following file format options and then select **Next**:
+    - **File format**: DelimitedText (1)
+    - **Column delimiter**: Comma (,) (2)
+    - **Row delimiter**: Line feed (\n) (3)
+    - **Add header to file**: Selected 
+    - **Compression type**: Leave default (4)
    
     ![09](./Images/01/09.png)
 
-14. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
+11. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
 
     A new pipeline containing a **Copy Data** activity is created, as shown here:
 
     ![Screenshot of a pipeline with a Copy Data activity.](./Images/copy-data-pipeline1.png)
 
-15. When the pipeline starts to run, you can monitor its status in the **Output** pane under the pipeline designer. Use the **&#8635;** (*Refresh*) icon to refresh the status, and wait until it has succeeded.
+12. When the pipeline starts to run, you can monitor its status in the **Output** pane under the pipeline designer. Use the **&#8635;** (*Refresh*) icon to refresh the status, and wait until it has succeeded.
 
     ![Screenshot of a pipeline with a Copy Data activity.](./Images/01/Pg3-CpyOutput.png)
 
-16. In the menu bar on the left, select your lakehouse.
+13. In the menu bar on the left, select your lakehouse.
 
-17. On the **Home** page, in the **Lakehouse explorer** pane, expand **Files** and select the **new_data** folder to verify that the **sales.csv** file has been copied.
+14. On the **Home** page, in the **Lakehouse explorer** pane, expand **Files** and select the **new_data** folder to verify that the **sales.csv** file has been copied.
 
     >**Note**: If you dont see sales.csv try refreshing 
 
