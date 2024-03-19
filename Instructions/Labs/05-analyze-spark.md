@@ -263,11 +263,11 @@ A common task for data engineers is to ingest data in a particular format or str
 
     > **Note**: Commonly, *Parquet* format is preferred for data files that you will use for further analysis or ingestion into an analytical store. Parquet is a very efficient format that is supported by most large scale data analytics systems. In fact, sometimes your data transformation requirement may simply be to convert data from another format (such as CSV) to Parquet!
 
-2. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and select the **transformed_orders** folder to verify that it contains a new folder named **orders**, which in turn contains one or more Parquet files.
+2. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and select the **transformed_data** folder to verify that it contains a new folder named **orders**, which in turn contains one or more Parquet files.
 
     ![Screenshot of a folder containing parquet files.](./Images/saved-parquet1.png)
 
-3. Add a new cell with the following code to load a new dataframe from the parquet files in the **transformed_orders/orders** folder:
+3. Add a new cell with the following code to load a new dataframe from the parquet files in the **transformed_data/orders** folder:
 
     ```python
    orders_df = spark.read.format("parquet").load("Files/transformed_data/orders")
@@ -285,7 +285,7 @@ A common task for data engineers is to ingest data in a particular format or str
    print ("Transformed data saved!")
     ```
 
-2. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and expand the **partitioned_orders** folder to verify that it contains a hierarchy of folders named **Year=*xxxx***, each containing folders named **Month=*xxxx***. Each month folder contains a parquet file with the orders for that month.
+2. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and expand the **partitioned_data** folder to verify that it contains a hierarchy of folders named **Year=*xxxx***, each containing folders named **Month=*xxxx***. Each month folder contains a parquet file with the orders for that month.
 
     ![Screenshot of a hierarchy of partitioned data files.](./Images/partitioned-files1.png)
 
