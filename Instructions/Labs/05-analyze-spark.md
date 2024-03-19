@@ -136,7 +136,7 @@ Now you're ready to run code that loads the data into a *dataframe*. Dataframes 
 10. Confirm that your changes have been applied to the data by viewing the dataframe. Run the following cell:
 
     ```python
-   display(df)
+    display(df)
     ```
 
 11. The dataframe includes only the data from the **2019.csv** file. Modify the code so that the file path uses a \* wildcard to read the sales order data from all of the files in the **orders** folder:
@@ -160,7 +160,7 @@ df = spark.read.format("csv").schema(orderSchema).load("Files/orders/*.csv")
 display(df)
 ```
 
-11. Run the modified code cell and review the output, which should now include sales for 2019, 2020, and 2021.
+12. Run the modified code cell and review the output, which should now include sales for 2019, 2020, and 2021.
 
     **Note**: Only a subset of the rows is displayed, so you may not be able to see examples from all years.
 
@@ -383,6 +383,8 @@ A picture is proverbially worth a thousand words, and a chart is often better th
     - **Series Group**: *leave blank*
     - **Aggregation**: Sum
     - **Stacked**: *Unselected*
+      
+         ![Screenshot of a bar chart of products by total order quantiies](./Images/f-21.png)
 
 5. Verify that the chart looks similar to this:
 
