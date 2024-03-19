@@ -276,7 +276,7 @@ The tables in your lakehouse are automatically added to a default dataset that d
 
 2. In the menu ribbon, select the **Reporting** tab. Then select **New report**. A new browser tab opens in which you can design your report.
 
-    ![Screenshot of the report designer.](./Images/f-91.png)
+    ![Screenshot of the report designer.](./Images/f-9.png)
 
       >**Note:** Click on Try free if the following pop-up appears.
 
@@ -306,7 +306,4 @@ The tables in your lakehouse are automatically added to a default dataset that d
 
 In this exercise, you have created a lakehouse and imported data into it. You've seen how a lakehouse consists of files and tables stored in a OneLake data store. The managed tables can be queried using SQL, and are included in a default dataset to support data visualizations.
 
-
-
 ## Proceed to next exercise
-
