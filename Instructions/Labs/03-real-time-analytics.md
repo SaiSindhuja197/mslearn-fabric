@@ -30,21 +30,24 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
    ![01](./Images/03/01.png)
 
 6. Use the wizard to import the data into a new table by selecting the following options:
-    - **Destination**:
-        - **Database**: *The database you created is already selected*
-        - **Table**: *Create a new table named* **sales**.
     - **Source**:
-        - **Source type**: File
-        - **Upload files**: Drag or Browse for the file from **C:\LabFiles\Files\sales.csv**
-    - **Schema**:
-        - **Compression type**: Uncompressed
-        - **Data format**: CSV
-        - **Ignore the first record**: *Selected*
-        - **Mapping name**: sales_mapping
-    - **Summary**:
+        - **Database:** *The database you created is already selected*
+        - **Table:** *Create a new table named* **sales**.
+        - **Source type:** File
+        - **Upload files:** Drag or Browse for the file from **C:\LabFiles\Files\sales.csv**
+
+            ![01](./Images/fabric17.png)
+
+    - **Inspect:** Preview the data and click on **Finish**.
+
+        ![01](./Images/fabric18.png)
+
+    - **Summary:**
         - *Review the preview of the table and close the wizard.*
 
-> **Note**: In this example, you imported a very small amount of static data from a file, which is fine for the purposes of this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
+            ![01](./Images/fabric19.png)
+
+> **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
 
 ## Use KQL to query the sales table
 
