@@ -376,7 +376,7 @@ A picture is proverbially worth a thousand words, and a chart is often better th
 
 3. In the results section beneath the cell, change the **View** option from **Table** to **Chart**.
 
-4. Use the **View options** button at the top right of the chart to display the options pane for the chart. Then set the options as follows and select **Apply**:
+4. Click on **Customize chart** on the right side of the chart to display the options pane for the chart. Then set the options as follows and select **Apply**:
     - **Chart type**: Bar chart
     - **Key**: Item
     - **Values**: Quantity
