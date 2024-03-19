@@ -82,10 +82,10 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
     - **File format**: DelimitedText (1)
     - **Column delimiter**: Comma (,) (2)
     - **Row delimiter**: Line feed (\n) (3)
-    - **First row as header**: Selected (4)
-    - **Compression type**: Leave default (5)
-    - Select **Preview data (6)** to see a sample of the data that will be ingested. Then close the data preview and
-    - Select **Next**. (7)
+    - **First row as header**: Selected 
+    - **Compression type**: Leave default (4)
+    - Select **Preview data (5)** to see a sample of the data that will be ingested. Then close the data preview and
+    - Select **Next**. (6)
 
      ![06](./Images/01/06.png)
 
@@ -132,7 +132,7 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
 ## Create a notebook
 
-1. On the **Home** page for your lakehouse, in the **Open notebook** menu, select **New notebook**.
+1. On the **Home** page for your lakehouse, in the **Open notebook (1)** menu, select **New notebook (2)**.
 
       ![11](./Images/01/11.png)
 
@@ -148,7 +148,7 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
 3. In the **...** menu for the cell (at its top-right) select **Toggle parameter cell**. This configures the cell so that the variables declared in it are treated as parameters when running the notebook from a pipeline.
 
-     ![12](./Images/toggle.png)
+     ![12](./Images/f-4.png)
 
 4. Under the parameters cell, use the **+ Code** button to add a new code cell. Then add the following code to it:
 
@@ -198,7 +198,7 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
 7. When the notebook run has completed, in the **Lakehouse explorer** pane on the left, in the **...** menu for **Tables** select **Refresh** and verify that a **sales** table has been created.
 
-8. In the notebook menu bar, use the ⚙️ **Settings** icon to view the notebook settings. Then set the **Name** of the notebook to **Load Sales Notebook** and close the settings pane.
+8. In the notebook menu bar, use the ⚙️ **Settings (1)** icon to view the notebook settings. Then set the **Name** of the notebook to **Load Sales Notebook (2)** and close the settings pane.
 
    ![.](./Images/01/Pg3-Notebook-S10.png)
  
@@ -219,6 +219,8 @@ When you create a lakehouse and define tables in it, a SQL endpoint is automatic
 
 3. Use the **New SQL query** button to open a new query editor, and enter the following SQL query:
 
+   ![Screenshot of a new sql query.](./Images/f-06.png)
+   
     ```sql
    SELECT Item, SUM(Quantity * UnitPrice) AS Revenue
    FROM sales
@@ -226,7 +228,7 @@ When you create a lakehouse and define tables in it, a SQL endpoint is automatic
    ORDER BY Revenue DESC;
     ```
 
-4. Use the **&#9655; Run** button to run the query and view the results, which should show the total revenue for each product.
+5. Use the **&#9655; Run** button to run the query and view the results, which should show the total revenue for each product.
 
     ![Screenshot of a SQL query with results.](./Images/sql-query1.png)
 
@@ -242,6 +244,7 @@ While many data professionals are familiar with SQL, data analysts with Power BI
 
 3. In the **Manage columns** menu, select **Choose columns**. Then select only the **SalesOrderNumber** and **SalesOrderLineNumber** columns and click on **OK**.
 
+    ![Screenshot of a Choose columns dialog box.](./Images/f-7.png)
     ![Screenshot of a Choose columns dialog box.](./Images/choose-columns1.png)
 
 4. Click on **+ (1)** ,in the **Transform table** menu, select **Group by (2)**.
@@ -267,15 +270,19 @@ The tables in your lakehouse are automatically added to a default dataset that d
 
 1. At the bottom of the SQL Endpoint page, select the **Model** tab. The data model schema for the dataset is shown.
 
-    ![Screenshot of a data model.](./Images/data-model1.png)
+    ![Screenshot of a data model.](./Images/f-8.png)
 
     > **Note**: In this exercise, the data model consists of a single table. In a real-world scenario, you would likely create multiple tables in your lakehouse, each of which would be included in the model. You could then define relationships between these tables in the model.
 
 2. In the menu ribbon, select the **Reporting** tab. Then select **New report**. A new browser tab opens in which you can design your report.
 
-    ![Screenshot of the report designer.](./Images/report-designer1.png)
+    ![Screenshot of the report designer.](./Images/f-91.png)
 
-3. In the **Data** pane on the right, expand the **sales** table. Then select the following fields:
+      >**Note:** Click on Try free if the following pop-up appears.
+
+      ![Screenshot of the report designer.](./Images/f-25.png)
+   
+3. In the **Data** pane on the right, expand the **sales** table. Then drag the following fields:
     - **Item**
     - **Quantity**
 
