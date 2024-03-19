@@ -40,15 +40,15 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
    > **Note:** If this option is grayed out, you may already have a data destination set. Check the data destination at the bottom of the Query settings pane on the right side of the Power Query editor. If a destination is already set, you can change it using the gear.
 
-2. In the **Connect to data destination** dialog box, edit the connection and sign in using your Power BI organizational account to set the identity that the dataflow uses to access the lakehouse.
+1. In the **Connect to data destination** dialog box, edit the connection and sign in using your Power BI organizational account to set the identity that the dataflow uses to access the lakehouse and select **Next**.
 
     ![Data destination configuration page.](./Images/lakehuse_31-1.png)
 
-3. Select **Next** and in the list of available workspaces, find your workspace and select the lakehouse you created in it at the start of this exercise. Then specify a new table named **orders**:
+1. In the list of available workspaces, find your workspace and select the lakehouse you created in it at the start of this exercise. Then specify a new table named **orders** and click on **Next**:
 
     ![Data destination configuration page.](./Images/data-destination-target1.png)
 
-   > **Note:** On the **Destination settings** page, notice how OrderDate and MonthNo are not selected in the Column mapping and there is an informational message: *Change to date/time*.
+1. On the **Destination settings** page, notice how OrderDate and MonthNo are not selected in the Column mapping and there is an informational message: *Change to date/time*. Click on **Save settings**.
 
     ![Data destination settings page.](./Images/destination-settings123.png)
 
@@ -59,14 +59,13 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
 1. Now repeat the process outlined earlier to add a lakehouse destination.
 
-8. On the **Destination settings** page, select **Append**, and then save the settings.  The **Lakehouse** destination is indicated as an icon in the query in the Power Query editor.
+1. On the **Destination settings** page, select **Append**, and then save the settings.  The **Lakehouse** destination is indicated as an icon in the query in the Power Query editor.
 
     ![Query with a lakehouse destination.](./Images/lakehouse-destination1.png)
 
-9. Select **Publish** to publish the dataflow. Then wait for the **Dataflow 1** dataflow to be created in your workspace.
+1. Select **Publish** to publish the dataflow. Then wait for the **Dataflow 1** dataflow to be created in your workspace.
 
 1. Once published, you can right-click on the dataflow in your workspace, select **Properties**, and rename your dataflow as **Transform Orders Dataflow**.
-
 
 ## Add a dataflow to a pipeline
 
