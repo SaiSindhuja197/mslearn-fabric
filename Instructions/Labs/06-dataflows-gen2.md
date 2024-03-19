@@ -38,7 +38,9 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
 1. On the toolbar ribbon, select the **Home** tab. Then in the **Add data destination** drop-down menu, select **Lakehouse**.
 
-   > **Note:** If this option is grayed out, you may already have a data destination set. Check the data destination at the bottom of the Query settings pane on the right side of the Power Query editor. If a destination is already set, you can change it using the gear.
+      ![Data destination configuration page.](./Images/f-21-6.png)
+
+      > **Note:** If this option is grayed out, you may already have a data destination set. Check the data destination at the bottom of the Query settings pane on the right side of the Power Query editor. If a destination is already set, you can change it using the gear.
 
 1. In the **Connect to data destination** dialog box, edit the connection and sign in using your Power BI organizational account to set the identity that the dataflow uses to access the lakehouse and select **Next**.
 
@@ -46,11 +48,11 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
 1. In the list of available workspaces, find your workspace and select the lakehouse you created in it at the start of this exercise. Then specify a new table named **orders** and click on **Next**:
 
-    ![Data destination configuration page.](./Images/data-destination-target1.png)
+    ![Data destination configuration page.](./Images/f-22-6.png)
 
       >**Note:** On the **Destination settings** page, notice how OrderDate and MonthNo are not selected in the Column mapping and there is an informational message: *Change to date/time*.
 
-      ![Data destination settings page.](./Images/destination-settings123.png)
+      ![Data destination settings page.](./Images/f-27png)
 
 1. Cancel this action, then go back to OrderDate and MonthNo columns in Power Query online. Right-click on the column header and **Change Type**.
 
@@ -79,7 +81,7 @@ You can include a dataflow as an activity in a pipeline. Pipelines are used to o
 
 2. Select **Add pipeline activity**, and add a **Dataflow** activity to the pipeline.
 
-   ![Empty data pipeline.](./Images/new-pipeline1.png)
+   ![Empty data pipeline.](./Images/f-35.png)
 
 3. With the new **Dataflow1** activity selected, on the **Settings** tab, in the **Dataflow** drop-down list, select **Transform Orders Dataflow** (the data flow you created previously)
 
