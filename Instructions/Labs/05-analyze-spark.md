@@ -18,10 +18,8 @@ Now that you have a workspace, it's time to switch to the *Data engineering* exp
 
 3. Return to the web browser tab containing your lakehouse, and in the **...** menu for the **Files** folder in the **Explorer** pane, select **Upload** and **Upload folder**, and then upload the **orders** folder from **C:\LabFiles\Files\orders** to the lakehouse.
 
-4. After the files have been uploaded, expand **Files** and select the **orders** folder; and verify that the CSV files have been uploaded, as shown here:
-
-    ![Screenshot of uploaded files in a lakehouse.](./Images/uploaded-files1.png)
-
+4. After the files have been uploaded, expand **Files** and select the **orders** folder; and verify that the CSV files have been uploaded.
+   
 ## Create a notebook
 
 To work with data in Apache Spark, you can create a *notebook*. Notebooks provide an interactive environment in which you can write and run code (in multiple languages), and add notes to document it.
@@ -138,7 +136,7 @@ Now you're ready to run code that loads the data into a *dataframe*. Dataframes 
 10. Confirm that your changes have been applied to the data by viewing the dataframe. Run the following cell:
 
     ```python
-   display(df)
+    display(df)
     ```
 
 11. The dataframe includes only the data from the **2019.csv** file. Modify the code so that the file path uses a \* wildcard to read the sales order data from all of the files in the **orders** folder:
@@ -162,7 +160,7 @@ df = spark.read.format("csv").schema(orderSchema).load("Files/orders/*.csv")
 display(df)
 ```
 
-11. Run the modified code cell and review the output, which should now include sales for 2019, 2020, and 2021.
+12. Run the modified code cell and review the output, which should now include sales for 2019, 2020, and 2021.
 
     **Note**: Only a subset of the rows is displayed, so you may not be able to see examples from all years.
 
@@ -265,11 +263,11 @@ A common task for data engineers is to ingest data in a particular format or str
 
     > **Note**: Commonly, *Parquet* format is preferred for data files that you will use for further analysis or ingestion into an analytical store. Parquet is a very efficient format that is supported by most large scale data analytics systems. In fact, sometimes your data transformation requirement may simply be to convert data from another format (such as CSV) to Parquet!
 
-2. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and select the **transformed_orders** folder to verify that it contains a new folder named **orders**, which in turn contains one or more Parquet files.
+2. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and select the **transformed_data** folder to verify that it contains a new folder named **orders**, which in turn contains one or more Parquet files.
 
     ![Screenshot of a folder containing parquet files.](./Images/saved-parquet1.png)
 
-3. Add a new cell with the following code to load a new dataframe from the parquet files in the **transformed_orders/orders** folder:
+3. Add a new cell with the following code to load a new dataframe from the parquet files in the **transformed_data/orders** folder:
 
     ```python
    orders_df = spark.read.format("parquet").load("Files/transformed_data/orders")
@@ -287,7 +285,7 @@ A common task for data engineers is to ingest data in a particular format or str
    print ("Transformed data saved!")
     ```
 
-2. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and expand the **partitioned_orders** folder to verify that it contains a hierarchy of folders named **Year=*xxxx***, each containing folders named **Month=*xxxx***. Each month folder contains a parquet file with the orders for that month.
+2. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and expand the **partitioned_data** folder to verify that it contains a hierarchy of folders named **Year=*xxxx***, each containing folders named **Month=*xxxx***. Each month folder contains a parquet file with the orders for that month.
 
     ![Screenshot of a hierarchy of partitioned data files.](./Images/partitioned-files1.png)
 
@@ -378,13 +376,15 @@ A picture is proverbially worth a thousand words, and a chart is often better th
 
 3. In the results section beneath the cell, change the **View** option from **Table** to **Chart**.
 
-4. Use the **View options** button at the top right of the chart to display the options pane for the chart. Then set the options as follows and select **Apply**:
+4. Click on **Customize chart** on the right side of the chart to display the options pane for the chart. Then set the options as follows and select **Apply**:
     - **Chart type**: Bar chart
     - **Key**: Item
     - **Values**: Quantity
     - **Series Group**: *leave blank*
     - **Aggregation**: Sum
     - **Stacked**: *Unselected*
+      
+         ![Screenshot of a bar chart of products by total order quantiies](./Images/f-21.png)
 
 5. Verify that the chart looks similar to this:
 

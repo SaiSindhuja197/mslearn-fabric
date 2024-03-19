@@ -32,6 +32,7 @@ To train a model, you can create a *notebook*. Notebooks provide an interactive 
 
 1. Select the first cell (which is currently a *code* cell), and then in the dynamic tool bar at its top-right, use the **M&#8595;** button to convert the cell to a *markdown* cell.
 
+      ![](./Images/f-18.png)
     When the cell changes to a markdown cell, the text it contains is rendered.
 
 1. Use the **&#128393;** (Edit) button to switch the cell to editing mode, then delete the content and enter the following text:
@@ -46,8 +47,9 @@ To train a model, you can create a *notebook*. Notebooks provide an interactive 
 
 Now you're ready to run code to prepare data and train a model. To work with data, you'll use *dataframes*. Dataframes in Spark are similar to Pandas dataframes in Python, and provide a common structure for working with data in rows and columns.
 
-1. In the **Add lakehouse** pane, select **Add** to add a lakehouse.
+1. Selct Lakehouses from the left pane and in the **Add lakehouse** pane, select **Add** to add a lakehouse.
 
+   ![](./Images/f-19.png)
    ![](./Images/Pg6-Edit-S4.png)
 
 1. Select **Existing lakehouse (1)** and select **Add (2)**.
@@ -71,7 +73,7 @@ Now you're ready to run code to prepare data and train a model. To work with dat
     display(df)
     ```
     
-   > **Tip**: You can hide the pane containing the files on the left by using its **<<** icon. Doing so will help you focus on the notebook.
+      > **Tip**: You can hide the pane containing the files on the left by using its **<<** icon. Doing so will help you focus on the notebook.
 
 1. Use the **&#9655; Run cell** button on the left of the cell to run it.
 
@@ -197,7 +199,7 @@ When you've trained and tracked models with MLflow, you can use the MLflow libra
 
     The output should resemble the following image:
 
-    ![Screenshot of the plotted evaluation metrics.](./Images/plotted-metrics.png)
+    ![Screenshot of the plotted evaluation metrics.](./Images/f-33.png)
 
 ## Explore your experiments
 
@@ -247,9 +249,9 @@ After comparing machine learning models that you've trained across experiment ru
 
 1. Select **Create a new model** in the newly opened pop-up window.
 
-1. Name the model `model-churn`, and select **Create**. 
+1. Select **model** for Select folder, name the model `model-churn`, and select **Create**. 
 
-1. Select **View model** in the notification that appears at the top right of your screen when the model is created. You can also refresh the window. The saved model is linked under **Registered version**. 
+1. Select **View ML model** in the notification that appears at the top right of your screen when the model is created. You can also refresh the window. The saved model is linked under **Registered version**. 
 
 Note that the model, the experiment, and the experiment run are linked, allowing you to review how the model is trained. 
 
@@ -257,11 +259,13 @@ Note that the model, the experiment, and the experiment run are linked, allowing
 
 Now that you've finished training and evaluating the models, you can save the notebook with a meaningful name and end the Spark session.
 
-1. In the notebook menu bar, use the ⚙️ **Settings** icon to view the notebook settings.
+1. Navigate back to **Notebook 1** from the left pane and in the notebook menu bar, use the ⚙️ **Settings** icon to view the notebook settings.
 
 2. Set the **Name** of the notebook to **Train and compare models notebook**, and then close the settings pane.
 
 3. On the notebook menu, select **Stop session** to end the Spark session.
+
+   ![](./Images/f-20.png)
 
 ## Review
 

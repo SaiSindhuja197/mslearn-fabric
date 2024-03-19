@@ -23,7 +23,7 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
    ![Query in the Power Query editor.](./Images/power-query1.png)
 
-4. On the toolbar ribbon, select the **Add column** tab. Then select **Custom column** and create a new column named **MonthNo** that contains a number based on the formula `Date.Month([OrderDate])` - as shown here:
+4. On the toolbar ribbon, select the **Add column** tab. Then select **Custom column** and create a new column named **MonthNo** that contains a number based on the formula `Date.Month([OrderDate])` - as shown here and click on **OK**:
 
     ![Custom column in Power Query editor.](./Images/custom-column1.png)
 
@@ -38,19 +38,21 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
 1. On the toolbar ribbon, select the **Home** tab. Then in the **Add data destination** drop-down menu, select **Lakehouse**.
 
-   > **Note:** If this option is grayed out, you may already have a data destination set. Check the data destination at the bottom of the Query settings pane on the right side of the Power Query editor. If a destination is already set, you can change it using the gear.
+      ![Data destination configuration page.](./Images/f-21-6.png)
 
-2. In the **Connect to data destination** dialog box, edit the connection and sign in using your Power BI organizational account to set the identity that the dataflow uses to access the lakehouse.
+      > **Note:** If this option is grayed out, you may already have a data destination set. Check the data destination at the bottom of the Query settings pane on the right side of the Power Query editor. If a destination is already set, you can change it using the gear.
+
+1. In the **Connect to data destination** dialog box, edit the connection and sign in using your Power BI organizational account to set the identity that the dataflow uses to access the lakehouse and select **Next**.
 
     ![Data destination configuration page.](./Images/lakehuse_31-1.png)
 
-3. Select **Next** and in the list of available workspaces, find your workspace and select the lakehouse you created in it at the start of this exercise. Then specify a new table named **orders**:
+1. In the list of available workspaces, find your workspace and select the lakehouse you created in it at the start of this exercise. Then specify a new table named **orders** and click on **Next**:
 
-    ![Data destination configuration page.](./Images/data-destination-target1.png)
+    ![Data destination configuration page.](./Images/f-22-6.png)
 
-   > **Note:** On the **Destination settings** page, notice how OrderDate and MonthNo are not selected in the Column mapping and there is an informational message: *Change to date/time*.
+      >**Note:** On the **Destination settings** page, notice how OrderDate and MonthNo are not selected in the Column mapping and there is an informational message: *Change to date/time*.
 
-    ![Data destination settings page.](./Images/destination-settings123.png)
+      ![Data destination settings page.](./Images/f-27.png)
 
 1. Cancel this action, then go back to OrderDate and MonthNo columns in Power Query online. Right-click on the column header and **Change Type**.
 
@@ -59,28 +61,27 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
 1. Now repeat the process outlined earlier to add a lakehouse destination.
 
-8. On the **Destination settings** page, select **Append**, and then save the settings.  The **Lakehouse** destination is indicated as an icon in the query in the Power Query editor.
+1. On the **Destination settings** page, select **Append**, and then save the settings.  The **Lakehouse** destination is indicated as an icon in the query in the Power Query editor.
 
     ![Query with a lakehouse destination.](./Images/lakehouse-destination1.png)
 
-9. Select **Publish** to publish the dataflow. Then wait for the **Dataflow 1** dataflow to be created in your workspace.
+1. Select **Publish** to publish the dataflow. Then wait for the **Dataflow 1** dataflow to be created in your workspace.
 
-1. Once published, you can right-click on the dataflow in your workspace, select **Properties**, and rename your dataflow as **Transform Orders Dataflow**.
-
+1. Once published, click on ... beside the **dataflow 1** in your workspace, select **Properties**, and rename your dataflow as **Transform Orders Dataflow**.
 
 ## Add a dataflow to a pipeline
 
 You can include a dataflow as an activity in a pipeline. Pipelines are used to orchestrate data ingestion and processing activities, enabling you to combine dataflows with other kinds of operation in a single, scheduled process. Pipelines can be created in a few different experiences, including Data Factory experience.
 
-1. From your Fabric-enabled workspace, make sure you're still in the **Data Engineering** experience. Select **New**, **Data pipeline**, then when prompted, create a new pipeline named **Load Orders pipeline**.
+1. From your Fabric-enabled workspace, switch to **Data Engineering** experience. Click on **Data pipeline**, and name it as **Load Orders pipeline**.
 
    The pipeline editor opens.
-
-    ![Empty data pipeline.](./Images/new-pipeline1.png)
 
    > **Tip**: If the Copy Data wizard opens automatically, close it!
 
 2. Select **Add pipeline activity**, and add a **Dataflow** activity to the pipeline.
+
+   ![Empty data pipeline.](./Images/f-35.png)
 
 3. With the new **Dataflow1** activity selected, on the **Settings** tab, in the **Dataflow** drop-down list, select **Transform Orders Dataflow** (the data flow you created previously)
 

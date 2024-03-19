@@ -14,7 +14,7 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
     
      ![00](./Images/03/synpase.png)
 
-3. On the **Home** page for the **Real-Time Analytics** experience, select **KQL database** and create a new database.
+2. On the **Home** page for the **Real-Time Analytics** experience, select **KQL database** and create a new database.
    
      ![00](./Images/03/kql.png)
 
@@ -23,28 +23,30 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
    - **Name:** Enter **KQL-Database-<inject key="DeploymentID" enableCopy="false"/>**
 
     ![00](./Images/03/createkql.png)
-   
-   
-5. When the new database has been created, select the option to get data from **Local File**.
+      
+3. Click on **Get Data (1)** and select **Local File (2)**.
 
    ![01](./Images/03/01.png)
 
-6. Use the wizard to import the data into a new table by selecting the following options:
-    - **Destination**:
-        - **Database**: *The database you created is already selected*
-        - **Table**: *Create a new table named* **sales**.
+4. Use the wizard to import the data into a new table by selecting the following options:
     - **Source**:
-        - **Source type**: File
-        - **Upload files**: Drag or Browse for the file from **C:\LabFiles\Files\sales.csv**
-    - **Schema**:
-        - **Compression type**: Uncompressed
-        - **Data format**: CSV
-        - **Ignore the first record**: *Selected*
-        - **Mapping name**: sales_mapping
-    - **Summary**:
+        - **Database:** *The database you created is already selected*
+        - **Table:** *Create a new table named* **sales**.
+        - **Source type:** File
+        - **Upload files:** Drag or Browse for the file from **C:\LabFiles\Files\sales.csv**
+
+            ![01](./Images/fabric17.png)
+
+    - **Inspect:** Preview the data and click on **Finish**.
+
+        ![01](./Images/fabric18.png)
+
+    - **Summary:**
         - *Review the preview of the table and close the wizard.*
 
-> **Note**: In this example, you imported a very small amount of static data from a file, which is fine for the purposes of this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
+            ![01](./Images/fabric19.png)
+
+> **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
 
 ## Use KQL to query the sales table
 
@@ -52,6 +54,8 @@ Now that you have a table of data in your database, you can use KQL code to quer
 
 1. Make sure you have the **sales** table highlighted. From the menu bar, select the **Query table** drop-down, and from there select **Show any 100 records** .
 
+    ![01](./Images/f-16.png)
+    
 2. A new pane will open with the query and its result. 
 
 3. Modify the query as follows:
