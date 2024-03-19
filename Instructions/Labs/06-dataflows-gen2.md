@@ -48,9 +48,9 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
     ![Data destination configuration page.](./Images/data-destination-target1.png)
 
-1. On the **Destination settings** page, notice how OrderDate and MonthNo are not selected in the Column mapping and there is an informational message: *Change to date/time*. Click on **Save settings**.
+      >**Note:** On the **Destination settings** page, notice how OrderDate and MonthNo are not selected in the Column mapping and there is an informational message: *Change to date/time*.
 
-    ![Data destination settings page.](./Images/destination-settings123.png)
+      ![Data destination settings page.](./Images/destination-settings123.png)
 
 1. Cancel this action, then go back to OrderDate and MonthNo columns in Power Query online. Right-click on the column header and **Change Type**.
 
