@@ -16,7 +16,7 @@
 
    ![search-fabric-admin](./Images/ws/entra020.png)
 
-4. This will take you to the **Fabric Administrator | Assignments** page where you will have to assign yourself the **Fabric Administrator role**. Now, click on **+ Add Assignments**:
+4. This will take you to the **Fabric Administrator | Assignments** page where you will have to assign yourself the **Fabric Administrator role**. Now, click on **+ Add Assignments (1)**:
 
    ![click-add-assignments](./Images/ws/004.png)
 
