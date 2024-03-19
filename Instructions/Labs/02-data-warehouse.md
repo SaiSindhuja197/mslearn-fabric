@@ -22,7 +22,7 @@ Now that you already have a workspace, it's time to switch to the *Data Warehous
 
 A warehouse is a relational database in which you can define tables and other objects.
 
-1. In your new warehouse, select the **Create tables with T-SQL** tile.
+1. In your new warehouse, select the **T-SQL** tile.
 
    ![01](./Images/02/Pg4-T2-S1.png)
 
@@ -40,11 +40,11 @@ A warehouse is a relational database in which you can define tables and other ob
    GO
     ```
 
-    ![01](./Images/02/Pg4-T2-S2.png)
-
 3. Use the **&#9655; Run** button to run the SQL script, which creates a new table named **DimProduct** in the **dbo** schema of the data warehouse.
 
-4. Use the **Refresh** button on the toolbar to refresh the view. Then, in the **Explorer** pane, expand **Schemas** > **dbo** > **Tables** and verify that the **DimProduct** table has been created.
+   ![01](./Images/02/Pg4-T2-S2.png)
+   
+4. In the **Explorer** pane, expand **Schemas** > **dbo** > **Tables** and verify that the **DimProduct** table has been created.
 
 5. On the **Home** menu tab, use the **New SQL Query** button to create a new query, and enter the following INSERT statement:
 
