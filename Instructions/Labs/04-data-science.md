@@ -32,6 +32,7 @@ To train a model, you can create a *notebook*. Notebooks provide an interactive 
 
 1. Select the first cell (which is currently a *code* cell), and then in the dynamic tool bar at its top-right, use the **M&#8595;** button to convert the cell to a *markdown* cell.
 
+      ![](./Images/f-18.png)
     When the cell changes to a markdown cell, the text it contains is rendered.
 
 1. Use the **&#128393;** (Edit) button to switch the cell to editing mode, then delete the content and enter the following text:
@@ -48,6 +49,7 @@ Now you're ready to run code to prepare data and train a model. To work with dat
 
 1. In the **Add lakehouse** pane, select **Add** to add a lakehouse.
 
+   ![](./Images/f-19.png)
    ![](./Images/Pg6-Edit-S4.png)
 
 1. Select **Existing lakehouse (1)** and select **Add (2)**.
