@@ -213,7 +213,7 @@ When you create a lakehouse and define tables in it, a SQL endpoint is automatic
 
 1. Switch Back to the **Home** page and select your **Lakehouse**. 
 
-2. At the top-right of the Lakehouse page, switch from **Lakehouse** to **SQL endpoint**. Then wait a short time until the SQL query endpoint for your lakehouse opens in a visual interface from which you can query its tables, as shown here:
+2. At the top-right of the Lakehouse page, switch from **Lakehouse** to **SQL analytics endpoint**. Then wait a short time until the SQL query endpoint for your lakehouse opens in a visual interface from which you can query its tables, as shown here:
 
     ![Screenshot of the SQL endpoint page.](./Images/sql_31-1.png)
 
