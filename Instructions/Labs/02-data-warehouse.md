@@ -10,15 +10,13 @@ Now that you already have a workspace, it's time to switch to the *Data Warehous
 
 1. At the bottom left of the Data Engineering portal, switch to the **Data Warehouse** experience.
 
-    The Data Warehouse home page includes a shortcut to create a new warehouse:
-
+1. Click on Warehouse to create a new Warehouse.
+   
    ![01](./Images/01/warehouse.png)
 
-2. In the **Data Warehouse** home page, create a new **Warehouse**.
-   
-   - **Name:** Enter **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/>** .
+1. Provide the name as **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/>** and click on **Create**.
 
-     After a minute or so, a new warehouse will be created:
+     After a minute or so, a new warehouse will be created.
 
 ## Create tables and insert data
 
