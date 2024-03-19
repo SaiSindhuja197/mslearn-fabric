@@ -257,7 +257,7 @@ Note that the model, the experiment, and the experiment run are linked, allowing
 
 Now that you've finished training and evaluating the models, you can save the notebook with a meaningful name and end the Spark session.
 
-1. In the notebook menu bar, use the ⚙️ **Settings** icon to view the notebook settings.
+1. Navigate back to **Notebook 1** from the left pane and in the notebook menu bar, use the ⚙️ **Settings** icon to view the notebook settings.
 
 2. Set the **Name** of the notebook to **Train and compare models notebook**, and then close the settings pane.
 
