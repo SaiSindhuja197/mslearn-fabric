@@ -71,7 +71,7 @@ Now you're ready to run code to prepare data and train a model. To work with dat
     display(df)
     ```
     
-   > **Tip**: You can hide the pane containing the files on the left by using its **<<** icon. Doing so will help you focus on the notebook.
+      > **Tip**: You can hide the pane containing the files on the left by using its **<<** icon. Doing so will help you focus on the notebook.
 
 1. Use the **&#9655; Run cell** button on the left of the cell to run it.
 
