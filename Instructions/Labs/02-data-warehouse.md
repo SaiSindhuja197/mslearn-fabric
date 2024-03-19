@@ -10,7 +10,7 @@ Now that you already have a workspace, it's time to switch to the *Data Warehous
 
 1. At the bottom left of the Data Engineering portal, switch to the **Data Warehouse** experience.
 
-1. Click on Warehouse to create a new Warehouse.
+1. Click on **Warehouse** to create a new Warehouse.
    
    ![01](./Images/01/warehouse.png)
 
@@ -107,7 +107,7 @@ A relational data warehouse typically consists of *fact* and *dimension* tables.
 
 5. When all of the relationships have been defined, the model should look like this:
 
-    ![Screenshot of the model with relationships.](./Images/dw-relationships1.png)
+    ![Screenshot of the model with relationships.](./Images/f-31.png)
 
 ## Query data warehouse tables
 
@@ -193,11 +193,15 @@ Instead of writing SQL code, you can use the graphical query designer to query t
 
    ![Screenshot of the canvas with the FactSalesOrder table selected.](./Images/visual-query-merge.png)
 
-1. In the **Merge queries** window, select **DimProduct (1)** as the right table for merge. Select **ProductKey** in both queries, leave the default **Left outer** to join type, and click **OK (4)**.
+1. In the **Merge queries** window, select **DimProduct** as the right table for merge. Select **ProductKey** in both queries, leave the default **Left outer** to join type, and click **OK**.
+
+   ![Screenshot of the preview pane with the DimProduct column expanded, with ProductName selected.](./Images/f-13.png)
 
 1. In the **Preview**, note that the new **DimProduct** column has been added to the FactSalesOrder table. Expand the column by clicking the arrow to the right of the column name. Select **ProductName** and click **OK**.
 
-   ![Screenshot of the preview pane with the DimProduct column expanded, with ProductName selected.](./Images/visual-query-preview.png)
+   ![Screenshot of the preview pane with the DimProduct column expanded, with ProductName selected.](./Images/f-14.png)
+
+   ![Screenshot of the preview pane with the DimProduct column expanded, with ProductName selected.](./Images/f-15.png)
 
 1. If you're interested in looking at data for a single product, per a manager's request, you can now use the **ProductName** column to filter the data in the query. Filter the **ProductName** column to look at **Cable Lock** data only.
 
@@ -243,7 +247,7 @@ You can easily visualize the data in either a single query or in your data wareh
 
     ![Screenshot of the Visualizations pane with the bar chart selected.](./Images/visualizations-pane1.png)
 
-11. In the **Visualizations** pane, select the **Format your visual** tab and in the **General** sub-tab, in the **Title** section, change the **Text** to **Total Sales by Category**.
+11. In the **Visualizations** pane, select the **Format your visual (1)** tab and in the **General** sub-tab, in the **Title** section, change the **Text** to **Total Sales by Category (2)**.
 
     ![04](./Images/02/04.png)
 
