@@ -193,7 +193,7 @@ Instead of writing SQL code, you can use the graphical query designer to query t
 
 1. Use the **(+)** button on the **FactSalesOrder** table on the canvas to **Merge queries**.
 
-   ![Screenshot of the canvas with the FactSalesOrder table selected.](./Images/visual-query-merge.png)
+   ![Screenshot of the canvas with the FactSalesOrder table selected.](./Images/f-32.png)
 
 1. In the **Merge queries** window, select **DimProduct** as the right table for merge. Select **ProductKey** in both queries, leave the default **Left outer** to join type, and click **OK**.
 
