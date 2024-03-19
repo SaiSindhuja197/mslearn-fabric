@@ -18,10 +18,8 @@ Now that you have a workspace, it's time to switch to the *Data engineering* exp
 
 3. Return to the web browser tab containing your lakehouse, and in the **...** menu for the **Files** folder in the **Explorer** pane, select **Upload** and **Upload folder**, and then upload the **orders** folder from **C:\LabFiles\Files\orders** to the lakehouse.
 
-4. After the files have been uploaded, expand **Files** and select the **orders** folder; and verify that the CSV files have been uploaded, as shown here:
-
-    ![Screenshot of uploaded files in a lakehouse.](./Images/uploaded-files1.png)
-
+4. After the files have been uploaded, expand **Files** and select the **orders** folder; and verify that the CSV files have been uploaded.
+   
 ## Create a notebook
 
 To work with data in Apache Spark, you can create a *notebook*. Notebooks provide an interactive environment in which you can write and run code (in multiple languages), and add notes to document it.
