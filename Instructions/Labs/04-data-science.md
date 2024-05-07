@@ -249,7 +249,7 @@ After comparing machine learning models that you've trained across experiment ru
 
 1. Select **Create a new model** in the newly opened pop-up window.
 
-1. Select **model** for Select folder, name the model `model-churn`, and select **Create**. 
+1. Select **model** for Select folder, name the model `model-churn`, and select **Save**. 
 
 1. Select **View ML model** in the notification that appears at the top right of your screen when the model is created. You can also refresh the window. The saved model is linked under **Registered version**. 
 
