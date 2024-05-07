@@ -18,7 +18,7 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
    
      ![00](./Images/03/kql.png)
 
-   >**Note:** Make the fabric workspace is selected before Creating KQL database
+   >**Note:** Make sure the fabric workspace is selected before Creating KQL database.
    
    - **Name:** Enter **KQL-Database-<inject key="DeploymentID" enableCopy="false"/>**
 
