@@ -16,7 +16,7 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
  - **Link to file**: *Selected*
  - **File path or URL**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/orders.csv`
  - **Connection**: Create new connection
- - **data gateway**: (none)
+ - **Data gateway**: (none)
  - **Authentication kind**: Anonymous
 
 3. Select **Next** to preview the file data, and then **Create** the data source. The Power Query editor shows the data source and an initial set of query steps to format the data, as shown here:
