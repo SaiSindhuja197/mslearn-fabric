@@ -14,7 +14,7 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
     
      ![00](./Images/03/synpase.png)
 
-2. On the **Home** page for the **Real-Time Analytics** experience, select **Event House** and create a Event House.
+2. On the **Home** page for the **Real-Time Analytics** experience, select **Event House** and create an Event House.
 
    - **Name:** Enter **Eventhouse-<inject key="DeploymentID" enableCopy="false"/> (1)**.
 
