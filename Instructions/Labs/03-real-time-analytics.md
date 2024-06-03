@@ -23,9 +23,10 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
      ![](./Images/event-house.png)
 
 3. When the new event house has been created, select **Eventhouse-<inject key="DeploymentID" enableCopy="false"/>** from the left side pane under KQL database.
+
    ![01](./Images/03/01.png)
 
-4. Use the wizard to import the data into a new table by selecting the following options:
+5. Use the wizard to import the data into a new table by selecting the following options:
     - **Source**:
         - **Database:** *The database you created is already selected*
         - **Table:** *Create a new table named* **sales**.
