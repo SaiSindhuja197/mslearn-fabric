@@ -14,21 +14,19 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
     
      ![00](./Images/03/synpase.png)
 
-2. On the **Home** page for the **Real-Time Analytics** experience, select **KQL database** and create a new database.
-   
-     ![00](./Images/03/kql.png)
+2. On the **Home** page for the **Real-Time Analytics** experience, select **Event House** and create an Event House.
 
-   >**Note:** Make sure the fabric workspace is selected before Creating KQL database.
-   
-   - **Name:** Enter **KQL-Database-<inject key="DeploymentID" enableCopy="false"/>**
+   - **Name:** Enter **Eventhouse-<inject key="DeploymentID" enableCopy="false"/> (1)**.
 
-    ![00](./Images/03/createkql.png)
-      
-3. Click on **Get Data (1)** and select **Local File (2)**.
+   - Click on **Create (2)**.
+
+     ![](./Images/event-house.png)
+
+3. When the new event house has been created, select **Eventhouse-<inject key="DeploymentID" enableCopy="false"/>** from the left side pane under KQL database.
 
    ![01](./Images/03/01.png)
 
-4. Use the wizard to import the data into a new table by selecting the following options:
+5. Use the wizard to import the data into a new table by selecting the following options:
     - **Source**:
         - **Database:** *The database you created is already selected*
         - **Table:** *Create a new table named* **sales**.
