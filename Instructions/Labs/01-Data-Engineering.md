@@ -51,84 +51,85 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
    
    ![03](./Images/01/Pg3-TCreatePipeline-S1.1.png)
    
-3. If the **Copy Data** wizard doesn't open automatically, select **Copy Data (1)** in the pipeline editor page.
+3. If the **Copy data** wizard doesn't open automatically, select **Copy data assistance (1)** in the pipeline editor page.
 
    ![03](./Images/01/03.png)
 
-4. In the **Copy Data** wizard, on the **Choose a data source** page, in the **data sources** section, select the **Generic protocol (1)** tab and then select **HTTP (2)**, click on **Next (3)**.
+4. In the **Copy Data** wizard, on the **Choose a data source** page, search for HTTP and select the **Other** tab and then select **HTTP (2)**, click on **Next (3)**.
 
-   ![Screenshot of the Choose data source page.](./Images/01/Pg3-TCreatePipeline-S3.png)
+   ![Screenshot of the Choose data source page.](./Images/data-source.png)
 
-5. Select **Create new connection** and enter the following settings for the connection to your data source:
-    - **URL**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv` (1)
-    - **Connection**: Create a new connection (2)
-    - **Connection name**: *Specify a unique name* (3)
-    - **Authentication kind**: Basic (*Leave the username and password blank*) (4)
-    -  Click on **Next** (5)
+5. In the **Connection settings** pane, enter the following settings for the connection to your data source:
+    - **URL (1)**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv`
+    - **Connection (2)**: Create new connection
+    - **Connection name (3)**: *Specify a unique name*
+    - **Authentication kind (4)**: Anonymous
+    - Click on **Next (5)**
   
-    ![04](./Images/01/04.png)
+        ![04](./Images/data-source-01.png)
     
-6. Ensure the following settings are selected and select **Next (1)**:
+6. Select **Next**. Make sure the following settings are selected:
     - **Relative URL**: *Leave blank*
     - **Request method**: GET
     - **Additional headers**: *Leave blank*
-    - **Binary copy**: <u>Un</u>selected
+    - **Binary copy**: Unselected
     - **Request timeout**: *Leave blank*
     - **Max concurrent connections**: *Leave blank*
   
-    ![05](./Images/01/05.png)
+        ![05](./Images/fabric4.png)
    
-7. Wait for the data to be sampled and then ensure that the following settings are selected:
-    - **File format**: DelimitedText (1)
-    - **Column delimiter**: Comma (,) (2)
-    - **Row delimiter**: Line feed (\n) (3)
-    - **First row as header**: Selected 
-    - **Compression type**: Leave default (4)
-    - Select **Preview data (5)** to see a sample of the data that will be ingested. Then close the data preview and
-    - Select **Next**. (6)
+8. Wait for the data to be sampled and then ensure that the following settings are selected:
+    - **File format (1)**: DelimitedText
+    - **Column delimiter (2)**: Comma (,)
+    - **Row delimiter (3)**: Line feed (\n)
+    - Select **Preview data (4)** to see a sample of the data that will be ingested.
 
-     ![06](./Images/01/06.png)
+      ![05](./Images/fabric5.png)
 
-8. On the **Choose data destination** page, select your existing lakehouse. Then select **Next**.
+9. Select **Preview data** to see a sample of the data that will be ingested. Then close the data preview and select **Next**.
 
-     ![07](./Images/01/07.png)
+     ![06](./Images/fabric6.png)
 
-     ![07](./Images/01/connectdest02.png)
+10. On the **Choose data destination** page, select **Lakehouse (1)**. Then select **Next (2)**.
 
-9. Set the following data destination options, and then select **Next**:
-    - **Root folder**: Files (1)
-    - **Folder path name**: new_data (2)
-    - **File name**: sales.csv (3)
-    - **Copy behavior**: Leave default (4)
+     ![07](./Images/fabric7.png)
+
+1. On the **Choose data destination** page, select your **Existing Lakehouse (1)** and from the drop-down select **Lakehouse<inject key="DeploymentID" enableCopy="false"/> (2)**, select **Next (3)**.
+
+   ![05](./Images/fabric8.png)
+
+11. Set the following data destination options, and then select **Next (4)**:
+    - **Root folder (1)**: Files
+    - **Folder path (2)**: new_data
+    - **File name (3)**: sales.csv
    
-    ![08](./Images/01/08.png)
+        ![08](./Images/fabric9.png)
 
-10. Set the following file format options and then select **Next**:
-    - **File format**: DelimitedText (1)
-    - **Column delimiter**: Comma (,) (2)
-    - **Row delimiter**: Line feed (\n) (3)
-    - **Add header to file**: Selected 
-    - **Compression type**: Leave default (4)
+12. Set the following file format options and then select **Next (4)**:
+    - **File format (1)**: DelimitedText
+    - **Column delimiter (2)**: Comma (,)
+    - **Row delimiter (3)**: Line feed (\n)
    
-    ![09](./Images/01/09.png)
+      ![09](./Images/fabric10.png)
 
-11. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
+13. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
 
-    A new pipeline containing a **Copy Data** activity is created, as shown here:
+    ![09](./Images/fabric11.png)
 
-    ![Screenshot of a pipeline with a Copy Data activity.](./Images/copy-data-pipeline1.png)
+    A new pipeline containing a **Copy data** activity is created, as shown here:
 
-12. When the pipeline starts to run, you can monitor its status in the **Output** pane under the pipeline designer. Use the **&#8635;** (*Refresh*) icon to refresh the status, and wait until it has succeeded.
+    ![Screenshot of a pipeline with a Copy Data activity.](./Images/copy-data-pipeline.png)
+
+14. When the pipeline starts to run, you can monitor its status in the **Output** pane under the pipeline designer. Use the **&#8635;** (*Refresh*) icon to refresh the status, and wait until it has succeeded.
 
     ![Screenshot of a pipeline with a Copy Data activity.](./Images/01/Pg3-CpyOutput.png)
 
-13. In the menu bar on the left, select your lakehouse.
+15. In the menu bar on the left, select your lakehouse i.e., **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>**.
 
-14. On the **Home** page, in the **Lakehouse explorer** pane, expand **Files** and select the **new_data** folder to verify that the **sales.csv** file has been copied.
-
-    >**Note**: If you don't see sales.csv try refreshing 
+16. On the **Home** page, in the **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** pane, expand **Files** and select the **new_data (2)** folder to verify that the **sales.csv (3)** file has been copied.
 
     ![10](./Images/01/10.png)
+
 
 ## Create a notebook
 
