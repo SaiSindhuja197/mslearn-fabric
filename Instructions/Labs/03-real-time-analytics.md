@@ -1,12 +1,23 @@
-# Get started with Real-Time Analytics in Microsoft Fabric
+# Lab 04: Get started with Real-Time Analytics in Microsoft Fabric
+
+### Estimated Duration: 45 minutes
+
+## Overview
 
 Microsoft Fabric provides a runtime that you can use to store and query data by using Kusto Query Language (KQL). Kusto is optimized for data that includes a time series component, such as real-time data from log files or IoT devices.
 
-This lab takes approximately **30** minutes to complete.
-
 Now that you have created a workspace in the previous step, it's time to switch to the *Synapse Real-Time Analytics* experience in the portal.
 
-## Create a KQL database
+## Lab Objectives
+
+You will be able to complete the following tasks:
+
+- Task 1: Create a KQL database
+- Task 2: Use KQL to query the sales table
+- Task 3: Create a Power BI report from a KQL Queryset
+- Task 4: Use delta tables for streaming data
+
+### Task 1: Create a KQL database
 
 Kusto query language (KQL) is used to query static or streaming data in a table that is defined in a KQL database. To analyze the sales data, you must create a table in a KQL database and ingest the data from the file.
 
@@ -46,7 +57,7 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
 
 > **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
 
-## Use KQL to query the sales table
+### Task 2: Use KQL to query the sales table
 
 Now that you have a table of data in your database, you can use KQL code to query it.
 
@@ -88,7 +99,7 @@ Now that you have a table of data in your database, you can use KQL code to quer
 
 9. Select **Save as KQL queryset** and save the query as **Revenue by Product**.
 
-## Create a Power BI report from a KQL Queryset
+### Task 3: Create a Power BI report from a KQL Queryset
 
 You can use your KQL Queryset as the basis for a Power BI report.
 
@@ -110,7 +121,7 @@ You can use your KQL Queryset as the basis for a Power BI report.
 
 7. In the list of items in your workspace, note that the **Revenue by Item** report is listed.
 
-## Use delta tables for streaming data
+### Task 4: Use delta tables for streaming data
 
 Delta lake supports streaming data. Delta tables can be a *sink* or a *source* for data streams created using the Spark Structured Streaming API. In this example, you'll use a delta table as a sink for some streaming data in a simulated internet of things (IoT) scenario.
 
@@ -205,9 +216,9 @@ Delta lake supports streaming data. Delta tables can be a *sink* or a *source* f
 
     This code stops the stream.
 
-## Review
+## Summary
 
-In this exercise, you have created a lakehouse, a KQL database to analyze the data uploaded into the lakehouse. You used KQL to query the data and create a query set, which was then used to create a Power BI report.
+In this lab, you have created a lakehouse, a KQL database to analyze the data uploaded into the lakehouse. You used KQL to query the data and create a query set, which was then used to create a Power BI report.
 
 
-## Proceed to next exercise
+### You have successfully completed the lab
