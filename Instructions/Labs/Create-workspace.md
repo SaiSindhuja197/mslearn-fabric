@@ -1,6 +1,20 @@
-### Create a Fabric workspace
+# Create a Fabric workspace
 
-#### Task 1.1: Assign Fabric Administrator Role
+### Estimated Duration: 20 minutes
+
+## Overview
+
+In this lab, you will set up and configure a centralized environment within Microsoft Fabric to streamline data management, collaboration, and project organization.
+
+## Lab Objectives
+
+You will be able to complete the following tasks:
+
+- Task 1: Assign Fabric Administrator Role
+- Task 2: Sign up for Microsoft Fabric Trial
+- Task 3: Create a workspace
+
+### Task 1: Assign Fabric Administrator Role
 
 1. Start by searching for **Microsoft Entra ID** in the search pane in Azure portal:
 
@@ -28,7 +42,7 @@
 
 ----
 
-#### Task 1.2: Sign up for Microsoft Fabric Trial
+### Task 2: Sign up for Microsoft Fabric Trial
 
 1. Copy the **microsoft fabric homepage link**, and open this link inside the VM in a new tab:
 
@@ -63,7 +77,7 @@
 
    ![](./Images/fabric-get-started-01.png)
 
-#### Task 1.3: Create a workspace
+### Task 3: Create a workspace
 
 Here, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, the notebooks, Power BI datasets, and reports.
 
@@ -83,6 +97,9 @@ Here, you create a Fabric workspace. The workspace contains all the items needed
 
    ![advanced-and-apply](./Images/f-11.png)
 
-    **Congratulations!** You have successfully learnt to create a Fabric workspace.
+## Summary
 
-   ## Proceed to next exercise
+In this exercise, you assigned Fabric Administrator Role to your Azure user, signed up for Microsoft Fabric Trial and created a workspace.
+
+### You have successfully completed the lab
+
