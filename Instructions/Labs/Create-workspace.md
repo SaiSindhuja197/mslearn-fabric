@@ -1,4 +1,4 @@
-# Create a Fabric workspace
+# Lab 01: Create a Fabric workspace
 
 ### Estimated Duration: 20 minutes
 
