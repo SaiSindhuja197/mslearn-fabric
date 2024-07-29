@@ -38,8 +38,25 @@ Participants should have:
 
 ## Architecture
 
+Microsoft Fabric offers a comprehensive suite of services to manage and analyze data at scale. Participants can set up a central workspace for project management, automate data ingestion with pipelines, and perform complex queries using its data warehouse capabilities. Real-time data processing is supported through a dedicated analytics engine, while interactive notebooks facilitate machine learning model development. Apache Spark provides scalable data processing, and advanced data transformations are handled by Dataflow Gen2. Together, these tools enable efficient data management, real-time insights, and scalable analytics across diverse data scenarios.
 
-# Getting Started with Lab
+## Architecture Diagram
+
+![](./Images/cloud-scale-fabric-arch-diagram.png)
+
+## Explanation of Components
+
+The architecture for this lab involves several key components of Microsoft Fabric:
+
+- **Microsoft Fabric Workspace:** The main environment for managing all data-related projects, including resources, permissions, and configuration.
+- **Microsoft Fabric Data Factory (or Data Pipelines):** Service for creating, scheduling, and managing data ingestion workflows and ETL (Extract, Transform, Load) processes.
+- **Microsoft Fabric Data Warehouse (or Synapse Analytics):** Scalable data storage and querying service for performing complex data analysis and running SQL queries.
+- **Real-Time Analytics Engine:** Service for processing and analyzing streaming data to provide real-time insights.
+- **Microsoft Fabric Notebooks:** Interactive notebooks for developing, training, and testing machine learning models using languages such as Python or R.
+- **Apache Spark on Microsoft Fabric:** A distributed computing service for performing large-scale data processing and analytics using Spark clusters.
+- **Dataflow Gen2:** A service for designing and executing advanced data transformation workflows, enabling efficient data integration and processing.
+
+# Getting Started with the Lab
 
 1. Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. You can see the number on the bottom of lab guide to switch to different exercises of the lab guide.
 
@@ -78,9 +95,9 @@ Participants should have:
 
 1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
       
+By the end of this lab, participants can expect to learn how to effectively utilize Microsoft Fabric’s suite of services for comprehensive data management and analysis. They will gain hands-on experience in setting up and configuring a Fabric workspace, automating data ingestion processes using pipelines, and performing complex data queries in a data warehouse. Participants will also learn to implement real-time analytics for immediate insights, develop and train machine learning models using interactive notebooks, and leverage Apache Spark for scalable data processing. Additionally, they will understand how to design and execute advanced data transformations with Dataflow Gen2, equipping them with a complete toolkit for managing and analyzing large-scale data projects.
 
-
-
+### Happy Learning!!
 
 
 
