@@ -1,10 +1,24 @@
-# Use notebooks to train a model in Microsoft Fabric
+# Lab 05: Use notebooks to train a model in Microsoft Fabric
+
+### Estimated Duration: 90 minutes
+
+## Overview
 
 In this lab, we will use Microsoft Fabric to create a notebook and train a machine learning model to predict customer churn. We will use Scikit-Learn to train the model and MLflow to track its performance. Customer churn is a critical business problem that many companies face, and predicting which customers are likely to churn can help companies retain their customers and increase revenue. By completing this lab, you will gain hands-on experience in machine learning and model tracking, and learn how to use Microsoft Fabric to create a notebook for your projects.
 
-This lab will take approximately **45** minutes to complete.
+## Lab Objectives
 
-## Create a lakehouse and upload files
+You will be able to complete the following tasks:
+
+- Task 1: Create a lakehouse and upload files
+- Task 2: Create a notebook
+- Task 3: Load data into a dataframe
+- Task 4: Train a machine learning model
+- Task 5: Use MLflow to search and view your experiments
+- Task 6: Explore your experiments
+- Task 7: Save the model
+
+### Task 1: Create a lakehouse and upload files
 
 Using the same workspace, it's time to switch to the *Data science* experience in the portal.
 
@@ -20,7 +34,7 @@ Using the same workspace, it's time to switch to the *Data science* experience i
 
    ![](./Images/Pg6-S2.1.png)
 
-## Create a notebook
+### Task 2: Create a notebook
 
 To train a model, you can create a *notebook*. Notebooks provide an interactive environment in which you can write and run code (in multiple languages) as *experiments*.
 
@@ -43,7 +57,7 @@ To train a model, you can create a *notebook*. Notebooks provide an interactive 
    Use the code in this notebook to train and track models.
     ```    
 
-## Load data into a dataframe
+### Task 3: Load data into a dataframe
 
 Now you're ready to run code to prepare data and train a model. To work with data, you'll use *dataframes*. Dataframes in Spark are similar to Pandas dataframes in Python, and provide a common structure for working with data in rows and columns.
 
@@ -91,7 +105,7 @@ Now you're ready to run code to prepare data and train a model. To work with dat
 
     The output shows the rows and columns of customer data from the churn.csv file.
 
-## Train a machine learning model
+### Task 4: Train a machine learning model
 
 Now that you've loaded the data, you can use it to train a machine learning model and predict customer churn. You'll train a model using the Scikit-Learn library and track the model with MLflow. 
 
@@ -147,7 +161,7 @@ Now that you've loaded the data, you can use it to train a machine learning mode
 
     The code trains a classification model using Decision Tree Classifier. Parameters, metrics, and artifacts, are automatically logged with MLflow. Additionally, you're logging a parameter called `estimator`, with the value `DecisionTreeClassifier`.
 
-## Use MLflow to search and view your experiments
+### Task 5: Use MLflow to search and view your experiments
 
 When you've trained and tracked models with MLflow, you can use the MLflow library to retrieve your experiments and its details.
 
@@ -201,7 +215,7 @@ When you've trained and tracked models with MLflow, you can use the MLflow libra
 
     ![Screenshot of the plotted evaluation metrics.](./Images/f-33.png)
 
-## Explore your experiments
+### Task 6: Explore your experiments
 
 Microsoft Fabric will keep track of all your experiments and allows you to visually explore them.
 
@@ -233,7 +247,7 @@ Microsoft Fabric will keep track of all your experiments and allows you to visua
 
 By plotting the accuracy per logged estimator, you can review which algorithm resulted in a better model.
 
-## Save the model
+### Task 7: Save the model
 
 After comparing machine learning models that you've trained across experiment runs, you can choose the best performing model. To use the best performing model, save the model and use it to generate predictions.
 
@@ -255,7 +269,7 @@ After comparing machine learning models that you've trained across experiment ru
 
 Note that the model, the experiment, and the experiment run are linked, allowing you to review how the model is trained. 
 
-## Save the notebook and end the Spark session
+### Task 8: Save the notebook and end the Spark session
 
 Now that you've finished training and evaluating the models, you can save the notebook with a meaningful name and end the Spark session.
 
@@ -267,8 +281,8 @@ Now that you've finished training and evaluating the models, you can save the no
 
    ![](./Images/f-20.png)
 
-## Review
+## Summary
 
-In this exercise, you have created a notebook and trained a machine learning model. You used Scikit-Learn to train the model and MLflow to track it´s performance.
+In this lab, you have created a notebook and trained a machine learning model. You used Scikit-Learn to train the model and MLflow to track it´s performance.
 
-## The lab has been successfully completed; if necessary, proceed to the next exercise, which is optional.
+### You have successfully completed the lab
