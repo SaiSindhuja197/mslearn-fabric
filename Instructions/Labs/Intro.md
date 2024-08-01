@@ -97,6 +97,16 @@ The architecture for this lab involves several key components of Microsoft Fabri
       
 By the end of this lab, participants can expect to learn how to effectively utilize Microsoft Fabric’s suite of services for comprehensive data management and analysis. They will gain hands-on experience in setting up and configuring a Fabric workspace, automating data ingestion processes using pipelines, and performing complex data queries in a data warehouse. Participants will also learn to implement real-time analytics for immediate insights, develop and train machine learning models using interactive notebooks, and leverage Apache Spark for scalable data processing. Additionally, they will understand how to design and execute advanced data transformations with Dataflow Gen2, equipping them with a complete toolkit for managing and analyzing large-scale data projects.
 
+## Support Contact
+ 
+The CloudLabs support team is available 24/7, 365 days a year, via email and live chat to ensure seamless assistance at any time. We offer dedicated support channels tailored specifically for both learners and instructors, ensuring that all your needs are promptly and efficiently addressed.
+
+Learner Support Contacts:
+- Email Support: labs-support@spektrasystems.com
+- Live Chat Support: https://cloudlabs.ai/labs-support
+
+Now, click on **Next** from the lower right corner to move on to the next page.
+
 ### Happy Learning!!
 
 
