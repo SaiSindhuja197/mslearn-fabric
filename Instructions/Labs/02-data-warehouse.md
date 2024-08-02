@@ -271,6 +271,14 @@ You can easily visualize the data in either a single query or in your data wareh
 
 13. In the menu hub on the left, navigate back to the workspace. Notice that you now have items saved in your workspace.
 
+    <validation step="ed927a03-5062-4d23-bf52-d57ae336f0eb" />
+
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Hit the Validate button for the corresponding task.
+    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+
 ## Summary
 
 In this lab, you have created a data warehouse that contains multiple tables. You used SQL to insert data into the tables and query them. and also used the visual query tool. Finally, you enhanced the data model for the data warehouse's default dataset and used it as the source for a report.
