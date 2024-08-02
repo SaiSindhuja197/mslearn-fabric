@@ -21,7 +21,7 @@ You will be able to complete the following tasks:
 
 Kusto query language (KQL) is used to query static or streaming data in a table that is defined in a KQL database. To analyze the sales data, you must create a table in a KQL database and ingest the data from the file.
 
-1. In the **Microsoft Fabric** https://app.fabric.microsoft.com/ experience portal , select the **Synapse Real-Time Analytics** experience image as shown here:
+1. In the **Microsoft Fabric** https://app.fabric.microsoft.com/ experience portal , select the **Real-Time Analytics** experience image as shown here:
     
      ![00](./Images/03/synpase.png)
 
@@ -32,6 +32,8 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
    - Click on **Create (2)**.
 
      ![](./Images/event-house.png)
+
+    >**Note:** Click on **OK** if any popup appears regarding upgradation popup. close any popup appears after upgradation.
 
 3. When the new event house has been created, select **Eventhouse-<inject key="DeploymentID" enableCopy="false"/>** from the left side pane under KQL database.
 
@@ -215,6 +217,14 @@ Delta lake supports streaming data. Delta tables can be a *sink* or a *source* f
     ```
 
     This code stops the stream.
+
+    <validation step="3e3b6775-5941-4063-965e-9f1d3a6baa2e" />
+
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Hit the Validate button for the corresponding task.
+    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
 
 ## Summary
 

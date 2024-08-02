@@ -35,6 +35,8 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
    ![Query in the Power Query editor.](./Images/power-query1.png)
 
+`>**Note**: Disable to use automatic settings
+
 4. On the toolbar ribbon, select the **Add column** tab. Then select **Custom column** and create a new column named **MonthNo** that contains a number based on the formula `Date.Month([OrderDate])` - as shown here and click on **OK**:
 
     ![Custom column in Power Query editor.](./Images/custom-column1.png)
@@ -73,19 +75,17 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
 1. Now repeat the process outlined earlier to add a lakehouse destination.
 
-1. On the **Destination settings** page, select **Append**, and then save the settings.  The **Lakehouse** destination is indicated as an icon in the query in the Power Query editor.
-
-    ![Query with a lakehouse destination.](./Images/lakehouse-destination1.png)
+1. On the **Destination settings** page, select **Append**, and then save the settings. you will be back to Power Query editor.
 
 1. Select **Publish** to publish the dataflow. Then wait for the **Dataflow 1** dataflow to be created in your workspace.
 
-1. Once published, click on ... beside the **dataflow 1** in your workspace, select **Properties**, and rename your dataflow as **Transform Orders Dataflow**.
+1. Once published, click on ... beside the **dataflow 1** in your workspace, select **Properties**, and rename your dataflow as **Transform Orders Dataflow** and click on **Save**.
 
 ### Task 3: Add a dataflow to a pipeline
 
 You can include a dataflow as an activity in a pipeline. Pipelines are used to orchestrate data ingestion and processing activities, enabling you to combine dataflows with other kinds of operation in a single, scheduled process. Pipelines can be created in a few different experiences, including Data Factory experience.
 
-1. From your Fabric-enabled workspace, switch to **Data Engineering** experience. Click on **Data pipeline**, and name it as **Load Orders pipeline**.
+1. From your Fabric-enabled workspace, switch to **Data Engineering** experience. Click on **Data pipeline**, name it as **Load Orders pipeline** and click on **Save**
 
    The pipeline editor opens.
 

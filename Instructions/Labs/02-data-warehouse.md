@@ -269,11 +269,15 @@ You can easily visualize the data in either a single query or in your data wareh
 
 12. In the **File** menu, select **Save**. Then save the report as **Sales Report** in the workspace you created previously.
 
-13. In the menu hub on the left, navigate back to the workspace. Notice that you now have three items saved in your workspace: your data warehouse, its default dataset, and the report you created.
+13. In the menu hub on the left, navigate back to the workspace. Notice that you now have items saved in your workspace.
 
-    ![Screenshot of the workspace with the three items listed.](./Images/workspace-items1.png)
+    <validation step="ed927a03-5062-4d23-bf52-d57ae336f0eb" />
 
-    - Refer to [DataWarehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/data-warehousing) for more delated information
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Hit the Validate button for the corresponding task.
+    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
 
 ## Summary
 

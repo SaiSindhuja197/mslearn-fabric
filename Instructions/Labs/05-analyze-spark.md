@@ -78,12 +78,12 @@ Now you're ready to run code that loads the data into a *dataframe*. Dataframes 
 3. A new code cell containing the following code should be added to the notebook:
 
     ```python
-   df = spark.read.format("csv").option("header","true").load("your_ABFS_path/Files/orders/2019.csv")
+   df = spark.read.format("csv").option("header","true").load("Files/orders/2019.csv")
    # df now is a Spark DataFrame containing CSV data from "Files/orders/2019.csv".
    display(df)
     ```
 
-    > **Tip**: You can hide the Lakehouse explorer panes on the left by using their **<<** icons. Doing so will help you focus on the notebook.
+    > **Tip**: You can hide the Lakehouse explorer panes on the left by using their **<<** icons. Doing so will help you focus on the notebook. if the abfs path fails, right clicking on csv file > right click on abfs path copy it and paste it in load path.
 
 4. Use the **&#9655; Run cell** button on the left of the cell to run it.
 
@@ -594,6 +594,14 @@ Now that you've finished working with the data, you can save the notebook with a
 1. In the notebook menu bar, use the ⚙️ **Settings** icon to view the notebook settings.
 2. Set the **Name** of the notebook to **Explore Sales Orders Notebook**, and then close the settings pane.
 3. On the notebook menu, select **Stop session** to end the Spark session.
+
+    <validation step="17b4e545-1878-4b1e-8b41-f6d4401d997a" />
+
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Hit the Validate button for the corresponding task.
+    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
 
 ## Summary
 
