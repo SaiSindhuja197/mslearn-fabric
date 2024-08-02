@@ -269,11 +269,7 @@ You can easily visualize the data in either a single query or in your data wareh
 
 12. In the **File** menu, select **Save**. Then save the report as **Sales Report** in the workspace you created previously.
 
-13. In the menu hub on the left, navigate back to the workspace. Notice that you now have three items saved in your workspace: your data warehouse, its default dataset, and the report you created.
-
-    ![Screenshot of the workspace with the three items listed.](./Images/workspace-items1.png)
-
-    - Refer to [DataWarehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/data-warehousing) for more delated information
+13. In the menu hub on the left, navigate back to the workspace. Notice that you now have items saved in your workspace.
 
 ## Summary
 
