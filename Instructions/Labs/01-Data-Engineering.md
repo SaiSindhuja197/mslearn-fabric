@@ -67,7 +67,6 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
    
 3. If the **Copy data** wizard doesn't open automatically, select **Copy data assistance (1)** in the pipeline editor page.
 
-   ![03](./Images/01/03.png)
 
 4. In the **Copy Data** wizard, on the **Choose a data source** page, search for HTTP and select the **Other** tab and then select **HTTP (2)**, click on **Next (3)**.
 
@@ -108,9 +107,8 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
      ![07](./Images/fabric7.png)
 
-1. On the **Choose data destination** page, select your **Existing Lakehouse (1)** and from the drop-down select **Lakehouse<inject key="DeploymentID" enableCopy="false"/> (2)**, select **Next (3)**.
+1. On the **Choose data destination** page, provide the new lakehouse name as **Lakehouse<inject key="DeploymentID" enableCopy="false"/> (2)**, select **Next/Create (3)**.
 
-   ![05](./Images/fabric8.png)
 
 11. Set the following data destination options, and then select **Next (4)**:
     - **Root folder (1)**: Files
