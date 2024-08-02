@@ -78,12 +78,12 @@ Now you're ready to run code that loads the data into a *dataframe*. Dataframes 
 3. A new code cell containing the following code should be added to the notebook:
 
     ```python
-   df = spark.read.format("csv").option("header","true").load("your_ABFS_path/Files/orders/2019.csv")
+   df = spark.read.format("csv").option("header","true").load("Files/orders/2019.csv")
    # df now is a Spark DataFrame containing CSV data from "Files/orders/2019.csv".
    display(df)
     ```
 
-    > **Tip**: You can hide the Lakehouse explorer panes on the left by using their **<<** icons. Doing so will help you focus on the notebook.
+    > **Tip**: You can hide the Lakehouse explorer panes on the left by using their **<<** icons. Doing so will help you focus on the notebook. if the abfs path fails, right clicking on csv file > right click on abfs path copy it and paste it in load path.
 
 4. Use the **&#9655; Run cell** button on the left of the cell to run it.
 
