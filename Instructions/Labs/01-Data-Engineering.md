@@ -313,6 +313,14 @@ The tables in your lakehouse are automatically added to a default dataset that d
     - The **Item Sales Report** report.
 
 
+    <validation step="b28817e6-75d8-40fd-9c33-0a408a962f8e" />
+
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Hit the Validate button for the corresponding task.
+    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+
 ## Summary
 
 In this lab, you have created a lakehouse and imported data into it. You've seen how a lakehouse consists of files and tables stored in a OneLake data store. The managed tables can be queried using SQL, and are included in a default dataset to support data visualizations.
