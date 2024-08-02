@@ -281,6 +281,14 @@ Now that you've finished training and evaluating the models, you can save the no
 
    ![](./Images/f-20.png)
 
+    <validation step="67d8cbeb-e9b6-495c-8631-ae0dfe4775fa" />
+
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Hit the Validate button for the corresponding task.
+    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+
 ## Summary
 
 In this lab, you have created a notebook and trained a machine learning model. You used Scikit-Learn to train the model and MLflow to track it´s performance.
