@@ -595,6 +595,14 @@ Now that you've finished working with the data, you can save the notebook with a
 2. Set the **Name** of the notebook to **Explore Sales Orders Notebook**, and then close the settings pane.
 3. On the notebook menu, select **Stop session** to end the Spark session.
 
+    <validation step="17b4e545-1878-4b1e-8b41-f6d4401d997a" />
+
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+    > - Hit the Validate button for the corresponding task.
+    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+
 ## Summary
 
 In this lab, you've learned how to use Spark to work with data in Microsoft Fabric.
