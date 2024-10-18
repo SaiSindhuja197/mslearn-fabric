@@ -1,328 +1,354 @@
-# Lab 02: Ingest data with a pipeline in Microsoft Fabric
+# 演習2: Microsoft Fabricでパイプラインを使用してデータを取り込む
 
-### Estimated Duration: 90 minutes
+### 推定所要時間: 90分
 
-## Overview
+データレイクハウスは、クラウド規模の分析ソリューションのための一般的な分析データストアです。データエンジニアの主要なタスクの一つは、複数の運用データソースからレイクハウスへのデータ取り込みを実装および管理することです。Microsoft Fabricでは、*抽出、変換、ロード* (ETL) または *抽出、ロード、変換* (ELT) ソリューションをパイプラインの作成を通じてデータ取り込みに実装できます。
 
-A data lakehouse is a common analytical data store for cloud-scale analytics solutions. One of the core tasks of a data engineer is to implement and manage the ingestion of data from multiple operational data sources into the lakehouse. In Microsoft Fabric, you can implement *extract, transform, and load* (ETL) or *extract, load, and transform* (ELT) solutions for data ingestion through the creation of *pipelines*.
+FabricはApache Sparkもサポートしており、大規模なデータ処理のためのコードを記述して実行することができます。FabricのパイプラインとSparkの機能を組み合わせることで、外部ソースからレイクハウスのベースとなっているOneLakeストレージにデータをコピーし、その後Sparkコードを使用してカスタムデータ変換を実行し、分析用のテーブルにロードするという複雑なデータ取り込みロジックを実装できます。
 
-Fabric also supports Apache Spark, enabling you to write and run code to process data at scale. By combining the pipeline and Spark capabilities in Fabric, you can implement complex data ingestion logic that copies data from external sources into the OneLake storage on which the lakehouse is based and then uses Spark code to perform custom data transformations before loading it into tables for analysis.
+## ラボの目的
 
-## Lab Objectives
+次のタスクを完了できるようになります:
 
-You will be able to complete the following tasks:
+- タスク1: レイクハウスを作成する
+- タスク2: ショートカットを探索する
+- タスク3: パイプラインを作成する
+- タスク4: ノートブックを作成する
+- タスク5: SQLを使用してテーブルをクエリする
+- タスク6: ビジュアルクエリを作成する
+- タスク7: レポートを作成する
 
-- Task 1: Create a Lakehouse
-- Task 2: Explore shortcuts
-- Task 3: Create a pipeline
-- Task 4: Create a notebook
-- Task 5: Use SQL to query tables
-- Task 6: Create a visual query
-- Task 7: Create a report
+### タスク1: レイクハウスを作成する
 
-### Task 1: Create a Lakehouse
+大規模なデータ分析ソリューションは伝統的に、データがリレーショナルテーブルに格納され、SQLを使用してクエリされる*データウェアハウス*を中心に構築されてきました。「ビッグデータ」（ 新しいデータ資産の高度な *Volume* 、*Variety* 、および *Velocity* から特徴付けられる）の成長と、低コストのストレージおよびクラウド規模の分散コンピューティング技術の利用可能性により、分析データストレージへの代替アプローチが生まれました。それが*データレイク*です。データレイクでは、固定されたスキーマを課さずにファイルとしてデータが保存されます。データエンジニアやアナリストは、これらのアプローチの最良の特徴を組み合わせた*データレイクハウス*を利用することが増えています。データレイクハウスでは、データレイクにファイルとしてデータが保存され、メタデータレイヤーとしてリレーショナルスキーマが適用されるため、従来のSQLセマンティクスを使用してクエリできます。
 
-Large-scale data analytics solutions have traditionally been built around a *data warehouse*, in which data is stored in relational tables and queried using SQL. The growth in "big data" (characterized by high *volumes*, *variety*, and *velocity* of new data assets) together with the availability of low-cost storage and cloud-scale distributed computing technologies has led to an alternative approach to analytical data storage; the *data lake*. In a data lake, data is stored as files without imposing a fixed schema for storage. Increasingly, data engineers and analysts seek to benefit from the best features of both of these approaches by combining them in a *data lakehouse*; in which data is stored in files in a data lake and a relational schema is applied to them as a metadata layer so that they can be queried using traditional SQL semantics.
+Microsoft Fabricでは、レイクハウスは*OneLake*ストア（Azure Data Lake Store Gen2上に構築）における非常にスケーラブルなファイルストレージを提供し、オープンソースの*Delta Lake*テーブル形式に基づくテーブルやビューなどのリレーショナルオブジェクトのメタストアを提供します。Delta Lakeを使用すると、SQLを使用してクエリできるレイクハウス内のテーブルのスキーマを定義できます。
 
-In Microsoft Fabric, a lakehouse provides highly scalable file storage in a *OneLake* store (built on Azure Data Lake Store Gen2) with a metastore for relational objects such as tables and views based on the open source *Delta Lake* table format. Delta Lake enables you to define a schema of tables in your lakehouse that you can query using SQL.
+前のステップでワークスペースを作成したので、ポータルで*データエンジニアリング*エクスペリエンスに切り替え、データを取り込むためのデータレイクハウスを作成します。
 
-
-Now that you have created a workspace in the previous step, it's time to switch to the *Data engineering* experience in the portal and create a data lakehouse into which you will ingest data.
-
-1. At the bottom left of the Power BI portal, select the **Power BI** icon and switch to the **Data Engineering** experience.
+1. Power BIポータルの左下にある**Power BI **アイコンを選択し、**データエンジニアリング **エクスペリエンスに切り替えます。
 
    ![02](./Images/01/Pg3-T1-S1.png)
-   
-2. In the **Data engineering** home page, click on **Lakehouse**, name it as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** and click on **Create**.
 
+2. **データエンジニアリング**のホームページで、**Lakehouse** をクリックしてから **名前:** **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>**と入力して **作成** をクリックします。
    ![02](./Images/01/lakehouse.png)
 
-   ![02](./Images/f-3.png)
+   ![02](./Images/01/f-3.png)
 
-    After a minute or so, a new lakehouse with no **Tables** or **Files** will be created.
+    1分ほど待つと、**テーブル**や**ファイル**がない新しいレイクハウスが作成されます。
+3. 左側のペインにある**エクスプローラー**で、**ファイル**ノードの **...** メニューをクリックし、**新しいサブフォルダー**を選択します。
 
-4. On the **Lake view** tab in the pane on the left, in the **...** menu for the **Files** node, select **New subfolder** and create a subfolder named **new_data**.
+   ![02](./Images/01/f-30.png)
 
-   ![02](./Images/f-30.png)
+4. **new_data**という名前のサブフォルダーを作成します。
+   
+   ![alt text](./Images/01/new_data.png)
 
 ### Task 2: Explore shortcuts
 
-In many scenarios, the data you need to work within your lakehouse may be stored in some other location. While there are many ways to ingest data into the OneLake storage for your lakehouse, another option is to instead create a *shortcut*. Shortcuts enable you to include externally sourced data in your analytics solution without the overhead and risk of data inconsistency associated with copying it.
+多くのシナリオでは、レイクハウスで作業するために必要なデータが他の場所に保存されている場合があります。自分のレイクハウスのOneLakeストレージにデータを取り込む方法は多数ありますが、別のオプションとして*ショートカット*を作成することもできます。ショートカットを使用すると、データをコピーする際のオーバーヘッドやデータの不整合のリスクを伴わずに、外部のデータを分析ソリューションに含めることができます。
 
-1. In the **...** menu for the **Files** folder, select **New shortcut**.
-2. View the available data source types for shortcuts. Then close the **New shortcut** dialog box without creating a shortcut.
+1. **ファイル**フォルダーの **...** メニューで、**新しいショートカット**を選択します。
+   ![alt text](./Images/01/shortcut-menu.png)
+   
+2. ショートカットの利用可能なデータソースの種類を確認します。その後、**新しいショートカット**ダイアログボックスを閉じて、ショートカットを作成せずに終了します。
+   ![alt text](./Images/01/shortcut-dialog.png)
 
+### タスク3: パイプラインを作成する
 
-### Task 3: Create a pipeline
+データを取り込む簡単な方法は、パイプライン内で **データのコピー** アクティビティを使用して、ソースからデータを抽出し、レイクハウス内のファイルにコピーすることです。
 
-A simple way to ingest data is to use a **Copy Data** activity in a pipeline to extract the data from a source and copy it to a file in the lakehouse.
-
-1. On the **Home** page for your lakehouse, select **Data pipeline**.
+1. レイクハウスの **ホーム** ページで、 **新しいデータパイプライン** を選択します。
 
     ![03](./Images/01/datapipeline.png)
 
-2. Name it as **Ingest Sales Data Pipeline (1)** and click on **Create (2)**. 
+2. **Ingest Sales Data Pipeline**という名前 (1)を付け、**作成 (2)** をクリックします。 
    
    ![03](./Images/01/Pg3-TCreatePipeline-S1.1.png)
+
+3. **データのコピー**ウィザードの**データソースの選択**ページで、**HTTPを検索 (1)**し、**HTTP (2)** をクリックします。
+
+   ![Screenshot of the Choose data source page.](./Images/01/data-source01.png)
    
-3. If the **Copy data** wizard doesn't open automatically, select **Copy data assistance (1)** in the pipeline editor page.
+    > **補足**：
+    > データのコピーウィザードが自動的に開かない場合は、パイプラインエディターページで**コピーアシスタントを使用する**を選択します。
+    > ![alt text](./Images/01/copy-assistant.png)
 
-
-4. In the **Copy Data** wizard, on the **Choose a data source** page, search for HTTP and select the **Other** tab and then select **HTTP (2)**, click on **Next (3)**.
-
-   ![Screenshot of the Choose data source page.](./Images/data-source01.png)
-
-5. In the **Connection settings** pane, enter the following settings for the connection to your data source:
+4. **接続設定**ペインで、データソースへの接続のために次の設定を入力します:
     - **URL (1)**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv`
-    - **Connection (2)**: Create new connection
-    - **Connection name (3)**: *Specify a unique name*
-    - **Authentication kind (4)**: Anonymous
-    - Click on **Next (5)**
+    - **接続 (2)**: 新しい接続を作成
+    - **接続名 (3)**: *一意の名前が指定されます。*
+    - **データゲートウェイ (4)**: なし
+    - **認証の種類 (5)**: 匿名
+    - **次へ (6)** をクリックします。
   
-        ![04](./Images/data-source-02.png)
-    
-6. Select **Next**. Make sure the following settings are selected:
-    - **Relative URL**: *Leave blank*
-    - **Request method**: GET
-    - **Additional headers**: *Leave blank*
-    - **Binary copy**: Unselected
-    - **Request timeout**: *Leave blank*
-    - **Max concurrent connections**: *Leave blank*
+        ![04](./Images/01/data-source-02.png)
+
+5. **次へ**を選択します。次の設定が選択されていることを確認し、次に進みます:
+    - **相対URL**: *空白のまま*
+    - **リクエストメソッド**: GET
+    - **追加ヘッダー**: *空白のまま*
+    - **バイナリコピー**: 未選択
+    - **リクエストタイムアウト**: *空白のまま*
+    - **最大同時接続数**: *空白のまま*
   
-        ![05](./Images/fabric4.png)
+        ![05](./Images/01/fabric4.png)
    
-8. Wait for the data to be sampled and then ensure that the following settings are selected:
-    - **File format (1)**: DelimitedText
-    - **Column delimiter (2)**: Comma (,)
-    - **Row delimiter (3)**: Line feed (\n)
-    - Select **Preview data (4)** to see a sample of the data that will be ingested.
+6. データのサンプリング後、画面が有効化されたら次の設定が選択されていることを確認します:
+    - **ファイル形式 (1)**: DelimitedText
+    - **列区切り記号 (2)**: Comma (,)
+    - **行区切り記号 (3)**: Line feed (\n)
+    - **データのプレビュー (4)**を選択して、取り込まれるデータのサンプルを確認します。
 
-      ![05](./Images/fabric5.png)
+      ![05](./Images/01/fabric5.png)
 
-9. Select **Preview data** to see a sample of the data that will be ingested. Then close the data preview and select **Next**.
+7. データプレビューを閉じて**次へ**を選択します。
 
-     ![06](./Images/fabric6.png)
-
-10. On the **Choose data destination** page, select **Lakehouse (1)**. Then select **Next (2)**.
-
-     ![07](./Images/fabric7.png)
-
-1. On the **Choose data destination** page, provide the new lakehouse name as **Lakehouse<inject key="DeploymentID" enableCopy="false"/> (2)**, select **Next/Create (3)**.
+     ![06](./Images/01/fabric6.png)
 
 
-11. Set the following data destination options, and then select **Next (4)**:
-    - **Root folder (1)**: Files
-    - **Folder path (2)**: new_data
-    - **File name (3)**: sales.csv
+8.  **データ変換先に接続** ページでオプションを設定し、**次へ (4)** を選択します:
+    - **ルートフォルダー (1)**: ファイル
+    - **フォルダーパス (2)**: new_data
+    - **ファイル名 (3)**: sales.csv
    
-        ![08](./Images/fabric9.png)
+        ![08](./Images/01/fabric9.png)
 
-12. Set the following file format options and then select **Next (4)**:
-    - **File format (1)**: DelimitedText
-    - **Column delimiter (2)**: Comma (,)
-    - **Row delimiter (3)**: Line feed (\n)
+
+    > **補足**: 
+    >
+    > **データ変換先に接続** ページに直接移動しない場合、 **データ変換先の選択**ページで、**Lakehouse<inject key="DeploymentID" enableCopy="false"/> ** を選択します。
+    >
+    > ![07](./Images/01/fabric7.png)
+    >
+    > サインインして接続します
+    >
+    > ![alt text](./Images/01/lakehouse-connect.png)
+
+9.  変換先のファイル形式オプションを設定し、**次へ (4)** を選択します:
+    - **ファイル形式 (1)**: DelimitedText
+    - **列区切り記号 (2)**: Comma (,)
+    - **行区切り記号 (3)**: Line feed (\n)
    
-      ![09](./Images/fabric10.png)
+      ![09](./Images/01/fabric10.png)
 
-13. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
+10.  **レビューと保存**ページで、コピー操作の概要を確認し、**保存と実行**を選択します。
 
-    ![09](./Images/fabric11.png)
+      ![09](./Images/01/fabric11.png)
+    **データのコピー** アクティビティを含む新しいパイプラインが作成されます。
 
-    A new pipeline containing a **Copy data** activity is created, as shown here:
+     ![Screenshot of a pipeline with a Copy Data activity.](./Images/01/copy-data-pipeline.png)
 
-    ![Screenshot of a pipeline with a Copy Data activity.](./Images/copy-data-pipeline.png)
+11.  パイプラインが実行を開始すると、パイプラインデザイナーの**出力**ペインでそのステータスを監視できます。**&#8635;** (*更新*)アイコンを使用してステータスを更新し、成功するまで待ちます。
 
-14. When the pipeline starts to run, you can monitor its status in the **Output** pane under the pipeline designer. Use the **&#8635;** (*Refresh*) icon to refresh the status, and wait until it has succeeded.
+     ![Screenshot of a pipeline with a Copy Data activity.](./Images/01/Pg3-CpyOutput.png)
 
-    ![Screenshot of a pipeline with a Copy Data activity.](./Images/01/Pg3-CpyOutput.png)
+12.  左側のメニューバーで、レイクハウス、つまり**Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** からペインの**ファイル**を展開し、 **new_data (2)** フォルダーを選択して、**sales.csv (3)** ファイルがコピーされたことを確認します。
 
-15. In the menu bar on the left, select your lakehouse i.e., **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>**.
+![10](./Images/01/10.png)
 
-16. On the **Home** page, in the **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** pane, expand **Files** and select the **new_data (2)** folder to verify that the **sales.csv (3)** file has been copied.
+### タスク4: ノートブックを作成する
 
-    ![10](./Images/01/10.png)
+1. レイクハウスの**ホーム**ページで、**ノートブックを開く (1)**メニューから**新しいノートブック (2)**を選択します。
 
+    ![11](./Images/01/11.png)
 
-### Task 4: Create a notebook
+    数秒後、新しいノートブックが1つの*セル*を含む状態で開きます。ノートブックは、*コード*または*マークダウン*（フォーマットされたテキスト）を含む1つ以上のセルで構成されます。
 
-1. On the **Home** page for your lakehouse, in the **Open notebook (1)** menu, select **New notebook (2)**.
-
-      ![11](./Images/01/11.png)
-
-    After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
-
-2. Select the existing cell in the notebook, which contains some simple code, and then replace the default code with the following **variable declaration (1)** and click on **Run cell (2)**.
+2. ノートブック内の既存のセルを選択し、デフォルトのコードを次の**変数宣言 (1)** に置き換え、**&#9655;セル実行ボタン (2)** をクリックします。
 
     ```python
-   table_name = "sales"
+    table_name = "sales"
     ```
 
-   ![11](./Images/01/Pg3-Notebook-S2.png) 
+    ![11](./Images/01/Pg3-Notebook-S2.png)
+    > **注:** このセッションで初めてSparkコードを実行するため、Sparkプールを起動する必要があります。最初のセルの実行には1分ほどかかることがあります。
+3. セルの右上にある**...**メニューで**Toggle parameter cell**を選択します。これにより、セル内で宣言された変数がパイプラインからノートブックを実行する際にパラメータとして扱われるように設定されます。
 
-3. In the **...** menu for the cell (at its top-right) select **Toggle parameter cell**. This configures the cell so that the variables declared in it are treated as parameters when running the notebook from a pipeline.
+    ![12](./Images/01/F-4.png)
 
-    ![12](./Images/F-4.png)
+4. パラメータセルの下にある**+ Code**ボタンを使用して新しいコードセルを追加します。その後、次のコードを追加します：
 
-4. Under the parameters cell, use the **+ Code** button to add a new code cell. Then add the following code to it:
+    >**注:** 前のコードの実行が完了するまで待ちます
 
-   >**Note:** Wait until the previous code completes the execution
-   
     ```Python
-   from pyspark.sql.functions import *
+    from pyspark.sql.functions import *
 
-   # Read the new sales data
-   df = spark.read.format("csv").option("header","true").option("inferSchema","true").load("Files/new_data/*.csv")
+    # 新しい売上データを読み込む
+    df = spark.read.format("csv").option("header","true").option("inferSchema","true").load("Files/new_data/*.csv")
 
-   ## Add month and year columns
-   df = df.withColumn("Year", year(col("OrderDate"))).withColumn("Month", month(col("OrderDate")))
+    # 月と年の列を追加
+    df = df.withColumn("Year", year(col("OrderDate"))).withColumn("Month", month(col("OrderDate")))
 
-   # Derive FirstName and LastName columns
-   df = df.withColumn("FirstName", split(col("CustomerName"), " ").getItem(0)).withColumn("LastName", split(col("CustomerName"), " ").getItem(1))
+    # FirstNameとLastNameの列を派生
+    df = df.withColumn("FirstName", split(col("CustomerName"), " ").getItem(0)).withColumn("LastName", split(col("CustomerName"), " ").getItem(1))
 
-   # Filter and reorder columns
-   df = df["SalesOrderNumber", "SalesOrderLineNumber", "OrderDate", "Year", "Month", "FirstName", "LastName", "EmailAddress", "Item", "Quantity", "UnitPrice", "TaxAmount"]
+    # 列をフィルタリングして並べ替え
+    df = df["SalesOrderNumber", "SalesOrderLineNumber", "OrderDate", "Year", "Month", "FirstName", "LastName", "EmailAddress", "Item", "Quantity", "UnitPrice", "TaxAmount"]
 
-   # Load the data into a managed table
-   #Managed tables are tables for which both the schema metadata and the data files are managed by Fabric. The data files for the table are created in the Tables folder.
-   df.write.format("delta").mode("append").saveAsTable(table_name)
+    # データをマネージドテーブルにロード
+    # マネージドテーブルは、スキーマメタデータとデータファイルの両方がFabricによって管理されるテーブルです。テーブルのデータファイルはTablesフォルダーに作成されます。
+    df.write.format("delta").mode("append").saveAsTable(table_name)
     ```
 
-    This code loads the data from the sales.csv file that was ingested by the **Copy Data** activity, applies some transformation logic, and saves the transformed data as a **managed table** - appending the data if the table already exists.
+    このコードは、**Copy Data**アクティビティによって取り込まれたsales.csvファイルからデータを読み込み、いくつかの変換ロジックを適用し、変換されたデータを**マネージドテーブル**として保存します（テーブルが既に存在する場合はデータを追加します）。
 
-5. Verify that your notebooks look similar to this, and then use the **&#9655; Run all** button on the toolbar to run all of the cells it contains.
+5. ノートブックが次のように記載されていることを確認し、ツールバーの **&#9655; すべて実行** ボタンを使用してすべてのセルを実行します。
 
-    ![Screenshot of a notebook with a parameters cell and code to transform data.](./Images/notebook1.png)
+    ![ノートブックのスクリーンショット](./Images/01/notebook1.png)
 
-    > **Note**: Since this is the first time you've run any Spark code in this session, the Spark pool must be started. This means that the first cell can take a minute or so to complete.
 
-6. (Optional) You can also create **external tables** for which the schema metadata is defined in the metastore for the lakehouse, but the data files are stored in an external location.
+
+6. （オプション）外部の場所にデータファイルが保存されている**外部テーブル** を作成することもできます。
 
     ```Python
     df.write.format("delta").saveAsTable("external_sales", path="<abfs_path>/external_sales")
 
-    #In the Lakehouse explorer pane, in the ... menu for the Files folder, select Copy ABFS path.
+    # Lakehouseエクスプローラーペインで、Filesフォルダーの...メニューからCopy ABFS pathを選択します。
 
-    #The ABFS path is the fully qualified path to the Files folder in the OneLake storage for your lakehouse - similar to this:
+    # ABFSパスは、レイクハウスのOneLakeストレージ内のFilesフォルダーへの完全修飾パスです。次のようになります：
 
-    #abfss://workspace@tenant-onelake.dfs.fabric.microsoft.com/lakehousename.Lakehouse/Files
+    # abfss://workspace@tenant-onelake.dfs.fabric.microsoft.com/lakehousename.Lakehouse/Files
     ```
-    > **Note**: To run the above code, you need to replace the <abfs_path> with your abfs path
+    > **注:** 上記のコードを実行するには、<abfs_path>を自分のabfsパスに置き換える必要があります。
 
-7. When the notebook run has completed, in the **Lakehouse explorer** pane on the left, in the **...** menu for **Tables** select **Refresh** and verify that a **sales** table has been created.
+7. ノートブックの実行が完了したら、左側の**エクスプローラー** ペインで **レイクハウス** をクリックします。
+    ![alt text](./Images/01/explorer.png)
 
-8. In the notebook menu bar, use the ⚙️ **Settings (1)** icon to view the notebook settings. Then set the **Name** of the notebook to **Load Sales Notebook (2)** and close the settings pane.
 
-   ![.](./Images/01/Pg3-Notebook-S10.png)
- 
-9. In the hub menu bar on the left, select your lakehouse.
+8. **sales**テーブルが作成されたことを確認します。表示されていない場合はノートブックの実行が完了していることを確認して **最新の情報に更新** をクリックします
+    ![alt text](./Images/01/table.png)
 
-10. In the **Explorer** pane, refresh the view. Then expand **Tables**, and select the **sales** table to see a preview of the data it contains.
+9. ノートブックメニューバーで⚙️**Settings (1)** アイコンを使用してノートブックの設定を表示します。その後、ノートブックの **名前** を**Load Sales Notebook (2)** に設定し、設定ペインを閉じます。
 
-### Task 5: Use SQL to query tables
+    ![.](./Images/01/Pg3-Notebook-S10.png)
 
-When you create a lakehouse and define tables in it, an SQL endpoint is automatically created through which the tables can be queried using SQL `SELECT` statements.
+10. 左側のハブメニューバーで　**Lakehouse_<inject key="DeploymentID" enableCopy="false"/> ** を選択します。
+    ![alt text](./Images/01/lakehouse-navi.png)
+    
+11. **エクスプローラー** ペインでビューを**更新 (1)** します。その後、**Tables (2)** を展開し、**sales (3)** テーブルを選択して、その中に含まれるデータのプレビューを確認します。
+    ![alt text](./Images/01/lakehouse-view.png)
 
-1. Switch Back to the **Home** page and select your **Lakehouse**. 
+### タスク5: SQLを使用してテーブルをクエリする
 
-2. At the top-right of the Lakehouse page, switch from **Lakehouse** to **SQL analytics endpoint**. Then wait a short time until the SQL query endpoint for your lakehouse opens in a visual interface from which you can query its tables, as shown here:
+レイクハウスを作成し、テーブルを定義すると、`SELECT` SQL 文を使用してテーブルをクエリできるSQL分析エンドポイントが自動的に作成されます。
 
-    ![Screenshot of the SQL endpoint page.](./Images/sql_31-1.png)
+1. レイクハウスページの右上で、**Lakehouse**から**SQL 分析エンドポイント**に切り替えます。その後、レイクハウスのSQL 分析エンドポイントが表示されるまで少し待ちます。
 
-3. Use the **New SQL query** button to open a new query editor, and enter the following SQL query:
+    ![SQLエンドポイントページのスクリーンショット](./Images/01/sql_31-1.png)
 
-   ![Screenshot of a new sql query.](./Images/f-06.png)
-   
+
+2. **新規 SQL クエリ**ボタンを使用して新しいクエリエディタを開き、次のSQLクエリを入力します：
+
+    ![新しいSQLクエリのスクリーンショット](./Images/01/f-06.png)
+
     ```SQL
-   SELECT Item, SUM(Quantity * UnitPrice) AS Revenue
-   FROM sales
-   GROUP BY Item
-   ORDER BY Revenue DESC;
+    SELECT Item, SUM(Quantity * UnitPrice) AS Revenue
+    FROM sales
+    GROUP BY Item
+    ORDER BY Revenue DESC;
     ```
 
-5. Use the **&#9655; Run** button to run the query and view the results, which should show the total revenue for each product.
+3. **&#9655; 実行**ボタンを使用してクエリを実行し、結果を表示します。結果には各商品の総収益が表示されます。
 
-    ![Screenshot of a SQL query with results.](./Images/sql-query1.png)
+    ![SQLクエリの結果のスクリーンショット](./Images/01/sql-query1.png)
 
-### Task 6: Create a visual query
+### タスク6: ビジュアルクエリを作成する
 
-While many data professionals are familiar with SQL, data analysts with Power BI experience can apply their Power Query skills to create visual queries.
+多くのデータプロフェッショナルはSQLに精通していますが、Power BIの経験を持つデータアナリストはPower Queryのスキルを活かしてビジュアルクエリを作成できます。
 
-1. On the toolbar, select **New visual query**.
+1. ツールバーで**New visual query**を選択します。
+    ![alt text](./Images/01/new-visualquery.png)
 
-2. Drag the **sales** table to the new visual query editor pane that opens to create a Power Query as shown here: 
+2. 新しいビジュアルクエリエディタペインに**sales**テーブルをドラッグしてPower Queryを作成します。
 
-    ![Screenshot of a Visual query.](./Images/visual-query1.png)
+    ![ビジュアルクエリのスクリーンショット](./Images/01/visual-query1.png)
 
-3. In the **Manage columns** menu, select **Choose columns**. Then select only the **SalesOrderNumber** and **SalesOrderLineNumber** columns and click on **OK**.
+3. **列の管理**メニューで**列の選択**を選択します。その後、**SalesOrderNumber**と**SalesOrderLineNumber**の列のみを選択し、**OK**をクリックします。
 
-    ![Screenshot of a Choose columns dialog box.](./Images/f-7.png)
-    ![Screenshot of a Choose columns dialog box.](./Images/choose-columns1.png)
+    ![Choose columnsダイアログボックスのスクリーンショット](./Images/01/f-7.png)
+    ![Choose columnsダイアログボックスのスクリーンショット](./Images/01/choose-columns1.png)
 
-4. Click on **+ (1)** ,in the **Transform table** menu, select **Group by (2)**.
+4. **+ (1)** をクリックし、メニューから**グループ化 (2)** を選択します。
 
-    ![Screenshot of a Visual query with results.](./Images/01/Pg3-VisQuery-S4.0.png)
+    ![ビジュアルクエリの結果のスクリーンショット](./Images/01/Pg3-VisQuery-S4.0.png)
 
-5. Then group the data by using the following **Basic** settings and click on **OK**:
+5. 次の**Basic**設定を使用してデータをグループ化し、**OK**をクリックします：
 
-    - **Group by**: SalesOrderNumber
-    - **New column name**: LineItems
-    - **Operation**: Count distinct values
-    - **Column**: SalesOrderLineNumber
+    - **グループ化**: SalesOrderNumber
+    - **新しい列名**: LineItems
+    - **操作**: 個別の値のカウント
+    - **列**: SalesOrderLineNumber
 
-    ![Screenshot of a Visual query with results.](./Images/01/Pg3-VisQuery-S4.01.png)
+    ![ビジュアルクエリの結果のスクリーンショット](./Images/01/Pg3-VisQuery-S4.01.png)
 
-6. When you're done, the results pane under the visual query shows the number of line items for each sales order.
+6. 完了すると、ビジュアルクエリの結果ペインに各販売注文のラインアイテム数が表示されます。
 
-    ![Screenshot of a Visual query with results.](./Images/visual-query-results1.png)
+    ![ビジュアルクエリの結果のスクリーンショット](./Images/01/visual-query-results1.png)
 
-### Task 7: Create a report
+### タスク7: レポートを作成する
 
-The tables in your lakehouse are automatically added to a default dataset that defines a data model for reporting with Power BI.
+レイクハウス内のテーブルをデフォルトのセマンティックモデルに追加すると、Power BIを使用したレポート作成のためのデータモデルが定義されます。
+>**注:** 自動的にテーブルを追加する場合は設定アイコンから同期設定をオンにします。
 
-1. At the bottom of the SQL Endpoint page, select the **Model** tab. The data model schema for the dataset is shown.
+1. SQLエンドポイントページの下部で**Model**タブを選択します。
 
-    ![Screenshot of a data model.](./Images/f-8.png)
+    ![データモデルのスクリーンショット](./Images/01/f-8.png)
+    
+2. **sales** を含むセマンティックモデルのデータモデルスキーマが表示されます。
 
-    > **Note**: In this exercise, the data model consists of a single table. In a real-world scenario, you would likely create multiple tables in your lakehouse, each of which would be included in the model. You could then define relationships between these tables in the model.
+    ![alt text](./Images/01/model.png)
 
-2. In the menu ribbon, select the **Reporting** tab. Then select **New report**. A new browser tab opens in which you can design your report.
+    > **注:** この演習では、データモデルは Sales テーブルのみが対象になります。実際のシナリオでは、レイクハウスに複数のテーブルを作成し、それぞれがモデルに含まれることが一般的です。その後、モデル内でこれらのテーブル間の関係を定義できます。
 
-    ![Screenshot of the report designer.](./Images/f-9.png)
+3. メニューリボンで**Reporting**タブを選択します。その後、**New report**を選択します。
 
-      >**Note:** Click on Try free if the following pop-up appears.
+    ![レポートデザイナーのスクリーンショット](./Images/01/f-9.png)
+4. データの追加確認画面で、**続行** をクリックすると、レポートをデザインするための新しいブラウザタブが開きます。
+    >**注:** 自動的にテーブルを追加する場合はウェアハウスの設定アイコンから同期設定をオンにします。
+    
+    ![alt text](./Images/01/add-model.png)
+    
+    >**注:** 次のポップアップが表示された場合は、**無料で試す** をクリックします。
+    >![レポートデザイナーのスクリーンショット](./Images/01/f-25.png)
 
-      ![Screenshot of the report designer.](./Images/f-25.png)
-   
-3. In the **Data** pane on the right, expand the **sales** table. Then drag the following fields:
+5. 右側の**データ**ペインで**sales**テーブルを展開します。その後、次のフィールドをチェックします：
     - **Item**
     - **Quantity**
 
-    A table visualization is added to the report:
+    レポートにテーブルによるビジュアルが追加されます：
 
-    ![Screenshot of a report containing a table.](./Images/table-visualization1.png)
+    ![テーブルを含むレポートのスクリーンショット](./Images/01/table-visualization.png)
 
-4. Hide the **Data** and **Filters** panes to create more space. Then ensure the table visualization is selected and in the **Visualizations** pane, change the visualization to a **Clustered bar chart** and resize it as shown here.
+6. **データ**および**フィルター**ペインを非表示にしてスペースを確保します。その後、テーブルビジュアライゼーションが選択されていることを確認し、**視覚化**ペインでビジュアルを **集合横棒グラフ**に変更し、次のようにサイズを調整します。
 
-    ![Screenshot of a report containing a clustered bar chart.](./Images/clustered-bar-chart11.png)
+    ![クラスター化された棒グラフを含むレポートのスクリーンショット](./Images/01/clustered-bar-chart11.png)
 
-5. On the **File** menu, select **Save**. Then save the report as **Item Sales Report** in the workspace you created previously.
-6. Close the browser tab containing the report to return to the SQL endpoint for your lakehouse. Then, in the hub menu bar on the left, select your workspace to verify that it contains the following items:
-    - Your lakehouse.
-    - The SQL endpoint for your lakehouse.
-    - A default dataset for the tables in your lakehouse.
-    - The **Item Sales Report** report.
+7. **ファイル**メニューで**保存**を選択します。その後、レポートを**Item Sales Report**として以前に作成したワークスペースに保存します。
+    ![alt text](./Images/01/savemenu.png)
+    
+    ![alt text](./Images/01/save1.png)
 
+8. レポートを含むブラウザタブを閉じてレイクハウスのSQLエンドポイントに戻ります。その後、左側のハブメニューバーでワークスペースを選択し、次の項目が含まれていることを確認します：
+    - **Ingest Sales Data Pipeline** データパイプライン
+    - **Item Sales Report** レポート
+    - **レイクハウス**
+    - **レイクハウス** のSQLエンドポイント
+    - **レイクハウス** 内のテーブルのデフォルトデータセット
+    - **Load Sales Notebook** ノートブック
+
+    ![alt text](./Images/01/01result.png)
 
     <validation step="b28817e6-75d8-40fd-9c33-0a408a962f8e" />
 
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Hit the Validate button for the corresponding task.
-    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+    > **おめでとうございます** タスクを完了しました！次は検証です。以下の手順に従ってください：
+    > - 対応するタスクの検証ボタンを押します。
+    > - 成功メッセージが表示されたら、次のタスクに進むことができます。表示されない場合は、エラーメッセージをよく読み、ラボガイドの指示に従ってステップを再試行してください。
+    > - サポートが必要な場合は、labs-support@spektrasystems.comまでご連絡ください。24時間365日対応しています。
 
+## まとめ
 
-## Summary
+このラボでは、レイクハウスを作成し、データをインポートしました。レイクハウスがOneLakeデータストアに保存されたファイルとテーブルで構成されていることを確認しました。管理テーブルはSQLを使用してクエリでき、データの視覚化をサポートするデフォルトセマンティックモデルに追加できます。
 
-In this lab, you have created a lakehouse and imported data into it. You've seen how a lakehouse consists of files and tables stored in a OneLake data store. The managed tables can be queried using SQL, and are included in a default dataset to support data visualizations.
+### ラボを正常に完了しました
 
-### You have successfully completed the lab
