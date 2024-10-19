@@ -261,7 +261,7 @@ Microsoft Fabricでは、レイクハウスは*OneLake*ストア（Azure Data La
     ![alt text](./Images/01/new-visualquery.png)
 
 2. 新しいビジュアルクエリエディタペインに**sales**テーブルをドラッグしてPower Queryを作成します。
-
+    >**ヒント:**　ドラッグするときにはクリックしてから 1,2 秒マウスを動かさずにホールドするとテーブルが浮上してドラッグできるようになります。
     ![ビジュアルクエリのスクリーンショット](./Images/01/visual-query1.png)
 
 3. **列の管理**メニューで**列の選択**を選択します。その後、**SalesOrderNumber**と**SalesOrderLineNumber**の列のみを選択し、**OK**をクリックします。
@@ -334,7 +334,7 @@ Microsoft Fabricでは、レイクハウスは*OneLake*ストア（Azure Data La
     - **Item Sales Report** レポート
     - **レイクハウス**
     - **レイクハウス** のSQLエンドポイント
-    - **レイクハウス** 内のテーブルのデフォルトデータセット
+    - **レイクハウス**内のテーブルのデフォルトデータセット
     - **Load Sales Notebook** ノートブック
 
     ![alt text](./Images/01/01result.png)
