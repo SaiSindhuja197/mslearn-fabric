@@ -1,90 +1,91 @@
 # Lab 03: Analyze data in a data warehouse
+### 所要時間: 60分
 
-### Estimated Duration: 60 minutes
+## 概要
 
-## Overview
+Microsoft Fabricでは、データウェアハウスは大規模な分析のためのリレーショナルデータベースを提供します。レイクハウスに定義されたテーブルに既定で付属する読み取り専用のSQL分析エンドポイントとは異なり、データウェアハウスは完全なSQLセマンティクスを提供し、テーブル内のデータの挿入、更新、および削除が可能です。
 
-In Microsoft Fabric, a data warehouse provides a relational database for large-scale analytics. Unlike the default read-only SQL endpoint for tables defined in a lakehouse, a data warehouse provides full SQL semantics; including the ability to insert, update, and delete data in the tables.
+## ラボの目的
 
-## Lab Objectives
+次のタスクを完了できるようになります：
 
-You will be able to complete the following tasks:
+- タスク 1: データウェアハウスを作成する
+- タスク 2: テーブルを作成し、データを挿入する
+- タスク 3: データモデルを定義する
+- タスク 4: データウェアハウスのテーブルをクエリする
+- タスク 5: ビューを作成する
+- タスク 6: ビジュアルクエリを作成する
+- タスク 7: データを可視化する
 
-- Task 1: Create a data warehouse
-- Task 2: Create tables and insert data
-- Task 3: Define a data model
-- Task 4: Query data warehouse tables
-- Task 5: Create a view
-- Task 6: Create a visual query
-- Task 7: Visualize your data
+### タスク 1: データウェアハウスを作成する
 
-### Task 1: Create a data warehouse
+既にワークスペースを持っているので、ポータルで*データウェアハウス*エクスペリエンスに切り替え、データウェアハウスを作成します。
 
-Now that you already have a workspace, it's time to switch to the *Data Warehouse* experience in the portal and create a data warehouse.
+1. データエンジニアリングポータルの左下で、**データウェアハウス**エクスペリエンスに切り替えます。
 
-1. At the bottom left of the Data Engineering portal, switch to the **Data Warehouse** experience.
-
-1. Click on **Warehouse** to create a new Warehouse.
+1. **Warehouse**をクリックして新しいウェアハウスを作成します。
    
-   ![01](./Images/01/warehouse.png)
+   ![01](./Images/02/warehouse.png)
 
-1. Provide the name as **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/>** and click on **Create**.
+1. 名前を **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/>** と入力し、**作成** をクリックします。
 
-     After a minute or so, a new warehouse will be created.
+     1分ほどで、新しいウェアハウスが作成されます。
+    
+### タスク 2: テーブルを作成し、データを挿入する
 
-### Task 2: Create tables and insert data
+    データウェアハウスは、テーブルやその他のオブジェクトを定義できるリレーショナルデータベースです。
 
-A warehouse is a relational database in which you can define tables and other objects.
+1. 新しいデータウェアハウスで、**T-SQL**タイルを選択します。
 
-1. In your new warehouse, select the **T-SQL** tile.
+    ![01](./Images/02/Pg4-T2-S1.png)
 
-   ![01](./Images/02/Pg4-T2-S1.png)
-
-2. Replace the default SQL code with the following CREATE TABLE statement:
+2. デフォルトのSQLコードを次のCREATE TABLEステートメントに置き換えます：
 
     ```sql
-   CREATE TABLE dbo.DimProduct
-   (
-       ProductKey INTEGER NOT NULL,
-       ProductAltKey VARCHAR(25) NULL,
-       ProductName VARCHAR(50) NOT NULL,
-       Category VARCHAR(50) NULL,
-       ListPrice DECIMAL(5,2) NULL
-   );
-   GO
+    CREATE TABLE dbo.DimProduct
+    (
+            ProductKey INTEGER NOT NULL,
+            ProductAltKey VARCHAR(25) NULL,
+            ProductName VARCHAR(50) NOT NULL,
+            Category VARCHAR(50) NULL,
+            ListPrice DECIMAL(5,2) NULL
+    );
+    GO
     ```
 
-3. Use the **&#9655; Run** button to run the SQL script, which creates a new table named **DimProduct** in the **dbo** schema of the data warehouse.
+3. **&#9655; Run**ボタンを使用してSQLスクリプトを実行し、データウェアハウスの**dbo**スキーマに**DimProduct**という新しいテーブルを作成します。
 
-   ![01](./Images/02/Pg4-T2-S2.png)
-   
-4. In the **Explorer** pane, expand **Schemas** > **dbo** > **Tables** and verify that the **DimProduct** table has been created.
+    ![01](./Images/02/Pg4-T2-S2.png)
+    
+4. **エクスプローラー**ペインで、**Schemas** > **dbo** > **Tables**を展開し、**DimProduct**テーブルが作成されたことを確認します。
 
-5. On the **Home** menu tab, use the **New SQL Query** button to create a new query, and enter the following INSERT statement:
+    ![alt text](./Images/02/DimProduct.png)
+
+5. **Home**メニュータブで、**新規 SQL クエリ** ボタンを使用して新しいクエリを作成し、次のINSERTステートメントを入力します：
 
     ```sql
-   INSERT INTO dbo.DimProduct
-   VALUES
-   (1, 'RING1', 'Bicycle bell', 'Accessories', 5.99),
-   (2, 'BRITE1', 'Front light', 'Accessories', 15.49),
-   (3, 'BRITE2', 'Rear light', 'Accessories', 15.49);
-   GO
+    INSERT INTO dbo.DimProduct
+    VALUES
+    (1, 'RING1', 'Bicycle bell', 'Accessories', 5.99),
+    (2, 'BRITE1', 'Front light', 'Accessories', 15.49),
+    (3, 'BRITE2', 'Rear light', 'Accessories', 15.49);
+    GO
     ```
+    ![alt text](./Images/02/insert-dimproduct.png)
 
-6. Run the new query to insert three rows into the **DimProduct** table.
+6. 新しいクエリを実行して、**DimProduct**テーブルに3行を挿入します。
 
-7. When the query has finished, select the **Data** tab at the bottom of the page in the data warehouse. In the **Explorer** pane, select the **DimProduct** table and verify that the three rows have been added to the table.
+7. クエリが完了したら、データウェアハウスのページ下部にある**Data**タブを選択します。**Explorer**ペインで**DimProduct**テーブルを選択し、3行がテーブルに追加されたことを確認します。
 
-      ![01](./Images/F-12.png)
-      
-8. Navigate to the Home menu tab and utilize the **New SQL Query** button to generate a new query for each table. Import the code from the first text file located at **C:\LabFiles\Files\create-dw-01.txt**, as well as the files **create-dw-02.txt** and **create-dw-03.txt** from the same directory. **Paste the code sequentially and execute all three files within a single query.**
-<!-- I had to remove the GO command in this query as well -->
+    ![01](./Images/02/F-12.png)
 
-   ![01](./Images/02/Pg4-T2-S7.png)
+8. **Home**メニュータブに移動し、**新規 SQL クエリ**ボタンを使用して各テーブルの新しいクエリを生成します。最初のテキストファイル**C:\LabFiles\Files\create-dw.txt**にあるコードを**貼り付け、実行します。**
 
-9. Run the query, which creates a simple data warehouse schema and loads some data. The script should take around 30 seconds to run.
+    ![01](./Images/02/Pg4-T2-S7-2.png)
 
-10. Use the **Refresh** button on the toolbar to refresh the view. Then in the **Explorer** pane, verify that the **dbo** schema in the data warehouse now contains the following four tables:
+9. クエリを実行すると、シンプルなデータウェアハウススキーマが作成され、いくつかのデータがロードされます。スクリプトの実行には約30秒かかります。
+
+10. ツールバーの **最新の情報に更新** ボタンを使用してビューを更新します。その後、**Explorer**ペインで、データウェアハウスの**dbo**スキーマに次の4つのテーブルが含まれていることを確認します：
     - **DimCustomer**
     - **DimDate**
     - **DimProduct**
@@ -92,45 +93,51 @@ A warehouse is a relational database in which you can define tables and other ob
 
      ![01](./Images/02/Pg4-T2-S9.png)  
 
-    > **Tip**: If the schema takes a while to load, just refresh the browser page.
+    > **ヒント**: スキーマの読み込みに時間がかかる場合は、ブラウザページを更新してください。
 
-### Task 3: Define a data model
+### タスク 3: データモデルを定義する
 
-A relational data warehouse typically consists of *fact* and *dimension* tables. The fact tables contain numeric measures you can aggregate to analyze business performance (for example, sales revenue), and the dimension tables contain attributes of the entities by which you can aggregate the data (for example, product, customer, or time). In a Microsoft Fabric data warehouse, you can use these keys to define a data model that encapsulates the relationships between the tables.
+リレーショナルデータウェアハウスは通常、**ファクト** テーブルと**ディメンション** テーブルで構成されます。ファクトテーブルには、ビジネスパフォーマンスを分析するために集計できる数値指標（例：売上収益）が含まれ、ディメンションテーブルにはデータを集計するための属性（例：製品、顧客、時間）が含まれます。Microsoft Fabricデータウェアハウスでは、これらのテーブルがもつキー項目を使用してテーブル間の関係が設定されたデータモデルを定義できます。
 
-1. At the bottom of the page in the data warehouse, select the **Model** tab.
+1. データウェアハウスのリボンで、**モデル レイアウト** fタブを選択します。
 
-2. In the model pane, rearrange the tables in your data warehouse so that the **FactSalesOrder** table is in the middle, like this:
+    ![alt text](./Images/02/modellayout.png)
 
-    ![Screenshot of the data warehouse model page.](./Images/model-dw1.png)
+2. Model layouts タブで、データウェアハウス内のテーブルをドラッグし、**FactSalesOrder**　テーブルを中央に配置します。次のようになります：
 
-3. Drag the **ProductKey** field from the **FactSalesOrder** table and drop it on the **ProductKey** field in the **DimProduct** table. Then confirm the following relationship details:
-    - **Table 1**: FactSalesOrder
-    - **Column**: ProductKey
-    - **Table 2**: DimProduct
-    - **Column**: ProductKey
-    - **Cardinality**: Many to one (*:1)
-    - **Cross filter direction**: Single
-    - **Make this relationship active**: Selected
-    - **Assume referential integrity**: Unselected
+    ![データウェアハウスモデルページのスクリーンショット。](./Images/02/model-dw1.png)
 
-4. Repeat the process to create many-to-one relationships between the following tables:
+    > **ヒント**: スキーマの読み込みに時間がかかる場合は、ブラウザページを更新してください。
+
+3. **FactSalesOrder**テーブルの**ProductKey**フィールドをドラッグし、**DimProduct**テーブルの**ProductKey**フィールドにドロップします。
+
+    ![alt text](./Images/02/key-field.png)
+
+4. 次の関係の詳細を確認し、保存します：
+    - **テーブルから**: FactSalesOrder
+    - **列**: ProductKey
+    - **テーブル表示**: DimProduct
+    - **列**: ProductKey
+    - **カーディナリティ**: 多対1 (*:1)
+    - **クロスフィルターの方向**: 単一
+    - **このリレーションシップをアクティブにする**: 選択済み
+    - **参照整合性を想定します**: 未選択
+
+    ![alt text](./Images/02/relationship.png)
+
+5. 次のテーブル間で多対1の関係を作成するプロセスを繰り返します：
     - **FactOrderSales.CustomerKey** &#8594; **DimCustomer.CustomerKey**
-
-    ![Screenshot of the data warehouse model page.](./Images/02/Pg4-T3-S3.png)
-
     - **FactOrderSales.SalesOrderDateKey** &#8594; **DimDate.DateKey**
 
-5. When all of the relationships have been defined, the model should look like this:
+6. すべての関係が定義されたら、モデルは次のようになります：
 
-    ![Screenshot of the model with relationships.](./Images/f-31.png)
+    ![関係を持つモデルのスクリーンショット。](./Images/02/f-31.png)
 
-### Task 4: Query data warehouse tables
+### タスク 4: データウェアハウステーブルをクエリする
 
-Since the data warehouse is a relational database, you can use SQL to query its tables.
-Most queries in a relational data warehouse involve aggregating and grouping data (using aggregate functions and GROUP BY clauses) across related tables (using JOIN clauses).
+データウェアハウスはリレーショナルデータベースであるため、SQLを使用してテーブルをクエリできます。リレーショナルデータウェアハウスのほとんどのクエリは、関連テーブル間でデータを集計およびグループ化（集計関数およびGROUP BY句を使用）することを含みます（JOIN句を使用）。
 
-1. Create a new SQL Query, and run the following code:
+1. 新しいSQLクエリを作成し、次のコードを実行します：
 
     ```sql
    SELECT  d.[Year] AS CalendarYear,
@@ -143,10 +150,11 @@ Most queries in a relational data warehouse involve aggregating and grouping dat
    ORDER BY CalendarYear, MonthOfYear;
     ```
 
-    >**Note**: that the attributes in the time dimension enable you to aggregate the measures in the fact table at multiple hierarchical levels - in this case, year and month. This is a common pattern in data warehouses.
+    ![alt text](./Images/02/query.png)
 
+    >**注**: 時間ディメンションの属性により、ファクトテーブルの指標を複数の階層レベル（この場合は年と月）で集計できます。これはデータウェアハウスで一般的なパターンです。
 
-2. Modify the query as follows to add a second dimension to the aggregation.
+2. クエリを次のように変更して、集計に2番目のディメンションを追加します。
 
     ```sql
    SELECT  d.[Year] AS CalendarYear,
@@ -161,15 +169,14 @@ Most queries in a relational data warehouse involve aggregating and grouping dat
    ORDER BY CalendarYear, MonthOfYear, SalesRegion;
     ```
 
-    ![](./Images/02/Pg4-T3QF-S2.png)
 
-3. Run the modified query and review the results, which now include sales revenue aggregated by year, month, and sales region.
+3. 変更されたクエリを実行し、年、月、および販売地域ごとに集計された売上収益を含む結果を確認します。
 
-### Task 5: Create a view
+### タスク 5: ビューを作成する
 
-A data warehouse in Microsoft Fabric has many of the same capabilities you may be used to in relational databases. For example, you can create database objects like *views* and *stored procedures* to encapsulate SQL logic.
+Microsoft Fabricのデータウェアハウスには、リレーショナルデータベースで慣れているかもしれない多くの機能があります。たとえば、SQLロジックをカプセル化するために*ビュー*や*ストアドプロシージャ*などのデータベースオブジェクトを作成できます。
 
-1. Modify the query you created previously as follows to create a view (note that you need to remove the ORDER BY clause to create a view).
+1. 以前に作成したクエリを次のように変更してビューを作成します（ビューを作成するにはORDER BY句を削除する必要があることに注意してください）。
 
     ```SQL
    CREATE VIEW vSalesByRegion
@@ -185,9 +192,11 @@ A data warehouse in Microsoft Fabric has many of the same capabilities you may b
    GROUP BY d.[Year], d.[Month], d.MonthName, c.CountryRegion;
     ```
 
-2. Run the query to create the view. Then refresh the data warehouse schema and verify that the new view is listed in the **Explorer** pane.
+2. クエリを実行してビューを作成します。次に、データウェアハウススキーマを更新し、新しいビューが**エクスプローラー** ペインに表示されていることを確認します。
+    
+    ![alt text](./Images/02/view.png)
 
-3. Create a new SQL query and run the following SELECT statement:
+3. 新しいSQLクエリを作成し、次のSELECTステートメントを実行します：
 
     ```SQL
    SELECT CalendarYear, MonthName, SalesRegion, SalesRevenue
@@ -195,48 +204,56 @@ A data warehouse in Microsoft Fabric has many of the same capabilities you may b
    ORDER BY CalendarYear, MonthOfYear, SalesRegion;
     ```
 
-### Task 6: Create a visual query
+### タスク 6: ビジュアルクエリを作成する
 
-Instead of writing SQL code, you can use the graphical query designer to query the tables in your data warehouse. This experience is similar to Power Query online, where you can create data transformation steps with no code. For more complex tasks, you can use Power Query's M (Mashup) language.
+SQLコードを書く代わりに、グラフィカルクエリデザイナーを使用してデータウェアハウスのテーブルをクエリできます。このエクスペリエンスは、コードなしでデータ変換ステップを作成できるPower Queryオンラインに似ています。より複雑なタスクには、Power QueryのM（Mashup）言語を使用できます。
 
-1. On the **Home** menu, select **New visual query**.
+1. **ホーム**メニューで、**New visual query** を選択します。
 
-1. Drag **FactSalesOrder** onto the **canvas**. Notice that a preview of the table is displayed in the **Preview** pane below.
+    ![alt text](./Images/02/new-visualquery.png)
 
-1. Drag **DimProduct** onto the **canvas**. We now have two tables in our query.
+1. **FactSalesOrder**を**キャンバス**にドラッグします。キャンバスで選択されているテーブルのプレビューが下の**プレビューペイン**に表示されます。
+    >**ヒント:**　ドラッグするときにはクリックしてから 1,2 秒マウスを動かさずにホールドするとテーブルが浮上してドラッグできるようになります。
 
-1. Use the **(+)** button on the **FactSalesOrder** table on the canvas to **Merge queries**.
+    ![alt text](./Images/02/sales-vquery.png)
 
-   ![Screenshot of the canvas with the FactSalesOrder table selected.](./Images/f-32.png)
+1. **DimProduct**を**キャンバス**にドラッグします。これでクエリに2つのテーブルが追加されました。
 
-1. In the **Merge queries** window, select **DimProduct** as the right table for merge. Select **ProductKey** in both queries, leave the default **Left outer** to join type, and click **OK**.
+1. キャンバス上の **FactSalesOrder** テーブルの **(+)** ボタンを使用して **クエリをマージ** します。
 
-   ![Screenshot of the preview pane with the DimProduct column expanded, with ProductName selected.](./Images/f-13.png)
+   ![キャンバス上でFactSalesOrderテーブルが選択されているスクリーンショット。](./Images/02/f-32.png)
 
-1. In the **Preview**, note that the new **DimProduct** column has been added to the FactSalesOrder table. Expand the column by clicking the arrow to the right of the column name. Select **ProductName** and click **OK**.
+1. **クエリのマージ**ウィンドウで、右側のテーブルとして**DimProduct**を選択します。両方のクエリで**ProductKey**を選択し、デフォルトの**左外部結合**をそのままにして、**OK**をクリックします。
 
-   ![Screenshot of the preview pane with the DimProduct column expanded, with ProductName selected.](./Images/f-14.png)
+   ![](./Images/02/f-13.png)
 
-   ![Screenshot of the preview pane with the DimProduct column expanded, with ProductName selected.](./Images/f-15.png)
+1. **プレビュー**で、新しい**DimProduct**列がFactSalesOrderテーブルに追加されたことに注意してください。列名の右側にある矢印をクリックして列を展開します。**ProductName**を選択し、**OK**をクリックします。
 
-1. If you're interested in looking at data for a single product, per a manager's request, you can now use the **ProductName** column to filter the data in the query. Filter the **ProductName** column to look at **Cable Lock** data only.
+   ![DimProduct列が展開され、ProductNameが選択されているプレビューペインのスクリーンショット。](./Images/02/f-14.png)
 
-1. From here, you can analyze the results of this single query by selecting **Visualize results** or **Open in Excel**. You can now see exactly what the manager was asking for, so we don't need to analyze the results further.
+   ![DimProduct列が展開され、ProductNameが選択されているプレビューペインのスクリーンショット。](./Images/02/f-15.png)
 
-### Task 7: Visualize your data
+2. マネージャーのリクエストに応じて、単一の製品のデータを確認したい場合は、**ProductName**列を使用してクエリ内のデータをフィルタリングできます。**ProductName**列をフィルタリングして、**Cable Lock**データのみを表示します。
 
-You can easily visualize the data in either a single query or in your data warehouse. Before you visualize, hide columns and/or tables that aren't friendly to report designers.
+    ![alt text](./Images/02/filter.png)
 
-1. In the **Explorer** pane, select the **Model** view. 
+3. ここから、**結果の視覚化** または**Excel ファイルのダウンロード** を選択して、この単一のクエリの結果を分析できます。マネージャーが求めていたものが正確に表示されるため、これ以上の分析は不要です。
 
-1. Hide the following columns in your Fact and Dimension tables that are not necessary to create a report. Note that this does not remove the columns from the model, it simply hides them from view on the report canvas.
+### タスク 7: データを可視化する
+
+単一のクエリまたはデータウェアハウス内のデータを簡単に可視化できます。可視化する前に、レポートデザイナーに適さない列やテーブルを非表示にします。
+
+1. ウェアハウスのリボンメニューから、**モデル レイアウト** を選択します。
+
+1. レポートの作成に必要ないFactおよびDimensionテーブルの次の列を非表示にします。これにより、モデルから列が削除されるわけではなく、レポートキャンバス上で非表示になるだけです。
+
+    ![03](./Images/02/03.png)
+    > **ヒント:** ctrl キーを押しながら項目を選択すると一括で非表示に切替が可能です
+
    1. FactSalesOrder
       - **SalesOrderDateKey**
       - **CustomerKey**
       - **ProductKey**
-
-    ![03](./Images/02/03.png)
-
    2. DimCustomer
       - **CustomerKey**
       - **CustomerAltKey**
@@ -247,40 +264,42 @@ You can easily visualize the data in either a single query or in your data wareh
       - **ProductKey**
       - **ProductAltKey** 
 
-6. Now you're ready to build a report and make this dataset available to others. On the Home menu, select **New report**. This will open a new window, where you can create a Power BI report.
+6. これでこのデータセットを他の人に展開可能にしてレポートを作成する準備が整いました。ホームメニューで、**New report** を選択します。これにより、新しいウィンドウが開き、Power BIレポートを作成できます。
 
    ![03](./Images/02/Pg4-VisualizeData-S3.png)
+     >**注:** データの追加を確認するポップアップが表示されたら、続行をクリックしてください。
 
-7. In the **Data** pane, expand **FactSalesOrder**. Note that the columns you hid are no longer visible. 
+7. **データ**ペインで、**FactSalesOrder**を展開します。非表示にした列が表示されなくなったことに注意してください。
 
-8. Select **SalesTotal**. This will add the column to the **Report canvas**. Because the column is a numeric value, the default visual is a **column chart**.
+8. **SalesTotal**を選択します。これにより、列が**レポートキャンバス**に追加されます。列が数値であるため、デフォルトのビジュアルは**縦棒グラフ**です。
+    
+    ![alt text](./Images/02/salestotal.png)
 
- >**Note:**  Drag **SalesTotal** if its not getting added when selected.
+ >**注:** 選択しても追加されない場合は、**SalesTotal**をドラッグします。
 
-9. Ensure that the column chart on the canvas is active (with a gray border and handles), and then select **Category** from the **DimProduct** table to add a category to your column chart.
+9. キャンバス上の縦棒グラフがアクティブ（灰色の枠線とハンドルが表示されている）であることを確認し、次に**DimProduct**テーブルから**Category**を選択して、縦棒グラフにカテゴリを追加します。
 
-10. In the **Visualizations** pane, change the chart type from a column chart to a **clustered bar chart**. Then resize the chart as necessary to ensure that the categories are readable.
+10. **Visualizations**ペインで、グラフの種類を縦棒グラフから**クラスター化された横棒グラフ**に変更します。次に、カテゴリが読みやすくなるようにグラフのサイズを調整します。
 
-    ![Screenshot of the Visualizations pane with the bar chart selected.](./Images/visualizations-pane1.png)
+    ![横棒グラフが選択されているVisualizationsペインのスクリーンショット。](./Images/02/visualizations-pane1.png)
 
-11. In the **Visualizations** pane, select the **Format your visual (1)** tab and in the **General** sub-tab, in the **Title** section, change the **Text** to **Total Sales by Category (2)**.
+11. **視覚化 (1)** ペインで、**ビジュアルの書式設定 (2)** タブを選択し、**全般 (3)** タブの **タイトル**セクションで、**テキスト**を**カテゴリ別総売上 (4)** に変更します。
 
     ![04](./Images/02/04.png)
 
-12. In the **File** menu, select **Save**. Then save the report as **Sales Report** in the workspace you created previously.
+1.  **ファイル**メニューで、**保存**を選択します。次に、レポートを**Sales Report**として以前に作成したワークスペースに保存します。
 
-13. In the menu hub on the left, navigate back to the workspace. Notice that you now have items saved in your workspace.
+2.  左側のメニューハブで、ワークスペースに戻ります。ワークスペースにアイテムが保存されていることに注意してください。
 
     <validation step="ed927a03-5062-4d23-bf52-d57ae336f0eb" />
 
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Hit the Validate button for the corresponding task.
-    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+    > **おめでとうございます** タスクを完了しました！次の手順で検証してください：
+    > - 対応するタスクの検証ボタンを押します。
+    > - 成功メッセージが表示されたら、次のタスクに進むことができます。表示されない場合は、エラーメッセージをよく読み、ラボガイドの指示に従ってステップを再試行してください。
+    > - サポートが必要な場合は、labs-support@spektrasystems.comまでご連絡ください。24時間365日対応しています。
 
+## まとめ
 
-## Summary
+このラボでは、複数のテーブルを含むデータウェアハウスを作成しました。SQLを使用してテーブルにデータを挿入し、クエリを実行しました。また、ビジュアルクエリツールも使用しました。最後に、データウェアハウスのデフォルトデータセットのデータモデルを強化し、それをレポートのソースとして使用しました。
 
-In this lab, you have created a data warehouse that contains multiple tables. You used SQL to insert data into the tables and query them. and also used the visual query tool. Finally, you enhanced the data model for the data warehouse's default dataset and used it as the source for a report.
-
-### You have successfully completed the lab
+### ラボを正常に完了しました
