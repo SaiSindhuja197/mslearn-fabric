@@ -1,4 +1,4 @@
-# Lab 04: Get started with Real-Time Analytics in Microsoft Fabric
+# 演習 04: Microsoft Fabric で リアルタイム分析を開始する
 
 ### 所要時間: 45分
 
@@ -6,7 +6,7 @@
 
 Microsoft Fabricは、Kusto Query Language (KQL) を使用してデータを保存およびクエリするためのランタイムを提供します。Kustoは、ログファイルやIoTデバイスからのリアルタイムデータなど、時系列コンポーネントを含むデータに最適化されています。
 
-前のステップでワークスペースを作成したので、ポータルで*Synapse Real-Time Analytics*エクスペリエンスに切り替えます。
+前のステップでワークスペースを作成したので、ポータルで *Real-Time Intellijence* エクスペリエンスに切り替えます。
 
 ## ラボの目的
 

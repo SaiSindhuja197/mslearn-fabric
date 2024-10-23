@@ -1,4 +1,5 @@
-# Lab 03: Analyze data in a data warehouse
+# 演習 03: データウェアハウスのデータを分析する
+
 ### 所要時間: 60分
 
 ## 概要

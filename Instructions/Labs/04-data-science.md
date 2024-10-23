@@ -1,4 +1,5 @@
-# Lab 05: Use notebooks to train a model in Microsoft Fabric
+# 演習 05: Microsoft Fabric 上でのノートブックによるモデルのトレーニングを行う
+
 ### 所要時間: 90分
 
 ## 概要
