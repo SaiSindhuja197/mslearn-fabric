@@ -1,4 +1,4 @@
-# Lab 01: Create a Fabric workspace
+# 演習 01: Fabric ワークスペースの作成
 
 ### 所要時間: 20分
 
