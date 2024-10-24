@@ -1,40 +1,41 @@
 # Getting Started with Lab
 
-1. Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. You can see the number on the bottom of lab guide to switch to different exercises of the lab guide.
+1. 環境がプロビジョニングされると、仮想マシン（踏み台VM）とラボガイドがブラウザに読み込まれます。この仮想マシンを使用して、ワークショップ全体でラボを実行します。ラボガイドの下部にある番号を見て、ラボガイドの異なる演習に切り替えることができます。
 
    ![07](./Images/gs/1a.png)
 
-1. To get the lab environment details, you can select the **Environment Details** tab. Additionally, the credentials will also be emailed to your registered email address. You can also open the Lab Guide on separate and full window by selecting the **Split Window** from the lower right corner. Also, you can start, stop, and restart virtual machines from the **Resources** tab.
+1. ラボ環境の詳細を取得するには、**環境の詳細** タブを選択します。さらに、資格情報は登録されたメールアドレスにも送信されます。**ウィンドウの分割** を選択して、ラボガイドを別のフルウィンドウで開くこともできます。また、**リソース** タブから仮想マシンの開始、停止、再起動を行うこともできます。
 
    ![08](./Images/gs/08.png)
  
-    > You will see the DeploymentID value on **Environment Details** tab, use it wherever you see SUFFIX or DeploymentID in lab steps.
+    > **環境の詳細** タブに DeploymentID 値が表示されます。ラボの手順で SUFFIX または DeploymentID が表示される場所で使用します。
 
 
-## Login to Azure Portal
+## Azure ポータルにログイン
 
-1. In the JumpVM, click on Azure portal shortcut of Microsoft Edge browser which is created on desktop.
+1. JumpVM で、デスクトップに作成された Microsoft Edge ブラウザの Azure ポータルショートカットをクリックします。
 
    ![09](./Images/gs/09.png)
    
-1. On **Sign into Microsoft Azure** tab you will see login screen, in that enter following email/username and then click on **Next**. 
-   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+1. **Microsoft Azure にサインイン** タブでログイン画面が表示されます。次のメール/ユーザー名を入力し、**次へ** をクリックします。
+   * メール/ユーザー名: `<inject key="AzureAdUserEmail"></inject>`
    
      ![04](./Images/gs/04.png)
      
-1. Now enter the following password and click on **Sign in**.
-   * Password: <inject key="AzureAdUserPassword"></inject>
+1. 次に、次のパスワードを入力し、**サインイン** をクリックします。
+   * パスワード: `<inject key="AzureAdUserPassword"></inject>`
    
      ![05](./Images/gs/05.png)
      
-   > If you see the pop-up click on **ask later**.
+   > ポップアップが表示された場合は、**後で確認** をクリックします。
 
       ![06](./Images/gs/asklater1.png)
   
-1. If you see the pop-up **Stay Signed in?**, click No
+1. **サインインを続けますか？** のポップアップが表示された場合は、いいえをクリックします。
 
-1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+2. **無料の Azure Advisor 推奨事項があります！** のポップアップが表示された場合は、ウィンドウを閉じてラボを続行します。
 
-1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+3. **Microsoft Azure へようこそ** のポップアップウィンドウが表示された場合は、**後で** をクリックしてツアーをスキップします。
       
-1. Now, click on the **Next** from lower right corner to move on next page.
+4. 次のページに進むには、右下の **次へ** をクリックします。
+

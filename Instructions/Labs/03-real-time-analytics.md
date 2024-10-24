@@ -1,84 +1,89 @@
-# Lab 04: Get started with Real-Time Analytics in Microsoft Fabric
+# 演習 04: Microsoft Fabric でリアルタイム分析を開始する
 
-### Estimated Duration: 45 minutes
+### 所要時間: 45分
 
-## Overview
+## 概要
 
-Microsoft Fabric provides a runtime that you can use to store and query data by using Kusto Query Language (KQL). Kusto is optimized for data that includes a time series component, such as real-time data from log files or IoT devices.
+Microsoft Fabricは、Kusto Query Language (KQL) を使用してデータを保存およびクエリするためのランタイムを提供します。Kustoは、ログファイルやIoTデバイスからのリアルタイムデータなど、時系列コンポーネントを含むデータに最適化されています。
 
-Now that you have created a workspace in the previous step, it's time to switch to the *Synapse Real-Time Analytics* experience in the portal.
+前のステップでワークスペースを作成したので、ポータルで *Real-Time Intellijence* エクスペリエンスに切り替えます。
 
-## Lab Objectives
+## ラボの目的
 
-You will be able to complete the following tasks:
+次のタスクを完了できるようになります：
 
-- Task 1: Create a KQL database
-- Task 2: Use KQL to query the sales table
-- Task 3: Create a Power BI report from a KQL Queryset
-- Task 4: Use delta tables for streaming data
+- タスク 1: KQLデータベースの作成
+- タスク 2: KQLを使用して売上テーブルをクエリする
+- タスク 3: KQLクエリセットからPower BIレポートを作成する
+- タスク 4: ストリーミングデータにデルタテーブルを使用する
 
-### Task 1: Create a KQL database
+### タスク 1: KQLデータベースの作成
 
-Kusto query language (KQL) is used to query static or streaming data in a table that is defined in a KQL database. To analyze the sales data, you must create a table in a KQL database and ingest the data from the file.
+Kustoクエリ言語 (KQL) は、KQLデータベースに定義されたテーブル内の静的またはストリーミングデータをクエリするために使用されます。売上データを分析するために、KQLデータベースにテーブルを作成し、ファイルからデータを取り込む必要があります。
 
-1. In the **Microsoft Fabric** https://app.fabric.microsoft.com/ experience portal , select the **Real-Time Analytics** experience image as shown here:
-    
-     ![00](./Images/03/synpase.png)
+1. ホーム画面左下で、**Real-Time Intelligence** エクスペリエンスを選択します：
 
-2. On the **Home** page for the **Real-Time Analytics** experience, select **Event House** and create an Event House.
+    ![00](./Images/03/synpase.png)
 
-   - **Name:** Enter **Eventhouse-<inject key="DeploymentID" enableCopy="false"/> (1)**.
+2. **Real-Time Analytics**エクスペリエンスの**ホーム**ページで、**イベントハウス** を選択し、イベントハウスを作成します。
 
-   - Click on **Create (2)**.
+    ![alt text](./Images/03/eventhouse.png)
 
-     ![](./Images/event-house.png)
+3. **名前:** に **Eventhouse-<inject key="DeploymentID" enableCopy="false"/> (1)** を入力し、**作成 (2)** をクリックします。
 
-    >**Note:** Click on **OK** if any popup appears regarding upgradation popup. close any popup appears after upgradation.
+     ![](./Images/03/event-house.png)
 
-3. When the new event house has been created, select **Eventhouse-<inject key="DeploymentID" enableCopy="false"/>** from the left side pane under KQL database.
+    >**注:** アップグレードに関するポップアップが表示された場合は**OK**をクリックします。アップグレード後に表示されるポップアップを閉じます。
+
+4. 新しいイベントハウスが作成されたら、左側のペインのKQLデータベースの下から **Eventhouse-<inject key="DeploymentID" enableCopy="false"/>** を選択します。
 
    ![01](./Images/03/01.png)
 
-5. Use the wizard to import the data into a new table by selecting the following options:
-    - **Source**:
-        - **Database:** *The database you created is already selected*
-        - **Table:** *Create a new table named* **sales**.
-        - **Source type:** File
-        - **Upload files:** Drag or Browse for the file from **C:\LabFiles\Files\sales.csv**
+    >**注:** Get started が表示されたボタンをクリックして完了させます。
+5. リボンのメニューから **Get data** 内にある **Local file**　を選択します。
 
-            ![01](./Images/fabric17.png)
+    ![alt text](./Images/03/localfile.png)
 
-    - **Inspect:** Preview the data and click on **Finish**.
+6. ウィザードを使用して新しいテーブルにデータをインポートするために次のオプションを選択します：
+    - **宛先テーブルの選択とソースの構成**:
+        - **宛先テーブルの選択又は作成:** 新しいテーブルとして **sales** となる名前を入力しチェックマークで確定します。
+        - **1000 個までのファイルを追加する:** **C:\LabFiles\Files\sales.csv**からファイルをドラッグまたは参照します。
 
-        ![01](./Images/fabric18.png)
+            ![01](./Images/03/fabric17.png)
 
-    - **Summary:**
-        - *Review the preview of the table and close the wizard.*
+    - **データの検査:** データをプレビューし、**終了**をクリックします。
 
-            ![01](./Images/fabric19.png)
+        ![01](./Images/03/fabric18.png)
 
-> **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
+    - **概要:**
+        - テーブルのプレビューを確認し、**ウィザードを閉じます。**
 
-### Task 2: Use KQL to query the sales table
+            ![01](./Images/03/fabric19.png)
 
-Now that you have a table of data in your database, you can use KQL code to query it.
+> **注:** この例では、ファイルから非常に少量の静的データをインポートしましたが、この演習には問題ありません。実際には、Azure Event Hubsなどのストリーミングソースからのリアルタイムデータを含む、はるかに大規模なデータをKustoを使用して分析できます。
 
-1. Make sure you have the **sales** table highlighted. From the menu bar, select the **Query table** drop-down, and from there select **Show any 100 records** .
+### タスク 2: KQLを使用して売上テーブルをクエリする
 
-    ![01](./Images/f-16.png)
-    
-2. A new pane will open with the query and its result. 
+データベースにデータのテーブルができたので、KQLコードを使用してクエリを実行できます。
 
-3. Modify the query as follows:
+1. **sales**テーブルがハイライトされていることを確認します。メニューバーから**Query table** ドロップダウンを選択し、**Show any 100 records** を選択します。
+
+    ![01](./Images/03/f-16.png)
+
+2. 新しいペインが開き、クエリとその結果が表示されます。
+
+    ![alt text](./Images/03/query.png)
+
+3. クエリを次のように変更します：
 
     ```kusto
    sales
    | where Item == 'Road-250 Black, 48'
     ```
 
-4. Run the query. Then review the results, which should contain only the rows for sales orders for the *Road-250 Black, 48* product.
+4. クエリを実行します。次に、結果を確認します。結果には*Road-250 Black, 48*製品の売上注文のみが含まれているはずです。
 
-5. Modify the query as follows:
+5. クエリを次のように変更します：
 
     ```kusto
    sales
@@ -86,9 +91,9 @@ Now that you have a table of data in your database, you can use KQL code to quer
    | where datetime_part('year', OrderDate) > 2020
     ```
 
-6. Run the query and review the results, which should contain only sales orders for *Road-250 Black, 48* made after 2020.
+6. クエリを実行し、結果を確認します。結果には2020年以降に行われた*Road-250 Black, 48*の売上注文のみが含まれているはずです。
 
-7. Modify the query as follows:
+7. クエリを次のように変更します：
 
     ```kusto
    sales
@@ -97,55 +102,59 @@ Now that you have a table of data in your database, you can use KQL code to quer
    | sort by Item asc
     ```
 
-8. Run the query and review the results, which should contain the total net revenue for each product between January 1st and December 31st 2020 in ascending order of product name.
+8. クエリを実行し、結果を確認します。結果には、2020年1月1日から2020年12月31日までの各製品の総純収益が製品名の昇順で含まれているはずです。
 
-9. Select **Save as KQL queryset** and save the query as **Revenue by Product**.
+9. **KQLクエリセットとして保存**を選択し、クエリを**Revenue by Product**として保存します。
+    ![alt text](./Images/03/quetysets.png)
 
-### Task 3: Create a Power BI report from a KQL Queryset
 
-You can use your KQL Queryset as the basis for a Power BI report.
+### タスク 3: KQLクエリセットからPower BIレポートを作成する
 
-1. In the query workbench editor for your query set, run the query and wait for the results.
+KQLクエリセットを基にPower BIレポートを作成できます。
 
-2. Select **Build Power BI report** and wait for the report editor to open.
+1. KQL クエリセットのクエリエディタ画面で、クエリを実行し、結果を待ちます。
 
-3. In the report editor, in the **Data** pane, expand **Kusto Query Result** and select the **Item** and **TotalRevenue** fields.
+    ![alt text](./Images/03/editor.png)
 
-4. On the report design canvas, select the table visualization that has been added and then in the **Visualizations** pane, select **Clustered bar chart**.
+2. **Power BIレポートを構築**を選択し、レポートエディタが開くのを待ちます。
 
-    ![Screenshot of a report from a KQL query.](./Images/kql-report1.png)
+3. レポートエディタの**データ**ペインで、**Kusto Query Result**を展開し、**Item**と**TotalRevenue**フィールドを選択します。
 
-5. In the **Power BI** window, in the **File** menu, select **Save**. Then save the report as **Revenue by Item.pbix** in the workspace where your lakehouse and KQL database are defined using a **Non-Business** sensitivity label.
+4. レポートデザインキャンバスで、追加されたテーブルビジュアライゼーションを選択し、**視覚化**ペインで**集合棒グラフ**を選択します。
 
-6. Close the **Power BI** window, and in the bar on the left, select the icon for your workspace.
+    ![KQLクエリからのレポートのスクリーンショット。](./Images/03/kql-report1.png)
 
-    Refresh the Workspace page if necessary to view all of the items it contains.
+5. **Power BI**ウィンドウで、**ファイル**メニューから**保存**を選択します。次に、レイクハウスとKQLデータベースが定義されているワークスペースに**Revenue by Item.pbix**としてレポートを保存します。
 
-7. In the list of items in your workspace, note that the **Revenue by Item** report is listed.
+6. **Power BI**ウィンドウを閉じ、左側のバーでワークスペースのアイコンを選択します。
 
-### Task 4: Use delta tables for streaming data
+    必要に応じてワークスペースページを更新し、含まれているすべてのアイテムを表示します。
 
-Delta lake supports streaming data. Delta tables can be a *sink* or a *source* for data streams created using the Spark Structured Streaming API. In this example, you'll use a delta table as a sink for some streaming data in a simulated internet of things (IoT) scenario.
+7. ワークスペース内のアイテムのリストで、**Revenue by Item**レポートがリストされていることを確認します。
 
-1. Navigate back to your workspace and open **Load Sales Notebook**. Add a new code cell in the notebook. Then, in the new cell, add the following code and run it:
+### タスク 4: ストリーミングデータにデルタテーブルを使用する
+
+デルタレイクはストリーミングデータをサポートします。デルタテーブルは、Spark Structured Streaming APIを使用して作成されたデータストリームの*シンク*または*ソース*になることができます。この例では、シミュレートされたIoTシナリオでストリーミングデータのシンクとしてデルタテーブルを使用します。
+
+1. ワークスペースに戻り、**Load Sales Notebook**を開きます。ノートブックに新しいコードセルを追加します。次に、新しいセルに次のコードを追加して実行します：
 
     ```python
    from notebookutils import mssparkutils
    from pyspark.sql.types import *
    from pyspark.sql.functions import *
 
-   # Create a folder
+   # フォルダを作成
    inputPath = 'Files/data/'
    mssparkutils.fs.mkdirs(inputPath)
 
-   # Create a stream that reads data from the folder, using a JSON schema
+   # フォルダからデータを読み取るストリームを作成し、JSONスキーマを使用
    jsonSchema = StructType([
    StructField("device", StringType(), False),
    StructField("status", StringType(), False)
    ])
    iotstream = spark.readStream.schema(jsonSchema).option("maxFilesPerTrigger", 1).json(inputPath)
 
-   # Write some event data to the folder
+   # フォルダにイベントデータを書き込む
    device_data = '''{"device":"Dev1","status":"ok"}
    {"device":"Dev1","status":"ok"}
    {"device":"Dev1","status":"ok"}
@@ -156,24 +165,25 @@ Delta lake supports streaming data. Delta tables can be a *sink* or a *source* f
    {"device":"Dev2","status":"error"}
    {"device":"Dev1","status":"ok"}'''
    mssparkutils.fs.put(inputPath + "data.txt", device_data, True)
-   print("Source stream created...")
+   print("ソースストリームが作成されました...")
     ```
 
-    Ensure the message *Source stream created...* is printed. The code you just ran has created a streaming data source based on a folder to which some data has been saved, representing readings from hypothetical IoT devices.
+    ![alt text](./Images/03/notebook.png)
 
-2. In a new code cell, add and run the following code:
+2. メッセージ*ソースストリームが作成されました...*が表示されることを確認します。実行したコードは、フォルダに保存されたデータに基づいてストリーミングデータソースを作成しました。これは仮想のIoTデバイスからの読み取りを表しています。
+3. 新しいコードセルに次のコードを追加して実行します：
 
     ```python
-   # Write the stream to a delta table
+   # ストリームをデルタテーブルに書き込む
    delta_stream_table_path = 'Tables/iotdevicedata'
    checkpointpath = 'Files/delta/checkpoint'
    deltastream = iotstream.writeStream.format("delta").option("checkpointLocation", checkpointpath).start(delta_stream_table_path)
-   print("Streaming to delta sink...")
+   print("デルタシンクへのストリーミング...")
     ```
 
-    This code writes the streaming device data in delta format to a folder named **iotdevicedata**. Because the path for the folder location in the **Tables** folder, a table will automatically be created for it.
+    このコードは、ストリーミングデバイスデータをデルタ形式で**iotdevicedata**というフォルダに書き込みます。**Tables**フォルダの場所にパスがあるため、自動的にテーブルが作成されます。
 
-3. In a new code cell, add and run the following code:
+4. 新しいコードセルに次のコードを追加して実行します：
 
     ```sql
    %%sql
@@ -181,12 +191,14 @@ Delta lake supports streaming data. Delta tables can be a *sink* or a *source* f
    SELECT * FROM IotDeviceData;
     ```
 
-    This code queries the **IotDeviceData** table, which contains the device data from the streaming source.
+    このコードは、ストリーミングソースからのデバイスデータを含む**IotDeviceData**テーブルをクエリします。
 
-4. In a new code cell, add and run the following code:
+    ![alt text](./Images/03/stream.png)
+
+5. 新しいコードセルに次のコードを追加して実行します：
 
     ```python
-   # Add more data to the source stream
+   # ソースストリームにデータを追加
    more_data = '''{"device":"Dev1","status":"ok"}
    {"device":"Dev1","status":"ok"}
    {"device":"Dev1","status":"ok"}
@@ -198,9 +210,9 @@ Delta lake supports streaming data. Delta tables can be a *sink* or a *source* f
    mssparkutils.fs.put(inputPath + "more-data.txt", more_data, True)
     ```
 
-    This code writes more hypothetical device data to the streaming source.
+    このコードは、ストリーミングソースに仮想のデバイスデータをさらに書き込みます。
 
-5. Re-run the cell containing the following code:
+6. 次のコードを含むセルを再実行します：
 
     ```sql
    %%sql
@@ -208,27 +220,29 @@ Delta lake supports streaming data. Delta tables can be a *sink* or a *source* f
    SELECT * FROM IotDeviceData;
     ```
 
-    This code queries the **IotDeviceData** table again, which should now include the additional data that was added to the streaming source.
+    このコードは、**IotDeviceData**テーブルを再度クエリし、ストリーミングソースに追加された追加データを含むはずです。
+    ![alt text](./Images/03/streamresult.png)
 
-6. In a new code cell, add and run the following code:
+7. 新しいコードセルに次のコードを追加して実行します：
 
     ```python
    deltastream.stop()
     ```
 
-    This code stops the stream.
+    このコードはストリームを停止します。
 
     <validation step="3e3b6775-5941-4063-965e-9f1d3a6baa2e" />
 
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Hit the Validate button for the corresponding task.
-    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+    > **おめでとうございます** タスクを完了しました！次のステップで検証します：
+    > - 対応するタスクの検証ボタンを押します。
+    > - 成功メッセージが表示された場合、次のタスクに進むことができます。表示されない場合は、エラーメッセージをよく読み、ラボガイドの指示に従ってステップを再試行します。
+    > - サポートが必要な場合は、labs-support@spektrasystems.comまでご連絡ください。24時間365日対応しています。
 
 
-## Summary
+## まとめ
 
-In this lab, you have created a lakehouse, a KQL database to analyze the data uploaded into the lakehouse. You used KQL to query the data and create a query set, which was then used to create a Power BI report.
+このラボでは、レイクハウスを作成し、レイクハウスにアップロードされたデータを分析するためのKQLデータベースを作成しました。KQLを使用してデータをクエリし、クエリセットを作成し、それを基にPower BIレポートを作成しました。
 
 
-### You have successfully completed the lab
+### ラボを正常に完了しました
+

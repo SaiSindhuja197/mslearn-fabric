@@ -1,81 +1,86 @@
-# Lab 06: Analyze data with Apache Spark
+# 演習 06: Apache Spark を使用してデータを分析する
 
-### Estimated Duration: 60 minutes
+### 所要時間: 60 分
 
-## Overview
+## 概要
 
-Apache Spark is an open source engine for distributed data processing, and is widely used to explore, process, and analyze huge volumes of data in data lake storage. Spark is available as a processing option in many data platform products, including Azure HDInsight, Azure Databricks, Azure Synapse Analytics, and Microsoft Fabric. One of the benefits of Spark is support for a wide range of programming languages, including Java, Scala, Python, and SQL; making Spark a very flexible solution for data processing workloads including data cleansing and manipulation, statistical analysis and machine learning, and data analytics and visualization.
+Apache Sparkは、分散データ処理のためのオープンソースエンジンであり、データレイクストレージ内の膨大なデータを探索、処理、分析するために広く使用されています。Sparkは、Azure HDInsight、Azure Databricks、Azure Synapse Analytics、Microsoft Fabricなど、多くのデータプラットフォーム製品で処理オプションとして利用可能です。Sparkの利点の一つは、Java、Scala、Python、SQLなど、幅広いプログラミング言語をサポートしていることです。これにより、データのクレンジングおよび操作、統計分析と機械学習、データ分析と可視化などのデータ処理ワークロードに非常に柔軟なソリューションとなっています。
 
-## Lab Objectives
+## ラボの目的
 
-You will be able to complete the following tasks:
+次のタスクを完了できるようになります：
 
-- Task 1: Create a lakehouse and upload files
-- Task 2: Create a notebook
-- Task 3: Load data into a dataframe
-- Task 4: Explore data in a dataframe
-- Task 5: Use Spark to transform data files
-- Task 6: Save the Transformed data
-- Task 7: Save data in partitioned files
-- Task 8: Work with Tables and SQL
-- Task 9: Visualize data with Spark
-- Task 10: Save the notebook and end the Spark session
+- タスク 1: レイクハウスを作成し、ファイルをアップロードする
+- タスク 2: ノートブックを作成する
+- タスク 3: データフレームにデータをロードする
+- タスク 4: データフレーム内のデータを探索する
+- タスク 5: Sparkを使用してデータファイルを変換する
+- タスク 6: 変換されたデータを保存する
+- タスク 7: パーティション化したファイルにデータを保存する
+- タスク 8: テーブルとSQLを使用する
+- タスク 9: Sparkでデータを可視化する
+- タスク 10: ノートブックを保存し、Sparkセッションを終了する
 
-### Task 1: Create a lakehouse and upload files
+### タスク 1: レイクハウスを作成し、ファイルをアップロードする
 
-Now that you have a workspace, it's time to switch to the *Data engineering* experience in the portal and create a data lakehouse for the data files you're going to analyze.
+作成済みのワークスペース上で、ポータルで*データエンジニアリング*エクスペリエンスに切り替え、分析するデータファイルのためのデータレイクハウスを作成します。
 
-1. At the bottom left of the Power BI portal, select the **Power BI** icon and switch to the **Data Engineering** experience.
+1. Power BIポータルの左下にある**Power BI**アイコンを選択し、**データエンジニアリング**エクスペリエンスに切り替えます。
 
-2. In the **Synapse Data Engineering** home page, create a new **Lakehouse**.
+    ![alt text](./Images/05/de01.png)
 
-   - **Name:** Enter **fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/>**.
+2. **Synapse Data Engineering**ホームページで、新しい**レイクハウス**を作成します。
 
-    After a minute or so, a new empty lakehouse will be created. You need to ingest some data into the data lakehouse for analysis. There are multiple ways to do this, but in this exercise you'll simply upload them to your lakehouse from the **LabVM**.
+    - **名前:** **fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/>** と入力します。
 
-3. Return to the web browser tab containing your lakehouse, and in the **...** menu for the **Files** folder in the **Explorer** pane, select **Upload** and **Upload folder**, and then upload the **orders** folder from **C:\LabFiles\Files\orders** to the lakehouse.
+     1分ほどで、新しい空のレイクハウスが作成されます。分析のためにデータレイクハウスにデータを取り込む必要があります。これには複数の方法がありますが、この演習では**LabVM**からレイクハウスにアップロードします。
 
-4. After the files have been uploaded, expand **Files** and select the **orders** folder; and verify that the CSV files have been uploaded.
+3. レイクハウスを含むウェブブラウザタブに戻り、**Explorer**ペインの**Files**フォルダーの **...** メニューで**Upload**と**Upload folder**を選択し、**C:\LabFiles\Files\orders**から**orders**フォルダーをレイクハウスにアップロードします。
+
+4. ファイルがアップロードされた後、**Files**を展開し、**orders**フォルダーを選択して、CSVファイルがアップロードされたことを確認します。
+    ![alt text](./Images/05/de02.png)
    
-### Task 2: Create a notebook
+### タスク 2: ノートブックを作成する
 
-To work with data in Apache Spark, you can create a *notebook*. Notebooks provide an interactive environment in which you can write and run code (in multiple languages), and add notes to document it.
+Apache Sparkでデータを操作するには、*ノートブック*を作成することができます。ノートブックは、コードを記述して実行し、ドキュメント化するためのインタラクティブな環境を提供します。
 
-1. On the **Home** page while viewing the contents of the **orders** folder in your datalake, in the **Open notebook (1)** menu, select **New notebook (2)**.
+1. データレイク内の**orders**フォルダーの内容を表示している**ホーム**ページで、 **ノートブックを開く (1)** メニューから **新しいノートブック (2)** を選択します。
 
-   ![](./Images/Pg7-Notebook-S1.png)
+    ![](./Images/05/Pg7-Notebook-S1.png)
 
-    After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
+     数秒後、新しいノートブックが1つの*セル*を含んで開きます。ノートブックは、*コード*または*マークダウン*（フォーマットされたテキスト）を含む1つ以上のセルで構成されます。
 
-2. Select the first cell (which is currently a *code* cell), and then in the dynamic tool bar at its top-right, use the **M&#8595;** button to convert the cell to a *markdown* cell.
+2. 最初のセル（現在は*コード*セル）を選択し、右上の動的ツールバーで **M&#8595;** ボタンを使用してセルを*マークダウン*セルに変換します。
 
-    When the cell changes to a markdown cell, the text it contains is rendered.
+     セルがマークダウンセルに変わると、その内容がレンダリングされます。
 
-3. Use the **&#128393;** (Edit) button to switch the cell to editing mode, then modify the markdown as follows:
+3. **&#128393;**（編集）ボタンを使用してセルを編集モードに切り替え、次のようにマークダウンを修正します：
 
     ```
-   # Sales order data exploration
+   # 売上注文データの探索
 
-   Use the code in this notebook to explore sales order data.
-    ```
+    このノートブックのコードを使用して、売上注文データを探索してください。
+     ```
 
-4. Click anywhere in the notebook outside of the cell to stop editing it and see the rendered markdown.
+4. セルの外側をクリックして編集を終了し、レンダリングされたマークダウンを確認します。
 
-### Task 3: Load data into a dataframe
+    ![alt text](./Images/05/de03.png)
 
-Now you're ready to run code that loads the data into a *dataframe*. Dataframes in Spark are similar to Pandas dataframes in Python, and provide a common structure for working with data in rows and columns.
+### タスク 3: データをデータフレームにロードする
 
-> **Note**: Spark supports multiple coding languages, including Scala, Java, and others. In this exercise, we'll use *PySpark*, which is a Spark-optimized variant of Python. PySpark is one of the most commonly used languages on Spark and is the default language in Fabric notebooks.
+次に、データを*データフレーム*にロードするコードを実行します。Sparkのデータフレームは、PythonのPandasデータフレームに似ており、行と列でデータを操作するための共通の構造を提供します。
 
-1. With the notebook visible, expand the **Files** list and select the **orders** folder so that the CSV files are listed next to the notebook editor, like this:
+> **注**: SparkはScala、Javaなど複数のコーディング言語をサポートしています。この演習では、Sparkに最適化されたPythonのバリアントである*PySpark*を使用します。PySparkはSparkで最も一般的に使用される言語の1つであり、Fabricノートブックのデフォルト言語です。
 
-    ![Screenshot of a notebook with a Files pane.](./Images/notebook-files1.png)
+1. ノートブックを表示した状態で、**Files** リストを展開し、**orders** フォルダーを選択して、CSVファイルがノートブックエディタの横にリストされるようにします：
 
-2. In the **...** menu for **2019.csv**, select **Load data** > **Spark**.
+     ![ノートブックとファイルペインのスクリーンショット](./Images/05/notebook-files1.png)
+
+2. **2019.csv**の **...** メニューで、**Load data** > **Spark** を選択します。
 
    ![](./Images/Pg7-LoadData-S2.png)
 
-3. A new code cell containing the following code should be added to the notebook:
+3. 次のコードを含む新しいコードセルがノートブックに追加されます：
 
     ```python
    df = spark.read.format("csv").option("header","true").load("Files/orders/2019.csv")
@@ -83,13 +88,13 @@ Now you're ready to run code that loads the data into a *dataframe*. Dataframes 
    display(df)
     ```
 
-    > **Tip**: You can hide the Lakehouse explorer panes on the left by using their **<<** icons. Doing so will help you focus on the notebook. if the abfs path fails, right clicking on csv file > right click on abfs path copy it and paste it in load path.
+     > **ヒント**: 左側のレイクハウスエクスプローラペインを**<<**アイコンで非表示にすることができます。これにより、ノートブックに集中できます。abfsパスが失敗した場合、csvファイルを右クリックしてabfsパスをコピーし、ロードパスに貼り付けます。
 
-4. Use the **&#9655; Run cell** button on the left of the cell to run it.
+4. セルの左側にある **&#9655; Run cell** ボタンを使用してセルを実行します。
 
-    > **Note**: Since this is the first time you've run any Spark code, a Spark session must be started. This means that the first run in the session can take a minute or so to complete. Subsequent runs will be quicker.
+     > **注**: これは初めてSparkコードを実行するため、Sparkセッションが開始されます。最初の実行には1分ほどかかることがありますが、その後の実行はより速くなります。
 
-5. When the cell command has completed, review the output below the cell, which should look similar to this:
+5. セルコマンドが完了したら、セルの下の出力を確認します。次のように表示されるはずです：
 
     | Index | SO43701 | 11 | 2019-07-01 | Christy Zhu | christy12@adventure-works.com | Mountain-100 Silver, 44 | 16 | 3399.99 | 271.9992 |
     | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
@@ -97,9 +102,9 @@ Now you're ready to run code that loads the data into a *dataframe*. Dataframes 
     | 2 | SO43705 | 1 | 2019-07-01 | Curtis Lu | curtis9@adventure-works.com | Mountain-100 Silver, 38 | 1 | 3399.99 | 271.9992 |
     | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
 
-    The output shows the rows and columns of data from the 2019.csv file. However, note that the column headers don't look right. The default code used to load the data into a dataframe assumes that the CSV file includes the column names in the first row, but in this case the CSV file just includes the data with no header information.
+     出力には2019.csvファイルのデータの行と列が表示されます。ただし、列ヘッダーが正しく表示されていないことに注意してください。デフォルトのコードは、CSVファイルの最初の行に列名が含まれていると仮定していますが、この場合、CSVファイルにはヘッダー情報が含まれていません。
 
-6. Modify the code to set the **header** option to **false** as follows:
+6. コードを修正して、**header** オプションを **false** に設定します：
 
     ```python
    df = spark.read.format("csv").option("header","false").load("Files/orders/2019.csv")
@@ -107,7 +112,7 @@ Now you're ready to run code that loads the data into a *dataframe*. Dataframes 
    display(df)
     ```
 
-7. Re-run the cell and review the output, which should look similar to this:
+7. セルを再実行し、出力を確認します。次のように表示されるはずです：
 
    | Index | _c0 | _c1 | _c2 | _c3 | _c4 | _c5 | _c6 | _c7 | _c8 |
     | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
@@ -116,9 +121,9 @@ Now you're ready to run code that loads the data into a *dataframe*. Dataframes 
     | 3 | SO43705 | 1 | 2019-07-01 | Curtis Lu | curtis9@adventure-works.com | Mountain-100 Silver, 38 | 1 | 3399.99 | 271.9992 |
     | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
 
-    Now the dataframe correctly includes first row as data values, but the column names are auto-generated and not very helpful. To make sense of the data, you need to explicitly define the correct schema and data type for the data values in the file.
+     データフレームには最初の行がデータ値として正しく含まれていますが、列名は自動生成されており、あまり役に立ちません。データを理解するためには、正しいスキーマとデータ型を明示的に定義する必要があります。
 
-8. Modify the code as follows to define a schema and apply it when loading the data:
+8. 次のようにコードを修正してスキーマを定義し、データをロードする際に適用します：
 
     ```python
    from pyspark.sql.types import *
@@ -139,7 +144,7 @@ Now you're ready to run code that loads the data into a *dataframe*. Dataframes 
    display(df)
     ```
 
-9. Run the modified cell and review the output, which should look similar to this:
+9. 修正したセルを実行し、出力を確認します。次のように表示されるはずです：
 
    | Index | SalesOrderNumber | SalesOrderLineNumber | OrderDate | CustomerName | Email | Item | Quantity | UnitPrice | Tax |
     | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
@@ -148,46 +153,46 @@ Now you're ready to run code that loads the data into a *dataframe*. Dataframes 
     | 3 | SO43705 | 1 | 2019-07-01 | Curtis Lu | curtis9@adventure-works.com | Mountain-100 Silver, 38 | 1 | 3399.99 | 271.9992 |
     | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
 
-    Now the dataframe includes the correct column names (in addition to the **Index**, which is a built-in column in all dataframes based on the ordinal position of each row). The data types of the columns are specified using a standard set of types defined in the Spark SQL library, which were imported at the beginning of the cell.
+     データフレームには正しい列名が含まれています（**Index**はすべてのデータフレームに含まれる組み込み列で、各行の順序位置に基づいています）。列のデータ型は、セルの最初にインポートされたSpark SQLライブラリで定義された標準の型を使用して指定されています。
 
-10. Confirm that your changes have been applied to the data by viewing the dataframe. Run the following cell:
+10. データフレームを表示して、変更が適用されたことを確認します。次のセルを実行します：
 
     ```python
     display(df)
     ```
 
-11. The dataframe includes only the data from the **2019.csv** file. Modify the code so that the file path uses a \* wildcard to read the sales order data from all of the files in the **orders** folder:
+11. データフレームには**2019.csv**ファイルのデータのみが含まれています。ファイルパスに **\* ワイルドカード**を使用して**orders**フォルダー内のすべてのファイルから販売注文データを読み込むようにコードを修正します：
 
-```python
-from pyspark.sql.types import *
+    ```python
+    from pyspark.sql.types import *
+    
+    orderSchema = StructType([
+        StructField("SalesOrderNumber", StringType()),
+        StructField("SalesOrderLineNumber", IntegerType()),
+        StructField("OrderDate", DateType()),
+        StructField("CustomerName", StringType()),
+        StructField("Email", StringType()),
+        StructField("Item", StringType()),
+        StructField("Quantity", IntegerType()),
+        StructField("UnitPrice", FloatType()),
+        StructField("Tax", FloatType())
+    ])
+    
+    df = spark.read.format("csv").schema(orderSchema).load("Files/orders/*.csv")
+    display(df)
+    ```
 
-orderSchema = StructType([
-    StructField("SalesOrderNumber", StringType()),
-    StructField("SalesOrderLineNumber", IntegerType()),
-    StructField("OrderDate", DateType()),
-    StructField("CustomerName", StringType()),
-    StructField("Email", StringType()),
-    StructField("Item", StringType()),
-    StructField("Quantity", IntegerType()),
-    StructField("UnitPrice", FloatType()),
-    StructField("Tax", FloatType())
-])
+12. 修正したコードセルを実行し、出力を確認します。これで2019年、2020年、2021年の販売データが含まれているはずです。
 
-df = spark.read.format("csv").schema(orderSchema).load("Files/orders/*.csv")
-display(df)
-```
+     **注**: 表示される行のサブセットのみが表示されるため、すべての年の例を確認できない場合があります。
 
-12. Run the modified code cell and review the output, which should now include sales for 2019, 2020, and 2021.
+### タスク 4: データフレーム内のデータを探索する
 
-    **Note**: Only a subset of the rows is displayed, so you may not be able to see examples from all years.
+データフレームオブジェクトには、含まれるデータをフィルタリング、グループ化、その他の操作を行うための多くの関数が含まれています。
 
-### Task 4: Explore data in a dataframe
+#### データフレームをフィルタリングする
 
-The dataframe object includes a wide range of functions that you can use to filter, group, and otherwise manipulate the data it contains.
-
-### Filter a dataframe
-
-1. Use the **+ Code** icon below the cell output to add a new code cell to the notebook, and enter the following code in it.
+1. セルの出力の下にある **+ コード** アイコンを使用して新しいコードセルをノートブックに追加し、次のコードを入力します。
 
     ```Python
    customers = df['CustomerName', 'Email']
@@ -196,12 +201,12 @@ The dataframe object includes a wide range of functions that you can use to filt
    display(customers.distinct())
     ```
 
-2. Run the new code cell, and review the results. Observe the following details:
-    - When you perform an operation on a dataframe, the result is a new dataframe (in this case, a new **customers** dataframe is created by selecting a specific subset of columns from the **df** dataframe)
-    - Dataframes provide functions such as **count** and **distinct** that can be used to summarize and filter the data they contain.
-    - The `dataframe['Field1', 'Field2', ...]` syntax is a shorthand way of defining a subset of columns. You can also use **select** method, so the first line of the code above could be written as `customers = df.select("CustomerName", "Email")`
+2. 新しいコードセルを実行し、結果を確認します。次の点に注意してください：
+    - データフレームに対して操作を行うと、その結果は新しいデータフレームになります（この場合、特定の列のサブセットを選択することで新しい**customers**データフレームが作成されます）
+    - データフレームには、含まれるデータを要約およびフィルタリングするために使用できる**count**や**distinct**などの関数が提供されています。
+    - `dataframe['Field1', 'Field2', ...]`構文は、列のサブセットを定義するための省略形です。**select**メソッドを使用することもでき、上記のコードの最初の行は`customers = df.select("CustomerName", "Email")`と書くことができます。
 
-3. Modify the code as follows:
+3. コードを次のように修正します：
 
     ```Python
    customers = df.select("CustomerName", "Email").where(df['Item']=='Road-250 Red, 52')
@@ -210,20 +215,20 @@ The dataframe object includes a wide range of functions that you can use to filt
    display(customers.distinct())
     ```
 
-4. Run the modified code to view the customers who have purchased the *Road-250 Red, 52* product. Note that you can "chain" multiple functions together so that the output of one function becomes the input for the next - in this case, the dataframe created by the **select** method is the source dataframe for the **where** method that is used to apply filtering criteria.
+4. 修正したコードを実行して、*Road-250 Red, 52* の製品を購入した顧客を表示します。複数の関数を連続で記述して、ある関数の出力を次の関数の入力として使用できることに注意してください。この場合、**select**メソッドで作成されたデータフレームが、フィルタリング条件を適用するために使用される**where**メソッドのソースデータフレームとなります。
 
-### Aggregate and group data in a dataframe
+#### データフレーム内のデータを集計およびグループ化する
 
-1. Add a new code cell to the notebook, and enter the following code in it:
+1. ノートブックに新しいコードセルを追加し、次のコードを入力します：
 
     ```Python
    productSales = df.select("Item", "Quantity").groupBy("Item").sum()
    display(productSales)
     ```
 
-2. Run the code cell you added, and note that the results show the sum of order quantities grouped by product. The **groupBy** method groups the rows by *Item*, and the subsequent **sum** aggregate function is applied to all of the remaining numeric columns (in this case, *Quantity*)
+2. 追加したコードセルを実行し、結果を確認します。結果には、製品ごとにグループ化された注文数量の合計が表示されます。**groupBy**メソッドは行を*Item*でグループ化し、その後の**sum**集計関数が残りのすべての数値列（この場合は*Quantity*）に適用されます。
 
-3. Add another new code cell to the notebook, and enter the following code in it:
+3. ノートブックにさらに新しいコードセルを追加し、次のコードを入力します：
 
     ```Python
    from pyspark.sql.functions import *
@@ -232,100 +237,99 @@ The dataframe object includes a wide range of functions that you can use to filt
    display(yearlySales)
     ```
 
-4. Run the code cell you added, and note that the results show the number of sales orders per year. Note that the **select** method includes a SQL **year** function to extract the year component of the *OrderDate* field (which is why the code includes an **import** statement to import functions from the Spark SQL library). It then uses an **alias** method is used to assign a column name to the extracted year value. The data is then grouped by the derived *Year* column and the count of rows in each group is calculated before finally the **orderBy** method is used to sort the resulting dataframe.
+4. 追加したコードセルを実行し、結果を確認します。結果には、年ごとの販売注文の数が表示されます。**select**メソッドには、**OrderDate** フィールドの年の部分を抽出するための **year** 関数が含まれています（そのため、コードにはSpark SQLライブラリから関数をインポートするための**import**文が含まれています）。その後、**alias**メソッドを使用して抽出された年の値に列名を割り当てます。データは派生した*Year*列でグループ化され、各グループの行数が計算され、最後に**orderBy**メソッドを使用して結果のデータフレームがソートされます。
 
-### Task 5: Use Spark to transform data files
+### タスク 5: Sparkを使用してデータファイルを変換する
 
-A common task for data engineers is to ingest data in a particular format or structure, and transform it for further downstream processing or analysis.
+データエンジニアにとって一般的なタスクは、特定の形式や構造でデータを取り込み、さらなる下流処理や分析のために変換することです。
 
-### Use dataframe methods and functions to transform data
+#### データフレームメソッドと関数を使用してデータを変換する
 
-1. Add another new code cell to the notebook, and enter the following code in it:
+1. ノートブックに新しいコードセルを追加し、次のコードを入力します：
 
     ```Python
    from pyspark.sql.functions import *
 
-   ## Create Year and Month columns
+   ## 年と月の列を作成
    transformed_df = df.withColumn("Year", year(col("OrderDate"))).withColumn("Month", month(col("OrderDate")))
 
-   # Create the new FirstName and LastName fields
+   # 新しいFirstNameとLastNameフィールドを作成
    transformed_df = transformed_df.withColumn("FirstName", split(col("CustomerName"), " ").getItem(0)).withColumn("LastName", split(col("CustomerName"), " ").getItem(1))
 
-   # Filter and reorder columns
+   # 列をフィルタリングして並べ替え
    transformed_df = transformed_df["SalesOrderNumber", "SalesOrderLineNumber", "OrderDate", "Year", "Month", "FirstName", "LastName", "Email", "Item", "Quantity", "UnitPrice", "Tax"]
 
-   # Display the first five orders
+   # 最初の5つの注文を表示
    display(transformed_df.limit(5))
     ```
 
-2. Run the code to create a new dataframe from the original order data with the following transformations:
-    - Add **Year** and **Month** columns based on the **OrderDate** column.
-    - Add **FirstName** and **LastName** columns based on the **CustomerName** column.
-    - Filter and reorder the columns, removing the **CustomerName** column.
+2. コードを実行して、元の注文データから次の変換を行った新しいデータフレームを作成します：
+    - **OrderDate**列に基づいて、**Year**と**Month**列を追加。
+    - **CustomerName**列に基づいて、**FirstName**と**LastName**列を追加。
+    - 列をフィルタリングして並べ替えることで、**CustomerName**列を削除。
 
-3. Review the output and verify that the transformations have been made to the data.
+3. 出力を確認し、データに対して変換が行われたことを確認します。
 
-    You can use the full power of the Spark SQL library to transform the data by filtering rows, deriving, removing, renaming columns, and applying any other required data modifications.
+    Spark SQLライブラリの全機能を使用して、行のフィルタリング、列の派生、削除、名前変更、その他の必要なデータ変更を適用できます。
 
-    > **Tip**: See the [Spark dataframe documentation](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) to learn more about the methods of the Dataframe object.
+    > **ヒント**: データフレームオブジェクトのメソッドについて詳しくは、[Sparkデータフレームドキュメント](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html)を参照してください。
 
-### Task 6: Save the Transformed data
+### タスク 6: 変換されたデータを保存する
 
-1. Add a new cell with the following code to save the transformed dataframe in Parquet format (Overwriting the data if it already exists):
+1. 次のコードを含む新しいセルを追加し、変換されたデータフレームをParquet形式で保存します（既存のデータがある場合は上書き）：
 
     ```python
    transformed_df.write.mode("overwrite").parquet('Files/transformed_data/orders')
    print ("Transformed data saved!")
     ```
 
-    > **Note**: Commonly, *Parquet* format is preferred for data files that you will use for further analysis or ingestion into an analytical store. Parquet is a very efficient format that is supported by most large scale data analytics systems. In fact, sometimes your data transformation requirement may simply be to convert data from another format (such as CSV) to Parquet!
+    > **注**: さらなる分析や分析ストアへの取り込みに使用するデータファイルには、一般的に*Parquet*形式が好まれます。Parquetは非常に効率的な形式であり、ほとんどの大規模データ分析システムでサポートされています。実際、データ変換の要件が単に別の形式（例えばCSV）からParquetに変換することだけの場合もあります！
 
-2. Run the cell and await confirmation that the data transformation has been completed with the message **Transformed data saved!**. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and select the **transformed_data** folder to verify that it contains a new folder named **orders**, which in turn contains one or more Parquet files.
+2. セルを実行し、**Transformed data saved!**というメッセージが表示されるまで待ちます。その後、左側の**エクスプローラー** ペインで **...** メニューから **最新の情報に更新** を選択し、**transformed_data** フォルダーを選択して、新しい**orders**フォルダーが含まれていることを確認します。このフォルダーには1つ以上のParquetファイルが含まれています。
 
-    ![Screenshot of a folder containing parquet files.](./Images/saved-parquet1.png)
+    ![Parquetファイルを含むフォルダーのスクリーンショット](./Images/05/saved-parquet1.png)
 
-3. Add a new cell with the following code to load a new dataframe from the parquet files in the **transformed_data/orders** folder:
+3. 次のコードを含む新しいセルを追加し、**transformed_data/orders**フォルダー内のParquetファイルから新しいデータフレームをロードします：
 
     ```python
    orders_df = spark.read.format("parquet").load("Files/transformed_data/orders")
    display(orders_df)
     ```
 
-4. Run the cell and verify that the results show the order data that has been loaded from the parquet files.
+4. セルを実行し、Parquetファイルからロードされた注文データが表示されることを確認します。
+### タスク 7: パーティション化されたファイルにデータを保存する
 
-### Task 7: Save data in partitioned files
-
-1. Add a new cell with the following code; which saves the dataframe, partitioning the data by **Year** and **Month**:
+1. 次のコードを含む新しいセルを追加し、データフレームを**Year**および**Month**でパーティション分けして保存します：
 
     ```python
    orders_df.write.partitionBy("Year","Month").mode("overwrite").parquet("Files/partitioned_data")
    print ("Transformed data saved!")
     ```
 
-2. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and expand the **partitioned_data** folder to verify that it contains a hierarchy of folders named **Year=*xxxx***, each containing folders named **Month=*xxxx***. Each month folder contains a parquet file with the orders for that month.
+2. セルを実行し、データが保存されたというメッセージが表示されるまで待ちます。その後、左側の**エクスプローラー** ペインで **...** メニューから **最新の情報に更新** を選択し、**partitioned_data**フォルダーを展開して、**Year=*xxxx***という名前のフォルダーの階層が含まれていることを確認します。各月フォルダーには、その月の注文が含まれるParquetファイルが含まれています。
 
-    ![Screenshot of a hierarchy of partitioned data files.](./Images/partitioned-files1.png)
+    ![パーティション化されたデータファイルの階層のスクリーンショット](./Images/05/partitioned-files1.png)
 
-    Partitioning data files is a common way to optimize performance when dealing with large volumes of data. This technique can significantly improve performance and make it easier to filter data.
+    パーティション化されたデータファイルは、大量のデータを扱う際のパフォーマンスを最適化する一般的な方法です。この技術はパフォーマンスを大幅に向上させ、データのフィルタリングを容易にします。
 
-3. Add a new cell with the following code to load a new dataframe from the **orders.parquet** file:
+3. 次のコードを含む新しいセルを追加し、**orders.parquet**ファイルから新しいデータフレームをロードします：
 
     ```python
    orders_2021_df = spark.read.format("parquet").load("Files/partitioned_data/Year=2021/Month=*")
    display(orders_2021_df)
     ```
 
-4. Run the cell and verify that the results show the order data for sales in 2021. Note that the partitioning columns specified in the path (**Year** and **Month**) are not included in the dataframe.
+4. セルを実行し、結果が2021年の販売データを表示することを確認します。パスで指定されたパーティション列（**Year**および**Month**）はデータフレームに含まれないことに注意してください。
 
-### Task 8: Work with Tables and SQL
+### タスク 8: テーブルとSQLを使用する
 
-As you've seen, the native methods of the dataframe object enable you to query and analyze data from a file quite effectively. However, many data analysts are more comfortable working with tables that they can query using SQL syntax. Spark provides a *metastore* in which you can define relational tables. The Spark SQL library that provides the dataframe object also supports the use of SQL statements to query tables in the metastore. By using these capabilities of Spark, you can combine the flexibility of a data lake with the structured data schema and SQL-based queries of a relational data warehouse - hence the term "data lakehouse".
+データフレームオブジェクトのネイティブメソッドを使用して、ファイルからデータを効果的にクエリおよび分析できることを確認しました。しかし、多くのデータアナリストは、SQL構文を使用してクエリを実行できるテーブルで作業する方が快適です。Sparkは、リレーショナルテーブルを定義できる*メタストア*を提供します。データフレームオブジェクトを提供するSpark SQLライブラリは、メタストア内のテーブルに対してSQLステートメントを使用してクエリを実行することもサポートしています。これらのSparkの機能を使用することで、データレイクの柔軟性とリレーショナルデータウェアハウスの構造化データスキーマおよびSQLベースのクエリを組み合わせることができます。
 
-### Create a Table
+#### テーブルを作成する
 
-Tables in a Spark metastore are relational abstractions over files in the data lake. Tables can be *managed* (in which case the files are managed by the metastore) or *external* (in which case the table references a file location in the data lake that you manage independently of the metastore).
+Sparkメタストアのテーブルは、データレイク内のファイルに対するリレーショナル抽象化です。テーブルは **マネージド**（ファイルがメタストアによって管理される）または **外部**（テーブルがデータレイク内のファイル位置を参照し、メタストアとは独立して管理される）にすることができます。
 
-1. Add a new code cell to the notebook, and enter the following code, which saves the dataframe of sales order data as a table named **salesorders**:
+1. ノートブックに新しいコードセルを追加し、次のコードを入力します。これは、販売注文データのデータフレームを**salesorders**という名前のテーブルとして保存します：
 
     ```Python
    # Create a new table
@@ -335,31 +339,32 @@ Tables in a Spark metastore are relational abstractions over files in the data l
    spark.sql("DESCRIBE EXTENDED salesorders").show(truncate=False)
     ```
 
-    > **Note**: It's worth noting a couple of things about this example. Firstly, no explicit path is provided, so the files for the table will be managed by the metastore. Secondly, the table is saved in **delta** format. You can create tables based on multiple file formats (including CSV, Parquet, Avro, and others) but *delta lake* is a Spark technology that adds relational database capabilities to tables; including support for transactions, row versioning, and other useful features. Creating tables in delta format is preferred for data lakehouses in Fabric.
+    > **注**: この例についていくつか注目すべき点があります。まず、明示的なパスが提供されていないため、テーブルのファイルはメタストアによって管理されます。次に、テーブルは**delta**形式で保存されます。複数のファイル形式（CSV、Parquet、Avroなど）に基づいてテーブルを作成できますが、*delta lake*はテーブルにトランザクション、行バージョニング、その他の便利な機能を追加するSpark技術です。Fabricのデータレイクハウスでは、delta形式でテーブルを作成することが推奨されます。
 
-2. Run the code cell and review the output, which describes the definition of the new table.
+2. コードセルを実行し、新しいテーブルの定義を説明する出力を確認します。
 
-3. In the **Explorer** pane, in the **...** menu for the **Tables** folder, select **Refresh**. Then expand the **Tables** node and verify that the **salesorders** table has been created.
+3. **Explorer**ペインで、**...**メニューから**Refresh**を選択します。次に**Tables**ノードを展開し、**salesorders**テーブルが作成されたことを確認します。
 
-   ![](./Images/table-view1.png)
+   ![](./Images/05/table-view1.png)
    
 
-5. In the **...** menu for the **salesorders** table, select **Load data** > **Spark**.
+5. **salesorders**テーブルの **...** メニューで、**Load data** > **Spark**を選択します。
 
-    A new code cell containing code similar to the following example is added to the notebook:
+    ノートブックに次のようなコードを含む新しいコードセルが追加されます：
 
     ```Python
-   df = spark.sql("SELECT * FROM [your_lakehouse].salesorders LIMIT 1000")
+   df = spark.sql("SELECT * FROM [レイクハウス名].salesorders LIMIT 1000")
    display(df)
     ```
 
-6. Run the new code, which uses the Spark SQL library to embed a SQL query against the **salesorder** table in PySpark code and load the results of the query into a dataframe.
+1. 新しいコードを実行し、PySparkコードに埋め込まれたSQLクエリを使用して**salesorder**テーブルに対してクエリを実行し、クエリの結果をデータフレームにロードします。
+   ![alt text](./Images/05/de06.png)
 
-### Run SQL code in a cell
+#### セルでSQLコードを実行する
 
-While it's useful to be able to embed SQL statements into a cell containing PySpark code, data analysts often just want to work directly in SQL.
+SQLステートメントをセルに埋め込むことができるのは便利ですが、データアナリストは直接SQLで作業したいことがよくあります。
 
-1. Add a new code cell to the notebook, and enter the following code in it:
+1. ノートブックに新しいコードセルを追加し、次のコードを入力します：
 
     ```sql
    %%sql
@@ -370,47 +375,44 @@ While it's useful to be able to embed SQL statements into a cell containing PySp
    ORDER BY OrderYear;
     ```
 
-2. Run the cell and review the results. Observe that:
-    - The `%%sql` line at the beginning of the cell (called a *magic*) indicates that the Spark SQL language runtime should be used to run the code in this cell instead of PySpark.
-    - The SQL code references the **salesorders** table that you created previously.
-    - The output from the SQL query is automatically displayed as the result under the cell.
+2. セルを実行し、結果を確認します。次の点に注意してください：
+    - セルの先頭にある`%%sql` （**マジックコマンド** と呼ばれる）は、このセルのコードをPySparkではなくSpark SQLランタイムで実行することを示しています。
+    - SQLコードは、以前に作成した**salesorders**テーブルを参照しています。
+    - SQLクエリの出力は自動的にセルの下に表示されます。
 
-> **Note**: For more information about Spark SQL and dataframes, see the [Spark SQL documentation](https://spark.apache.org/docs/2.2.0/sql-programming-guide.html).
+> **注**: Spark SQLおよびデータフレームに関する詳細については、[Spark SQLドキュメント](https://spark.apache.org/docs/2.2.0/sql-programming-guide.html)を参照してください。
 
-### Task 9: Visualize data with Spark
+### タスク 9: Sparkでデータを可視化する
 
-A picture is proverbially worth a thousand words, and a chart is often better than a thousand rows of data. While notebooks in Fabric include a built-in chart view for data that is displayed from a dataframe or Spark SQL query, it is not designed for comprehensive charting. However, you can use Python graphics libraries like **matplotlib** and **seaborn** to create charts from data in dataframes.
+百聞は一見に如かず、千行のデータよりも優れたチャートがあります。Fabricのノートブックには、データフレームやSpark SQLクエリから表示されるデータのための組み込みのチャートビューが含まれていますが、包括的なチャート作成には設計されていません。しかし、**matplotlib**や**seaborn**などのPythonグラフィックスライブラリを使用して、データフレーム内のデータからチャートを作成することができます。
 
-### View results as a chart
+#### 結果をチャートとして表示する
 
-1. Add a new code cell to the notebook, and enter the following code in it:
+1. ノートブックに新しいコードセルを追加し、次のコードを入力します：
 
     ```sql
    %%sql
    SELECT * FROM salesorders
     ```
 
-2. Run the code and observe that it returns the data from the **salesorders** view you created previously.
+2. コードを実行し、以前に作成した**salesorders**ビューからデータが返されることを確認します。
 
-3. In the results section beneath the cell, change the **View** option from **Table** to **Chart**.
+3. セルの下の結果セクションで、**View**オプションを**Table**から**Chart**に変更します。
 
-4. Click on **Customize chart** on the right side of the chart to display the options pane for the chart. Then set the options as follows and select **Apply**:
+4. チャートの右側にある**Customize chart**をクリックして、チャートのオプションペインを表示します。次のようにオプションを設定し、**Apply**を選択し、チャートが次のように表示されることを確認します：
     - **Chart type**: Bar chart
     - **Key**: Item
     - **Values**: Quantity
-    - **Series Group**: *leave blank*
+    - **Series Group**: *空白のまま*
     - **Aggregation**: Sum
-    - **Stacked**: *Unselected*
+    - **Stacked**: *未選択*
       
-         ![Screenshot of a bar chart of products by total order quantiies](./Images/f-21.png)
+         ![製品ごとの注文数量の合計を示す棒グラフのスクリーンショット](./Images/05/f-21.png)
 
-5. Verify that the chart looks similar to this:
 
-    ![Screenshot of a bar chart of products by total order quantiies](./Images/chart.png)
+#### **matplotlib**を使ってみる
 
-### Get started with **matplotlib**
-
-1. Add a new code cell to the notebook, and enter the following code in it:
+1. ノートブックに新しいコードセルを追加し、次のコードを入力します：
 
     ```Python
    sqlQuery = "SELECT CAST(YEAR(OrderDate) AS CHAR(4)) AS OrderYear, \
@@ -422,189 +424,192 @@ A picture is proverbially worth a thousand words, and a chart is often better th
    df_spark.show()
     ```
 
-2. Run the code and observe that it returns a Spark dataframe containing the yearly revenue.
+2. コードを実行し、年間収益を含むSparkデータフレームが返されることを確認します。
 
-    To visualize the data as a chart, we'll start by using the **matplotlib** Python library. This library is the core plotting library on which many others are based, and provides a great deal of flexibility in creating charts.
+    次に、データをチャートとして視覚化するために、まず**matplotlib** Pythonライブラリを使用していきます。このライブラリは多くの他のライブラリの基盤となっており、チャート作成において非常に柔軟です。
 
-3. Add a new code cell to the notebook, and add the following code to it:
+3. ノートブックに新しいコードセルを追加し、次のコードを入力します：
 
     ```Python
    from matplotlib import pyplot as plt
 
-   # matplotlib requires a Pandas dataframe, not a Spark one
+   # matplotlibはSparkデータフレームではなくPandasデータフレームを必要とします
    df_sales = df_spark.toPandas()
 
-   # Create a bar plot of revenue by year
+   # 年ごとの収益の棒グラフを作成
    plt.bar(x=df_sales['OrderYear'], height=df_sales['GrossRevenue'])
 
-   # Display the plot
+   # プロットを表示
    plt.show()
     ```
 
-4. Run the cell and review the results, which consist of a column chart with the total gross revenue for each year. Note the following features of the code used to produce this chart:
-    - The **matplotlib** library requires a *Pandas* dataframe, so you need to convert the *Spark* dataframe returned by the Spark SQL query to this format.
-    - At the core of the **matplotlib** library is the **pyplot** object. This is the foundation for most plotting functionality.
-    - The default settings result in a usable chart, but there's considerable scope to customize it
+4. セルを実行し、結果を確認します。結果は各年の総収益を示す棒グラフです。次の点に注意してください：
+    - **matplotlib**ライブラリは*Pandas*データフレームを必要とするため、Spark SQLクエリから返された*Spark*データフレームをこの形式に変換する必要があります。
+    - **matplotlib**ライブラリの中心は**pyplot**オブジェクトです。これはほとんどのプロット機能の基盤です。
+    - デフォルトの設定で使えるチャートが作成されますが、カスタマイズの余地が大いにあります。
 
-5. Modify the code to plot the chart as follows:
+5. コードを次のように修正してチャートをプロットします：
 
     ```Python
    from matplotlib import pyplot as plt
 
-   # Clear the plot area
+   # プロットエリアをクリア
    plt.clf()
 
-   # Create a bar plot of revenue by year
+   # 年ごとの収益の棒グラフを作成
    plt.bar(x=df_sales['OrderYear'], height=df_sales['GrossRevenue'], color='orange')
 
-   # Customize the chart
+   # チャートをカスタマイズ
    plt.title('Revenue by Year')
    plt.xlabel('Year')
    plt.ylabel('Revenue')
    plt.grid(color='#95a5a6', linestyle='--', linewidth=2, axis='y', alpha=0.7)
    plt.xticks(rotation=45)
 
-   # Show the figure
+   # 図を表示
    plt.show()
     ```
 
-6. Re-run the code cell and view the results. The chart now includes a little more information.
+6. コードセルを再実行し、結果を確認します。チャートにはさらに多くの情報が含まれています。
 
-    A plot is technically contained with a **Figure**. In the previous examples, the figure was created implicitly for you; but you can create it explicitly.
+    プロットは技術的には**Figure**内に含まれます。前の例では、図は暗黙的に作成されましたが、明示的に作成することもできます。
 
-7. Modify the code to plot the chart as follows:
+7. コードを次のように修正してチャートをプロットします：
 
     ```Python
    from matplotlib import pyplot as plt
 
-   # Clear the plot area
+   # プロットエリアをクリア
    plt.clf()
 
-   # Create a Figure
+   # 図を作成
    fig = plt.figure(figsize=(8,3))
 
-   # Create a bar plot of revenue by year
+   # 年ごとの収益の棒グラフを作成
    plt.bar(x=df_sales['OrderYear'], height=df_sales['GrossRevenue'], color='orange')
 
-   # Customize the chart
+   # チャートをカスタマイズ
    plt.title('Revenue by Year')
    plt.xlabel('Year')
    plt.ylabel('Revenue')
    plt.grid(color='#95a5a6', linestyle='--', linewidth=2, axis='y', alpha=0.7)
    plt.xticks(rotation=45)
 
-   # Show the figure
+   # 図を表示
    plt.show()
     ```
 
-8. Re-run the code cell and view the results. The figure determines the shape and size of the plot.
+8. コードセルを再実行し、結果を確認します。図はプロットの形状とサイズを決定します。
 
-    A figure can contain multiple subplots, each on its own *axis*.
+    図には複数のサブプロットを含めることができ、それぞれが独自の*軸*を持ちます。
 
-9. Modify the code to plot the chart as follows:
+9. コードを次のように修正してチャートをプロットします：
 
     ```Python
    from matplotlib import pyplot as plt
 
-   # Clear the plot area
+   # プロットエリアをクリア
    plt.clf()
 
-   # Create a figure for 2 subplots (1 row, 2 columns)
+   # 2つのサブプロット（1行2列）の図を作成
    fig, ax = plt.subplots(1, 2, figsize = (10,4))
 
-   # Create a bar plot of revenue by year on the first axis
+   # 最初の軸に年ごとの収益の棒グラフを作成
    ax[0].bar(x=df_sales['OrderYear'], height=df_sales['GrossRevenue'], color='orange')
    ax[0].set_title('Revenue by Year')
 
-   # Create a pie chart of yearly order counts on the second axis
+   # 2番目の軸に年ごとの注文数の円グラフを作成
    yearly_counts = df_sales['OrderYear'].value_counts()
    ax[1].pie(yearly_counts)
    ax[1].set_title('Orders per Year')
    ax[1].legend(yearly_counts.keys().tolist())
 
-   # Add a title to the Figure
+   # 図にタイトルを追加
    fig.suptitle('Sales Data')
 
-   # Show the figure
+   # 図を表示
    plt.show()
     ```
 
-10. Re-run the code cell and view the results. The figure contains the subplots specified in the code.
+10. コードセルを再実行し、結果を確認します。図にはコードで指定されたサブプロットが含まれています。
+    ![alt text](./Images/05/de07.png)
 
-> **Note**: To learn more about plotting with matplotlib, see the [matplotlib documentation](https://matplotlib.org/).
+> **注**: matplotlibを使用したプロットについて詳しくは、[matplotlibのドキュメント](https://matplotlib.org/)を参照してください。
 
-### Use the **seaborn** library
+#### **seaborn**ライブラリを使用する
 
-While **matplotlib** enables you to create complex charts of multiple types, it can require some complex code to achieve the best results. For this reason, over the years, many new libraries have been built on the base of matplotlib to abstract its complexity and enhance its capabilities. One such library is **seaborn**.
+**matplotlib**は複数のタイプの複雑なチャートを作成することができますが、最良の結果を得るためには複雑なコードが必要になることがあります。このため、**matplotlib**の基盤の上に構築され、その複雑さを抽象化し、機能を強化する多くの新しいライブラリが登場しました。その一つが**seaborn**です。
 
-1. Add a new code cell to the notebook, and enter the following code in it:
+1. ノートブックに新しいコードセルを追加し、次のコードを入力します：
 
     ```Python
    import seaborn as sns
 
-   # Clear the plot area
+   # プロットエリアをクリア
    plt.clf()
 
-   # Create a bar chart
+   # 棒グラフを作成
    ax = sns.barplot(x="OrderYear", y="GrossRevenue", data=df_sales)
    plt.show()
     ```
 
-2. Run the code and observe that it displays a bar chart using the seaborn library.
+2. コードを実行し、seabornライブラリを使用して棒グラフが表示されることを確認します。
 
-3. Modify the code as follows:
+3. コードを次のように修正します：
 
     ```Python
    import seaborn as sns
 
-   # Clear the plot area
+   # プロットエリアをクリア
    plt.clf()
 
-   # Set the visual theme for seaborn
+   # seabornのビジュアルテーマを設定
    sns.set_theme(style="whitegrid")
 
-   # Create a bar chart
+   # 棒グラフを作成
    ax = sns.barplot(x="OrderYear", y="GrossRevenue", data=df_sales)
    plt.show()
     ```
 
-4. Run the modified code and note that seaborn enables you to set a consistent color theme for your plots.
+4. 修正したコードを実行し、seabornがプロットの一貫したカラーテーマを設定できることを確認します。
 
-5. Modify the code again as follows:
+5. コードを次のように再度修正します：
 
     ```Python
    import seaborn as sns
 
-   # Clear the plot area
+   # プロットエリアをクリア
    plt.clf()
 
-   # Create a bar chart
+   # 折れ線グラフを作成
    ax = sns.lineplot(x="OrderYear", y="GrossRevenue", data=df_sales)
    plt.show()
     ```
 
-6. Run the modified code to view the yearly revenue as a line chart.
+6. 修正したコードを実行し、年間収益を折れ線グラフとして表示します。
+    
+    ![alt text](./Images/05/de08.png)
 
-> **Note**: To learn more about plotting with seaborn, see the [seaborn documentation](https://seaborn.pydata.org/index.html).
+> **注**: seabornを使用したプロットについて詳しくは、[seabornのドキュメント](https://seaborn.pydata.org/index.html)を参照してください。
+### タスク 10: ノートブックを保存し、Sparkセッションを終了する
 
-### Task 10: Save the notebook and end the Spark session
+データの操作が完了したら、ノートブックに意味のある名前を付けて保存し、Sparkセッションを終了します。
 
-Now that you've finished working with the data, you can save the notebook with a meaningful name and end the Spark session.
-
-1. In the notebook menu bar, use the ⚙️ **Settings** icon to view the notebook settings.
-2. Set the **Name** of the notebook to **Explore Sales Orders Notebook**, and then close the settings pane.
-3. On the notebook menu, select **Stop session** to end the Spark session.
+1. ノートブックのメニューバーで、⚙️ **設定**アイコンを使用してノートブックの設定を表示します。
+2. ノートブックの**名前**を**Explore Sales Orders Notebook**に設定し、設定ペインを閉じます。
+3. ノートブックメニューで、**セッションを停止**を選択してSparkセッションを終了します。
+   
+   ![alt text](./Images/05/de09.png)
 
     <validation step="17b4e545-1878-4b1e-8b41-f6d4401d997a" />
 
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Hit the Validate button for the corresponding task.
-    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+    > **おめでとうございます** タスクを完了しました！次に、タスクを検証します。以下の手順に従ってください：
+    > - 対応するタスクの検証ボタンを押します。
+    > - 成功メッセージが表示されたら、次のタスクに進むことができます。エラーメッセージが表示された場合は、エラーメッセージをよく読み、ラボガイドの指示に従ってステップを再試行してください。
+    > - サポートが必要な場合は、labs-support@spektrasystems.comまでご連絡ください。24時間365日対応しています。
 
+## まとめ
 
-## Summary
+このラボでは、Microsoft FabricでSparkを使用してデータを操作する方法を学びました。
 
-In this lab, you've learned how to use Spark to work with data in Microsoft Fabric.
-
-### You have successfully completed the lab
+### ラボを正常に完了しました

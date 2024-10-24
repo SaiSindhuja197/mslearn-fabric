@@ -1,119 +1,111 @@
 # Cloud scale analytics with Microsoft Fabric
 
-### Overall Estimated Duration: 8 hours
+### 全体の推定所要時間: 8時間
 
-## Overview
+## 概要
 
-A global e-commerce company uses Microsoft Fabric for cloud-scale analytics to handle and analyze vast amounts of customer transaction data. They set up data pipelines for continuous ingestion of transactional information, which is stored in a scalable data warehouse. Real-time analytics monitor live data streams for immediate insights, while Apache Spark performs complex analyses and machine learning on the data. Dataflows Gen2 are employed to clean and transform data, and interactive notebooks allow data scientists to explore and model data dynamically. This integrated approach enables the company to make real-time, data-driven decisions and optimize their strategies effectively.
+あるグローバルなeコマース企業は、Microsoft Fabricを使用してクラウド規模の分析を行い、膨大な顧客取引データを処理および分析しています。彼らは、取引情報の継続的な取り込みのためにデータパイプラインを設定し、それをスケーラブルなデータウェアハウスに保存します。リアルタイム分析はライブデータストリームを監視して即時の洞察を提供し、Apache Sparkはデータに対して複雑な分析と機械学習を行います。Dataflows Gen2はデータのクリーンアップと変換に使用され、インタラクティブなノートブックはデータサイエンティストが動的にデータを探索しモデル化することを可能にします。この統合されたアプローチにより、企業はリアルタイムでデータ駆動の意思決定を行い、戦略を効果的に最適化することができます。
 
-Cloud Scale Analytics with Microsoft Fabric enables organizations to process, analyze, and gain insights from massive amounts of data efficiently and effectively.
+Microsoft Fabricを使用したクラウド規模の分析により、組織は膨大なデータを効率的かつ効果的に処理、分析、洞察を得ることができます。
 
-## Objective
+## 目的
 
-This lab is designed to equip participants with hands-on experience in creating a workspace to manage data, ingesting it via pipelines, analyzing it in a data warehouse, performing real-time analytics, training models using notebooks, leveraging Apache Spark for complex analysis, and designing advanced data transformations with Dataflow Gen2.
+このラボは、参加者がデータを管理するためのワークスペースを作成し、パイプラインを介してデータを取り込み、データウェアハウスで分析し、リアルタイム分析を実行し、ノートブックを使用してモデルをトレーニングし、Apache Sparkを活用して複雑な分析を行い、Dataflow Gen2を使用して高度なデータ変換を設計する実践的な経験を提供することを目的としています。
 
-1. **Create a Fabric workspace:** Set up a centralized environment in Microsoft Fabric to manage and collaborate on data projects. Participants will establish a centralized platform for managing and collaborating on data projects.
+1. **Fabric ワークスペースの作成:** Microsoft Fabricでデータプロジェクトを管理および共同作業するための集中環境を設定します。参加者はデータプロジェクトを管理および共同作業するための集中プラットフォームを確立します。
 
-1. **Ingest data with a pipeline in Microsoft Fabric:** Use data pipelines to import and prepare data for analysis within Microsoft Fabric. Participants will automate the import and preparation of data for subsequent analysis.
+1. **Microsoft Fabricでパイプラインを使用してデータを取り込む:** データパイプラインを使用して、Microsoft Fabric内でデータをインポートおよび準備します。参加者は、後続の分析のためにデータのインポートと準備を自動化します。
 
-1. **Analyze data in a data warehouse:** Perform complex queries and insights on large datasets stored in a data warehouse within Microsoft Fabric. Participants will execute complex queries to derive insights from large datasets.
+1. **データウェアハウスでデータを分析する:** Microsoft Fabric内のデータウェアハウスに保存された大規模なデータセットに対して複雑なクエリと洞察を実行します。参加者は、大規模なデータセットから洞察を得るために複雑なクエリを実行します。
 
-1. **Get started with Real-Time Analytics in Microsoft Fabric:** Implement real-time data processing and analytics to gain immediate insights from live data streams. Participants will enable immediate insights and decision-making from live data streams.
+1. **Microsoft Fabric でリアルタイム分析を開始する:** ライブデータストリームから即時の洞察を得るためにリアルタイムデータ処理と分析を実装します。参加者は、ライブデータストリームから即時の洞察と意思決定を可能にします。
 
-1. **Use notebooks to train a model in Microsoft Fabric:** Utilize interactive notebooks for developing, training, and testing machine learning models within Microsoft Fabric. Participants will develop and refine machine learning models interactively.
+1. **Microsoft Fabric でノートブックを使用してモデルをトレーニングする:** インタラクティブなノートブックを使用して、Microsoft Fabric内で機械学習モデルを開発、トレーニング、およびテストします。参加者は、インタラクティブに機械学習モデルを開発および改良します。
 
-1. **Analyze data with Apache Spark:** Leverage Apache Spark’s distributed computing capabilities to perform large-scale data analysis in Microsoft Fabric. Participants will perform scalable, high-performance data analysis on large volumes of data.
+1. **Apache Spark を使用してデータを分析する:** Apache Sparkの分散コンピューティング機能を活用して、Microsoft Fabric内で大規模なデータ分析を行います。参加者は、大量のデータに対してスケーラブルで高性能なデータ分析を行います。
 
-1. **Create a Dataflow (Gen2) in Microsoft Fabric:** Design and implement advanced data transformation workflows using Dataflow Gen2 for enhanced data integration and processing. Participants will design and execute sophisticated data transformation processes for integration and processing.
+1. **Microsoft Fabric で Dataflow (Gen2) を作成する:** Dataflow Gen2を使用して高度なデータ変換ワークフローを設計および実装し、データ統合と処理を強化します。参加者は、統合と処理のための高度なデータ変換プロセスを設計および実行します。
 
-## Prerequisites
+## 前提条件
 
-Participants should have:
+参加者は以下の知識を持っている必要があります:
 
-- Basic understanding of cloud computing concepts and familiarity with Microsoft Azure services.
-- Knowledge of data integration principles and experience with data formats and sources.
-- Understanding of SQL and relational database concepts, and familiarity with data warehousing solutions.
-- Familiarity with machine learning concepts and experience with programming languages like Python or R
-- Understanding of distributed computing principles and experience with data processing frameworks like Apache Spark.
+- クラウドコンピューティングの基本概念とMicrosoft Azureサービスに関する知識。
+- データ統合の原則に関する知識とデータ形式およびソースに関する経験。
+- SQLおよびリレーショナルデータベースの概念に関する理解とデータウェアハウスソリューションに関する知識。
+- 機械学習の概念に関する理解とPythonやRなどのプログラミング言語の経験。
+- 分散コンピューティングの原則に関する理解とApache Sparkなどのデータ処理フレームワークの経験。
 
-## Architecture
+## アーキテクチャ
 
-Microsoft Fabric offers a comprehensive suite of services to manage and analyze data at scale. Participants can set up a central workspace for project management, automate data ingestion with pipelines, and perform complex queries using its data warehouse capabilities. Real-time data processing is supported through a dedicated analytics engine, while interactive notebooks facilitate machine learning model development. Apache Spark provides scalable data processing, and advanced data transformations are handled by Dataflow Gen2. Together, these tools enable efficient data management, real-time insights, and scalable analytics across diverse data scenarios.
+Microsoft Fabricは、スケールでデータを管理および分析するための包括的なサービススイートを提供します。参加者は、プロジェクト管理のための中央ワークスペースを設定し、パイプラインを使用してデータの取り込みを自動化し、データウェアハウス機能を使用して複雑なクエリを実行します。リアルタイムデータ処理は専用の分析エンジンを通じてサポートされ、インタラクティブなノートブックは機械学習モデルの開発を促進します。Apache Sparkはスケーラブルなデータ処理を提供し、高度なデータ変換はDataflow Gen2によって処理されます。これらのツールを組み合わせることで、効率的なデータ管理、リアルタイムの洞察、および多様なデータシナリオにわたるスケーラブルな分析が可能になります。
 
-## Architecture Diagram
+## アーキテクチャ図
 
 ![](./Images/cloud-scale-fabric-arch-diagram.png)
 
-## Explanation of Components
+## コンポーネントの説明
 
-The architecture for this lab involves several key components of Microsoft Fabric:
+このラボのアーキテクチャには、Microsoft Fabricのいくつかの主要なコンポーネントが含まれます:
 
-- **Microsoft Fabric Workspace:** The main environment for managing all data-related projects, including resources, permissions, and configuration.
-- **Microsoft Fabric Data Factory (or Data Pipelines):** Service for creating, scheduling, and managing data ingestion workflows and ETL (Extract, Transform, Load) processes.
-- **Microsoft Fabric Data Warehouse (or Synapse Analytics):** Scalable data storage and querying service for performing complex data analysis and running SQL queries.
-- **Real-Time Analytics Engine:** Service for processing and analyzing streaming data to provide real-time insights.
-- **Microsoft Fabric Notebooks:** Interactive notebooks for developing, training, and testing machine learning models using languages such as Python or R.
-- **Apache Spark on Microsoft Fabric:** A distributed computing service for performing large-scale data processing and analytics using Spark clusters.
-- **Dataflow Gen2:** A service for designing and executing advanced data transformation workflows, enabling efficient data integration and processing.
+- **Microsoft Fabric ワークスペース:** リソース、権限、および構成を含むすべてのデータ関連プロジェクトを管理するための主要な環境。
+- **Microsoft Fabric Data Factory (またはデータパイプライン):** データ取り込みワークフローおよびETL（抽出、変換、ロード）プロセスを作成、スケジュール、および管理するためのサービス。
+- **Microsoft Fabric Data Warehouse :** 複雑なデータ分析とSQLクエリの実行のためのスケーラブルなデータストレージおよびクエリサービス。
+- **Microsoft Fabric Real-time Intelligence:** ストリーミングデータを処理および分析してリアルタイムの洞察を提供するためのサービス。
+- **Microsoft Fabricノートブック:** PythonやRなどの言語を使用して機械学習モデルを開発、トレーニング、およびテストするためのインタラクティブなノートブック。
+- **Microsoft Fabric上のApache Spark:** Sparkクラスターを使用して大規模なデータ処理および分析を行うための分散コンピューティングサービス。
+- **Dataflow Gen2:** 高度なデータ変換ワークフローを設計および実行するためのサービスで、効率的なデータ統合および処理を可能にします。
 
-# Getting Started with the Lab
+# ラボの開始
 
-1. Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. You can see the number on the bottom of lab guide to switch to different exercises of the lab guide.
+1. 環境がプロビジョニングされると、仮想マシン（JumpVM）とラボガイドがブラウザに読み込まれます。この仮想マシンを使用してワークショップ全体でラボを実行します。ラボガイドの下部にある番号を参照して、ラボガイドの異なる演習に切り替えることができます。
 
    ![07](./Images/gs/1a.png)
 
-1. To get the lab environment details, you can select the **Environment Details** tab. Additionally, the credentials will also be emailed to your registered email address. You can also open the Lab Guide on separate and full window by selecting the **Split Window** from the lower right corner. Also, you can start, stop, and restart virtual machines from the **Resources** tab.
+1. ラボ環境の詳細を取得するには、**Environment Details**タブを選択します。さらに、資格情報は登録されたメールアドレスにも送信されます。**Split Window**を選択して、ラボガイドを別のフルウィンドウで開くこともできます。また、**Resources**タブから仮想マシンを開始、停止、および再起動することもできます。
 
    ![08](./Images/gs/08.png)
  
-    > You will see the DeploymentID value on **Environment Details** tab, use it wherever you see SUFFIX or DeploymentID in lab steps.
+    > **Environment Details**タブでDeploymentID値が表示されます。ラボの手順でSUFFIXまたはDeploymentIDが表示される場所で使用します。
 
 
-## Login to Azure Portal
+## Azureポータルへのログイン
 
-1. In the JumpVM, click on Azure portal shortcut of Microsoft Edge browser which is created on desktop.
+1. JumpVMで、デスクトップに作成されたMicrosoft EdgeブラウザのAzureポータルショートカットをクリックします。
 
    ![09](./Images/gs/09.png)
    
-1. On **Sign into Microsoft Azure** tab you will see login screen, in that enter following email/username and then click on **Next**. 
-   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+1. **Microsoft Azureにサインイン**タブでログイン画面が表示されます。次のメール/ユーザー名を入力し、**次へ**をクリックします。
+   * メール/ユーザー名: <inject key="AzureAdUserEmail"></inject>
    
      ![04](./Images/gs/04.png)
      
-1. Now enter the following password and click on **Sign in**.
-   * Password: <inject key="AzureAdUserPassword"></inject>
+1. 次に、次のパスワードを入力し、**サインイン**をクリックします。
+   * パスワード: <inject key="AzureAdUserPassword"></inject>
    
      ![05](./Images/gs/05.png)
      
-   > If you see the pop-up click on **ask later**.
+   > ポップアップが表示された場合は、**後で確認**をクリックします。
 
       ![06](./Images/gs/asklater1.png)
   
-1. If you see the pop-up **Stay Signed in?**, click No
+1. **サインインを続けますか？** のポップアップが表示された場合は、**いいえ**をクリックします。
 
-1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+1. **無料のAzure Advisorの推奨事項があります！** のポップアップが表示された場合は、ウィンドウを閉じてラボを続行します。
 
-1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+1. **Microsoft Azureへようこそ** のポップアップウィンドウが表示された場合は、**後で確認**をクリックしてツアーをスキップします。
       
-By the end of this lab, participants can expect to learn how to effectively utilize Microsoft Fabric’s suite of services for comprehensive data management and analysis. They will gain hands-on experience in setting up and configuring a Fabric workspace, automating data ingestion processes using pipelines, and performing complex data queries in a data warehouse. Participants will also learn to implement real-time analytics for immediate insights, develop and train machine learning models using interactive notebooks, and leverage Apache Spark for scalable data processing. Additionally, they will understand how to design and execute advanced data transformations with Dataflow Gen2, equipping them with a complete toolkit for managing and analyzing large-scale data projects.
+このラボの終了時には、参加者はMicrosoft Fabricのサービススイートを効果的に利用して包括的なデータ管理と分析を行う方法を学ぶことができます。Fabricワークスペースの設定と構成、パイプラインを使用したデータ取り込みプロセスの自動化、データウェアハウスでの複雑なデータクエリの実行に関する実践的な経験を得ることができます。参加者はまた、リアルタイム分析を実装して即時の洞察を得る方法、インタラクティブなノートブックを使用して機械学習モデルを開発およびトレーニングする方法、Apache Sparkを活用してスケーラブルなデータ処理を行う方法を学びます。さらに、Dataflow Gen2を使用して高度なデータ変換を設計および実行する方法を理解し、大規模なデータプロジェクトを管理および分析するための完全なツールキットを装備します。
 
-## Support Contact
+## サポート連絡先
  
-The CloudLabs support team is available 24/7, 365 days a year, via email and live chat to ensure seamless assistance at any time. We offer dedicated support channels tailored specifically for both learners and instructors, ensuring that all your needs are promptly and efficiently addressed.
+CloudLabsサポートチームは、365日24時間体制でメールおよびライブチャットを通じてシームレスな支援を提供します。学習者とインストラクターの両方に特化した専用のサポートチャネルを提供し、すべてのニーズに迅速かつ効率的に対応します。
 
-Learner Support Contacts:
-- Email Support: cloudlabs-support@spektrasystems.com
-- Live Chat Support: https://cloudlabs.ai/labs-support
+学習者サポート連絡先:
+- メールサポート: cloudlabs-support@spektrasystems.com
+- ライブチャットサポート: https://cloudlabs.ai/labs-support
 
-Now, click on **Next** from the lower right corner to move on to the next page.
+それでは、右下の**次へ**をクリックして次のページに進みましょう。
 
-### Happy Learning!!
-
-
-
-
-
-
-
-
+### 楽しい学習を!!
 

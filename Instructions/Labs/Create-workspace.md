@@ -1,113 +1,108 @@
-# Lab 01: Create a Fabric workspace
+# 演習 01: Fabric ワークスペースの作成
 
-### Estimated Duration: 20 minutes
+### 所要時間: 20分
 
-## Overview
+## 概要
 
-In this lab, you will set up and configure a centralized environment within Microsoft Fabric to streamline data management, collaboration, and project organization.
+このラボでは、Microsoft Fabric 内でデータ管理、コラボレーション、およびプロジェクト整備を簡素化するための環境を設定および構成します。
 
-## Lab Objectives
+## ラボの目的
 
-You will be able to complete the following tasks:
+次のタスクを完了できるようになります:
 
-- Task 1: Assign Fabric Administrator Role
-- Task 2: Sign up for Microsoft Fabric Trial
-- Task 3: Create a workspace
+- タスク 1: Fabric 管理者ロールの割り当て
+- タスク 2: Microsoft Fabric トライアルへのサインアップ
+- タスク 3: ワークスペースの作成
 
-### Task 1: Assign Fabric Administrator Role
+### タスク 1: Fabric 管理者ロールの割り当て
 
-1. Start by searching for **Microsoft Entra ID** in the search pane in Azure portal:
+1. Azure ポータルの検索ペインで **Microsoft Entra ID** を検索します:
 
    ![Navigate-To-AAD](./Images/ws/entra01.png)
 
-2. Navigate to **Roles and administrators**:
+2. **ロールと管理者** に移動します:
 
    ![Roles-and-Administrator](./Images/f-1.png)
 
-3. In the **Roles and administrators** page, search for **Fabric Administrator**, and click on it:
+3. **ロールと管理者** ページで **Fabric 管理者** (または Fabric Administrator )を検索し、クリックします:
 
    ![search-fabric-admin](./Images/ws/entra020.png)
 
-4. This will take you to the **Fabric Administrator | Assignments** page where you will have to assign yourself the **Fabric Administrator role**. Now, click on **+ Add Assignments (1)**:
+4. これにより **Fabric 管理者 | 割り当て** ページに移動し、**Fabric 管理者ロール** を自分に割り当てる必要があります。次に、**+ 割り当ての追加 (1)** をクリックします:
 
    ![click-add-assignments](./Images/ws/004.png)
 
-5. Make sure to **check the box(1)** next to your username, confirm if it is **Selected(2)** and click on **Add(3)**:
+5. ユーザー名の横にある **チェックボックス(1)** を確認し、それが **選択済み(2)** であることを確認してから、**追加(3)** をクリックします:
 
    ![check-and-add-role](./Images/ws/005.png)
 
-6. You can confirm the **Fabric Administrator** role has been added successfully by **refreshing(1)** Fabric Administrators | Assignments page. After **confirming(2)** it has been added successfully, navigate back to **Home(3)**.
+6. **Fabric 管理者** ロールが正常に追加されたことを確認するには、**Fabric 管理者 | 割り当て** ページを **更新(1)** します。正常に追加されたことを **確認(2)** した後、**ホーム(3)** に戻ります。
 
    ![check-and-navigate-back-to-home](./Images/ws/006.png)
 
 ----
 
-### Task 2: Sign up for Microsoft Fabric Trial
+### タスク 2: Microsoft Fabric トライアルへのサインアップ
 
-1. Copy the **microsoft fabric homepage link**, and open this link inside the VM in a new tab:
+1. **Microsoft Fabric ホームページリンク** をコピーし、VM 内の新しいタブでこのリンクを開きます:
 
    ```
    https://app.fabric.microsoft.com/
    ```
 
 
-2. Select **Power BI**.
+2. Microsoft Fabric ページで、**メールアドレス**(1) を入力し、**送信**(2) をクリックします。これにより、新しいアカウントを作成する必要があるかどうかが確認されます。
 
-   ![Account-manager-start](./Images/ws/microsoftpage.png)
+   ![check-email](./Images/ws/fabric-email.png)
 
-3. On the Microsoft Fabric page, enter your **Email**(1) and click on **SUBMIT**(2). This will check if you need to create a new account.
 
-4. Now let’s get started by signing into Microsoft Fabric. Click on **Sign In**.
+3. 新しいウィンドウが表示され、**パスワード** を入力してから **サインイン** をクリックするように求められます。
 
-   ![](./Images/fabric-sign-in.png)
+   ![](./Images/ws/fabric-sign-in-pass.png)
 
-5. Once you’ve clicked on Sign in, a new window will appear asking you to enter your **Password** and then click on **Sign In**.
+4. サインイン状態を維持するウィンドウで、**はい** をクリックします。
 
-   ![](./Images/fabric-sign-in-pass.png)
+   ![](./Images/ws/fabric-stay-sign-in.png)
 
-6. On the Stay Signed In window, click on **YES**.
 
-   ![](./Images/fabric-stay-sign-in.png)
+5. 次に、Microsoft Fabric にサインインします。**サインイン** をクリックします。
 
-7. In the Create Your Account section, enter the required fields **(1)** & **(2)** and click on **GET STARTED**(3). 
+   ![](./Images/ws/fabric-sign-in.png)
 
-   ![](./Images/fabric-get-started.png)
+6. アカウント作成セクションで、必要なフィールド **(1)** および **(2)** を入力し、**開始**(3) をクリックします。
 
-8. You have now successfully created your Microsoft Fabric account. Click on **GET STARTED**.
+   ![](./Images/ws/fabric-get-started.png)
 
-   ![](./Images/fabric-get-started-01.png)
+7. Microsoft Fabric アカウントの作成に成功しました。**開始** をクリックします。
 
-### Task 3: Create a workspace
+   ![](./Images/ws/fabric-get-started-01.png)
 
-Here, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, the notebooks, Power BI datasets, and reports.
+### タスク 3: ワークスペースの作成
 
-1.  Now, select **Workspaces (1)** and click on **+ New workspace (2)**:
+ここでは、Fabric ワークスペースを作成します。このワークスペースには、レイクハウス、データフロー、Data Factory パイプライン、ノートブック、Power BI データセット、およびレポートが含まれます。
+
+1. **ワークスペース (1)** を選択し、**+ 新しいワークスペース (2)** をクリックします:
 
     ![New Workspace](./Images/ws/workspace.png)
 
-2. Fill out the **Create a workspace** form with the following details:
-
-   - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/>**.
+2. **ワークスペースの作成** フォームで、 **名前:** **fabric-<inject key="DeploymentID" enableCopy="false"/>** を入力し、**詳細 (2):** を展開します。
    
-   ![name-and-desc-of-workspc](./Images/f-02.png)
+   ![name-and-desc-of-workspc](./Images/ws/workspace01.png)
 
-   - **Advanced:** Expand it and Under **License mode**, select **Fabric capacity(1)**.
+3. **ファブリック容量(1)**、既存の **容量(2)** を選択し、**適用(3)** をクリックしてワークスペースを作成および開きます。
 
-3. Select on exisitng **Capacity(2)** then click on **Apply(3)** to create and open the workspace.
-
-   ![advanced-and-apply](./Images/f-11.png)
+   ![advanced-and-apply](./Images/ws/advanced-and-apply.png)
 
     <validation step="796cb471-1103-4bc8-8e98-9e6dd3e8c025" />
 
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Hit the Validate button for the corresponding task.
-    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+    > **おめでとうございます** タスクを完了しました！次は検証です。手順は以下の通りです:
+    > - 対応するタスクの検証ボタンを押します。
+    > - 成功メッセージが表示された場合、次のタスクに進むことができます。表示されない場合は、エラーメッセージをよく読み、ラボガイドの指示に従って手順を再試行してください。
+    > - サポートが必要な場合は、labs-support@spektrasystems.com までご連絡ください。24時間365日対応しています。
 
+## まとめ
 
-## Summary
+この演習では、Azure ユーザーに Fabric 管理者ロールを割り当て、Microsoft Fabric トライアルにサインアップし、ワークスペースを作成しました。
 
-In this exercise, you assigned Fabric Administrator Role to your Azure user, signed up for Microsoft Fabric Trial and created a workspace.
-
-### You have successfully completed the lab
+### ラボを正常に完了しました
 

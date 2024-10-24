@@ -1,122 +1,136 @@
-# Lab 07: Create a Dataflow (Gen2) in Microsoft Fabric
+# 演習 07: Microsoft Fabric で Dataflow (Gen2) を作成する
 
-### Estimated Duration: 45 minutes
+### 所要時間: 45 分
 
-## Overview
+## 概要
 
-In Microsoft Fabric, Dataflows (Gen2) connect to various data sources and perform transformations in Power Query Online. They can then be used in Data Pipelines to ingest data into a lakehouse or other analytical store, or to define a dataset for a Power BI report.
+Microsoft Fabric では、Dataflows (Gen2) を使用してさまざまなデータ ソースに接続し、Power Query Online で変換を実行可能です。次に、データ パイプラインで使用してデータをレイクハウスやその他の分析ストアに取り込んだり、Power BI レポート用のデータセットを定義したりできます。
 
-This lab is designed to introduce the different elements of Dataflows (Gen2), and not create a complex solution that may exist in an enterprise
+このラボは、Dataflows (Gen2) のさまざまな要素を紹介することを目的としており、企業で存在する可能性のある複雑なソリューションの作成は行いません。
 
-## Lab Objectives
+## ラボの目的
 
-You will be able to complete the following tasks:
+次のタスクを完了できるようになります。
 
-- Task 1: Create a Dataflow (Gen2) to ingest data
-- Task 2: Add data destination for Dataflow
-- Task 3: Add a dataflow to a pipeline
+- タスク 1: データを取り込むための Dataflow (Gen2) を作成する
+- タスク 2: データフローのデータの宛先を追加する
+- タスク 3: パイプラインにデータフローを追加する
 
-### Task 1: Create a Dataflow (Gen2) to ingest data
+### タスク 1: データを取り込むための Dataflow (Gen2) を作成する
 
-Now that you have a lakehouse, you need to ingest some data into it. One way to do this is to define a dataflow that encapsulates an *extract, transform, and load* (ETL) process.
+レイクハウスを作成したので、そこにデータを取り込む必要があります。これを行う 1 つの方法は、*抽出、変換、および読み込み* (ETL) プロセスをカプセル化するデータフローを定義することです。
 
-1. Select **Data Warehouse** from the left bottom and in the home page  select **Dataflow Gen2**. After a few seconds, the Power Query editor for your new dataflow opens as shown here.
+1. 左下から **Data Warehouse** を選択し、ホームページで **Dataflow Gen2** を選択します。数秒後、新しいデータフローの Power Query エディターが開きます。
 
-   ![New dataflow.](./Images/new-dataflow1.png)
+    ![alt text](./Images/06/newdf.png)
 
-2. Select **Import from a Text/CSV file**, and create a new data source with the following settings:
- - **Link to file**: *Selected*
- - **File path or URL**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/orders.csv`
- - **Connection**: Create new connection
- - **Data gateway**: (none)
- - **Authentication kind**: Anonymous
+2. **Text ファイルまたは CSV ファイルからインポート** を選択します。
 
-3. Select **Next** to preview the file data, and then **Create** the data source. The Power Query editor shows the data source and an initial set of query steps to format the data, as shown here:
+    ![新しいデータフロー。](./Images/new-dataflow1.png)
 
-   ![Query in the Power Query editor.](./Images/power-query1.png)
+3. 設定で新しいデータ ソースを作成します。
+ - **ファイルへのリンク**: *選択済み*
+ - **ファイル パスまたは URL**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/orders.csv`
+ - **接続**: 新しい接続を作成
+ - **データ ゲートウェイ**: (なし)
+ - **認証の種類**: 匿名
+ - **プライバシーレベル**: なし
 
-`>**Note**: Disable to use automatic settings
+4. **次へ** を選択してファイル データをプレビューし、次にデータ ソースを **作成** します。
+   
+    ![Power Query エディターのクエリ。](./Images/06/power-query1.png)
 
-4. On the toolbar ribbon, select the **Add column** tab. Then select **Custom column** and create a new column named **MonthNo** that contains a number based on the formula `Date.Month([OrderDate])` - as shown here and click on **OK**:
+5. Power Query エディターにデータ ソースとデータの書式設定の初期クエリ ステップが表示されます。
 
-    ![Custom column in Power Query editor.](./Images/custom-column1.png)
+    ![Power Query エディターのクエリ。](./Images/06/power-query2.png)
 
-     The step to add the custom column is added to the query and the resulting column is displayed in the data pane:
-     ![Query with a custom column step.](./Images/custom-column-added1.png)
 
-> **Tip:** In the Query Settings pane on the right side, notice the **Applied Steps** include each transformation step. At the bottom, you can also toggle the **Diagram flow** button to turn on the Visual Diagram of the steps.
+1. ツールバー リボンで **列の追加** タブを選択します。次に **カスタム列** を選択し、`Date.Month([OrderDate])` という数式に基づいて数値を含む **MonthNo** という名前の新しい列を作成し、**OK** をクリックします。
+     ![alt text](./Images/06/tab.png)
+
+     ![Power Query エディターのカスタム列。](./Images/06/custom-column1.png)
+
+      カスタム列を追加するステップがクエリに追加され、結果の列がデータ ペインに表示されます。
+      ![カスタム列ステップを含むクエリ。](./Images/06/custom-column-added1.png)
+
+> **ヒント:** 右側のクエリ設定ペインで、**適用されたステップ** に各変換ステップが含まれていることに注意してください。下部では、**ダイアグラム フロー** ボタンを切り替えてステップのビジュアル ダイアグラムをオンにすることもできます。
 >
-> Steps can be moved up or down, edited by selecting the gear icon, and you can select each step to see the transformations apply in the preview pane.
+> ステップは上下に移動したり、歯車アイコンを選択して編集したり、各ステップを選択してプレビュー ペインで変換を適用することができます。
 
-### Task 2: Add data destination for Dataflow
+### タスク 2: Dataflow のデータの宛先を追加する
 
-1. On the toolbar ribbon, select the **Home** tab. Then in the **Add data destination** drop-down menu, select **Lakehouse**.
+1. ツールバー リボンで **ホーム** タブを選択します。次に **データの宛先を追加** ドロップダウン メニューで **レイクハウス** を選択します。
 
-      ![Data destination configuration page.](./Images/f-21-6.png)
+    ![データの宛先設定ページ。](./Images/06/f-21-6.png)
 
-      > **Note:** If this option is grayed out, you may already have a data destination set. Check the data destination at the bottom of the Query settings pane on the right side of the Power Query editor. If a destination is already set, you can change it using the gear.
+    > **注:** このオプションがグレー表示されている場合は、すでにデータの宛先が設定されている可能性があります。Power Query エディターの右側のクエリ設定ペインの下部でデータの宛先を確認してください。すでに宛先が設定されている場合は、歯車を使用して変更できます。
 
-1. In the **Connect to data destination** dialog box, edit the connection and sign in using your Power BI organizational account to set the identity that the dataflow uses to access the lakehouse and select **Next**.
+2. **データの宛先に接続** ダイアログ ボックスで接続を編集し、Power BI 組織アカウントを使用してサインインし、データフローがレイクハウスにアクセスするための ID を設定して **次へ** を選択します。
 
-    ![Data destination configuration page.](./Images/lakehuse_31-1.png)
+     ![データの宛先設定ページ。](./Images/06/lakehuse_31-1.png)
 
-1. In the list of available workspaces, find your workspace and select the lakehouse you created in it at the start of this exercise. Then specify a new table named **orders** and click on **Next**:
+3. 利用可能なワークスペースのリストで、ワークスペースを見つけ、最初の演習で作成したレイクハウスを選択します。次に、**orders** という新しいテーブルを指定し、**次へ** をクリックします。
 
-    ![Data destination configuration page.](./Images/f-22-6.png)
+     ![データの宛先設定ページ。](./Images/06/f-22-6.png)
 
-      >**Note:** On the **Destination settings** page, notice how OrderDate and MonthNo are not selected in the Column mapping and there is an informational message: *Change to date/time*.
+    >**注:** **宛先設定** ページで、 MonthNo が列マッピングで選択されておらず、*任意型となっている列を含めることができない* という旨のメッセージが表示されていることに注意してください。
 
-      ![Data destination settings page.](./Images/f-27.png)
+    ![データの宛先設定ページ。](./Images/06/f-27.png)
 
-1. Cancel this action, then go back to OrderDate and MonthNo columns in Power Query online. Right-click on the column header and **Change Type**.
+4. この操作をキャンセルし、Power Query Online で OrderDate 列と MonthNo 列に戻ります。列ヘッダーを右クリックして **変更の種類** を選択し、以下のように設定します。
 
-    - OrderDate = Date/Time
-    - MonthNo = Whole number
+    - MonthNo = 整数
 
-1. Now repeat the process outlined earlier to add a lakehouse destination.
+    ![alt text](./Images/06/changetype.png)
 
-1. On the **Destination settings** page, select **Append**, and then save the settings. you will be back to Power Query editor.
+5. 先ほど説明した手順を繰り返してレイクハウスの宛先を追加します。
 
-1. Select **Publish** to publish the dataflow. Then wait for the **Dataflow 1** dataflow to be created in your workspace.
+6. **宛先設定** ページで **自動設定を使用するを無効化 (1)** し、 **アペンドする (2)** を選択し、**設定を保存 (3)** します。
+   
+   ![alt text](./Images/06/append.png)
 
-1. Once published, click on ... beside the **dataflow 1** in your workspace, select **Properties**, and rename your dataflow as **Transform Orders Dataflow** and click on **Save**.
+7. データフローの名前を **Transform Orders Dataflow** に変更し **公開** を選択してデータフローを発行します。
+    ![alt text](./Images/06/dfpublish.png)
 
-### Task 3: Add a dataflow to a pipeline
+### タスク 3: パイプラインにデータフローを追加する
 
-You can include a dataflow as an activity in a pipeline. Pipelines are used to orchestrate data ingestion and processing activities, enabling you to combine dataflows with other kinds of operation in a single, scheduled process. Pipelines can be created in a few different experiences, including Data Factory experience.
+データフローをパイプラインのアクティビティとして含めることができます。パイプラインはデータの取り込みと処理アクティビティをオーケストレーションするために使用され、データフローを他の種類の操作と組み合わせて単一のスケジュールされたプロセスにすることができます。パイプラインは、Data Factory エクスペリエンスを含むいくつかの異なるエクスペリエンスで作成できます。
 
-1. From your Fabric-enabled workspace, switch to **Data Engineering** experience. Click on **Data pipeline**, name it as **Load Orders pipeline** and click on **Save**
+1. Fabric 対応のワークスペースから **Data Factory** エクスペリエンスに切り替えます。
+   
+   ![alt text](./Images/06/datafactory.png)
 
-   The pipeline editor opens.
+2. **データ パイプライン** をクリックし、**Load Orders pipeline** と名前を付けて **保存** をクリックします。
 
-   > **Tip**: If the Copy Data wizard opens automatically, close it!
+    ![alt text](./Images/06/createpipeline.png)
+    
+    パイプライン エディターが開きます。
 
-2. Select **Add pipeline activity**, and add a **Dataflow** activity to the pipeline.
+    > **ヒント**: コピー データ ウィザードが自動的に開いた場合は、閉じてください。
 
-   ![Empty data pipeline.](./Images/f-35.png)
+3. **パイプライン アクティビティを追加** を選択し、パイプラインに **データフロー** アクティビティを追加します。
 
-3. With the new **Dataflow1** activity selected, on the **Settings** tab, in the **Dataflow** drop-down list, select **Transform Orders Dataflow** (the data flow you created previously)
+    ![空のデータ パイプライン。](./Images/06/f-35.png)
 
-    ![Pipeline with a dataflow activity.](./Images/transformoder_31-1.png)
+4. 新しい **Dataflow1** アクティビティを選択した状態で、**設定** タブの **データフロー** ドロップダウン リストで、以前に作成したデータフロー **Transform Orders Dataflow** を選択します。
 
-4. On the **Home** tab, save the pipeline using the **&#128427;** (*Save*) icon.
-5. Use the **&#9655; Run** button to run the pipeline, and wait for it to complete. It may take a few minutes.
+     ![データフロー アクティビティを含むパイプライン。](./Images/06/transformoder_31-1.png)
 
-    ![Pipeline with a dataflow that has completed successfully.](./Images/dataflow-pipeline-succeeded1.png)
+5. **ホーム** タブで、**&#128427;** (*保存*) アイコンを使用してパイプラインを保存します。
+6. **&#9655; 実行** ボタンを使用してパイプラインを実行し、完了するまで待ちます。数分かかる場合があります。
 
-6. In the menu bar on the left edge, select your lakehouse.
-7. In the **...** menu for **Tables**, select **refresh**. Then expand **Tables** and select the **orders** table, which has been created by your dataflow.
+     ![正常に完了したデータフローを含むパイプライン。](./Images/06/dataflow-pipeline-succeeded1.png)
 
-   ![Table loaded by a dataflow.](./Images/loaded-table1.png)
+7. 左端のメニュー バーでレイクハウスを選択します。
+    > **ヒント**: メニューバーに表示されない場合は、ワークスペース名のアイコンをクリックして一覧画面からレイクハウスに移動してください。
 
-> **Tip**: Use the Power BI Desktop *Dataflows connector* to connect directly to the data transformations done with your dataflow.
->
-> You can also make additional transformations, publish as a new dataset, and distribute with intended audience for specialized datasets.
->
-> ![Power BI data source connectors](Images/pbid-dataflow-connectors1.png)
+8. **...** メニューで **テーブル** を選択し、**更新** を選択します。次に **テーブル** を展開し、データフローによって作成された **orders** テーブルを選択します。
 
-## Summary
+    ![データフローによって読み込まれたテーブル。](./Images/06/loaded-table1.png)
 
-In this lab, you created a Dataflow (Gen2) to ingest data, Aadd data destination for Dataflow and add a dataflow to a pipeline.
+## まとめ
 
-## You have successfully completed the lab
+このラボでは、データを取り込むための Dataflow (Gen2) を作成し、Dataflow のデータの宛先を追加し、パイプラインにデータフローを追加しました。
+
+## ラボを正常に完了しました
+

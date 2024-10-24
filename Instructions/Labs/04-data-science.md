@@ -1,84 +1,90 @@
-# Lab 05: Use notebooks to train a model in Microsoft Fabric
+# 演習 05: Microsoft Fabric でノートブックを使用してモデルをトレーニングする
 
-### Estimated Duration: 90 minutes
+### 所要時間: 90分
 
-## Overview
+## 概要
 
-In this lab, we will use Microsoft Fabric to create a notebook and train a machine learning model to predict customer churn. We will use Scikit-Learn to train the model and MLflow to track its performance. Customer churn is a critical business problem that many companies face, and predicting which customers are likely to churn can help companies retain their customers and increase revenue. By completing this lab, you will gain hands-on experience in machine learning and model tracking, and learn how to use Microsoft Fabric to create a notebook for your projects.
+このラボでは、Microsoft Fabricを使用してノートブックを作成し、顧客の解約を予測する機械学習モデルをトレーニングします。Scikit-Learnを使用してモデルをトレーニングし、MLflowを使用してそのパフォーマンスを追跡します。
+顧客の解約は多くの企業が直面する重要なビジネス問題であり、どの顧客が解約する可能性が高いかを予測することで、企業は顧客を維持し、収益を増加させることができます。このラボを完了することで、機械学習とモデル追跡の実践的な経験を得るとともに、Microsoft Fabricを使用してプロジェクトのためのノートブックを作成する方法を学びます。
 
-## Lab Objectives
+## ラボの目的
 
-You will be able to complete the following tasks:
+次のタスクを完了できるようになります：
 
-- Task 1: Create a lakehouse and upload files
-- Task 2: Create a notebook
-- Task 3: Load data into a dataframe
-- Task 4: Train a machine learning model
-- Task 5: Use MLflow to search and view your experiments
-- Task 6: Explore your experiments
-- Task 7: Save the model
+- タスク 1: レイクハウスを作成し、ファイルをアップロードする
+- タスク 2: ノートブックを作成する
+- タスク 3: データフレームにデータをロードする
+- タスク 4: 機械学習モデルをトレーニングする
+- タスク 5: MLflowを使用して実験を検索および表示する
+- タスク 6: 実験を探索する
+- タスク 7: モデルを保存する
+ 
+### タスク 1: レイクハウスを作成し、ファイルをアップロードする
 
-### Task 1: Create a lakehouse and upload files
+同じワークスペースを使用して、ポータルの*データサイエンス*エクスペリエンスに切り替えます。
 
-Using the same workspace, it's time to switch to the *Data science* experience in the portal.
+1. レイクハウスに戻り、**エクスプローラー**ペインの **Files(1)** ノードのメニューで、**アップロード(2)** および **ファイルのアップロード(3)** を選択します。
 
-1. Navigate back to your lakehouse, and in the menu for the **Files(1)** node in the **Explorer** pane, select **Upload (2)** and **Upload files (3)**. 
+    ![](./Images/04/Pg6-S1.png)
 
-   ![](./Images/Pg6-S1.png)
+2. **C:\LabFiles\Files\churn.csv**に移動し、**churn.csv**ファイルを選択してレイクハウスにアップロードします。
 
-2. Navigate to **C:\LabFiles\Files\churn.csv**, select the **churn.csv** file and upload it to the lakehouse.   
+    ![](./Images/04/Pg6-S2.png)
 
-   ![](./Images/Pg6-S2.png)
+3. ファイルがアップロードされた後、**ファイル**を展開し、CSVファイルがアップロードされたことを確認します。
 
-3. After the files have been uploaded, expand **Files** and verify that the CSV file have been uploaded.
+    ![](./Images/04/Pg6-S2.1.png)
 
-   ![](./Images/Pg6-S2.1.png)
+### タスク 2: ノートブックを作成する
 
-### Task 2: Create a notebook
+モデルをトレーニングするために、*ノートブック*を作成します。ノートブックは、複数の言語でコードを記述および実行できるインタラクティブな環境を提供します。
 
-To train a model, you can create a *notebook*. Notebooks provide an interactive environment in which you can write and run code (in multiple languages) as *experiments*.
+1. ポータルの左下で、**Data Science** エクスペリエンスに切り替えます。
 
-1. At the bottom left of the Power BI portal, switch to the **Data science** experience.
+    ![alt text](./Images/04/datascience.png)
 
-1. In the **Data science** home page, create a new **Notebook**.
+1. **データサイエンス**ホームページで、新しい**ノートブック**を作成します。
 
-    After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
+    ![alt text](./Images/04/createnotebook.png)
 
-1. Select the first cell (which is currently a *code* cell), and then in the dynamic tool bar at its top-right, use the **M&#8595;** button to convert the cell to a *markdown* cell.
+     数秒後、新しいノートブックが1つの*セル*を含んで開きます。ノートブックは、*コード*または*マークダウン*（フォーマットされたテキスト）を含む1つ以上のセルで構成されます。
 
-      ![](./Images/f-18.png)
-    When the cell changes to a markdown cell, the text it contains is rendered.
+1. 最初のセル（現在は **コード** セルになっています）を選択し、その右上の動的ツールバーで **M&#8595;** ボタンを使用してセルを **マークダウン** セルに変換します。
 
-1. Use the **&#128393;** (Edit) button to switch the cell to editing mode, then delete the content and enter the following text:
+    ![](./Images/04/f-18.png)
+     セルがマークダウンセルに変わると、その内容がレンダリングされます。
 
-    ```text
-   # Train a machine learning model and track with MLflow
+2. **&#128393;**（編集）ボタンまたはダブルクリックを使用してセルを編集モードに切り替え、内容を削除して次のテキストを入力します：
 
-   Use the code in this notebook to train and track models.
-    ```    
+     ```text
+    # 機械学習モデルのトレーニングとMLflowでのトラッキング
 
-### Task 3: Load data into a dataframe
+    このノートブックのコードを使用してモデルをトレーニング、トラッキングします。
+     ```    
+    ![alt text](./Images/04/markdowntitle.png)
 
-Now you're ready to run code to prepare data and train a model. To work with data, you'll use *dataframes*. Dataframes in Spark are similar to Pandas dataframes in Python, and provide a common structure for working with data in rows and columns.
+### タスク 3: データをデータフレームにロードする
 
-1. Selct Lakehouses from the left pane and in the **Add lakehouse** pane, select **Add** to add a lakehouse.
+データを準備してモデルをトレーニングするコードを実行する準備ができました。データを操作するために、*データフレーム*を使用します。SparkのデータフレームはPythonのPandasデータフレームに似ており、行と列でデータを操作するための共通の構造を提供します。
 
-   ![](./Images/f-19.png)
-   ![](./Images/Pg6-Edit-S4.png)
+1. 左ペインからレイクハウスを選択し、**レイクハウスの追加**ペインで**追加**を選択してレイクハウスを追加します。
 
-1. Select **Existing lakehouse (1)** and select **Add (2)**.
+    ![](./Images/04/f-19.png)
+    ![](./Images/04/Pg6-Edit-S4.png)
 
-   ![](./Images/Pg6-AddLakehouse.png)
+2. **既存の Lakehouse (1)** を選択し、**追加 (2)** を選択します。
 
-1. Select the lakehouse you created in a previous section.
+    ![](./Images/04/Pg6-AddLakehouse.png)
 
-1. Expand the **Files** folder so that the CSV file is listed next to the notebook editor.
+3. 前のセクションで使用したレイクハウスを選択します。
 
-1. In the **...** menu for **churn.csv**, select **Load data** > **Pandas**.
+    ![alt text](./Images/04/selectlakehouse.png)
 
-    ![](./Images/Pg6-LoadData-S5.png)
+4. **Files (1)** フォルダーを展開し、 **churn.csv (2)** の **...** メニューで、**データの読み込み (3)** > **Pandas (4)** を選択します。
 
-1.  A new code cell containing the following code should be added to the notebook:
+     ![](./Images/04/Pg6-LoadData-S5.png)
+
+5. 次のコードを含む新しいコードセルがノートブックに追加されます：
 
      ```
     import pandas as pd
@@ -86,14 +92,14 @@ Now you're ready to run code to prepare data and train a model. To work with dat
     df = pd.read_csv("/lakehouse/default/" + "Files/churn.csv")
     display(df)
     ```
-    
-      > **Tip**: You can hide the pane containing the files on the left by using its **<<** icon. Doing so will help you focus on the notebook.
+     
+     > **ヒント**: 左側のファイルを含むペインは **<<** アイコンを使用して非表示にできます。これにより、ノートブックに集中できます。
 
-1. Use the **&#9655; Run cell** button on the left of the cell to run it.
+6. セルの左側にある **&#9655; セルの実行** ボタンを使用してセルを実行します。
 
-    > **Note**: Since this is the first time you've run any Spark code in this session, the Spark pool must be started. This means that the first run in the session can take a minute or so to complete. Subsequent runs will be quicker.
+     > **注意**: このセッションで初めてSparkコードを実行するため、Sparkプールを起動する必要があります。これにより、セッションの最初の実行には1分ほどかかることがあります。以降の実行はより迅速になります。
 
-1. When the cell command has completed, review the output below the cell, which should look similar to this:
+7. セルコマンドが完了したら、セルの下に表示される出力を確認します。出力は次のようになります：
 
     |Index|CustomerID|years_with_company|total_day_calls|total_eve_calls|total_night_calls|total_intl_calls|average_call_minutes|total_customer_service_calls|age|churn|
     | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
@@ -103,35 +109,35 @@ Now you're ready to run code to prepare data and train a model. To work with dat
     |4|1000340|0|92|24|11|37|31.61998183|0.124931779|34|0|
     | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
 
-    The output shows the rows and columns of customer data from the churn.csv file.
+     出力には、churn.csvファイルからの顧客データの行と列が表示されます。
 
-### Task 4: Train a machine learning model
+### タスク 4: 機械学習モデルをトレーニングする
 
-Now that you've loaded the data, you can use it to train a machine learning model and predict customer churn. You'll train a model using the Scikit-Learn library and track the model with MLflow. 
+データをロードしたので、これを使用して機械学習モデルをトレーニングし、顧客の離脱を予測できます。Scikit-Learnライブラリを使用してモデルをトレーニングし、MLflowでモデルをトラッキングします。
 
-1. Use the **+ Code** icon below the cell output to add a new code cell to the notebook, and enter the following code in it:
+1. セル出力の下にある **+ コード** アイコンを使用してノートブックに新しいコードセルを追加し、次のコードを入力します：
 
     ```python
    from sklearn.model_selection import train_test_split
 
-   print("Splitting data...")
+   print("データを分割中...")
    X, y = df[['years_with_company','total_day_calls','total_eve_calls','total_night_calls','total_intl_calls','average_call_minutes','total_customer_service_calls','age']].values, df['churn'].values
    
    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=0)
     ```
 
-1. Run the code cell you added, and note you're omitting 'CustomerID' from the dataset, and splitting the data into a training and test dataset.
-1. Add another new code cell to the notebook, enter the following code in it, and run it:
-    
+1. 追加したコードセルを実行し、データセットから'CustomerID'を省略し、データをトレーニングデータセットとテストデータセットに分割していることを確認します。
+1. ノートブックに新しいコードセルを追加し、次のコードを入力して実行します：
+     
     ```python
    import mlflow
    experiment_name = "experiment-churn"
    mlflow.set_experiment(experiment_name)
     ```
-    
-    The code creates an MLflow experiment named `experiment-churn`. Your models will be tracked in this experiment.
+     
+     このコードは、`experiment-churn`という名前のMLflow実験を作成します。モデルはこの実験でトラッキングされます。
 
-1. Add another new code cell to the notebook, enter the following code in it, and run it:
+1. ノートブックに新しいコードセルを追加し、次のコードを入力して実行します：
 
     ```python
    from sklearn.linear_model import LogisticRegression
@@ -143,10 +149,10 @@ Now that you've loaded the data, you can use it to train a machine learning mode
 
        mlflow.log_param("estimator", "LogisticRegression")
     ```
-    
-    The code trains a classification model using Logistic Regression. Parameters, metrics, and artifacts, are automatically logged with MLflow. Additionally, you're logging a parameter called `estimator`, with the value `LogisticRegression`.
 
-1. Add another new code cell to the notebook, enter the following code in it, and run it:
+     このコードは、ロジスティック回帰を使用して分類モデルをトレーニングします。パラメーター、メトリック、およびアーティファクトはMLflowで自動的にログされます。さらに、`estimator`というパラメーターを`LogisticRegression`という値でログしています。
+
+1. ノートブックに新しいコードセルを追加し、次のコードを入力して実行します：
 
     ```python
    from sklearn.tree import DecisionTreeClassifier
@@ -159,13 +165,15 @@ Now that you've loaded the data, you can use it to train a machine learning mode
        mlflow.log_param("estimator", "DecisionTreeClassifier")
     ```
 
-    The code trains a classification model using Decision Tree Classifier. Parameters, metrics, and artifacts, are automatically logged with MLflow. Additionally, you're logging a parameter called `estimator`, with the value `DecisionTreeClassifier`.
+      このコードは、決定木分類器を使用して分類モデルをトレーニングします。パラメーター、メトリック、およびアーティファクトはMLflowで自動的にログされます。さらに、`estimator`というパラメーターを`DecisionTreeClassifier`という値でログしています。   
+    
+    ![alt text](./Images/04/DecisionTreeClassifier.png)
 
-### Task 5: Use MLflow to search and view your experiments
+### タスク 5: MLflowを使用して実験を検索および表示する
 
-When you've trained and tracked models with MLflow, you can use the MLflow library to retrieve your experiments and its details.
+MLflowでモデルをトレーニングおよびトラッキングした後、MLflowライブラリを使用して実験とその詳細を取得できます。
 
-1. To list all experiments, use the following code:
+1. すべての実験をリストするには、次のコードを使用します：
 
     ```python
    import mlflow
@@ -174,7 +182,7 @@ When you've trained and tracked models with MLflow, you can use the MLflow libra
        print(exp.name)
     ```
 
-1. To retrieve a specific experiment, you can get it by its name:
+1. 特定の実験を取得するには、その名前を使用します：
 
     ```python
    experiment_name = "experiment-churn"
@@ -182,19 +190,19 @@ When you've trained and tracked models with MLflow, you can use the MLflow libra
    print(exp)
     ```
 
-1. Using an experiment name, you can retrieve all jobs of that experiment:
+1. 実験名を使用して、その実験のすべてのジョブを取得できます：
 
     ```python
    mlflow.search_runs(exp.experiment_id)
     ```
 
-1. To more easily compare job runs and outputs, you can configure the search to order the results. For example, the following cell orders the results by `start_time`, and only shows a maximum of `2` results: 
+1. ジョブの実行と出力をより簡単に比較するために、検索結果を並べ替えることができます。例えば、次のセルは結果を`start_time`で並べ替え、最大`2`件の結果のみを表示します：
 
     ```python
    mlflow.search_runs(exp.experiment_id, order_by=["start_time DESC"], max_results=2)
     ```
 
-1. Finally, you can plot the evaluation metrics of multiple models next to each other to easily compare models:
+1. 最後に、複数のモデルの評価メトリックを並べてプロットし、モデルを簡単に比較できます：
 
     ```python
    import matplotlib.pyplot as plt
@@ -211,86 +219,79 @@ When you've trained and tracked models with MLflow, you can use the MLflow libra
    plt.show()
     ```
 
-    The output should resemble the following image:
+    出力は次の画像のようになります：
 
-    ![Screenshot of the plotted evaluation metrics.](./Images/f-33.png)
+    ![評価メトリックをプロットしたスクリーンショット。](./Images/04/f-33.png)
 
-### Task 6: Explore your experiments
+### タスク 6: 実験を探索する
 
-Microsoft Fabric will keep track of all your experiments and allows you to visually explore them.
+Microsoft Fabricはすべての実験をトラッキングし、視覚的に探索することができます。
 
-1. Navigate to your **Workspace (1)**, select **Data Science (2)**  you will see the **experiment-churn (3)** Experiment created.
+1. **ワークスペース (1)** に移動し、画面をリロードすると、作成された**experiment-churn (2)** 実験が表示されます。
 
-   ![](./Images/Pg6-ExpChurn-S1.png)
+    ![](./Images/04/Pg6-ExpChurn-S1.png)
 
-1. Select the `experiment-churn` experiment to open it.
+1. `experiment-churn`実験を選択して開きます。
 
-    > **Tip:**
-    > If you don't see any logged experiment runs, refresh the page.
+    > **ヒント:**
+    > ログされた実験の実行が表示されない場合は、ページを更新してください。
 
-1. Select the **View** tab.
+1. **表示** タブから、**実行リスト** を選択します。
 
-1. Select **Run list**. 
+    ![alt text](./Images/04/excutionlist.png)
 
-1. Select the two latest runs by checking each box.
-    As a result, your two last runs will be compared to each other in the **Metric comparison** pane. By default, the metrics are plotted by run name. 
+1. 最新の2つの実行を選択し、それぞれのボックスにチェックをつけると、**メトリック比較**ペインで2つの最新の実行が比較されます。各実行の精度を視覚化するグラフの**&#128393;**（編集）ボタンを選択します。
+    > **ヒント**: デフォルトでは、メトリックは実行名でプロットされます。
 
-1. Select the **&#128393;** (Edit) button of the graph visualizing the accuracy for each run. 
+    ![](./Images/04/Pg6-ExpChurn-S6.png)
 
-   ![](./Images/Pg6-ExpChurn-S6.png)
+1. **視覚化タイプ**を`bar`に変更します。
 
-1. Change the **visualization type** to `bar`. 
+1. **X軸**を`estimator`に変更します。
 
-1. Change the **X-axis** to `estimator`. 
+1. **置換**を選択し、新しいグラフを確認します。
 
-1. Select **Replace** and explore the new graph.
+ログされた推定器ごとの精度をプロットすることで、どのアルゴリズムがより良いモデルを生成したかを確認できます。
 
-By plotting the accuracy per logged estimator, you can review which algorithm resulted in a better model.
+### タスク 7: モデルを保存する
 
-### Task 7: Save the model
+実験の実行間でトレーニングした機械学習モデルを比較した後、最も性能の良いモデルを選択できます。最も性能の良いモデルを使用するには、モデルを保存し、予測を生成するために使用します。
 
-After comparing machine learning models that you've trained across experiment runs, you can choose the best performing model. To use the best performing model, save the model and use it to generate predictions.
+1. 実験の概要で、**表示 (1)** から **実行の詳細 (2)** を選択し、最も高い精度を持つ実行を選択された状態で、**保存 (3)** を選択します。
 
-1. In the experiment overview, ensure the **View** tab is selected.
+    ![](./Images/04/saverun_31-1.png)
 
-1. Select **Run details**.
+3. 新しく開いたポップアップウィンドウで**新しいモデルを作成 (1)** をチェックし、 **フォルダーを選択**で**model (2)** を選択し、モデルに**model-churn (3)** という名前を付け、**保存 (4)** を選択します。
 
-1. Select the run with the highest accuracy. 
+   ![alt text](./Images/04/savemodel.png)![alt text](image.png)
 
-1. Scroll right to see the Save as model option. Select **Save** in the **Save run as ML model** box.
+5. モデルが作成されたときに画面の右上に表示される通知で**MLモデルの表示**を選択します。または、ウィンドウを更新します。保存されたモデルは**登録されたバージョン**の下にリンクされています。
 
-   ![](./Images/saverun_31-1.png)
+モデル、実験、および実験の実行がリンクされているため、モデルがどのようにトレーニングされたかを確認できます。
 
-1. Select **Create a new model** in the newly opened pop-up window.
+### タスク 8: ノートブックを保存し、Sparkセッションを終了する
 
-1. Select **model** for Select folder, name the model `model-churn`, and select **Save**. 
+モデルのトレーニングと評価が完了したので、意味のある名前でノートブックを保存し、Sparkセッションを終了できます。
 
-1. Select **View ML model** in the notification that appears at the top right of your screen when the model is created. You can also refresh the window. The saved model is linked under **Registered version**. 
+1. 左ペインから**notebook 1**に戻り、ノートブックメニューバーの⚙️ **設定** アイコンを使用してノートブックの設定を表示します。
 
-Note that the model, the experiment, and the experiment run are linked, allowing you to review how the model is trained. 
+   ![alt text](./Images/04/notebooksetting.png)
 
-### Task 8: Save the notebook and end the Spark session
+2. ノートブックの**名前**を**Train and compare models notebook**に設定し、設定ペインを閉じます。
 
-Now that you've finished training and evaluating the models, you can save the notebook with a meaningful name and end the Spark session.
+3. ノートブックメニューで**セッションを停止**を選択してSparkセッションを終了します。
 
-1. Navigate back to **Notebook 1** from the left pane and in the notebook menu bar, use the ⚙️ **Settings** icon to view the notebook settings.
-
-2. Set the **Name** of the notebook to **Train and compare models notebook**, and then close the settings pane.
-
-3. On the notebook menu, select **Stop session** to end the Spark session.
-
-   ![](./Images/f-20.png)
+    ![](./Images/04/f-20.png)
 
     <validation step="67d8cbeb-e9b6-495c-8631-ae0dfe4775fa" />
 
-    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Hit the Validate button for the corresponding task.
-    > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+    > **おめでとうございます**、タスクを完了しました！次の手順で検証してください：
+    > - 対応するタスクの検証ボタンを押します。
+    > - 成功メッセージが表示されたら、次のタスクに進むことができます。エラーメッセージが表示された場合は、ラボガイドの指示に従ってステップを再試行してください。
+    > - サポートが必要な場合は、labs-support@spektrasystems.comまでご連絡ください。24時間365日対応しています。
 
+## まとめ
 
-## Summary
+このラボでは、ノートブックを作成し、機械学習モデルをトレーニングしました。Scikit-Learnを使用してモデルをトレーニングし、MLflowを使用してそのパフォーマンスをトラッキングしました。
 
-In this lab, you have created a notebook and trained a machine learning model. You used Scikit-Learn to train the model and MLflow to track it´s performance.
-
-### You have successfully completed the lab
+### ラボを正常に完了しました
