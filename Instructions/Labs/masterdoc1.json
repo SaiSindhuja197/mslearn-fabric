@@ -75,11 +75,11 @@
         "Order": 6
       },
         {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/main/Instructions/Labs/07-data-engineering-ingest-data-in-fabric.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/Japanese-Content/Instructions/Labs/07-data-engineering-ingest-data-in-fabric.md",
         "Order": 7
       },
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/main/Instructions/Labs/08-data-warehouse-analyze-data-in-a-warehouse.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/Japanese-Content/Instructions/Labs/08-data-warehouse-analyze-data-in-a-warehouse.md",
         "Order": 8
       },
        {
