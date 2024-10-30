@@ -1,4 +1,4 @@
-# Exercise 7: Data Warehouse Analyze Data in a Warehouse with Fabric Copilot
+# 演習 07: Fabric Copilot を使用して データウェア内のデータを分析する
 
 ### 所要時間: 60分
 
