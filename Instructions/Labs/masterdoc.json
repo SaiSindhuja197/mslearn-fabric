@@ -11,15 +11,15 @@
       "Order": 2
     },
     {
-      "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/fabric-capacity/Instructions/Labs/01-Data-Engineering.md",
+      "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/japanese-content/Instructions/Labs/01-Data-Engineering.md",
       "Order": 3
     },
     {
-      "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/fabric-capacity/Instructions/Labs/02-data-warehouse.md",
+      "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/japanese-content/Instructions/Labs/02-data-warehouse.md",
       "Order": 4
     },
     {
-      "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/fabric-capacity/Instructions/Labs/03-real-time-analytics.md",
+      "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/japanese-content/Instructions/Labs/03-real-time-analytics.md",
       "Order": 5
     },
     {
