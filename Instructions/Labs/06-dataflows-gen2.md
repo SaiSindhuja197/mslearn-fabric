@@ -1,4 +1,4 @@
-# 演習 07: Microsoft Fabric で Dataflow (Gen2) を作成する
+# 演習 09: Microsoft Fabric で Dataflow (Gen2) を作成する
 
 ### 所要時間: 45 分
 
