@@ -1,3 +1,5 @@
+<div style="font-family: 'Meiryo'">
+
 # Cloud scale analytics with Microsoft Fabric
 
 ### 全体の推定所要時間: 8時間
@@ -109,3 +111,4 @@ CloudLabsサポートチームは、365日24時間体制でメールおよびラ
 
 ### 楽しい学習を!!
 
+</div>
