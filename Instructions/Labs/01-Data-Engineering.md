@@ -1,3 +1,5 @@
+<div style="font-family: 'Meiryo'">
+
 # 演習　02: Microsoft Fabricでパイプラインを使用してデータを取り込む
 
 ### 推定所要時間: 90分
@@ -352,3 +354,4 @@ Microsoft Fabricでは、レイクハウスは*OneLake*ストア（Azure Data La
 
 ### ラボを正常に完了しました
 
+</div>
