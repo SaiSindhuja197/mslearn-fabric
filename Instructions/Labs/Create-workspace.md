@@ -1,4 +1,4 @@
-<div style="font-family: 'Meiryo'"> 
+<div style="font-family: 'Meiryo'">
 
 # 演習 01: Fabric ワークスペースの作成
 
