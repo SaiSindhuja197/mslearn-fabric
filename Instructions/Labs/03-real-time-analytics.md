@@ -1,3 +1,5 @@
+<div style="font-family: 'Meiryo'">
+
 # 演習 04: Microsoft Fabric でリアルタイム分析を開始する
 
 ### 所要時間: 45分
@@ -246,3 +248,4 @@ KQLクエリセットを基にPower BIレポートを作成できます。
 
 ### ラボを正常に完了しました
 
+</div>
