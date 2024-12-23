@@ -1,3 +1,5 @@
+<div style="font-family: 'Meiryo'">
+
 # 演習 09: Microsoft Fabric で Dataflow (Gen2) を作成する
 
 ### 所要時間: 45 分
@@ -134,3 +136,4 @@ Microsoft Fabric では、Dataflows (Gen2) を使用してさまざまなデー�
 
 ## ラボを正常に完了しました
 
+</div>
