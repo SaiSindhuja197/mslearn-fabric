@@ -23,13 +23,14 @@ You will be able to complete the following tasks:
 
 ### Task 1: Create a lakehouse and upload files
 
-Now that you have a workspace, it's time to switch to the *Data engineering* experience in the portal and create a data lakehouse for the data files you're going to analyze.
+Now that you have a workspace, it's time to create a data lakehouse for the data files you're going to analyze.
 
-1. At the bottom left of the Power BI portal, select the **Power BI** icon and switch to the **Data Engineering** experience.
+1. Navigate back to your workspace, select **+ New item** icon.
 
-2. In the **Synapse Data Engineering** home page, create a new **Lakehouse**.
+2. On the All items page, scroll down and select **Lakehouse** from Store data.
 
    - **Name:** Enter **fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/>**.
+     
 
     After a minute or so, a new empty lakehouse will be created. You need to ingest some data into the data lakehouse for analysis. There are multiple ways to do this, but in this exercise you'll simply upload them to your lakehouse from the **LabVM**.
 
@@ -43,7 +44,7 @@ To work with data in Apache Spark, you can create a *notebook*. Notebooks provid
 
 1. On the **Home** page while viewing the contents of the **orders** folder in your datalake, in the **Open notebook (1)** menu, select **New notebook (2)**.
 
-   ![](./Images/Pg7-Notebook-S1.png)
+   ![](./Images/L6T2S1.png)
 
     After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
 
@@ -158,24 +159,24 @@ Now you're ready to run code that loads the data into a *dataframe*. Dataframes 
 
 11. The dataframe includes only the data from the **2019.csv** file. Modify the code so that the file path uses a \* wildcard to read the sales order data from all of the files in the **orders** folder:
 
-```python
-from pyspark.sql.types import *
-
-orderSchema = StructType([
-    StructField("SalesOrderNumber", StringType()),
-    StructField("SalesOrderLineNumber", IntegerType()),
-    StructField("OrderDate", DateType()),
-    StructField("CustomerName", StringType()),
-    StructField("Email", StringType()),
-    StructField("Item", StringType()),
-    StructField("Quantity", IntegerType()),
-    StructField("UnitPrice", FloatType()),
-    StructField("Tax", FloatType())
-])
-
-df = spark.read.format("csv").schema(orderSchema).load("Files/orders/*.csv")
-display(df)
-```
+   ```python
+   from pyspark.sql.types import *
+   
+   orderSchema = StructType([
+       StructField("SalesOrderNumber", StringType()),
+       StructField("SalesOrderLineNumber", IntegerType()),
+       StructField("OrderDate", DateType()),
+       StructField("CustomerName", StringType()),
+       StructField("Email", StringType()),
+       StructField("Item", StringType()),
+       StructField("Quantity", IntegerType()),
+       StructField("UnitPrice", FloatType()),
+       StructField("Tax", FloatType())
+   ])
+   
+   df = spark.read.format("csv").schema(orderSchema).load("Files/orders/*.csv")
+   display(df)
+   ```
 
 12. Run the modified code cell and review the output, which should now include sales for 2019, 2020, and 2021.
 
@@ -392,21 +393,24 @@ A picture is proverbially worth a thousand words, and a chart is often better th
 
 2. Run the code and observe that it returns the data from the **salesorders** view you created previously.
 
-3. In the results section beneath the cell, change the **View** option from **Table** to **Chart**.
+3. We need to change the view from table to chart in the results section beneath the cell. To do so we will first need to turn off the new visualization option. Click on **...** and then **New visualization** to turn it off. Then click on **Chart**.
 
-4. Click on **Customize chart** on the right side of the chart to display the options pane for the chart. Then set the options as follows and select **Apply**:
+   ![Screenshot of a bar chart of products by total order quantiies](./Images/L6T9S3.png)   
+
+4. Click on **Customize chart** on the right side of the chart to display the options pane for the chart. Then set the options as follows and select **Apply**.
+
+   ![Screenshot of a bar chart of products by total order quantiies](./Images/f-21.png)
+
     - **Chart type**: Bar chart
     - **Key**: Item
     - **Values**: Quantity
     - **Series Group**: *leave blank*
     - **Aggregation**: Sum
     - **Stacked**: *Unselected*
-      
-         ![Screenshot of a bar chart of products by total order quantiies](./Images/f-21.png)
 
 5. Verify that the chart looks similar to this:
 
-    ![Screenshot of a bar chart of products by total order quantiies](./Images/chart.png)
+   ![Screenshot of a bar chart of products by total order quantiies](./Images/L6T9S5.png)
 
 ### Get started with **matplotlib**
 
@@ -445,6 +449,7 @@ A picture is proverbially worth a thousand words, and a chart is often better th
     - The **matplotlib** library requires a *Pandas* dataframe, so you need to convert the *Spark* dataframe returned by the Spark SQL query to this format.
     - At the core of the **matplotlib** library is the **pyplot** object. This is the foundation for most plotting functionality.
     - The default settings result in a usable chart, but there's considerable scope to customize it
+
 
 5. Modify the code to plot the chart as follows:
 
@@ -592,7 +597,9 @@ While **matplotlib** enables you to create complex charts of multiple types, it 
 Now that you've finished working with the data, you can save the notebook with a meaningful name and end the Spark session.
 
 1. In the notebook menu bar, use the ⚙️ **Settings** icon to view the notebook settings.
+   
 2. Set the **Name** of the notebook to **Explore Sales Orders Notebook**, and then close the settings pane.
+
 3. On the notebook menu, select **Stop session** to end the Spark session.
 
     <validation step="17b4e545-1878-4b1e-8b41-f6d4401d997a" />
