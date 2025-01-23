@@ -89,7 +89,7 @@ Here, you create a Fabric workspace. The workspace contains all the items needed
 
    - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/>**.
    
-   ![name-and-desc-of-workspc](./Images/f-02.png)
+     ![name-and-desc-of-workspc](./Images/f-02.png)
 
    - **Advanced:** Expand it and Under **License mode**, select **Fabric capacity(1)**.
 
@@ -97,12 +97,12 @@ Here, you create a Fabric workspace. The workspace contains all the items needed
 
    ![advanced-and-apply](./Images/f-11.png)
 
-    <validation step="796cb471-1103-4bc8-8e98-9e6dd3e8c025" />
-
     > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     > - Hit the Validate button for the corresponding task.
     > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
     > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+    <validation step="796cb471-1103-4bc8-8e98-9e6dd3e8c025" />
 
 
 ## Summary
