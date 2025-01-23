@@ -17,25 +17,29 @@ You will be able to complete the following tasks:
 - Task 3: Create a Power BI report from a KQL Queryset
 - Task 4: Use delta tables for streaming data
 
-### Task 1: Create a KQL database
+## Task 1: Create a KQL database
 
 Kusto query language (KQL) is used to query static or streaming data in a table that is defined in a KQL database. To analyze the sales data, you must create a table in a KQL database and ingest the data from the file.
 
-1. In the **Microsoft Fabric** https://app.fabric.microsoft.com/ experience portal , select the **Real-Time Analytics** experience image as shown here:
+1. In the **Microsoft Fabric** https://app.fabric.microsoft.com/ experience portal , select the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace and click on **+ New item**.
     
-     ![00](./Images/03/synpase.png)
+     ![00](./Images/u1.png)
 
-2. On the **Home** page for the **Real-Time Analytics** experience, select **Event House** and create an Event House.
+2. On the **New item** pane, search and select **Event House** and create an Event House.
 
    - **Name:** Enter **Eventhouse-<inject key="DeploymentID" enableCopy="false"/> (1)**.
 
    - Click on **Create (2)**.
+    
+     ![](./Images/u17.png)
 
-     ![](./Images/event-house.png)
+     ![](./Images/u18.png)
 
-    >**Note:** Click on **OK** if any popup appears regarding upgradation popup. close any popup appears after upgradation.
+     >**Note:** Click on **OK** if any popup appears regarding upgradation popup. close any popup appears after upgradation.
 
 3. When the new event house has been created, select **Eventhouse-<inject key="DeploymentID" enableCopy="false"/>** from the left side pane under KQL database.
+
+1. Click on **Get data (1)** and select **Local file (2)**
 
    ![01](./Images/03/01.png)
 
@@ -59,7 +63,7 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
 
 > **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
 
-### Task 2: Use KQL to query the sales table
+## Task 2: Use KQL to query the sales table
 
 Now that you have a table of data in your database, you can use KQL code to query it.
 
@@ -101,7 +105,7 @@ Now that you have a table of data in your database, you can use KQL code to quer
 
 9. Select **Save as KQL queryset** and save the query as **Revenue by Product**.
 
-### Task 3: Create a Power BI report from a KQL Queryset
+## Task 3: Create a Power BI report from a KQL Queryset
 
 You can use your KQL Queryset as the basis for a Power BI report.
 
@@ -123,7 +127,7 @@ You can use your KQL Queryset as the basis for a Power BI report.
 
 7. In the list of items in your workspace, note that the **Revenue by Item** report is listed.
 
-### Task 4: Use delta tables for streaming data
+## Task 4: Use delta tables for streaming data
 
 Delta lake supports streaming data. Delta tables can be a *sink* or a *source* for data streams created using the Spark Structured Streaming API. In this example, you'll use a delta table as a sink for some streaming data in a simulated internet of things (IoT) scenario.
 
@@ -218,12 +222,12 @@ Delta lake supports streaming data. Delta tables can be a *sink* or a *source* f
 
     This code stops the stream.
 
-    <validation step="3e3b6775-5941-4063-965e-9f1d3a6baa2e" />
-
     > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     > - Hit the Validate button for the corresponding task.
     > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
     > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+    <validation step="3e3b6775-5941-4063-965e-9f1d3a6baa2e" />
 
 
 ## Summary

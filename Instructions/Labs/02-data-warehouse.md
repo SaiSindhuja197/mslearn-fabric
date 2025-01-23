@@ -18,21 +18,21 @@ You will be able to complete the following tasks:
 - Task 6: Create a visual query
 - Task 7: Visualize your data
 
-### Task 1: Create a data warehouse
+## Task 1: Create a data warehouse
 
 Now that you already have a workspace, it's time to switch to the *Data Warehouse* experience in the portal and create a data warehouse.
 
-1. At the bottom left of the Data Engineering portal, switch to the **Data Warehouse** experience.
+1. Navigate back to your fabric-<inject key="DeploymentID" enableCopy="false"/> workspace.
 
-1. Click on **Warehouse** to create a new Warehouse.
+1. Seacrh and Click on **Warehouse** to create a new Warehouse.
    
-   ![01](./Images/01/warehouse.png)
+   ![01](./Images/u10.png)
 
 1. Provide the name as **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/>** and click on **Create**.
 
      After a minute or so, a new warehouse will be created.
 
-### Task 2: Create tables and insert data
+## Task 2: Create tables and insert data
 
 A warehouse is a relational database in which you can define tables and other objects.
 
@@ -73,14 +73,15 @@ A warehouse is a relational database in which you can define tables and other ob
 
 6. Run the new query to insert three rows into the **DimProduct** table.
 
-7. When the query has finished, select the **Data** tab at the bottom of the page in the data warehouse. In the **Explorer** pane, select the **DimProduct** table and verify that the three rows have been added to the table.
+7. When the query has finished, In the **Explorer** pane, select the **DimProduct** table and verify that the three rows have been added to the table.
 
-      ![01](./Images/F-12.png)
+   ![01](./Images/u11.png)
       
 8. Navigate to the Home menu tab and utilize the **New SQL Query** button to generate a new query for each table. Import the code from the first text file located at **C:\LabFiles\Files\create-dw-01.txt**, as well as the files **create-dw-02.txt** and **create-dw-03.txt** from the same directory. **Paste the code sequentially and execute all three files within a single query.**
-<!-- I had to remove the GO command in this query as well -->
 
-   ![01](./Images/02/Pg4-T2-S7.png)
+   ![](./Images/02/Pg4-T2-S7.png)
+
+<!-- I had to remove the GO command in this query as well -->
 
 9. Run the query, which creates a simple data warehouse schema and loads some data. The script should take around 30 seconds to run.
 
@@ -90,21 +91,22 @@ A warehouse is a relational database in which you can define tables and other ob
     - **DimProduct**
     - **FactSalesOrder**
 
-     ![01](./Images/02/Pg4-T2-S9.png)  
+      ![01](./Images/02/Pg4-T2-S9.png)  
 
     > **Tip**: If the schema takes a while to load, just refresh the browser page.
 
-### Task 3: Define a data model
+## Task 3: Define a data model
 
 A relational data warehouse typically consists of *fact* and *dimension* tables. The fact tables contain numeric measures you can aggregate to analyze business performance (for example, sales revenue), and the dimension tables contain attributes of the entities by which you can aggregate the data (for example, product, customer, or time). In a Microsoft Fabric data warehouse, you can use these keys to define a data model that encapsulates the relationships between the tables.
 
-1. At the bottom of the page in the data warehouse, select the **Model** tab.
+1. At the top of the page in the data warehouse, select the **Model** tab.
 
 2. In the model pane, rearrange the tables in your data warehouse so that the **FactSalesOrder** table is in the middle, like this:
 
-    ![Screenshot of the data warehouse model page.](./Images/model-dw1.png)
+    ![Screenshot of the data warehouse model page.](./Images/u12.png)
 
-3. Drag the **ProductKey** field from the **FactSalesOrder** table and drop it on the **ProductKey** field in the **DimProduct** table. Then confirm the following relationship details:
+3. Drag the **ProductKey** field from the **FactSalesOrder** table and drop it on the **ProductKey** field in the **DimProduct** table. Then confirm the following relationship details and click on **Save**:
+
     - **Table 1**: FactSalesOrder
     - **Column**: ProductKey
     - **Table 2**: DimProduct
@@ -114,10 +116,13 @@ A relational data warehouse typically consists of *fact* and *dimension* tables.
     - **Make this relationship active**: Selected
     - **Assume referential integrity**: Unselected
 
+      ![](./Images/u13.png)      
+
 4. Repeat the process to create many-to-one relationships between the following tables:
+
     - **FactOrderSales.CustomerKey** &#8594; **DimCustomer.CustomerKey**
 
-    ![Screenshot of the data warehouse model page.](./Images/02/Pg4-T3-S3.png)
+      ![Screenshot of the data warehouse model page.](./Images/u14.png)
 
     - **FactOrderSales.SalesOrderDateKey** &#8594; **DimDate.DateKey**
 
@@ -125,7 +130,7 @@ A relational data warehouse typically consists of *fact* and *dimension* tables.
 
     ![Screenshot of the model with relationships.](./Images/f-31.png)
 
-### Task 4: Query data warehouse tables
+## Task 4: Query data warehouse tables
 
 Since the data warehouse is a relational database, you can use SQL to query its tables.
 Most queries in a relational data warehouse involve aggregating and grouping data (using aggregate functions and GROUP BY clauses) across related tables (using JOIN clauses).
@@ -165,7 +170,7 @@ Most queries in a relational data warehouse involve aggregating and grouping dat
 
 3. Run the modified query and review the results, which now include sales revenue aggregated by year, month, and sales region.
 
-### Task 5: Create a view
+## Task 5: Create a view
 
 A data warehouse in Microsoft Fabric has many of the same capabilities you may be used to in relational databases. For example, you can create database objects like *views* and *stored procedures* to encapsulate SQL logic.
 
@@ -195,7 +200,7 @@ A data warehouse in Microsoft Fabric has many of the same capabilities you may b
    ORDER BY CalendarYear, MonthOfYear, SalesRegion;
     ```
 
-### Task 6: Create a visual query
+## Task 6: Create a visual query
 
 Instead of writing SQL code, you can use the graphical query designer to query the tables in your data warehouse. This experience is similar to Power Query online, where you can create data transformation steps with no code. For more complex tasks, you can use Power Query's M (Mashup) language.
 
@@ -235,7 +240,7 @@ You can easily visualize the data in either a single query or in your data wareh
       - **CustomerKey**
       - **ProductKey**
 
-    ![03](./Images/02/03.png)
+        ![03](./Images/02/03.png)
 
    2. DimCustomer
       - **CustomerKey**
@@ -247,15 +252,19 @@ You can easily visualize the data in either a single query or in your data wareh
       - **ProductKey**
       - **ProductAltKey** 
 
-6. Now you're ready to build a report and make this dataset available to others. On the Home menu, select **New report**. This will open a new window, where you can create a Power BI report.
+6. Now you're ready to build a report and make this dataset available to others. On the Reporting menu, select **New report**. This will open a new window, where you can create a Power BI report.
 
-   ![03](./Images/02/Pg4-VisualizeData-S3.png)
+   ![03](./Images/u15.png)
+
+   > **Note :** On the New report with all available data pane, click on Continue.
+   
+   ![03](./Images/u16.png)
 
 7. In the **Data** pane, expand **FactSalesOrder**. Note that the columns you hid are no longer visible. 
 
 8. Select **SalesTotal**. This will add the column to the **Report canvas**. Because the column is a numeric value, the default visual is a **column chart**.
 
- >**Note:**  Drag **SalesTotal** if its not getting added when selected.
+   >**Note:**  Drag **SalesTotal** if its not getting added when selected.
 
 9. Ensure that the column chart on the canvas is active (with a gray border and handles), and then select **Category** from the **DimProduct** table to add a category to your column chart.
 
@@ -271,13 +280,12 @@ You can easily visualize the data in either a single query or in your data wareh
 
 13. In the menu hub on the left, navigate back to the workspace. Notice that you now have items saved in your workspace.
 
-    <validation step="ed927a03-5062-4d23-bf52-d57ae336f0eb" />
-
     > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     > - Hit the Validate button for the corresponding task.
     > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
     > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
+      <validation step="ed927a03-5062-4d23-bf52-d57ae336f0eb" />
 
 ## Summary
 
