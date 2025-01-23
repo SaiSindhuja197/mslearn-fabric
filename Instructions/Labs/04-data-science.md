@@ -38,9 +38,9 @@ Using the same workspace, it's time to switch to the *Data science* experience i
 
 To train a model, you can create a *notebook*. Notebooks provide an interactive environment in which you can write and run code (in multiple languages) as *experiments*.
 
-1. At the bottom left of the Power BI portal, switch to the **Data science** experience.
+1. Navigate back to your workspace, click on **+ New item** to create a notebook.
 
-1. In the **Data science** home page, create a new **Notebook**.
+1. From the All items, select **Notebook**.
 
     After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
 
@@ -66,17 +66,19 @@ Now you're ready to run code to prepare data and train a model. To work with dat
    ![](./Images/f-19.png)
    ![](./Images/Pg6-Edit-S4.png)
 
-1. Select **Existing lakehouse (1)** and select **Add (2)**.
+1. Select **Existing lakehouse without Schema(1)** and select **Add (2)**.
 
-   ![](./Images/Pg6-AddLakehouse.png)
+   ![](./Images/L5T3S2.png)
 
-1. Select the lakehouse you created in a previous section.
+1. Select the lakehouse you created in a previous section named **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and then click on **Add (2)**.
+
+   ![](./Images/L5T3S3.png) 
 
 1. Expand the **Files** folder so that the CSV file is listed next to the notebook editor.
 
 1. In the **...** menu for **churn.csv**, select **Load data** > **Pandas**.
 
-    ![](./Images/Pg6-LoadData-S5.png)
+    ![](./Images/L5T3S5.png)
 
 1.  A new code cell containing the following code should be added to the notebook:
 
@@ -219,9 +221,9 @@ When you've trained and tracked models with MLflow, you can use the MLflow libra
 
 Microsoft Fabric will keep track of all your experiments and allows you to visually explore them.
 
-1. Navigate to your **Workspace (1)**, select **Data Science (2)**  you will see the **experiment-churn (3)** Experiment created.
+1. Navigate to your **Workspace (1)**, you will see the **experiment-churn (2)** experiment created.
 
-   ![](./Images/Pg6-ExpChurn-S1.png)
+   ![](./Images/L5T6S1.png)
 
 1. Select the `experiment-churn` experiment to open it.
 
@@ -263,7 +265,9 @@ After comparing machine learning models that you've trained across experiment ru
 
 1. Select **Create a new model** in the newly opened pop-up window.
 
-1. Select **model** for Select folder, name the model `model-churn`, and select **Save**. 
+1. Select **model** for Select folder, name the model **model-churn**, and select **Save**.
+
+    ![](./Images/L5T7S6.png)
 
 1. Select **View ML model** in the notification that appears at the top right of your screen when the model is created. You can also refresh the window. The saved model is linked under **Registered version**. 
 
@@ -273,13 +277,13 @@ Note that the model, the experiment, and the experiment run are linked, allowing
 
 Now that you've finished training and evaluating the models, you can save the notebook with a meaningful name and end the Spark session.
 
-1. Navigate back to **Notebook 1** from the left pane and in the notebook menu bar, use the ⚙️ **Settings** icon to view the notebook settings.
+1. Navigate back to Notebook from the left pane created in Task 2 and in the notebook menu bar, use the ⚙️ **Settings** icon to view the notebook settings.
 
 2. Set the **Name** of the notebook to **Train and compare models notebook**, and then close the settings pane.
 
 3. On the notebook menu, select **Stop session** to end the Spark session.
 
-   ![](./Images/f-20.png)
+   ![](./Images/L5T8S3.png)
 
     <validation step="67d8cbeb-e9b6-495c-8631-ae0dfe4775fa" />
 

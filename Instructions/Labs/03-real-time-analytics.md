@@ -23,7 +23,7 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
 
 1. In the **Microsoft Fabric** https://app.fabric.microsoft.com/ experience portal , select the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace and click on **+ New item**.
     
-     ![00](./Images/u1.png)
+   ![00](./Images/u1.png)
 
 2. On the **New item** pane, search and select **Event House** and create an Event House.
 
@@ -31,11 +31,11 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
 
    - Click on **Create (2)**.
     
-     ![](./Images/u17.png)
+   ![](./Images/u17.png)
 
-     ![](./Images/u18.png)
+   ![](./Images/u18.png)
 
-     >**Note:** Click on **OK** if any popup appears regarding upgradation popup. close any popup appears after upgradation.
+   >**Note:** Click on **OK** if any popup appears regarding upgradation popup. close any popup appears after upgradation.
 
 3. When the new event house has been created, select **Eventhouse-<inject key="DeploymentID" enableCopy="false"/>** from the left side pane under KQL database.
 
@@ -50,16 +50,16 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
         - **Source type:** File
         - **Upload files:** Drag or Browse for the file from **C:\LabFiles\Files\sales.csv**
 
-            ![01](./Images/fabric17.png)
+    ![01](./Images/fabric17.png)
 
     - **Inspect:** Preview the data and click on **Finish**.
 
-        ![01](./Images/fabric18.png)
+    ![01](./Images/fabric18.png)
 
     - **Summary:**
         - *Review the preview of the table and close the wizard.*
 
-            ![01](./Images/fabric19.png)
+    ![01](./Images/fabric19.png)
 
 > **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
 
@@ -69,7 +69,7 @@ Now that you have a table of data in your database, you can use KQL code to quer
 
 1. Make sure you have the **sales** table highlighted. From the menu bar, select the **Query table** drop-down, and from there select **Show any 100 records** .
 
-    ![01](./Images/f-16.png)
+    ![01](./Images/L4T2S1.png)
     
 2. A new pane will open with the query and its result. 
 
@@ -111,7 +111,7 @@ You can use your KQL Queryset as the basis for a Power BI report.
 
 1. In the query workbench editor for your query set, run the query and wait for the results.
 
-2. Select **Build Power BI report** and wait for the report editor to open.
+2. Select **Create Power BI report** and wait for the report editor to open.
 
 3. In the report editor, in the **Data** pane, expand **Kusto Query Result** and select the **Item** and **TotalRevenue** fields.
 

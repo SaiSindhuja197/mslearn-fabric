@@ -20,7 +20,7 @@ You will be able to complete the following tasks:
 
 Now that you have a lakehouse, you need to ingest some data into it. One way to do this is to define a dataflow that encapsulates an *extract, transform, and load* (ETL) process.
 
-1. Select **Data Warehouse** from the left bottom and in the home page  select **Dataflow Gen2**. After a few seconds, the Power Query editor for your new dataflow opens as shown here.
+1. Navigate back to your workspace, click on **+ New item**.  Select **Dataflow Gen2**. After a few seconds, the Power Query editor for your new dataflow opens as shown here.
 
    ![New dataflow.](./Images/new-dataflow1.png)
 
@@ -35,18 +35,17 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
    ![Query in the Power Query editor.](./Images/power-query1.png)
 
-`>**Note**: Disable to use automatic settings
+ > **Note:** Disable to use automatic settings.
 
-4. On the toolbar ribbon, select the **Add column** tab. Then select **Custom column** and create a new column named **MonthNo** that contains a number based on the formula `Date.Month([OrderDate])` - as shown here and click on **OK**:
+4. On the toolbar ribbon, select the **Add column** tab. Then select **Custom column** and create a new column named **MonthNo** that contains a number based on the formula **Date.Month([OrderDate])** and click on **OK**.
 
     ![Custom column in Power Query editor.](./Images/custom-column1.png)
 
-     The step to add the custom column is added to the query and the resulting column is displayed in the data pane:
+     The step to add the custom column is added to the query and the resulting column is displayed in the data pane.
+   
      ![Query with a custom column step.](./Images/custom-column-added1.png)
 
-> **Tip:** In the Query Settings pane on the right side, notice the **Applied Steps** include each transformation step. At the bottom, you can also toggle the **Diagram flow** button to turn on the Visual Diagram of the steps.
->
-> Steps can be moved up or down, edited by selecting the gear icon, and you can select each step to see the transformations apply in the preview pane.
+> **Tip:** In the Query Settings pane on the right side, notice the **Applied Steps** include each transformation step. At the bottom, you can also toggle the **Diagram flow** button to turn on the Visual Diagram of the steps. Steps can be moved up or down, edited by selecting the gear icon, and you can select each step to see the transformations apply in the preview pane.
 
 ### Task 2: Add data destination for Dataflow
 
@@ -72,6 +71,7 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
     - OrderDate = Date/Time
     - MonthNo = Whole number
+      
 
 1. Now repeat the process outlined earlier to add a lakehouse destination.
 
@@ -85,35 +85,35 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
 You can include a dataflow as an activity in a pipeline. Pipelines are used to orchestrate data ingestion and processing activities, enabling you to combine dataflows with other kinds of operation in a single, scheduled process. Pipelines can be created in a few different experiences, including Data Factory experience.
 
-1. From your Fabric-enabled workspace, switch to **Data Engineering** experience. Click on **Data pipeline**, name it as **Load Orders pipeline** and click on **Save**
+1. From your Fabric-enabled workspace, Select **+ New item**. Click on **Data pipeline**, name it as **Load Orders pipeline** and click on **Create**.
 
    The pipeline editor opens.
 
    > **Tip**: If the Copy Data wizard opens automatically, close it!
 
-2. Select **Add pipeline activity**, and add a **Dataflow** activity to the pipeline.
+2. Select **Pipeline activity**, and add a **Dataflow** activity to the pipeline.
 
-   ![Empty data pipeline.](./Images/f-35.png)
+   ![Empty data pipeline.](./Images/L7T3S2.png)
 
-3. With the new **Dataflow1** activity selected, on the **Settings** tab, in the **Dataflow** drop-down list, select **Transform Orders Dataflow** (the data flow you created previously)
+3. With the new **Dataflow1** activity selected, on the **Settings** tab, in the **Dataflow** drop-down list, select **Transform Orders Dataflow** (the data flow you created previously).
 
     ![Pipeline with a dataflow activity.](./Images/transformoder_31-1.png)
 
 4. On the **Home** tab, save the pipeline using the **&#128427;** (*Save*) icon.
+   
 5. Use the **&#9655; Run** button to run the pipeline, and wait for it to complete. It may take a few minutes.
 
     ![Pipeline with a dataflow that has completed successfully.](./Images/dataflow-pipeline-succeeded1.png)
 
 6. In the menu bar on the left edge, select your lakehouse.
+   
 7. In the **...** menu for **Tables**, select **refresh**. Then expand **Tables** and select the **orders** table, which has been created by your dataflow.
 
    ![Table loaded by a dataflow.](./Images/loaded-table1.png)
 
-> **Tip**: Use the Power BI Desktop *Dataflows connector* to connect directly to the data transformations done with your dataflow.
->
-> You can also make additional transformations, publish as a new dataset, and distribute with intended audience for specialized datasets.
->
-> ![Power BI data source connectors](Images/pbid-dataflow-connectors1.png)
+> **Tip**: Use the Power BI Desktop *Dataflows connector* to connect directly to the data transformations done with your dataflow. You can also make additional transformations, publish as a new dataset, and distribute with intended audience for specialized datasets.
+
+![Power BI data source connectors](Images/pbid-dataflow-connectors1.png)
 
 ## Summary
 
