@@ -69,7 +69,7 @@ Now that you have a table of data in your database, you can use KQL code to quer
 
 1. Make sure you have the **sales** table highlighted. From the menu bar, select the **Query table** drop-down, and from there select **Show any 100 records** .
 
-    ![01](./Images/f-16.png)
+    ![01](./Images/L4T2S1.png)
     
 2. A new pane will open with the query and its result. 
 
@@ -111,7 +111,7 @@ You can use your KQL Queryset as the basis for a Power BI report.
 
 1. In the query workbench editor for your query set, run the query and wait for the results.
 
-2. Select **Build Power BI report** and wait for the report editor to open.
+2. Select **Create Power BI report** and wait for the report editor to open.
 
 3. In the report editor, in the **Data** pane, expand **Kusto Query Result** and select the **Item** and **TotalRevenue** fields.
 
