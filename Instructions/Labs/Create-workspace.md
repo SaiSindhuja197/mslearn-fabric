@@ -50,11 +50,6 @@ You will be able to complete the following tasks:
    https://app.fabric.microsoft.com/
    ```
 
-
-2. Select **Power BI**.
-
-   ![Account-manager-start](./Images/ws/microsoftpage.png)
-
 3. On the Microsoft Fabric page, enter your **Email**(1) and click on **SUBMIT**(2). This will check if you need to create a new account.
 
 4. Now let’s get started by signing into Microsoft Fabric. Click on **Sign In**.
@@ -76,6 +71,10 @@ You will be able to complete the following tasks:
 8. You have now successfully created your Microsoft Fabric account. Click on **GET STARTED**.
 
    ![](./Images/fabric-get-started-01.png)
+
+1. Select **Power BI**.
+
+   ![Account-manager-start](./Images/ws/microsoftpage.png)
 
 ### Task 3: Create a workspace
 

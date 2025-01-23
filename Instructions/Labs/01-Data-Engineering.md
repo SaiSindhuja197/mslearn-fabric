@@ -20,7 +20,7 @@ You will be able to complete the following tasks:
 - Task 6: Create a visual query
 - Task 7: Create a report
 
-### Task 1: Create a Lakehouse
+## Task 1: Create a Lakehouse
 
 Large-scale data analytics solutions have traditionally been built around a *data warehouse*, in which data is stored in relational tables and queried using SQL. The growth in "big data" (characterized by high *volumes*, *variety*, and *velocity* of new data assets) together with the availability of low-cost storage and cloud-scale distributed computing technologies has led to an alternative approach to analytical data storage; the *data lake*. In a data lake, data is stored as files without imposing a fixed schema for storage. Increasingly, data engineers and analysts seek to benefit from the best features of both of these approaches by combining them in a *data lakehouse*; in which data is stored in files in a data lake and a relational schema is applied to them as a metadata layer so that they can be queried using traditional SQL semantics.
 
@@ -29,37 +29,42 @@ In Microsoft Fabric, a lakehouse provides highly scalable file storage in a *One
 
 Now that you have created a workspace in the previous step, it's time to switch to the *Data engineering* experience in the portal and create a data lakehouse into which you will ingest data.
 
-1. At the bottom left of the Power BI portal, select the **Power BI** icon and switch to the **Data Engineering** experience.
+1. Open your fabric-<inject key="DeploymentID" enableCopy="false"/> workspace and click on **+ New item**.
 
-   ![02](./Images/01/Pg3-T1-S1.png)
+   ![02](./Images/u1.png)
    
-2. In the **Data engineering** home page, click on **Lakehouse**, name it as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** and click on **Create**.
+2. In the **New item** page, search and select **Lakehouse**, name it as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and click on **Create (2)**.
 
-   ![02](./Images/01/lakehouse.png)
+   ![02](./Images/u2.png)
 
-   ![02](./Images/f-3.png)
+   ![02](./Images/u3.png)
 
     After a minute or so, a new lakehouse with no **Tables** or **Files** will be created.
 
-4. On the **Lake view** tab in the pane on the left, in the **...** menu for the **Files** node, select **New subfolder** and create a subfolder named **new_data**.
+4. On the **Lake view** tab in the pane on the left, in the **... (1)** menu for the **Files** node, select **New subfolder (2)** and create a subfolder named **new_data**.
 
    ![02](./Images/f-30.png)
 
-### Task 2: Explore shortcuts
+## Task 2: Explore shortcuts
 
 In many scenarios, the data you need to work within your lakehouse may be stored in some other location. While there are many ways to ingest data into the OneLake storage for your lakehouse, another option is to instead create a *shortcut*. Shortcuts enable you to include externally sourced data in your analytics solution without the overhead and risk of data inconsistency associated with copying it.
 
 1. In the **...** menu for the **Files** folder, select **New shortcut**.
 2. View the available data source types for shortcuts. Then close the **New shortcut** dialog box without creating a shortcut.
 
+   ![](./Images/u4.png)
 
 ### Task 3: Create a pipeline
 
 A simple way to ingest data is to use a **Copy Data** activity in a pipeline to extract the data from a source and copy it to a file in the lakehouse.
 
-1. On the **Home** page for your lakehouse, select **Data pipeline**.
+1. On the **Home** page for your workspace, select **New item**.
 
-    ![03](./Images/01/datapipeline.png)
+    ![03](./Images/u1.png)
+
+1. Search and select **Data pipeline** on the New item page.
+
+   ![03](./Images/u5.png)
 
 2. Name it as **Ingest Sales Data Pipeline (1)** and click on **Create (2)**. 
    
@@ -68,7 +73,7 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 3. If the **Copy data** wizard doesn't open automatically, select **Copy data assistance (1)** in the pipeline editor page.
 
 
-4. In the **Copy Data** wizard, on the **Choose a data source** page, search for HTTP and select the **Other** tab and then select **HTTP (2)**, click on **Next (3)**.
+4. In the **Copy Data** wizard, on the **Choose a data source** page, search for HTTP and select the **Other** tab and then select **HTTP (1)**, click on **Next (2)**.
 
    ![Screenshot of the Choose data source page.](./Images/data-source01.png)
 
@@ -95,20 +100,16 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
     - **File format (1)**: DelimitedText
     - **Column delimiter (2)**: Comma (,)
     - **Row delimiter (3)**: Line feed (\n)
-    - Select **Preview data (4)** to see a sample of the data that will be ingested.
 
       ![05](./Images/fabric5.png)
 
-9. Select **Preview data** to see a sample of the data that will be ingested. Then close the data preview and select **Next**.
+9. Select **Preview data (4)** to see a sample of the data that will be ingested. Then close the data preview and select **Next**.
 
      ![06](./Images/fabric6.png)
 
-10. On the **Choose data destination** page, select **Lakehouse (1)**. Then select **Next (2)**.
+10. On the **Choose data destination** page, scroll down and select the Lake house that you have created previously.
 
-     ![07](./Images/fabric7.png)
-
-1. On the **Choose data destination** page, provide the new lakehouse name as **Lakehouse<inject key="DeploymentID" enableCopy="false"/> (2)**, select **Next/Create (3)**.
-
+     ![07](./Images/u7.png)
 
 11. Set the following data destination options, and then select **Next (4)**:
     - **Root folder (1)**: Files
@@ -159,7 +160,7 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
    ![11](./Images/01/Pg3-Notebook-S2.png) 
 
-3. In the **...** menu for the cell (at its top-right) select **Toggle parameter cell**. This configures the cell so that the variables declared in it are treated as parameters when running the notebook from a pipeline.
+3. In the **... (1)** menu for the cell (at its top-right) select **Toggle parameter cell (2)**. This configures the cell so that the variables declared in it are treated as parameters when running the notebook from a pipeline.
 
     ![12](./Images/F-4.png)
 
@@ -269,7 +270,7 @@ While many data professionals are familiar with SQL, data analysts with Power BI
     - **Operation**: Count distinct values
     - **Column**: SalesOrderLineNumber
 
-    ![Screenshot of a Visual query with results.](./Images/01/Pg3-VisQuery-S4.01.png)
+      ![Screenshot of a Visual query with results.](./Images/01/Pg3-VisQuery-S4.01.png)
 
 6. When you're done, the results pane under the visual query shows the number of line items for each sales order.
 
@@ -279,9 +280,9 @@ While many data professionals are familiar with SQL, data analysts with Power BI
 
 The tables in your lakehouse are automatically added to a default dataset that defines a data model for reporting with Power BI.
 
-1. At the bottom of the SQL Endpoint page, select the **Model** tab. The data model schema for the dataset is shown.
+1. At the top of the SQL Endpoint page, select the **Model** tab. The data model schema for the dataset is shown.
 
-    ![Screenshot of a data model.](./Images/f-8.png)
+    ![Screenshot of a data model.](./Images/u8.png)
 
     > **Note**: In this exercise, the data model consists of a single table. In a real-world scenario, you would likely create multiple tables in your lakehouse, each of which would be included in the model. You could then define relationships between these tables in the model.
 
@@ -292,14 +293,18 @@ The tables in your lakehouse are automatically added to a default dataset that d
       >**Note:** Click on Try free if the following pop-up appears.
 
       ![Screenshot of the report designer.](./Images/f-25.png)
+
+      > **Note :** CLick on **Continue** on New report with all available data pane.
+
+    ![](./Images/u9.png)
    
-3. In the **Data** pane on the right, expand the **sales** table. Then drag the following fields:
+3. In the **Data** pane on the right, expand the **sales** table. Then select the following fields:
     - **Item**
-    - **Quantity**
+    - **Sum of Quantity**
 
     A table visualization is added to the report:
 
-    ![Screenshot of a report containing a table.](./Images/table-visualization1.png)
+     ![Screenshot of a report containing a table.](./Images/table-visualization1.png)
 
 4. Hide the **Data** and **Filters** panes to create more space. Then ensure the table visualization is selected and in the **Visualizations** pane, change the visualization to a **Clustered bar chart** and resize it as shown here.
 
@@ -312,13 +317,12 @@ The tables in your lakehouse are automatically added to a default dataset that d
     - A default dataset for the tables in your lakehouse.
     - The **Item Sales Report** report.
 
-
-    <validation step="b28817e6-75d8-40fd-9c33-0a408a962f8e" />
-
     > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     > - Hit the Validate button for the corresponding task.
     > - If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
     > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+    <validation step="b28817e6-75d8-40fd-9c33-0a408a962f8e" />
 
 
 ## Summary
