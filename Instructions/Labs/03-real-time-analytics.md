@@ -23,7 +23,7 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
 
 1. In the **Microsoft Fabric** https://app.fabric.microsoft.com/ experience portal , select the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace and click on **+ New item**.
     
-     ![00](./Images/u1.png)
+   ![00](./Images/u1.png)
 
 2. On the **New item** pane, search and select **Event House** and create an Event House.
 
@@ -31,11 +31,11 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
 
    - Click on **Create (2)**.
     
-     ![](./Images/u17.png)
+   ![](./Images/u17.png)
 
-     ![](./Images/u18.png)
+   ![](./Images/u18.png)
 
-     >**Note:** Click on **OK** if any popup appears regarding upgradation popup. close any popup appears after upgradation.
+   >**Note:** Click on **OK** if any popup appears regarding upgradation popup. close any popup appears after upgradation.
 
 3. When the new event house has been created, select **Eventhouse-<inject key="DeploymentID" enableCopy="false"/>** from the left side pane under KQL database.
 
@@ -50,16 +50,16 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
         - **Source type:** File
         - **Upload files:** Drag or Browse for the file from **C:\LabFiles\Files\sales.csv**
 
-            ![01](./Images/fabric17.png)
+    ![01](./Images/fabric17.png)
 
     - **Inspect:** Preview the data and click on **Finish**.
 
-        ![01](./Images/fabric18.png)
+    ![01](./Images/fabric18.png)
 
     - **Summary:**
         - *Review the preview of the table and close the wizard.*
 
-            ![01](./Images/fabric19.png)
+    ![01](./Images/fabric19.png)
 
 > **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
 
