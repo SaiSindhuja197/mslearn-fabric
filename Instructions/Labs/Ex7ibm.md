@@ -20,14 +20,6 @@ In this task, you will create a new **Dataflow Gen2** in Microsoft Fabric's Data
 
     ![](./Images/Updated/E3-T1-S1.png)
 
-1. Click on **Data Engineering (1)** icon from the botton left corner, Select **Data Factory (2)** Object in the workspace.
-
-    ![New dataflow.](./Images/f32.png)
-
-1. In the home page for your workspace, select **Dataflow Gen2**. 
-
-   ![New dataflow.](./Images/data-factorygen2.png)
-
 1. After a few seconds, the Power Query editor for your new dataflow opens as shown here.
 
    ![New dataflow.](./Images/new-dataflow.png)
@@ -53,7 +45,7 @@ In this task, you will create a new **Dataflow Gen2** in Microsoft Fabric's Data
 
 1. Click **Copilot** button on Ribbon. 
 
-    ![New dataflow.](./Images/31.png)
+    ![](./Images/Updated/E3-T1-S6.png)
 
 1. To better illustrate all that Copilot is doing for you, let me expand the UI a little to see what's going on behind the scenes.
 
