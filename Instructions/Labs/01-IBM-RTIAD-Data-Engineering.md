@@ -71,7 +71,7 @@ In this task, you will create a data pipeline in Microsoft Fabric to ingest data
 
    - **Note:** If the **New data pipeline** option is not visible directly, select **Get data (2)** from the top left corner and then choose **New data pipeline (3)**.
 
-    ![03](./Images/f8.png)
+    ![](./Images/E2-T3-S1.png)
 
 1. Create a new data pipeline named **Ingest Sales Data Pipeline (1)** and click on **Create (2)**. 
    
