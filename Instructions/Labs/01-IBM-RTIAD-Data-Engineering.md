@@ -29,7 +29,7 @@ In Microsoft Fabric, a lakehouse provides highly scalable file storage in a *One
 
 Now that you have created a workspace in the previous step, it's time to switch to the *Data engineering* experience in the portal and create a data lakehouse into which you will ingest data.
 
-1. Select your Fabric workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>** (1) from the left panel. Then, click on **+ New Item (2)**, search for **Lakehouse (3)** in the search bar, and select **Lakehouse (4)**.
+1. Select your Fabric workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>** **(1)** from the left panel. Then, click on **+ New Item (2)**, search for **Lakehouse (3)** in the search bar, and select **Lakehouse (4)**.
 
     ![](./Images/Updated/E2-T1-S1.png)
 
@@ -71,7 +71,7 @@ In this task, you will create a data pipeline in Microsoft Fabric to ingest data
 
    - **Note:** If the **New data pipeline** option is not visible directly, select **Get data (2)** from the top left corner and then choose **New data pipeline (3)**.
 
-    ![](./Images/E2-T3-S1.png)
+    ![](./Images/Updated/E2-T3-S1.png)
 
 1. Create a new data pipeline named **Ingest Sales Data Pipeline (1)** and click on **Create (2)**. 
    
@@ -102,7 +102,7 @@ In this task, you will create a data pipeline in Microsoft Fabric to ingest data
     - **Request timeout**: *Leave blank*
     - **Max concurrent connections**: *Leave blank*
   
-        ![](./Images/E2-T3-S5.png)
+        ![](./Images/Updated/E2-T3-S5.png)
    
 1. Wait for the data to be sampled and then ensure that the following settings are selected:
     - File format: **DelimitedText (1)**
@@ -110,11 +110,11 @@ In this task, you will create a data pipeline in Microsoft Fabric to ingest data
     - Row delimiter: **Line feed (\n) (3)**
     - Select **Preview data (4)** to see a sample of the data that will be ingested.
 
-        ![](./Images/E2-T3-S6.png)
+        ![](./Images/Updated/E2-T3-S6.png)
 
 1. Select **Preview data** to see a sample of the data that will be ingested. Then close the data preview and select **Next**.
 
-     ![](./Images/E2-T3-S7.png)
+     ![](./Images/Updated/E2-T3-S7.png)
 
 
 1. Note that the connection with **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** will be already present. Set the following data destination options, and then select **Next (4)**:
@@ -122,18 +122,18 @@ In this task, you will create a data pipeline in Microsoft Fabric to ingest data
     - Folder path: **new_data (2)**
     - File name: **sales.csv (3)**
    
-       ![](./Images/E2-T3-S8.png)
+       ![](./Images/Updated/E2-T3-S8.png)
 
 1. Set the following file format options and then select **Next (4)**:
     - File format: **DelimitedText (1)**
     - Column delimiter: **Comma (,) (2)**
     - Row delimiter: **Line feed (\n) (3)**
    
-       ![](./Images/E2-T3-S9.png)
+       ![](./Images/Updated/E2-T3-S9.png)
 
 1. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
 
-    ![](./Images/E2-T3-S10.png)
+    ![](./Images/Updated/E2-T3-S10.png)
 
     >**Note:** A new pipeline containing a **Copy data** activity is created, as shown here:
 
