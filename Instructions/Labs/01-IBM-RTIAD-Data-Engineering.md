@@ -31,7 +31,7 @@ Now that you have created a workspace in the previous step, it's time to switch 
 
 1. Select your Fabric workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>** (1) from the left panel. Then, click on **+ New Item (2)**, search for **Lakehouse (3)** in the search bar, and select **Lakehouse (4)**.
 
-      ![](./Images/E2-T1-S1.png)
+    ![](./Images/E2-T1-S1.png)
 
 1. On the **New lakehouse**, enter the following:
 
