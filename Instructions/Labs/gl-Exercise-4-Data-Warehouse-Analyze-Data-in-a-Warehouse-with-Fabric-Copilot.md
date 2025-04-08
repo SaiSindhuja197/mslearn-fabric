@@ -21,13 +21,10 @@ In this task, you'll create a new data warehouse in the Data Warehouse experienc
 
 Now that you already have a workspace, it's time to switch to the *Data Warehouse* experience in the portal and create a data warehouse.
 
-1. At the bottom left of the Power BI portal, click on the **Data factory (1)** icon and select **Data Warehouse (2)** to switch to the **Data Warehouse** experience. 
+1. Select your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** from the left panel.Then, click on **+ New Item (2)**, search for **warehouse (3)** in the search bar, and select **Warehouse (4)**.
 
-   ![01](./Images/f38.png)
+    ![](./Images/Updated/E4-T1-S1.png)
 
-1. The Data Warehouse home page includes a shortcut to create a new warehouse. Click on **Warehouse**.
-
-   ![01](./Images/warehouse1.png)
 
 1. In the **Data Warehouse** home page, create a new **Warehouse** named **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/> (1)** and click on **Create (2)**.
 
