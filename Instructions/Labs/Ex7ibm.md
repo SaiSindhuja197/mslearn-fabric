@@ -16,17 +16,9 @@ You will be able to complete the following tasks:
 
 In this task, you will create a new **Dataflow Gen2** in Microsoft Fabric's Data Factory, utilizing Copilot's natural language capabilities to ingest and transform data efficiently.
 
-1. Select the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>** (this is the workspace that mimics the lab environment)
+1. Select your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** from the left panel.Then, click on **+ New Item (2)**, search for **Dataflow Gen2 (3)** in the search bar, and select **Dataflow Gen2 (4)**.
 
-   ![New dataflow.](./Images/26.png)
-
-1. Click on **Data Engineering (1)** icon from the botton left corner, Select **Data Factory (2)** Object in the workspace.
-
-    ![New dataflow.](./Images/f32.png)
-
-1. In the home page for your workspace, select **Dataflow Gen2**. 
-
-   ![New dataflow.](./Images/data-factorygen2.png)
+    ![](./Images/Updated/E3-T1-S1.png)
 
 1. After a few seconds, the Power Query editor for your new dataflow opens as shown here.
 
@@ -53,7 +45,7 @@ In this task, you will create a new **Dataflow Gen2** in Microsoft Fabric's Data
 
 1. Click **Copilot** button on Ribbon. 
 
-    ![New dataflow.](./Images/31.png)
+    ![](./Images/Updated/E3-T1-S6.png)
 
 1. To better illustrate all that Copilot is doing for you, let me expand the UI a little to see what's going on behind the scenes.
 
