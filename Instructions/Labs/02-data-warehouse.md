@@ -47,7 +47,7 @@ In this task, you will design and implement a data warehouse by organizing data 
    - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
    - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="ed927a03-5062-4d23-bf52-d57ae336f0eb" />
+<validation step="ae9ea1a1-6466-459b-87da-12cb0f83b186" />
 
 ### Task 2: Create tables and insert data
 
@@ -309,4 +309,4 @@ In this task, you will visualize your data from a single query or your data ware
 
 In this exercise, you have created a data warehouse that contains multiple tables. You used SQL to insert data into the tables and query them. and also used the visual query tool. Finally, you enhanced the data model for the data warehouse's default dataset and used it as the source for a report.
 
-### You have successfully completed the lab. Click on Next >> to procced with next exercise.
+### You have successfully completed the lab. Click on Next >> to proceed with next exercise.
