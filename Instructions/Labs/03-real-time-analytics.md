@@ -127,7 +127,7 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
 
 6. Close the **Power BI** window, and in the bar on the left, select the icon for your workspace.
 
-    >**Note**:Refresh the Workspace page if necessary to view all of the items it contains.
+    >**Note**: Refresh the Workspace page if necessary to view all of the items it contains.
 
 7. In the list of items in your workspace, note that the **Revenue by Item** report is listed.
 
@@ -138,7 +138,7 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
    - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
    - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="3e3b6775-5941-4063-965e-9f1d3a6baa2e" />
+<validation step="f0432ac8-2698-4432-be77-0a69568c2d09" />
 
 ### Task 4: Use delta tables for streaming data
 
