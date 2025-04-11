@@ -38,6 +38,8 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
 
 1. Select the **Add column** tab on the toolbar ribbon. Then, choose **Custom column** and create a new column named **MonthNo** using the formula `Date.Month([OrderDate])`.
 
+   ![](./Images/29a.png)
+
    ![Custom column in Power Query editor.](./Images/fabric24.png)
 
 1. The step to add the custom column is added to the query and the resulting column is displayed in the data pane:
@@ -66,7 +68,7 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
 5. On the Destination settings page, observe that **MonthNo** is not selected in the Column mapping, and an informational message is displayed.
  
-6. On the Destination settings page, toggle off the **Use Automatic Settings** option. Then, right-click on the **MonthNo** column header and select **Change Type** to set **MonthNo** as a **Whole number**. Finally, click on **Save Settings**.
+6. On the Destination settings page, toggle **off** the **Use Automatic Settings** option. Then, right-click on the **MonthNo** column header and select **Change Type** to set **MonthNo** as a **Whole number**. Finally, click on **Save Settings**.
    
    ![Data destination settings page.](./Images/lak2.png)
 

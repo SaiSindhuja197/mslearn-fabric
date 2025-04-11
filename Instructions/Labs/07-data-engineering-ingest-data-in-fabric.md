@@ -78,14 +78,7 @@ You will be able to complete the following tasks:
 
    ![New dataflow.](./Images/4.png)
 
-1. Show the m-code and new query step that the copilot generated.
- 
-   ```
-   Add a step that
-   ```
-   ![New dataflow.](./Images/3.png)
-
-1. Type the following into Copilot:
+1. Type the following query into Copilot:
  
     ```
     Split the Item column on the ' ', creating three new fields called Description, Color and Size
@@ -101,23 +94,16 @@ You will be able to complete the following tasks:
 
 1. **Scenario:** think Red bikes are going to be a big seller, so increase the quantity in Inventory
 Call out that the quantities for all items are 1.
- 
-1. Add a step to the query:
 
-   ```
-   Add a step that
-   ```
-   ![New dataflow.](./Images/3.png)
-
-1. Type the following into Copilot:
+1. Add a step to type the following query into Copilot:
  
     ```
-    Multiply the Quantity column by 10 for all rows where the Color column equals 'Red'. Make sure that the Color column is treated as text and the Quantity column as a number.
+    Add a new column named QuantityNew where for each row, if the Color column is equal to "Red", multiply the Quantity by 10, otherwise keep the same value. Then remove the old Quantity column and rename QuantityNew back to Quantity.
     ```
  
 1. Show that the quantity field for Red bikes is now 10 instead of 1.
 
-   ![New dataflow.](./Images/6.png)
+   ![New dataflow.](./Images/6a.png)
  
 1. Here is a concise summary highlighting the impacts of Visual Query and M-Query/M-Code scripting:
 
