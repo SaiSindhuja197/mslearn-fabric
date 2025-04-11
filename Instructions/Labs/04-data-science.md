@@ -1,6 +1,6 @@
 # Exercise 5: Use notebooks to train a model in Microsoft Fabric
 
-### Estimated Duration: 60 minutes
+### Estimated Duration: 70 minutes
 
 In this lab, we will use Microsoft Fabric to create a notebook and train a machine-learning model to predict customer churn. We will use Scikit-Learn to train the model and MLflow to track its performance. Customer churn is a critical business problem that many companies face, and predicting which customers are likely to churn can help companies retain their customers and increase revenue. By completing this lab, you will gain hands-on experience in machine learning and model tracking, and learn how to use Microsoft Fabric to create a notebook for your projects.
 
@@ -257,7 +257,7 @@ By plotting the accuracy per logged estimator, you can review which algorithm re
    - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
    - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="67d8cbeb-e9b6-495c-8631-ae0dfe4775fa" />
+<validation step="9bc2b595-c7f5-4276-93dc-2293e35d87e2" />
 
 ### Task 7: Save the model
 

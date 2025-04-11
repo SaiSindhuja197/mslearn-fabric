@@ -123,7 +123,7 @@ In this task, you will create a pipeline to automate data processing workflows. 
 
    ![Account-manager-start](./Images/E1T3S9.png)
 
-10. Set the following data destination options, and then select **Next (4)**:
+10. Set the following data destination options and then select **Next (4)**:
 
     - Root folder: **Files (1)**
     - Folder path: **new_data (2)**
@@ -195,7 +195,7 @@ In this task, you will create a notebook to document your data analysis process.
 
      ![Account-manager-start](./Images/lab1-image17.png)
 
-10. Under the parameters cell, use the **+ Code** button to add a new code cell. Then add the following code to it:
+10. Under the parameters cell, use the **+ Code** button to add a new code cell. Then, add the following code to it:
 
      ![](./Images/E2-T4-S9.png) 
 
@@ -245,7 +245,7 @@ In this task, you will create a notebook to document your data analysis process.
 
     ![.](./Images/fab-6.png)
 
-14. Navigate to notebook menu bar, use the ⚙️ **Settings (1)** icon to view the notebook settings. Then set the **Name** of the notebook to **Load Sales Notebook (2)** and close the settings pane.
+14. Navigate to the notebook menu bar and use the ⚙️ **Settings (1)** icon to view the notebook settings. Then, set the **Name** of the notebook to **Load Sales Notebook (2)** and close the settings pane.
 
      ![.](./Images/fab-7.png)
  
@@ -320,9 +320,10 @@ In this task, you will create a report to visualize and present your data findin
     ![Screenshot of a data model.](./Images/fab20.png)
 
     > Reload the Page if the data model schema is not seen.
+
     > **Note**: In this exercise, the data model consists of a single table. In a real-world scenario, you would likely create multiple tables in your lakehouse, each of which would be included in the model. You could then define relationships between these tables in the model.
 
-2. In the menu ribbon, select the **Reporting** tab. Then select **New report**. A new browser tab opens in which you can design your report.
+2. In the menu ribbon, select the **Reporting** tab. Then select **New report**. A new browser tab will open in which you can design your report.
 
     ![Screenshot of the report designer.](./Images/E2-T7-S2.png)
    
@@ -336,17 +337,17 @@ In this task, you will create a report to visualize and present your data findin
 
     - **Quantity (2)**
 
-   Then a **table visualization (3)** is added to the report.
+   Then, a **table visualization (3)** is added to the report.
 
      ![Screenshot of a report containing a table.](./Images/E2-T7-S4.png)
    
-5. Hide the **Data** and **Filters** panes to create more space. Then ensure the **table visualization is selected (1)** and in the **Visualizations** pane, change the visualization to a **Clustered bar chart (2)** and resize it as shown here.
+5. Hide the **Data** and **Filters** panes to create more space. Then, make sure the **table visualization is selected (1)** and in the **Visualizations** pane, change the visualization to a **Clustered bar chart (2)** and resize it as shown here.
 
       ![Screenshot of a report containing a clustered bar chart.](./Images/E2-T7-S5.png)
 
       ![Screenshot of a report containing a clustered bar chart.](./Images/E2-T7-S5a.png)
 
-6. On the **File** menu, select **Save As**. Then name the Report as **Item Sales Report (1)** and click **Save (2)** in the workspace you created previously.
+6. On the **File** menu, select **Save As**. Then, name the Report as **Item Sales Report (1)** and click **Save (2)** in the workspace you created previously.
 
       ![](./Images/E2-T7-S6.png)
 
@@ -364,10 +365,10 @@ In this task, you will create a report to visualize and present your data findin
    - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
    - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-   <validation step="b28817e6-75d8-40fd-9c33-0a408a962f8e" />
+   <validation step="478b8d65-837a-4b29-b792-922fe3c10580" />
 
 ### Summary
 
-In this exercise, you have created a lakehouse and imported data into it. You've seen how a lakehouse consists of files and tables stored in a OneLake data store. The managed tables can be queried using SQL, and are included in a default dataset to support data visualizations.
+In this exercise, you have created a lakehouse and imported data into it. You've seen how a lakehouse consists of files and tables stored in a OneLake data store. The managed tables can be queried using SQL and are included in a default dataset to support data visualizations.
 
-### You have successfully completed the lab. Click on Next >> to procced with next exercise.
+### You have successfully completed the lab. Click on Next >> to proceed with the next exercise.

@@ -29,13 +29,9 @@ In Microsoft Fabric, a lakehouse provides highly scalable file storage in a *One
 
 Now that you have created a workspace in the previous step, it's time to switch to the *Data engineering* experience in the portal and create a data lakehouse into which you will ingest data.
 
-1. At the bottom left of the Power BI portal, select the **Power BI (1)** icon and switch to the **Data Engineering (2)** experience.
+1. Select your Fabric workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>** **(1)** from the left panel. Then, click on **+ New Item (2)**, search for **Lakehouse (3)** in the search bar, and select **Lakehouse (4)**.
 
-   ![02](./Images/01/Pg3-T1-S1.png)
-   
-1. In the **Data engineering** home page, click on **Lakehouse** to create a new lakehouse.
-
-   ![02](./Images/fabriclakehouse.png)
+    ![](./Images/Updated/E2-T1-S1.png)
 
 1. On the **New lakehouse**, enter the following:
 
@@ -71,9 +67,11 @@ In many scenarios, the data you need to work within your lakehouse may be stored
 
 In this task, you will create a data pipeline in Microsoft Fabric to ingest data by configuring a **Copy Data** activity, which extracts data from a specified source and loads it into your lakehouse.  
 
-1. On the **Home** page for your lakehouse, select **New data pipeline**.
+1. On the **Home** page for your lakehouse, select **New data pipeline (1)**. 
 
-    ![03](./Images/f8.png)
+   - **Note:** If the **New data pipeline** option is not visible directly, select **Get data (2)** from the top left corner and then choose **New data pipeline (3)**.
+
+    ![](./Images/Updated/E2-T3-S1.png)
 
 1. Create a new data pipeline named **Ingest Sales Data Pipeline (1)** and click on **Create (2)**. 
    
@@ -104,7 +102,7 @@ In this task, you will create a data pipeline in Microsoft Fabric to ingest data
     - **Request timeout**: *Leave blank*
     - **Max concurrent connections**: *Leave blank*
   
-        ![05](./Images/fabric4.png)
+        ![](./Images/Updated/E2-T3-S5.png)
    
 1. Wait for the data to be sampled and then ensure that the following settings are selected:
     - File format: **DelimitedText (1)**
@@ -112,37 +110,30 @@ In this task, you will create a data pipeline in Microsoft Fabric to ingest data
     - Row delimiter: **Line feed (\n) (3)**
     - Select **Preview data (4)** to see a sample of the data that will be ingested.
 
-      ![Account-manager-start](./Images/lab1-image12.png)
+        ![](./Images/Updated/E2-T3-S6.png)
 
 1. Select **Preview data** to see a sample of the data that will be ingested. Then close the data preview and select **Next**.
 
-     ![Account-manager-start](./Images/lab1-image13.png)
+     ![](./Images/Updated/E2-T3-S7.png)
 
-1. On the **Choose data destination** page, click on **OneLake data hub** and select **Lakehouse**.
 
-     ![Account-manager-start](./Images/lab1-image14.png)
-
-     >**Note:** If it prompts for sign-in, select **Sign In**, enter the username as <inject key="AzureAdUserEmail"></inject>, and provide the password as <inject key="AzureAdUserPassword"></inject>.
-     
-     > On the **Connect to data source**, under connection select the lakehouse that we created in previous step, and select **Connect**.
-
-1. Set the following data destination options, and then select **Next (4)**:
+1. Note that the connection with **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** will be already present. Set the following data destination options, and then select **Next (4)**:
     - Root folder: **Files (1)**
     - Folder path: **new_data (2)**
     - File name: **sales.csv (3)**
    
-        ![08](./Images/fabric9.png)
+       ![](./Images/Updated/E2-T3-S8.png)
 
 1. Set the following file format options and then select **Next (4)**:
     - File format: **DelimitedText (1)**
     - Column delimiter: **Comma (,) (2)**
     - Row delimiter: **Line feed (\n) (3)**
    
-      ![09](./Images/fabric10.png)
+       ![](./Images/Updated/E2-T3-S9.png)
 
 1. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
 
-    ![09](./Images/saverunfabric.png)
+    ![](./Images/Updated/E2-T3-S10.png)
 
     >**Note:** A new pipeline containing a **Copy data** activity is created, as shown here:
 
