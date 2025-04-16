@@ -272,7 +272,7 @@ In this task, you will visualize your data from a single query or your data ware
       - **CustomerKey**
       - **ProductKey**
 
-    ![03](./Images/02/03.png)
+        ![03](./Images/02/03.png)
 
    1. DimCustomer
       - **CustomerKey**

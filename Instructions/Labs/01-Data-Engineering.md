@@ -158,19 +158,17 @@ In this task, you will create a pipeline to automate data processing workflows. 
 
 In this task, you will create a notebook to document your data analysis process. You’ll set up the notebook environment, import necessary libraries, and structure your code to include data exploration, visualization, and insights. This will help you organize your workflow and enhance reproducibility in your analysis.
 
-1. From the left pane, select the workspace named Fabric-<inject key="DeploymentID" enableCopy="false"/>.
+1. From the left pane, select the workspace named **Fabric-<inject key="DeploymentID" enableCopy="false"/>**.
 
     ![](./Images/E2-T4-S1.png) 
 
-2. In the workspace, click on **+ New Item**. In the New Item panel, search for **Notebook** and **select** it.
+2. In the workspace, click on **+ New Item (1)**. In the New Item panel, search for **Notebook (2)** and select **Notebook (3)**.
 
     ![](./Images/E2-T4-S2.png) 
 
 3. After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
 
-4. Once the Notebook opens, select **Lakehouses** from the **Explorer** Section.
-
-5. Click **Add data items (1)** and select **Exiting data source (2)** from the drop-down.
+5.  Click **Add data items (1)** under explorer and select **Exiting data source (2)** from the drop-down.
 
     ![](./Images/E2-T4-S4.png)  
 
