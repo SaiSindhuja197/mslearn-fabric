@@ -24,7 +24,7 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
 
 1. In the All items search for **Dataflow Gen2** and select it from the list.
 
-1. Select **Get data**, select **test/csv** and create a new data source with the following settings:
+1. Select **Get data**, select **Test/CSV** and create a new data source with the following settings:
     - **Link to file**: *Selected*
     - **File path or URL**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/orders.csv`
     - **Connection**: Create new connection
@@ -43,8 +43,6 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
 1. The step to add the custom column is added to the query and the resulting column is displayed in the data pane:
 
    ![Query with a custom column step.](./Images/lak4.png)
-
-1. Duplicate the existing tabe, Go to the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>** , Delete the **orders** files from the table.
 
 ### Task 2: Add data destination for Dataflow
 

@@ -64,7 +64,6 @@ In many scenarios, the data you need to work within your lakehouse may be stored
 
 2. View the available data source types for shortcuts. Then close the **New shortcut** dialog box without creating a shortcut.
 
-
 ### Task 3: Create a pipeline
 
 In this task, you will create a pipeline to automate data processing workflows. Youâ€™ll define the sequence of data transformation steps, configure the necessary components, and set up triggers for execution. This will streamline your data integration processes and improve efficiency in handling data tasks. A simple way to ingest data is to use a **Copy data** activity in a pipeline to extract the data from a source and copy it to a file in the lakehouse.
@@ -171,13 +170,9 @@ In this task, you will create a notebook to document your data analysis process.
 
 4. Once the Notebook opens, select **Lakehouses** from the **Explorer** Section.
 
-5. click **Add** to add a lakehouse.
+5. Click **Add data items (1)** and select **Exiting data source (2)** from the drop-down.
 
-    ![](./Images/E2-T4-S4.png) 
-
-6. Choose the **Existing Lakehouse without Schema(1)** option and click **Add (2)**.
-
-    ![](./Images/E2-T4-S5.png) 
+    ![](./Images/E2-T4-S4.png)  
 
 7. Select the lakehouse named **Lakehouse-<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Add (2)**.
  
@@ -195,9 +190,11 @@ In this task, you will create a notebook to document your data analysis process.
 
      ![Account-manager-start](./Images/lab1-image17.png)
 
-10. Under the parameters cell, use the **+ Code** button to add a new code cell. Then, add the following code to it:
+10. Under the parameters cell, use the **+ Code** button to add a new code cell. 
 
      ![](./Images/E2-T4-S9.png) 
+
+1. Add the following code to it:
 
     ```python
     from pyspark.sql.functions import *
@@ -218,6 +215,8 @@ In this task, you will create a notebook to document your data analysis process.
     #Managed tables are tables for which both the schema metadata and the data files are managed by Fabric. The data files for the table are created in the Tables folder.
     df.write.format("delta").mode("append").saveAsTable(table_name)
     ```
+
+     ![](./Images/code1.png) 
 
     This code loads the data from the sales.csv file that was ingested by the **Copy Data** activity, applies some transformation logic, and saves the transformed data as a **managed table** - appending the data if the table already exists.
 
@@ -315,11 +314,13 @@ In this task, you will create a visual query in Power BI using Power Query. Youâ
 
 In this task, you will create a report to visualize and present your data findings. You'll gather relevant data, select appropriate visualizations, and structure the report for clarity and insight. This process will help you effectively communicate your analysis and support data-driven decision-making.
 
-1.  At the top of the SQL analytics endpoint page, select the **Model Layouts (1)** tab. Click on **sales (2)** and select the **insert into canvas (3)** , the data model schema for the dataset will be shown as **follows (4)**:
+1. At the top of the SQL analytics endpoint page, select the **Model Layouts (1)** tab. Click on **sales (2)** and select the **insert into canvas (3)** , the data model schema for the dataset will be shown as **follows (4)**:
 
-    ![Screenshot of a data model.](./Images/fab20.png)
+   ![Screenshot of a data model.](./Images/fab20.png)
 
-    > Reload the Page if the data model schema is not seen.
+   > You might notice some additional tables appeared as shown below, please ignore the system tables which are shown ignore.
+
+     ![Screenshot of a data model.](./Images/ig.png)
 
     > **Note**: In this exercise, the data model consists of a single table. In a real-world scenario, you would likely create multiple tables in your lakehouse, each of which would be included in the model. You could then define relationships between these tables in the model.
 
@@ -356,7 +357,6 @@ In this task, you will create a report to visualize and present your data findin
     - The SQL endpoint for your lakehouse.
     - A default dataset for the tables in your lakehouse.
     - The **Item Sales Report** report.
-
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       

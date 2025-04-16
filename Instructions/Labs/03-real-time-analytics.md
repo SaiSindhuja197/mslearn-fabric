@@ -23,18 +23,23 @@ In this task, you will create a KQL database to facilitate querying of static or
 
     ![](./Images/E1T1S2.png)
    
-
-2. In the All items search for Eventhouse (1) and select Eventhouse (2) from the list. Create a new **Eventhouse** with the name **Eventhouse-<inject key="DeploymentID" enableCopy="false"/>**.
+2. In the All items search for **Eventhouse (1)** and select **Eventhouse (2)** from the list.
 
     ![](./Images/E4T1S2.png)
 
+1. Create a new **Eventhouse** with the name **Eventhouse-<inject key="DeploymentID" enableCopy="false"/>**.
+
 3. Once the Eventhouse gets created, in the settings pane, create a **+ Database** for the **KQL Databases**.
+
+   ![](./Images/database.png)
+
+1. Enter the following details:
 
    - **Name:** Enter **KQL-Database<inject key="DeploymentID" enableCopy="false"/> (1)**.
 
    - Click on **Create (2)**.
 
-   ![](./Images/fabric16.png)
+     ![](./Images/fabric16.png)
 
 4. Click on the newly created Database from the left pane, and from the middle screen,select the option to **Get data** then **Local file**.
 
@@ -48,16 +53,16 @@ In this task, you will create a KQL database to facilitate querying of static or
         - **Source type:** File
         - **Upload files:** Drag or Browse for the file from **C:\LabFiles\Files\sales.csv**
 
-    ![01](./Images/fabric17.png)
+      ![01](./Images/fabric17.png)
 
     - **Inspect:** Preview the data, enable **First row header** and click on **Finish**.
 
-     ![01](./Images/E4T2S5.png)
+      ![01](./Images/E4T2S5.png)
 
     - **Summary:**
         - *Review the preview of the table and close the wizard.*
 
-     ![01](./Images/fabric19.png)
+      ![01](./Images/fabric19.png)
 
    > **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
 

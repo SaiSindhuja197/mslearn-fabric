@@ -65,19 +65,17 @@ In this task, you will create a notebook to facilitate model training and experi
 
 In this task, you will load data into a dataframe to prepare for model training. Dataframes in Spark, akin to Pandas dataframes in Python, offer a structured way to work with data in rows and columns, enabling efficient data manipulation and analysis.
 
-1. Click on **lakehouses**
+5. Click **Add data items (1)** and select **Exiting data source (2)** from the drop-down.
 
-   ![](./Images/lakehouse_1.png)
+    ![](./Images/adddataitem.png)  
+
+7. Select the lakehouse named **Lakehouse-<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Add (2)**.
+ 
+    ![](./Images/E2-T4-S6.png) 
 
 1. In the **Add lakehouse** pane, select **Add** to add a lakehouse. A popup window will show up and choose **Existing Lakehouse without Schema**.
 
    ![](./Images/Pg6-Edit-S4.png)
-
-1. Select **Existing lakehouse (1)** and select **Add (2)**.
-
-   ![](./Images/Pg6-AddLakehouse.png)
-
-1. Select the lakehouse you created in a previous section.
 
 1. Click the **Files (1)** folder so that the CSV file is listed next to the notebook editor.
 

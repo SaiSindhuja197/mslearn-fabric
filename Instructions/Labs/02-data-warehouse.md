@@ -117,9 +117,15 @@ In this task, you will create a relational data warehouse consisting of fact and
 
     >**Note:** If you do not see the **Model Layouts** option, close and reopen the Data Warehouse from the left-most navigation pane.
 
+    >**Note:** If the Model Layouts do not display any data upon first opening, try closing and reopening the Data Warehouse.
+
 2. In the model pane, rearrange the tables in your data warehouse so that the **FactSalesOrder** table is in the middle, like this:
 
     ![Screenshot of the data warehouse model page.](./Images/fab1.png)
+
+   >**Note:** You might notice some additional tables appearing, as shown below—please ignore them.
+
+     ![](./Images/ig2.png) 
 
 3. Drag the **ProductKey** field from the **FactSalesOrder** table and drop it on the **ProductKey** field in the **DimProduct** table. Then confirm the following relationship details and click on **Save**.
    
@@ -301,7 +307,7 @@ In this task, you will visualize your data from a single query or your data ware
 
 1. In the **File** menu, select **Save**. Then save the report as **Sales Report** in the workspace you created previously.
 
-1. In the menu hub on the left, navigate back to the **workspace**. Notice that you now have three items saved in your workspace: your data warehouse, its default dataset, and the report you created.
+1. In the menu hub on the left, navigate back to the **workspace**. Notice that you now have three items saved in your workspace: your data warehouse, its semantic model (default), and the report you created.
 
    ![Screenshot of the workspace with the three items listed.](./Images/workspace-items1.png)
 

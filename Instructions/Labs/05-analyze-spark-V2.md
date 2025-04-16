@@ -329,7 +329,6 @@ In this task, you will use Spark to transform data files into a desired format f
 
 1. Run the cell and verify that the results show the order data for sales in 2021. Note that the partitioning columns specified in the path (**Year** and **Month**) are not included in the dataframe.
 
-
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       
    - If you receive an InProgress message, you can hit refresh to see the final status.
@@ -338,7 +337,6 @@ In this task, you will use Spark to transform data files into a desired format f
    - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 <validation step="17b4e545-1878-4b1e-8b41-f6d4401d997a" />
-
 
 ### Task 7: Work with tables and SQL
 
@@ -409,10 +407,13 @@ In this task, you will visualize data using Spark to enhance understanding and i
    %%sql
    SELECT * FROM salesorders
     ```
-
 2. Run the code and observe that it returns the data from the **salesorders** view you created previously.
 
 3. In the results section beneath the cell, change the View  from **Table** to **Chart** by clicking on **+ New Chart**.
+
+1. Click on the three dots **... (1)** in the top-left corner and turn off **New virtualization (2)**.
+
+   ![](./Images/odlexperiance.png)
 
 4. Use the **Customize Chart** button at the top right of the chart to display the options pane for the chart. Then set the options as follows and select **Apply**:
     - **Chart type**: Bar chart
@@ -425,6 +426,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 5. Verify that the chart looks similar to this:
 
     ![Screenshot of a bar chart of products by total order quantiies](./Images/chart_final.png)
+
 
 #### Get started with **matplotlib**
 
@@ -439,7 +441,6 @@ In this task, you will visualize data using Spark to enhance understanding and i
    df_spark = spark.sql(sqlQuery)
    df_spark.show()
     ```
-
 1. Run the code and observe that it returns a Spark dataframe containing the yearly revenue.
 
 1. To visualize the data as a chart, we'll start by using the **matplotlib** Python library. This library is the core plotting library on which many others are based, and provides a great deal of flexibility in creating charts.
@@ -458,7 +459,6 @@ In this task, you will visualize data using Spark to enhance understanding and i
    # Display the plot
    plt.show()
     ```
-
 1. Run the cell and review the results, which consist of a column chart with the total gross revenue for each year. Note the following features of the code used to produce this chart:
     - The **matplotlib** library requires a *Pandas* dataframe, so you need to convert the *Spark* dataframe returned by the Spark SQL query to this format.
     - At the core of the **matplotlib** library is the **pyplot** object. This is the foundation for most plotting functionality.
@@ -485,7 +485,6 @@ In this task, you will visualize data using Spark to enhance understanding and i
    # Show the figure
    plt.show()
     ```
-
 1. Re-run the code cell and view the results. The chart now includes a little more information.
 
 1. A plot is technically contained with a **Figure**. In the previous examples, the figure was created implicitly for you; but you can create it explicitly.
@@ -514,7 +513,6 @@ In this task, you will visualize data using Spark to enhance understanding and i
    # Show the figure
    plt.show()
     ```
-
 1. Re-run the code cell and view the results. The figure determines the shape and size of the plot. A figure can contain multiple subplots, each on its own *axis*.
 
 1. Modify the code to plot the chart as follows:
