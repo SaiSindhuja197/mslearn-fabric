@@ -336,7 +336,7 @@ In this task, you will use Spark to transform data files into a desired format f
    - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
    - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="17b4e545-1878-4b1e-8b41-f6d4401d997a" />
+<validation step="c2a9bb5d-2eb6-45b7-8b8a-2145f7f1d7e2" />
 
 ### Task 7: Work with tables and SQL
 
