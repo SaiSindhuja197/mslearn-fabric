@@ -41,7 +41,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
      ![](./Images/fabric16.png)
 
-4. Click on the newly created Database from the left pane, and from the middle screen,select the option to **Get data** then **Local file**.
+4. Click on the newly created Database from the left pane, and from the middle screen, select the option to **Get data** then **Local file**.
 
    ![01](./Images/E4T1S4.png)
 
