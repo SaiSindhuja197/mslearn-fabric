@@ -369,7 +369,8 @@ Tables in a Spark metastore are relational abstractions over files in the data l
    df = spark.sql("SELECT * FROM [your_lakehouse].salesorders LIMIT 1000")
    display(df)
     ```
-
+     > **Note**: Ensure to replace the [your_lakehouse] with **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>**
+     
 5. Run the new code, which uses the Spark SQL library to embed a SQL query against the **salesorder** table in PySpark code and load the results of the query into a dataframe.
 
 #### Run SQL code in a cell
