@@ -41,7 +41,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
      ![](./Images/fabric16.png)
 
-4. Click on the newly created Database from the left pane, and from the middle screen, select the option to **Get data** then **Local file**.
+4. Click on the newly created Database from the left pane, and from the middle screen, select the option to **Get data (1)** then **Local file (2)**.
 
    ![01](./Images/E4T1S4.png)
 
@@ -128,9 +128,25 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
 
     ![Screenshot of a report from a KQL query.](./Images/update3.png)
 
-5. In the **Power BI** window, in the **File** menu, select **Save**. Then save the report as **Revenue by Item** in the workspace where your lakehouse and KQL database are defined using a **Non-Business** sensitivity label.Click on **Continue**
+5. In the **Power BI** window, in the **File** menu, select **Save**. Then save the report as **Revenue by Item** in the fabric-<inject key="DeploymentID" enableCopy="false"/> where your lakehouse and KQL database are defined using a **Non-Business** sensitivity label from the drop-down. Click on **Continue**
 
-6. Close the **Power BI** window, and in the bar on the left, select the icon for your workspace.
+   >**Note:** If you are not getting option to **Save** the report in the **fabric-<inject key="DeploymentID" enableCopy="false"/>** then follow the below steps:
+
+      1. Enter the file name **Revenue by Item** and click **Continue** to save the Power BI report to workspace.
+
+         ![](./Images/38.png)
+
+      1. The report has been saved successfully; click **Open the file in Power BI to view, edit, and get a shareable link** to proceed.
+
+         ![](./Images/39.png)
+
+      1. Click **File** > **Save a copy** to duplicate the Power BI report to your workspace.
+         
+         ![](./Images/40.png)
+
+      1. Select **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** where you want to save the copied report, enter a name as **Revenue by Item (2)**, and click the **Save (3)** button to finalize the copy.
+       
+         ![](./Images/41.png)
 
     >**Note**: Refresh the Workspace page if necessary to view all of the items it contains.
 

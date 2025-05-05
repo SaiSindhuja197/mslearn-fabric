@@ -126,6 +126,8 @@ In this task, you will create a relational data warehouse consisting of fact and
 
 1. In the warehouse, from the top navigation pane, select the **Model Layouts** option.
 
+   ![](./Images/42.png)
+
     >**Note:** If you do not see the **Model Layouts** option, close and reopen the Data Warehouse from the left-most navigation pane.
 
     >**Note:** If the Model Layouts do not display any data upon first opening, try closing and reopening the Data Warehouse.
@@ -316,7 +318,9 @@ In this task, you will visualize your data from a single query or your data ware
 
    ![04](./Images/02/04.png)
 
-1. In the **File** menu, select **Save**. Then save the report as **Sales Report** in the workspace you created previously.
+1. In the **File** menu, select **Save**. select **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, enter a name as **Sales Report (2)**, and click the **Save (3)** button .
+
+   ![04](./Images/43.png)
 
 1. In the menu hub on the left, navigate back to the **workspace**. Notice that you now have three items saved in your workspace: your data warehouse, its semantic model (default), and the report you created.
 
