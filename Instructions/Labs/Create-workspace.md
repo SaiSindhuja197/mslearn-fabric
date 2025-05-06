@@ -40,6 +40,8 @@ You will be able to complete the following tasks:
 
 ### Task 2: Sign up for Microsoft Fabric Trial
 
+In this task, you will initiate your 60-day free trial of Microsoft Fabric by signing up through the Fabric app, providing access to its comprehensive suite of data integration, analytics, and visualization tools
+
 1. Copy the **Power BI homepage link**, and open this link inside the VM in a new tab.
 
    ```
@@ -48,50 +50,40 @@ You will be able to complete the following tasks:
 
    >**Note**: In case a sign-up page asks for a phone number, you can enter a dummy phone number to proceed.
 
-2. Enter <inject key="AzureAdUserEmail"></inject> as the username/Email and <inject key="AzureAdUserPassword"></inject> as the password when prompted.
+1. Select **Account manager (1)**, and click on **Free trial (2)**.
 
-3. Select **Account manager (1)**, and click on **Free trial (2)**.
+     ![Account-manager-start](./Images/f1.png)
 
-   ![Account-manager-start](./Images/E1-T2-S3.png)
+1. A new prompt will appear asking you to **Activate your 60-day free Fabric trial capacity**, click on **Activate**.
 
-4. A new prompt will appear asking you to **Activate your 60-day free Fabric trail Capacity**, click on **Activate**.
+      ![Account-manager-start](./Images/fabric-3.png)
 
-   ![Start-trial](./Images/E1-T2-S4.png)
+1. Click on **Stay on current page** when prompted.
 
-5. Once successfully upgraded to a free Microsoft Fabric trial, you receive a confirmation message. Select **Stay on Current Page** to begin working in Fabric.
+      ![Account-manager-start](./Images/fabric-2.png)
 
-   ![Got-it](./Images/E1-T2-S5.png)
+1. Now, open **Account manager (1)** again, and verify **Trial Status (2)**.
 
-6. Now, open **Account manager (1)** again, and verify **Trial Status (2)**.
-
-   ![Verify-trial-status](./Images/E1-T2-S6.png)
-
+      ![Account-manager-start](./Images/lab1-image5.png)
+      
 ### Task 3: Create a workspace
 
 Here, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, notebooks, Power BI datasets, and reports.
 
-1.  Now, select **Workspaces** and click on **+ New workspace**.
+1. Now, select **Workspaces (1)** and click on **+ New workspace (2)**.
 
-    ![New Workspace](./Images/E1-T3-S1.png)
+    ![New Workspace](./Images/f2.png)
 
-2. Fill out the **Create a workspace** form with the following details:
+1. Fill out the **Create a workspace** form with the following details:
+ 
+   - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/>**
+ 
+      ![name-and-desc-of-workspc](./Images/f3.png)
+ 
+   - **Advanced:** Expand it and Under **License mode**, select **Fabric capacity (1)**, Under **Capacity** Select available **fabric<inject key="DeploymentID" enableCopy="false"/> - <inject key="Region"></inject>(2)** and click on **Apply (3)** to create and open the workspace.
+ 
+      ![advanced-and-apply](./Images/f4.png)
 
-   - **Name:** Enter **Fabric-<inject key="DeploymentID" enableCopy="false"/>**
-
-      ![name-and-desc-of-workspc](./Images/E1-T3-S2a.png)
-
-   - **Advanced:** Expand it and Under **License mode**, select **Trial capacity (1)** and click on **Apply (2)** to create and open the workspace.
-
-      ![advanced-and-apply](./Images/E1-T3-S2b.png)
-
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-      
-   - If you receive an InProgress message, you can hit refresh to see the final status.
-   - If you receive a success message, you can proceed to the next task.
-   - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-   - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
-
-  <validation step="796cb471-1103-4bc8-8e98-9e6dd3e8c025" />
 
 ### Summary
 
