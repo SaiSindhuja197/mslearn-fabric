@@ -159,7 +159,7 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
    - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
    - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="ae9ea1a1-6466-459b-87da-12cb0f83b186" />
+  <validation step="3e3b6775-5941-4063-965e-9f1d3a6baa2e" />
 
 ### Task 4: Use delta tables for streaming data
 
