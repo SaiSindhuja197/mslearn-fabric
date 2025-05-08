@@ -16,7 +16,7 @@ By the end of this lab, you will be able to:
 - **Get started with Real-Time Analytics in Microsoft Fabric** : Use Microsoft Fabric’s Kusto Query Language (KQL) for efficient storage and querying of time-series data, including real-time logs and IoT information. Upon completing this exercise, you will have created a KQL database, queried a sales table using KQL, generated a Power BI report from a KQL Queryset, and utilized delta tables for streaming data. This will enhance your skills in data querying, visualization, and real-time data management within Microsoft Fabric.
 - **Use notebooks to train a model in Microsoft Fabric** : Discover how to use Microsoft Fabric’s Kusto Query Language (KQL) for efficient storage and querying of time-series data, including real-time logs and IoT information. In this exercise, you'll build a lakehouse, upload files, create a notebook, train a machine learning model, use MLflow to track experiments, and save your work, concluding with ending the Spark session.
 - **Data Engineering Ingest Data in Fabric with Fabric Copilot** : Streamline the process of ingesting diverse data sources into Fabric using Fabric Copilot for efficient data management. In this exercise, you completed tasks to connect to data sources, configure ingestion settings, ingest data into Fabric, monitor the ingestion process, validate the ingested data, and document the entire process.
-- **Data Warehouse Analyze Data in a Warehouse with Fabric Copilot** : Leverage Fabric Copilot to enhance data analysis capabilities in a warehouse, enabling insightful decision-making through advanced analytics. In this exercise, you completed tasks to connect to the data warehouse, explore data sources, run data queries, visualize data insights, generate reports, and collaborate on findings.
+- **Analyze Data in a Warehouse with Fabric Copilot** : Leverage Fabric Copilot to enhance data analysis capabilities in a warehouse, enabling insightful decision-making through advanced analytics. In this exercise, you completed tasks to connect to the data warehouse, explore data sources, run data queries, visualize data insights, generate reports, and collaborate on findings.
 - **Analyze data with Apache Spark** : Use Microsoft Fabric to train and track a customer churn prediction model with Scikit-Learn and MLflow. After completing this exercise, you will have set up a lakehouse, uploaded and explored data, used Spark for transformation and visualization, and effectively managed your notebook and Spark session. This will demonstrate your ability to integrate and analyze data through multiple stages using advanced tools and techniques.
 - **Create a Dataflow (Gen2) in Microsoft Fabric** : Master Apache Spark for flexible, distributed data processing and analysis across platforms like Azure HDInsight and Databricks. Successfully created a Dataflow (Gen2) to ingest data, configured its destination, and integrated it into a pipeline. This streamlined the data ingestion and processing workflow within your environment.
   
@@ -36,17 +36,49 @@ In Microsoft Fabric, the workflow begins with creating a Fabric workspace to man
 
 ## Explanation of Components
 
-1. **Data Factory**: Handles data integration and workflow orchestration, allowing you to move and transform data from various sources into your data platform.
+1. **Data Pipeline**: Orchestrates and automates data movement and transformation workflows using a visual interface. Ideal for building ETL (Extract, Transform, Load) processes across multiple data sources.
 
-1. **Data Warehouse**: Provides scalable, high-performance storage and full SQL functionality for large-scale analytics. It supports complex queries, including insert, update, and delete operations, to efficiently handle extensive data sets.
-   
-1. **Data Engineering**: Provides tools and services for preparing and transforming data for analysis. This includes data pipelines, data flow orchestration, and data quality management.
+2. **Dataflow Gen 2**: A self-service data preparation tool that allows users to create reusable data transformation pipelines, optimized for performance and scalability within the Microsoft Fabric ecosystem.
 
-1. **Data Science**: Offers capabilities for building, training, and deploying machine learning models. It supports various programming languages and frameworks for data science.
+3. **Lakehouse**: Combines the benefits of data lakes and data warehouses by supporting open data formats and structured querying, making it suitable for both analytics and machine learning workloads.
 
-1. **Real-Time Analytics**: Facilitates real-time data processing and analysis, enabling insights from streaming data sources.
-   
-1. **Power BI**: A powerful analytics and visualization tool that allows you to create reports and dashboards, providing interactive and actionable insights from your data.
+4. **Notebook** (under Lakehouse and Model): Interactive development environment that supports languages like PySpark, SQL, and others, enabling data exploration, transformation, and visualization.
+
+5. **Spark Job Definition**: Defines distributed data processing tasks using Apache Spark, allowing for scalable data transformations and advanced analytics over large datasets.
+
+6. **Model**: Semantic layer that organizes and defines business logic, relationships, and KPIs for your data, used for consistent analysis and reporting across tools.
+
+7. **Experiment**: Enables tracking and managing of machine learning experiments, including metrics and model versions, facilitating reproducibility and performance comparison.
+
+8. **Warehouse**: Provides scalable, high-performance storage and full SQL functionality for large-scale analytics. It supports complex queries, including insert, update, and delete operations, to efficiently handle extensive data sets.
+
+9. **KQL Database**: Optimized for real-time telemetry and log data, it uses the Kusto Query Language (KQL) for fast, scalable analysis of time-series and event data.
+
+10. **KQL Queryset**: A collection of saved KQL queries that users can organize and reuse, enabling collaborative analytics and faster insights on streaming or log data.
+
+11. **Eventstream**: Captures, transforms, and routes real-time events from multiple sources for real-time processing, analytics, or storage in various destinations.
+
+12. **Dataset**: A curated set of data ready for reporting and visualization, often used in Power BI to build interactive dashboards and reports.
+
+13. **Streaming Dataset**: Allows real-time data to be pushed into Power BI dashboards, enabling up-to-the-second updates on live data feeds.
+
+14. **Dataflow**: A tool for ETL operations in Power BI, enabling users to transform and load data into reusable tables using Power Query.
+
+15. **Streaming Dataflow**: Enhances Dataflow with support for real-time streaming data, enabling transformation and analysis as data arrives.
+
+16. **Deployment Pipelines**: Supports DevOps practices by enabling version control, testing, and promotion of Power BI content across development, test, and production environments.
+
+17. **Datamart**: A self-service analytics solution that combines data storage, transformation, and querying capabilities with integrated Power BI for quick data insights.
+
+18. **Report**: Visual representation of data using various charts and graphs, enabling users to interact with and analyze their data.
+
+19. **Operation Report**: A specialized type of report focused on monitoring and tracking operational metrics and KPIs.
+
+20. **Scorecard**: Tool to define, track, and visualize key performance indicators (KPIs) and business goals over time.
+
+21. **Dashboard**: A single-pane view that aggregates visuals and reports from multiple datasets, offering quick insights and real-time monitoring.
+
+22. **App**: A collection of related Power BI content (reports, dashboards, datasets) packaged for easy sharing and access across teams or organizations.
 
 # Getting Started with the Lab
 
