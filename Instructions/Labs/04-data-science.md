@@ -220,7 +220,7 @@ In this task, you will use MLflow to search for and view your experiments relate
 
 In this task, you will explore your experiments in Microsoft Fabric, which tracks all your training activities. The platform allows for visual exploration of these experiments, enabling you to analyze and compare results effectively.
 
-1. Navigate to your **Workspace (1)**, you will see the **experiment-churn (3)** Experiment created.
+1. Navigate to your **Workspace (1)**, you will see the **experiment-churn (2)** Experiment created.
 
    ![](./Images/Pg6-ExpChurn-S1.png)
 
