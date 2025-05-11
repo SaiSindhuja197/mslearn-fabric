@@ -112,6 +112,191 @@ In this task, you will create a pipeline to automate data processing workflows. 
     - Row delimiter: **Line feed (\n) (3)**
     - Select **Preview data (4)** to see a sample of the data that will be ingested.
 
+   ![Account-manager-start](./Images/lab1-image12.png)
+
+8. Observe the sample of the data that will be ingested. Then close the data preview and click on **Next**.
+
+   ![Account-manager-start](./Images/lab1-image13.png)
+
+9. On the **Choose data destination** page, click on **OneLake (1)** and select the lakehouse **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (2)**.
+
+   ![Account-manager-start](./Images/E1T3S9.png)
+
+10. Set the following data destination options and then select **Next (4)**:
+
+    - Root folder: **Files (1)**
+    - Folder path: **new_data (2)**
+    - File name: **sales.csv  (3)**
+   
+    ![08](./Images/fabric9.png)
+
+11. Set the following file format options and then select **Next (4)**:
+
+    - File format: **DelimitedText (1)**
+    - Column delimiter: **Comma (,) (2)**
+    - Row delimiter: **Line feed (\n) (3)**
+   
+    ![09](./Images/fabric10.png)
+
+12. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
+
+    ![09](./Images/b777.png)
+
+13. A new pipeline containing a **Copy data** activity is created, as shown here:
+
+    ![Screenshot of a pipeline with a Copy Data activity.](./Images/E1T3S13.png)
+
+14. When the pipeline starts to run, you can monitor its status in the **Output** pane under the pipeline designer. Use the **&#8635;** (*Refresh*) icon to refresh the status, and wait until it has succeeded.
+
+    ![Screenshot of a pipeline with a Copy Data activity.](./Images/01/Pg3-CpyOutput.png)
+
+15. In the **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** page, expand **Files (1)** and select the **new_data (2)** folder, refresh the page and verify that the **sales.csv (3)** file has been copied.
+
+    ![Account-manager-start](./Images/lab1-image16.png)
+
+### Task 4: Create a notebook
+
+In this task, you will create a notebook to document your data analysis process. You’ll set up the notebook environment, import necessary libraries, and structure your code to include data exploration, visualization, and insights. This will help you organize your workflow and enhance reproducibility in your analysis.
+
+1. From the left pane, select the workspace named **Fabric-<inject key="DeploymentID" enableCopy="false"/>**.
+
+    ![](./Images/E2-T4-S1.png) 
+
+2. In the workspace, click on **+ New Item (1)**. In the New Item panel, search for **Notebook (2)** and select **Notebook (3)**.
+
+    ![](./Images/E2-T4-S2.png) 
+
+3. After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
+
+5.  Click **Add data items (1)** under explorer and select **Exiting data source (2)** from the drop-down.
+
+    ![](./Images/E2-T4-S4.png)  
+
+7. Select the lakehouse named **Lakehouse-<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Add (2)**.
+ 
+    ![](./Images/E2-T4-S6.png) 
+
+8. Select the existing cell in the notebook, which contains some simple code, and then replace the default code with the following variable declaration and click on **&#9655; Run**.
+
+    ```python
+   table_name = "sales"
+    ```
+
+   ![11](./Images/01/Pg3-Notebook-S2.png) 
+
+9. In the **Ellipsis(...) (1)** menu for the cell (at its top-right) select **Toggle parameter cell (2)**. This configures the cell so that the variables declared in it are treated as parameters when running the notebook from a pipeline.
+
+     ![Account-manager-start](./Images/lab1-image17.png)
+
+10. Under the parameters cell, use the **+ Code** button to add a new code cell. 
+
+     ![](./Images/E2-T4-S9.png) 
+
+1. Add the following code to it:
+
+    ```python
+    from pyspark.sql.functions import *
+    
+    # Read the new sales data
+    df = spark.read.format("csv").option("header","true").option("inferSchema","true").load("Files/new_data/*.csv")
+
+    ## Add month and year columns
+    df = df.withColumn("Year", year(col("OrderDate"))).withColumn("Month", month(col("OrderDate")))
+
+    # Derive FirstName and LastName columns
+    df = df.withColumn("FirstName", split(col("CustomerName"), " ").getItem(0)).withColumn("LastName", split(col("CustomerName"), " ").getItem(1))
+
+    # Filter and reorder columns
+    df = df["SalesOrderNumber", "SalesOrderLineNumber", "OrderDate", "Year", "Month", "FirstName", "LastName", "EmailAddress", "Item", "Quantity", "UnitPrice", "TaxAmount"]
+
+    # Load the data into a managed table
+    #Managed tables are tables for which both the schema metadata and the data files are managed by Fabric. The data files for the table are created in the Tables folder.
+    df.write.format("delta").mode("append").saveAsTable(table_name)
+    ```
+
+     ![](./Images/code1.png) 
+
+    This code loads the data from the sales.csv file that was ingested by the **Copy Data** activity, applies some transformation logic, and saves the transformed data as a **managed table** - appending the data if the table already exists.
+
+11. Verify that your notebooks look similar to this, and then use the **&#9655; Run all** button on the toolbar to run all of the cells it contains.
+
+    ![Screenshot of a notebook with a parameters cell and code to transform data.](./Images/fab8.png)
+
+    > **Note**: Since this is the first time you've run any Spark code in this session, the Spark pool must be started. This means that the first cell can take a minute or so to complete.
+
+12. (Optional) You can also create **external tables** for which the schema metadata is defined in the metastore for the lakehouse, but the data files are stored in an external location.
+
+    ```python
+    df.write.format("delta").saveAsTable("external_sales", path="<abfs_path>/external_sales")
+
+    #In the Lakehouse explorer pane, in the ... menu for the Files folder, select Copy ABFS path.
+
+    #The ABFS path is the fully qualified path to the Files folder in the OneLake storage for your lakehouse - similar to this:
+
+    #abfss://workspace@tenant-onelake.dfs.fabric.microsoft.com/lakehousename.Lakehouse/Files
+    ```
+    > **Note**: To run the above code, you need to replace the <abfs_path> with your abfs path
+
+
+13. When the notebook run has completed, in the **Lakehouse explorer** pane on the left, in the **Ellipsis(...)** menu for **Tables** select **Refresh** and verify that a **sales** table has been created.
+
+    ![.](./Images/fab-6.png)
+
+14. Navigate to the notebook menu bar and use the ⚙️ **Settings (1)** icon to view the notebook settings. Then, set the **Name** of the notebook to **Load Sales Notebook (2)** and close the settings pane.
+
+     ![.](./Images/fab-7.png)
+ 
+15. In the hub menu bar on the left, select your lakehouse.
+
+16. In the **Explorer** pane, refresh the view. Then expand **Tables**, and select the **sales** table to see a preview of the data it contains.
+
+### Task 5: Use SQL to query tables
+
+In this task, you will use SQL to query tables in a database. You'll write SQL statements to retrieve, filter, and manipulate data from specified tables, allowing you to analyze and extract meaningful insights from the dataset. This will enhance your understanding of data retrieval and improve your SQL skills.
+
+1. At the top-right of the Lakehouse page, switch from **Lakehouse** to **SQL analytics endpoint**. Then wait a short time until the SQL query endpoint for your lakehouse opens in a visual interface from which you can query its tables, as shown here:
+
+    ![.](./Images/01/lab1-image20.png)
+
+2. Use the **New SQL query** button to open a new query editor, and enter the following SQL query:
+
+    ![](./Images/E2-T5-S2.png)
+
+    ```SQL
+   SELECT Item, SUM(Quantity * UnitPrice) AS Revenue
+   FROM sales
+   GROUP BY Item
+   ORDER BY Revenue DESC;
+    ```
+
+3. Use the **&#9655; Run** button to run the query and view the results, which should show the total revenue for each product.
+
+    ![](./Images/E2-T5-S3.png)
+
+### Task 6: Create a visual query
+
+In this task, you will create a visual query in Power BI using Power Query. You’ll begin by adding the **sales** table to the query editor, select relevant columns, and apply a **Group by** transformation to count distinct line items for each sales order. Finally, you'll review the results to see the summarized data.
+
+1. On the toolbar, select **New visual query**.
+
+    ![](./Images/E2-T6-S1.png)
+
+2. In the Lakehouse, navigate to Schemas, then to dbo, and select the **sales (1)** table. In the sales table click on **&#8230;** and select **Insert into Canvas (2)** it in the new visual query editor pane that opens to create a Power Query as shown here: 
+
+    ![Screenshot of a Visual query.](./Images/E2-T6-S2.png)
+
+3. In the **Manage columns (1)** menu, select **Choose columns (2)**. Then select only the **SalesOrderNumber and SalesOrderLineNumber (3)** columns and click on **OK (4)**.
+
+    ![Account-manager-start](./Images/lab1-image22.png)
+
+    ![Account-manager-start](./Images/lab1-image23.png)
+
+4. Click on **+ (1)**, in the **Transform table** menu, select **Group by (2)**.
+
+    ![Screenshot of a Visual query with results.](./Images/01/Pg3-VisQuery-S4.0.png)
+
+5. Then group the data by using the following **Basic** settings and click on **OK**.
+
     - Group by: **SalesOrderNumber**
     - New column name: **LineItems**
     - Operation: **Count distinct values**
