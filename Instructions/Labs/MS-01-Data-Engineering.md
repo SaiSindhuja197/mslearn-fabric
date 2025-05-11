@@ -178,7 +178,7 @@ In this task, you will create a report to visualize and present your data findin
    - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
    - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-   <validation step="b28817e6-75d8-40fd-9c33-0a408a962f8e" />
+   <validation step="09d5de71-ba8a-42fa-a261-b57c69f32b12" />
 
 ### Summary
 
