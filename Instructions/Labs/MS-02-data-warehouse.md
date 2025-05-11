@@ -47,7 +47,7 @@ In this task, you will design and implement a data warehouse by organizing data 
    - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
    - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-      <validation step="ed927a03-5062-4d23-bf52-d57ae336f0eb" />
+      <validation step="ed2c6226-96ee-48e8-b8f1-205dae3aaf6b" />
 
 ### Task 2: Create tables and insert data
 
