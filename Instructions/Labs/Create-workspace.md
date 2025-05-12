@@ -8,37 +8,10 @@ Microsoft Fabric lets you set up workspaces depending on your workflows and use 
 
 You will be able to complete the following tasks:
 
-- Task 1: Assign Fabric Administrator Role
-- Task 2: Sign up for Microsoft Fabric Trial
-- Task 3: Create a workspace
-  
-### Task 1: Assign Fabric Administrator Role
+- Task 1: Sign up for Microsoft Fabric Trial
+- Task 2: Create a workspace
 
-1. In the Azure portal, type **Microsoft Entra ID (1)** in the search box and select **Microsoft Entra ID (2)** from the results.
-
-   ![Navigate-To-AAD](./Images/ws/entra01.png)
-
-2. Navigate to **Roles and administrators (1)** under the **Manage** section.
-
-   ![Roles-and-Administrator](./Images/E1-T1-S2.png)
-
-3. In the **Roles and administrators** page, type **Fabric Administrator (1)** in the search box and select **Fabric Administrators (2)** from the results.
-
-   ![search-fabric-admin](./Images/E1-T1-S3.png)
-
-4. This will take you to the **Fabric Administrator | Assignments** page where you will have to assign yourself the **Fabric Administrator role**. Now, click on **+ Add assignments (1)**.
-
-   ![click-add-assignments](./Images/E1-T1-S4.png)
-
-5. Make sure to **check the box (1)** next to your username, confirm if it is **Selected (2)** and click on **Add (3)**.
-
-   ![check-and-add-role](./Images/E1-T1-S5.png)
-
-6. You can confirm the **Fabric Administrator** role has been added successfully by **Refresh (1)** Fabric Administrators | Assignments page. After **confirming (2)** it has been added successfully, navigate back to **Home (3)**.
-
-   ![check-and-navigate-back-to-home](./Images/E1-T1-S6.png)
-
-### Task 2: Sign up for Microsoft Fabric Trial
+### Task 1: Sign up for Microsoft Fabric Trial
 
 In this task, you will initiate your 60-day free trial of Microsoft Fabric by signing up through the Fabric app, providing access to its comprehensive suite of data integration, analytics, and visualization tools
 
@@ -66,7 +39,7 @@ In this task, you will initiate your 60-day free trial of Microsoft Fabric by si
 
       ![Account-manager-start](./Images/lab1-image5.png)
       
-### Task 3: Create a workspace
+### Task 2: Create a workspace
 
 Here, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, notebooks, Power BI datasets, and reports.
 
@@ -87,6 +60,6 @@ Here, you create a Fabric workspace. The workspace contains all the items needed
 
 ### Summary
 
-In this exercise, you have assigned Fabric Administrator Role, signed up for the for Microsoft Fabric Trial and created a workspace
+In this exercise, you have signed up for the for Microsoft Fabric Trial and created a workspace
 
 ### You have successfully completed the lab
