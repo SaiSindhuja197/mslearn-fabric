@@ -36,7 +36,7 @@ Now that you have created a workspace in the previous step, it's time to switch 
 
     ![](./Images/E1T1S2.png)
 
-4. In the All items search for Lakehouse (1) and select Lakehouse (2) from the list.
+4. In the All items search, for Lakehouse **(1)** and select **Lakehouse (2)** from the list.
 
     ![](./Images/E1T1S3.png)
 
@@ -56,7 +56,7 @@ Now that you have created a workspace in the previous step, it's time to switch 
 
 ### Task 2: Explore shortcuts
 
-In many scenarios, the data you need to work within your lakehouse may be stored in some other location. While there are many ways to ingest data into the OneLake storage for your lakehouse, another option is to instead create a *shortcut*. Shortcuts enable you to include externally sourced data in your analytics solution without the overhead and risk of data inconsistency associated with copying it.
+In many scenarios, the data you need to work with your lakehouse may be stored in some other location. While there are many ways to ingest data into the OneLake storage for your lakehouse, another option is to instead create a *shortcut*. Shortcuts enable you to include externally sourced data in your analytics solution without the overhead and risk of data inconsistency associated with copying it.
 
 1. In the **Ellipsis(...) (1)** menu for the **Files** folder, select **New shortcut (2)**.
 
@@ -92,7 +92,7 @@ In this task, you will create a pipeline to automate data processing workflows. 
     - Authentication kind : **Anonymous (4)**
     - Click on **Next (5)**
   
-   ![Account-manager-start](./Images/lab1-image11.png)
+      ![Account-manager-start](./Images/lab1-image11.png)
     
 6. Make sure the following settings are selected and click on **Next** :
     
@@ -103,7 +103,7 @@ In this task, you will create a pipeline to automate data processing workflows. 
     - Request timeout: **Leave blank**
     - Max concurrent connections: **Leave blank**
   
-   ![05](./Images/fabric4.png)
+      ![05](./Images/fabric4.png)
    
 7. Wait for the data to be sampled and then ensure that the following settings are selected:
     
@@ -112,7 +112,7 @@ In this task, you will create a pipeline to automate data processing workflows. 
     - Row delimiter: **Line feed (\n) (3)**
     - Select **Preview data (4)** to see a sample of the data that will be ingested.
 
-   ![Account-manager-start](./Images/lab1-image12.png)
+      ![Account-manager-start](./Images/lab1-image12.png)
 
 8. Observe the sample of the data that will be ingested. Then close the data preview and click on **Next**.
 
@@ -128,7 +128,7 @@ In this task, you will create a pipeline to automate data processing workflows. 
     - Folder path: **new_data (2)**
     - File name: **sales.csv  (3)**
    
-    ![08](./Images/fabric9.png)
+      ![08](./Images/fabric9.png)
 
 11. Set the following file format options and then select **Next (4)**:
 
@@ -136,7 +136,7 @@ In this task, you will create a pipeline to automate data processing workflows. 
     - Column delimiter: **Comma (,) (2)**
     - Row delimiter: **Line feed (\n) (3)**
    
-    ![09](./Images/fabric10.png)
+      ![09](./Images/fabric10.png)
 
 12. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
 
@@ -168,7 +168,7 @@ In this task, you will create a notebook to document your data analysis process.
 
 3. After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
 
-5.  Click **Add data items (1)** under explorer and select **Exiting data source (2)** from the drop-down.
+5.  Click **Add data items (1)** under explorer and select **Existing data source (2)** from the drop-down.
 
     ![](./Images/E2-T4-S4.png)  
 
@@ -194,7 +194,7 @@ In this task, you will create a notebook to document your data analysis process.
 
 1. Add the following code to it:
 
-    ```python
+    ```Python
     from pyspark.sql.functions import *
     
     # Read the new sales data
@@ -236,7 +236,6 @@ In this task, you will create a notebook to document your data analysis process.
     #abfss://workspace@tenant-onelake.dfs.fabric.microsoft.com/lakehousename.Lakehouse/Files
     ```
     > **Note**: To run the above code, you need to replace the <abfs_path> with your abfs path
-
 
 13. When the notebook run has completed, in the **Lakehouse explorer** pane on the left, in the **Ellipsis(...)** menu for **Tables** select **Refresh** and verify that a **sales** table has been created.
 
@@ -281,7 +280,7 @@ In this task, you will create a visual query in Power BI using Power Query. Youâ
 
     ![](./Images/E2-T6-S1.png)
 
-2. In the Lakehouse, navigate to Schemas, then to dbo, and select the **sales (1)** table. In the sales table click on **&#8230;** and select **Insert into Canvas (2)** it in the new visual query editor pane that opens to create a Power Query as shown here: 
+2. In the Lakehouse, navigate to Schemas, then to dbo, and select the **sales (1)** table. In the sales table, click on **&#8230;** and select **Insert into Canvas (2)**. It will open a new visual query editor pane that opens to create a Power Query as shown here: 
 
     ![Screenshot of a Visual query.](./Images/E2-T6-S2.png)
 
@@ -312,11 +311,11 @@ In this task, you will create a visual query in Power BI using Power Query. Youâ
 
 In this task, you will create a report to visualize and present your data findings. You'll gather relevant data, select appropriate visualizations, and structure the report for clarity and insight. This process will help you effectively communicate your analysis and support data-driven decision-making.
 
-1. At the top of the SQL analytics endpoint page, select the **Model Layouts (1)** tab. Click on **sales (2)** and select the **insert into canvas (3)** , the data model schema for the dataset will be shown as **follows (4)**:
+1. At the top of the SQL analytics endpoint page, select the **Model Layouts (1)** tab. Click on **sales (2)** and select the **insert into canvas (3)**, the data model schema for the dataset will be shown as **follows (4)**:
 
    ![Screenshot of a data model.](./Images/fab20.png)
 
-   > You might notice some additional tables appeared as shown below, please ignore the system tables which are shown ignore.
+   > You might notice some additional tables appeared as shown below, please ignore the system tables which are shown in ignore.
 
      ![Screenshot of a data model.](./Images/ig.png)
 
@@ -326,7 +325,7 @@ In this task, you will create a report to visualize and present your data findin
 
     ![Screenshot of the report designer.](./Images/E2-T7-S2.png)
    
-3. Click on **Continue** for adding data to the default semantic model.
+3. Click on **Continue** to add data to the default semantic model.
 
     ![](./Images/E2-T7-S3.png)
 
@@ -358,7 +357,7 @@ In this task, you will create a report to visualize and present your data findin
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       
-   - If you receive an InProgress message, you can hit refresh to see the final status.
+   - If you receive an In Progress message, you can hit refresh to see the final status.
    - If you receive a success message, you can proceed to the next task.
    - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
    - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
