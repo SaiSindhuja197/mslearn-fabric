@@ -1,6 +1,6 @@
 # MS Fabric Foundation for Enterprise Analytics
 
-### Overall Estimated Duration: 8 hours
+### Overall Estimated Duration: 8 Hours
 
 ## Overview
 
@@ -30,7 +30,6 @@ This lab is designed to equip participants with hands-on experience in creating 
 
 Participants should have:
 
-- Basic understanding of cloud computing concepts and familiarity with Microsoft Azure services.
 - Knowledge of data integration principles and experience with data formats and sources.
 - Understanding of SQL and relational database concepts, and familiarity with data warehousing solutions.
 - Familiarity with machine learning concepts and experience with programming languages like Python or R
@@ -56,46 +55,45 @@ The architecture for this lab involves several key components of Microsoft Fabri
 - **Apache Spark on Microsoft Fabric:** A distributed computing service for performing large-scale data processing and analytics using Spark clusters.
 - **Dataflow Gen2:** A service for designing and executing advanced data transformation workflows, enabling efficient data integration and processing.
 
-# Getting Started with the Lab
-
-1. Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. You can see the number on the bottom of lab guide to switch to different exercises of the lab guide.
-
-   ![07](./Images/gs/1a.png)
-
-1. To get the lab environment details, you can select the **Environment Details** tab. Additionally, the credentials will also be emailed to your registered email address. You can also open the Lab Guide on separate and full window by selecting the **Split Window** from the lower right corner. Also, you can start, stop, and restart virtual machines from the **Resources** tab.
-
-   ![08](./Images/gs/08.png)
+## Getting Started with the Lab
  
-    > You will see the DeploymentID value on **Environment Details** tab, use it wherever you see SUFFIX or DeploymentID in lab steps.
+Welcome to your MS Fabric Foundation for Enterprise Analytics workshop! We've prepared a seamless environment for you to explore and learn about Azure services. Let's begin by making the most of this experience:
+ 
+## Accessing Your Lab Environment
+ 
+Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
 
+## Virtual Machine & Lab Guide
+ 
+Your virtual machine is your workhorse throughout the workshop. The **Guide** is your roadmap to success.
 
-## Login to Azure Portal
+![](./Images/ws/02062025(1).png)
 
-1. In the JumpVM, click on Azure portal shortcut of Microsoft Edge browser which is created on desktop.
+## Exploring Your Lab Resources
+ 
+To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
+ 
+![](./Images/ws/02062025(2).png)
+ 
+## Utilizing the Split Window Feature
+ 
+For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
+ 
+![](./Images/ws/02062025(3).png)
+ 
+## Managing Your Virtual Machine
+ 
+Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
 
-   ![09](./Images/gs/09.png)
+![](./Images/ws/02062025(4).png)
+
+## Lab Guide Zoom In/Zoom Out
+
+To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
+
+![](./Images/ws/02062025(5).png)
+
    
-1. On **Sign into Microsoft Azure** tab you will see login screen, in that enter following email/username and then click on **Next**. 
-   * Email/Username: <inject key="AzureAdUserEmail"></inject>
-   
-     ![04](./Images/gs/04.png)
-     
-1. Now enter the following password and click on **Sign in**.
-   * Password: <inject key="AzureAdUserPassword"></inject>
-   
-     ![05](./Images/gs/05.png)
-     
-   > If you see the pop-up click on **ask later**.
-
-      ![06](./Images/gs/asklater1.png)
-  
-1. If you see the pop-up **Stay Signed in?**, click No
-
-1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
-
-1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
-      
-By the end of this lab, participants can expect to learn how to effectively utilize Microsoft Fabric’s suite of services for comprehensive data management and analysis. They will gain hands-on experience in setting up and configuring a Fabric workspace, automating data ingestion processes using pipelines, and performing complex data queries in a data warehouse. Participants will also learn to implement real-time analytics for immediate insights, develop and train machine learning models using interactive notebooks, and leverage Apache Spark for scalable data processing. Additionally, they will understand how to design and execute advanced data transformations with Dataflow Gen2, equipping them with a complete toolkit for managing and analyzing large-scale data projects.
 
 ## Support Contact
  
@@ -106,6 +104,8 @@ Learner Support Contacts:
 - Live Chat Support: https://cloudlabs.ai/labs-support
 
 Now, click on **Next** from the lower right corner to move on to the next page.
+
+![alt text](image.png)
 
 ### Happy Learning!!
 
