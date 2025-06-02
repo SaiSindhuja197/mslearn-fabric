@@ -224,19 +224,6 @@ In this task, you will create a notebook to document your data analysis process.
 
     > **Note**: Since this is the first time you've run any Spark code in this session, the Spark pool must be started. This means that the first cell can take a minute or so to complete.
 
-12. (Optional) You can also create **external tables** for which the schema metadata is defined in the metastore for the lakehouse, but the data files are stored in an external location.
-
-    ```python
-    df.write.format("delta").saveAsTable("external_sales", path="<abfs_path>/external_sales")
-
-    #In the Lakehouse explorer pane, in the ... menu for the Files folder, select Copy ABFS path.
-
-    #The ABFS path is the fully qualified path to the Files folder in the OneLake storage for your lakehouse - similar to this:
-
-    #abfss://workspace@tenant-onelake.dfs.fabric.microsoft.com/lakehousename.Lakehouse/Files
-    ```
-    > **Note**: To run the above code, you need to replace the <abfs_path> with your abfs path
-
 13. When the notebook run has completed, in the **Lakehouse explorer** pane on the left, in the **Ellipsis(...)** menu for **Tables** select **Refresh** and verify that a **sales** table has been created.
 
     ![.](./Images/fab-6.png)
