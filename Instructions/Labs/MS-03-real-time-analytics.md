@@ -41,7 +41,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
      ![](./Images/fabric16.png)
 
-4. Click on the newly created Database from the left pane, and from the middle screen, select the option to **Get data (1)** then **Local file (2)**.
+4. Click on the newly created Database from the left pane, and from the middle screen, select the option to **Get data (1)**, then **Local file (2)**.
 
    ![01](./Images/E4T1S4.png)
 
@@ -64,7 +64,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
       ![01](./Images/fabric19.png)
 
-   > **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
+   > **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data, including real-time data from a streaming source such as Azure Event Hubs.
 
 ### Task 2: Use KQL to query the sales table
 
@@ -106,9 +106,9 @@ In this task, you will use Kusto Query Language (KQL) to query the sales table i
    | sort by Item asc
     ```
 
-8. Run the query and review the results, which should contain the total net revenue for each product between January 1st and December 31st 2020 in ascending order of product name.
+8. Run the query and review the results, which should contain the total net revenue for each product between January 1st and December 31st 2020, in ascending order of product name.
 
-9. From the top left corner select the KQL Queryset and save the query as **Revenue by Product** in your workspace.
+9. From the top left corner, select the KQL Queryset and save the query as **Revenue by Product** in your workspace.
 
     ![](./Images/E4-T2-S9.png)
 
@@ -132,7 +132,7 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
 
    >**Note:** If you are not getting option to **Save** the report in the **fabric-<inject key="DeploymentID" enableCopy="false"/>** then follow the below steps:
 
-      1. Enter the file name **Revenue by Item** and click **Continue** to save the Power BI report to workspace.
+      1. Enter the file name **Revenue by Item** and click **Continue** to save the Power BI report to the workspace.
 
          ![](./Images/38.png)
 
@@ -256,9 +256,8 @@ In this task, you will use Delta tables to handle streaming data, leveraging the
 
     >**Note**: This code stops the stream.
 
-
 ### Summary
 
 In this exercise, you have created a lakehouse, a KQL database to analyze the data uploaded into the lakehouse. You used KQL to query the data and create a query set, which was then used to create a Power BI report.
 
-### You have successfully completed the lab. Click on Next >> to procced with next exercise.
+### You have successfully completed the lab. Click on Next >> to proceed with next exercise.
