@@ -58,13 +58,14 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
    ![Data destination configuration page.](./Images/lak1.png)
 
-4. Select **Next**, Select the **fabric-<inject key="DeploymentID" enableCopy="false"/>**. Choose the **lakehouse** then specify a new table named **orders**.
+4. Select **Next**, Select the **fabric-<inject key="DeploymentID" enableCopy="false"/>**. Choose the **lakehouse**, then specify a new table named **orders**.
 
    ![Data destination configuration page.](./Images/fabric26.png)
 
 5. On the Destination settings page, observe that **MonthNo** is not selected in the Column mapping, and an informational message is displayed.
  
 6. On the Destination settings page, toggle off the **Use Automatic Settings** option. Then, right-click on the **MonthNo** column header and select **Change Type** to set **MonthNo** as a **Whole number**. Finally, click on **Save Settings**.
+
     ![Data destination settings page.](./Images/lak2.png)
 
 5. Select **Publish** to publish the dataflow. Then wait for the **Dataflow** to be created in the workspace.
@@ -75,7 +76,7 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
 In this task, you’ll add a dataflow to a pipeline to streamline the data processing workflow and enable automated data transformations.
 
-1. Navigate back to the workspace, click on **+ New item** and select **Data pipeline**.Name the pipeline as **Load Orders pipeline**. This will open the pipeline editor.
+1. Navigate back to the workspace, click on **+ New item** and select **Data pipeline**. Name the pipeline as **Load Orders pipeline**. This will open the pipeline editor.
 
     ![](./Images/E1T3S1.png)
   
@@ -105,7 +106,6 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 
 ### Summary
 
-In this exercise, you have created a Dataflow (Gen2) to ingest data , added data destination for Dataflow and a dataflow to a pipeline.
+In this exercise, you have created a Dataflow (Gen2) to ingest data, added a data destination for Dataflow and added a Dataflow to a pipeline.
 
 ### You have successfully completed the lab
-
