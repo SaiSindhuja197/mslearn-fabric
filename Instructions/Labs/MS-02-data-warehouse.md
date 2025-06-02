@@ -30,7 +30,7 @@ In this task, you will design and implement a data warehouse by organizing data 
 
     ![](./Images/E1T1S2.png)
    
-4. In the **All items** search for Warehouse (1) and select **Warehouse** (2) from the list.
+4. In the **All items** search for Warehouse **(1)** and select **Warehouse (2)** from the list.
 
    ![](./Images/E3T1S1.png)
    
@@ -51,13 +51,13 @@ In this task, you will design and implement a data warehouse by organizing data 
 
 ### Task 2: Create tables and insert data
 
-In this task, you will create database tables by defining their structure with appropriate columns and constraints. Afterward, you'll insert data into the tables, ensuring it is ready for querying and further operations.
+In this task, you will create database tables by defining their structure with appropriate columns and constraints. Afterwards, you'll insert data into the tables, ensuring it is ready for querying and further operations.
 
 1. In your new warehouse, select the **Create tables with T-SQL** tile.
 
    ![](./Images/E3-T2-S1.png)
 
-1. Replace the default SQL code with the following **CREATE TABLE statement (1)** and Use the **&#9655; Run (2)** button to run the SQL script, which creates a new table named **DimProduct** in the **dbo** schema of the data warehouse.
+1. Replace the default SQL code with the following **CREATE TABLE statement (1)** and use the **&#9655; Run (2)** button to run the SQL script, which creates a new table named **DimProduct** in the **dbo** schema of the data warehouse.
 
     ```SQL
    CREATE TABLE dbo.DimProduct
@@ -77,14 +77,14 @@ In this task, you will create database tables by defining their structure with a
 
 1. On the **Home** menu tab, use the **New SQL Query** button and from the drop down select **New SQL Query**  to create a new query, and enter the following INSERT statement:
 
-    ```SQL
+   ```SQL
    INSERT INTO dbo.DimProduct
    VALUES
    (1, 'RING1', 'Bicycle bell', 'Accessories', 5.99),
    (2, 'BRITE1', 'Front light', 'Accessories', 15.49),
    (3, 'BRITE2', 'Rear light', 'Accessories', 15.49);
    GO
-    ```
+   ```
 
 1. Run the above query to insert three rows into the **DimProduct** table.
 
@@ -92,8 +92,7 @@ In this task, you will create database tables by defining their structure with a
 
 1. On the Home menu tab, use the **New SQL Query** button to create a new query for the table.
 
-1. Open the **Lab VM** and navigate to the following path:
-   `C:\LabFiles\Files\`
+1. Open the **Lab VM** and navigate to the following path: `C:\LabFiles\Files\`
 
 1. Open the file **`create-dw-01.txt`** and copy the Transact-SQL code related to the **`DimProduct`** table.
 
@@ -109,7 +108,7 @@ In this task, you will create database tables by defining their structure with a
 
      ![01](./Images/E3-T2-S8.png)
 
-1. Use the **Refresh** button on the toolbar to refresh the view. Then in the **Explorer** pane, verify that the **dbo** schema in the data warehouse now contains the following four tables:
+1. Use the **Refresh** button on the toolbar to refresh the view. Then, in the **Explorer** pane, verify that the **dbo** schema in the data warehouse now contains the following four tables:
    
     - **DimCustomer**
     - **DimDate**
@@ -173,7 +172,7 @@ In this task, you will query data warehouse tables using SQL to retrieve and ana
 
 1. Create a new SQL Query, and run the following code:
 
-    ```SQL
+   ```SQL
    SELECT  d.[Year] AS CalendarYear,
             d.[Month] AS MonthOfYear,
             d.MonthName AS MonthName,
@@ -182,14 +181,15 @@ In this task, you will query data warehouse tables using SQL to retrieve and ana
    JOIN DimDate AS d ON so.SalesOrderDateKey = d.DateKey
    GROUP BY d.[Year], d.[Month], d.MonthName
    ORDER BY CalendarYear, MonthOfYear;
-    ```
+   ```
+    
     ![](./Images/E3-T4-S1.png)
    
 2. Note that the attributes in the time dimension enable you to aggregate the measures in the fact table at multiple hierarchical levels- in this case, year and month. This is a common pattern in data warehouses.
 
 3. Modify the query as follows to add a second dimension to the aggregation.
 
-    ```SQL
+   ```SQL
    SELECT  d.[Year] AS CalendarYear,
            d.[Month] AS MonthOfYear,
            d.MonthName AS MonthName,
@@ -200,7 +200,7 @@ In this task, you will query data warehouse tables using SQL to retrieve and ana
    JOIN DimCustomer AS c ON so.CustomerKey = c.CustomerKey
    GROUP BY d.[Year], d.[Month], d.MonthName, c.CountryRegion
    ORDER BY CalendarYear, MonthOfYear, SalesRegion;
-    ```
+   ```
 
    ![](./Images/02/Pg4-T3QF-S2.png)
 
@@ -212,7 +212,7 @@ In this task, you will create a view in the data warehouse to encapsulate SQL lo
 
 1. Modify the query you created previously as follows to create a view (note that you need to remove the ORDER BY clause to create a view).
 
-    ```SQL
+   ```SQL
    CREATE VIEW vSalesByRegion
    AS
    SELECT  d.[Year] AS CalendarYear,
@@ -224,7 +224,8 @@ In this task, you will create a view in the data warehouse to encapsulate SQL lo
    JOIN DimDate AS d ON so.SalesOrderDateKey = d.DateKey
    JOIN DimCustomer AS c ON so.CustomerKey = c.CustomerKey
    GROUP BY d.[Year], d.[Month], d.MonthName, c.CountryRegion;
-    ```
+   ```
+    
     ![](./Images/E3-T5-S1.png)
 
 2. Run the query to create the view. Then refresh the data warehouse schema and verify that the new view is listed in the **Explorer** pane.
@@ -233,11 +234,11 @@ In this task, you will create a view in the data warehouse to encapsulate SQL lo
 
 3. Create a new SQL query and run the following SELECT statement:
 
-    ```SQL
+   ```SQL
    SELECT CalendarYear, MonthName, SalesRegion, SalesRevenue
    FROM vSalesByRegion
    ORDER BY CalendarYear, MonthOfYear, SalesRegion;
-    ```
+   ```
 
 ### Task 6: Create a visual query
 
@@ -299,7 +300,6 @@ In this task, you will visualize your data from a single query or your data ware
       - **ProductKey**
       - **ProductAltKey** 
 
-
 1. On the Home menu, select **New report (2)** from the **Reporting(1)** tab. This will open a new window, where you can create a Power BI report.
 
     ![03](./Images/pg-08-1.png)
@@ -309,7 +309,9 @@ In this task, you will visualize your data from a single query or your data ware
     ![](./Images/E3-T7-S4.png)
 
 1. Select **SalesTotal**. This will add the column to the **Report canvas**. Because the column is a numeric value, the default visual is a **column chart**.
+
 1. Ensure that the column chart on the canvas is active (with a grey border and handles), and then select **Category** from the **DimProduct** table to add a category to your column chart.
+
 1. In the **Visualizations** pane, change the chart type from a column chart to a **clustered bar chart**. Then resize the chart as necessary to ensure that the categories are readable.
 
     ![](./Images/E3-T7-S7.png)
