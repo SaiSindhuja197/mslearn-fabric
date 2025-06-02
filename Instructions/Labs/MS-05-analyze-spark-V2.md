@@ -28,7 +28,7 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
      ![Screenshot of uploaded files in a lakehouse.](./Images/E1T1S3.png)
    
-3. Enter the below mentioned details to create a Lakehouse. 
+3. Enter the below-mentioned details to create a Lakehouse. 
 
    - **Name:** Enter **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>**
 
@@ -204,11 +204,13 @@ In this task, you will explore data within a dataframe to gain insights and unde
 
    >**Note:** You might have to hover your mouse below the output to view the + Code option.
 
-2. Run the new code cell, and review the results. Observe the following details:
+2. Run the new code cell and review the results. Observe the following details:
+    
     - When you operate on a dataframe, the result is a new dataframe (in this case, a new **customers** dataframe is created by selecting a specific subset of columns from the **df** dataframe)
+    
     - Dataframes provide functions such as **count** and **distinct** that can be used to summarize and filter the data they contain.
+    
     - The `dataframe['Field1', 'Field2', ...]` syntax is a shorthand way of defining a subset of columns. You can also use the **select** method, so the first line of the code above could be written as `customers = df.select("CustomerName", "Email")`
-
 
 3. Modify the code as follows:
 
@@ -234,7 +236,7 @@ In this task, you will aggregate and group data within a dataframe to summarize 
 
 2. Run the code cell you added, and note that the results show the sum of order quantities grouped by product. The **groupBy** method groups the rows by *Item*, and the subsequent **sum** aggregate function is applied to all of the remaining numeric columns (in this case, *Quantity*)
 
-3. Add another new code cell to the notebook, and enter the following code in it:
+3. Add a new code cell to the notebook, and enter the following code in it:
 
     ```Python
    from pyspark.sql.functions import *
@@ -243,7 +245,7 @@ In this task, you will aggregate and group data within a dataframe to summarize 
    display(yearlySales)
     ```
 
-4. Run the code cell you added, and note that the results show the number of sales orders per year. Note that the **select** method includes a SQL **year** function to extract the year component of the *OrderDate* field (which is why the code includes an **import** statement to import functions from the Spark SQL library). It then uses an **alias** method is used to assign a column name to the extracted year value. The data is then grouped by the derived *Year* column and the count of rows in each group is calculated before finally the **orderBy** method is used to sort the resulting dataframe.
+4. Run the code cell you added, and note that the results show the number of sales orders per year. Note that the **select** method includes an SQL **year** function to extract the year component of the *OrderDate* field (which is why the code includes an **import** statement to import functions from the Spark SQL library). It then uses an **alias** method to assign a column name to the extracted year value. The data is then grouped by the derived *Year* column, and the count of rows in each group is calculated before finally the **orderBy** method is used to sort the resulting dataframe.
 
 ### Task 6: Use Spark to transform data files
 
@@ -251,7 +253,7 @@ In this task, you will use Spark to transform data files into a desired format f
 
 #### Use dataframe methods and functions to transform data
 
-1. Add another new code cell to the notebook, and enter the following code in it:
+1. Add a new code cell to the notebook, and enter the following code in it:
 
     ```Python
    from pyspark.sql.functions import *
@@ -270,8 +272,11 @@ In this task, you will use Spark to transform data files into a desired format f
     ```
 
 1. Run the code to create a new dataframe from the original order data with the following transformations:
+    
     - Add **Year** and **Month** columns based on the **OrderDate** column.
+    
     - Add **FirstName** and **LastName** columns based on the **CustomerName** column.
+    
     - Filter and reorder the columns, removing the **CustomerName** column.
 
 1. Review the output and verify that the transformations have been made to the data.
@@ -380,8 +385,11 @@ While it's useful to be able to embed SQL statements into a cell containing PySp
     ```
 
 2. Run the cell and review the results. Observe that:
+    
     - The `%%sql` line at the beginning of the cell (called a *magic*) indicates that the Spark SQL language runtime should be used to run the code in this cell instead of PySpark.
+    
     - The SQL code references the **salesorders** table that you created previously.
+    
     - The output from the SQL query is automatically displayed as the result under the cell.
 
         > **Note**: For more information about Spark SQL and dataframes, see the [Spark SQL documentation](https://spark.apache.org/docs/2.2.0/sql-programming-guide.html).
@@ -479,7 +487,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
 1. Re-run the code cell and view the results. The chart now includes a little more information.
 
-1. A plot is technically contained with a **Figure**. In the previous examples, the figure was created implicitly for you; but you can create it explicitly.
+1. A plot is technically contained within a **Figure**. In the previous examples, the figure was created implicitly for you, but you can create it explicitly.
 
 1. Modify the code to plot the chart as follows:
 
@@ -599,6 +607,7 @@ While **matplotlib** enables you to create complex charts of multiple types, it 
 In this task, you will save your notebook with a meaningful name to preserve your work after processing the data. Additionally, you will end the Spark session to free up resources and complete your data engineering tasks.
 
 1. In the top left corner, set the **Name** of the notebook from Notebook 1 to **Explore Sales Orders Notebook**.
+
 2. On the notebook menu, select **Stop session** to end the Spark session.
 
     > **Note:** The stop session icon is present next to the **Start Session** option.
@@ -607,4 +616,4 @@ In this task, you will save your notebook with a meaningful name to preserve you
 
 In this exercise, you've learned how to use Spark to work with data in Microsoft Fabric.
 
-### You have successfully completed the lab. Click on Next >> to procced with next exercise.
+### You have successfully completed the lab. Click on Next >> to proceed with next exercise.
