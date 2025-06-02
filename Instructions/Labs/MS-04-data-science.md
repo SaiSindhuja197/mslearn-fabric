@@ -1,6 +1,6 @@
 # Exercise 5: Use notebooks to train a model in Microsoft Fabric
 
-### Estimated Duration: 70 minutes
+### Estimated Duration: 70 Minutes
 
 In this lab, we will use Microsoft Fabric to create a notebook and train a machine-learning model to predict customer churn. We will use Scikit-Learn to train the model and MLflow to track its performance. Customer churn is a critical business problem that many companies face, and predicting which customers are likely to churn can help companies retain their customers and increase revenue. By completing this lab, you will gain hands-on experience in machine learning and model tracking, and learn how to use Microsoft Fabric to create a notebook for your projects.
 
@@ -245,7 +245,7 @@ In this task, you will explore your experiments in Microsoft Fabric, which track
 
 1. Select **Replace** and explore the new graph.
 
-By plotting the accuracy per logged estimator, you can review which algorithm resulted in a better model.
+    By plotting the accuracy per logged estimator, you can review which algorithm resulted in a better model.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       
@@ -274,7 +274,7 @@ In this task, you will save the best-performing machine learning model after com
 
 1. Select **View ML model** in the notification that appears at the top right of your screen when the model is created. You can also refresh the window. The saved model is linked under **Registered version**. 
 
->**Note**: The model, the experiment, and the experiment run are linked, allowing you to review how the model is trained. 
+    >**Note**: The model, the experiment, and the experiment run are linked, allowing you to review how the model is trained. 
 
 ### Task 8: Save the notebook and end the Spark session
 
@@ -292,4 +292,4 @@ In this task, you will save your notebook with a meaningful name to preserve you
 
 In this exercise, you have created a notebook and trained a machine-learning model. You used Scikit-Learn to train the model and MLflow to track its performance.
 
-### You have successfully completed the lab. Click on Next >> to proceed with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.

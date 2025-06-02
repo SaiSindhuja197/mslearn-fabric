@@ -1,6 +1,6 @@
 #  Exercise 6: Analyze data with Apache Spark
 
-### Estimated Duration: 90 minutes
+### Estimated Duration: 90 Minutes
 
 Apache Spark is an open-source engine for distributed data processing and is widely used to explore, process, and analyze huge volumes of data in data lake storage. Spark is available as a processing option in many data platform products, including Azure HDInsight, Azure Databricks, Azure Synapse Analytics, and Microsoft Fabric. One of the benefits of Spark is support for a wide range of programming languages, including Java, Scala, Python, and SQL; making Spark a very flexible solution for data processing workloads including data cleansing and manipulation, statistical analysis and machine learning, and data analytics and visualization.
 
@@ -78,7 +78,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
     ![Screenshot of a notebook with a Files pane.](./Images/notebook-files.png)
 
-2. In the **orders (1)** folder, click the **ellipses(2)** menu for **2019.csv**, then select **Load data (3)** > **Spark (4)**.
+2. In the **orders (1)** folder, click the **ellipses(2)** menu for **2019.csv**, then select **Load data (3)** **->** **Spark (4)**.
 
    ![](./Images/Pg7-LoadData-S2.png)
 
@@ -127,7 +127,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
 10. Modify the code as follows to define a schema and apply it when loading the data:
 
-   ```python
+    ```python
       from pyspark.sql.types import *
       orderSchema = StructType([
           StructField("SalesOrderNumber", StringType()),
@@ -143,7 +143,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
    
       df = spark.read.format("csv").schema(orderSchema).load("Files/orders/2019.csv")
       display(df)
-   ```
+    ```
 
 11. Run the modified cell and review the output, which should look similar to this:
 
@@ -616,4 +616,4 @@ In this task, you will save your notebook with a meaningful name to preserve you
 
 In this exercise, you've learned how to use Spark to work with data in Microsoft Fabric.
 
-### You have successfully completed the lab. Click on Next >> to proceed with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.

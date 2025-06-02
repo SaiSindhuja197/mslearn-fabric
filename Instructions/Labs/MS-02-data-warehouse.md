@@ -1,6 +1,6 @@
 # Exercise 3: Analyze data in a data warehouse
 
-### Estimated Duration: 75 minutes
+### Estimated Duration: 75 Minutes
 
 In Microsoft Fabric, a data warehouse provides a relational database for large-scale analytics. Unlike the default read-only SQL endpoint for tables defined in a lakehouse, a data warehouse provides full SQL semantics; including the ability to insert, update, and delete data in the tables.
 
@@ -156,11 +156,11 @@ In this task, you will create a relational data warehouse consisting of fact and
 
     - **FactSalesOrder.CustomerKey** &#8594; **DimCustomer.CustomerKey**
 
-   ![Screenshot of the data warehouse model page.](./Images/E3T3S4.png)
+      ![Screenshot of the data warehouse model page.](./Images/E3T3S4.png)
 
     - **FactSalesOrder.SalesOrderDateKey** &#8594; **DimDate.DateKey**
   
-    ![Screenshot of the data warehouse model page.](./Images/E3T3S5.png)
+      ![Screenshot of the data warehouse model page.](./Images/E3T3S5.png)
 
 5. When all of the relationships have been defined, the model should look like this:
 
@@ -332,4 +332,4 @@ In this task, you will visualize your data from a single query or your data ware
 
 In this exercise, you have created a data warehouse that contains multiple tables. You used SQL to insert data into the tables and query them. and also used the visual query tool. Finally, you enhanced the data model for the data warehouse's default dataset and used it as the source for a report.
 
-### You have successfully completed the lab. Click on Next >> to proceed with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.

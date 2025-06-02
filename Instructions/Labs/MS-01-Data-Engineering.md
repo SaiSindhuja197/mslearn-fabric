@@ -1,6 +1,6 @@
 # Exercise 2: Ingest data with a pipeline in Microsoft Fabric
 
-### Estimated Duration: 90 minutes
+### Estimated Duration: 90 Minutes
 
 A data lakehouse is a common analytical data store for cloud-scale analytics solutions. One of the core tasks of a data engineer is to implement and manage the ingestion of data from multiple operational data sources into the lakehouse. In Microsoft Fabric, you can implement *extract, transform, and load* (ETL) or *extract, load, and transform* (ELT) solutions for data ingestion through the creation of *pipelines*.
 
@@ -36,7 +36,7 @@ Now that you have created a workspace in the previous step, it's time to switch 
 
     ![](./Images/E1T1S2.png)
 
-4. In the All items search, for Lakehouse **(1)** and select **Lakehouse (2)** from the list.
+4. In the All items search, for **Lakehouse** **(1)** and select **Lakehouse (2)** from the list.
 
     ![](./Images/E1T1S3.png)
 
@@ -368,4 +368,4 @@ In this task, you will create a report to visualize and present your data findin
 
 In this exercise, you have created a lakehouse and imported data into it. You've seen how a lakehouse consists of files and tables stored in a OneLake data store. The managed tables can be queried using SQL and are included in a default dataset to support data visualizations.
 
-### You have successfully completed the lab. Click on Next >> to proceed with the next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.

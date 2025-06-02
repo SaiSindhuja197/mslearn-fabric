@@ -53,7 +53,7 @@ In this task, you will create a KQL database to facilitate querying of static or
         - **Source type:** File
         - **Upload files:** Drag or Browse for the file from **C:\LabFiles\Files\sales.csv**
 
-      ![01](./Images/fabric17.png)
+            ![01](./Images/fabric17.png)
 
     - **Inspect:** Preview the data, enable **First row header** and click on **Finish**.
 
@@ -62,7 +62,7 @@ In this task, you will create a KQL database to facilitate querying of static or
     - **Summary:**
         - *Review the preview of the table and close the wizard.*
 
-      ![01](./Images/fabric19.png)
+            ![01](./Images/fabric19.png)
 
    > **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data, including real-time data from a streaming source such as Azure Event Hubs.
 
@@ -130,7 +130,7 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
 
 5. In the **Power BI** window, in the **File** menu, select **Save**. Then save the report as **Revenue by Item** in the fabric-<inject key="DeploymentID" enableCopy="false"/> where your lakehouse and KQL database are defined using a **Non-Business** sensitivity label from the drop-down. Click on **Continue**
 
-   >**Note:** If you are not getting option to **Save** the report in the **fabric-<inject key="DeploymentID" enableCopy="false"/>** then follow the below steps:
+   > **Note:** If you are not getting option to **Save** the report in the **fabric-<inject key="DeploymentID" enableCopy="false"/>** then follow the below steps:
 
       1. Enter the file name **Revenue by Item** and click **Continue** to save the Power BI report to the workspace.
 
@@ -140,7 +140,7 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
 
          ![](./Images/39.png)
 
-      1. Click **File** > **Save a copy** to duplicate the Power BI report to your workspace.
+      1. Click **File** -> **Save a copy** to duplicate the Power BI report to your workspace.
          
          ![](./Images/40.png)
 
@@ -148,7 +148,7 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
        
          ![](./Images/41.png)
 
-    >**Note**: Refresh the Workspace page if necessary to view all of the items it contains.
+         >**Note**: Refresh the Workspace page if necessary to view all of the items it contains.
 
 7. In the list of items in your workspace, note that the **Revenue by Item** report is listed.
 
@@ -260,4 +260,4 @@ In this task, you will use Delta tables to handle streaming data, leveraging the
 
 In this exercise, you have created a lakehouse, a KQL database to analyze the data uploaded into the lakehouse. You used KQL to query the data and create a query set, which was then used to create a Power BI report.
 
-### You have successfully completed the lab. Click on Next >> to proceed with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
