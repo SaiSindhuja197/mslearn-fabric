@@ -127,7 +127,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
 10. Modify the code as follows to define a schema and apply it when loading the data:
 
-    ```python
+      ```python
       from pyspark.sql.types import *
       orderSchema = StructType([
           StructField("SalesOrderNumber", StringType()),
@@ -143,7 +143,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
    
       df = spark.read.format("csv").schema(orderSchema).load("Files/orders/2019.csv")
       display(df)
-    ```
+      ```
 
 11. Run the modified cell and review the output, which should look similar to this:
 
