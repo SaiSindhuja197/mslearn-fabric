@@ -120,7 +120,7 @@ In this task, you will train a machine learning model to predict customer churn 
     ```
 
 1. Run the code cell you added, and note you're omitting 'CustomerID' from the dataset, and splitting the data into a training and test dataset.
-1. Add another new code cell to the notebook, enter the following code in it, and run it:
+1. Add a new code cell to the notebook, enter the following code in it, and run it:
     
     ```python
    import mlflow
@@ -130,7 +130,7 @@ In this task, you will train a machine learning model to predict customer churn 
     
 1. The code creates an MLflow experiment named `experiment-churn`. Your models will be tracked in this experiment.
 
-1. Add another new code cell to the notebook, enter the following code in it, and run it:
+1. Add a new code cell to the notebook, enter the following code in it, and run it:
 
     ```python
    from sklearn.linear_model import LogisticRegression
@@ -145,7 +145,7 @@ In this task, you will train a machine learning model to predict customer churn 
     
 1. The code trains a classification model using Logistic Regression. Parameters, metrics, and artifacts are automatically logged with MLflow. Additionally, you're logging a parameter called `estimator`, with the value `LogisticRegression`.
 
-1. Add another new code cell to the notebook, enter the following code in it, and run it:
+1. Add a new code cell to the notebook, enter the following code in it, and run it:
 
     ```python
    from sklearn.tree import DecisionTreeClassifier
@@ -226,8 +226,7 @@ In this task, you will explore your experiments in Microsoft Fabric, which track
 
 1. Select the `experiment-churn` experiment to open it.
 
-    > **Tip:**
-    > If you don't see any logged experiment runs, refresh the page.
+    > **Tip:** If you don't see any logged experiment runs, refresh the page.
 
 1. Select the **View (1)** tab.
 
@@ -275,7 +274,7 @@ In this task, you will save the best-performing machine learning model after com
 
 1. Select **View ML model** in the notification that appears at the top right of your screen when the model is created. You can also refresh the window. The saved model is linked under **Registered version**. 
 
->**Note**: That the model, the experiment, and the experiment run are linked, allowing you to review how the model is trained. 
+>**Note**: The model, the experiment, and the experiment run are linked, allowing you to review how the model is trained. 
 
 ### Task 8: Save the notebook and end the Spark session
 
@@ -287,10 +286,10 @@ In this task, you will save your notebook with a meaningful name to preserve you
 
 1. On the notebook menu, select &#9645;**Stop session** to end the Spark session.
 
-   >**Note:** If you can't see the **Stop Session** option, it means the spark session has already ended.
+   >**Note:** If you can't see the **Stop Session** option, it means the Spark session has already ended.
 
 ### Summary
 
 In this exercise, you have created a notebook and trained a machine-learning model. You used Scikit-Learn to train the model and MLflow to track its performance.
 
-### You have successfully completed the lab,. Click on Next >> to procced with next exercise.
+### You have successfully completed the lab. Click on Next >> to proceed with next exercise.
