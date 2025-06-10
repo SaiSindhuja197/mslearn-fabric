@@ -1,6 +1,6 @@
 # Exercise 1: Create a Fabric workspace
 
-### Estimated Duration: 40 minutes
+### Estimated Duration: 40 Minutes
 
 Microsoft Fabric lets you set up workspaces depending on your workflows and use cases. A workspace is where you can collaborate with others to create reports, notebooks, lakehouses, etc. This lab will introduce you to creating a workspace in Microsoft Fabric. You will learn how to set up a workspace, which serves as a collaborative environment for organizing and managing your projects, data, and resources.
 
@@ -29,7 +29,9 @@ In this task, you will initiate your 60-day free trial of Microsoft Fabric by si
 
 1. A new prompt will appear asking you to **Activate your 60-day free Fabric trial capacity**, click on **Activate**.
 
-      ![Account-manager-start](./Images/fabric-3.png)
+    ![image](https://github.com/user-attachments/assets/d12f89b8-955d-4e0c-b671-977c34e152d1)
+
+    > **Note:** The trial capacity region may differ from the one shown in the screenshot. No need to worry – simply use the default selected region, activate it, and continue to the next step.  
 
 1. Click on **Stay on current page** when prompted.
 
