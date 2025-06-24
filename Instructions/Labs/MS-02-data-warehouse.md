@@ -92,7 +92,7 @@ In this task, you will create database tables by defining their structure with a
 
 1. On the Home menu tab, use the **New SQL Query** button to create a new query for the table.
 
-1. Open the **Lab VM** and navigate to the following path: `C:\LabFiles\Files\`
+1. Open the **Lab VM** and navigate to the following path: `C:\LabFiles\Files\`.
 
 1. Open the file **`create-dw-01.txt`** and copy the Transact-SQL code related to the **`DimProduct`** table.
 
@@ -170,7 +170,7 @@ In this task, you will create a relational data warehouse consisting of fact and
 
 In this task, you will query data warehouse tables using SQL to retrieve and analyze data. Most queries will involve aggregating and grouping data with functions and GROUP BY clauses, as well as joining related fact and dimension tables using JOIN clauses.
 
-1. Create a new SQL Query, and run the following code:
+1. Create a new SQL Query, and **Run** the following code:
 
    ```SQL
    SELECT  d.[Year] AS CalendarYear,
@@ -202,7 +202,7 @@ In this task, you will query data warehouse tables using SQL to retrieve and ana
    ORDER BY CalendarYear, MonthOfYear, SalesRegion;
    ```
 
-   ![](./Images/02/Pg4-T3QF-S2.png)
+   ![](./Images/02/Pg4-T3QF-S2(1).png)
 
 4. Run the modified query and review the results, which now include sales revenue aggregated by year, month and sales region.
 
@@ -232,7 +232,7 @@ In this task, you will create a view in the data warehouse to encapsulate SQL lo
 
     ![](./Images/E3-T5-S2.png)
 
-3. Create a new SQL query and run the following SELECT statement:
+3. Create a **New SQL query** and **Run** the following SELECT statement:
 
    ```SQL
    SELECT CalendarYear, MonthName, SalesRegion, SalesRevenue
@@ -264,7 +264,7 @@ In this task, you will create a visual query using the graphical query designer 
 
     ![](./Images/E3-T6-S6.png)
 
-1. If you're interested in looking at data for a single product, per a manager's request, you can now use the **ProductName** column to filter the data in the query. Filter the **ProductName** column to look at **Cable Lock** data only.
+1. If you're interested in looking at data for a single product, as per a manager's request, you can now use the **ProductName** column to filter the data in the query. Filter the **ProductName** column to look at **Cable Lock** data only.
 
     ![](./Images/E3-T6-S7.png)
 
@@ -278,7 +278,7 @@ In this task, you will visualize your data from a single query or your data ware
 
    ![03](./Images/pg-8.png)
 
-1. Hide the following columns in your Fact and Dimension tables that are not necessary to create a report. Note that this does not remove the columns from the model, it simply hides them from view on the report canvas.
+1. Hide the following columns in your Fact and Dimension tables that are not necessary to create a report, for this, select and **Right click (1)** and click on **Hide in report view (2)**. Note that this does not remove the columns from the model, it simply hides them from view on the report canvas.
    
    1. FactSalesOrder
       
