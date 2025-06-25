@@ -278,7 +278,7 @@ In this task, you will visualize your data from a single query or your data ware
 
    ![03](./Images/pg-8.png)
 
-1. Hide the following columns in your Fact and Dimension tables that are not necessary to create a report, for this, select and **Right click (1)** and click on **Hide in report view (2)**. Note that this does not remove the columns from the model, it simply hides them from view on the report canvas.
+1. Hide the following columns in your Fact and Dimension tables that are not necessary to create a report, for this, select the column, **right click (1)** and then choose **Hide in report view (2)**. Note that this does not remove the columns from the model, it simply hides them from view on the report canvas.
    
    1. FactSalesOrder
       
