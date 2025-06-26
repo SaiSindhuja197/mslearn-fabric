@@ -8,7 +8,7 @@ Microsoft Fabric lets you set up workspaces depending on your workflows and use 
 
 You will be able to complete the following tasks:
 
-- Task 1: Sign up for Microsoft Fabric Trial
+- Task 1: Sign up for the Microsoft Fabric Trial
 - Task 2: Create a workspace
 
 ### Task 1: Sign up for Microsoft Fabric Trial
@@ -61,6 +61,6 @@ Here, you create a Fabric workspace. The workspace contains all the items needed
 
 ### Summary
 
-In this exercise, you have signed up for the Microsoft Fabric Trial and created a workspace
+In this exercise, you have signed up for the Microsoft Fabric Trial and created a workspace.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.

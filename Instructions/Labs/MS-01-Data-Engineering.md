@@ -68,7 +68,7 @@ In many scenarios, the data you need to work with your lakehouse may be stored i
 
 In this task, you will create a pipeline to automate data processing workflows. Youâ€™ll define the sequence of data transformation steps, configure the necessary components, and set up triggers for execution. This will streamline your data integration processes and improve efficiency in handling data tasks. A simple way to ingest data is to use a **Copy data** activity in a pipeline to extract the data from a source and copy it to a file in the lakehouse.
 
-1. Navigate back to the workspace, click on **+ New item** and select **Data pipeline**.
+1. Navigate back to the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>**, click on **+ New item** and select **Data pipeline**.
 
     ![](./Images/E1T3S1.png)
 
@@ -80,7 +80,7 @@ In this task, you will create a pipeline to automate data processing workflows. 
 
    ![03](./Images/E2-T3-S3.png)
 
-4. In the **Copy Data** wizard, on the **Choose a data source** page, search for **Http (1)** and select it.
+4. In the **Copy Data** wizard, on the **Choose a data source** page, search for **Http (1)** and select **Http (2)**.
 
    ![Screenshot of the Choose data source page.](./Images/E1T1S4.png)
 
@@ -172,11 +172,11 @@ In this task, you will create a notebook to document your data analysis process.
 
     ![](./Images/E2-T4-S4.png)  
 
-7. Select the lakehouse named **Lakehouse-<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Add (2)**.
+7. Select the lakehouse named **Lakehouse-<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Connect (2)**.
  
-    ![](./Images/E2-T4-S6.png) 
+    ![](./Images/E2-T4-S6(1).png) 
 
-8. Select the existing cell in the notebook, which contains some simple code, and then replace the default code with the following variable declaration and click on **&#9655; Run**.
+8. Select the existing cell in the notebook, which contains some simple code, and then replace the default code with the following variable declaration and click on **&#9655; Run (2)**.
 
     ```python
    table_name = "sales"
@@ -267,7 +267,7 @@ In this task, you will create a visual query in Power BI using Power Query. Youâ
 
     ![](./Images/E2-T6-S1.png)
 
-2. In the Lakehouse, navigate to Schemas, then to dbo, and select the **sales (1)** table. In the sales table, click on **&#8230;** and select **Insert into Canvas (2)**. It will open a new visual query editor pane that opens to create a Power Query as shown here: 
+2. In the Lakehouse, navigate to Schemas, then to dbo, and inside tables,select the **sales (1)** table. In the sales table, click on **Ellipsis (&#8230;)** and select **Insert into Canvas (2)**. It will open a new visual query editor pane that opens to create a Power Query as shown here: 
 
     ![Screenshot of a Visual query.](./Images/E2-T6-S2.png)
 
@@ -281,12 +281,12 @@ In this task, you will create a visual query in Power BI using Power Query. Youâ
 
     ![Screenshot of a Visual query with results.](./Images/01/Pg3-VisQuery-S4.0.png)
 
-5. Then group the data by using the following **Basic** settings and click on **OK**.
+5. Then group the data by using the following **Basic** settings and click on **OK (5)**.
 
-    - Group by: **SalesOrderNumber**
-    - New column name: **LineItems**
-    - Operation: **Count distinct values**
-    - Column: **SalesOrderLineNumber**
+    - Group by: **SalesOrderNumber (1)**
+    - New column name: **LineItems (2)**
+    - Operation: **Count distinct values (3)**
+    - Column: **SalesOrderLineNumber (4)**
 
         ![Screenshot of a Visual query with results.](./Images/01/Pg3-VisQuery-S4.01.png)
 
@@ -302,7 +302,7 @@ In this task, you will create a report to visualize and present your data findin
 
    ![Screenshot of a data model.](./Images/fab20.png)
 
-   > You might notice some additional tables appeared as shown below, please ignore the system tables which are shown in ignore.
+   > You might notice some additional tables appeared as shown below, please ignore the system tables, which are shown in ignore.
 
      ![Screenshot of a data model.](./Images/ig.png)
 

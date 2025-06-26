@@ -2,7 +2,7 @@
 
 ### Estimated Duration: 75 Minutes
 
-In Microsoft Fabric, a data warehouse provides a relational database for large-scale analytics. Unlike the default read-only SQL endpoint for tables defined in a lakehouse, a data warehouse provides full SQL semantics; including the ability to insert, update, and delete data in the tables.
+In Microsoft Fabric, a data warehouse provides a relational database for large-scale analytics. Unlike the default read-only SQL endpoint for tables defined in a lakehouse, a data warehouse provides full SQL semantics, including the ability to insert, update, and delete data in the tables.
 
 ## Lab objectives
 
@@ -42,7 +42,7 @@ In this task, you will design and implement a data warehouse by organizing data 
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       
-   - If you receive an InProgress message, you can hit refresh to see the final status.
+   - If you receive an In Progress message, you can hit refresh to see the final status.
    - If you receive a success message, you can proceed to the next task.
    - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
    - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
@@ -75,7 +75,7 @@ In this task, you will create database tables by defining their structure with a
 
 1. Use the **Refresh** button on the toolbar to refresh the view. Then, in the **Explorer** pane, expand **Schemas** > **dbo** > **Tables** and verify that the **DimProduct** table has been created.
 
-1. On the **Home** menu tab, use the **New SQL Query** button and from the drop down select **New SQL Query**  to create a new query, and enter the following INSERT statement:
+1. On the **Home** menu tab, use the **New SQL Query** button and from the drop-down select **New SQL Query**  to create a new query, and enter the following INSERT statement:
 
    ```SQL
    INSERT INTO dbo.DimProduct
@@ -92,7 +92,7 @@ In this task, you will create database tables by defining their structure with a
 
 1. On the Home menu tab, use the **New SQL Query** button to create a new query for the table.
 
-1. Open the **Lab VM** and navigate to the following path: `C:\LabFiles\Files\`
+1. Open the **Lab VM** and navigate to the following path: `C:\LabFiles\Files\`.
 
 1. Open the file **`create-dw-01.txt`** and copy the Transact-SQL code related to the **`DimProduct`** table.
 
@@ -170,7 +170,7 @@ In this task, you will create a relational data warehouse consisting of fact and
 
 In this task, you will query data warehouse tables using SQL to retrieve and analyze data. Most queries will involve aggregating and grouping data with functions and GROUP BY clauses, as well as joining related fact and dimension tables using JOIN clauses.
 
-1. Create a new SQL Query, and run the following code:
+1. Create a new SQL Query, and **Run** the following code:
 
    ```SQL
    SELECT  d.[Year] AS CalendarYear,
@@ -202,9 +202,9 @@ In this task, you will query data warehouse tables using SQL to retrieve and ana
    ORDER BY CalendarYear, MonthOfYear, SalesRegion;
    ```
 
-   ![](./Images/02/Pg4-T3QF-S2.png)
+   ![](./Images/02/Pg4-T3QF-S2(1).png)
 
-4. Run the modified query and review the results, which now include sales revenue aggregated by year, month and sales region.
+4. Run the modified query and review the results, which now include sales revenue aggregated by year, month, and sales region.
 
 ### Task 5: Create a view
 
@@ -232,7 +232,7 @@ In this task, you will create a view in the data warehouse to encapsulate SQL lo
 
     ![](./Images/E3-T5-S2.png)
 
-3. Create a new SQL query and run the following SELECT statement:
+3. Create a **New SQL query** and **Run** the following SELECT statement:
 
    ```SQL
    SELECT CalendarYear, MonthName, SalesRegion, SalesRevenue
@@ -264,7 +264,7 @@ In this task, you will create a visual query using the graphical query designer 
 
     ![](./Images/E3-T6-S6.png)
 
-1. If you're interested in looking at data for a single product, per a manager's request, you can now use the **ProductName** column to filter the data in the query. Filter the **ProductName** column to look at **Cable Lock** data only.
+1. If you're interested in looking at data for a single product, as per a manager's request, you can now use the **ProductName** column to filter the data in the query. Filter the **ProductName** column to look at **Cable Lock** data only.
 
     ![](./Images/E3-T6-S7.png)
 
@@ -278,7 +278,7 @@ In this task, you will visualize your data from a single query or your data ware
 
    ![03](./Images/pg-8.png)
 
-1. Hide the following columns in your Fact and Dimension tables that are not necessary to create a report. Note that this does not remove the columns from the model, it simply hides them from view on the report canvas.
+1. Hide the following columns in your Fact and Dimension tables that are not necessary to create a report. For this, select the column, **right click (1)** and then choose **Hide in report view (2)**. Note that this does not remove the columns from the model; it simply hides them from view on the report canvas.
    
    1. FactSalesOrder
       
@@ -312,7 +312,7 @@ In this task, you will visualize your data from a single query or your data ware
 
 1. Ensure that the column chart on the canvas is active (with a grey border and handles), and then select **Category** from the **DimProduct** table to add a category to your column chart.
 
-1. In the **Visualizations** pane, change the chart type from a column chart to a **clustered bar chart**. Then resize the chart as necessary to ensure that the categories are readable.
+1. In the **Visualizations** pane, change the chart type from a column chart to a **clustered bar chart**. Then, resize the chart as necessary to ensure that the categories are readable.
 
     ![](./Images/E3-T7-S7.png)
 
