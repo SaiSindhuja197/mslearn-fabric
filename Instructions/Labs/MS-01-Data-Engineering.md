@@ -302,7 +302,7 @@ In this task, you will create a report to visualize and present your data findin
 
    ![Screenshot of a data model.](./Images/fab20.png)
 
-   > You might notice some additional tables appeared as shown below, please ignore the system tables which are shown in ignore.
+   > You might notice some additional tables appeared as shown below, please ignore the system tables, which are shown in ignore.
 
      ![Screenshot of a data model.](./Images/ig.png)
 
