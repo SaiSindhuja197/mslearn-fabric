@@ -138,7 +138,7 @@ Learner Support Contacts:
 
 Now, click on **Next** from the lower right corner to move on to the next page.
 
-![alt text](image.png)
+![alt text](./Images/ws/GS7.png)
 
 ### Happy Learning!!
 
