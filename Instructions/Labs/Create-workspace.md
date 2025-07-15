@@ -50,41 +50,41 @@ You will be able to complete the following tasks:
    https://app.fabric.microsoft.com/
    ```
 
-3. On the Microsoft Fabric page, enter your **Email**(1) and click on **SUBMIT**(2). This will check if you need to create a new account.
+1. If required, enter your credentials below and sign in
 
-4. Now let’s get started by signing into Microsoft Fabric. Click on **Sign In**.
+   **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+ 
+   **Password:** <inject key="AzureAdUserPassword"></inject>
 
-   ![](./Images/fabric-sign-in.png)
+   ![](./Images/ws/GS2.png)
+   ![](./Images/ws/GS3.png)
 
-5. Once you’ve clicked on Sign in, a new window will appear asking you to enter your **Password** and then click on **Sign In**.
+1. On the top right corner of the screen, select the **user icon (1)**, and then click on **Free Trial (2)**.
+   
+   ![](./Images/ws/Fabric1.png)
 
-   ![](./Images/fabric-sign-in-pass.png)
+1. On the **Activate your 60-day free Fabric trial capacity** click on **Activate**.
 
-6. On the Stay Signed In window, click on **YES**.
+   ![](./Images/ws/Fabric2.png)
 
-   ![](./Images/fabric-stay-sign-in.png)
+1. You will see a prompt for successful upgrade, click on **Got it**.
 
-7. In the Create Your Account section, enter the required fields **(1)** & **(2)** and click on **GET STARTED**(3). 
+   ![](./Images/ws/Fabric3.png)
 
-   ![](./Images/fabric-get-started.png)
+1. Click on **Fabric** on the bottom left of the screen. Now Select **Power BI** from the options .
 
-8. You have now successfully created your Microsoft Fabric account. Click on **GET STARTED**.
-
-   ![](./Images/fabric-get-started-01.png)
-
-1. Select **Power BI**.
-
-   ![Account-manager-start](./Images/ws/microsoftpage.png)
+   ![](./Images/ws/Fabric4.png)
+   ![](./Images/ws/Fabric5.png)
 
 ### Task 3: Create a workspace
 
 Here, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, the notebooks, Power BI datasets, and reports.
 
-1.  Now, select **Workspaces (1)** and click on **+ New workspace (2)**:
-
+1. Now, select **Workspaces (1)** and click on **+ New workspace (2)**:
+   
     ![New Workspace](./Images/ws/workspace.png)
 
-2. Fill out the **Create a workspace** form with the following details:
+1. Fill out the **Create a workspace** form with the following details:
 
    - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/>**.
    
@@ -92,7 +92,7 @@ Here, you create a Fabric workspace. The workspace contains all the items needed
 
    - **Advanced:** Expand it and Under **License mode**, select **Fabric capacity(1)**.
 
-3. Select on exisitng **Capacity(2)** then click on **Apply(3)** to create and open the workspace.
+1. Leave **Capacity(2)** as default and then click on **Apply(3)** to create and open the workspace.
 
    ![advanced-and-apply](./Images/f-11.png)
 
