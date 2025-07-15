@@ -85,11 +85,11 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 5. In the **Connection settings** pane, enter the following settings for the connection to your data source:
     - **URL (1)**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv`
     - **Connection (2)**: Create new connection
-    - **Connection name (3)**: copydata1
+    - **Connection name (3)**: sampledata
     - **Authentication kind (4)**: Anonymous
     - Click on **Next (5)**
   
-        ![04](./Images/data-source-02.png)
+        ![04](./Images/Lake4.png)
     
 6. Select **Next**. Make sure the following settings are selected:
     - **Relative URL**: *Leave blank*
@@ -98,6 +98,7 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
     - **Binary copy**: Unselected
     - **Request timeout**: *Leave blank*
     - **Max concurrent connections**: *Leave blank*
+    - Click **Next**
   
         ![05](./Images/fabric4.png)
    
@@ -132,9 +133,9 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
 13. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
 
-    ![09](./Images/fabric11.png)
+    ![09](./Images/Lake5.png)
 
-    A new pipeline containing a **Copy data** activity is created, as shown here:
+    >**Note:** A new pipeline containing a **Copy data** activity is created, as shown here:
 
     ![Screenshot of a pipeline with a Copy Data activity.](./Images/copy-data-pipeline.png)
 
@@ -220,6 +221,10 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
    ![.](./Images/01/Pg3-Notebook-S10.png)
  
+1. Click on the **Stop** icon from the top bar.
+
+    ![](./Images/Lake6.png)
+
 9. In the hub menu bar on the left, select your lakehouse.
 
 10. In the **Explorer** pane, refresh the view. Then expand **Tables**, and select the **sales** table to see a preview of the data it contains.
