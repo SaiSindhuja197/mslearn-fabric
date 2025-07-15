@@ -1,4 +1,4 @@
-# MS Fabric Foundation for Enterprise Analytics
+# Cloud Scale Analytics with Microsoft Fabric
 
 ### Overall Estimated Duration: 8 Hours
 
@@ -93,7 +93,40 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
 ![](./Images/ws/02062025(5).png)
 
-   
+## Let's get started with Azure
+
+1. In the Lab VM, click on Azure portal shortcut of Microsoft Edge browser which is created on the desktop.
+
+   ![Azure Portal](./Images/ws/GS1.png)
+
+
+1. On the **Sign in to Microsoft Azure** window, you will see the login screen. Enter the following username and click on **Next**.
+
+    **Email/Username: <inject key="AzureAdUserEmail"></inject>**
+        
+    ![Sign-In](./Images/ws/GS2.png)
+
+1. Now enter the following password and click on **Sign in**.
+
+    **Password: <inject key="AzureAdUserPassword"></inject>**
+
+   ![Password](./Images/ws/GS3.png)
+
+1. First-time users are often prompted to **Stay Signed In**, if you see this pop-up, click on **Yes**.
+
+    ![](./Images/ws/GS4.png)
+
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+
+1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
+
+1. In the **Search** pane, search for **Resource groups (1)** and select **Resource groups (2)**.
+
+    ![In the search results pane, select the Resource group](./Images/ws/GS5.png)
+
+1. On the **Resource groups** page, you can view the pre-deployed resource group **fabric**.
+
+   ![RG](./Images/ws/GS6.png)
 
 ## Support Contact
  
