@@ -41,16 +41,20 @@ Now that you have created a workspace in the previous step, it's time to switch 
 
     After a minute or so, a new lakehouse with no **Tables** or **Files** will be created.
 
-4. On the **Lake view** tab in the pane on the left, in the **... (1)** menu for the **Files** node, select **New subfolder (2)** and create a subfolder named **new_data**.
+4. On the **Lake view** tab in the pane on the left, in the **... (1)** menu for the **Files** node, select **New subfolder (2)** and enter the subfolder name **new_data (3)** and click on **Create (4)**.
 
    ![02](./Images/f-30.png)
+   ![](./Images/Lake1.png)
 
 ## Task 2: Explore shortcuts
 
 In many scenarios, the data you need to work within your lakehouse may be stored in some other location. While there are many ways to ingest data into the OneLake storage for your lakehouse, another option is to instead create a *shortcut*. Shortcuts enable you to include externally sourced data in your analytics solution without the overhead and risk of data inconsistency associated with copying it.
 
 1. In the **...** menu for the **Files** folder, select **New shortcut**.
-2. View the available data source types for shortcuts. Then close the **New shortcut** dialog box without creating a shortcut.
+
+    ![](./Images/Lake2.png)
+
+1. View the available data source types for shortcuts. Then close the **New shortcut** dialog box without creating a shortcut.
 
    ![](./Images/u4.png)
 
@@ -72,15 +76,16 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
    
 3. If the **Copy data** wizard doesn't open automatically, select **Copy data assistant (1)** in the pipeline editor page.
 
+    ![](./Images/Lake3.png)
 
-4. In the **Copy Data** wizard, on the **Choose a data source** page, search for HTTP and select the **Other** tab and then select **HTTP (1)**, click on **Next (2)**.
+4. In the **Copy Data** wizard, on the **Choose a data source** page, search for **HTTP (1)** and then select **HTTP (2)**.
 
    ![Screenshot of the Choose data source page.](./Images/data-source01.png)
 
 5. In the **Connection settings** pane, enter the following settings for the connection to your data source:
     - **URL (1)**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv`
     - **Connection (2)**: Create new connection
-    - **Connection name (3)**: *Specify a unique name*
+    - **Connection name (3)**: copydata1
     - **Authentication kind (4)**: Anonymous
     - Click on **Next (5)**
   
