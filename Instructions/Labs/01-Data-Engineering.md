@@ -239,9 +239,9 @@ When you create a lakehouse and define tables in it, an SQL endpoint is automati
 
     ![Screenshot of the SQL endpoint page.](./Images/sql_31-1.png)
 
-3. Use the **New SQL query** button to open a new query editor, and enter the following SQL query:
+3. From the **New SQL Query (1)** drop-down select the **New SQL query (2)** button to open a new query editor, and enter the following SQL query:
 
-   ![Screenshot of a new sql query.](./Images/f-06.png)
+   ![](./Images/Lake7.png)
    
     ```SQL
    SELECT Item, SUM(Quantity * UnitPrice) AS Revenue
