@@ -41,7 +41,7 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
 
 1. Click on **Get data (1)** and select **Local file (2)**
 
-   ![01](./Images/03/01.png)
+   ![01](./Images/Real1.png)
 
 5. Use the wizard to import the data into a new table by selecting the following options:
     - **Source**:
@@ -67,7 +67,7 @@ Kusto query language (KQL) is used to query static or streaming data in a table 
 
 Now that you have a table of data in your database, you can use KQL code to query it.
 
-1. Make sure you have the **sales** table highlighted. From the menu bar, select the **Query table** drop-down, and from there select **Show any 100 records** .
+1. Make sure you have the **sales** table highlighted. From the menu bar, select the **Query with code** drop-down, and from there select **Show any 100 records** .
 
     ![01](./Images/L4T2S1.png)
     
@@ -103,7 +103,9 @@ Now that you have a table of data in your database, you can use KQL code to quer
 
 8. Run the query and review the results, which should contain the total net revenue for each product between January 1st and December 31st 2020 in ascending order of product name.
 
-9. Select **Save as KQL queryset** and save the query as **Revenue by Product**.
+9. Select **Eventhouse-1793453_queryset** and click on Edit buttons and change the name of the query to **Revenue by Product**.
+
+    ![01](./Images/Edit1.png)
 
 ## Task 3: Create a Power BI report from a KQL Queryset
 
@@ -113,15 +115,23 @@ You can use your KQL Queryset as the basis for a Power BI report.
 
 2. Select **Create Power BI report** and wait for the report editor to open.
 
-3. In the report editor, in the **Data** pane, expand **Kusto Query Result** and select the **Item** and **TotalRevenue** fields.
+    ![01](./Images/Edit2.png)
+
+3. In the report editor, in the **Data** pane, expand **Kusto Query Result** and select the **Item** and **TotalNetRevenue** fields.
 
 4. On the report design canvas, select the table visualization that has been added and then in the **Visualizations** pane, select **Clustered bar chart**.
 
     ![Screenshot of a report from a KQL query.](./Images/kql-report1.png)
 
-5. In the **Power BI** window, in the **File** menu, select **Save**. Then save the report as **Revenue by Item.pbix** in the workspace where your lakehouse and KQL database are defined using a **Non-Business** sensitivity label.
+5. In the **Power BI** window, in the **File** menu, select **Save**. Then save the report as **Revenue by Item (1)** then select the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/> (2)** where your lakehouse and KQL database are defined using a **Non-Business** sensitivity label and then click **Continue (3)**
 
-6. Close the **Power BI** window, and in the bar on the left, select the icon for your workspace.
+    ![01](./Images/Edit3.png)
+
+1. Close the **Power BI** window, then click on **Save**.
+    
+    ![01](./Images/Edit4.png)
+
+6. In the bar on the left, select the icon for your workspace.
 
     Refresh the Workspace page if necessary to view all of the items it contains.
 
@@ -131,7 +141,9 @@ You can use your KQL Queryset as the basis for a Power BI report.
 
 Delta lake supports streaming data. Delta tables can be a *sink* or a *source* for data streams created using the Spark Structured Streaming API. In this example, you'll use a delta table as a sink for some streaming data in a simulated internet of things (IoT) scenario.
 
-1. Navigate back to your workspace and open **Load Sales Notebook**. Add a new code cell in the notebook. Then, in the new cell, add the following code and run it:
+1. Navigate back to your workspace and open **Load Sales Notebook**. Add a new code cell in the notebook by using the **+ Code** button. Then, in the new cell, add the following code and run it:
+
+    ![01](./Images/Edit5.png)
 
     ```python
    from notebookutils import mssparkutils
@@ -165,7 +177,7 @@ Delta lake supports streaming data. Delta tables can be a *sink* or a *source* f
 
     Ensure the message *Source stream created...* is printed. The code you just ran has created a streaming data source based on a folder to which some data has been saved, representing readings from hypothetical IoT devices.
 
-2. In a new code cell, add and run the following code:
+2. Add a new code cell, and run the following code:
 
     ```python
    # Write the stream to a delta table
@@ -177,7 +189,7 @@ Delta lake supports streaming data. Delta tables can be a *sink* or a *source* f
 
     This code writes the streaming device data in delta format to a folder named **iotdevicedata**. Because the path for the folder location in the **Tables** folder, a table will automatically be created for it.
 
-3. In a new code cell, add and run the following code:
+3. Add a new code cell, and run the following code:
 
     ```sql
    %%sql
@@ -187,7 +199,7 @@ Delta lake supports streaming data. Delta tables can be a *sink* or a *source* f
 
     This code queries the **IotDeviceData** table, which contains the device data from the streaming source.
 
-4. In a new code cell, add and run the following code:
+4. Add a new code cell, and run the following code:
 
     ```python
    # Add more data to the source stream
@@ -214,7 +226,7 @@ Delta lake supports streaming data. Delta tables can be a *sink* or a *source* f
 
     This code queries the **IotDeviceData** table again, which should now include the additional data that was added to the streaming source.
 
-6. In a new code cell, add and run the following code:
+6. Add a new code cell, and run the following code:
 
     ```python
    deltastream.stop()
