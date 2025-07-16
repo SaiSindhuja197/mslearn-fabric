@@ -239,9 +239,9 @@ When you create a lakehouse and define tables in it, an SQL endpoint is automati
 
     ![Screenshot of the SQL endpoint page.](./Images/sql_31-1.png)
 
-3. From the **New SQL Query (1)** drop-down select the **New SQL query (2)** button to open a new query editor, and enter the following SQL query:
+3. Use the **New SQL query** button to open a new query editor, and enter the following SQL query:
 
-   ![](./Images/Lake7.png)
+   ![Screenshot of a new sql query.](./Images/f-06.png)
    
     ```SQL
    SELECT Item, SUM(Quantity * UnitPrice) AS Revenue
@@ -258,13 +258,15 @@ When you create a lakehouse and define tables in it, an SQL endpoint is automati
 
 While many data professionals are familiar with SQL, data analysts with Power BI experience can apply their Power Query skills to create visual queries.
 
-1. On the toolbar, select **New visual query**.
+1. On the toolbar, select **New visual query (2)** from the **New SQL Query (1)** dropdown.
+
+    ![.](./Images/Lake7.png)
 
 2. Drag the **sales** table to the new visual query editor pane that opens to create a Power Query as shown here: 
 
     ![Screenshot of a Visual query.](./Images/visual-query1.png)
 
-3. In the **Manage columns** menu, select **Choose columns**. Then select only the **SalesOrderNumber** and **SalesOrderLineNumber** columns and click on **OK**.
+3. In the **Manage columns (1)** menu, select **Choose columns (2)**. Then select only the **SalesOrderNumber** and **SalesOrderLineNumber** columns and click on **OK**.
 
     ![Screenshot of a Choose columns dialog box.](./Images/f-7.png)
     ![Screenshot of a Choose columns dialog box.](./Images/choose-columns1.png)
@@ -273,14 +275,14 @@ While many data professionals are familiar with SQL, data analysts with Power BI
 
     ![Screenshot of a Visual query with results.](./Images/01/Pg3-VisQuery-S4.0.png)
 
-5. Then group the data by using the following **Basic** settings and click on **OK**:
+5. Then group the data by using the following **Basic** settings and click on **OK (5)**:
 
-    - **Group by**: SalesOrderNumber
-    - **New column name**: LineItems
-    - **Operation**: Count distinct values
-    - **Column**: SalesOrderLineNumber
+    - **Group by (1)**: SalesOrderNumber
+    - **New column name (2)**: LineItems
+    - **Operation (3)**: Count distinct values
+    - **Column (4)**: SalesOrderLineNumber
 
-      ![Screenshot of a Visual query with results.](./Images/01/Pg3-VisQuery-S4.01.png)
+      ![Screenshot of a Visual query with results.](./Images/Pg3-VisQuery-S4.01.png)
 
 6. When you're done, the results pane under the visual query shows the number of line items for each sales order.
 
@@ -290,7 +292,7 @@ While many data professionals are familiar with SQL, data analysts with Power BI
 
 The tables in your lakehouse are automatically added to a default dataset that defines a data model for reporting with Power BI.
 
-1. At the top of the SQL Endpoint page, select the **Model** tab. The data model schema for the dataset is shown.
+1. At the top of the SQL Endpoint page, select the **Model Layouts** tab. The data model schema for the dataset is shown.
 
     ![Screenshot of a data model.](./Images/u8.png)
 
@@ -309,8 +311,8 @@ The tables in your lakehouse are automatically added to a default dataset that d
     ![](./Images/u9.png)
    
 3. In the **Data** pane on the right, expand the **sales** table. Then select the following fields:
-    - **Item**
-    - **Sum of Quantity**
+    - **Item (1)**
+    - **Quantity (1)**
 
     A table visualization is added to the report:
 
@@ -320,8 +322,8 @@ The tables in your lakehouse are automatically added to a default dataset that d
 
     ![Screenshot of a report containing a clustered bar chart.](./Images/clustered-bar-chart11.png)
 
-5. On the **File** menu, select **Save**. Then save the report as **Item Sales Report** in the workspace you created previously.
-6. Close the browser tab containing the report to return to the SQL endpoint for your lakehouse. Then, in the hub menu bar on the left, select your workspace to verify that it contains the following items:
+5. On the **File (1)** menu, select **Save (2)**. Then name the report as **Item Sales Report (3)** in the workspace you created previously, and then click **Save (4)**
+6. In the hub menu bar on the left, select your workspace to verify that it contains the following items:
     - Your lakehouse.
     - The SQL endpoint for your lakehouse.
     - A default dataset for the tables in your lakehouse.
