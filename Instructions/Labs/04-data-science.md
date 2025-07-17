@@ -65,8 +65,7 @@ Now you're ready to run code to prepare data and train a model. To work with dat
 
    ![](./Images/Data1.png)
    ![](./Images/Data2.png)
-
-
+   
 1. Expand the **Files** folder so that the CSV file is listed next to the notebook editor.
 
 1. In the **...** menu for **churn.csv**, select **Load data** > **Pandas**.
