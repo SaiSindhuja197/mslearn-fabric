@@ -82,77 +82,67 @@ In Microsoft Fabric, the workflow begins with creating a Fabric workspace to man
 
 # Getting Started with the Lab
 
-1. Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. You can see the number on the bottom of the **Lab guide** to switch to different exercises of the lab guide.
+## Accessing Your Lab Environment
 
-   ![07](./Images/march-getting-started-1.png)
+## Virtual Machine & Lab Guide
 
-1. To get the lab environment details, you can select the **Environment** tab. Additionally, the credentials will also be emailed to your registered email address.
+Once the environment is provisioned, a virtual machine (Lab VM) and **Guide** will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab.
 
-   ![08](./Images/march-getting-started-3.png)
+   ![07](./Images/GS1.png)
 
-2. Utilizing the Split Window Feature: For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
+## Exploring your Lab Resources
 
-   ![08](./Images/march-getting-started-2.png)
+To get the lab environment details, you can select the **Environment** tab. Additionally, the credentials will also be emailed to your registered email address.
 
-   > You will see the DeploymentID value on the **Environment** tab, use it wherever you see SUFFIX or DeploymentID in lab steps.
+   ![08](./Images/GS2.png)
 
-## Utilizing the Zoom In/Out Feature
+## Utilizing the Split Windw Feature
 
-To adjust the zoom level for the environment page, click the A↕ : 100% icon located next to the timer in the lab environment.
+Utilizing the Split Window Feature: For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
 
-   ![08](./Images/march-getting-started-6.png)
+   ![08](./Images/GS3.png)
+
+   >**Note:** You will see the DeploymentID value on the **Environment** tab, use it wherever you see SUFFIX or DeploymentID in lab steps.
 
 ## Managing Your Virtual Machine
  
 Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
 
-   ![08](./Images/march-getting-started-5.png)
+   ![08](./Images/GS5.png)
 
-## Login to Azure Portal
+## Lab Guide Zoom In/Zoom Out Options
 
-1. In the JumpVM, click on the **Azure portal** shortcut of the Microsoft Edge browser which is created on the desktop.
+To adjust the zoom level for the environment page, click the A↕ : 100% icon located next to the timer in the lab environment.
 
-   ![09](./Images/march-getting-started-04.png)
+   ![08](./Images/GS4.png)
+
+## Let's Get Started with Power BI Portal
+
+1. In the Lab VM, click on the **Microsoft Edge** browser which is available on the desktop.
+
+   ![09](./Images/GS6.png)
+
+1. Copy the **Power BI link**, below and open this link in a new tab on the Microsoft Edge Browser.
+
+   ```
+   https://powerbi.com
+   ```
    
-1. On the **Sign-in into Microsoft Azure** tab you will see the login screen, in that enter the following email/username and then click on **Next**. 
-   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+1. On the **Sign-in | Microsoft Power BI** tab enter the **Email/Username: <inject key="AzureAdUserEmail"></inject> (1)** and then click on **Submit (2)**.
 
-     ![04](./Images/gs/lab1-image1.png)
+     ![04](./Images/Sign1.png)
      
-1. Now enter the following password and click on **Sign in**.
-   * Password: <inject key="AzureAdUserPassword"></inject>
-   
-     ![05](./Images/gs/lab1-image2.png)
+1. Next, enter the **Password: <inject key="AzureAdUserPassword"></inject> (1)** and click on **Sign in (2)**.
+
+   ![05](./Images/Sign2.png)
      
-1. If you see the pop-up **Stay Signed in?**, click **No**.
+1. If you see a pop-up **Stay Signed in?**, click **No**.
 
-## Steps to Proceed with MFA Setup if "Ask Later" Option is Not Visible
+   ![05](./Images/Sign3.png)
 
-1. At the **"More information required"** prompt, select **Next**.
+1. You will be navigated to the Power BI Home page.
 
-1. On the **"Keep your account secure"** page, select **Next** twice.
-
-1. **Note:** If you don’t have the Microsoft Authenticator app installed on your mobile device:
-
-   - Open **Google Play Store** (Android) or **App Store** (iOS).
-   - Search for **Microsoft Authenticator** and tap **Install**.
-   - Open the **Microsoft Authenticator** app, select **Add account**, then choose **Work or school account**.
-
-1. A **QR code** will be displayed on your computer screen.
-
-1. In the Authenticator app, select **Scan a QR code** and scan the code displayed on your screen.
-
-1. After scanning, click **Next** to proceed.
-
-1. On your phone, enter the number shown on your computer screen in the Authenticator app and select **Next**.
-       
-1. If prompted to stay signed in, you can click **No**.
-
-1. If a **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
- 
-1. Now, click on the **Next** from the lower right corner to move to the next page.
-
-This hands-on-lab demonstrates how to create and manage a workspace in Microsoft Fabric, including setting up data pipelines and using Apache Spark. You’ll also train a machine-learning model and explore dataflows for Power BI reports.
+   ![05](./Images/Power1.png)
 
 ## Support Contact
 
@@ -163,6 +153,8 @@ Learner Support Contacts:
 - Email Support: cloudlabs-support@spektrasystems.com
 - Live Chat Support: https://cloudlabs.ai/labs-support
 
-    Now, click on Next from the lower right corner to move on to the next page.
+Now, click on Next from the lower right corner to move on to the next page.
+   
+   ![05](./Images/page1.png)
 
 ## Happy Learning!!
