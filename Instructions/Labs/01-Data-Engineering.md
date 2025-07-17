@@ -41,16 +41,20 @@ Now that you have created a workspace in the previous step, it's time to switch 
 
     After a minute or so, a new lakehouse with no **Tables** or **Files** will be created.
 
-4. On the **Lake view** tab in the pane on the left, in the **... (1)** menu for the **Files** node, select **New subfolder (2)** and create a subfolder named **new_data**.
+4. On the **Lake view** tab in the pane on the left, in the **... (1)** menu for the **Files** node, select **New subfolder (2)** and enter the subfolder name **new_data (3)** and click on **Create (4)**.
 
    ![02](./Images/f-30.png)
+   ![](./Images/Lake1.png)
 
 ## Task 2: Explore shortcuts
 
 In many scenarios, the data you need to work within your lakehouse may be stored in some other location. While there are many ways to ingest data into the OneLake storage for your lakehouse, another option is to instead create a *shortcut*. Shortcuts enable you to include externally sourced data in your analytics solution without the overhead and risk of data inconsistency associated with copying it.
 
 1. In the **...** menu for the **Files** folder, select **New shortcut**.
-2. View the available data source types for shortcuts. Then close the **New shortcut** dialog box without creating a shortcut.
+
+    ![](./Images/Lake2.png)
+
+1. View the available data source types for shortcuts. Then close the **New shortcut** dialog box without creating a shortcut.
 
    ![](./Images/u4.png)
 
@@ -72,19 +76,20 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
    
 3. If the **Copy data** wizard doesn't open automatically, select **Copy data assistant (1)** in the pipeline editor page.
 
+    ![](./Images/Lake3.png)
 
-4. In the **Copy Data** wizard, on the **Choose a data source** page, search for HTTP and select the **Other** tab and then select **HTTP (1)**, click on **Next (2)**.
+4. In the **Copy Data** wizard, on the **Choose a data source** page, search for **HTTP (1)** and then select **HTTP (2)**.
 
    ![Screenshot of the Choose data source page.](./Images/data-source01.png)
 
 5. In the **Connection settings** pane, enter the following settings for the connection to your data source:
     - **URL (1)**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv`
     - **Connection (2)**: Create new connection
-    - **Connection name (3)**: *Specify a unique name*
+    - **Connection name (3)**: sampledata
     - **Authentication kind (4)**: Anonymous
     - Click on **Next (5)**
   
-        ![04](./Images/data-source-02.png)
+        ![04](./Images/Lake4.png)
     
 6. Select **Next**. Make sure the following settings are selected:
     - **Relative URL**: *Leave blank*
@@ -93,6 +98,7 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
     - **Binary copy**: Unselected
     - **Request timeout**: *Leave blank*
     - **Max concurrent connections**: *Leave blank*
+    - Click **Next**
   
         ![05](./Images/fabric4.png)
    
@@ -127,9 +133,9 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
 13. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
 
-    ![09](./Images/fabric11.png)
+    ![09](./Images/Lake5.png)
 
-    A new pipeline containing a **Copy data** activity is created, as shown here:
+    >**Note:** A new pipeline containing a **Copy data** activity is created, as shown here:
 
     ![Screenshot of a pipeline with a Copy Data activity.](./Images/copy-data-pipeline.png)
 
@@ -215,6 +221,10 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
    ![.](./Images/01/Pg3-Notebook-S10.png)
  
+1. Click on the **Stop** icon from the top bar.
+
+    ![](./Images/Lake6.png)
+
 9. In the hub menu bar on the left, select your lakehouse.
 
 10. In the **Explorer** pane, refresh the view. Then expand **Tables**, and select the **sales** table to see a preview of the data it contains.
@@ -248,13 +258,15 @@ When you create a lakehouse and define tables in it, an SQL endpoint is automati
 
 While many data professionals are familiar with SQL, data analysts with Power BI experience can apply their Power Query skills to create visual queries.
 
-1. On the toolbar, select **New visual query**.
+1. On the toolbar, select **New visual query (2)** from the **New SQL Query (1)** dropdown.
+
+    ![.](./Images/Lake7.png)
 
 2. Drag the **sales** table to the new visual query editor pane that opens to create a Power Query as shown here: 
 
     ![Screenshot of a Visual query.](./Images/visual-query1.png)
 
-3. In the **Manage columns** menu, select **Choose columns**. Then select only the **SalesOrderNumber** and **SalesOrderLineNumber** columns and click on **OK**.
+3. In the **Manage columns (1)** menu, select **Choose columns (2)**. Then select only the **SalesOrderNumber** and **SalesOrderLineNumber** columns and click on **OK**.
 
     ![Screenshot of a Choose columns dialog box.](./Images/f-7.png)
     ![Screenshot of a Choose columns dialog box.](./Images/choose-columns1.png)
@@ -263,14 +275,14 @@ While many data professionals are familiar with SQL, data analysts with Power BI
 
     ![Screenshot of a Visual query with results.](./Images/01/Pg3-VisQuery-S4.0.png)
 
-5. Then group the data by using the following **Basic** settings and click on **OK**:
+5. Then group the data by using the following **Basic** settings and click on **OK (5)**:
 
-    - **Group by**: SalesOrderNumber
-    - **New column name**: LineItems
-    - **Operation**: Count distinct values
-    - **Column**: SalesOrderLineNumber
+    - **Group by (1)**: SalesOrderNumber
+    - **New column name (2)**: LineItems
+    - **Operation (3)**: Count distinct values
+    - **Column (4)**: SalesOrderLineNumber
 
-      ![Screenshot of a Visual query with results.](./Images/01/Pg3-VisQuery-S4.01.png)
+      ![Screenshot of a Visual query with results.](./Images/Pg3-VisQuery-S4.01.png)
 
 6. When you're done, the results pane under the visual query shows the number of line items for each sales order.
 
@@ -280,7 +292,7 @@ While many data professionals are familiar with SQL, data analysts with Power BI
 
 The tables in your lakehouse are automatically added to a default dataset that defines a data model for reporting with Power BI.
 
-1. At the top of the SQL Endpoint page, select the **Model** tab. The data model schema for the dataset is shown.
+1. At the top of the SQL Endpoint page, select the **Model Layouts** tab. The data model schema for the dataset is shown.
 
     ![Screenshot of a data model.](./Images/u8.png)
 
@@ -299,8 +311,8 @@ The tables in your lakehouse are automatically added to a default dataset that d
     ![](./Images/u9.png)
    
 3. In the **Data** pane on the right, expand the **sales** table. Then select the following fields:
-    - **Item**
-    - **Sum of Quantity**
+    - **Item (1)**
+    - **Quantity (1)**
 
     A table visualization is added to the report:
 
@@ -310,8 +322,8 @@ The tables in your lakehouse are automatically added to a default dataset that d
 
     ![Screenshot of a report containing a clustered bar chart.](./Images/clustered-bar-chart11.png)
 
-5. On the **File** menu, select **Save**. Then save the report as **Item Sales Report** in the workspace you created previously.
-6. Close the browser tab containing the report to return to the SQL endpoint for your lakehouse. Then, in the hub menu bar on the left, select your workspace to verify that it contains the following items:
+5. On the **File (1)** menu, select **Save (2)**. Then name the report as **Item Sales Report (3)** in the workspace you created previously, and then click **Save (4)**
+6. In the hub menu bar on the left, select your workspace to verify that it contains the following items:
     - Your lakehouse.
     - The SQL endpoint for your lakehouse.
     - A default dataset for the tables in your lakehouse.

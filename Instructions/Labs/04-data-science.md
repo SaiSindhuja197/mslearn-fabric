@@ -61,18 +61,11 @@ To train a model, you can create a *notebook*. Notebooks provide an interactive 
 
 Now you're ready to run code to prepare data and train a model. To work with data, you'll use *dataframes*. Dataframes in Spark are similar to Pandas dataframes in Python, and provide a common structure for working with data in rows and columns.
 
-1. Selct Lakehouses from the left pane and in the **Add lakehouse** pane, select **Add** to add a lakehouse.
+1. Under **Explore (1)** menu, select the **Add data items (2)** drop-down, and then select **Existing da`ta source (3)**, then select your **Lakehouse  (4)** and click on **Continue (5)** to add a lakehouse.
 
-   ![](./Images/f-19.png)
-   ![](./Images/Pg6-Edit-S4.png)
+   ![](./Images/Data1.png)
+   ![](./Images/Data2.png)
 
-1. Select **Existing lakehouse without Schema(1)** and select **Add (2)**.
-
-   ![](./Images/L5T3S2.png)
-
-1. Select the lakehouse you created in a previous section named **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and then click on **Add (2)**.
-
-   ![](./Images/L5T3S3.png) 
 
 1. Expand the **Files** folder so that the CSV file is listed next to the notebook editor.
 
@@ -257,15 +250,13 @@ After comparing machine learning models that you've trained across experiment ru
 
 1. Select **Run details**.
 
-1. Select the run with the highest accuracy. 
-
 1. Scroll right to see the Save as model option. Select **Save** in the **Save run as ML model** box.
 
    ![](./Images/saverun_31-1.png)
 
-1. Select **Create a new model** in the newly opened pop-up window.
+1. Select **Create a new model (1)** in the newly opened pop-up window.
 
-1. Select **model** for Select folder, name the model **model-churn**, and select **Save**.
+1. Select **model (2)** for Select folder, name the model **model-churn (3)**, and select **Save (4)**.
 
     ![](./Images/L5T7S6.png)
 

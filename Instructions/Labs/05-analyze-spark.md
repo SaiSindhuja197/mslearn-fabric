@@ -34,7 +34,9 @@ Now that you have a workspace, it's time to create a data lakehouse for the data
 
     After a minute or so, a new empty lakehouse will be created. You need to ingest some data into the data lakehouse for analysis. There are multiple ways to do this, but in this exercise you'll simply upload them to your lakehouse from the **LabVM**.
 
-3. Return to the web browser tab containing your lakehouse, and in the **...** menu for the **Files** folder in the **Explorer** pane, select **Upload** and **Upload folder**, and then upload the **orders** folder from **C:\LabFiles\Files\orders** to the lakehouse.
+3. Return to the web browser tab containing your lakehouse, and in the **Explorer** pane, right click on **Files (1)**, then select **Upload (2)**, and then **Upload folder (3)**, and then upload the **orders** folder from **C:\LabFiles\Files\orders** to the lakehouse.
+
+    ![](./Images/Spark1.png)
 
 4. After the files have been uploaded, expand **Files** and select the **orders** folder; and verify that the CSV files have been uploaded.
    
@@ -393,24 +395,22 @@ A picture is proverbially worth a thousand words, and a chart is often better th
 
 2. Run the code and observe that it returns the data from the **salesorders** view you created previously.
 
-3. We need to change the view from table to chart in the results section beneath the cell. To do so we will first need to turn off the new visualization option. Click on **...** and then **New visualization** to turn it off. Then click on **Chart**.
+3. We need to change the view from table to chart in the results section beneath the cell. To do so we will first need to turn off the new Chart option. Click on **+ New Chart** . Then click on **Start Editing**.
 
-   ![Screenshot of a bar chart of products by total order quantiies](./Images/L6T9S3.png)   
+   ![](./Images/Spark2.png)
+   ![](./Images/Spark3.png)   
 
-4. Click on **Customize chart** on the right side of the chart to display the options pane for the chart. Then set the options as follows and select **Apply**.
-
-   ![Screenshot of a bar chart of products by total order quantiies](./Images/f-21.png)
-
-    - **Chart type**: Bar chart
-    - **Key**: Item
-    - **Values**: Quantity
+    - **Chart type (1)**: Bar chart
+    - **X-axis (2)**: Item
+    - **Y-axis (3)**: Quantity
     - **Series Group**: *leave blank*
-    - **Aggregation**: Sum
+    - **Aggregation (4)**: Sum
     - **Stacked**: *Unselected*
 
 5. Verify that the chart looks similar to this:
 
-   ![Screenshot of a bar chart of products by total order quantiies](./Images/L6T9S5.png)
+   ![](./Images/Spark4.png)
+   ![](./Images/Spark5.png)
 
 ### Get started with **matplotlib**
 

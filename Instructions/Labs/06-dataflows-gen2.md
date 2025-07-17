@@ -20,7 +20,7 @@ You will be able to complete the following tasks:
 
 Now that you have a lakehouse, you need to ingest some data into it. One way to do this is to define a dataflow that encapsulates an *extract, transform, and load* (ETL) process.
 
-1. Navigate back to your workspace, click on **+ New item**.  Select **Dataflow Gen2**. After a few seconds, the Power Query editor for your new dataflow opens as shown here.
+1. Navigate back to your workspace, click on **+ New item**.  Select **Dataflow Gen2**. Leave the name as default and click on **Create**. After a few seconds, the Power Query editor for your new dataflow opens as shown here.
 
    ![New dataflow.](./Images/new-dataflow1.png)
 
@@ -49,7 +49,7 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
 ### Task 2: Add data destination for Dataflow
 
-1. On the toolbar ribbon, select the **Home** tab. Then in the **Add data destination** drop-down menu, select **Lakehouse**.
+1. On the toolbar ribbon, select the **Home** tab. Then in the **Data destination** click on **+**, and then select **Lakehouse**.
 
       ![Data destination configuration page.](./Images/f-21-6.png)
 
@@ -63,9 +63,9 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
     ![Data destination configuration page.](./Images/f-22-6.png)
 
-      >**Note:** On the **Destination settings** page, notice how OrderDate and MonthNo are not selected in the Column mapping and there is an informational message: *Change to date/time*.
+      >**Note:** On the **Destination settings** page, disable use automatic settings and select **Append**as Update method. You can see that MonthNo is not selected in the Column mapping.
 
-      ![Data destination settings page.](./Images/f-27.png)
+      ![Data destination settings page.](./Images/Flow1.png)
 
 1. Cancel this action, then go back to OrderDate and MonthNo columns in Power Query online. Right-click on the column header and **Change Type**.
 
@@ -75,11 +75,11 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
 1. Now repeat the process outlined earlier to add a lakehouse destination.
 
-1. On the **Destination settings** page, select **Append**, and then save the settings. you will be back to Power Query editor.
+1. On the **Destination settings** page, select **Append**, and then **save settings**. You will be back to Power Query editor.
 
 1. Select **Publish** to publish the dataflow. Then wait for the **Dataflow 1** dataflow to be created in your workspace.
 
-1. Once published, click on ... beside the **dataflow 1** in your workspace, select **Properties**, and rename your dataflow as **Transform Orders Dataflow** and click on **Save**.
+1. Once published, click on ... beside the **dataflow 1** in your workspace, select **Settings**, and rename your dataflow as **Transform Orders Dataflow** and then close the settings.
 
 ### Task 3: Add a dataflow to a pipeline
 
