@@ -35,7 +35,7 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
    ![Query in the Power Query editor.](./Images/power-query1.png)
 
- > **Note:** Disable to use automatic settings.
+    > **Note:** Disable to use automatic settings.
 
 4. On the toolbar ribbon, select the **Add column** tab. Then select **Custom column** and create a new column named **MonthNo** that contains a number based on the formula **Date.Month([OrderDate])** and click on **OK**.
 
