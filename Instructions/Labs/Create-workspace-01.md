@@ -15,15 +15,7 @@ You will be able to complete the following tasks:
 
 In this task, you will initiate your 60-day free trial of Microsoft Fabric by signing up through the Fabric app, providing access to its comprehensive suite of data integration, analytics, and visualization tools
 
-1. Copy the **Power BI homepage link**, and open this link inside the VM in a new tab.
-
-   ```
-   https://powerbi.com
-   ```
-
-   >**Note**: In case a sign-up page asks for a phone number, you can enter a dummy phone number to proceed.
-
-1. Select **Account manager (1)**, and click on **Free trial (2)**.
+1. On the **Power BI homepage**, click on the **Profile icon (1)** on the top right, and then click on **Free trial (2)**.
 
      ![Account-manager-start](./Images/f1.png)
 
