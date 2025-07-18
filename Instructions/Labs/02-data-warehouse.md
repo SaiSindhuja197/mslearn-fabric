@@ -16,7 +16,7 @@ You will be able to complete the following tasks:
 - Task 6: Create a visual query
 - Task 7: Visualize your data
 
-### Task 1: Create a data warehouse
+## Task 1: Create a data warehouse
 
 In this task, you will design and implement a data warehouse by organizing data from multiple sources, creating ETL processes, and optimizing for performance. The goal is to enable efficient querying and reporting while ensuring security, compliance, and scalability.
 
@@ -24,7 +24,7 @@ In this task, you will design and implement a data warehouse by organizing data 
 
     ![](./Images/Lake2.png)
    
-1. In the search box, search **Warehouse (1)** and select **Warehouse** (2) from the list.
+1. In the search box, search **Warehouse (1)** and select **Warehouse** **(2)** from the list.
     
     ![](./Images/Data1.png)
    
@@ -35,20 +35,15 @@ In this task, you will design and implement a data warehouse by organizing data 
         ![01](./Images/lab2-image2.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    
-- If you receive an InProgress message, you can hit refresh to see the final status.
-    
-- If you receive a success message, you can proceed to the next task.
-    
-- If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-    
-- If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+> - If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 <validation step="ae9ea1a1-6466-459b-87da-12cb0f83b186" />
 
-### Task 2: Create tables and insert data
+## Task 2: Create tables and insert data
 
-In this task, you will create database tables by defining their structure with appropriate columns and constraints. Afterward, you'll insert data into the tables, ensuring it is ready for querying and further operations.
+In this task, you will create database tables by defining their structure with appropriate columns and constraints. Afterwards, you'll insert data into the tables, ensuring it is ready for querying and further operations.
 
 1. In your new warehouse, under **Build a warehouse** select the **T-SQL** tile.
 
@@ -89,8 +84,7 @@ In this task, you will create database tables by defining their structure with a
 
 1. On the Home menu tab, use the **New SQL Query** button to create a new query for the table.
 
-1. Open the **Lab VM** and navigate to the following path:
-   `C:\LabFiles\Files\`
+1. Open the **Lab VM** and navigate to the following path: `C:\LabFiles\Files\`
 
 1. Open the file **`create-dw-01.txt`** and copy the Transact-SQL code related to the **`DimProduct`** table.
 
@@ -117,7 +111,7 @@ In this task, you will create database tables by defining their structure with a
 
 > **Note:** If the schema takes a while to load, just refresh the browser page.
 
-### Task 3: Define a data model
+## Task 3: Define a data model
 
 In this task, you will create a relational data warehouse consisting of fact and dimension tables, where fact tables hold numeric measures for analysis and dimension tables store entity attributes. You'll define relationships between tables in Microsoft Fabric to build a data model for efficient business performance analysis.
 
@@ -125,7 +119,7 @@ In this task, you will create a relational data warehouse consisting of fact and
 
     ![](./Images/Data2.png)
     
-    >**Note:** If you do not see the **Model Layouts** option, refresh the browser window and you will see the **Model Layouts** option.
+    >**Note:** If you do not see the **Model Layouts** option, refresh the browser window, and you will see the **Model Layouts** option.
 
 1. In the model pane, rearrange the tables in your data warehouse so that the **FactSalesOrder** table is in the middle, like this:
 
@@ -163,7 +157,7 @@ In this task, you will create a relational data warehouse consisting of fact and
 
     ![Screenshot of the model with relationships.](./Images/dw-relationships-1.png)
 
-### Task 4: Query data warehouse tables
+## Task 4: Query data warehouse tables
 
 In this task, you will query data warehouse tables using SQL to retrieve and analyze data. Most queries will involve aggregating and grouping data with functions and GROUP BY clauses, as well as joining related fact and dimension tables using JOIN clauses.
 
@@ -202,7 +196,7 @@ In this task, you will query data warehouse tables using SQL to retrieve and ana
 
 4. Run the modified query and review the results, which now include Sales Revenue aggregated by Year, Month and Sales Region.
 
-### Task 5: Create a view
+## Task 5: Create a view
 
 In this task, you will create a view in the data warehouse to encapsulate SQL logic for easier querying and data abstraction. A Microsoft Fabric data warehouse offers similar capabilities to relational databases, allowing you to create views and stored procedures to streamline complex queries and improve data access efficiency.
 
@@ -235,7 +229,7 @@ In this task, you will create a view in the data warehouse to encapsulate SQL lo
    ORDER BY CalendarYear, MonthOfYear, SalesRegion;
     ```
 
-### Task 6: Create a visual query
+## Task 6: Create a visual query
 
 In this task, you will create a visual query using the graphical query designer to query data warehouse tables without writing SQL code. Similar to Power Query online, this no-code approach allows you to perform data transformations, and for more complex tasks, you can leverage Power Query's M language.
 
@@ -267,7 +261,7 @@ In this task, you will create a visual query using the graphical query designer 
 
 1. From here, you can analyze the results of this single query by selecting **Visualize results** or **Download Excel file**. You can now see exactly what the manager was asking for, so we don't need to analyze the results further.
 
-### Task 7: Visualize your data
+## Task 7: Visualize your data
 
 In this task, you will visualize your data from a single query or your data warehouse to gain insights and present findings effectively. Before creating visualizations, it's important to hide any columns or tables that may clutter the report and are not user-friendly for report designers.
 
@@ -275,7 +269,7 @@ In this task, you will visualize your data from a single query or your data ware
 
    ![03](./Images/pg-8.png)
 
-1. Hide the following columns in your Fact and Dimension tables that are not necessary to create a report. Note that this does not remove the columns from the model, it simply hides them from view on the report canvas.
+1. Hide the following columns in your Fact and Dimension tables that are not necessary to create a report. Note that this does not remove the columns from the model; it simply hides them from view on the report canvas.
    
    1. FactSalesOrder
       
