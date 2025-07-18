@@ -1,18 +1,8 @@
 # Exercise 5: Data Engineering Ingest Data in Fabric with Fabric Copilot
 
-### Estimated Duration: 30 minutes
- In the labs, you'll create a simple data pipeline to bring in customer sales data. You are using the KiZAN Fabric Tenant - where we have Copilot enabled, demonstrate doing the same thing, but by using a new Data Flow Gen2 And leveraging the native integration of Copilot to use natural language to ingest and transform your data.
+### Estimated Duration: 30 Minutes
 
-## Lab objectives
-
-You will be able to complete the following tasks:
-
-- Connect to Data Sources  
-- Configure Ingestion Settings  
-- Ingest Data into Fabric  
-- Monitor Ingestion Process  
-- Validate Ingested Data  
-- Document the Ingestion Process
+In the exercise, you'll create a simple data pipeline to bring in customer sales data. You are using the KiZAN Fabric Tenant - where we have Copilot enabled, demonstrate doing the same thing, but by using a new Data Flow Gen2 and leveraging the native integration of Copilot to use natural language to ingest and transform your data.
    
 # Create New - Dataflow Gen2
 
@@ -31,7 +21,7 @@ You will be able to complete the following tasks:
     - **File path or URL (2):** `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv`
     - **Connection (3):** Create new connection
     - **Connection name (4):** Connection
-    - **data gateway (5):** (none)
+    - **Data gateway (5):** (none)
     - **Authentication kind (6):** Anonymous
     - Click **Next (7)**.
 
@@ -44,18 +34,23 @@ You will be able to complete the following tasks:
 1. Click **Copilot** button on Ribbon. 
 
     ![New dataflow.](./Images/E6T1S6.png)
+   
    > Note: If you are unable to locate Copilot, click Expand Ribbon in the top-right corner.
+   
    ![New dataflow.](./Images/cop-1.png)
 
 1. To give you a clearer view of everything Copilot is doing, expand the UI slightly to reveal what’s happening behind the scenes.
 
 1. Expand **Query Settings** (these are the steps in the query that bring in the data)
+   
    ![New dataflow.](./Images/cop-2.png)
 
 1. **View menu**: Look for the option or menu labeled "View" in the toolbar or menu bar. Click on it to reveal a dropdown menu.
+
    ![New dataflow.](./Images/cop-3.png)
 
 1. **Diagram View**: From the dropdown menu, select "Diagram View." This will switch your view to a visual representation of your code.
+
    ![New dataflow.](./Images/cop-4.png)
 
 1. **Script View**: Once you're in Script View, you should be able to see the M-Code that Copilot has generated. This is the underlying code representation of the actions or commands depicted in the Diagram View.
@@ -92,19 +87,18 @@ You will be able to complete the following tasks:
     Split the Item column on the ' ', creating two new fields called Color and Size
     ```
 
-1. Three new fields are now created to replace the Item Column.
+1. Three new fields have now been created to replace the Item Column.
 
    ![New dataflow.](./Images/Inj6.png)
  
-   >**Note:** Copilot can do more than transform the table, we can actually change data as well.
+   >**Note:** Copilot can do more than transform the table; we can actually change data as well.
 
-1. **Scenario:** If you think Red bikes are going to be a big seller, so you increase the quantity in Inventory
-Call out that the quantities for all items are 1.
+1. **Scenario:** If you think Red bikes are going to be a big seller, so you increase the quantity in the Inventory Call out that the quantities for all items are 1.
 
 1. Add a step to type the following query into Copilot:
  
     ```
-    Add a new column named QuantityNew where for each row, if the Color column is equal to "Red", multiply the Quantity by 10, otherwise keep the same value. Then remove the old Quantity column and rename QuantityNew back to Quantity.
+    Add a new column named QuantityNew where for each row, if the Color column is equal to "Red", multiply the Quantity by 10, otherwise keep the same value. Then, remove the old Quantity column and rename QuantityNew back to Quantity.
     ```
  
 1. Show that the quantity field for Red bikes is now 10 instead of 1.
@@ -124,4 +118,4 @@ Call out that the quantities for all items are 1.
 ## Summary
 In this exercise, you have created a notebook and trained a machine-learning model. You used Scikit-Learn to train the model and MLflow to track its performance.
 
-## You have successfully completed the exercise. Click on Next >> to procced with next exercise.
+## You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
