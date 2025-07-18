@@ -1,6 +1,6 @@
 # Exercise 1: Ingest data with a pipeline in Microsoft Fabric
 
-### Estimated Duration: 90 minutes
+### Estimated Duration: 90 Minutes
 
 A data lakehouse is a common analytical data store for cloud-scale analytics solutions. One of the core tasks of a data engineer is to implement and manage the ingestion of data from multiple operational data sources into the lakehouse. In Microsoft Fabric, you can implement *extract, transform, and load* (ETL) or *extract, load, and transform* (ELT) solutions for data ingestion through the creation of *pipelines*.
 
@@ -20,7 +20,7 @@ You will be able to complete the following tasks:
 - Task 8: Create a visual query
 - Task 9: Create a report
 
-### Task 1: Sign up for Microsoft Fabric Trial
+## Task 1: Sign up for Microsoft Fabric Trial
 
 In this task, you will initiate your 60-day free trial of Microsoft Fabric by signing up through the Fabric app, providing access to its comprehensive suite of data integration, analytics, and visualization tools
 
@@ -40,7 +40,7 @@ In this task, you will initiate your 60-day free trial of Microsoft Fabric by si
 
       ![Account-manager-start](./Images/lab1-image5.png)
       
-### Task 2: Create a workspace
+## Task 2: Create a workspace
 
 Here, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, notebooks, Power BI datasets, and reports.
 
@@ -48,7 +48,7 @@ Here, you create a Fabric workspace. The workspace contains all the items needed
 pop-up
     ![New Workspace](./Images/f2.png)
 
-1. Enter the detailsin the  **Create a workspace** form with the following details:
+1. Enter the details in the **Create a workspace** form with the following details:
  
    - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/>**
  
@@ -58,9 +58,9 @@ pop-up
  
       ![advanced-and-apply](./Images/f4.png)
 
-### Task 3: Create a Lakehouse
+## Task 3: Create a Lakehouse
 
-Large-scale data analytics solutions have traditionally been built around a *data warehouse*, in which data is stored in relational tables and queried using SQL. The growth in "big data" (characterized by high *volumes*, *variety*, and *velocity* of new data assets) together with the availability of low-cost storage and cloud-scale distributed computing technologies has led to an alternative approach to analytical data storage; the *data lake*. In a data lake, data is stored as files without imposing a fixed schema for storage. Increasingly, data engineers and analysts seek to benefit from the best features of both of these approaches by combining them in a *data lakehouse*; in which data is stored in files in a data lake and a relational schema is applied to them as a metadata layer so that they can be queried using traditional SQL semantics.
+Large-scale data analytics solutions have traditionally been built around a *data warehouse*, in which data is stored in relational tables and queried using SQL. The growth in "big data" (characterized by high *volumes*, *variety*, and *velocity* of new data assets) together with the availability of low-cost storage and cloud-scale distributed computing technologies has led to an alternative approach to analytical data storage; the *data lake*. In a data lake, data is stored as files without imposing a fixed schema for storage. Increasingly, data engineers and analysts seek to benefit from the best features of both of these approaches by combining them in a *data lakehouse*; in which data is stored in files in a data lake and a relational schema is applied to it as a metadata layer so that it can be queried using traditional SQL semantics.
 
 In Microsoft Fabric, a lakehouse provides highly scalable file storage in a *OneLake* store (built on Azure Data Lake Store Gen2) with a metastore for relational objects such as tables and views based on the open source *Delta Lake* table format. Delta Lake enables you to define a schema of tables in your lakehouse that you can query using SQL.
 
@@ -94,11 +94,11 @@ Now that you have created a workspace in the previous step, it's time to switch 
 
     ![](./Images/Lake5.png)
 
-### Task 4: Explore shortcuts
+## Task 4: Explore shortcuts
 
-In many scenarios, the data you need to work within your lakehouse may be stored in some other location. While there are many ways to ingest data into the OneLake storage for your lakehouse, another option is to instead create a *shortcut*. Shortcuts enable you to include externally sourced data in your analytics solution without the overhead and risk of data inconsistency associated with copying it.
+In many scenarios, the data you need to work with your lakehouse may be stored in some other location. While there are many ways to ingest data into the OneLake storage for your lakehouse, another option is to instead create a *shortcut*. Shortcuts enable you to include externally sourced data in your analytics solution without the overhead and risk of data inconsistency associated with copying it.
 
-1. In the **Ellipsis(...) (1)** menu for the **Files** folder, select **New shortcut (2)**.
+1. In the **Ellipsis (...) (1)** menu for the **Files** folder, select **New shortcut (2)**.
 
    ![02](./Images/Lake6.png)
 
@@ -106,7 +106,7 @@ In many scenarios, the data you need to work within your lakehouse may be stored
 
    ![](./Images/Lake7.png)
 
-### Task 5: Create a pipeline
+## Task 5: Create a pipeline
 
 In this task, you will create a pipeline to automate data processing workflows. Youâ€™ll define the sequence of data transformation steps, configure the necessary components, and set up triggers for execution. This will streamline your data integration processes and improve efficiency in handling data tasks. A simple way to ingest data is to use a **Copy data** activity in a pipeline to extract the data from a source and copy it to a file in the lakehouse.
 
@@ -160,8 +160,9 @@ In this task, you will create a pipeline to automate data processing workflows. 
     - Select **Preview data (4)** to see a sample of the data that will be ingested.
     - Observe the sample of the data that will be ingested. Then close the data preview and click on **Next**.
     
-    ![Account-manager-start](./Images/lab1-image12.png)
-    ![Account-manager-start](./Images/lab1-image13.png)
+     ![Account-manager-start](./Images/lab1-image12.png)
+
+     ![Account-manager-start](./Images/lab1-image13.png)
 
 1. On the **Choose data destination** page, click on **OneLake catalog (1)** and select the lakehouse **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (2)**.
     
@@ -201,7 +202,7 @@ In this task, you will create a pipeline to automate data processing workflows. 
 
     ![Account-manager-start](./Images/lab1-image16.png)
 
-### Task 6: Create a notebook
+## Task 6: Create a notebook
 
 In this task, you will create a notebook to document your data analysis process. Youâ€™ll set up the notebook environment, import necessary libraries, and structure your code to include data exploration, visualization, and insights. This will help you organize your workflow and enhance reproducibility in your analysis.
 
@@ -215,7 +216,7 @@ In this task, you will create a notebook to document your data analysis process.
 
 1. After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
 
-1.  Click **Add data items (1)** drow-down under explorer and select **Exiting data source (2)** from the drop-down.
+1. Click **Add data items (1)** drop-down under explorer and select **Existing data source (2)** from the drop-down.
 
     ![](./Images/E2-T4-S4.png)  
 
@@ -231,7 +232,7 @@ In this task, you will create a notebook to document your data analysis process.
 
    ![11](./Images/01/Pg3-Notebook-S2.png) 
 
-1. In the **Ellipsis(...) (1)** menu for the cell (at its top-right) select **Toggle parameter cell (2)**. This configures the cell so that the variables declared in it are treated as parameters when running the notebook from a pipeline.
+1. In the **Ellipsis (...) (1)** menu for the cell (at its top-right) select **Toggle parameter cell (2)**. This configures the cell so that the variables declared in it are treated as parameters when running the notebook from a pipeline.
 
      ![Account-manager-start](./Images/Lake18.png)
 
@@ -282,10 +283,10 @@ In this task, you will create a notebook to document your data analysis process.
 
     #abfss://workspace@tenant-onelake.dfs.fabric.microsoft.com/lakehousename.Lakehouse/Files
     ```
+    
     > **Note**: To run the above code, you need to replace the <abfs_path> with your abfs path
 
-
-1. When the notebook run has completed, click on your  **Lakehouse** pane on the left, in the **Ellipsis(...)** menu for **Tables** select **Refresh** and verify that a **sales** table has been created.
+1. When the notebook run has completed, click on your  **Lakehouse** pane on the left, in the **Ellipsis (...)** menu for **Tables** select **Refresh** and verify that a **sales** table has been created.
 
     ![.](./Images/fab-6.png)
 
@@ -301,7 +302,7 @@ In this task, you will create a notebook to document your data analysis process.
 
     ![.](./Images/newfab-2.png)
 
-### Task 7: Use SQL to query tables
+## Task 7: Use SQL to query tables
 
 In this task, you will use SQL to query tables in a database. You'll write SQL statements to retrieve, filter, and manipulate data from specified tables, allowing you to analyze and extract meaningful insights from the dataset. This will enhance your understanding of data retrieval and improve your SQL skills.
 
@@ -324,7 +325,7 @@ In this task, you will use SQL to query tables in a database. You'll write SQL s
 
     ![](./Images/E2-T5-S3.png)
 
-### Task 8: Create a visual query
+## Task 8: Create a visual query
 
 In this task, you will create a visual query in Power BI using Power Query. Youâ€™ll begin by adding the **sales** table to the query editor, select relevant columns, and apply a **Group by** transformation to count distinct line items for each sales order. Finally, you'll review the results to see the summarized data.
 
@@ -332,7 +333,7 @@ In this task, you will create a visual query in Power BI using Power Query. Youâ
 
     ![](./Images/Lake20.png)
 
-1. In the Lakehouse, navigate to **Schemas**, then to **dbo**, expand the **tables** folder and select the **sales** table. In the sales table click on **Elipsis &#8230; (1)** and select **Insert into canvas (2)** it in the new visual query editor pane that opens to create a Power Query. 
+1. In the Lakehouse, navigate to **Schemas**, then to **dbo**, expand the **tables** folder and select the **sales** table. In the sales table, click on **Elipsis &#8230; (1)** and select **Insert into canvas (2)**. It is in the new visual query editor pane that opens to create a Power Query. 
 
     ![](./Images/Lake21.png)
 
@@ -360,7 +361,7 @@ In this task, you will create a visual query in Power BI using Power Query. Youâ
 
     ![Screenshot of a Visual query with results.](./Images/E2-T6-S6.png)
 
-### Task 9: Create a report
+## Task 9: Create a report
 
 In this task, you will create a report to visualize and present your data findings. You'll gather relevant data, select appropriate visualizations, and structure the report for clarity and insight. This process will help you effectively communicate your analysis and support data-driven decision-making.
 
@@ -368,7 +369,7 @@ In this task, you will create a report to visualize and present your data findin
     
     ![](./Images/Lake23.png)
 
-    >**Note:** You might notice some additional tables appeared as shown below, please ignore the system tables which are shown ignore.
+    >**Note:** You might notice some additional tables appeared as shown below, please ignore the system tables which are shown in ignore.
 
     ![Screenshot of a data model.](./Images/ig.png)
 
@@ -378,7 +379,7 @@ In this task, you will create a report to visualize and present your data findin
 
     ![](./Images/E2-T7-S2.png)
    
-1. In the pop-up, click on **Continue** for adding data to the default semantic model.
+1. In the pop-up, click on **Continue** to add data to the default semantic model.
 
     ![](./Images/E2-T7-S3.png)
 
