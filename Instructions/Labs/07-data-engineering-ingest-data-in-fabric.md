@@ -124,4 +124,4 @@ Call out that the quantities for all items are 1.
 ## Summary
 In this exercise, you have created a notebook and trained a machine-learning model. You used Scikit-Learn to train the model and MLflow to track its performance.
 
-## You have successfully completed the lab. Click on Next >> to procced with next exercise.
+## You have successfully completed the exercise. Click on Next >> to procced with next exercise.
