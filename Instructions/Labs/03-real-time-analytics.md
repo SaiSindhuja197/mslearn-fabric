@@ -1,6 +1,6 @@
 # Exercise 3: Get started with Real-Time Analytics in Microsoft Fabric
 
-### Estimated Duration: 65 minutes
+### Estimated Duration: 65 Minutes
 
 Microsoft Fabric provides a runtime that you can use to store and query data by using Kusto Query Language (KQL). Kusto is optimized for data that includes a time series component, such as real-time data from log files or IoT devices.
 
@@ -15,7 +15,7 @@ You will be able to complete the following tasks:
 - Task 3: Create a Power BI report from a KQL Queryset
 - Task 4: Use delta tables for streaming data
   
-### Task 1: Create a KQL database
+## Task 1: Create a KQL database
 
 In this task, you will create a KQL database to facilitate querying of static or streaming data. You will define a table within the KQL database and ingest sales data from a file to enable effective analysis using Kusto Query Language (KQL).
 
@@ -68,7 +68,7 @@ In this task, you will create a KQL database to facilitate querying of static or
     
     > **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
 
-### Task 2: Use KQL to query the sales table
+## Task 2: Use KQL to query the sales table
 
 In this task, you will use Kusto Query Language (KQL) to query the sales table in your KQL database. With the data now available, you can write KQL code to extract insights and perform analysis on the sales data.
 
@@ -108,13 +108,13 @@ In this task, you will use Kusto Query Language (KQL) to query the sales table i
    | sort by Item asc
     ```
 
-1. Run the query and review the results, which should contain the total net revenue for each product between January 1st and December 31st 2020 in ascending order of product name.
+1. Run the query and review the results, which should contain the total net revenue for each product between January 1st and December 31st 2020, in ascending order of product name.
 
 1. From the top left corner select the **KQL Queryset (1)** and rename the query as **Revenue by Product (2)**.
 
     ![](./Images/E4-T2-S9.png)
 
-### Task 3: Create a Power BI report from a KQL Queryset
+## Task 3: Create a Power BI report from a KQL Queryset
 
 In this task, you will create a Power BI report using your KQL Queryset as the foundation for the analysis. This allows you to visualize and present the insights derived from your KQL queries in an interactive and user-friendly format within Power BI.
 
@@ -154,15 +154,13 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
 
 1. In the list of items in your workspace, note that the **Revenue by Item** report is listed.
 
-
-
-### Task 4: Use delta tables for streaming data
+## Task 4: Use delta tables for streaming data
 
 In this task, you will use Delta tables to handle streaming data, leveraging their capabilities for real-time data processing. Specifically, you will implement a Delta table as a sink for streaming data in a simulated Internet of Things (IoT) scenario, utilizing the Spark Structured Streaming API.
 
 1. Navigate back to your workspace and open **Load Sales Notebook**. Add a new code cell in the notebook using **+ Code**. Then, in the new cell, add the following code and run it:
 
-    ```python
+   ```python
    from notebookutils import mssparkutils
    from pyspark.sql.types import *
    from pyspark.sql.functions import *
@@ -190,7 +188,7 @@ In this task, you will use Delta tables to handle streaming data, leveraging the
    {"device":"Dev1","status":"ok"}'''
    mssparkutils.fs.put(inputPath + "data.txt", device_data, True)
    print("Source stream created...")
-    ```
+   ```
 
 1. Ensure the message *Source stream created...* is printed. The code you just ran has created a streaming data source based on a folder to which some data has been saved, representing readings from hypothetical IoT devices.
 
@@ -251,9 +249,8 @@ In this task, you will use Delta tables to handle streaming data, leveraging the
 
     >**Note**: This code stops the stream.
 
-
 ### Summary
 
 In this exercise, you have created a lakehouse, a KQL database to analyze the data uploaded into the lakehouse. You used KQL to query the data and create a query set, which was then used to create a Power BI report.
 
-### You have successfully completed the exercise. Click on Next >> to procced with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
