@@ -1,8 +1,8 @@
 #  Exercise 7: Analyze data with Apache Spark
 
-### Estimated Duration: 75 minutes
+### Estimated Duration: 75 Minutes
 
-Apache Spark is an open-source engine for distributed data processing and is widely used to explore, process, and analyze huge volumes of data in data lake storage. Spark is available as a processing option in many data platform products, including Azure HDInsight, Azure Databricks, Azure Synapse Analytics, and Microsoft Fabric. One of the benefits of Spark is support for a wide range of programming languages, including Java, Scala, Python, and SQL; making Spark a very flexible solution for data processing workloads including data cleansing and manipulation, statistical analysis and machine learning, and data analytics and visualization.
+Apache Spark is an open-source engine for distributed data processing and is widely used to explore, process, and analyze huge volumes of data in data lake storage. Spark is available as a processing option in many data platform products, including Azure HDInsight, Azure Databricks, Azure Synapse Analytics, and Microsoft Fabric. One of the benefits of Spark is support for a wide range of programming languages, including Java, Scala, Python, and SQL, making Spark a very flexible solution for data processing workloads, including data cleansing and manipulation, statistical analysis and machine learning, and data analytics and visualization.
 
 ## Lab objectives
 
@@ -18,7 +18,7 @@ You will be able to complete the following tasks:
 - Task 8: Visualize data with Spark
 - Task 9: Save the notebook and end the Spark session
 
-### Task 1: Create a lakehouse and upload files
+## Task 1: Create a lakehouse and upload files
 
 In this task, you will create a lakehouse to organize and analyze your data files. After setting up your workspace, you'll switch to the Data Engineering experience in the portal to initiate the creation of the data lakehouse.
 
@@ -30,7 +30,7 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
     ![](./Images/Spark1.png)
    
-1. Enter the below mentioned details to create a Lakehouse. 
+1. Enter the below-mentioned details to create a Lakehouse. 
 
    - **Name:** Enter **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)**
 
@@ -46,7 +46,7 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
     ![Screenshot of uploaded files in a lakehouse.](./Images/uploaded-files.png)
 
-### Task 2: Create a notebook
+## Task 2: Create a notebook
 
 In this task, you will create a notebook to work with data in Apache Spark. Notebooks provide an interactive environment where you can write and run code in multiple languages, while also allowing you to add notes for documentation.
 
@@ -58,7 +58,7 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
 
     ![](./Images/Spark4.png)
 
-    > **Note**: After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
+    > **Note:** After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
 
 1. In the **Explorer** tab, click on **Data items (1)**, then select **Add data items (2)** drop-down and choose **Existing data sources (3)**.
 
@@ -70,7 +70,7 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
 
     > **Note:** If required, reload the page to get the files and folders.
 
-1. Select the first cell (currently a *code* cell), and then click the **M&#8595;** button in the dynamic toolbar at the top-right to convert it to a **markdown** cell.
+1. Select the first cell (currently a *code* cell), and then click the **M&#8595;** button in the dynamic toolbar at the top-right to convert it to a **Markdown** cell.
 
 1. Use the **&#128393;** **(Edit)** button to switch the cell to editing mode, then modify the markdown as follows:
 
@@ -82,11 +82,11 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
 
 1. Click anywhere in the notebook outside of the cell to exit editing mode and view the rendered markdown.
 
-### Task 3: Load data into a dataframe
+## Task 3: Load data into a dataframe
 
 In this task, you will load data into a dataframe to prepare it for analysis. Dataframes in Spark, similar to Pandas dataframes in Python, offer a structured way to manage and manipulate data organized in rows and columns.
 
-> **Note**: Spark supports multiple coding languages, including Scala, Java, and others. In this exercise, we'll use *PySpark*, which is a Spark-optimized variant of Python. PySpark is one of the most commonly used languages on Spark and is the default language in Fabric notebooks.
+> **Note:** Spark supports multiple coding languages, including Scala, Java, and others. In this exercise, we'll use *PySpark*, which is a Spark-optimized variant of Python. PySpark is one of the most commonly used languages on Spark and is the default language in Fabric notebooks.
 
 1. With the notebook open, expand the **Files** list and select the **orders** folder to display the CSV files alongside the notebook editor, as shown here:
 
@@ -108,7 +108,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
 1. Use the **&#9655; Run cell** button on the left of the cell to run it.
 
-    > **Note**: Since this is the first time you've run any Spark code, a Spark session must be started. This means that the first run in the session can take a minute or so to complete. Subsequent runs will be quicker.
+    > **Note:** Since this is the first time you've run any Spark code, a Spark session must be started. This means that the first run in the session can take a minute or so to complete. Subsequent runs will be quicker.
 
 1. When the cell command has been completed, review the output below the cell, which should look similar to this:
 
@@ -200,9 +200,9 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
 1. Run the modified code cell and review the output, which should now include sales for 2019, 2020, and 2021.
 
-    >**Note**: Only a subset of the rows is displayed, so you may not be able to see examples from all years.
+    >**Note:** Only a subset of the rows is displayed, so you may not be able to see examples from all years.
 
-### Task 4: Explore data in a dataframe
+## Task 4: Explore data in a dataframe
 
 In this task, you will explore data within a dataframe to gain insights and understand its structure. The dataframe object offers various functions for filtering, grouping, and manipulating the data it contains, facilitating effective analysis.
 
@@ -224,7 +224,6 @@ In this task, you will explore data within a dataframe to gain insights and unde
     - Dataframes provide functions such as **count** and **distinct** that can be used to summarize and filter the data they contain.
     - The `dataframe['Field1', 'Field2', ...]` syntax is a shorthand way of defining a subset of columns. You can also use the **select** method, so the first line of the code above could be written as `customers = df.select("CustomerName", "Email")`
 
-
 1. Modify the code as follows:
 
     ```Python
@@ -236,7 +235,7 @@ In this task, you will explore data within a dataframe to gain insights and unde
 
 1. Run the modified code to view the customers who have purchased the *Road-250 Red, 52* product. Note that you can "chain" multiple functions together so that the output of one function becomes the input for the next - in this case, the dataframe created by the **select** method is the source dataframe for the **where** method that is used to apply filtering criteria.
 
-### Task 5: Aggregate and group data in a dataframe
+## Task 5: Aggregate and group data in a dataframe
 
 In this task, you will aggregate and group data within a dataframe to summarize information and extract meaningful insights. This process involves applying functions to organize the data based on specific criteria, allowing for easier analysis and reporting.
 
@@ -249,7 +248,7 @@ In this task, you will aggregate and group data within a dataframe to summarize 
 
 1. Run the code cell you added, and note that the results show the sum of order quantities grouped by product. The **groupBy** method groups the rows by *Item*, and the subsequent **sum** aggregate function is applied to all of the remaining numeric columns (in this case, *Quantity*)
 
-1. Add another new code cell to the notebook, and enter the following code in it:
+1. Add a new code cell to the notebook, and enter the following code in it:
 
     ```Python
    from pyspark.sql.functions import *
@@ -258,15 +257,15 @@ In this task, you will aggregate and group data within a dataframe to summarize 
    display(yearlySales)
     ```
 
-1. Run the code cell you added, and note that the results show the number of sales orders per year. Note that the **select** method includes a SQL **year** function to extract the year component of the *OrderDate* field (which is why the code includes an **import** statement to import functions from the Spark SQL library). It then uses an **alias** method is used to assign a column name to the extracted year value. The data is then grouped by the derived *Year* column and the count of rows in each group is calculated before finally the **orderBy** method is used to sort the resulting dataframe.
+1. Run the code cell you added, and note that the results show the number of sales orders per year. Note that the **select** method includes an SQL **year** function to extract the year component of the *OrderDate* field (which is why the code includes an **import** statement to import functions from the Spark SQL library). It then uses an **alias** method to assign a column name to the extracted year value. The data is then grouped by the derived *Year* column, and the count of rows in each group is calculated before finally the **orderBy** method is used to sort the resulting dataframe.
 
-### Task 6: Use Spark to transform data files
+## Task 6: Use Spark to transform data files
 
 In this task, you will use Spark to transform data files into a desired format for analysis and processing. This involves ingesting data in specific structures and applying transformations, a common responsibility for data engineers, to prepare the data for downstream applications.
 
 #### Use dataframe methods and functions to transform data
 
-1. Add another new code cell to the notebook, and enter the following code in it:
+1. Add a new code cell to the notebook, and enter the following code in it:
 
     ```Python
    from pyspark.sql.functions import *
@@ -293,7 +292,7 @@ In this task, you will use Spark to transform data files into a desired format f
 
 1. You can use the full power of the Spark SQL library to transform the data by filtering rows, deriving, removing, renaming columns, and applying any other required data modifications.
 
-    > **Tip**: See the [Spark dataframe documentation](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) to learn more about the methods of the Dataframe object.
+    > **Tip:** See the [Spark dataframe documentation](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) to learn more about the methods of the Dataframe object.
 
 ### Save the transformed data
 
@@ -304,7 +303,7 @@ In this task, you will use Spark to transform data files into a desired format f
    print ("Transformed data saved!")
     ```
 
-   >**Note**: If the node fails, rerun it.
+   >**Note:** If the node fails, rerun it.
 
 1. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and select the **transformed_data** folder to verify that it contains a new folder named **orders**, which in turn contains one or more Parquet files.
 
@@ -321,7 +320,7 @@ In this task, you will use Spark to transform data files into a desired format f
 
 ### Save data in partitioned files
 
-1. Add a new cell with the following code; which saves the dataframe, partitioning the data by **Year** and **Month**:
+1. Add a new cell with the following code; which saves the dataframe, partitioning the data by **Year** and **Month:**
 
     ```python
    orders_df.write.partitionBy("Year","Month").mode("overwrite").parquet("Files/partitioned_data")
@@ -352,15 +351,15 @@ In this task, you will use Spark to transform data files into a desired format f
 
 <validation step="c2a9bb5d-2eb6-45b7-8b8a-2145f7f1d7e2" />
 
-### Task 7: Work with tables and SQL
+## Task 7: Work with tables and SQL
 
 As you've seen, the native methods of the dataframe object enable you to query and analyze data from a file quite effectively. However, many data analysts are more comfortable working with tables that they can query using SQL syntax. Spark provides a *metastore* in which you can define relational tables. The Spark SQL library that provides the dataframe object also supports the use of SQL statements to query tables in the metastore. By using these capabilities of Spark, you can combine the flexibility of a data lake with the structured data schema and SQL-based queries of a relational data warehouse - hence the term "data lakehouse".
 
 ### Create a table
 
-Tables in a Spark metastore are relational abstractions over files in the data lake. tables can be *managed* (in which case the files are managed by the metastore) or *external* (in which case the table references a file location in the data lake that you manage independently of the metastore).
+Tables in a Spark metastore are relational abstractions over files in the data lake. Tables can be *managed* (in which case the files are managed by the metastore) or *external* (in which case the table references a file location in the data lake that you manage independently of the metastore).
 
-1. Add a new code cell to the notebook, and enter the following code, which saves the dataframe of sales order data as a table named **salesorders**:
+1. Add a new code cell to the notebook, and enter the following code, which saves the dataframe of sales order data as a table named **salesorders:**
 
     ```Python
    # Create a new table
@@ -370,7 +369,7 @@ Tables in a Spark metastore are relational abstractions over files in the data l
    spark.sql("DESCRIBE EXTENDED salesorders").show(truncate=False)
     ```
 
-    > **Note:** It's worth noting a couple of things about this example. Firstly, no explicit path is provided, so the files for the table will be managed by the metastore. Secondly, the table is saved in **delta** format. You can create tables based on multiple file formats (including CSV, Parquet, Avro, and others) but *delta lake* is a Spark technology that adds relational database capabilities to tables; including support for transactions, row versioning, and other useful features. Creating tables in delta format is preferred for data lakehouses in Fabric.
+    > **Note:** It's worth noting a couple of things about this example. Firstly, no explicit path is provided, so the files for the table will be managed by the metastore. Secondly, the table is saved in **delta** format. You can create tables based on multiple file formats (including CSV, Parquet, Avro, and others), but *delta lake* is a Spark technology that adds relational database capabilities to tables, including support for transactions, row versioning, and other useful features. Creating tables in delta format is preferred for data lakehouses in Fabric.
 
 1. Run the code cell and review the output, which describes the definition of the new table.
 
@@ -384,7 +383,8 @@ Tables in a Spark metastore are relational abstractions over files in the data l
    df = spark.sql("SELECT * FROM [your_lakehouse].salesorders LIMIT 1000")
    display(df)
     ```
-     > **Note**: Ensure to replace the [your_lakehouse] with **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>**
+    
+     > **Note:** Ensure to replace the [your_lakehouse] with **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>**
      
 1. Run the new code, which uses the Spark SQL library to embed a SQL query against the **salesorder** table in PySpark code and load the results of the query into a dataframe.
 
@@ -408,9 +408,9 @@ While it's useful to be able to embed SQL statements into a cell containing PySp
     - The SQL code references the **salesorders** table that you created previously.
     - The output from the SQL query is automatically displayed as the result under the cell.
 
-        > **Note**: For more information about Spark SQL and dataframes, see the [Spark SQL documentation](https://spark.apache.org/docs/2.2.0/sql-programming-guide.html).
+        > **Note:** For more information about Spark SQL and dataframes, see the [Spark SQL documentation](https://spark.apache.org/docs/2.2.0/sql-programming-guide.html).
 
-### Task 8: Visualize data with Spark
+## Task 8: Visualize data with Spark
 
 In this task, you will visualize data using Spark to enhance understanding and insights through graphical representation. While Fabric notebooks offer a basic chart view for data from dataframes or Spark SQL queries, you can utilize Python graphics libraries like **matplotlib** and **seaborn** for more comprehensive and customized charting.
 
@@ -429,13 +429,13 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
    ![](./Images/updated_chart.png) 
 
-1. Use the **Build my own** button at the bottom right of suggested charts. Then set the options as follows.
-    - **Chart type (1)**: Bar chart
-    - **X-axis (2)**: Item
-    - **Y-axis (3)**: Quantity
-    - **Series Group**: *leave blank*
-    - **Aggregation (4)**: Sum
-    - **Stacked**: *Unselected*
+1. Use the **Build my own** button at the bottom right of the suggested charts. Then set the options as follows.
+    - **Chart type (1):** Bar chart
+    - **X-axis (2):** Item
+    - **Y-axis (3):** Quantity
+    - **Series Group:** *leave blank*
+    - **Aggregation (4):** Sum
+    - **Stacked:** *Unselected*
 
     Verify that the chart looks similar to this:
 
@@ -505,7 +505,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
 1. Re-run the code cell and view the results. The chart now includes a little more information.
 
-1. A plot is technically contained with a **Figure**. In the previous examples, the figure was created implicitly for you; but you can create it explicitly.
+1. A plot is technically contained within a **Figure**. In the previous examples, the figure was created implicitly for you, but you can create it explicitly.
 
 1. Modify the code to plot the chart as follows:
 
@@ -618,9 +618,9 @@ While **matplotlib** enables you to create complex charts of multiple types, it 
 
 1. Run the modified code to view the yearly revenue as a line chart.
 
-    > **Note**: To learn more about plotting with seaborn, see the [seaborn documentation](https://seaborn.pydata.org/index.html).
+    > **Note:** To learn more about plotting with seaborn, see the [seaborn documentation](https://seaborn.pydata.org/index.html).
 
-### Task 9: Save the notebook and end the Spark session
+## Task 9: Save the notebook and end the Spark session
 
 In this task, you will save your notebook with a meaningful name to preserve your work after processing the data. Additionally, you will end the Spark session to free up resources and complete your data engineering tasks.
 
@@ -638,4 +638,4 @@ In this task, you will save your notebook with a meaningful name to preserve you
 
 In this exercise, you've learned how to use Spark to work with data in Microsoft Fabric.
 
-### You have successfully completed the exercise. Click on Next >> to procced with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
