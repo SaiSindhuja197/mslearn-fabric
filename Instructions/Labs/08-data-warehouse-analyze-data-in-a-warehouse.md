@@ -1,4 +1,4 @@
-# Exercise 7: Analyze Data in a Warehouse with Fabric Copilot
+# Exercise 6: Analyze Data in a Warehouse with Fabric Copilot
 
 ### Estimated Duration: 60 minutes
 
@@ -15,7 +15,9 @@ You will be able to complete the following tasks:
 - Generate Reports  
 - Collaborate on Findings  
 
-1. Select the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>** (this is the workspace that mimics the lab environment)
+## Analyze Data in a Warehouse
+
+1. In the left pane, select the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>**.
 
    ![New dataflow.](./Images/26.png)
  
@@ -37,19 +39,19 @@ You will be able to complete the following tasks:
 
     > **Tip**: If the schema takes a while to load, just refresh the browser page.
  
-1. Clicking on the **Model** view allows you to view the relationships between different tables within the data warehouse.
+1. Clicking on the **Model Layouts** view allows you to view the relationships between different tables within the data warehouse.
 
     ![](./Images/pg-8.png)
 
-1. When you click on the relationship between **FactSalesOrder** and **DimCustomer** and access its properties, you're essentially examining how these two tables are linked together. This relationship defines how data from these tables can be combined or related when querying or visualizing in Power BI.
+1. When you click on the **Relationship (1)** between **FactSalesOrder** and **DimCustomer** and access its **Properties (2)** pop-up on the right of the window, you're essentially examining how these two tables are linked together. This relationship defines how data from these tables can be combined or related when querying or visualizing in Power BI.
 
-     ![](./Images/10.png)
+     ![](./Images/Analyze1.png)
 
     - This relationship indicates that each record in the "FactSalesOrder" table is associated with a specific customer represented in the "DimCustomer" table. For example, if we have a sales record in "FactSalesOrder" for a particular transaction, we can use this relationship to look up additional details about the corresponding customer from the "DimCustomer" table.
 
     - This linkage is crucial for defining the Semantic Model used by Power BI. The Semantic Model essentially acts as a blueprint that outlines how data elements are interconnected and how they should be interpreted within Power BI. By establishing and defining relationships between tables, we're instructing Power BI on how to navigate and analyze the data effectively.
  
-1. Clicking on **New Report** from the **reporting tab** allows you to create a new report within Power BI. This report will utilize the Semantic Model defined by the relationships established in the data warehouse.
+1. Clicking on **New Report (2)** from the **Reporting  (1)** tab allows you to create a new report within Power BI. This report will utilize the Semantic Model defined by the relationships established in the data warehouse.
  
    ![](./Images/pg-08-1.png)
 
@@ -63,7 +65,7 @@ You will be able to complete the following tasks:
 
    ![](./Images/14.png)
 
-1. Locate the logo or icon associated with Copilot, then click on it to access its menu from the prompt guide.
+1. Locate the **Prompt guide** icon , then click on it to access its **Menu**.
 
    ![](./Images/15.png)
 
@@ -77,12 +79,7 @@ You will be able to complete the following tasks:
     
    - Copilot represents a significant advancement in AI utilization, showcasing its capability beyond just generating code or manipulating data. Its capacity to assist in analyzing datasets is particularly noteworthy, as it offers intelligent insights and suggestions that enhance the entire data analysis process. By leveraging Copilot, users can gain a deeper understanding and uncover valuable patterns within their datasets, ultimately empowering them to make informed decisions based on the insights derived. This highlights the transformative potential of AI in augmenting human capabilities and driving innovation in data analysis methodologies.
 
- 
-1. Explore the capabilities of Copilot further by **clicking on its logo** within the text box. This will allow you to access additional features and functionalities that Copilot offers, providing a deeper understanding of its capabilities.
-  
-   ![](./Images/24.png)
-
-1. Click **Create a page that shows**.
+1. Click **Create a report that shows**.
 
     ![](./Images/17.png)
    
@@ -91,12 +88,12 @@ You will be able to complete the following tasks:
 1. Type the following command into Copilot:
   
     ```
-    Create a page that shows "Total Sales by Product Category"
+    Create a report that shows "Total Sales by Product Category."
     ```
  
 1. **Execute the command** and let Copilot generate the report. Note that AI-generated results may vary, and you're never entirely sure what you'll get.
 
-    ![](./Images/18.png)
+    ![](./Images/Analyze2.png)
 
    - The report provides a comprehensive analysis of total sales across a spectrum of product categories, revealing a consistent pattern of total sales summing up to 19.59 million across all 39 categories. Similarly, the quantity sold uniformly stands at 25.98 thousand units for each category. With an average total sales figure of 4.55 thousand, it suggests an even distribution of sales performance across all categories. This uniformity underscores a balanced sales landscape across diverse product categories, thereby offering valuable insights for informed decision-making in subsequent business strategies.
 
@@ -109,13 +106,11 @@ You will be able to complete the following tasks:
  
 1. **Expand each suggestion** to see the text of the prompt and what will be created. This helps illustrate the range of suggestions Copilot can provide.
  
-1. Select the **Sales Performace Analysis** report as it's usually a decent report to work with. Note that the report generated can vary.
- 
-   ![](./Images/22.png)
+1. Select the **Sales Performace by Region (1)** report as it's usually a decent report to work with. Note that the report generated can vary.
   
-    >**Note:** Click **Edit** to demonstrate that you can adjust the query and customize the report.
+    >**Note:** Click **Edit (2)** to demonstrate that you can adjust the query and customize the report.
 
-   ![](./Images/21.png)
+   ![](./Images/Analyze3.png)
 
 1. **Clear the input box** and select:
 
@@ -124,12 +119,12 @@ You will be able to complete the following tasks:
     ```
     ![](./Images/23.png)
 
-1. Save the report as **Sample**.
+1. Click on **File**, then click on **Save**. Enter the name as **Sample (1)** and click on **Save (2)**.
 
-1. The summary provides an overview of sales revenue data from 2021 to 2022, highlighting increases year-over-year and identifying key months and regions driving revenue growth, with 2022 contributing significantly to total revenue, led by strong performance in the United States.
+   ![](./Images/Analyze4.png)
 
 ## Summary
 
 In this lab, you connected to a data warehouse using Fabric Copilot and explored the available datasets. You ran queries to extract insights and created visualizations for effective analysis. Finally, you compiled your findings into reports and collaborated with team members on the results.
 
-### You have successfully completed the lab. Click on Next >> to procced with next exercise.
+### You have successfully completed the exercise. Click on Next >> to procced with next exercise.
