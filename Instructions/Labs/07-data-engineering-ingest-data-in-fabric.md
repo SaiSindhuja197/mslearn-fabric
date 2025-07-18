@@ -16,7 +16,7 @@ You will be able to complete the following tasks:
    
 # Create New - Dataflow Gen2
 
-1. In the left pane, navigate back to your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>**, then click on **+ New item (1)**. Search for **Dataflow Gen2 (2)** and select **Dataflow Gen2 (3)**. Leave the name as default and click on **Create**.
+1. In the left pane, navigate back to your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>**, then click on **+ New item (1)**. Search for **Dataflow Gen2 (2)** and select **Dataflow Gen2 (3)**. Leave the name as default, **Uncheck (4)** the **Enable Git integration, deployment pipelines and Public API scenarios**, and then click on **Create (5)**.
 
    ![New dataflow.](./Images/Inj1.png)
    ![New dataflow.](./Images/Inj2.png)
