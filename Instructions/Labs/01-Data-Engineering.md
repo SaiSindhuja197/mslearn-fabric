@@ -13,12 +13,11 @@ You will be able to complete the following tasks:
 - Task 1: Sign up for Microsoft Fabric Trial
 - Task 2: Create a workspace
 - Task 3: Enable Copilot inside a Codespace
-- Task 4: Explore shortcuts
-- Task 5: Create a pipeline
-- Task 6: Create a notebook
-- Task 7: Use SQL to query tables
-- Task 8: Create a visual query
-- Task 9: Create a report
+- Task 4: Create a pipeline
+- Task 5: Create a notebook
+- Task 6: Use SQL to query tables
+- Task 7: Create a visual query
+- Task 8: Create a report
 
 ## Task 1: Sign up for Microsoft Fabric Trial
 
@@ -32,11 +31,11 @@ In this task, you will initiate your 60-day free trial of Microsoft Fabric by si
 
       ![Account-manager-start](./Images/fabric-3.png)
 
-1. Click on **Stay on current page** when prompted.
+1. In the confirmation pop-up that says **Successfully upgraded to a free Microsoft Fabric trial**, click **Stay on current page**.
 
       ![Account-manager-start](./Images/fabric-2.png)
 
-1. Now, open **Account manager (1)** again, and verify **Trial Status (2)**.
+1. In the top-right corner, click **Account Manager (1)** and verify your **Trial Status (2)** is active.
 
       ![Account-manager-start](./Images/lab1-image5.png)
       
@@ -44,17 +43,20 @@ In this task, you will initiate your 60-day free trial of Microsoft Fabric by si
 
 Here, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, notebooks, Power BI datasets, and reports.
 
-1. On the left pane of the screen, select **Workspaces (1)** and then click on **+ New workspace (2)**.
-pop-up
+1. On the left-hand pane of Power BI portal, select **Workspaces (1)** and Click on **+ New workspace (2)**
+
     ![New Workspace](./Images/f2.png)
 
-1. Enter the details in the **Create a workspace** form with the following details:
- 
-   - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/>**
- 
+
+1. On the **Create a workspace** page, enter the following details:
+    - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/>**
+
       ![name-and-desc-of-workspc](./Images/f3.png)
- 
-   - Under the **Advanced:** drop-down, Under **License mode**, select **Fabric capacity (1)**, and under **Capacity** Select available **fabric<inject key="DeploymentID" enableCopy="false"/> - <inject key="Region"></inject>(2)**, leave everything else as default and click on **Apply (3)** to create and open the new workspace.
+
+    - Expand the **Advanced** section.
+    - Select **License mode** as **Fabric capacity (3)**.
+    - From the dropdown list, select the available **Capacity (4)**.
+    - Click **Apply (5)** to create and open the workspace.
  
       ![advanced-and-apply](./Images/f4.png)
 
@@ -84,33 +86,19 @@ Now that you have created a workspace in the previous step, it's time to switch 
 
     ![](./Images/Lake3.png)
 
-    >**Note:** After a minute or so, a new lakehouse with no **Tables** or **Files** will be created.
-
-1. On the **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** tab in the pane on the left, click the **Ellipsis(...)** menu for the **Files (1)** node, click on **New subfolder (2)**.
+1. On the **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** tab in the left pane, click the **Ellipsis (...)** menu for the **Files (1)** node, click on **New subfolder (2)**.
     
     ![](./Images/lake4.png)
 
-1. Create a subfolder named **new_data (1)** and click on **Create (2)**.
+1. Enter a Folder name **new_data (1)** and click on **Create (2)**.
 
     ![](./Images/Lake5.png)
 
-## Task 4: Explore shortcuts
-
-In many scenarios, the data you need to work with your lakehouse may be stored in some other location. While there are many ways to ingest data into the OneLake storage for your lakehouse, another option is to instead create a *shortcut*. Shortcuts enable you to include externally sourced data in your analytics solution without the overhead and risk of data inconsistency associated with copying it.
-
-1. In the **Ellipsis (...) (1)** menu for the **Files** folder, select **New shortcut (2)**.
-
-   ![02](./Images/Lake6.png)
-
-1. View the available data source types for shortcuts. Then close the **New shortcut** dialog box without creating a shortcut.
-
-   ![](./Images/Lake7.png)
-
-## Task 5: Create a pipeline
+## Task 4: Create a pipeline
 
 In this task, you will create a pipeline to automate data processing workflows. You’ll define the sequence of data transformation steps, configure the necessary components, and set up triggers for execution. This will streamline your data integration processes and improve efficiency in handling data tasks. A simple way to ingest data is to use a **Copy data** activity in a pipeline to extract the data from a source and copy it to a file in the lakehouse.
 
-1. In the left pane, navigate back to the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, then click on **+ New item (2)** and then select **Data pipeline (3)**.
+1. In the left pane, navigate back to the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, then click on **+ New item (2)**.
 
     ![](./Images/Lake2.png)
 
@@ -122,11 +110,11 @@ In this task, you will create a pipeline to automate data processing workflows. 
     
     ![](./Images/Lake9.png)
    
-1. If the **Copy data** wizard doesn't open automatically, select **Copy data assistant (1)** in the pipeline editor page.
+1. On the **Build a data pipeline to organize and move your data** page, select **Copy data assistant (1)**.
 
    ![03](./Images/E2-T3-S3.png)
 
-1. In the **Copy Data** wizard, on the **Choose a data source** page, search for **Http (1)** and select **Http (2)** source.
+1. In the **Copy data** wizard, on the **Choose data source** page, search for **Http (1)** and select the **Http (2)** source from the results.
 
    ![](./Images/Lake10.png)
 
@@ -135,36 +123,29 @@ In this task, you will create a pipeline to automate data processing workflows. 
     - URL: **`https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv` (1)**
     - Connection: **Create new connection (2)**
     - Connection name: **Connection<inject key="DeploymentID" enableCopy="false"/> (3)**
-    - Authentication kind : **Anonymous (4)**
+    - Authentication kind: **Anonymous (4)**
     - Click on **Next (5)**
   
-   ![](./Images/Lake11.png)
+      ![](./Images/Lake11.png)
     
-1. Make sure the following settings are selected:
-    
-    - Relative URL: **Leave blank**
-    - Request method: **GET**
-    - Additional headers: **Leave blank**
-    - Binary copy: **Unselected**
-    - Request timeout: **Leave blank**
-    - Max concurrent connections: **Leave blank**
-    - Click on **Next**
+1. On the **Connect to data source** pane, keep the default settings and click **Next**.
     
     ![05](./Images/Lake12.png)
    
-1. Wait for the data to be sampled and then ensure that the following settings are selected:
-    
-    - File format: **DelimitedText (1)**
-    - Column delimiter: **Comma (,) (2)**
-    - Row delimiter: **Line feed (\n) (3)**
-    - Select **Preview data (4)** to see a sample of the data that will be ingested.
-    - Observe the sample of the data that will be ingested. Then close the data preview and click on **Next**.
-    
-     ![Account-manager-start](./Images/lab1-image12.png)
+1. Wait for the data to be sampled, then verify the following settings:
 
-     ![Account-manager-start](./Images/lab1-image13.png)
+   * **File format:** DelimitedText **(1)**
+   * **Column delimiter:** Comma (,) **(2)**
+   * **Row delimiter:** Line feed (\n) **(3)**
+   * Click **Preview data (4)** to view a sample of the data.
+   * After reviewing, close the preview and click **Next (5)**.
 
-1. On the **Choose data destination** page, click on **OneLake catalog (1)** and select the lakehouse **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (2)**.
+    
+      ![Account-manager-start](./Images/lab1-image12.png)
+
+      ![Account-manager-start](./Images/lab1-image13.png)
+
+1. On the **Choose data destination** page, click **OneLake catalog (1)** and select the lakehouse **Lakehouse\_<inject key="DeploymentID" enableCopy="false"/> (2)**.
     
     ![](./Images/Lake13.png)
 
@@ -173,18 +154,18 @@ In this task, you will create a pipeline to automate data processing workflows. 
     - Root folder: **Files (1)**
     - Folder path: **new_data (2)**
     - File name: **sales.csv  (3)**
-    -  Click **Next (4)**:
+    - Click **Next (4)**
    
-    ![08](./Images/Lake14.png)
+       ![08](./Images/Lake14.png)
 
 1. Set the following file format options and then select **Next (4)**:
 
     - File format: **DelimitedText (1)**
     - Column delimiter: **Comma (,) (2)**
     - Row delimiter: **Line feed (\n) (3)**
-    - Click **Next (4)**:
+    - Click **Next (4)**
    
-    ![09](./Images/Lake15.png)
+      ![09](./Images/Lake15.png)
 
 1. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
 
@@ -202,7 +183,7 @@ In this task, you will create a pipeline to automate data processing workflows. 
 
     ![Account-manager-start](./Images/lab1-image16.png)
 
-## Task 6: Create a notebook
+## Task 5: Create a notebook
 
 In this task, you will create a notebook to document your data analysis process. You’ll set up the notebook environment, import necessary libraries, and structure your code to include data exploration, visualization, and insights. This will help you organize your workflow and enhance reproducibility in your analysis.
 
@@ -302,7 +283,7 @@ In this task, you will create a notebook to document your data analysis process.
 
     ![.](./Images/newfab-2.png)
 
-## Task 7: Use SQL to query tables
+## Task 6: Use SQL to query tables
 
 In this task, you will use SQL to query tables in a database. You'll write SQL statements to retrieve, filter, and manipulate data from specified tables, allowing you to analyze and extract meaningful insights from the dataset. This will enhance your understanding of data retrieval and improve your SQL skills.
 
@@ -325,7 +306,7 @@ In this task, you will use SQL to query tables in a database. You'll write SQL s
 
     ![](./Images/E2-T5-S3.png)
 
-## Task 8: Create a visual query
+## Task 7: Create a visual query
 
 In this task, you will create a visual query in Power BI using Power Query. You’ll begin by adding the **sales** table to the query editor, select relevant columns, and apply a **Group by** transformation to count distinct line items for each sales order. Finally, you'll review the results to see the summarized data.
 
@@ -361,7 +342,7 @@ In this task, you will create a visual query in Power BI using Power Query. You�
 
     ![Screenshot of a Visual query with results.](./Images/E2-T6-S6.png)
 
-## Task 9: Create a report
+## Task 8: Create a report
 
 In this task, you will create a report to visualize and present your data findings. You'll gather relevant data, select appropriate visualizations, and structure the report for clarity and insight. This process will help you effectively communicate your analysis and support data-driven decision-making.
 
@@ -411,13 +392,11 @@ In this task, you will create a report to visualize and present your data findin
     - The **Item Sales Report** report.
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-      
-   - If you receive an InProgress message, you can hit refresh to see the final status.
-   - If you receive a success message, you can proceed to the next task.
-   - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-   - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+> - If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-   <validation step="478b8d65-837a-4b29-b792-922fe3c10580" />
+<validation step="478b8d65-837a-4b29-b792-922fe3c10580" />
 
 ### Summary
 
