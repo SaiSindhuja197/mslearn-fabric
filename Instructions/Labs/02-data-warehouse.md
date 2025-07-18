@@ -1,4 +1,4 @@
-# Exercise 3: Analyze data in a data warehouse
+# Exercise 2: Analyze data in a data warehouse
 
 ### Estimated Duration: 75 minutes
 

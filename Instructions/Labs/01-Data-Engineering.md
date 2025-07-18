@@ -1,4 +1,4 @@
-# Exercise 2: Ingest data with a pipeline in Microsoft Fabric
+# Exercise 1: Ingest data with a pipeline in Microsoft Fabric
 
 ### Estimated Duration: 90 minutes
 

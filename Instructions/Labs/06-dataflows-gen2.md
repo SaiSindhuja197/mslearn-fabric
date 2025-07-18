@@ -1,4 +1,4 @@
-# Exercise 9: Create a Dataflow (Gen2) in Microsoft Fabric
+# Exercise 8: Create a Dataflow (Gen2) in Microsoft Fabric
 
 ### Estimated Duration: 40 minutes
 
@@ -66,17 +66,17 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
    >**Note:** If this option is greyed out, you may already have a data destination set. Check the data destination at the bottom of the Query settings pane on the right side of the Power Query editor. If a destination is already set, you can change it using the gear.
 
-2. In the **Connect to data destination** dialog box, make sure **Create a new connection** is selected and the **<inject key="AzureAdUserEmail"></inject>** account is signed in. Click on **Next**.
+1. In the **Connect to data destination** dialog box, make sure **Create a new connection** is selected and the **<inject key="AzureAdUserEmail"></inject>** account is signed in. Click on **Next**.
 
    ![](./Images/Flow7.png)
 
-4. Select the **fabric-<inject key="DeploymentID" enableCopy="false"/>** Workspace. Choose the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** then specify the new table name as **orders (2)**, then click **Next (1)**.
+1. Select the **fabric-<inject key="DeploymentID" enableCopy="false"/>** Workspace. Choose the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** then specify the new table name as **orders (2)**, then click **Next (1)**.
 
    ![Data destination configuration page.](./Images/fabric26.png)
 
-5. On the Destination settings page, observe that **MonthNo** is not selected in the Column mapping, and an informational message is displayed.
+1. On the Destination settings page, observe that **MonthNo** is not selected in the Column mapping, and an informational message is displayed.
  
-6. On the Destination settings page, toggle **off  (1)** the **Use Automatic Settings** option. Then, for the **MonthNo** column header and change the **Source Type** to **Whole number (2)**. Now, click on **Save Settings (3)**.
+1. On the Destination settings page, toggle **off  (1)** the **Use Automatic Settings** option. Then, for the **MonthNo** column header and change the **Source Type** to **Whole number (2)**. Now, click on **Save Settings (3)**.
    
    ![Data destination settings page.](./Images/lak2.png)
 
@@ -84,7 +84,7 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
    ![](./Images/Publish.png)
 
-7. Click on the **Dataflow (1)** on the top left, and rename the dataflow as **Transform Orders Dataflow (2)**.
+1. Click on the **Dataflow (1)** on the top left, and rename the dataflow as **Transform Orders Dataflow (2)**.
 
    ![](./Images/Flow8.png)
 
@@ -102,26 +102,26 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 
    > **Note**: If the Copy Data wizard opens automatically, close it!
 
-2. Select **pipeline activity (1)**, and select **Dataflow (2)** activity to the pipeline.
+1. Select **pipeline activity (1)**, and select **Dataflow (2)** activity to the pipeline.
 
    ![Empty data pipeline.](./Images/L7T3S2.png)
 
-3. With the new **Dataflow1** activity selected, go to the **Settings (1)** tab in the bottom. In the **Workspace** drop-down list, choose **fabric-<inject key="DeploymentID" enableCopy="false"/> (2)** and in **Dataflow** drop-down list, select **Transform Orders Dataflow (3)** (the data flow you created previously).
+1. With the new **Dataflow1** activity selected, go to the **Settings (1)** tab in the bottom. In the **Workspace** drop-down list, choose **fabric-<inject key="DeploymentID" enableCopy="false"/> (2)** and in **Dataflow** drop-down list, select **Transform Orders Dataflow (3)** (the data flow you created previously).
 
    ![Empty data pipeline.](./Images/L9T3S3.png)
    
-4. **Save** the pipeline from the top left corner.
+1. **Save** the pipeline from the top left corner.
 
    ![](./Images/Flow11.png)
 
-5. Use the **Run** button to run the pipeline, and wait for it to complete. It may take a few minutes.
+1. Use the **Run** button to run the pipeline, and wait for it to complete. It may take a few minutes.
 
    ![](./Images/Flow12.png)
    ![](./Images/lak8.png)
 
-6. In the left pane, select **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>** Lakehouse.
+1. In the left pane, select **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>** Lakehouse.
 
-7. Expand the **Tables** section and select the **orders** table created by your dataflow.
+1. Expand the **Tables** section and select the **orders** table created by your dataflow.
 
    ![Table loaded by a dataflow.](./Images/Orders11.png)
 

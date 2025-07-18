@@ -1,4 +1,4 @@
-# Exercise 6: Data Engineering Ingest Data in Fabric with Fabric Copilot
+# Exercise 5: Data Engineering Ingest Data in Fabric with Fabric Copilot
 
 ### Estimated Duration: 30 minutes
  In the labs, you'll create a simple data pipeline to bring in customer sales data. You are using the KiZAN Fabric Tenant - where we have Copilot enabled, demonstrate doing the same thing, but by using a new Data Flow Gen2 And leveraging the native integration of Copilot to use natural language to ingest and transform your data.

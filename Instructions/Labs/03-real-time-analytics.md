@@ -1,4 +1,4 @@
-# Exercise 4: Get started with Real-Time Analytics in Microsoft Fabric
+# Exercise 3: Get started with Real-Time Analytics in Microsoft Fabric
 
 ### Estimated Duration: 65 minutes
 
