@@ -1,10 +1,10 @@
 # Exercise 8: Create a Dataflow (Gen2) in Microsoft Fabric
 
-### Estimated Duration: 40 minutes
+### Estimated Duration: 40 Minutes
 
 In Microsoft Fabric, Dataflows (Gen2) connect to various data sources and perform transformations in Power Query Online. They can then be used in Data Pipelines to ingest data into a lakehouse or other analytical store or to define a dataset for a Power BI report.
 
-This lab is designed to introduce the different elements of Dataflows (Gen2), and not create a complex solution that may exist in an enterprise.
+This exercise is designed to introduce the different elements of Dataflows (Gen2), and not create a complex solution that may exist in an enterprise.
 
 ## Lab objectives
 
@@ -14,13 +14,14 @@ You will be able to complete the following tasks:
 - Task 2: Add data destination for Dataflow
 - Task 3: Add a dataflow to a pipeline
 
-### Task 1: Create a Dataflow (Gen2) to ingest data
+## Task 1: Create a Dataflow (Gen2) to ingest data
 
 In this task, you will create a Dataflow (Gen2) to efficiently ingest and transform data from multiple sources for analysis. This process streamlines data preparation, enabling you to prepare the data for further processing and insights.
 
 1. In the left pane, on **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** Workspace, click on **+ New item (2)**. In the Search box search for **Dataflow Gen2 (3)** and select **Dataflow Gen2 (4)**. Leave the **Name (5)** as default, **Uncheck (6)** the **Enable Git integration, deployment pipelines and Public API Scenarios** and click on **Create (7)**. After a few seconds, the Power Query editor for your new dataflow will open.
 
    ![](./Images/Flow1.png)
+   
    ![](./Images/Flow2.png)
 
 1. From the center **Get data** pane, select **Import from a Text/CSV file**.
@@ -50,13 +51,13 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
 
    ![](./Images/fabric24.png)
 
-1. The step to add the custom column is added to the query and the resulting column is displayed in the data pane:
+1. The step to add the custom column is added to the query, and the resulting column is displayed in the data pane:
 
    ![Query with a custom column step.](./Images/lak4.png)
 
 1. Duplicate the existing tab. In the left pane, go to the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>** Lakehouse, and then delete the **orders** file.
 
-### Task 2: Add data destination for Dataflow
+## Task 2: Add data destination for Dataflow
 
 In this task, you’ll add a data destination for the Dataflow to determine where the ingested and transformed data will be stored for future use.
 
@@ -76,7 +77,7 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
 1. On the Destination settings page, observe that **MonthNo** is not selected in the Column mapping, and an informational message is displayed.
  
-1. On the Destination settings page, toggle **off  (1)** the **Use Automatic Settings** option. Then, for the **MonthNo** column header and change the **Source Type** to **Whole number (2)**. Now, click on **Save Settings (3)**.
+1. On the Destination settings page, toggle **off (1)** the **Use Automatic Settings** option. Then, for the **MonthNo** column header and change the **Source Type** to **Whole number (2)**. Now, click on **Save Settings (3)**.
    
    ![Data destination settings page.](./Images/lak2.png)
 
@@ -88,7 +89,7 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
    ![](./Images/Flow8.png)
 
-### Task 3: Add a dataflow to a pipeline
+## Task 3: Add a dataflow to a pipeline
 
 In this task, you’ll add a dataflow to a pipeline to streamline the data processing workflow and enable automated data transformations.
 
@@ -100,7 +101,7 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 
    ![](./Images/Flow10.png)
 
-   > **Note**: If the Copy Data wizard opens automatically, close it!
+   > **Note:** If the Copy Data wizard opens automatically, close it!
 
 1. Select **pipeline activity (1)**, and select **Dataflow (2)** activity to the pipeline.
 
@@ -117,6 +118,7 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 1. Use the **Run** button to run the pipeline, and wait for it to complete. It may take a few minutes.
 
    ![](./Images/Flow12.png)
+   
    ![](./Images/lak8.png)
 
 1. In the left pane, select **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>** Lakehouse.
@@ -129,6 +131,6 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 
 ### Summary
 
-In this exercise, you have created a Dataflow (Gen2) to ingest data , added data destination for Dataflow and a dataflow to a pipeline.
+In this exercise, you have created a Dataflow (Gen2) to ingest data, added da ata destination for Dataflow and a Dataflow to a pipeline.
 
-### You have successfully completed the lab
+### You have successfully completed the Hands-on lab
