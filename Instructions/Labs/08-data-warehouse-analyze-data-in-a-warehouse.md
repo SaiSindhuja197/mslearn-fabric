@@ -1,19 +1,8 @@
 # Exercise 6: Analyze Data in a Warehouse with Fabric Copilot
 
-### Estimated Duration: 60 minutes
+### Estimated Duration: 60 Minutes
 
-In this lab, you will analyze data in a warehouse using Fabric Copilot by connecting to your data source, running queries, and visualizing insights to drive informed decision-making.
-
-## Lab objectives
-
-You will be able to complete the following tasks:
-
-- Connect to the Warehouse  
-- Explore Data Sources  
-- Run Data Queries  
-- Visualize Data Insights  
-- Generate Reports  
-- Collaborate on Findings  
+In this exercise, you will analyze data in a warehouse using Fabric Copilot by connecting to your data source, running queries, and visualizing insights to drive informed decision-making. 
 
 ## Analyze Data in a Warehouse
 
@@ -37,7 +26,7 @@ You will be able to complete the following tasks:
 
    ![01](./Images/02/Pg4-T2-S9.png)  
 
-    > **Tip**: If the schema takes a while to load, just refresh the browser page.
+    > **Tip:** If the schema takes a while to load, just refresh the browser page.
  
 1. Clicking on the **Model Layouts** view allows you to view the relationships between different tables within the data warehouse.
 
@@ -106,7 +95,7 @@ You will be able to complete the following tasks:
  
 1. **Expand each suggestion** to see the text of the prompt and what will be created. This helps illustrate the range of suggestions Copilot can provide.
  
-1. Select the **Sales Performace by Region (1)** report as it's usually a decent report to work with. Note that the report generated can vary.
+1. Select the **Sales Performance by Region (1)** report as it's usually a decent report to work with. Note that the report generated can vary.
   
     >**Note:** Click **Edit (2)** to demonstrate that you can adjust the query and customize the report.
 
@@ -117,6 +106,7 @@ You will be able to complete the following tasks:
     ```
     Give me an executive summary
     ```
+    
     ![](./Images/23.png)
 
 1. Click on **File**, then click on **Save**. Enter the name as **Sample (1)** and click on **Save (2)**.
@@ -125,6 +115,6 @@ You will be able to complete the following tasks:
 
 ## Summary
 
-In this lab, you connected to a data warehouse using Fabric Copilot and explored the available datasets. You ran queries to extract insights and created visualizations for effective analysis. Finally, you compiled your findings into reports and collaborated with team members on the results.
+In this exercise, you connected to a data warehouse using Fabric Copilot and explored the available datasets. You ran queries to extract insights and created visualizations for effective analysis. Finally, you compiled your findings into reports and collaborated with team members on the results.
 
-### You have successfully completed the exercise. Click on Next >> to procced with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
