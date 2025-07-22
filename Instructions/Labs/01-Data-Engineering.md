@@ -195,7 +195,7 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
     ![](./Images/E2-T4-S4.png)  
 
-1. Select the previously created **Lakehouse-<inject key="DeploymentID" enableCopy="false"/> (1)** then click **Continue (2)**.
+1. Select the previously created **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** then click **Continue (2)**.
  
     ![](./Images/Lake17.png) 
 
@@ -398,13 +398,9 @@ In this task, you'll create a report to visualize your data findings. You'll sel
 In this exercise, you:
 
 - Created a Workspace and a Lakehouse to organize and manage your data environment.
-
 - Imported data into the Lakehouse.
-
 - Explored how a Lakehouse stores data as both files and tables in OneLake.
-
 - Learned that managed tables in the Lakehouse can be queried using SQL.
-
 - Observed that these tables are automatically included in a default dataset, enabling seamless data visualization.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.

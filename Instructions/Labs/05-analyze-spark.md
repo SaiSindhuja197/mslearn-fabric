@@ -640,19 +640,12 @@ In this task, you will save your notebook with a meaningful name to preserve you
 In this exercise, you:
 
 - Created a **Lakehouse** and uploaded data files.
-
 - Built a **Spark notebook** to explore and process data using **PySpark**.
-
 - Loaded and structured data with a defined schema.
-
 - Performed **data exploration**, **filtering**, and **aggregation** using dataframe operations.
-
 - Transformed and saved data in **Parquet** and **partitioned** formats.
-
 - Created and queried **Spark SQL tables** using both PySpark and SQL.
-
 - Visualized data using **Spark charts**, **matplotlib**, and **seaborn**.
-
 - Saved the notebook and ended the Spark session.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.

@@ -120,9 +120,7 @@ In the exercise, you'll create a simple data pipeline to bring in customer sales
 In this exercise, you:
 
 - Created a notebook to develop and execute a machine learning workflow.
-
 - Built and trained a machine learning model using Scikit-Learn.
-
 - Utilized MLflow to track experiments, including model parameters, metrics, and performance outcomes.
 
 ## You have successfully completed the exercise. Click on Next >> to proceed with next exercise.

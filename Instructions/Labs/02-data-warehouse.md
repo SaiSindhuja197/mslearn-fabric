@@ -323,15 +323,11 @@ In this task, you will visualize your data from a single query or your data ware
 In this exercise, you
 
 -  Created a data warehouse containing multiple related tables.
-
 - Used SQL to: 
     - Insert data into the tables.
     - Query the data for analysis.
-
 - Leveraged the visual query tool to explore and transform the data.
-
 - Enhanced the data model for the default dataset in the data warehouse.
-
 - Used the enhanced dataset as the source for building a report.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
