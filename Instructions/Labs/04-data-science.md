@@ -299,6 +299,12 @@ In this task, you will save your notebook with a meaningful name to preserve you
 
 ### Summary
 
-In this exercise, you have created a notebook and trained a machine-learning model. You used Scikit-Learn to train the model and MLflow to track its performance.
+In this exercise, you:
+
+- Created a notebook for developing and running your machine learning workflow.
+
+- Trained a machine learning model using the Scikit-Learn library.
+
+- Used MLflow to track the model’s performance, including metrics and parameters.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.

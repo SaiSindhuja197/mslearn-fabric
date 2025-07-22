@@ -132,21 +132,21 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
 
 1. In the **Power BI** window, in the **File** menu, select **Save**. Then save the report as **Revenue by Item** in the fabric-<inject key="DeploymentID" enableCopy="false"/> where your lakehouse and KQL database are defined using a **Non-Business** sensitivity label from the drop-down. Click on **Continue**
 
-   >**Note:** If you are not getting option to **Save** the report in the **fabric-<inject key="DeploymentID" enableCopy="false"/>** then follow the below steps:
+    >**Note:** If you are not getting option to **Save** the report in the **fabric-<inject key="DeploymentID" enableCopy="false"/>** then follow the below steps:
 
-      1. Enter the file name **Revenue by Item** and click **Continue** to save the Power BI report to workspace.
+    -  Enter the file name **Revenue by Item** and click **Continue** to save the Power BI report to workspace.
 
          ![](./Images/38.png)
 
-      1. The report has been saved successfully, now click on **Open the file in Power BI to view, edit, and get a shareable link** to proceed.
+    -  The report has been saved successfully, now click on **Open the file in Power BI to view, edit, and get a shareable link** to proceed.
 
          ![](./Images/39.png)
 
-      1. Click **File** > **Save a copy** to duplicate the Power BI report to your workspace.
+    - Click **File** > **Save a copy** to duplicate the Power BI report to your workspace.
          
          ![](./Images/40.png)
 
-      1. Select **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** where you want to save the copied report, enter a name as **Revenue by Item (2)**, and click the **Save (3)** button to finalize the copy.
+    - Select **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** where you want to save the copied report, enter a name as **Revenue by Item (2)**, and click the **Save (3)** button to finalize the copy.
        
          ![](./Images/41.png)
 
@@ -251,6 +251,16 @@ In this task, you will use Delta tables to handle streaming data, leveraging the
 
 ### Summary
 
-In this exercise, you have created a lakehouse, a KQL database to analyze the data uploaded into the lakehouse. You used KQL to query the data and create a query set, which was then used to create a Power BI report.
+In this exercise, you:
+
+- Created a Lakehouse to store and manage structured data.
+
+- Set up a KQL (Kusto Query Language) database to analyze the data stored in the Lakehouse.
+
+- Used KQL queries to explore and extract insights from the data.
+
+- Created a query set based on your KQL analysis.
+
+- Used the query set as the data source for a Power BI report to visualize the results.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.

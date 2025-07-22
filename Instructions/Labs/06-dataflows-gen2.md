@@ -131,6 +131,12 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 
 ### Summary
 
-In this exercise, you have created a Dataflow (Gen2) to ingest data, added da ata destination for Dataflow and a Dataflow to a pipeline.
+In this exercise, you::
+
+- Created a **Dataflow (Gen2)** to ingest and prepare data.
+
+- Added a **data destination** to store the output of the Dataflow.
+
+- Integrated the **Dataflow into a pipeline** for automated data processing.
 
 ### You have successfully completed the Hands-on lab

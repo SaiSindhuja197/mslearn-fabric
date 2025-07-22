@@ -26,7 +26,7 @@ In this exercise, you will analyze data in a warehouse using Fabric Copilot by c
 
    ![01](./Images/02/Pg4-T2-S9.png)  
 
-    > **Tip:** If the schema takes a while to load, just refresh the browser page.
+    > **Note:** If the schema takes a while to load, just refresh the browser page.
  
 1. Clicking on the **Model Layouts** view allows you to view the relationships between different tables within the data warehouse.
 
@@ -115,6 +115,18 @@ In this exercise, you will analyze data in a warehouse using Fabric Copilot by c
 
 ## Summary
 
-In this exercise, you connected to a data warehouse using Fabric Copilot and explored the available datasets. You ran queries to extract insights and created visualizations for effective analysis. Finally, you compiled your findings into reports and collaborated with team members on the results.
+In this exercise, you:
+
+- **Connected to a data warehouse** using **Fabric Copilot**.
+
+- **Explored available datasets** to understand the data structure and content.
+
+- **Executed queries** to extract meaningful insights from the data.
+
+- **Created visualizations** to support clear and effective data analysis.
+
+- **Compiled findings into reports** for presentation and decision-making.
+
+- **Collaborated with team members** to review and discuss the results.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.

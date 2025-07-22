@@ -4,11 +4,12 @@
 
 In the exercise, you'll create a simple data pipeline to bring in customer sales data. You are using the KiZAN Fabric Tenant - where we have Copilot enabled, demonstrate doing the same thing, but by using a new Data Flow Gen2 and leveraging the native integration of Copilot to use natural language to ingest and transform your data.
    
-# Create New - Dataflow Gen2
+## Create New - Dataflow Gen2
 
 1. In the left pane, navigate back to your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>**, then click on **+ New item (1)**. Search for **Dataflow Gen2 (2)** and select **Dataflow Gen2 (3)**. Leave the name as default, **Uncheck (4)** the **Enable Git integration, deployment pipelines and Public API scenarios**, and then click on **Create (5)**.
 
    ![New dataflow.](./Images/Inj1.png)
+
    ![New dataflow.](./Images/Inj2.png)
 
 1. After a few seconds, the Power Query editor for your new dataflow opens as shown below.
@@ -116,6 +117,12 @@ In the exercise, you'll create a simple data pipeline to bring in customer sales
    - **Facilitates automation and customization**: Through M-Query/M-Code scripting, users can automate repetitive tasks, build custom functions, and create tailored solutions, increasing efficiency and flexibility in data workflows.
 
 ## Summary
-In this exercise, you have created a notebook and trained a machine-learning model. You used Scikit-Learn to train the model and MLflow to track its performance.
+In this exercise, you:
+
+- Created a notebook to develop and execute a machine learning workflow.
+
+- Built and trained a machine learning model using Scikit-Learn.
+
+- Utilized MLflow to track experiments, including model parameters, metrics, and performance outcomes.
 
 ## You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
