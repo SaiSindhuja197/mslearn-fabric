@@ -291,7 +291,6 @@ In this task, you will visualize your data from a single query or your data ware
       - **ProductKey**
       - **ProductAltKey** 
 
-
 1. On the Home menu, from the **Reporting(1)** tab, select **New report (2)**. This will open a new window, where you can create a Power BI report.
 
     ![03](./Images/pg-08-1.png)
