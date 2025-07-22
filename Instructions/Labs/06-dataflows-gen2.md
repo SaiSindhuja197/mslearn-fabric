@@ -2,9 +2,7 @@
 
 ### Estimated Duration: 40 Minutes
 
-In Microsoft Fabric, Dataflows (Gen2) connect to various data sources and perform transformations in Power Query Online. They can then be used in Data Pipelines to ingest data into a lakehouse or other analytical store or to define a dataset for a Power BI report.
-
-This exercise is designed to introduce the different elements of Dataflows (Gen2), and not create a complex solution that may exist in an enterprise.
+In this exercise, you'll explore data ingestion and transformation in Microsoft Fabric using Dataflow Gen2. You'll begin by creating a Dataflow to import and shape sales data using Power Query Online. Then, you'll define a lakehouse as the data destination, configure column mappings, and publish the Dataflow. Finally, you'll integrate the Dataflow into a pipeline to automate data processing and verify that the transformed data is successfully loaded into the lakehouse for future analysis.
 
 ## Lab objectives
 
@@ -131,6 +129,12 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 
 ### Summary
 
-In this exercise, you have created a Dataflow (Gen2) to ingest data, added da ata destination for Dataflow and a Dataflow to a pipeline.
+In this exercise, you::
+
+- Created a **Dataflow (Gen2)** to ingest and prepare data.
+
+- Added a **data destination** to store the output of the Dataflow.
+
+- Integrated the **Dataflow into a pipeline** for automated data processing.
 
 ### You have successfully completed the Hands-on lab

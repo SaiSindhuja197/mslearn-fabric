@@ -2,7 +2,7 @@
 
 ### Estimated Duration: 75 Minutes
 
-In Microsoft Fabric, a data warehouse provides a relational database for large-scale analytics. Unlike the default read-only SQL endpoint for tables defined in a lakehouse, a data warehouse provides full SQL semantics; including the ability to insert, update, and delete data in the tables.
+In this exercise, you'll analyze data in a Microsoft Fabric data warehouse using SQL and visual tools. You'll begin by creating a data warehouse, designing its schema with fact and dimension tables, and inserting sample data. You’ll then define relationships to build a data model, run SQL queries to analyze data, and create a view for reuse. Finally, you'll use visual query and reporting features to explore and present insights effectively.
 
 ## Lab objectives
 
@@ -32,7 +32,7 @@ In this task, you will design and implement a data warehouse by organizing data 
 
     - Click on **Create (2)**
 
-        ![01](./Images/lab2-image2.png)
+    ![01](./Images/lab2-image2.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - If you receive a success message, you can proceed to the next task.
@@ -107,7 +107,7 @@ In this task, you will create database tables by defining their structure with a
     - **DimProduct**
     - **FactSalesOrder**
 
-        ![01](./Images/02/Pg4-T2-S9.png)
+    ![01](./Images/02/Pg4-T2-S9.png)
 
 > **Note:** If the schema takes a while to load, just refresh the browser page.
 
@@ -141,7 +141,7 @@ In this task, you will create a relational data warehouse consisting of fact and
     - **Assume referential integrity (8)**: Unselected
     - click **Save (9)**.
 
-        ![](./Images/u13.png)
+    ![](./Images/u13.png)
 
 1. Repeat the process to create many-to-one relationships between the following tables and click on **Save**.
 
@@ -271,7 +271,7 @@ In this task, you will visualize your data from a single query or your data ware
 
 1. Hide the following columns in your Fact and Dimension tables that are not necessary to create a report. Note that this does not remove the columns from the model; it simply hides them from view on the report canvas.
    
-   1. FactSalesOrder
+    - FactSalesOrder
       
       - **SalesOrderDateKey**
       - **CustomerKey**
@@ -279,15 +279,15 @@ In this task, you will visualize your data from a single query or your data ware
 
         ![03](./Images/02/03.png)
 
-   1. DimCustomer
+    - DimCustomer
       - **CustomerKey**
       - **CustomerAltKey**
 
-   1. DimDate
+    - DimDate
       - **DateKey**
       - **DateAltKey**
 
-   1. DimProduct
+    - DimProduct
       - **ProductKey**
       - **ProductAltKey** 
 
@@ -320,6 +320,18 @@ In this task, you will visualize your data from a single query or your data ware
 
 ### Summary
 
-In this exercise, you have created a data warehouse that contains multiple tables. You used SQL to insert data into the tables and query them. and also used the visual query tool. Finally, you enhanced the data model for the data warehouse's default dataset and used it as the source for a report.
+In this exercise, you
+
+-  Created a data warehouse containing multiple related tables.
+
+- Used SQL to: 
+    - Insert data into the tables.
+    - Query the data for analysis.
+
+- Leveraged the visual query tool to explore and transform the data.
+
+- Enhanced the data model for the default dataset in the data warehouse.
+
+- Used the enhanced dataset as the source for building a report.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
