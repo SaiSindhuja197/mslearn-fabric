@@ -118,15 +118,10 @@ In this exercise, you will analyze data in a warehouse using Fabric Copilot by c
 In this exercise, you:
 
 - **Connected to a data warehouse** using **Fabric Copilot**.
-
 - **Explored available datasets** to understand the data structure and content.
-
 - **Executed queries** to extract meaningful insights from the data.
-
 - **Created visualizations** to support clear and effective data analysis.
-
 - **Compiled findings into reports** for presentation and decision-making.
-
 - **Collaborated with team members** to review and discuss the results.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.

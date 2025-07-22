@@ -250,15 +250,10 @@ In this task, you will use Delta tables to handle streaming data, leveraging the
 ### Summary
 
 In this exercise, you:
-
 - Created a Lakehouse to store and manage structured data.
-
 - Set up a KQL (Kusto Query Language) database to analyze the data stored in the Lakehouse.
-
 - Used KQL queries to explore and extract insights from the data.
-
 - Created a query set based on your KQL analysis.
-
 - Used the query set as the data source for a Power BI report to visualize the results.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.

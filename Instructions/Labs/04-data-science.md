@@ -69,11 +69,11 @@ In this task, you will load data into a dataframe to prepare for model training.
 
     ![](./Images/adddataitem.png)  
 
-1. Select the lakehouse named **Lakehouse-<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Connect (2)**.
+1. Select the lakehouse named **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Connect (2)**.
  
     ![](./Images/Sci1.png) 
 
-1. Once after connecting to the existing lakehouse, we should be able to see the **Lakehouse-<inject key="DeploymentID" enableCopy="false"/>** under **Data Items**.
+1. Once after connecting to the existing lakehouse, we should be able to see the **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** under **Data Items**.
    
    ![](./Images/E5T3S3.png)
 
@@ -220,7 +220,7 @@ In this task, you will use MLflow to search for and view your experiments relate
 
 In this task, you will explore your experiments in Microsoft Fabric, which tracks all your training activities. The platform allows for visual exploration of these experiments, enabling you to analyze and compare results effectively.
 
-1. In the left pane, navigate to your **Workspace (1)**, you will see the **experiment-churn (2)** Experiment created.
+1. In the left pane, navigate to your **Fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, you will see the **experiment-churn (2)** Experiment created.
 
    ![](./Images/Pg6-ExpChurn-S1.png)
 
@@ -302,9 +302,7 @@ In this task, you will save your notebook with a meaningful name to preserve you
 In this exercise, you:
 
 - Created a notebook for developing and running your machine learning workflow.
-
 - Trained a machine learning model using the Scikit-Learn library.
-
 - Used MLflow to track the model’s performance, including metrics and parameters.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
