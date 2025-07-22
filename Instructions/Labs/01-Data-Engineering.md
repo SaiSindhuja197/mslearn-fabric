@@ -24,7 +24,6 @@ In this task, you will create a Fabric workspace. The workspace will contain all
 
     ![New Workspace](./Images/f2.png)
 
-
 1. On the **Create a workspace** page, enter the following details:
     - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/>**
 
