@@ -377,6 +377,7 @@ In this task, you'll create a report to visualize your data findings. You'll sel
 1. On the **File (1)** menu, select **Save As (2)**. Then, name the Report as **Item Sales Report (3)** and click **Save (4)** in the workspace you created previously.
 
       ![](./Images/Lake25.png)
+   
       ![](./Images/Lake26.png)
 
 1. In the hub menu bar on the left, select your workspace to verify that it contains the following items:
