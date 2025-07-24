@@ -152,6 +152,13 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
 
 1. In the list of items in your workspace, note that the **Revenue by Item** report is listed.
 
+> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+> - If you receive a success message, you can proceed to the next task.
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+
+<validation step="f0432ac8-2698-4432-be77-0a69568c2d09" />
+
 ## Task 4: Use delta tables for streaming data
 
 In this task, you will use Delta tables to handle streaming data, leveraging their capabilities for real-time data processing. Specifically, you will implement a Delta table as a sink for streaming data in a simulated Internet of Things (IoT) scenario, utilizing the Spark Structured Streaming API.
