@@ -8,15 +8,36 @@ In this exercise, you'll ingest data into a Microsoft Fabric lakehouse using pip
 
 You will be able to complete the following tasks:
 
-- Task 1: Create a workspace
-- Task 2: Enable Copilot inside a Codespace
-- Task 3: Create a pipeline
-- Task 4: Create a notebook
-- Task 5: Use SQL to query tables
-- Task 6: Create a visual query
-- Task 7: Create a report
-      
-## Task 1: Create a workspace
+- Task 1: Sign up for Microsoft Fabric Trial
+- Task 2: Create a workspace
+- Task 3: Enable Copilot inside a Codespace
+- Task 4: Create a pipeline
+- Task 5: Create a notebook
+- Task 6: Use SQL to query tables
+- Task 7: Create a visual query
+- Task 8: Create a report
+
+## Task 1: Sign up for Microsoft Fabric Trial
+
+In this task, you will initiate your 60-day free trial of Microsoft Fabric by signing up through the Fabric app, providing access to its comprehensive suite of data integration, analytics, and visualization tools
+
+1. On the **Power BI homepage**, click on the **Profile icon (1)** on the top right, and then click on **Free trial (2)**.
+
+     ![Account-manager-start](./Images/f1.png)
+
+1. A new prompt will appear asking you to **Activate your 60-day free Fabric trial capacity**, click on **Activate**.
+
+      ![Account-manager-start](./Images/fabric-3.png)
+
+1. Click on **Stay on current page** when prompted.
+
+      ![Account-manager-start](./Images/fabric-2.png)
+
+1. On the **Power BI homepage**, click on the **Profile icon (1)** on the top right again, and verify **Trial Status (2)**.
+
+      ![Account-manager-start](./Images/lab1-image5.png)
+
+## Task 2: Create a workspace
 
 In this task, you will create a Fabric workspace. The workspace will contain all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, notebooks, Power BI datasets, and reports.
 
@@ -36,7 +57,7 @@ In this task, you will create a Fabric workspace. The workspace will contain all
  
       ![advanced-and-apply](./Images/f4.png)
 
-## Task 2: Create a Lakehouse
+## Task 3: Create a Lakehouse
 
 In this task, switch to the Data engineering experience and create a new Lakehouse. You'll use it to ingest and manage data in the following steps.
 
@@ -66,7 +87,7 @@ In this task, switch to the Data engineering experience and create a new Lakehou
 
     ![](./Images/Lake5.png)
 
-## Task 3: Create a pipeline
+## Task 4: Create a pipeline
 
 In this task, you'll create a pipeline to automate data workflows. Using the Copy data activity, you'll extract data from a source and copy it to a file in the lakehouse, streamlining the data ingestion process.
 
@@ -155,7 +176,7 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
 
     ![Account-manager-start](./Images/lab1-image16.png)
 
-## Task 4: Create a Notebook
+## Task 5: Create a Notebook
 
 In this task, you'll create a Notebook to document your data analysis. You'll set up the environment, import libraries, and structure your code for exploration, visualization, and insights.
 
@@ -255,7 +276,7 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
     ![.](./Images/newfab-2.png)
 
-## Task 5: Use SQL to query tables
+## Task 6: Use SQL to query tables
 
 In this task, you'll use SQL to query tables in a database. You'll write statements to retrieve, filter, and manipulate data, helping you analyze the dataset and build your SQL skills.
 
@@ -278,7 +299,7 @@ In this task, you'll use SQL to query tables in a database. You'll write stateme
 
     ![](./Images/E2-T5-S3.png)
 
-## Task 6: Create a visual query
+## Task 7: Create a visual query
 
 In this task, you'll create a visual query in Power BI using Power Query. Start by adding the Sales table to the query editor, select the necessary columns, and apply a Group By transformation to count distinct line items per sales order. Then, review the summarized results.
 
@@ -314,7 +335,7 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
 
     ![Screenshot of a Visual query with results.](./Images/E2-T6-S6.png)
 
-## Task 7: Create a report
+## Task 8: Create a report
 
 In this task, you'll create a report to visualize your data findings. You'll select relevant data, choose appropriate visuals, and organize the report to clearly present insights and support data-driven decisions.
 
