@@ -41,7 +41,7 @@ Microsoft Fabric offers a comprehensive suite of services to manage and analyze 
 
 ## Architecture Diagram
 
-![](./Images/cloud-scale-fabric-arch-diagram.png)
+<img width="1418" height="778" alt="image" src="https://github.com/user-attachments/assets/c1b86651-2d87-4a4c-b314-c735589f2971" />
 
 ## Explanation of Components
 
@@ -63,7 +63,7 @@ Welcome to your MS Fabric Foundation for Enterprise Analytics workshop! We've pr
  
 Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
 
-![07](./Images/GS1.png)
+<img width="1912" height="925" alt="image" src="https://github.com/user-attachments/assets/733a4b3a-c301-4d09-8c26-a30cd52ae130" />
 
 ## Virtual Machine & Lab Guide
 
@@ -73,13 +73,13 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
 
 To get the lab environment details, you can select the **Environment** tab. Additionally, the credentials will also be emailed to your registered email address.
 
-   ![08](./Images/GS2.png)
+<img width="644" height="694" alt="image" src="https://github.com/user-attachments/assets/cdbd46f0-d324-40ef-bc27-84ca5d73e56a" />
 
 ## Utilizing the Split Window Feature
 
 Utilizing the Split Window Feature: For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
 
-   ![08](./Images/GS3.png)
+<img width="651" height="325" alt="image" src="https://github.com/user-attachments/assets/705c3299-ed55-4923-a222-80cf8ffdfc11" />
 
    >**Note:** You will see the DeploymentID value on the **Environment** tab, use it wherever you see SUFFIX or DeploymentID in lab steps.
 
@@ -87,19 +87,19 @@ Utilizing the Split Window Feature: For convenience, you can open the lab guide 
  
 Feel free to **Start, Stop, or Restart** your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
 
-   ![08](./Images/GS5.png)
+<img width="652" height="349" alt="image" src="https://github.com/user-attachments/assets/98bc6756-a18f-40c7-b5c1-59ba5ed1a007" />
 
 ## Lab Guide Zoom In/Zoom Out Options
 
 To adjust the zoom level for the environment page, click the A↕ : 100% icon located next to the timer in the lab environment.
 
-   ![08](./Images/GS4.png)
+<img width="644" height="243" alt="image" src="https://github.com/user-attachments/assets/980f1fd7-ee11-41ae-abf0-18a3ee852116" />
 
 ## Let's Get Started with Power BI Portal
 
 1. In the Lab VM, click on the **Microsoft Edge** browser, which is available on the desktop.
 
-   ![09](./Images/GS6.png)
+   <img width="1241" height="923" alt="image" src="https://github.com/user-attachments/assets/5ce4042a-475f-4075-aca0-ea86d61e28ae" />
 
 1. Copy the **Power BI link** below and open this link in a new tab on the Microsoft Edge Browser.
 
