@@ -1,4 +1,4 @@
-# Cloud scale analytics with Microsoft Fabric
+# MS Fabric Foundation for Enterprise Analytics
 
 ### Overall Estimated Duration: 8 Hours
 
@@ -53,7 +53,7 @@ In Microsoft Fabric, the workflow begins with creating a Fabric workspace to man
 
 # Getting Started with the Lab
 
-Welcome to your Cloud scale analytics with Microsoft Fabric workshop! We've prepared a seamless environment for you to explore and learn about Fabric services. Let's begin by making the most of this experience:
+Welcome to your MS Fabric Foundation for Enterprise Analytics workshop! We've prepared a seamless environment for you to explore and learn about Fabric services. Let's begin by making the most of this experience:
 
 ## Accessing Your Lab Environment
 Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
