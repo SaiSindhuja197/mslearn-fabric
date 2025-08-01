@@ -257,7 +257,7 @@ By plotting the accuracy per logged estimator, you can review which algorithm re
    - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
    - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="9bc2b595-c7f5-4276-93dc-2293e35d87e2" />
+<validation step="421eaf46-3e33-4dcd-86f4-ace96f811965" />
 
 ## Task 7: Save the model
 
