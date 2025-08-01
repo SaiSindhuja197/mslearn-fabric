@@ -1,4 +1,4 @@
-# Cloud Scale Analytics with Microsoft Fabric
+# MS Fabric Foundation for Enterprise Analytics
 
 ### Overall Estimated Duration: 8 Hours
 
