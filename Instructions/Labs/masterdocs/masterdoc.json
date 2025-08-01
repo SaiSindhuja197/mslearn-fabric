@@ -3,31 +3,31 @@
   "Language": "English",
   "Files": [
     {
-      "RawFilePath": "https://raw.githubusercontent.com/shivamujawame/mslearn-fabric/refs/heads/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/Getting-Started.md",
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/Getting-Started.md",
       "Order": 1
     },
     {
-      "RawFilePath": "https://raw.githubusercontent.com/shivamujawame/mslearn-fabric/refs/heads/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/MS-01-Data-Engineering.md",
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/MS-01-Data-Engineering.md",
       "Order": 2
  },
     {
-      "RawFilePath": "https://raw.githubusercontent.com/shivamujawame/mslearn-fabric/refs/heads/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/MS-02-data-warehouse.md",
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/MS-02-data-warehouse.md",
       "Order": 3
     },
     {
-      "RawFilePath": "https://raw.githubusercontent.com/shivamujawame/mslearn-fabric/refs/heads/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/MS-03-real-time-analytics.md",
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/MS-03-real-time-analytics.md",
       "Order": 4
     },
     {
-      "RawFilePath": "https://raw.githubusercontent.com/shivamujawame/mslearn-fabric/refs/heads/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/MS-04-data-science.md",
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/MS-04-data-science.md",
       "Order": 5
     },
      {
-      "RawFilePath": "https://raw.githubusercontent.com/shivamujawame/mslearn-fabric/refs/heads/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/MS-05-analyze-spark-V2.md",
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/MS-05-analyze-spark-V2.md",
       "Order": 6
     },
     {
-      "RawFilePath": "https://raw.githubusercontent.com/shivamujawame/mslearn-fabric/refs/heads/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/MS-06-dataflows-gen2-V2.md",
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/refs/heads/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/MS-06-dataflows-gen2-V2.md",
       "Order": 7
     }
   ]
