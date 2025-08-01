@@ -136,3 +136,5 @@ In this exercise, you:
 - Integrated the **Dataflow into a pipeline** for automated data processing.
 
 ### You have successfully completed the Hands-on lab
+
+By completing this lab, you have gained valuable, hands-on experience with the end-to-end capabilities of Microsoft Fabric for enterprise analytics. Starting from creating a collaborative workspace, you have learned to ingest and prepare data using pipelines, perform advanced analyses in a data warehouse, and access real-time insights through live analytics. They also practiced training machine learning models in notebooks, harnessed the scalability of Apache Spark for large-scale analysis, and designed sophisticated data transformation workflows with Dataflow Gen2. This comprehensive journey empowers you to confidently manage, analyze, and transform data—equipping them with practical skills to drive informed, data-driven decision-making within their organizations.

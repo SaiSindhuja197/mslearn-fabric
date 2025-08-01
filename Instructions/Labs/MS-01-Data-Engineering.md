@@ -46,11 +46,11 @@ In this task, you will create a Fabric workspace. The workspace will contain all
     ![New Workspace](./Images/f2.png)
 
 1. On the **Create a workspace** page, enter the following details:
-    - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/>**
+    - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**
+    - Expand the **Advanced (2)** section.
 
       ![name-and-desc-of-workspc](./Images/f3.png)
 
-    - Expand the **Advanced** section.
     - Select **License mode** as **Fabric capacity (3)**.
     - From the dropdown list, select the available **Capacity (4)**.
     - Click **Apply (5)** to create and open the workspace.
