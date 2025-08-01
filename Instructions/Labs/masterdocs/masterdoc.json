@@ -1,0 +1,22 @@
+[{
+  "Name": "Microsoft Fabric",
+  "Language": "English",
+  "Files": [
+    {
+      "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/gs-apache-spark.md",
+      "Order": 1
+    },
+    {
+      "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/01-apache-spark.md",
+      "Order": 2
+    },
+    {
+      "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/02-dataflow-gen2.md",
+      "Order": 3
+    },
+    {
+      "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/mslearn-fabric/MS-Fabric-Foundation-for-Enterprise-Analytics/Instructions/Labs/03-ingest-pipeline.md",
+      "Order": 4
+    }
+  ]
+}]
