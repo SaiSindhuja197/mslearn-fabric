@@ -1,6 +1,6 @@
 # Exercise 2: Analyze data in a data warehouse
 
-### Estimated Duration: 75 Minutes
+### Estimated Duration: 90 Minutes
 
 In this exercise, you'll analyze data in a Microsoft Fabric data warehouse using SQL and visual tools. You'll begin by creating a data warehouse, designing its schema with fact and dimension tables, and inserting sample data. You’ll then define relationships to build a data model, run SQL queries to analyze data, and create a view for reuse. Finally, you'll use visual query and reporting features to explore and present insights effectively.
 
@@ -39,7 +39,7 @@ In this task, you will design and implement a data warehouse by organizing data 
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="ae9ea1a1-6466-459b-87da-12cb0f83b186" />
+<validation step="ed2c6226-96ee-48e8-b8f1-205dae3aaf6b" />
 
 ## Task 2: Create tables and insert data
 

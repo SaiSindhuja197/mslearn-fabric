@@ -97,7 +97,7 @@ To adjust the zoom level for the environment page, click the A↕ : 100% icon lo
 
 1. In the Lab VM, click on the **Microsoft Edge** browser, which is available on the desktop.
 
-   <img width="1241" height="923" alt="image" src="https://github.com/user-attachments/assets/5ce4042a-475f-4075-aca0-ea86d61e28ae" />
+   ![04](./Images/PowerBI1.png)
 
 1. Copy the **Power BI link** below and open this link in a new tab on the Microsoft Edge Browser.
 

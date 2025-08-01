@@ -46,11 +46,11 @@ In this task, you will create a Fabric workspace. The workspace will contain all
     ![New Workspace](./Images/f2.png)
 
 1. On the **Create a workspace** page, enter the following details:
-    - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/>**
+    - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**
+    - Expand the **Advanced (2)** section.
 
       ![name-and-desc-of-workspc](./Images/f3.png)
 
-    - Expand the **Advanced** section.
     - Select **License mode** as **Fabric capacity (3)**.
     - From the dropdown list, select the available **Capacity (4)**.
     - Click **Apply (5)** to create and open the workspace.
@@ -390,7 +390,7 @@ In this task, you'll create a report to visualize your data findings. You'll sel
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="478b8d65-837a-4b29-b792-922fe3c10580" />
+<validation step="09d5de71-ba8a-42fa-a261-b57c69f32b12" />
 
 ### Summary
 

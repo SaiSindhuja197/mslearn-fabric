@@ -1,6 +1,6 @@
 # Exercise 3: Get started with Real-Time Analytics in Microsoft Fabric
 
-### Estimated Duration: 65 Minutes
+### Estimated Duration: 75 Minutes
 
 In this exercise, you'll explore real-time analytics in Microsoft Fabric using Kusto Query Language (KQL). You'll begin by creating a KQL database and importing sales data into a table. Then, you'll run KQL queries to analyze the data and create a query set. Using this query set, you’ll build a Power BI report to visualize results. Finally, you'll simulate real-time data ingestion using Spark Structured Streaming and Delta tables to process and query IoT-like data dynamically.
 
@@ -157,7 +157,7 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
 > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="f0432ac8-2698-4432-be77-0a69568c2d09" />
+<validation step="87b0a9aa-50e0-43f6-a218-25d67e5f4784" />
 
 ## Task 4: Use delta tables for streaming data
 
