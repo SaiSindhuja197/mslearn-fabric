@@ -53,6 +53,9 @@ The architecture for this lab involves several key components of Microsoft Fabri
 - **Apache Spark on Microsoft Fabric:** A distributed computing service for performing large-scale data processing and analytics using Spark clusters.
 - **Dataflow Gen2:** A service for designing and executing advanced data transformation workflows, enabling efficient data integration and processing.
 
+**Fabric trial provides access to most features, but excludes Copilot, private links, and trusted workspace access ([learn more](https://learn.microsoft.com/en-us/fabric/fundamentals/fabric-trial#overview-of-the-trial-capacity)).**
+
+
 ## Getting Started with the Lab
  
 Welcome to your MS Fabric Foundation for Enterprise Analytics workshop! We've prepared a seamless environment for you to explore and learn about Azure services. Let's begin by making the most of this experience:
