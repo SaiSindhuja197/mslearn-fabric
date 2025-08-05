@@ -61,7 +61,10 @@ The architecture for this lab involves several key components:
 
 - **Table**: A structured arrangement of data in rows and columns, used to organize and store information in databases or warehouses.  
 
-- **Data Model**: A structured representation of data and its relationships, designed to enhance analytical queries and reporting efficiency.  
+- **Data Model**: A structured representation of data and its relationships, designed to enhance analytical queries and reporting efficiency.
+
+**Fabric trial provides access to most features, but excludes Copilot, private links, and trusted workspace access ([learn more](https://learn.microsoft.com/en-us/fabric/fundamentals/fabric-trial#overview-of-the-trial-capacity)).**
+  
 
 # Getting Started with Lab
  
