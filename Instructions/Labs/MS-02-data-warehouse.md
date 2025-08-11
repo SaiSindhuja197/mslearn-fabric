@@ -4,7 +4,7 @@
 
 In this exercise, you'll analyze data in a Microsoft Fabric data warehouse using SQL and visual tools. You'll begin by creating a data warehouse, designing its schema with fact and dimension tables, and inserting sample data. You’ll then define relationships to build a data model, run SQL queries to analyze data, and create a view for reuse. Finally, you'll use visual query and reporting features to explore and present insights effectively.
 
-## Lab objectives
+## Objectives
 
 You will be able to complete the following tasks:
 
@@ -20,9 +20,9 @@ You will be able to complete the following tasks:
 
 In this task, you will design and implement a data warehouse by organizing data from multiple sources, creating ETL processes, and optimizing for performance. The goal is to enable efficient querying and reporting while ensuring security, compliance, and scalability.
 
-1. Navigate to your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, click on **+ New item (2)** to create a new warehouse.
+1. From the left navigation pane, select your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, click on **+ New item (2)** to create a new warehouse.
 
-    ![](./Images/Lake2.png)
+    ![](./Images/E1T3S2-1108.png)
    
 1. In the search box, search **Warehouse (1)** and select **Warehouse** **(2)** from the list.
     
@@ -65,9 +65,11 @@ In this task, you will create database tables by defining their structure with a
 
    ![](./Images/E3-T2-S2.png)
 
-1. Use the **Refresh** button on the toolbar to refresh the view. Then, in the **Explorer** pane, expand **Schemas** > **dbo** > **Tables** and verify that the **DimProduct** table has been created.
+1. Use the **Refresh (1)** button on the toolbar to refresh the view. Then, in the **Explorer** pane, expand **Schemas (2)** > **dbo (3)** > **Tables (4)** and verify that the **DimProduct (5)** table has been created.
 
-1. On the **Home** menu tab, use the **New SQL Query** button and from the drop down select **New SQL Query**  to create a new query, and enter the following INSERT statement:
+   ![](./Images/E2T2S3-1108.png)
+
+1. On the **Home** menu tab, use the **New SQL Query** button and from the drop-down select **New SQL Query**  to create a new query, and enter the following INSERT statement:
 
     ```SQL
    INSERT INTO dbo.DimProduct
@@ -79,8 +81,6 @@ In this task, you will create database tables by defining their structure with a
     ```
 
 1. Run the above query to insert three rows into the **DimProduct** table.
-
-1. When the query has finished, select the **Data** tab at the bottom of the page in the data warehouse. In the **Explorer** pane, select the **DimProduct** table and verify that the three rows have been added to the table.
 
 1. On the Home menu tab, use the **New SQL Query** button to create a new query for the table.
 
@@ -98,7 +98,7 @@ In this task, you will create database tables by defining their structure with a
 
 1. Once you have combined the code from all three files into a single query window, click **Run** to execute the query. This will create a basic data warehouse schema and populate it with sample data. The execution should take approximately **30 seconds** to complete.
 
-     ![01](./Images/E3-T2-S8.png)
+     ![01](./Images/E2T2S13-1108.png)
 
 1. Use the **Refresh** button on the toolbar to refresh the view. Then in the **Explorer** pane, verify that the **dbo** schema in the data warehouse now contains the following four tables:
    
@@ -107,7 +107,7 @@ In this task, you will create database tables by defining their structure with a
     - **DimProduct**
     - **FactSalesOrder**
 
-    ![01](./Images/02/Pg4-T2-S9.png)
+    ![01](./Images/E2T2S14-1108.png)
 
 > **Note:** If the schema takes a while to load, just refresh the browser page.
 
@@ -115,7 +115,7 @@ In this task, you will create database tables by defining their structure with a
 
 In this task, you will create a relational data warehouse consisting of fact and dimension tables, where fact tables hold numeric measures for analysis and dimension tables store entity attributes. You'll define relationships between tables in Microsoft Fabric to build a data model for efficient business performance analysis.
 
-1. In the warehouse, from the top navigation pane, select the **Model Layouts** option.
+1. In the Data warehouse, from the top navigation pane, select the **Model Layouts** option.
 
     ![](./Images/Data2.png)
     
@@ -123,7 +123,7 @@ In this task, you will create a relational data warehouse consisting of fact and
 
 1. In the model pane, rearrange the tables in your data warehouse so that the **FactSalesOrder** table is in the middle, like this:
 
-    ![Screenshot of the data warehouse model page.](./Images/fab1.png)
+    ![Screenshot of the data warehouse model page.](./Images/E2T3S2-1108.png)
 
    >**Note:** You might notice some additional tables appearing, as shown below - please ignore them.
 
@@ -141,17 +141,17 @@ In this task, you will create a relational data warehouse consisting of fact and
     - **Assume referential integrity (8)**: Unselected
     - click **Save (9)**.
 
-    ![](./Images/u13.png)
+    ![](./Images/E2T3S3-1108.png)
 
 1. Repeat the process to create many-to-one relationships between the following tables and click on **Save**.
 
     - **FactSalesOrder.CustomerKey** &#8594; **DimCustomer.CustomerKey**
 
-   ![](./Images/u14.png)
+   ![](./Images/E2T3S4.1-1108.png)
 
     - **FactSalesOrder.SalesOrderDateKey** &#8594; **DimDate.DateKey**
   
-    ![](./Images/Data3.png)
+    ![](./Images/E2T3S4.2-1108.png)
 
 1. When all of the relationships have been defined, the model should look like this:
 
@@ -177,7 +177,9 @@ In this task, you will query data warehouse tables using SQL to retrieve and ana
    
 1. Note that the attributes in the time dimension enable you to aggregate the measures in the fact table at multiple hierarchical levels- in this case, year and month. This is a common pattern in data warehouses.
 
-1. Modify the query as follows to add a second dimension to the aggregation.
+    ![](./Images/E2T4S2-1108.png)
+
+1. Create a **New SQL Query (1)** and modify the query **(2)** as follows to add a second dimension to the aggregation.
 
     ```SQL
    SELECT  d.[Year] AS CalendarYear,
@@ -194,13 +196,13 @@ In this task, you will query data warehouse tables using SQL to retrieve and ana
 
    ![](./Images/02/Pg4-T3QF-S2.png)
 
-4. Run the modified query and review the results, which now include Sales Revenue aggregated by Year, Month and Sales Region.
+4. Run the modified query and review the results, which now include Sales Revenue aggregated by Year, Month, and Sales Region.
 
 ## Task 5: Create a view
 
 In this task, you will create a view in the data warehouse to encapsulate SQL logic for easier querying and data abstraction. A Microsoft Fabric data warehouse offers similar capabilities to relational databases, allowing you to create views and stored procedures to streamline complex queries and improve data access efficiency.
 
-1. Modify the query you created previously as follows to create a view (note that you need to remove the ORDER BY clause to create a view).
+1. Modify and Run the query you created previously as follows to create a view (note that you need to remove the ORDER BY clause to create a view).
 
     ```SQL
    CREATE VIEW vSalesByRegion
@@ -217,9 +219,9 @@ In this task, you will create a view in the data warehouse to encapsulate SQL lo
     ```
     ![](./Images/E3-T5-S1.png)
 
-2. Run the query to create the view. Then refresh the data warehouse schema and verify that the new view is listed in the **Explorer** pane.
+2. After executing, it will create a view. **Refresh (1)** the data warehouse schema once and verify that the new view **vSalesByRegion (2)** is listed in the **Explorer** pane.
 
-    ![](./Images/E3-T5-S2.png)
+    ![](./Images/E2T5S2-1108.png)
 
 3. Create a **New SQL query** from the top Menu bar and run the following SELECT statement:
 
@@ -291,9 +293,9 @@ In this task, you will visualize your data from a single query or your data ware
       - **ProductKey**
       - **ProductAltKey** 
 
-1. On the Home menu, from the **Reporting(1)** tab, select **New report (2)**. This will open a new window, where you can create a Power BI report.
+1. On the Home menu, from the **Reporting (1)** tab, select **New report (2)**. This will open a new window, where you can create a Power BI report.
 
-    ![03](./Images/pg-08-1.png)
+    ![03](./Images/E2T7S3-1108.png)
 
 1. In the **Data** pane, expand **DimProduct**. Note that the columns you hide are no longer visible. 
 
@@ -305,17 +307,19 @@ In this task, you will visualize your data from a single query or your data ware
 
     ![](./Images/E3-T7-S7.png)
 
-1. In the **Visualizations** pane, select the **Format your visual (1)** tab and in the **General** sub-tab, in the **Title** section, change the **Text** to **Total Sales by Category (2)**.
+1. In the **Visualizations** pane, select the **Format your visual (1)** tab and in the **General (2)** sub-tab, in the **Title** section, change the **Text** to **Total Sales by Category (3)**.
 
-   ![04](./Images/02/04.png)
+   ![04](./Images/E2T7S8-1108.png)
 
 1. In the **File** menu, select **Save**. select **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, enter a name as **Sales Report (2)**, and click the **Save (3)** button .
 
-   ![04](./Images/43.png)
+   ![04](./Images/E2T7S9.1-1108.png)
+
+   ![04](./Images/E2T7S9.2-1108.png)
 
 1. In the menu hub on the left pane, navigate back to your **workspace**. Notice that you now have three items saved in your workspace: your data warehouse, its semantic model (default), and the report you created.
 
-   ![Screenshot of the workspace with the three items listed.](./Images/workspace-items1.png)
+   ![Screenshot of the workspace with the three items listed.](./Images/E2T7S10-1108.png)
 
 ### Summary
 
@@ -329,4 +333,4 @@ In this exercise, you
 - Enhanced the data model for the default dataset in the data warehouse.
 - Used the enhanced dataset as the source for building a report.
 
-### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
