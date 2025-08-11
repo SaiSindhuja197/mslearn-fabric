@@ -4,7 +4,9 @@
 
 ## Overview
 
-A global e-commerce company uses Microsoft Fabric for cloud-scale analytics to handle and analyze vast amounts of customer transaction data. They set up data pipelines for continuous ingestion of transactional information, which is stored in a scalable data warehouse. Real-time analytics monitor live data streams for immediate insights, while Apache Spark performs complex analyses and machine learning on the data. Dataflows Gen2 are employed to clean and transform data, and interactive notebooks allow data scientists to explore and model data dynamically. This integrated approach enables the company to make real-time, data-driven decisions and optimize their strategies effectively.
+In this hands-on lab, you will work with **Microsoft Fabric** to build a complete, cloud-scale analytics solution for managing and analyzing large volumes of e-commerce transaction data. You will create data pipelines to continuously ingest transactional information, store it in a scalable data warehouse, and run real-time analytics to monitor live data streams for instant insights. You will also leverage **Apache Spark** for complex analysis and machine learning, use **Dataflows Gen2** to clean and transform data, and explore the dataset interactively with notebooks.
+
+By the end of this lab, you will have practical experience in setting up an integrated data environment that enables real-time, data-driven decision-making and helps optimize business strategies effectively.
 
 ## Objective
 
@@ -39,7 +41,7 @@ Microsoft Fabric offers a comprehensive suite of services to manage and analyze 
 
 ## Architecture Diagram
 
-<img width="1418" height="778" alt="image" src="https://github.com/user-attachments/assets/c1b86651-2d87-4a4c-b314-c735589f2971" />
+   ![](./Images/architecture-diagram-1108.png)
 
 ## Explanation of Components
 
@@ -64,7 +66,7 @@ Welcome to your MS Fabric Foundation for Enterprise Analytics workshop! We've pr
  
 Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
 
-<img width="1912" height="925" alt="image" src="https://github.com/user-attachments/assets/733a4b3a-c301-4d09-8c26-a30cd52ae130" />
+   ![](./Images/acc-env-1108.png)
 
 ## Virtual Machine & Lab Guide
 
@@ -74,13 +76,13 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
 
 To get the lab environment details, you can select the **Environment** tab. Additionally, the credentials will also be emailed to your registered email address.
 
-<img width="644" height="694" alt="image" src="https://github.com/user-attachments/assets/cdbd46f0-d324-40ef-bc27-84ca5d73e56a" />
+   ![](./Images/exp-lab-resources-1108.png)
 
 ## Utilizing the Split Window Feature
 
 Utilizing the Split Window Feature: For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
 
-<img width="651" height="325" alt="image" src="https://github.com/user-attachments/assets/705c3299-ed55-4923-a222-80cf8ffdfc11" />
+   ![](./Images/split-feature.png)
 
    >**Note:** You will see the DeploymentID value on the **Environment** tab, use it wherever you see SUFFIX or DeploymentID in lab steps.
 
@@ -88,7 +90,7 @@ Utilizing the Split Window Feature: For convenience, you can open the lab guide 
  
 Feel free to **Start, Stop, or Restart** your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
 
-<img width="652" height="349" alt="image" src="https://github.com/user-attachments/assets/98bc6756-a18f-40c7-b5c1-59ba5ed1a007" />
+   ![](./Images/manage-vm.png)
 
 ## Lab Guide Zoom In/Zoom Out Options
 
@@ -100,7 +102,7 @@ To adjust the zoom level for the environment page, click the A↕ : 100% icon lo
 
 1. In the Lab VM, click on the **Microsoft Edge** browser, which is available on the desktop.
 
-   ![04](./Images/PowerBI1.png)
+   ![04](./Images/open-az-portal-1108.png)
 
 1. Copy the **Power BI link** below and open this link in a new tab on the Microsoft Edge Browser.
 
@@ -126,7 +128,7 @@ To adjust the zoom level for the environment page, click the A↕ : 100% icon lo
 
 1. You will be navigated to the Power BI Home page.
 
-   ![05](./Images/Power1.png)
+   ![05](./Images/pbi-homepage.png)
 
 ## Support Contact
 
