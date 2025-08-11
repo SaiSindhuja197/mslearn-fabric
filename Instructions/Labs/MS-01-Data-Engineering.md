@@ -4,7 +4,7 @@
 
 In this exercise, you'll ingest data into a Microsoft Fabric lakehouse using pipelines and Apache Spark. Pipelines allow you to extract data from external sources and load it into OneLake. Spark enables you to transform the data at scale before storing it in lakehouse tables for analysis. Ensure data is successfully loaded into OneLake before applying transformations.
 
-## Lab objectives
+## Objectives
 
 You will be able to complete the following tasks:
 
@@ -31,19 +31,19 @@ In this task, you will initiate your 60-day free trial of Microsoft Fabric by si
 
 1. Click on **Stay on current page** when prompted.
 
-      ![Account-manager-start](./Images/fabric-2.png)
+      ![Account-manager-start](./Images/E1T1S3-1108.png)
 
 1. On the **Power BI homepage**, click on the **Profile icon (1)** on the top right again, and verify **Trial Status (2)**.
 
-      ![Account-manager-start](./Images/lab1-image5.png)
+      ![Account-manager-start](./Images/E1T1S4-1108.png)
 
 ## Task 2: Create a workspace
 
 In this task, you will create a Fabric workspace. The workspace will contain all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, notebooks, Power BI datasets, and reports.
 
-1. On the left-hand pane of Power BI portal, select **Workspaces (1)** and Click on **+ New workspace (2)**
+1. On the left-hand pane of the Power BI portal, select **Workspaces (1)** and click on **+ New workspace (2)**
 
-    ![New Workspace](./Images/f2.png)
+    ![New Workspace](./Images/E1T2S1-1108.png)
 
 1. On the **Create a workspace** page, enter the following details:
     - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**
@@ -63,13 +63,13 @@ In this task, switch to the Data engineering experience and create a new Lakehou
 
 1. At the bottom left of the Power BI portal, select the **Power BI (1)** icon and switch to the **Fabric (2)** experience.
 
-   ![](./Images/E2T1S1.png)
+   ![](./Images/E1T3S1-1108.png)
 
-   ![](./Images/E1T1S1-1.png)
+   ![](./Images/E1T3S1.1-1108.png)
    
 1. In the left pane, navigate to your Workspace named as **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, click on **+ New item (2)** to create a new lakehouse.
 
-    ![](./Images/Lake2.png)
+    ![](./Images/E1T3S2-1108.png)
 
 1. In the search box, search for **Lakehouse (1)** and select **Lakehouse (2)** from the list.
 
@@ -77,25 +77,25 @@ In this task, switch to the Data engineering experience and create a new Lakehou
 
 1. Enter the **Name** as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and Click on **Create (2)**.
 
-    ![](./Images/Lake3.png)
+    ![](./Images/E1T3S4-1108.png)
 
-1. On the **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** tab in the left pane, click the **Ellipsis (...)** menu for the **Files (1)** node, click on **New subfolder (2)**.
+1. On the **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** tab in the left pane, click the **Ellipsis (...) (1)** menu for the **Files** node, click on **New subfolder (2)**.
     
     ![](./Images/lake4.png)
 
 1. Enter a Folder name **new_data (1)** and click on **Create (2)**.
 
-    ![](./Images/Lake5.png)
+    ![](./Images/E1T3S6-1108.png)
 
 ## Task 4: Create a pipeline
 
 In this task, you'll create a pipeline to automate data workflows. Using the Copy data activity, you'll extract data from a source and copy it to a file in the lakehouse, streamlining the data ingestion process.
 
-1. In the left pane, navigate back to the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, then click on **+ New item (2)**.
+1. From the left navigation pane, select **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** workspace, then click on **+ New item (2)**.
 
-    ![](./Images/Lake2.png)
+    ![](./Images/E1T3S2-1108.png)
 
-1. In the search box, search for **Data pipeline (1)** and select **Data pipeline (2)** from the list.
+1. In the search box, search for **Data pipeline (1)** and select **Data pipeline (2)** under **Get data** from the list.
 
     ![](./Images/Lake8.png)
 
@@ -111,17 +111,16 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
 
    ![](./Images/Lake10.png)
 
-1. In the **Connection settings** pane, enter the following settings for the connection to your data source:
+1. In the **Connection settings** page, enter the following settings and click on **Next (5)**:
     
     - URL: **`https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv` (1)**
     - Connection: **Create new connection (2)**
     - Connection name: **Connection<inject key="DeploymentID" enableCopy="false"/> (3)**
     - Authentication kind: **Anonymous (4)**
-    - Click on **Next (5)**
   
-      ![](./Images/Lake11.png)
+      ![](./Images/E1T4S6-1108.png)
     
-1. On the **Connect to data source** pane, keep the default settings and click **Next**.
+1. On the **Connect to data source** page, keep the default settings and click **Next**.
     
     ![05](./Images/Lake12.png)
    
@@ -132,11 +131,10 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
    * **Row delimiter:** Line feed (\n) **(3)**
    * Click **Preview data (4)** to view a sample of the data.
    * After reviewing, close the preview and click **Next (5)**.
-
     
     ![Account-manager-start](./Images/lab1-image12.png)
     
-    ![Account-manager-start](./Images/lab1-image13.png)
+    ![Account-manager-start](./Images/E1T4S8.2-1108.png)
 
 1. On the **Choose data destination** page, click **OneLake catalog (1)** and select the lakehouse **Lakehouse\_<inject key="DeploymentID" enableCopy="false"/> (2)**.
     
@@ -168,7 +166,7 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
 
     ![Screenshot of a pipeline with a Copy Data activity.](./Images/E1T3S13.png)
 
-1. When the pipeline starts to run, you can monitor its status in the **Output** pane under the pipeline designer. Use the **&#8635;** (*Refresh*) icon to refresh the status, and wait until it has succeeded.
+1. When the pipeline starts to run, you can monitor its status in the **Output** pane under the pipeline designer. Use the **&#8635;** (*Refresh*) icon to refresh the status, and wait until it has been successfully updated.
 
     ![Screenshot of a pipeline with a Copy Data activity.](./Images/01/Pg3-CpyOutput.png)
 
@@ -180,7 +178,7 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
 
 In this task, you'll create a Notebook to document your data analysis. You'll set up the environment, import libraries, and structure your code for exploration, visualization, and insights.
 
-1. From the left pane, select the workspace named **Fabric-<inject key="DeploymentID" enableCopy="false"/>**.
+1. From the left navigation pane, select the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>**.
 
     ![](./Images/E2-T4-S1.png) 
 
@@ -190,13 +188,15 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
 1. After a few seconds, a new notebook with a single cell opens. Each notebook consists of code or markdown cells used for running code or adding formatted text.
 
+     > **Note:** If a pop-up appears for **Enhance your notebook experience with AI tools**, click on **Skip tour**.
+
 1. Click **Add data items (1)** drop-down under explorer and select **Existing data source (2)** from the drop-down.
 
     ![](./Images/E2-T4-S4.png)  
 
 1. Select the previously created **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** then click **Continue (2)**.
  
-    ![](./Images/Lake17.png) 
+    ![](./Images/E1T5S5-1108.png) 
 
 1. Select the existing cell in the notebook, clear the default code, and replace it with the **variable declaration (1)** below. Then click **&#9655; Run (2)** to execute the cell.
 
@@ -206,13 +206,15 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
    ![11](./Images/01/Pg3-Notebook-S2.png) 
 
+    > **Note**: Since this is the first time you've run any Spark code in this session, the Spark pool must be started. This means that the first cell can take a minute or so to complete.
+
 1. In the **Ellipsis (...) (1)** menu for the cell (at its top-right) select **Toggle parameter cell (2)**. This configures the cell so that the variables declared in it are treated as parameters when running the notebook from a pipeline.
 
-     ![Account-manager-start](./Images/Lake18.png)
+     ![Account-manager-start](./Images/E1T5S7-1108.png)
 
 1. Under the parameters cell, use the **+ Code** button to add a new code cell. 
 
-     ![](./Images/E2-T4-S9.png) 
+     ![](./Images/E1T5S8-1108.png) 
 
 1. Add the following code to it:
 
@@ -240,11 +242,9 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
     This code loads the data from the sales.csv file that was ingested by the **Copy Data** activity, applies some transformation logic, and saves the transformed data as a **managed table** - appending the data if the table already exists.
 
-1. Verify that your notebooks look similar to this, and then use the **&#9655; Run all** button on the toolbar to run all of the cells it contains.
+1. Verify that your notebooks look similar to the one shown in the below image, and then use the **&#9655; Run all** button on the toolbar to run all of the cells it contains.
 
-    ![Screenshot of a notebook with a parameters cell and code to transform data.](./Images/fab8.png)
-
-    > **Note**: Since this is the first time you've run any Spark code in this session, the Spark pool must be started. This means that the first cell can take a minute or so to complete.
+    ![Screenshot of a notebook with a parameters cell and code to transform data.](./Images/E1T5S10-1108.png)
 
 1. (Optional) You can also create **external tables** for which the schema metadata is defined in the metastore for the lakehouse, but the data files are stored in an external location.
 
@@ -260,21 +260,21 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
     
     > **Note**: To run the above code, you need to replace the <abfs_path> with your abfs path
 
-1. When the notebook run has completed, click on your  **Lakehouse** pane on the left, in the **Ellipsis (...)** menu for **Tables** select **Refresh** and verify that a **sales** table has been created.
+1. When the notebook run has completed, click on your  **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** pane on the left, in the **Ellipsis (...) (2)** menu for **Tables** select **Refresh (3)** and verify that a **sales (4)** table has been created.
 
-    ![.](./Images/fab-6.png)
+    ![.](./Images/E1T5S12-1108.png)
 
 1. Navigate back to the **Notebook** on the left pane and use the ⚙️ **Settings (1)** icon at the top to view the notebook settings. Then, set the **Name** of the notebook to **Load Sales Notebook (2)** and close the settings pane.
 
-     ![.](./Images/fab-7.png)
+     ![.](./Images/E1T5S13-1108.png)
  
-1. In the hub menu bar on the left, select your lakehouse.  
+1. In the hub menu bar on the left, select your **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>**.  
 
-    ![.](./Images/newfab-1.png)
+    ![.](./Images/E1T5S14-1108.png)
 
 1. In the **Explorer** pane, refresh the **view (1)**. Then expand **Tables (2)**, and select the **sales (3)** table to see a preview of the data it contains.
 
-    ![.](./Images/newfab-2.png)
+    ![.](./Images/E1T5S15-1108.png)
 
 ## Task 6: Use SQL to query tables
 
@@ -286,14 +286,15 @@ In this task, you'll use SQL to query tables in a database. You'll write stateme
 
 1. Use the **New SQL query** button to open a new query editor, and enter the following SQL query:
 
-    ![](./Images/E2-T5-S2.png)
-
     ```SQL
    SELECT Item, SUM(Quantity * UnitPrice) AS Revenue
    FROM sales
    GROUP BY Item
    ORDER BY Revenue DESC;
     ```
+
+    ![](./Images/E2-T5-S2.png)
+
 
 1. Use the **&#9655; Run** button to run the query and view the results, which should show the total revenue for each product.
 
@@ -303,9 +304,9 @@ In this task, you'll use SQL to query tables in a database. You'll write stateme
 
 In this task, you'll create a visual query in Power BI using Power Query. Start by adding the Sales table to the query editor, select the necessary columns, and apply a Group By transformation to count distinct line items per sales order. Then, review the summarized results.
 
-1. On the toolbar,under **New SQL query (1)** drop-down select **New visual query (2)**.
+1. On the toolbar under **New SQL query (1)** drop-down select **New visual query (2)**.
 
-    ![](./Images/Lake20.png)
+    ![](./Images/E1T7S1-1108.png)
 
 1. In the Lakehouse, navigate to **Schemas**, then to **dbo**, expand the **tables** folder and select the **sales** table. In the sales table, click on **Elipsis &#8230; (1)** and select **Insert into canvas (2)**. It is in the new visual query editor pane that opens to create a Power Query. 
 
@@ -313,9 +314,9 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
 
 1. In the **Manage columns (1)** menu, select **Choose columns (2)**. Then select only the **SalesOrderNumber and SalesOrderLineNumber (3)** columns and click on **OK (4)**.
 
-    ![Account-manager-start](./Images/lab1-image22.png)
+    ![Account-manager-start](./Images/E1T7S3-1108.png)
 
-    ![Account-manager-start](./Images/lab1-image23.png)
+    ![Account-manager-start](./Images/E1T7S3.1-1108.png)
 
 1. Click on **+ (1)**, in the **Transform table** menu, select **Group by (2)**.
 
@@ -329,7 +330,7 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
     - Column: **SalesOrderLineNumber (4)**
     - click **OK (5)**
 
-    ![Screenshot of a Visual query with results.](./Images/01/Pg3-VisQuery-S4.01.png)
+    ![Screenshot of a Visual query with results.](./Images/E1T7S5-1108.png)
 
 1. When you're done, the results pane under the visual query shows the number of line items for each sales order.
 
@@ -343,7 +344,7 @@ In this task, you'll create a report to visualize your data findings. You'll sel
     
     ![](./Images/Lake23.png)
 
-    >**Note:** You might notice some additional tables appeared as shown below, please ignore the system tables which are shown in ignore.
+    >**Note:** You might notice some additional tables appeared as shown below. Please ignore the system tables, which are shown in ignore.
 
     ![Screenshot of a data model.](./Images/ig.png)
 
@@ -365,7 +366,7 @@ In this task, you'll create a report to visualize your data findings. You'll sel
 
    Then, a **Table visualization (3)** is added to the report.
 
-     ![Screenshot of a report containing a table.](./Images/E2-T7-S4.png)
+     ![Screenshot of a report containing a table.](./Images/E1T8S4-1108.png)
    
 1. Hide the **Data** and **Filters** panes to create more space if required. Then, make sure the **Table visualization is selected (1)** and in the **Visualizations** pane, change the visualization to a **Clustered bar chart (2)** and resize it as shown here.
 
