@@ -404,3 +404,5 @@ In this exercise, you:
 - Observed that these tables are automatically included in a default dataset, enabling seamless data visualization.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
+
+   ![05](./Images/next-page-1208.png)
