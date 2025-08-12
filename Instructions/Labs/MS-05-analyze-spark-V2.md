@@ -684,3 +684,5 @@ In this exercise, you:
 - Saved the notebook and ended the Spark session.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
+
+   ![05](./Images/next-page-1208.png)
