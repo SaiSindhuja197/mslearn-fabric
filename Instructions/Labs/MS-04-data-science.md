@@ -4,7 +4,7 @@
 
 In this exercise, you'll build a machine learning workflow in Microsoft Fabric using notebooks. You'll begin by uploading churn data into a lakehouse and creating a notebook. Then, you’ll load the data into a dataframe and train classification models using Scikit-Learn. With MLflow integration, you’ll track experiments, compare model performance, and visualize results. Finally, you'll save the best-performing model and end the Spark session to complete the development cycle.
 
-## Lab objectives
+## Objectives
 
 You will be able to complete the following tasks:
 
@@ -21,29 +21,35 @@ You will be able to complete the following tasks:
 
 In this task, you will create a lakehouse and upload files to facilitate data storage and analysis. Using the same workspace, you'll switch to the *Data Science* experience in the portal to manage and utilize the data effectively.
 
-1. In the left pane, navigate back to your lakehouse, and in the **Ellipsis ... (1)** menu for the **Files** node in the **Explorer** pane, select **Upload (2)** and **Upload files (3)**. 
+1. From the left navigation pane, go to your **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** workspace and select **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (2)**.
 
-   ![](./Images/Pg6-S1.png)
+   ![](./Images/E4T1S1-1208.png)
 
-1. Navigate to **C:\LabFiles\Files\churn.csv (1)**, select the **churn.csv (2)** file and click on **Open (3)** then click on **Upload**.   
+1. In the Lakehouse, from the **Ellipsis ... (1)** menu for the **Files** node in the **Explorer** pane, select **Upload (2)** and **Upload files (3)**. 
 
-   ![](./Images/Pg6-S2.png)
+   ![](./Images/E4T1S2-1208.png)
+
+1. On the Upload files page, click on the **Browse (1)** option to upload the file. Go to the **C:\LabFiles\Files\churn.csv (2)** location, select the **churn.csv (3)** file, and click on **Open (4)**. Then click on **Upload (5)**.   
+
+   ![](./Images/E4T1S3.1-1208.png)
+
+   ![](./Images/E4T1S3.2-1208.png)
 
 1. After the files have been uploaded, expand **Files** and verify that the CSV file has been uploaded.
 
-   ![](./Images/Pg6-S2.1.png)
+   ![](./Images/E4T1S4-1208.png)
 
 ## Task 2: Create a notebook
 
 In this task, you will create a notebook to facilitate model training and experimentation. Notebooks offer an interactive environment where you can write and execute code in multiple languages, allowing you to conduct experiments effectively.
 
-1. From the left pane, select the workspace **Fabric-<inject key="DeploymentID" enableCopy="false"/>**.
+1. From the left navigation, select your **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** workspace and click on **+ New item (2)**.
 
-    ![](./Images/E2-T4-S1.png) 
+    ![](./Images/E1T3S2-1108.png) 
 
-2. In the workspace, click on **+ New Item (1)**. In the New Item panel, search for **Notebook (2)** and select **Notebook (3)**.
+2. In the New Item panel, search for **Notebook (2)** and select **Notebook (3)**.
 
-    ![](./Images/E2-T4-S2.png) 
+    ![](./Images/E4T2S2-1208.png) 
 
 1. After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
 
@@ -53,7 +59,7 @@ In this task, you will create a notebook to facilitate model training and experi
 
 1. When the cell changes to a markdown cell, the text it contains is rendered.
 
-1. Use the **&#128393;** button to switch the cell to editing mode, then delete the content and enter the following text:
+1. Use the **&#128393; (1)** button to switch the cell to editing mode, then delete the content and enter the following text **(2)**:
 
     ```text
    # Train a machine learning model and track with MLflow
@@ -61,27 +67,29 @@ In this task, you will create a notebook to facilitate model training and experi
    Use the code in this notebook to train and track models.
     ```    
 
+    ![](./Images/E4T2S6-1208.png)
+
 ## Task 3: Load data into a dataframe
 
 In this task, you will load data into a dataframe to prepare for model training. Dataframes in Spark, akin to Pandas dataframes in Python, offer a structured way to work with data in rows and columns, enabling efficient data manipulation and analysis.
 
 1. In the Explorer pane, click **Add data items (1)** drop-down and select **Existing data sources (2)** from the drop-down.
 
-    ![](./Images/adddataitem.png)  
+    ![](./Images/E4T3S1-1208.png)  
 
 1. Select the lakehouse named **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Connect (2)**.
  
-    ![](./Images/Sci1.png) 
+    ![](./Images/E4T3S2-1208.png) 
 
 1. Once after connecting to the existing lakehouse, we should be able to see the **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** under **Data Items**.
    
-   ![](./Images/E5T3S3.png)
+   ![](./Images/E4T3S3-1208.png)
 
 1. Click the **Files (1)** folder so that the CSV file is listed next to the notebook editor.
 
-1. Right click on **churn.csv (2)**, and click on **Load data (3)** and then select **Pandas (4)**.
+1. Click on **Ellipsis ... (2)** for **churn.csv** file, and click on **Load data (3)** and then select **Pandas (4)**.
 
-    ![](./Images/E5T3S5.png)
+    ![](./Images/E4T3S5-1208.png)
 
 1.  A new code cell containing the following code should be added to the notebook:
 
@@ -93,6 +101,8 @@ In this task, you will load data into a dataframe to prepare for model training.
     ```
     
     > **Note:** You can hide the pane containing the files on the left by using its **<<** icon. Doing so will help you focus on the notebook.
+
+    ![](./Images/E4T3S6-1208.png)
 
 1. Use the **&#9655; Run cell** button on the left of the cell to run it.
 
