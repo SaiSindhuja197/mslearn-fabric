@@ -327,3 +327,5 @@ In this exercise, you:
 - Used MLflow to track the model’s performance, including metrics and parameters.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
+
+   ![05](./Images/next-page-1208.png)
