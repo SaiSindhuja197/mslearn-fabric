@@ -97,7 +97,7 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
 
 1. In the search box, search for **Data pipeline (1)** and select **Data pipeline (2)** under **Get data** from the list.
 
-    ![](./Images/Lake8.png)
+    ![](./Images/E6T3S2-1208.png)
 
 1. Create a new data pipeline named **Ingest Sales Data Pipeline (1)** and click on **Create (2)**. 
     
@@ -126,15 +126,15 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
    
 1. Wait for the data to be sampled, then verify the following settings:
 
-   * **File format:** DelimitedText **(1)**
-   * **Column delimiter:** Comma (,) **(2)**
-   * **Row delimiter:** Line feed (\n) **(3)**
-   * Click **Preview data (4)** to view a sample of the data.
-   * After reviewing, close the preview and click **Next (5)**.
+   - **File format:** DelimitedText **(1)**
+   - **Column delimiter:** Comma (,) **(2)**
+   - **Row delimiter:** Line feed (\n) **(3)**
+   - Click **Preview data (4)** to view a sample of the data.
+   - After reviewing, close the preview and click **Next (5)**.
     
-    ![Account-manager-start](./Images/lab1-image12.png)
+      ![Account-manager-start](./Images/lab1-image12.png)
     
-    ![Account-manager-start](./Images/E1T4S8.2-1108.png)
+      ![Account-manager-start](./Images/E1T4S8.2-1108.png)
 
 1. On the **Choose data destination** page, click **OneLake catalog (1)** and select the lakehouse **Lakehouse\_<inject key="DeploymentID" enableCopy="false"/> (2)**.
     
@@ -146,8 +146,8 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
     - Folder path: **new_data (2)**
     - File name: **sales.csv  (3)**
     - Click **Next (4)**
-   
-    ![08](./Images/Lake14.png)
+         
+      ![08](./Images/Lake14.png)
 
 1. Set the following file format options and then select **Next (4)**:
 
@@ -155,8 +155,8 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
     - Column delimiter: **Comma (,) (2)**
     - Row delimiter: **Line feed (\n) (3)**
     - Click **Next (4)**
-   
-    ![09](./Images/Lake15.png)
+         
+      ![09](./Images/Lake15.png)
 
 1. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
 
@@ -178,13 +178,13 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
 
 In this task, you'll create a Notebook to document your data analysis. You'll set up the environment, import libraries, and structure your code for exploration, visualization, and insights.
 
-1. From the left navigation pane, select the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>**.
+1. From the left navigation pane, select your **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** workspace, click on **+ New item (2)**. 
 
-    ![](./Images/E2-T4-S1.png) 
+    ![](./Images/E1T3S2-1108.png)
 
-1. In the workspace, click on **+ New Item (1)**. In the New Item panel, search for **Notebook (2)** and select **Notebook (3)**.
+1. In the New Item panel, search for **Notebook (1)** and select **Notebook (2)**.
 
-    ![](./Images/E2-T4-S2.png) 
+    ![](./Images/E4T2S2-1208.png) 
 
 1. After a few seconds, a new notebook with a single cell opens. Each notebook consists of code or markdown cells used for running code or adding formatted text.
 
@@ -215,6 +215,8 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 1. Under the parameters cell, use the **+ Code** button to add a new code cell. 
 
      ![](./Images/E1T5S8-1108.png) 
+
+   >**Note:** You might have to hover your mouse below the output to view the **+ Code** option.
 
 1. Add the following code to it:
 
@@ -266,7 +268,7 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
 1. Navigate back to the **Notebook** on the left pane and use the ⚙️ **Settings (1)** icon at the top to view the notebook settings. Then, set the **Name** of the notebook to **Load Sales Notebook (2)** and close the settings pane.
 
-     ![.](./Images/E1T5S13-1108.png)
+     ![.](./Images/E1T5S13-1208.png)
  
 1. In the hub menu bar on the left, select your **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>**.  
 
@@ -404,3 +406,5 @@ In this exercise, you:
 - Observed that these tables are automatically included in a default dataset, enabling seamless data visualization.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
+
+   ![05](./Images/next-page-1208.png)
