@@ -110,13 +110,13 @@ To adjust the zoom level for the environment page, click the A↕ : 100% icon lo
    https://powerbi.com
    ```
    
-2. On the **Enter your email, we'll check if you need to create a new account** tab, you will see the login screen, in that enter the following email/username, and click on **Submit (2)**.
+1. On the **Enter your email, we'll check if you need to create a new account** tab, you will see the login screen, in that enter the following email/username, and click on **Submit (2)**.
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject> **(1)**
 
      ![04](./Images/Sign1.png)
      
-3. Now enter the following password and click on **Sign in**.
+1. Now enter the following password and click on **Sign in**.
  
    - **Password:** <inject key="AzureAdUserPassword"></inject> 
 
@@ -141,6 +141,6 @@ Learner Support Contacts:
 
 Now, click on **Next** from the lower right corner to move on to the next page.
    
-   ![05](./Images/page1.png)
+   ![05](./Images/next-page-1208.png)
 
 ## Happy Learning!!
