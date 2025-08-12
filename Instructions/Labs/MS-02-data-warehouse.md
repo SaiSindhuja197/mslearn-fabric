@@ -27,12 +27,14 @@ In this task, you will design and implement a data warehouse by organizing data 
 1. In the search box, search **Warehouse (1)** and select **Warehouse** **(2)** from the list.
     
     ![](./Images/Data1.png)
-   
-   - **Name:** Enter **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/>** **(1)**
+
+1. Enter the following details to create a **Warehouse**:
+
+    - **Name:** Enter **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/>** **(1)**
 
     - Click on **Create (2)**
 
-    ![01](./Images/lab2-image2.png)
+      ![01](./Images/lab2-image2.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - If you receive a success message, you can proceed to the next task.
@@ -107,7 +109,7 @@ In this task, you will create database tables by defining their structure with a
     - **DimProduct**
     - **FactSalesOrder**
 
-    ![01](./Images/E2T2S14-1108.png)
+       ![01](./Images/E2T2S14-1108.png)
 
 > **Note:** If the schema takes a while to load, just refresh the browser page.
 
@@ -141,17 +143,17 @@ In this task, you will create a relational data warehouse consisting of fact and
     - **Assume referential integrity (8)**: Unselected
     - click **Save (9)**.
 
-    ![](./Images/E2T3S3-1108.png)
+       ![](./Images/E2T3S3-1108.png)
 
 1. Repeat the process to create many-to-one relationships between the following tables and click on **Save**.
 
     - **FactSalesOrder.CustomerKey** &#8594; **DimCustomer.CustomerKey**
-
-   ![](./Images/E2T3S4.1-1108.png)
+       
+       ![](./Images/E2T3S4.1-1108.png)
 
     - **FactSalesOrder.SalesOrderDateKey** &#8594; **DimDate.DateKey**
-  
-    ![](./Images/E2T3S4.2-1108.png)
+         
+       ![](./Images/E2T3S4.2-1108.png)
 
 1. When all of the relationships have been defined, the model should look like this:
 
