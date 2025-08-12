@@ -284,3 +284,5 @@ In this exercise, you:
 - Used the query set as the data source for a Power BI report to visualize the results.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
+
+   ![05](./Images/next-page-1208.png)
