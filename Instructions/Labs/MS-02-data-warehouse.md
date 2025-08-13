@@ -275,25 +275,24 @@ In this task, you will visualize your data from a single query or your data ware
 
 1. Hide the following columns in your Fact and Dimension tables that are not necessary to create a report. Note that this does not remove the columns from the model; it simply hides them from view on the report canvas.
    
-    - FactSalesOrder
-      
-      - **SalesOrderDateKey**
-      - **CustomerKey**
-      - **ProductKey**
+   - From FactSalesOrder
+     - **SalesOrderDateKey**
+     - **CustomerKey**
+     - **ProductKey**
 
-        ![03](./Images/02/03.png)
-
-    - DimCustomer
-      - **CustomerKey**
-      - **CustomerAltKey**
-
-    - DimDate
-      - **DateKey**
-      - **DateAltKey**
-
-    - DimProduct
-      - **ProductKey**
-      - **ProductAltKey** 
+      ![03](./Images/02/03.png)
+   
+   - From DimCustomer
+     - **CustomerKey**
+     - **CustomerAltKey**
+   
+   - From DimDate
+     - **DateKey**
+     - **DateAltKey**
+   
+   - From DimProduct
+     - **ProductKey**
+     - **ProductAltKey** 
 
 1. On the Home menu, from the **Reporting (1)** tab, select **New report (2)**. This will open a new window, where you can create a Power BI report.
 
@@ -313,7 +312,7 @@ In this task, you will visualize your data from a single query or your data ware
 
    ![04](./Images/E2T7S8-1108.png)
 
-1. In the **File** menu, select **Save**. select **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, enter a name as **Sales Report (2)**, and click the **Save (3)** button .
+1. In the **File (1)** menu, select **Save (2)**. select **fabric-<inject key="DeploymentID" enableCopy="false"/> (3)**, enter a name as **Sales Report (4)**, and click the **Save (5)** button .
 
    ![04](./Images/E2T7S9.1-1108.png)
 
