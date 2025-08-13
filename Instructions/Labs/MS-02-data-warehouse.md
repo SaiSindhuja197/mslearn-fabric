@@ -275,24 +275,24 @@ In this task, you will visualize your data from a single query or your data ware
 
 1. Hide the following columns in your Fact and Dimension tables that are not necessary to create a report. Note that this does not remove the columns from the model; it simply hides them from view on the report canvas.
    
-   - From FactSalesOrder
-     - **SalesOrderDateKey**
-     - **CustomerKey**
-     - **ProductKey**
+    - From FactSalesOrder
+        - **SalesOrderDateKey**
+        - **CustomerKey**
+        - **ProductKey**
 
-      ![03](./Images/02/03.png)
+           ![03](./Images/02/03.png)
    
-   - From DimCustomer
-     - **CustomerKey**
-     - **CustomerAltKey**
+    - From DimCustomer
+        - **CustomerKey**
+        - **CustomerAltKey**
    
-   - From DimDate
-     - **DateKey**
-     - **DateAltKey**
+    - From DimDate
+        - **DateKey**
+        - **DateAltKey**
    
-   - From DimProduct
-     - **ProductKey**
-     - **ProductAltKey** 
+    - From DimProduct
+        - **ProductKey**
+        - **ProductAltKey** 
 
 1. On the Home menu, from the **Reporting (1)** tab, select **New report (2)**. This will open a new window, where you can create a Power BI report.
 
