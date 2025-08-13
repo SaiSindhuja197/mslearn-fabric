@@ -38,13 +38,13 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
     ![](./Images/E5T1S2-1208.png)
    
-1. Enter the below-mentioned details to create a Lakehouse. 
-
+1. Enter the following details to create a Lakehouse. 
+   
    - **Name:** Enter **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)**
 
    - Click on **Create (2)**
 
-   ![](./Images/Spark2.png)
+     ![](./Images/Spark2.png)
 
 1. Once you're in the lakehouse, navigate to the **Files** folder in the **Explorer** pane, click on the **Ellipses ... (1)** menu for **Files**, and select **Upload (2)** followed by **Upload folder (3)**.
 
