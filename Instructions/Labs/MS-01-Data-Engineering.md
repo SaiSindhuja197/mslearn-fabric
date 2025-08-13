@@ -149,7 +149,7 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
    - File name: **sales.csv  (3)**
    - Click **Next (4)**
          
-      ![08](./Images/Lake14.png)
+     ![08](./Images/Lake14.png)
 
 1. Set the following file format options and then select **Next (4)**:
    
@@ -158,7 +158,7 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
    - Row delimiter: **Line feed (\n) (3)**
    - Click **Next (4)**
          
-      ![09](./Images/Lake15.png)
+     ![09](./Images/Lake15.png)
 
 1. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
 
@@ -366,10 +366,9 @@ In this task, you'll create a report to visualize your data findings. You'll sel
    
    - **Item (1)**
    - **Quantity (2)**
-
-   Then, a **Table visualization (3)** is added to the report.
-
-     ![Screenshot of a report containing a table.](./Images/E1T8S4-1108.png)
+   - Then, a **Table visualization (3)** is added to the report.
+     
+      ![Screenshot of a report containing a table.](./Images/E1T8S4-1108.png)
    
 1. Hide the **Data** and **Filters** panes to create more space if required. Then, make sure the **Table visualization is selected (1)** and in the **Visualizations** pane, change the visualization to a **Clustered bar chart (2)** and resize it as shown here.
 
