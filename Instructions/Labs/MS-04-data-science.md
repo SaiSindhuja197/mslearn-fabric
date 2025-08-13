@@ -247,25 +247,25 @@ In this task, you will explore your experiments in Microsoft Fabric, which track
 
 1. Select the `experiment-churn` experiment to open it.
 
-1. Select the following settings on the experiment page:
-
-      - Select the **View (1)** tab.
+1. Perform the following steps on the experiment page:
+   
+   - Select the **View (1)** tab.
       
-      - Select **Run list (2)**.
+   - Select **Run list (2)**.
       
-      - Select the **two latest runs (3)** by checking each box. As a result, your last two runs will be compared to each other in the **Performance** pane. By default, the metrics are plotted by run name.
+   - Select the **two latest runs (3)** by checking each box. As a result, your last two runs will be compared to each other in the **Performance** pane. By default, the metrics are plotted by run name.
       
-      - Select the **&#128393;** **(Edit) (4)** button of the graph visualizing the accuracy for each run. 
+   - Select the **&#128393;** **(Edit) (4)** button of the graph visualizing the accuracy for each run. 
 
       ![](./Images/E4T6S6-1208.png)
 
 1. In the Personalize pane, edit the following settings:
 
-      - Change the **visualization type** to **bar (1)**.
+   - Change the **visualization type** to **bar (1)**.
       
-      - Change the **X-axis** to **estimator (2)**.
+   - Change the **X-axis** to **estimator (2)**.
       
-      -  Select **Replace (3)** and explore the new graph.
+   -  Select **Replace (3)** and explore the new graph.
 
       ![](./Images/Note1.png)
 

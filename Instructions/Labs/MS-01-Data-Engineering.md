@@ -131,8 +131,10 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
    - **Row delimiter:** Line feed (\n) **(3)**
    - Click **Preview data (4)** to view a sample of the data.
    - After reviewing, close the preview and click **Next (5)**.
-    
+  
+     
       ![Account-manager-start](./Images/lab1-image12.png)
+  
     
       ![Account-manager-start](./Images/E1T4S8.2-1108.png)
 
@@ -141,20 +143,20 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
     ![](./Images/Lake13.png)
 
 1. Set the following data destination options.
-
-    - Root folder: **Files (1)**
-    - Folder path: **new_data (2)**
-    - File name: **sales.csv  (3)**
-    - Click **Next (4)**
+   
+   - Root folder: **Files (1)**
+   - Folder path: **new_data (2)**
+   - File name: **sales.csv  (3)**
+   - Click **Next (4)**
          
       ![08](./Images/Lake14.png)
 
 1. Set the following file format options and then select **Next (4)**:
-
-    - File format: **DelimitedText (1)**
-    - Column delimiter: **Comma (,) (2)**
-    - Row delimiter: **Line feed (\n) (3)**
-    - Click **Next (4)**
+   
+   - File format: **DelimitedText (1)**
+   - Column delimiter: **Comma (,) (2)**
+   - Row delimiter: **Line feed (\n) (3)**
+   - Click **Next (4)**
          
       ![09](./Images/Lake15.png)
 
@@ -325,14 +327,14 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
     ![Screenshot of a Visual query with results.](./Images/Lake22.png)
 
 1. Then group the data by using the following **Basic** settings.
+   
+   - Group by: **SalesOrderNumber (1)**
+   - New column name: **LineItems (2)**
+   - Operation: **Count distinct values (3)**
+   - Column: **SalesOrderLineNumber (4)**
+   - click **OK (5)**
 
-    - Group by: **SalesOrderNumber (1)**
-    - New column name: **LineItems (2)**
-    - Operation: **Count distinct values (3)**
-    - Column: **SalesOrderLineNumber (4)**
-    - click **OK (5)**
-
-    ![Screenshot of a Visual query with results.](./Images/E1T7S5-1108.png)
+     ![Screenshot of a Visual query with results.](./Images/E1T7S5-1108.png)
 
 1. When you're done, the results pane under the visual query shows the number of line items for each sales order.
 
@@ -361,10 +363,9 @@ In this task, you'll create a report to visualize your data findings. You'll sel
     ![](./Images/E2-T7-S3.png)
 
 1. In the **Data** pane on the right, expand the **sales** table. Then select the following fields:
-
-    - **Item (1)**
-
-    - **Quantity (2)**
+   
+   - **Item (1)**
+   - **Quantity (2)**
 
    Then, a **Table visualization (3)** is added to the report.
 

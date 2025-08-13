@@ -38,13 +38,13 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
     ![](./Images/E5T1S2-1208.png)
    
-1. Enter the below-mentioned details to create a Lakehouse. 
-
+1. Enter the following details to create a Lakehouse. 
+   
    - **Name:** Enter **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)**
 
    - Click on **Create (2)**
 
-   ![](./Images/Spark2.png)
+     ![](./Images/Spark2.png)
 
 1. Once you're in the lakehouse, navigate to the **Files** folder in the **Explorer** pane, click on the **Ellipses ... (1)** menu for **Files**, and select **Upload (2)** followed by **Upload folder (3)**.
 
@@ -82,7 +82,9 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
 
     > **Note:** If required, reload the page to get the files and folders.
 
-1. Select the first cell (currently a *code* cell), and then click the **M&#8595;** button in the dynamic toolbar at the top-right to convert it to a **Markdown** cell.
+1. Select the first cell (which is currently a *code* cell), and then in the dynamic toolbar at its top-right, use the **M&#8595;** button to convert the cell to a **Markdown** cell.
+
+    ![](./Images/E5-T2-S3.png)
 
 1. Use the **&#128393;** **(Edit)** button to switch the cell to editing mode, then modify the markdown as follows:
 
@@ -100,9 +102,9 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
 > **Note:** Spark supports multiple coding languages, including Scala, Java, and others. In this exercise, we'll use *PySpark*, which is a Spark-optimized variant of Python. PySpark is one of the most commonly used languages on Spark and is the default language in Fabric notebooks.
 
-1. With the notebook open, expand the **Files** list and select the **orders** folder to display the CSV files alongside the notebook editor, as shown here:
+1. With the notebook open, expand the **Files (1)** list and select the **orders (2)** folder to display the **CSV files (3)** alongside the notebook editor, as shown here:
 
-    ![Screenshot of a notebook with a Files pane.](./Images/E5T3S1-1208.png)
+    ![Screenshot of a notebook with a Files pane.](./Images/E5T3S1-1308.png)
 
 1. In the **orders** folder, right click on the **2019.csv (1)**, then select **Load data (2)** and then select **Spark (3)**.
 
@@ -321,9 +323,9 @@ In this task, you will use Spark to transform data files into a desired format f
 
    >**Note:** If the node fails, rerun it.
 
-1. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and select the **transformed_data** folder to verify that it contains a new folder named **orders**, which in turn contains one or more Parquet files.
+1. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **... (1)** menu for the **Files** node, select **Refresh (2)**; and select the **transformed_data (3)** folder to verify that it contains a new folder named **orders (4)**, which in turn contains one or more Parquet files **(5)**.
 
-    ![Screenshot of a folder containing parquet files.](./Images/E5T6-transformeddata.png)
+    ![Screenshot of a folder containing parquet files.](./Images/E5T6-transformeddata-1308.png)
 
 1. Add a new code cell in the notebook using **+ Code**. Then, in the new cell, add the following code. This code will load a new dataframe from the parquet files in the **transformed_orders/orders** folder:
 
@@ -343,9 +345,9 @@ In this task, you will use Spark to transform data files into a desired format f
    print ("Transformed data saved!")
     ```
 
-1. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and expand the **partitioned_data** folder to verify that it contains a hierarchy of folders named **Year=*xxxx***, each containing folders named **Month=*xxxx***. Each month's folder contains a parquet file with the orders for that month.
+1. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **... (1)** menu for the **Files** node, select **Refresh (2)**; and expand the **partitioned_data (3)** folder to verify that it contains a hierarchy of folders named **Year=*xxxx***, each containing folders named **Month=*xxxx***. Each month's folder contains a parquet file with the orders for that month.
 
-    ![Screenshot of a hierarchy of partitioned data files.](./Images/E5T6-savedata.png)
+    ![Screenshot of a hierarchy of partitioned data files.](./Images/E5T6-savedata-1308.png)
 
 1. Partitioning data files is a common way to optimize performance when dealing with large volumes of data. This technique can significantly improve performance and make it easier to filter data.
 
@@ -460,11 +462,11 @@ In this task, you will visualize data using Spark to enhance understanding and i
     - **Aggregation (4):** Sum
     - **Stacked:** *Unselected*
 
-    Verify that the chart looks similar to this:
+   Verify that the chart looks similar to this:
 
-    ![](./Images/E5T8.1S5.1-1208.png)
+      ![](./Images/E5T8.1S5.1-1208.png)
     
-    ![](./Images/E5T8.1S5.2-1208.png)
+      ![](./Images/E5T8.1S5.2-1208.png)
 
 ### Task 8.2: Get started with **matplotlib**
 
@@ -660,7 +662,7 @@ While **matplotlib** enables you to create complex charts of multiple types, it 
 
 In this task, you will save your notebook with a meaningful name to preserve your work after processing the data. Additionally, you will end the Spark session to free up resources and complete your data engineering tasks.
 
-1. In the top left corner, set the **Name** of the notebook from Notebook 1 to **Explore Sales Orders Notebook**.
+1. In the top left corner, set the **Name** of the notebook from **Notebook 1 (1)** to **Explore Sales Orders Notebook (2)**.
 
     ![](./Images/Spark8.png)
 

@@ -46,25 +46,25 @@ In this task, you will create a KQL database to facilitate querying of static or
    ![01](./Images/E4T1S4.png)
 
 1. Use the wizard to import the data into a new table by selecting the following options:
-
-    - **Source**: The local file is the Source. 
    
-    - **Configure**:
-        - **Database:** *The database you created is already selected*
-        - **Table:** Click on **+ New table**.
-        - **Name:**  **sales (1)**.
-        - **Source type:** File
-        - **Upload files:** Drag or Browse for the file from **C:\LabFiles\Files\sales.csv (2)**
-        - Click **Next (3)**
+   - **Source**: The local file is the Source. 
+   
+   - **Configure**:
+      - **Database:** *The database you created is already selected*
+      - **Table:** Click on **+ New table**.
+      - **Name:**  **sales (1)**.
+      - **Source type:** File
+      - **Upload files:** Drag or Browse for the file from **C:\LabFiles\Files\sales.csv (2)**
+      - Click **Next (3)**
 
-      ![01](./Images/E3T1S7.1-1208.png)
+        ![01](./Images/E3T1S7.1-1208.png)
 
     - **Inspect:** Preview the data, enable **First row header (1)** and click on **Finish (2)**.
 
-      ![01](./Images/Real3.png)
-    
-    - **Summary:**
-        - Review the preview of the table and close the wizard.
+        ![01](./Images/Real3.png)
+       
+   - **Summary:**
+      - Review the preview of the table and close the wizard.
 
         ![01](./Images/E3T1S7.3-1208.png)
     
