@@ -46,17 +46,20 @@ In this task, you will create a Fabric workspace. The workspace will contain all
     ![New Workspace](./Images/f2.png)
 
 1. On the **Create a workspace** page, enter the following details:
-    - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/>**
 
-      ![name-and-desc-of-workspc](./Images/f3.png)
+    - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**
+    - Expand the **Advanced (2)** section.
 
-    - Expand the **Advanced** section.
+      ![alt text](image.png)
+
     - Select **License mode** as **Fabric capacity (3)**.
+
     - From the dropdown list, select the available **Capacity (4)**.
+
     - Click **Apply (5)** to create and open the workspace.
  
-      ![advanced-and-apply](./Images/f4.png)
-
+      ![alt text](image-1.png)
+      
 ## Task 3: Create a Lakehouse
 
 In this task, switch to the Data engineering experience and create a new Lakehouse. You'll use it to ingest and manage data in the following steps.
