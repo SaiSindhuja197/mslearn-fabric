@@ -28,16 +28,16 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
 
 1. Create a new data source with the following settings:
 
-    - **Link to file: (1)** *Selected*
-    - **File path or URL: (2)** `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/orders.csv`
-    - **Connection: (3)** Create new connection
-    - **Connection Name: (4)** Connection
-    - **data gateway: (5)** (none)
-    - **Authentication kind: (6)** Anonymous
-    - **Privacy level: (7)** None
-    - Click **Next (8)**
-
-    ![Get data](./Images/Flow4.png)
+   - **Link to file: (1)** *Selected*
+   - **File path or URL: (2)** `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/orders.csv`
+   - **Connection: (3)** Create new connection
+   - **Connection Name: (4)** Connection
+   - **data gateway: (5)** (none)
+   - **Authentication kind: (6)** Anonymous
+   - **Privacy level: (7)** None
+   - Click **Next (8)**
+   
+   ![Get data](./Images/Flow4.png)
 
 1. Preview the file data, and then click **Create** the data source. The Power Query editor shows the data source and an initial set of query steps to format the data, as shown below:
 
