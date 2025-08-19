@@ -20,7 +20,7 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
 
    ![](./Images/Flow1.png)
    
-   ![](./Images/Flow2.png)
+   ![](./Images/Inj211.png)
 
 1. From the center **Get data** pane, select **Import from a Text/CSV file**.
 
