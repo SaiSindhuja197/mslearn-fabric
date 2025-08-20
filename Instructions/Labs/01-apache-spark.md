@@ -30,51 +30,59 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
 1. In the All items search for **Lakehouse (1)** and select **Lakehouse (2)** from the list.
 
-    ![](./Images/E1T1S3.png)
+    ![](./Images2/1/1.png)
 
-1. Enter the **Name** as **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>** and click on **Create**.
+1. Enter the **Name** as **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** and click on **Create (2)**.
 
-1. Once you're in the lakehouse, navigate to the **Files (1)** folder in the **Explorer** pane, click on the **ellipses** menu, and select **Upload (2)** followed by **Upload folder (3)**.
+    ![](./Images2/1/2.png)
 
-    ![](./Images/ap6.png)
+1. Once you're in the lakehouse, navigate to the **Files** folder in the **Explorer** pane, click on the **ellipses (1)** menu, and select **Upload (2)** followed by **Upload folder (3)**.
+
+    ![](./Images2/1/t1-4.png)
 
 1. Browse and navigate to `C:\LabFiles\Files`, select **orders (1)** and click on **Upload (2)**.
+
+    ![](./Images2/1/t1-5.png)
 
     ![](./Images/ap7.png)
 
 1. Click on **Upload** from the pop-up.
 
+    ![](./Images2/1/t1-6.png)
+
 1. Click on **Upload** once again from the pop-up and close the window.
 
-    ![](./Images/ap1-1.png)
+    ![](./Images2/1/t1-7.png)
 
 1. After the files have been uploaded, expand **Files** and select the **orders** folder; and verify that the CSV files have been uploaded.
 
-    ![](./Images/ap1-2.png)
+    ![](./Images2/1/t1-8.png)
 
 ### Task 2: Create a notebook
 
 In this task, you will create a notebook to work with data in Apache Spark. Notebooks provide an interactive environment where you can write and run code in multiple languages, while also allowing you to add notes for documentation.
 
-1. From the left pane, select the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace . In the workspace, click on **+ New Item (1)**. In the New Item panel, search (2) for **Notebook** and select (3) it.
+1. From the left pane, select the **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** workspace . In the workspace, click on **+ New Item (2)**. In the New Item panel, search for **Notebook (3)** and select (4) it.
 
-    ![](./Images/E2-T4-S2.png) 
+    ![](./Images2/1/t2-1.png)
 
    > **Note**: After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
 
-1. From the **Explorer** on the left Panel, click on **Inputs** tab. On the **Add sources (1)** dropdown, select **Existing data sources (2)**.
+1. From the **Explorer** on the left Panel, click on **Data items** tab. On the **Add data items (1)** dropdown, select **Existing data sources (2)**.
 
-    ![](./Images/ap1-3.png)
+    ![](./Images2/1/t2-2.png)
 
 1. Select the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>** **(1)** and click on **Connect (2)**.
 
-    ![](./Images/ap1-4.png)
+    ![](./Images2/1/t2-3.png)
 
 1. Select the first cell (currently a *code* cell), and then click the **M&#8595;** button in the dynamic toolbar at the top-right to convert it to a **markdown** cell.
 
     ![](./Images/ap1-5.png)
 
-1. Replace the code with the below:
+1. Click the **Edit** icon and replace the code with the below:
+
+    ![](./Images2/1/t2-5.png)
 
     ```
    # Sales order data exploration
@@ -83,6 +91,8 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
     ```
 
 1. Click anywhere in the notebook outside of the cell to exit editing mode and view the rendered markdown.
+
+    ![](./Images2/1/t2-6.png)
 
 ### Task 3: Load data into a dataframe
 
@@ -96,7 +106,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
 1. In the **orders (1)** folder, click the **ellipses(2)** menu for **2019.csv**, then select **Load data (3)** > **Spark (4)**.
 
-   ![](./Images/Pg7-LoadData-S2.png)
+    ![](./Images2/1/t3-2.png)
 
 1. A new code cell containing the following code should be added to the notebook:
 
@@ -112,15 +122,13 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
 1. Use the **&#9655; Run cell** button on the left of the cell to run it.
 
+    ![](./Images2/1/t3-4.png)
+
     > **Note**: Since this is the first time you've run any Spark code, a Spark session must be started. This means that the first run in the session can take a minute or so to complete. Subsequent runs will be quicker.
 
 1. When the cell command has been completed, review the output below the cell, which should look similar to this:
 
-    | Index | SO43701 | 11 | 2019-07-01 | Christy Zhu | christy12@adventure-works.com | Mountain-100 Silver, 44 | 16 | 3399.99 | 271.9992 |
-    | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
-    | 1 | SO43704 | 1 | 2019-07-01 | Julio Ruiz | julio1@adventure-works.com | Mountain-100 Black, 48 | 1 | 3374.99 | 269.9992 |
-    | 2 | SO43705 | 1 | 2019-07-01 | Curtis Lu | curtis9@adventure-works.com | Mountain-100 Silver, 38 | 1 | 3399.99 | 271.9992 |
-    | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+    ![](./Images2/1/t3-5.png)
 
 1. The output shows the rows and columns of data from the 2019.csv file. However, note that the column headers don't look right. The default code used to load the data into a dataframe assumes that the CSV file includes the column names in the first row, but in this case, the CSV file just includes the data with no header information.
 
@@ -132,14 +140,9 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
    display(df)
     ```
 
-1. Re-run the cell and review the output, which should look similar to this:
+1. **Re-run (1)** the cell and review the **output (2)**, which should look similar to this:
 
-   | Index | _c0 | _c1 | _c2 | _c3 | _c4 | _c5 | _c6 | _c7 | _c8 |
-    | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
-    | 1 | SO43701 | 11 | 2019-07-01 | Christy Zhu | christy12@adventure-works.com | Mountain-100 Silver, 44 | 16 | 3399.99 | 271.9992 |
-    | 2 | SO43704 | 1 | 2019-07-01 | Julio Ruiz | julio1@adventure-works.com | Mountain-100 Black, 48 | 1 | 3374.99 | 269.9992 |
-    | 3 | SO43705 | 1 | 2019-07-01 | Curtis Lu | curtis9@adventure-works.com | Mountain-100 Silver, 38 | 1 | 3399.99 | 271.9992 |
-    | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+    ![](./Images2/1/t3-8.png)
 
 1. Now the dataframe correctly includes the first row as data values, but the column names are auto-generated and not very helpful. To make sense of the data, you need to explicitly define the correct schema and data type for the data values in the file.
 
@@ -164,21 +167,16 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
    display(df)
     ```
 
-1. Run the modified cell and review the output, which should look similar to this:
+1. **Run (1)** the modified cell and review the **output (2)**, which should look similar to this:
 
-   | Index | SalesOrderNumber | SalesOrderLineNumber | OrderDate | CustomerName | Email | Item | Quantity | UnitPrice | Tax |
-    | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
-    | 1 | SO43701 | 11 | 2019-07-01 | Christy Zhu | christy12@adventure-works.com | Mountain-100 Silver, 44 | 16 | 3399.99 | 271.9992 |
-    | 2 | SO43704 | 1 | 2019-07-01 | Julio Ruiz | julio1@adventure-works.com | Mountain-100 Black, 48 | 1 | 3374.99 | 269.9992 |
-    | 3 | SO43705 | 1 | 2019-07-01 | Curtis Lu | curtis9@adventure-works.com | Mountain-100 Silver, 38 | 1 | 3399.99 | 271.9992 |
-    | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+    ![](./Images2/1/t3-11a.png)
 
 1. Now the dataframe includes the correct column names (in addition to the **Index**, which is a built-in column in all dataframes based on the ordinal position of each row). The data types of the columns are specified using a standard set of types defined in the Spark SQL library, which were imported at the beginning of the cell.
 
 1. Confirm that your changes have been applied to the data by viewing the dataframe. Run the following cell:
 
     ```python
-      display(df)
+    display(df)
     ```
 
 1. The dataframe includes only the data from the **2019.csv** file. Modify the code so that the file path uses a \* wildcard to read the sales order data from all of the files in the **orders** folder:
@@ -202,7 +200,9 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
     display(df)
     ```
 
-1. Run the modified code cell and review the output, which should now include sales for 2019, 2020, and 2021.
+1. **Run (1)** the modified code cell and review the **output (2)**, which should now include sales for 2019, 2020, and 2021.
+
+    ![](./Images2/1/t3-15.png)
 
     >**Note**: Only a subset of the rows is displayed, so you may not be able to see examples from all years.
 
@@ -223,10 +223,15 @@ In this task, you will explore data within a dataframe to gain insights and unde
 
    >**Note:** You might have to hover your mouse below the output to view the + Code option.
 
-2. Run the new code cell, and review the results. Observe the following details:
+2. **Run (1)** the new code cell, and review the **results (2)**. Observe the following details:
+
     - When you operate on a dataframe, the result is a new dataframe (in this case, a new **customers** dataframe is created by selecting a specific subset of columns from the **df** dataframe)
+
     - Dataframes provide functions such as **count** and **distinct** that can be used to summarize and filter the data they contain.
+
     - The `dataframe['Field1', 'Field2', ...]` syntax is a shorthand way of defining a subset of columns. You can also use the **select** method, so the first line of the code above could be written as `customers = df.select("CustomerName", "Email")`
+
+    ![](./Images2/1/t4-2.png)
 
 3. Modify the code as follows:
 
@@ -237,7 +242,9 @@ In this task, you will explore data within a dataframe to gain insights and unde
    display(customers.distinct())
     ```
 
-4. Run the modified code to view the customers who have purchased the *Road-250 Red, 52* product. Note that you can "chain" multiple functions together so that the output of one function becomes the input for the next - in this case, the dataframe created by the **select** method is the source dataframe for the **where** method that is used to apply filtering criteria.
+4. **Run (1)** the modified code to view the customers who have purchased the *Road-250 Red, 52* product. Note that you can "chain" multiple functions together so that the output of one function becomes the input for the next - in this case, the dataframe created by the **select** method is the source dataframe for the **where** method that is used to apply filtering criteria.
+
+    ![](./Images2/1/t4-4.png)
 
 ### Task 5: Aggregate and group data in a dataframe
 
@@ -250,7 +257,9 @@ In this task, you will aggregate and group data within a dataframe to summarize 
    display(productSales)
     ```
 
-2. Run the code cell you added, and note that the results show the sum of order quantities grouped by product. The **groupBy** method groups the rows by *Item*, and the subsequent **sum** aggregate function is applied to all of the remaining numeric columns (in this case, *Quantity*)
+2. **Run (1)** the code cell you added, and note that the **results (2)** show the sum of order quantities grouped by product. The **groupBy** method groups the rows by *Item*, and the subsequent **sum** aggregate function is applied to all of the remaining numeric columns (in this case, *Quantity*)
+
+    ![](./Images2/1/t5-2.png)
 
 3. Add another new code cell to the notebook, and enter the following code in it:
 
@@ -261,7 +270,9 @@ In this task, you will aggregate and group data within a dataframe to summarize 
    display(yearlySales)
     ```
 
-4. Run the code cell you added, and note that the results show the number of sales orders per year. Note that the **select** method includes a SQL **year** function to extract the year component of the *OrderDate* field (which is why the code includes an **import** statement to import functions from the Spark SQL library). It then uses an **alias** method is used to assign a column name to the extracted year value. The data is then grouped by the derived *Year* column and the count of rows in each group is calculated before finally the **orderBy** method is used to sort the resulting dataframe.
+4. **Run (1)** the code cell you added, and note that the **results (2)** show the number of sales orders per year. Note that the **select** method includes a SQL **year** function to extract the year component of the *OrderDate* field (which is why the code includes an **import** statement to import functions from the Spark SQL library). It then uses an **alias** method is used to assign a column name to the extracted year value. The data is then grouped by the derived *Year* column and the count of rows in each group is calculated before finally the **orderBy** method is used to sort the resulting dataframe.
+
+    ![](./Images2/1/t5-4.png)
 
 ### Task 6: Use Spark to transform data files
 
@@ -292,6 +303,8 @@ In this task, you will use Spark to transform data files into a desired format f
     - Add **FirstName** and **LastName** columns based on the **CustomerName** column.
     - Filter and reorder the columns, removing the **CustomerName** column.
 
+    ![](./Images2/1/t6-2.png)
+
 1. Review the output and verify that the transformations have been made to the data.
 
 1. You can use the full power of the Spark SQL library to transform the data by filtering rows, deriving, removing, renaming columns, and applying any other required data modifications.
@@ -309,18 +322,24 @@ In this task, you will use Spark to transform data files into a desired format f
 
     >**Note**: If the node fails, rerun it.
 
-2. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and select the **transformed_data** folder to verify that it contains a new folder named **orders**, which in turn contains one or more Parquet files.
+1. **Run (1)** the cell and wait for the message that **Transformed data saved! (2)**
 
-    ![Screenshot of a folder containing parquet files.](./Images/saved1234.png)
+    ![](./Images2/1/t6-2a.png)
 
-3. Add a new cell with the following code to load a new dataframe from the parquet files in the **transformed_orders/orders** folder:
+1. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and select the **transformed_data** folder to verify that it contains a new folder named **orders**, which in turn contains one or more Parquet files.
+
+    ![](./Images2/1/t6-3a.png)
+
+1. Add a new cell with the following code to load a new dataframe from the parquet files in the **transformed_orders/orders** folder:
 
     ```python
    orders_df = spark.read.format("parquet").load("Files/transformed_data/orders")
    display(orders_df)
     ```
 
-4. Run the cell and verify that the results show the order data that has been loaded from the parquet files.
+1. **Run (1)** the cell and verify that the **results (2)** show the order data that has been loaded from the parquet files.
+
+    ![](./Images2/1/t6-4a.png)
 
 #### Save data in partitioned files
 
@@ -331,9 +350,15 @@ In this task, you will use Spark to transform data files into a desired format f
    print ("Transformed data saved!")
     ```
 
-1. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and expand the **partitioned_data** folder to verify that it contains a hierarchy of folders named **Year=*xxxx***, each containing folders named **Month=*xxxx***. Each month's folder contains a parquet file with the orders for that month.
+1. **Run (1)** the cell and wait for the message **Transformed data saved (2)**.
 
-    ![Screenshot of a hierarchy of partitioned data files.](./Images/partitioned1234.png)
+    ![](./Images2/1/t6-12.png)
+
+1. Then, in the **Explorer** pane on the left, in the **... (1)** menu for the **Files** node, select **Refresh (2)**; and expand the **partitioned_data** folder to verify that it contains a hierarchy of folders named **Year=*xxxx***, each containing folders named **Month=*xxxx***. Each month's folder contains a parquet file with the orders for that month.
+
+    ![](./Images2/1/t6-11.png)
+
+    ![](./Images2/1/t6-14.png)
 
 1. Partitioning data files is a common way to optimize performance when dealing with large volumes of data. This technique can significantly improve performance and make it easier to filter data.
 
@@ -344,8 +369,9 @@ In this task, you will use Spark to transform data files into a desired format f
    display(orders_2021_df)
     ```
 
-1. Run the cell and verify that the results show the order data for sales in 2021. Note that the partitioning columns specified in the path (**Year** and **Month**) are not included in the dataframe.
+1. **Run (1)** the cell and verify that the **results (2)** show the order data for sales in 2021. Note that the partitioning columns specified in the path (**Year** and **Month**) are not included in the dataframe.
 
+    ![](./Images2/1/t6-15.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       
@@ -379,7 +405,11 @@ Tables in a Spark metastore are relational abstractions over files in the data l
 
 2. Run the code cell and review the output, which describes the definition of the new table.
 
+    ![](./Images2/1/t7-2.png)
+
 3. In the **Explorer** pane, in the **...** menu for the **Tables** folder, select **Refresh**. Then expand the **Tables** node and verify that the **salesorders** table has been created.
+
+    ![](./Images2/1/t7-3.png)
 
     ![Screenshot of the salesorder table in Explorer.](./Images/table1234.png)
 
