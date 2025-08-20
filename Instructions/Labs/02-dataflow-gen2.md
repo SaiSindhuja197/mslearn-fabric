@@ -71,70 +71,81 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
    >**Note:** If this option is greyed out, you may already have a data destination set. Check the data destination at the bottom of the Query settings pane on the right side of the Power Query editor. If a destination is already set, you can change it using the gear.
 
-2. In the **Connect to data destination** dialog box, keep everything as default and click on **Next**.
+1. In the **Connect to data destination** dialog box, keep everything as default and click on **Next**.
 
     ![](./Images2/2/t2-2.png)
 
-4. From the left pane, expand the **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, then select the **fabric-lakehouse<inject key="DeploymentID" enableCopy="false"/> (2)** table.
+1. From the left pane, expand the **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, then select the **fabric-lakehouse<inject key="DeploymentID" enableCopy="false"/> (2)** table.
 The Table name field will automatically populate with **orders (3)**.
 Click **Next (4)** to continue.
 
     ![](./Images2/2/t2-3pa.png)
 
-5. On the Destination settings page, observe that **MonthNo** is not selected in the Column mapping, and an informational message is displayed.
+1. On the Destination settings page, observe that **MonthNo** is not selected in the Column mapping, and an informational message is displayed.
 
-6. On the Destination settings page, toggle off the **Use Automatic Settings** option. Then, right-click on the **MonthNo** column header and select **Change Type** to set **MonthNo** as a **Whole number**. Finally, click on **Save Settings**.
+1. On the Destination settings page, toggle off the **Use Automatic Settings** option. Then, right-click on the **MonthNo** column header and select **Change Type** to set **MonthNo** as a **Whole number**. Finally, click on **Save Settings**.
 
     ![](./Images2/2/t2-5.png)
 
-5. Select **Publish** to publish the dataflow from the bottom right.
+1. Select **Publish** to publish the dataflow from the bottom right.
 
-    ![](./Images/ap17.png)
+    ![](./Images2/2/t2-6.png)
 
-6. Once published, click on the **ellipsis** next to the published dataflow in the workspace, select **Properties**, rename the dataflow as **Transform Orders Dataflow (1)** and click on **save (2)**.
+1. Once published, click on the **ellipsis (1)** next to the published dataflow in the workspace, select **Properties (2)**, 
 
-    ![](./Images/ap18.png)
+    ![](./Images2/2/t2-7.png)
 
-    ![](./Images/ap19.png)
+    ![](./Images2/2/t2-7p.png)
+
+1. Rename the dataflow as **Transform Orders Dataflow (1)** and click on **Save (2)**.
+
+    ![](./Images2/2/t2-8.png)
 
 ## Task 3: Add a dataflow to a pipeline
 
 In this task, you’ll add a dataflow to a pipeline to streamline the data processing workflow and enable automated data transformations.
 
-1. Navigate back to the workspace, click on **+ New item** and select **Data pipeline**.Name the pipeline as **Load Orders pipeline**. This will open the pipeline editor.
+1. From the left navigation pane, select the **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** workspace, click **+ New item (2)**, then from the right pane, select **Data Pipeline (3)** under the Get data section.
 
-    ![](./Images/E1T3S1.png)
+    ![](./Images2/2/t1-1.png)
+
+    ![](./Images2/2/t3-1pa.png)
+
+1. In the New pipeline dialog box, enter the name **Load Orders pipeline (1)**, then click **Create (2)**.
+
+    ![](./Images2/2/t3-2.png)
   
    > **Note**: If the Copy Data wizard opens automatically, close it!
 
+1. Select **pipeline activity (1)** and add a **Dataflow (2)** activity to the pipeline.
 
-2. Provide the name of the pipeline as **pipeline<inject key="DeploymentID" enableCopy="false"/>** and click on **Create**.
+    ![](./Images2/2/t2-3a.png)
 
-3. Select **pipeline activity (1)** and add a **Dataflow (2)** activity to the pipeline.
+1. Select the Dataflow1 activity, go to **Settings (1)** from the bottom pane, choose **fabric-<inject key="DeploymentID" enableCopy="false"/>**  **(2)** as the Workspace, and select **Transform Orders Dataflow (3)** as the Dataflow.
 
-   ![Empty data pipeline.](./Images/dataflow_1.png)
-
-4. With the new **Dataflow1** activity selected, go to the **Settings (1)** tab in the bottom. In the **Workspace** drop-down list, choose **fabric-<inject key="DeploymentID" enableCopy="false"/>**  **(2)** and for the Dataflow, select **Transform Orders Dataflow (3)** from the dropdown.
-
-   ![Empty data pipeline.](./Images/transform.png)
+    ![](./Images2/2/t3-4.png)
    
-6. **Save** the pipeline from the top left corner.
+1. **Save (2)** the pipeline using the **disk icon** from the top-left, then click **Run (2)** to execute it.
 
-7. Use the **Run** button to run the pipeline, and wait for it to complete. It may take a few minutes. Verify the run from the Ouput option in the bottom.
+    ![](./Images2/2/t3-5.png)
 
-   ![Pipeline with a dataflow that has completed successfully.](./Images/lak8.png)
+1. The pipeline run may take a few minutes. Verify its completion under the **Output** tab at the bottom, where the Pipeline status and Activity status should show as Succeeded.
 
-8. In the menu bar on the left edge, select **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>**
+    ![](./Images2/2/t3-6.png)
 
-9. Expand the **Tables** section and select the **orders** table created by your dataflow.
+1. From the left pane, click **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>** **(1)**, expand the **Tables (2)** section, and select the **orders (3**) table to view the loaded data.
 
-   ![Table loaded by a dataflow.](./Images/orders_1.png)
+    ![](./Images2/2/t3-7.png)
 
    >**Note:** You might have to refresh the browser to get the expected output.
 
 ## Summary
 
-In this exercise, you have created a Dataflow (Gen2) to ingest data , added data destination for Dataflow and a dataflow to a pipeline.
+In this exercise, you have completed the following:
+
+- Created a Dataflow (Gen2) to ingest data.
+- Added a data destination for the Dataflow.
+- Added a Dataflow to a pipeline.
 
 ### You have successfully completed the module. Now, click on **Next >>** from the lower right corner to move on to the next page.
        
