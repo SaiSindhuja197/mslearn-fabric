@@ -16,65 +16,76 @@ You will be able to complete the following tasks:
 - Task 2: Add data destination for Dataflow
 - Task 3: Add a dataflow to a pipeline
 
-### Task 1: Create a Dataflow (Gen2) to ingest data
+## Task 1: Create a Dataflow (Gen2) to ingest data
 
 In this task, you will create a Dataflow (Gen2) to efficiently ingest and transform data from multiple sources for analysis. This process streamlines data preparation, enabling you to prepare the data for further processing and insights.
 
-1. Click on **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace from the left navigation pane and click on **+ New item (1)** to create a Dataflow. Search (2) for **Dataflow Gen2** and select (3) it from the list.
+1. From the left navigation pane, select the **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** workspace, click **+ New item (2)**, then in the right pane, search for **Dataflow Gen2 (3)** and select **Dataflow Gen2 (4)** under the Get data section.
 
-    ![](./Images/ap2-1.png)
+    ![](./Images2/2/t1-1.png)
 
-1. Select **Get data (1)** and click on **test/csv (2)**.
+    ![](./Images2/2/t1-1p.png)
 
-    ![](./Images/ap15.png)
+1. In the New Dataflow Gen2 dialog, enter a **name (1)**, **uncheck** the **Git integration option (2)**, and click **Create (3)** to proceed.
 
-1. Add the following and click on **Next**:
+    ![](./Images2/2/t1-2.png)
 
-    - **Link to file**: *Selected*
-    - **File path or URL**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/orders.csv`
-    - **Connection**: Create new connection
-    - **data gateway**: (none)
-    - **Authentication kind**: Anonymous
-    - **Privacy level**: None
+1. After a few seconds, the Power Query editor for your new dataflow opens as shown here. Select **Import from a Text/CSV file**.
+
+    ![](./Images2/2/t1-3.png)
+
+1. Add the following and click on **Next (7)**:
+
+    - **Link to file**: *Selected* **(1)**
+    - **File path or URL**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/orders.csv` **(2)**
+    - **Connection**: Create new connection **(3)**
+    - **data gateway**: (none) **(4)**
+    - **Authentication kind**: Anonymous **(5)**
+    - **Privacy level**: None **(6)**
+
+    ![](./Images2/2/t1-4p.png)
 
 1. Click on **Create** to create the data source. The Power Query editor shows the data source and an initial set of query steps to format the data, as shown below:
 
-   ![Query in the Power Query editor.](./Images/fabric23.png)
+    ![](./Images2/2/t1-5.png)
 
-1. Click on the **Add column (1)** tab from the toolbar ribbon. Then, choose **Custom column (2)**.
+1. From the top menu bar, click the **Add column (1)** tab, then select **Custom column (2)** to create a new column.
 
-    ![](./Images/ap16.png)
+    ![](./Images2/2/t1-6.png)
 
-1. On the dialpog box, provide the name of the New Coloumn as **MonthNo (1)**, the formula as `Date.Month([OrderDate])` **(2)** and click on **OK (3)**.
+1. In the Custom column dialog, enter **MonthNo (1)** as the new column name, input the formula `Date.Month([OrderDate])` **(2)**, and then click **OK (3)** to apply.
 
-    ![](./Images/ap2-2.png)
+    ![](./Images2/2/t1-7.png)
 
-1. The step to add the custom column is added to the query and the resulting column is displayed in the data pane:
+1. The custom column **MonthNo** is now added to the query, and its values are displayed in the data preview pane.
 
-   ![Query with a custom column step.](./Images/lak4.png)
+    ![](./Images2/2/t1-8.png)
 
-### Task 2: Add data destination for Dataflow
+## Task 2: Add data destination for Dataflow
 
 In this task, you’ll add a data destination for the Dataflow to determine where the ingested and transformed data will be stored for future use.
 
-1. From the bottom right corner, choose **Lakehouse** from the **Add data destination** drop-down menu.
+1. At the bottom right corner, click the **+ (1)** icon and select **Lakehouse (2)** from the New destination menu.
 
-   ![Empty data pipeline.](./Images/35.png)
+    ![](./Images2/2/t2-1.png)
 
    >**Note:** If this option is greyed out, you may already have a data destination set. Check the data destination at the bottom of the Query settings pane on the right side of the Power Query editor. If a destination is already set, you can change it using the gear.
 
 2. In the **Connect to data destination** dialog box, keep everything as default and click on **Next**.
 
-   ![Data destination configuration page.](./Images/lak1.png)
+    ![](./Images2/2/t2-2.png)
 
-4. Select the **fabric-<inject key="DeploymentID" enableCopy="false"/>** dropdow and choose the **lakehouse**, table named **orders** automatically shows up. Click on **Next**.
+4. From the left pane, expand the **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, then select the **fabric-lakehouse<inject key="DeploymentID" enableCopy="false"/> (2)** table.
+The Table name field will automatically populate with **orders (3)**.
+Click **Next (4)** to continue.
 
-   ![Data destination configuration page.](./Images/fabric26.png)
+    ![](./Images2/2/t2-3pa.png)
 
 5. On the Destination settings page, observe that **MonthNo** is not selected in the Column mapping, and an informational message is displayed.
- 
+
 6. On the Destination settings page, toggle off the **Use Automatic Settings** option. Then, right-click on the **MonthNo** column header and select **Change Type** to set **MonthNo** as a **Whole number**. Finally, click on **Save Settings**.
-    ![Data destination settings page.](./Images/lak2.png)
+
+    ![](./Images2/2/t2-5.png)
 
 5. Select **Publish** to publish the dataflow from the bottom right.
 
@@ -86,7 +97,7 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
     ![](./Images/ap19.png)
 
-### Task 3: Add a dataflow to a pipeline
+## Task 3: Add a dataflow to a pipeline
 
 In this task, you’ll add a dataflow to a pipeline to streamline the data processing workflow and enable automated data transformations.
 
@@ -121,8 +132,10 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 
    >**Note:** You might have to refresh the browser to get the expected output.
 
-### Summary
+## Summary
 
 In this exercise, you have created a Dataflow (Gen2) to ingest data , added data destination for Dataflow and a dataflow to a pipeline.
 
-### You have successfully completed the lab.
+### You have successfully completed the module. Now, click on **Next >>** from the lower right corner to move on to the next page.
+       
+   ![05](./Images2/nextpage.png)
