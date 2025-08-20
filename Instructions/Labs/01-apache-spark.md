@@ -700,7 +700,7 @@ In this task, you will save your notebook with a meaningful name to preserve you
 
 ## Summary
 
-In this module, you have completed the following:
+In this exercise, you have completed the following:
 
 - Created a lakehouse and uploaded files
 - Created a notebook
@@ -712,6 +712,6 @@ In this module, you have completed the following:
 - Visualized data with Spark
 - Saved the notebook and ended the Spark session
 
-### You have successfully completed the module. Now, click on **Next >>** from the lower right corner to move on to the next page.
+### You have successfully completed the lab. Now, click on **Next >>** from the lower right corner to move on to the next page.
        
    ![05](./Images2/nextpage.png)

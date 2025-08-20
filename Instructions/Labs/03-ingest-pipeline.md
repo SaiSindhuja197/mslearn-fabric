@@ -233,6 +233,12 @@ In this exercise, you implemented a data ingestion solution that uses a pipeline
 
 ## Summary
 
-In this lab, you created a pipeline to automate data processing, developed a notebook for writing and testing your pipeline logic, and then modified the pipeline to refine its functionality. These tasks helped you gain practical experience in building and optimizing data workflows within a pipeline.
+In this exercise, you have completed the following:
+
+- Created a pipeline to automate data processing.
+- Developed a notebook to write and test pipeline logic.
+- Modified the pipeline to refine and optimize its functionality.
 
 ## You have successfully completed the lab
+
+By completing this hands-on lab on How to use Apache Spark in Microsoft Fabric, you have developed a comprehensive understanding of data engineering workflows within the Fabric environment. You created and managed lakehouses, performed data exploration and transformation using Spark notebooks, ingested data through Dataflows (Gen2), and orchestrated processes using pipelines. This end-to-end experience has equipped you with the practical skills required to build, automate, and optimize scalable data solutions in Microsoft Fabric.
