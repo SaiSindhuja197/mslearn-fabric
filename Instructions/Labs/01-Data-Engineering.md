@@ -308,7 +308,7 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
 
 1. On the toolbar,under **New SQL query (1)** drop-down select **New visual query (2)**.
 
-    ![](./Images/Lake20.png)
+    ![](./Images/Ware711.png)
 
 1. In the Lakehouse, navigate to **Schemas**, then to **dbo**, expand the **tables** folder and select the **sales** table. In the sales table, click on **Elipsis &#8230; (1)** and select **Insert into canvas (2)**. It is in the new visual query editor pane that opens to create a Power Query. 
 
