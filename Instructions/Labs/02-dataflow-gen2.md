@@ -79,15 +79,15 @@ Click **Next (4)** to continue.
 
     ![](./Images2/2/t2-3pa.png)
 
-1. On the Destination settings page, toggle **off** the **Use Automatic Settings (1)** option. Then, right-click on the **MonthNo** column header and select **Source Type** to set **MonthNo** as a **Whole number**. Finally, click on **Save Settings**.
+1. On the Destination settings page, toggle **off** the **Use Automatic Settings (1)** option. Then, for the **MonthNo** column header, set the **Source Type** to **Whole number (2)**. Finally, click **Save Settings (3)** to apply the changes
 
     ![](./Images2/2/t2-5.png)
 
-1. Select **Publish** to publish the dataflow from the bottom right.
+1. Select **Publish** from the bottom right corner to publish the dataflow.
 
     ![](./Images2/2/t2-6.png)
 
-1. Once published, click on the **ellipsis (1)** next to the published dataflow in the workspace, select **Properties (2)**, 
+1. Once published, click on the **ellipsis (...) (1)** next to the published dataflow in the workspace, select **Properties (2)**, 
 
     ![](./Images2/2/t2-7.png)
 
@@ -113,21 +113,21 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
   
    > **Note**: If the Copy Data wizard opens automatically, close it!
 
-1. Select **pipeline activity (1)** and add a **Dataflow (2)** activity to the pipeline.
+1. Select **Pipeline activity (1)** and add a **Dataflow (2)** activity to the pipeline.
 
     ![](./Images2/2/t2-3a.png)
 
-1. Select the Dataflow1 activity, go to **Settings (1)** from the bottom pane, choose **fabric-<inject key="DeploymentID" enableCopy="false"/>**  **(2)** as the Workspace, and select **Transform Orders Dataflow (3)** as the Dataflow.
+1. Select the Dataflow1 activity, go to **Settings (1)** from the bottom pane, choose **fabric-<inject key="DeploymentID" enableCopy="false"/>**  **(2)** as the **Workspace**, and select **Transform Orders Dataflow (3)** as the **Dataflow**.
 
     ![](./Images2/2/t3-4.png)
    
-1. **Save (2)** the pipeline using the **disk icon** from the top-left, then click **Run (2)** to execute it.
+1. **Save (1)** the pipeline using the **disk icon** from the top-left, then click **Run (2)** to execute it.
 
     ![](./Images2/2/t3-5.png)
 
 1. The pipeline run may take a few minutes. Verify its completion under the **Output** tab at the bottom, where the Pipeline status and Activity status should show as Succeeded.
 
-    ![](./Images2/2/t3-6.png)
+    ![](./Images2/2/t3-6a.png)
 
 1. From the left pane, click **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>** **(1)**, expand the **Tables (2)** section, and select the **orders (3**) table to view the loaded data.
 
