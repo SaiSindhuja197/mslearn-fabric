@@ -32,7 +32,7 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
 
     ![](./Images2/2/t1-3.png)
 
-1. Add the following and click on **Next (7)**:
+1. Add the following details and then click **Next (7)**:
 
     - **Link to file**: *Selected* **(1)**
     - **File path or URL**: `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/orders.csv` **(2)**
@@ -67,7 +67,7 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
     ![](./Images2/2/t2-1.png)
 
-   >**Note:** If this option is greyed out, you may already have a data destination set. Check the data destination at the bottom of the Query settings pane on the right side of the Power Query editor. If a destination is already set, you can change it using the gear.
+   >**Note:** If this option is greyed out, it indicates that a data destination may already be configured. To verify, check the bottom of the Query settings pane on the right side of the Power Query editor. If a destination exists, you can modify it by clicking the gear icon.
 
 1. In the **Connect to data destination** dialog box, keep everything as default and click on **Next**.
 
@@ -79,9 +79,7 @@ Click **Next (4)** to continue.
 
     ![](./Images2/2/t2-3pa.png)
 
-1. On the Destination settings page, observe that **MonthNo** is not selected in the Column mapping, and an informational message is displayed.
-
-1. On the Destination settings page, toggle off the **Use Automatic Settings** option. Then, right-click on the **MonthNo** column header and select **Change Type** to set **MonthNo** as a **Whole number**. Finally, click on **Save Settings**.
+1. On the Destination settings page, toggle **off** the **Use Automatic Settings (1)** option. Then, right-click on the **MonthNo** column header and select **Source Type** to set **MonthNo** as a **Whole number**. Finally, click on **Save Settings**.
 
     ![](./Images2/2/t2-5.png)
 
