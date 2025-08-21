@@ -147,6 +147,6 @@ In this exercise, you have completed the following:
 - Added a data destination for the Dataflow.
 - Added a Dataflow to a pipeline.
 
-### You have successfully completed the module. Now, click on **Next >>** from the lower right corner to move on to the next page.
+### You have successfully completed the exercise. Now, click on **Next >>** from the lower right corner to move on to the next page.
        
    ![05](./Images2/nextpage.png)
