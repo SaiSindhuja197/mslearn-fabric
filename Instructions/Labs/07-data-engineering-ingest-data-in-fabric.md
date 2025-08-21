@@ -6,6 +6,8 @@ In the exercise, you'll create a simple data pipeline to bring in customer sales
    
 ## Create New - Dataflow Gen2
 
+In this task, we will develop a machine learning workflow in a notebook, build and train a model using Scikit-Learn, and use MLflow to track experiments (including model parameters, metrics, and performance) to ensure reproducibility and easy comparison of results
+
 1. In the left pane, navigate back to your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>**, then click on **+ New item (1)**. Search for **Dataflow Gen2 (2)** and select **Dataflow Gen2 (3)**. Leave the name as default, **Uncheck (4)** the **Enable Git integration, deployment pipelines and Public API scenarios**, and then click on **Create (5)**.
 
    ![New dataflow.](./Images/Inj1.png)

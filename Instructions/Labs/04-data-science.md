@@ -1,6 +1,6 @@
 # Exercise 4: Use notebooks to train a model in Microsoft Fabric
 
-### Estimated Duration: 70 Minutes
+### Estimated Duration: 65 Minutes
 
 In this exercise, you'll build a machine learning workflow in Microsoft Fabric using notebooks. You'll begin by uploading churn data into a lakehouse and creating a notebook. Then, you’ll load the data into a dataframe and train classification models using Scikit-Learn. With MLflow integration, you’ll track experiments, compare model performance, and visualize results. Finally, you'll save the best-performing model and end the Spark session to complete the development cycle.
 

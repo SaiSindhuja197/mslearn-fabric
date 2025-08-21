@@ -116,10 +116,14 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
 
 1. In the **Connection settings** pane, enter the following settings for the connection to your data source:
     
-    - URL: **`https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv` (1)**
+    - URL: Enter the URL below **(1)** 
+    ```
+    https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv
+    ```
     - Connection: **Create new connection (2)**
     - Connection name: **Connection<inject key="DeploymentID" enableCopy="false"/> (3)**
     - Authentication kind: **Anonymous (4)**
+    - Leave everything else as default
     - Click on **Next (5)**
   
       ![](./Images/Lake11.png)
@@ -128,7 +132,7 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
     
     ![05](./Images/Lake12.png)
    
-1. Wait for the data to be sampled, then verify the following settings:
+1. Wait for the data to be sampled, then verify and update the following settings:
 
    * **File format:** DelimitedText **(1)**
    * **Column delimiter:** Comma (,) **(2)**
@@ -213,7 +217,7 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
      ![Account-manager-start](./Images/Lake18.png)
 
-1. Under the parameters cell, use the **+ Code** button to add a new code cell. 
+1. Hover under the parameters cell to use the **+ Code** button to add a new code cell. 
 
      ![](./Images/E2-T4-S9.png) 
 
@@ -308,7 +312,7 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
 
 1. On the toolbar,under **New SQL query (1)** drop-down select **New visual query (2)**.
 
-    ![](./Images/Lake20.png)
+    ![](./Images/Ware711.png)
 
 1. In the Lakehouse, navigate to **Schemas**, then to **dbo**, expand the **tables** folder and select the **sales** table. In the sales table, click on **Elipsis &#8230; (1)** and select **Insert into canvas (2)**. It is in the new visual query editor pane that opens to create a Power Query. 
 
@@ -346,7 +350,7 @@ In this task, you'll create a report to visualize your data findings. You'll sel
     
     ![](./Images/Lake23.png)
 
-    >**Note:** You might notice some additional tables appeared as shown below, please ignore the system tables which are shown in ignore.
+    >**Note:** You might notice some additional tables appeared as shown below, please ignore the system tables which are shown in the modal layout.
 
     ![Screenshot of a data model.](./Images/ig.png)
 
