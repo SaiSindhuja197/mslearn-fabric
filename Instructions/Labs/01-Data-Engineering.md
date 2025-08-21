@@ -116,10 +116,14 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
 
 1. In the **Connection settings** pane, enter the following settings for the connection to your data source:
     
-    - URL: **`https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv` (1)**
+    - URL: Enter the URL Below **(1)**
+    ```
+    https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv`
+    ```
     - Connection: **Create new connection (2)**
     - Connection name: **Connection<inject key="DeploymentID" enableCopy="false"/> (3)**
     - Authentication kind: **Anonymous (4)**
+    - Leave everything else as default
     - Click on **Next (5)**
   
       ![](./Images/Lake11.png)
@@ -153,7 +157,7 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
         
         ![08](./Images/Lake14.png)
 
-1. Set the following file format options and then select **Next (4)**:
+1. Set the following file format options.
 
     - File format: **DelimitedText (1)**
     - Column delimiter: **Comma (,) (2)**
@@ -172,7 +176,9 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
 
 1. When the pipeline starts to run, you can monitor its status in the **Output** pane under the pipeline designer. Use the **&#8635;** (*Refresh*) icon to refresh the status, and wait until it has succeeded.
 
-    ![Screenshot of a pipeline with a Copy Data activity.](./Images/01/Pg3-CpyOutput.png)
+    > **Note:** If you don't see any Output status, click on **View run status** on the top menu or check the notifications for a successful output.
+
+    ![](./Images/01/Pg3-CpyOutput.png)
 
 1. In the left pane, click on the **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** page, expand **Files (1)** and select the **new_data (2)** folder, refresh the page and verify that the **sales.csv (3)** file has been copied.
 
@@ -206,13 +212,15 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
    table_name = "sales"
     ```
 
+    > **Note:** If the Spark session doesn't start, try clicking on Run All button on the top menu, this should restart the Spark session.
+
    ![11](./Images/01/Pg3-Notebook-S2.png) 
 
 1. In the **Ellipsis (...) (1)** menu for the cell (at its top-right) select **Toggle parameter cell (2)**. This configures the cell so that the variables declared in it are treated as parameters when running the notebook from a pipeline.
 
      ![Account-manager-start](./Images/Lake18.png)
 
-1. Under the parameters cell, use the **+ Code** button to add a new code cell. 
+1. Hover under the parameters cell, use the **+ Code** button to add a new code cell. 
 
      ![](./Images/E2-T4-S9.png) 
 
@@ -307,9 +315,9 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
 
 1. On the toolbar,under **New SQL query (1)** drop-down select **New visual query (2)**.
 
-    ![](./Images/Lake20.png)
+    ![](./Images/Ware711.png)
 
-1. In the Lakehouse, navigate to **Schemas**, then to **dbo**, expand the **tables** folder and select the **sales** table. In the sales table, click on **Elipsis &#8230; (1)** and select **Insert into canvas (2)**. It is in the new visual query editor pane that opens to create a Power Query. 
+1. In the Lakehouse, navigate to **Schemas**, then to **dbo**, expand the **tables** folder and select the **sales** table. In the sales table, click on **Elipsis &#8230; (1)** or **Right click** and select **Insert into canvas (2)**. It is in the new visual query editor pane that opens to create a Power Query. 
 
     ![](./Images/Lake21.png)
 

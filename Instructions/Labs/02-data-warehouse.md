@@ -69,6 +69,8 @@ In this task, you will create database tables by defining their structure with a
 
 1. On the **Home** menu tab, use the **New SQL Query** button and from the drop down select **New SQL Query**  to create a new query, and enter the following INSERT statement:
 
+    ![](./Images/Lake20.png)
+
     ```SQL
    INSERT INTO dbo.DimProduct
    VALUES
@@ -80,7 +82,7 @@ In this task, you will create database tables by defining their structure with a
 
 1. Run the above query to insert three rows into the **DimProduct** table.
 
-1. When the query has finished, select the **Data** tab at the bottom of the page in the data warehouse. In the **Explorer** pane, select the **DimProduct** table and verify that the three rows have been added to the table.
+1. In the **Explorer** pane, select the **DimProduct** table and verify that the three rows have been added to the table.
 
 1. On the Home menu tab, use the **New SQL Query** button to create a new query for the table.
 
@@ -192,9 +194,7 @@ In this task, you will query data warehouse tables using SQL to retrieve and ana
    ORDER BY CalendarYear, MonthOfYear, SalesRegion;
     ```
 
-   ![](./Images/02/Pg4-T3QF-S2.png)
-
-4. Run the modified query and review the results, which now include Sales Revenue aggregated by Year, Month and Sales Region.
+1. Run the modified query and review the results, which now include Sales Revenue aggregated by Year, Month and Sales Region.
 
 ## Task 5: Create a view
 
@@ -291,9 +291,13 @@ In this task, you will visualize your data from a single query or your data ware
       - **ProductKey**
       - **ProductAltKey** 
 
+    > **Note:** If the screen stutters while making these changes, try refreshing the browser window.
+
 1. On the Home menu, from the **Reporting(1)** tab, select **New report (2)**. This will open a new window, where you can create a Power BI report.
 
     ![03](./Images/pg-08-1.png)
+
+    > **Note:** Click on **Continue** in the pop-up. 
 
 1. In the **Data** pane, expand **DimProduct**. Note that the columns you hide are no longer visible. 
 

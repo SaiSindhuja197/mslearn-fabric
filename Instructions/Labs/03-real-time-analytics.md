@@ -33,7 +33,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
 1. Enter the following details:
 
-   - **Name:** Enter .
+   - **Database Name:** Enter **KQL-Database<inject key="DeploymentID" enableCopy="false"/> (1)**.
 
    - Click on **Create (2)**.
 
@@ -49,7 +49,6 @@ In this task, you will create a KQL database to facilitate querying of static or
         - **Database:** *The database you created is already selected*
         - **Table:** Click on **+ New table**.
         - **Name:**  **sales (1)**.
-        - **Source type:** File
         - **Upload files:** Drag or Browse for the file from **C:\LabFiles\Files\sales.csv (2)**
         - Click **Next (3)**
 
