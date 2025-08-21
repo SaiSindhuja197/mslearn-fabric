@@ -91,11 +91,11 @@ In this task, you will create a pipeline in Microsoft Fabric to ingest data into
 
     ![](./Images2/3/t1-13.png)
 
-14. Once the pipeline is running, monitor its execution status by selecting the **Output** tab below the pipeline designer. Click the Refresh **↻** icon to update the status, and wait for the pipeline to show as Succeeded.
+14. Once the pipeline is running, monitor its execution status by selecting the **Output (1)** tab below the pipeline designer. Click the refresh **↻ (2)** icon to update the status, and wait for the pipeline to show as Succeeded.
 
-    ![](./Images2/3/t1-14.png)
+    ![](./Images2/3/t1-14a.png)
 
-15. From the left pane, select **fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)**, expand the **Files** section, click the **ellipsis (•••) (2)**, and select **Refresh (3)** to verify that the folder **new_data (5)** contains the copied file **sales.csv (6)**.
+15. From the left pane, select **fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)**, click the **ellipsis (...) (2)** next to the **Files** folder, and select **Refresh (3)** to verify that the folder **new_data (4)** contains the copied file **sales.csv (5)**.
 
     ![](./Images2/3/t1-15.png)
 
@@ -117,7 +117,7 @@ In this task, you will create a notebook in Microsoft Fabric to begin processing
 
     ![](./Images2/3/t2-2.png)
 
-1. In the notebook cell, click the **ellipsis (•••) (1)** menu from top-right corner of the cell, then select **Toggle parameter cell (2)** to set the cell’s variables as parameters for pipeline runs.
+1. In the notebook cell, click the **ellipsis (...) (1)** menu from top-right corner of the cell, then select **Toggle parameter cell (2)** to set the cell’s variables as parameters for pipeline runs.
 
     ![](./Images2/3/t2-3.png)
 
@@ -153,15 +153,13 @@ In this task, you will create a notebook in Microsoft Fabric to begin processing
 
     > **Note**: Since this is the first time you've run any Spark code in this session, the Spark pool must be started. This means that the first cell can take a minute or so to complete.
 
-1. After the notebook run completes, go to **fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** expand Tables, click the **ellipsis (•••) (2)** menu, select **Refresh (3)**, and verify the sales (3) table is created.
+1. After the notebook run completes, go to **fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** expand Tables, click the **ellipsis (•••) (2)** menu, select **Refresh (3)**, and verify the **sales (4)** table is created.
 
     ![](./Images2/3/t2-6a.png)
 
     ![](./Images2/3/t2-6b.png)
 
-1. Navigate to notebook menu bar, use the ⚙️ **Settings (1)** icon to view the notebook settings. Then set the **Name** of the notebook to **Load Sales Notebook (2)** and close the settings pane.
-
-1. From the left pane, select the **Notebook (1)**, then click the **Settings (2)** icon in the notebook menu bar, set the Name to **Load Sales Notebook (3)**, and close the pane with the **X (4)**.
+1. From the left pane, select the **Notebook (1)**, then click the **Settings (2)** icon in the notebook menu bar, set the Name to **Load Sales Notebook (3)**, and close the settings pane by clicking the **X (4)**.
 
     ![](./Images2/3/t2-7.png)
 
@@ -169,10 +167,10 @@ In this task, you will create a notebook in Microsoft Fabric to begin processing
 
 In this task, you will modify your existing pipeline to include the notebook you created for data transformation. By integrating the notebook into the pipeline, you’ll build a reusable and automated ETL process that extracts data, runs Spark-based transformations, and loads the results into a lakehouse table.
 
-1. From the left-hand navigation pane in the hub, select the previously created **Ingest Sales Data pipeline** to proceed.
+1. From the left navigation pane, select the previously created **Ingest Sales Data pipeline** to proceed.
 
     ![](./Images2/3/t3-1.png)
-2. From the **Activities (1)** tab, click the **ellipsis (...) (1)** in the toolbar, select **Delete data (3)** from the list, then position the **Delete data** activity to the left of the **Copy data** activity and connect the On completion (blue arrow) output from **Delete data** to **Copy data**, as shown below:
+2. From the **Activities (1)** tab, click the **ellipsis (...) (1)** in the toolbar, select **Delete data (3)** from the list, then position the **Delete data** activity to the left of the **Copy data** activity and connect the **On completion** (blue arrow) output from **Delete data** to **Copy data**, as shown below:
 
     ![](./Images2/3/t3-2.png)
 
@@ -186,11 +184,11 @@ In this task, you will modify your existing pipeline to include the notebook you
           ![](./Images2/3/t3-3a.png)
 
     - **Source (1)**
-        - **Connection**: **fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/> (2)**
-        - **File path type**: **Wildcard file path (3)**
-        - **Folder path**: **new_data** **(4)**
-        - **Wildcard file name**: ***.csv (5)**    
-        - **Recursively**: **Selected (6)**
+        - **Connection**: fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/> **(2)**
+        - **File path type**: Wildcard file path **(3)**
+        - **Folder path**: new_data **(4)**
+        - **Wildcard file name**: *.csv **(5)**    
+        - **Recursively**: Selected **(6)**
 
           ![](./Images2/3/t3-3b.png)
 
@@ -205,7 +203,7 @@ In this task, you will modify your existing pipeline to include the notebook you
 
     ![](./Images2/3/t3-4.png)
 
-5. Select the **Copy data** activity, then link its **On Completion** output to the **Notebook** activity as illustrated below:
+5. Select the **Copy data** activity, then link its **On completion** (blue arrow) output to the **Notebook** activity as illustrated below:
 
     ![](./Images2/3/t3-5.png)
 
@@ -235,7 +233,7 @@ In this task, you will modify your existing pipeline to include the notebook you
 
     ![](./Images2/3/t3-7b.png)
 
-8. In the hub menu bar on the left, select your **fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)**, then click the **ellipsis (...) (2)** next to the **Tables**, and choose **Refresh (3)**.
+8. From the left navigation pane, select your **fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)**, then click the **ellipsis (...) (2)** next to the **Tables**, and choose **Refresh (3)**.
 
     ![](./Images2/3/t3-8.png)
 
@@ -253,4 +251,4 @@ In this exercise, you have completed the following:
 
 ## You have successfully completed the lab
 
-By completing this hands-on lab on How to use Apache Spark in Microsoft Fabric, you have developed a comprehensive understanding of data engineering workflows within the Fabric environment. You created and managed lakehouses, performed data exploration and transformation using Spark notebooks, ingested data through Dataflows (Gen2), and orchestrated processes using pipelines. This end-to-end experience has equipped you with the practical skills required to build, automate, and optimize scalable data solutions in Microsoft Fabric.
+By completing this hands-on lab on **How to use Apache Spark in Microsoft Fabric**, you have developed a comprehensive understanding of data engineering workflows within the Fabric environment. You created and managed lakehouses, performed data exploration and transformation using Spark notebooks, ingested data through Dataflows (Gen2), and orchestrated processes using pipelines. This end-to-end experience has equipped you with the practical skills required to build, automate, and optimize scalable data solutions in Microsoft Fabric.
