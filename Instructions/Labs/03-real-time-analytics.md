@@ -1,6 +1,6 @@
 # Exercise 3: Get started with Real-Time Analytics in Microsoft Fabric
 
-### Estimated Duration: 60 Minutes
+### Estimated Duration: 65 Minutes
 
 In this exercise, you'll explore real-time analytics in Microsoft Fabric using Kusto Query Language (KQL). You'll begin by creating a KQL database and importing sales data into a table. Then, you'll run KQL queries to analyze the data and create a query set. Using this query set, you’ll build a Power BI report to visualize results. Finally, you'll simulate real-time data ingestion using Spark Structured Streaming and Delta tables to process and query IoT-like data dynamically.
 
@@ -33,7 +33,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
 1. Enter the following details:
 
-   - **Name:** Enter **KQL-Database<inject key="DeploymentID" enableCopy="false"/> (1)**.
+   - **Name:** Enter .
 
    - Click on **Create (2)**.
 
@@ -53,7 +53,7 @@ In this task, you will create a KQL database to facilitate querying of static or
         - **Upload files:** Drag or Browse for the file from **C:\LabFiles\Files\sales.csv (2)**
         - Click **Next (3)**
 
-      ![01](./Images/fabric17.png)
+            ![01](./Images/fabric17.png)
 
     - **Inspect:** Preview the data, enable **First row header (1)** and click on **Finish (2)**.
 
@@ -108,7 +108,7 @@ In this task, you will use Kusto Query Language (KQL) to query the sales table i
 
 1. Run the query and review the results, which should contain the total net revenue for each product between January 1st and December 31st 2020, in ascending order of product name.
 
-1. From the top left corner select the **KQL Queryset (1)** and rename the query as **Revenue by Product (2)**.
+1. From the top left corner select the **KQL-Database<inject key="DeploymentID" enableCopy="false"/> (1)** and rename it to **Revenue by Product (2)**.
 
     ![](./Images/E4-T2-S9.png)
 

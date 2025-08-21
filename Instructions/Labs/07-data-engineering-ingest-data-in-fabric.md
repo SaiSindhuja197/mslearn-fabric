@@ -6,8 +6,6 @@ In the exercise, you'll create a simple data pipeline to bring in customer sales
    
 ## Create New - Dataflow Gen2
 
-In this task, we will develop a machine learning workflow in a notebook, build and train a model using Scikit-Learn, and use MLflow to track experiments (including model parameters, metrics, and performance) to ensure reproducibility and easy comparison of results
-
 1. In the left pane, navigate back to your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>**, then click on **+ New item (1)**. Search for **Dataflow Gen2 (2)** and select **Dataflow Gen2 (3)**. Leave the name as default, **Uncheck (4)** the **Enable Git integration, deployment pipelines and Public API scenarios**, and then click on **Create (5)**.
 
    ![New dataflow.](./Images/Inj1.png)
@@ -20,15 +18,15 @@ In this task, we will develop a machine learning workflow in a notebook, build a
 
 1. Select **Import from a Text/CSV file**, and create a new data source with the following settings:
 
-    - **Link to file (1):** *Selected*
-    - **File path or URL (2):** `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv`
-    - **Connection (3):** Create new connection
-    - **Connection name (4):** Connection
-    - **Data gateway (5):** (none)
-    - **Authentication kind (6):** Anonymous
-    - Click **Next (7)**.
+   - **Link to file (1):** *Selected*
+   - **File path or URL (2):** `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv`
+   - **Connection (3):** Create new connection
+   - **Connection name (4):** Connection
+   - **Data gateway (5):** (none)
+   - **Authentication kind (6):** Anonymous
+   - Click **Next (7)**.
 
-   ![New dataflow.](./Images/Inj3.png)
+      ![New dataflow.](./Images/Inj3.png)
 
 1. On **Preview file data** page, Click on **Create**.
 

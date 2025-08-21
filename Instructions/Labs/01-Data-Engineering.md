@@ -116,14 +116,10 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
 
 1. In the **Connection settings** pane, enter the following settings for the connection to your data source:
     
-    - URL: Enter the URL below **(1)** 
-    ```
-    https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv
-    ```
+    - URL: **`https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv` (1)**
     - Connection: **Create new connection (2)**
     - Connection name: **Connection<inject key="DeploymentID" enableCopy="false"/> (3)**
     - Authentication kind: **Anonymous (4)**
-    - Leave everything else as default
     - Click on **Next (5)**
   
       ![](./Images/Lake11.png)
@@ -132,18 +128,17 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
     
     ![05](./Images/Lake12.png)
    
-1. Wait for the data to be sampled, then verify and update the following settings:
+1. Wait for the data to be sampled, then verify the following settings:
 
-   * **File format:** DelimitedText **(1)**
-   * **Column delimiter:** Comma (,) **(2)**
-   * **Row delimiter:** Line feed (\n) **(3)**
-   * Click **Preview data (4)** to view a sample of the data.
-   * After reviewing, close the preview and click **Next (5)**.
+   - **File format:** DelimitedText **(1)**
+   - **Column delimiter:** Comma (,) **(2)**
+   - **Row delimiter:** Line feed (\n) **(3)**
+   - Click **Preview data (4)** to view a sample of the data.
+   - After reviewing, close the preview and click **Next (5)**.
 
-    
-    ![Account-manager-start](./Images/lab1-image12.png)
-    
-    ![Account-manager-start](./Images/lab1-image13.png)
+        ![Account-manager-start](./Images/lab1-image12.png)
+
+        ![Account-manager-start](./Images/lab1-image13.png)
 
 1. On the **Choose data destination** page, click **OneLake catalog (1)** and select the lakehouse **Lakehouse\_<inject key="DeploymentID" enableCopy="false"/> (2)**.
     
@@ -155,8 +150,8 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
     - Folder path: **new_data (2)**
     - File name: **sales.csv  (3)**
     - Click **Next (4)**
-   
-    ![08](./Images/Lake14.png)
+    
+        ![08](./Images/Lake14.png)
 
 1. Set the following file format options and then select **Next (4)**:
 
@@ -165,7 +160,7 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
     - Row delimiter: **Line feed (\n) (3)**
     - Click **Next (4)**
    
-    ![09](./Images/Lake15.png)
+        ![09](./Images/Lake15.png)
 
 1. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
 
@@ -217,7 +212,7 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
      ![Account-manager-start](./Images/Lake18.png)
 
-1. Hover under the parameters cell to use the **+ Code** button to add a new code cell. 
+1. Under the parameters cell, use the **+ Code** button to add a new code cell. 
 
      ![](./Images/E2-T4-S9.png) 
 
@@ -312,7 +307,7 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
 
 1. On the toolbar,under **New SQL query (1)** drop-down select **New visual query (2)**.
 
-    ![](./Images/Ware711.png)
+    ![](./Images/Lake20.png)
 
 1. In the Lakehouse, navigate to **Schemas**, then to **dbo**, expand the **tables** folder and select the **sales** table. In the sales table, click on **Elipsis &#8230; (1)** and select **Insert into canvas (2)**. It is in the new visual query editor pane that opens to create a Power Query. 
 
@@ -336,7 +331,7 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
     - Column: **SalesOrderLineNumber (4)**
     - click **OK (5)**
 
-    ![Screenshot of a Visual query with results.](./Images/01/Pg3-VisQuery-S4.01.png)
+        ![](./Images/01/Pg3-VisQuery-S4.01.png)
 
 1. When you're done, the results pane under the visual query shows the number of line items for each sales order.
 
@@ -350,7 +345,7 @@ In this task, you'll create a report to visualize your data findings. You'll sel
     
     ![](./Images/Lake23.png)
 
-    >**Note:** You might notice some additional tables appeared as shown below, please ignore the system tables which are shown in the modal layout.
+    >**Note:** You might notice some additional tables appeared as shown below, please ignore the system tables which are shown in ignore.
 
     ![Screenshot of a data model.](./Images/ig.png)
 

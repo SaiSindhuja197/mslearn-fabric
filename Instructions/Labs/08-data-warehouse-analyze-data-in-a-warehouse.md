@@ -1,12 +1,10 @@
 # Exercise 6: Analyze Data in a Warehouse with Fabric Copilot
 
-### Estimated Duration: 50 Minutes
+### Estimated Duration: 60 Minutes
 
 In this exercise, you will analyze data in a warehouse using Fabric Copilot by connecting to your data source, running queries, and visualizing insights to drive informed decision-making. 
 
 ## Analyze Data in a Warehouse
-
-In this task, we will connect to a data warehouse using Fabric Copilot, explore available datasets to understand their structure and content, and execute queries to extract meaningful insights. We'll create visualizations to support effective data analysis, compile findings into reports for presentation and decision-making, and collaborate with team members to review and discuss the results.
 
 1. In the left pane, select the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>**.
 
