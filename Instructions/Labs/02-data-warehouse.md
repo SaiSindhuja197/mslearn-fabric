@@ -1,6 +1,6 @@
 # Exercise 2: Analyze data in a data warehouse
 
-### Estimated Duration: 75 Minutes
+### Estimated Duration: 70 Minutes
 
 In this exercise, you'll analyze data in a Microsoft Fabric data warehouse using SQL and visual tools. You'll begin by creating a data warehouse, designing its schema with fact and dimension tables, and inserting sample data. You’ll then define relationships to build a data model, run SQL queries to analyze data, and create a view for reuse. Finally, you'll use visual query and reporting features to explore and present insights effectively.
 
@@ -68,6 +68,8 @@ In this task, you will create database tables by defining their structure with a
 1. Use the **Refresh** button on the toolbar to refresh the view. Then, in the **Explorer** pane, expand **Schemas** > **dbo** > **Tables** and verify that the **DimProduct** table has been created.
 
 1. On the **Home** menu tab, use the **New SQL Query** button and from the drop down select **New SQL Query**  to create a new query, and enter the following INSERT statement:
+
+    ![](./Images/Lake201.png)
 
     ```SQL
    INSERT INTO dbo.DimProduct
@@ -192,7 +194,7 @@ In this task, you will query data warehouse tables using SQL to retrieve and ana
    ORDER BY CalendarYear, MonthOfYear, SalesRegion;
     ```
 
-   ![](./Images/02/Pg4-T3QF-S2.png)
+
 
 4. Run the modified query and review the results, which now include Sales Revenue aggregated by Year, Month and Sales Region.
 
@@ -251,7 +253,7 @@ In this task, you will create a visual query using the graphical query designer 
 
    ![02](./Images/Data4.png)
 
-1. In the **Preview**, note that the new **DimProduct** column has been added to the FactSalesOrder table. Expand the column by clicking the **arrow (1)** to the right of the column name. Select **ProductName (2)** and click **OK (3)**.
+1. In the **Preview**, note that the new **DimProduct** column has been added to the FactSalesOrder table. Expand the column by clicking the **double arrow icon (1)** to the right of the column name. Select **ProductName (2)** and click **OK (3)**.
 
     ![](./Images/E3-T6-S6.png)
 
