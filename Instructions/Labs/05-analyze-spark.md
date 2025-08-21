@@ -34,9 +34,9 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
    - **Name:** Enter **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)**
 
-   - Click on **Create (2)**
+    - Click on **Create (2)**
 
-   ![](./Images/Spark2.png)
+        ![](./Images/Spark2.png)
 
 1. Once you're in the lakehouse, navigate to the **Files** folder in the **Explorer** pane, click on the **Ellipses ... (1)** menu for **Files**, and select **Upload (2)** followed by **Upload folder (3)**. Then, select and upload the **orders** folder located at **C:\LabFiles\Files\orders** to the lakehouse.
 

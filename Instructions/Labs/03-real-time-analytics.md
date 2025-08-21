@@ -60,9 +60,10 @@ In this task, you will create a KQL database to facilitate querying of static or
       ![01](./Images/Real3.png)
     
     - **Summary:**
+    
         - Review the preview of the table and close the wizard.
 
-        ![01](./Images/fabric19.png)
+            ![01](./Images/fabric19.png)
     
     > **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
 

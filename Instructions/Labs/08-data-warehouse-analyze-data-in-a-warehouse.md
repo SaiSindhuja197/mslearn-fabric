@@ -16,15 +16,15 @@ In this exercise, you will analyze data in a warehouse using Fabric Copilot by c
 
 1. In the **Explorer** pane, verify that the **dbo** schema in the data warehouse contains the following four tables:
    
-    - **DimCustomer**
+   - **DimCustomer**
 
-    - **DimDate**
+   - **DimDate**
 
-    - **DimProduct**
+   - **DimProduct**
 
-    - **FactSalesOrder**
+   - **FactSalesOrder**
 
-   ![01](./Images/02/Pg4-T2-S9.png)  
+      ![01](./Images/02/Pg4-T2-S9.png)  
 
     > **Note:** If the schema takes a while to load, just refresh the browser page.
  
