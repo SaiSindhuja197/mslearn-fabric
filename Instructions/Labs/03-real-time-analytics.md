@@ -43,7 +43,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
    ![01](./Images/E4T1S4.png)
 
-1. Use the wizard to import the data into a new table by selecting the following opt**KQL-Database<inject key="DeploymentID" enableCopy="false"/> (1)**ions:
+1. Use the wizard to import the data into a new table by selecting the following options:
    
     - **Source**:
         - **Database:** *The database you created is already selected*
