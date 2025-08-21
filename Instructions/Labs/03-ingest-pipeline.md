@@ -1,6 +1,6 @@
 # Exercise 3: Ingest data with a pipeline
 
-### Estimated Duration: 90 minutes
+### Estimated Duration: 90 Minutes
 
 ## Overview
 
