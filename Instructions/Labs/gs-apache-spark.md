@@ -110,7 +110,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
    ![05](./Images2/fabric.png)
 
-1. Click the **Profile (1)** icon from the top-right corner, then select the **Free trial (2)** button from the panel.
+1. Click the **Profile (1)** icon from the top-right corner, then select **Free trial (2)** to activate your Microsoft Fabric trial license.
 
      ![08](./Images2/freetrial.png)
 
