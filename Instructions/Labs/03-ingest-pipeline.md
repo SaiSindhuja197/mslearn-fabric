@@ -10,11 +10,11 @@ In this exercise, you will learn how to ingest data into a Microsoft Fabric lake
 
 In this exercise, you will complete the following tasks:
 
- - Task 1 : Create a pipeline
- - Task 2 : Create a notebook
- - Task 3 : Modify the pipeline
+ - Task 1: Create a pipeline
+ - Task 2: Create a notebook
+ - Task 3: Modify the pipeline
 
-## Task 1 : Create a pipeline
+## Task 1: Create a pipeline
 
 In this task, you will create a pipeline in Microsoft Fabric to ingest data into your lakehouse. You will use the Copy Data activity to extract data from a source and copy it into a subfolder within the lakehouse, forming the foundation for an ETL or ELT process.
 
@@ -64,7 +64,6 @@ In this task, you will create a pipeline in Microsoft Fabric to ingest data into
 
 9. On the **Choose data destination** page, click on **OneLake catalog (1)** from the top menu bar, then select the lakehouse named **fabric_lakehouse_<inject key="DeploymentID" enableCopy="false"/> (2)**.
 
-
     ![](./Images2/3/t1-9.png)
 
 10. On the **Connect to data destination** page, configure the following settings, then click on **Next (4)**:
@@ -99,9 +98,9 @@ In this task, you will create a pipeline in Microsoft Fabric to ingest data into
 
     ![](./Images2/3/t1-15.png)
 
-    ![](./Images2/3/t1-15pa.png)    
+    ![](./Images2/3/t1-15pa.png)
 
-## Task 2 : Create a notebook
+## Task 2: Create a notebook
 
 In this task, you will create a notebook in Microsoft Fabric to begin processing your ingested data using PySpark. You’ll write code to load sales data, apply transformations, and save the results as a table in the lakehouse—enabling further analysis or reporting through SQL or visualization tools.
 
@@ -117,7 +116,7 @@ In this task, you will create a notebook in Microsoft Fabric to begin processing
 
     ![](./Images2/3/t2-2.png)
 
-1. In the notebook cell, click the **ellipsis (...) (1)** menu from top-right corner of the cell, then select **Toggle parameter cell (2)** to set the cell’s variables as parameters for pipeline runs.
+1. In the notebook cell, click the **ellipsis (...) (1)** menu from the top-right corner of the cell, then select **Toggle parameter cell (2)** to set the cell’s variables as parameters for pipeline runs.
 
     ![](./Images2/3/t2-3.png)
 
@@ -163,13 +162,14 @@ In this task, you will create a notebook in Microsoft Fabric to begin processing
 
     ![](./Images2/3/t2-7.png)
 
-## Task 3 : Modify the pipeline
+## Task 3: Modify the pipeline
 
 In this task, you will modify your existing pipeline to include the notebook you created for data transformation. By integrating the notebook into the pipeline, you’ll build a reusable and automated ETL process that extracts data, runs Spark-based transformations, and loads the results into a lakehouse table.
 
 1. From the left navigation pane, select the previously created **Ingest Sales Data pipeline** to proceed.
 
     ![](./Images2/3/t3-1.png)
+
 2. From the **Activities (1)** tab, click the **ellipsis (...) (1)** in the toolbar, select **Delete data (3)** from the list, then position the **Delete data** activity to the left of the **Copy data** activity and connect the **On completion** (blue arrow) output from **Delete data** to **Copy data**, as shown below:
 
     ![](./Images2/3/t3-2.png)
