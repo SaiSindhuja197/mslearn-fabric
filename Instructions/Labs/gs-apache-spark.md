@@ -10,9 +10,9 @@ This lab provides an introduction to Dataflows (Gen2) and Data Pipelines in Micr
 
 By the end of this lab, you will be able to:
 
-- **Analyze data with Apache Spark** : You will learn how to use Apache Spark within Microsoft Fabric to explore and analyze large datasets. This task will guide you through creating Spark notebooks, running distributed data processing tasks, and performing data transformations to gain meaningful insights.
+- **Analyze data with Apache Spark:** You will learn how to use Apache Spark within Microsoft Fabric to explore and analyze large datasets. This task will guide you through creating Spark notebooks, running distributed data processing tasks, and performing data transformations to gain meaningful insights.
 
-- **Create a Dataflow (Gen2) in Microsoft Fabric** : You will learn how to create and configure Dataflows (Gen2) to connect to data sources and perform transformations using Power Query Online. This task introduces the core features of Dataflows and demonstrates how they can be used in pipelines or Power BI datasets.
+- **Create a Dataflow (Gen2) in Microsoft Fabric:** You will learn how to create and configure Dataflows (Gen2) to connect to data sources and perform transformations using Power Query Online. This task introduces the core features of Dataflows and demonstrates how they can be used in pipelines or Power BI datasets.
 
 - **Ingest data with a pipeline**: You will learn how to build data pipelines to ingest data from external sources into a lakehouse in Microsoft Fabric. This includes using Apache Spark to apply custom transformations before loading the data for analysis.
 
@@ -66,7 +66,7 @@ For convenience, you can open the lab guide in a separate window by selecting th
 
 ## Managing Your Virtual Machine
  
-Feel free to **start, stop**, or **restart** your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
+Feel free to **Start, Stop**, or **Restart** your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
 
    ![08](./Images2/resources.png)
 
@@ -179,6 +179,6 @@ Learner Support Contacts:
 
 Now, click on **Next >>** from the lower right corner to move on to the next page.
    
-   ![05](./Images2/nextpage.png)
+![05](./Images2/nextpage.png)
 
 ## Happy Learning!!
