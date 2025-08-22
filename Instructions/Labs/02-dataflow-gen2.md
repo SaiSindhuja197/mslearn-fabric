@@ -73,9 +73,7 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
     ![](./Images2/2/t2-2.png)
 
-1. From the left pane, expand the **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, then select the **fabric-lakehouse<inject key="DeploymentID" enableCopy="false"/> (2)** table.
-The Table name field will automatically populate with **orders (3)**.
-Click **Next (4)** to continue.
+1. From the left pane, expand the **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, then select the **fabric-lakehouse<inject key="DeploymentID" enableCopy="false"/> (2)** table. The Table name field will automatically populate with **orders (3)**. Click **Next (4)** to continue.
 
     ![](./Images2/2/t2-3pa.png)
 
@@ -143,6 +141,6 @@ In this exercise, you have completed the following:
 - Added a data destination for the Dataflow.
 - Added a Dataflow to a pipeline.
 
-### You have successfully completed the exercise. Now, click on **Next >>** from the lower right corner to move on to the next page.
+### You have successfully completed the exercise. Now, click on **Next >>** from the lower right corner to proceed to the next exercise.
        
-   ![05](./Images2/nextpage.png)
+![05](./Images2/nextpage.png)
