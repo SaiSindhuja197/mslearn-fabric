@@ -130,16 +130,15 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
    
 1. Wait for the data to be sampled, then verify the following settings:
 
-   * **File format:** DelimitedText **(1)**
-   * **Column delimiter:** Comma (,) **(2)**
-   * **Row delimiter:** Line feed (\n) **(3)**
-   * Click **Preview data (4)** to view a sample of the data.
-   * After reviewing, close the preview and click **Next (5)**.
+   - **File format:** DelimitedText **(1)**
+   - **Column delimiter:** Comma (,) **(2)**
+   - **Row delimiter:** Line feed (\n) **(3)**
+   - Click **Preview data (4)** to view a sample of the data.
+   - After reviewing, close the preview and click **Next (5)**.
 
-    
-    ![Account-manager-start](./Images/lab1-image12.png)
-    
-    ![Account-manager-start](./Images/lab1-image13.png)
+        ![Account-manager-start](./Images/lab1-image12.png)
+
+        ![Account-manager-start](./Images/lab1-image13.png)
 
 1. On the **Choose data destination** page, click **OneLake catalog (1)** and select the lakehouse **Lakehouse\_<inject key="DeploymentID" enableCopy="false"/> (2)**.
     
@@ -151,8 +150,8 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
     - Folder path: **new_data (2)**
     - File name: **sales.csv  (3)**
     - Click **Next (4)**
-   
-    ![08](./Images/Lake14.png)
+        
+        ![08](./Images/Lake14.png)
 
 1. Set the following file format options and then select **Next (4)**:
 
@@ -161,7 +160,7 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
     - Row delimiter: **Line feed (\n) (3)**
     - Click **Next (4)**
    
-    ![09](./Images/Lake15.png)
+        ![09](./Images/Lake15.png)
 
 1. On the **Copy summary** page, review the details of your copy operation and then select **Save + Run**.
 
@@ -332,7 +331,7 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
     - Column: **SalesOrderLineNumber (4)**
     - click **OK (5)**
 
-    ![Screenshot of a Visual query with results.](./Images/01/Pg3-VisQuery-S4.01.png)
+        ![](./Images/01/Pg3-VisQuery-S4.01.png)
 
 1. When you're done, the results pane under the visual query shows the number of line items for each sales order.
 

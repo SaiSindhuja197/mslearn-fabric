@@ -18,15 +18,15 @@ In the exercise, you'll create a simple data pipeline to bring in customer sales
 
 1. Select **Import from a Text/CSV file**, and create a new data source with the following settings:
 
-    - **Link to file (1):** *Selected*
-    - **File path or URL (2):** `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv`
-    - **Connection (3):** Create new connection
-    - **Connection name (4):** Connection
-    - **Data gateway (5):** (none)
-    - **Authentication kind (6):** Anonymous
-    - Click **Next (7)**.
+   - **Link to file (1):** *Selected*
+   - **File path or URL (2):** `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv`
+   - **Connection (3):** Create new connection
+   - **Connection name (4):** Connection
+   - **Data gateway (5):** (none)
+   - **Authentication kind (6):** Anonymous
+   - Click **Next (7)**.
 
-   ![New dataflow.](./Images/Inj3.png)
+      ![New dataflow.](./Images/Inj3.png)
 
 1. On **Preview file data** page, Click on **Create**.
 

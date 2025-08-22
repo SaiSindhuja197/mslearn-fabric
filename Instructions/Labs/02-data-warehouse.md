@@ -107,7 +107,7 @@ In this task, you will create database tables by defining their structure with a
     - **DimProduct**
     - **FactSalesOrder**
 
-    ![01](./Images/02/Pg4-T2-S9.png)
+        ![01](./Images/02/Pg4-T2-S9.png)
 
 > **Note:** If the schema takes a while to load, just refresh the browser page.
 
@@ -141,17 +141,17 @@ In this task, you will create a relational data warehouse consisting of fact and
     - **Assume referential integrity (8)**: Unselected
     - click **Save (9)**.
 
-    ![](./Images/u13.png)
+        ![](./Images/u13.png)
 
 1. Repeat the process to create many-to-one relationships between the following tables and click on **Save**.
 
     - **FactSalesOrder.CustomerKey** &#8594; **DimCustomer.CustomerKey**
 
-   ![](./Images/u14.png)
+        ![](./Images/u14.png)
 
     - **FactSalesOrder.SalesOrderDateKey** &#8594; **DimDate.DateKey**
   
-    ![](./Images/Data3.png)
+        ![](./Images/Data3.png)
 
 1. When all of the relationships have been defined, the model should look like this:
 

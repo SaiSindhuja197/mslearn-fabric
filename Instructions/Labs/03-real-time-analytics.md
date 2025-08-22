@@ -33,7 +33,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
 1. Enter the following details:
 
-   - **Name:** Enter **KQL-Database<inject key="DeploymentID" enableCopy="false"/> (1)**.
+   - **Name:** Enter .
 
    - Click on **Create (2)**.
 
@@ -53,16 +53,17 @@ In this task, you will create a KQL database to facilitate querying of static or
         - **Upload files:** Drag or Browse for the file from **C:\LabFiles\Files\sales.csv (2)**
         - Click **Next (3)**
 
-      ![01](./Images/fabric17.png)
+            ![01](./Images/fabric17.png)
 
     - **Inspect:** Preview the data, enable **First row header (1)** and click on **Finish (2)**.
 
       ![01](./Images/Real3.png)
     
     - **Summary:**
+    
         - Review the preview of the table and close the wizard.
 
-        ![01](./Images/fabric19.png)
+            ![01](./Images/fabric19.png)
     
     > **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
 
@@ -108,7 +109,7 @@ In this task, you will use Kusto Query Language (KQL) to query the sales table i
 
 1. Run the query and review the results, which should contain the total net revenue for each product between January 1st and December 31st 2020, in ascending order of product name.
 
-1. From the top left corner select the **KQL Queryset (1)** and rename the query as **Revenue by Product (2)**.
+1. From the top left corner select the **KQL-Database<inject key="DeploymentID" enableCopy="false"/> (1)** and rename it to **Revenue by Product (2)**.
 
     ![](./Images/E4-T2-S9.png)
 

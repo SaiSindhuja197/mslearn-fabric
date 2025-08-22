@@ -91,11 +91,13 @@ In this task, you will load data into a dataframe to prepare for model training.
     df = pd.read_csv("/lakehouse/default/" + "Files/churn.csv")
     display(df)
     ```
-    
+
     > **Note:** You can hide the pane containing the files on the left by using its **<<** icon. Doing so will help you focus on the notebook.
 
 1. Use the **&#9655; Run cell** button on the left of the cell to run it.
 
+    > **Note:** If the Spark session doesn't start or you get an error, click on **Run all** buttom on the ribbon to restart the Spark session.
+    
     > **Note:** Since this is the first time you've run any Spark code in this session, the Spark pool must be started. This means that the first run in the session can take a minute or so to complete. Subsequent runs will be quicker.
 
 1. When the cell command has been completed, review the output below the cell, which should look similar to this:

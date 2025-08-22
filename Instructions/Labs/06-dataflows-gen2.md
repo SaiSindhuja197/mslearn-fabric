@@ -20,7 +20,7 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
 
    ![](./Images/Flow1.png)
    
-   ![](./Images/Flow2.png)
+   ![](./Images/Inj211.png)
 
 1. From the center **Get data** pane, select **Import from a Text/CSV file**.
 
@@ -37,7 +37,7 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
     - **Privacy level: (7)** None
     - Click **Next (8)**
 
-    ![Get data](./Images/Flow4.png)
+      ![Get data](./Images/Flow4.png)
 
 1. Preview the file data, and then click **Create** the data source. The Power Query editor shows the data source and an initial set of query steps to format the data, as shown below:
 
