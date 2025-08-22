@@ -68,7 +68,7 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
 
     ![](./Images2/1/t2-1a.png)
 
-   > **Note**: After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
+   > **Note:** After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
 
 1. From the **Explorer** panel on the left, under the **Data items** tab, open the **Add data items (1)** dropdown and select **Existing data sources (2)**.
 
@@ -87,9 +87,8 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
     ![](./Images2/1/t2-5.png)
 
     ```
-   # Sales order data exploration
-
-   Use the code in this notebook to explore sales order data.
+    # Sales order data exploration
+    Use the code in this notebook to explore sales order data.
     ```
 
 1. Click anywhere outside the cell in the notebook to exit editing mode and view the rendered markdown.
@@ -100,7 +99,7 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
 
 In this task, you will load data into a dataframe to prepare it for analysis. Dataframes in Spark, similar to Pandas dataframes in Python, offer a structured way to manage and manipulate data organized in rows and columns.
 
-> **Note**: Spark supports multiple coding languages, including Scala, Java, and others. In this exercise, we'll use *PySpark*, which is a Spark-optimized variant of Python. PySpark is one of the most commonly used languages on Spark and is the default language in Fabric notebooks.
+> **Note:** Spark supports multiple coding languages, including Scala, Java, and others. In this exercise, we'll use *PySpark*, which is a Spark-optimized variant of Python. PySpark is one of the most commonly used languages on Spark and is the default language in Fabric notebooks.
 
 1. With the notebook open, expand the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** under **Explorer**, then expand **Files (2)**, select the **orders (3)** folder, click the **ellipsis (...) (4)** menu next to 2019.csv, and choose **Load data (5)** > **Spark (6)**.
 
@@ -116,13 +115,13 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
     ![](./Images/ap1-7.png)
 
-    > **Note**: You can hide the Lakehouse Explorer panes on the left by using their **<<** icons. Doing so will help you focus on the notebook.
+    > **Note:** You can hide the Lakehouse Explorer panes on the left by using their **<<** icons. Doing so will help you focus on the notebook.
 
 1. Use the **Run** cell button on the left side of the cell to execute it.
 
     ![](./Images2/1/t3-4.png)
 
-    > **Note**: Since this is your first time running Spark code, a Spark session will be started, which may take about a minute to complete; subsequent runs will execute faster.
+    > **Note:** Since this is your first time running Spark code, a Spark session will be started, which may take about a minute to complete; subsequent runs will execute faster.
 
 1. Once the cell command has completed, review the output below the cell, which should resemble the following:
 
@@ -202,7 +201,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
     ![](./Images2/1/t3-15.png)
 
-    >**Note**: Only a subset of the rows is displayed, so you may not immediately see data from all years (2019, 2020, and 2021) in the output.
+    >**Note:** Only a subset of the rows is displayed, so you may not immediately see data from all years (2019, 2020, and 2021) in the output.
 
 ## Task 4: Explore data in a dataframe
 
@@ -311,7 +310,7 @@ In this task, you will use Spark to transform data files into a desired format f
 
 1. You can use the full power of the Spark SQL library to transform the data by filtering rows, deriving, removing, renaming columns, and applying any other required data modifications.
 
-    > **Tip**: See the [Spark dataframe documentation](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) to learn more about the methods of the Dataframe object.
+    > **Tip:** See the [Spark dataframe documentation](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) to learn more about the methods of the Dataframe object.
 
 ### Save the transformed data
 
@@ -322,7 +321,7 @@ In this task, you will use Spark to transform data files into a desired format f
    print ("Transformed data saved!")
     ```
 
-    >**Note**: If the node fails, please rerun the operation.
+    >**Note:** If the node fails, please rerun the operation.
 
 1. **Run (1)** the cell and wait until the message **Transformed data saved! (2)** appears, indicating the operation completed successfully.
 
@@ -345,7 +344,7 @@ In this task, you will use Spark to transform data files into a desired format f
 
 ### Save data in partitioned files
 
-1. Add a new code cell and enter the following code to save the dataframe, partitioned by **Year** and **Month**:
+1. Add a new code cell and enter the following code to save the dataframe, partitioned by **Year** and **Month:**
 
     ```python
    orders_df.write.partitionBy("Year","Month").mode("overwrite").parquet("Files/partitioned_data")
@@ -389,7 +388,7 @@ In this task, you will work with tables and SQL in Spark to combine the flexibil
 
 ### Create a table
 
-Tables in a Spark metastore are relational abstractions over files in the data lake. tables can be *managed* (in which case the files are managed by the metastore) or *external* (in which case the table references a file location in the data lake that you manage independently of the metastore).
+Tables in a Spark metastore are relational abstractions over files in the data lake. Tables can be *managed* (in which case the files are managed by the metastore) or *external* (in which case the table references a file location in the data lake that you manage independently of the metastore).
 
 1. Add a new code cell to the notebook, then enter and execute the following code to save the dataframe containing the sales order data as a managed table named **salesorders**.
 
@@ -403,7 +402,7 @@ Tables in a Spark metastore are relational abstractions over files in the data l
 
     > **Note:** It is important to note a few key points about this example:
     **First**, no explicit path is provided, so the files for the table will be managed by the metastore.
-    **Second**, the table is saved in **delta** format. You can create tables based on multiple file formats (including CSV, Parquet, Avro, and others) but *delta lake* is a Spark technology that adds relational database capabilities to tables; including support for transactions, row versioning, and other useful features. Creating tables in delta format is preferred for data lakehouses in Fabric.
+    **Second**, the table is saved in **delta** format. You can create tables based on multiple file formats (including CSV, Parquet, Avro, and others) but *delta lake* is a Spark technology that adds relational database capabilities to tables, including support for transactions, row versioning, and other useful features. Creating tables in delta format is preferred for data lakehouses in Fabric.
 
 2. **Run** the code cell and review the output, which displays the definition details of the newly created table.
 
@@ -453,7 +452,7 @@ While it's useful to be able to embed SQL statements into a cell containing PySp
 
     ![](./Images2/1/t7-11.png)
 
-    > **Note**: For more information about Spark SQL and dataframes, see the [Spark SQL documentation](https://spark.apache.org/docs/2.2.0/sql-programming-guide.html).
+    > **Note:** For more information about Spark SQL and dataframes, see the [Spark SQL documentation](https://spark.apache.org/docs/2.2.0/sql-programming-guide.html).
 
 ## Task 8: Visualize data with Spark
 
@@ -482,8 +481,8 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
 5. Then, configure the chart options as follows:
  
-    - **Chart type**: Bar chart **(1)**
-    - **Aggregation**: Sum **(2)**
+    - **Chart type:** Bar chart **(1)**
+    - **Aggregation:** Sum **(2)**
 
     ![](./Images2/1/t8-5.png)
 
@@ -511,11 +510,11 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
     ![](./Images2/1/t8-11.png)
 
-1. TTo visualize the data as a chart, we will use the **matplotlib** Python library. As a foundational plotting library in Python, matplotlib offers extensive flexibility and control for creating high-quality, customized visualizations.
+1. To visualize the data as a chart, we will use the **matplotlib** Python library. As a foundational plotting library in Python, matplotlib offers extensive flexibility and control for creating high-quality, customized visualizations.
 
 1. Add a new code cell to the notebook and enter the following code:
 
-    ```Python
+   ```Python
    from matplotlib import pyplot as plt
 
    # matplotlib requires a Pandas dataframe, not a Spark one
@@ -526,7 +525,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
    # Display the plot
    plt.show()
-    ```
+   ```
 
 1. **Run** the cell and review the results, which display a column chart representing the total gross revenue for each year. Note the following key aspects of the code used to generate this visualization:
 
@@ -631,7 +630,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
 ### Use the seaborn library
 
-While **matplotlib** enables you to create complex charts of multiple types, it can require some complex code to achieve the best results. For this reason, over the years, many new libraries have been built on the base of matplotlib to abstract its complexity and enhance its capabilities. One such library is **seaborn**.
+While **matplotlib** enables you to create complex charts of multiple types, it can require some complex code to achieve the best results. For this reason, over the years, many new libraries have been built on the basis of matplotlib to abstract its complexity and enhance its capabilities. One such library is **seaborn**.
 
 1. Add a new code cell to the notebook and enter the following code:
 
@@ -687,7 +686,7 @@ While **matplotlib** enables you to create complex charts of multiple types, it 
 
     ![](./Images2/1/t8-22.png)
 
-    > **Note**: To learn more about plotting with seaborn, see the [seaborn documentation](https://seaborn.pydata.org/index.html).
+    > **Note:** To learn more about plotting with seaborn, see the [seaborn documentation](https://seaborn.pydata.org/index.html).
 
 ## Task 9: Save the notebook and end the Spark session
 
@@ -717,6 +716,6 @@ In this exercise, you have completed the following:
 - Visualized data with Spark
 - Saved the notebook and ended the Spark session
 
-### You have successfully completed the exercise. Now, click on **Next >>** from the lower right corner to move on to the next page.
+### You have successfully completed the exercise. Now, click on **Next >>** from the lower right corner to proceed on to the next exercise.
        
-   ![05](./Images2/nextpage.png)
+![05](./Images2/nextpage.png)
