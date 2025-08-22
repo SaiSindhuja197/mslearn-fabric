@@ -135,4 +135,8 @@ In this exercise, you:
 - Added a **data destination** to store the output of the Dataflow.
 - Integrated the **Dataflow into a pipeline** for automated data processing.
 
+### Conclusion
+
+Congratulations on completing this lab. By completing this lab, you’ve gained hands-on experience across key components of **Microsoft Fabric**, from setting up collaborative **workspaces** to ingesting, transforming, and analyzing data using tools like **Dataflows**, **Pipelines**, **Notebooks**, **Copilot**, and **Apache Spark**. You explored data in real time with **KQL**, built and queried **Data warehouses**, trained machine learning models, and leveraged **Copilot** for advanced analytics and automation. These exercises collectively strengthen your skills in modern **data engineering**, **analytics**, and **AI-driven workflows**, preparing you to build scalable, efficient, and intelligent data solutions within Microsoft Fabric.
+
 ### You have successfully completed the Hands-on lab
