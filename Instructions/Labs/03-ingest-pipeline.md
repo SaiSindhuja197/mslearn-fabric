@@ -43,7 +43,7 @@ In this task, you will create a pipeline in Microsoft Fabric to ingest data into
     - Privacy Level : **None (5)**
     - Then, click **Next (6)**.
 
-    ![](./Images2/3/t1-5p.png)
+      ![](./Images2/3/t1-5p.png)
     
 6. Leave all fields on the **Connect to data source** page as default and click **Next**.
   
@@ -56,7 +56,7 @@ In this task, you will create a pipeline in Microsoft Fabric to ingest data into
     - Row delimiter: **Line feed (\n) (3)**
     - Click **Preview data (4)** to see a sample of the data.
 
-    ![](./Images2/3/t1-7.png)
+      ![](./Images2/3/t1-7.png)
 
 8. After reviewing the sample data, click **Next** to proceed to the next step.
 
@@ -72,7 +72,7 @@ In this task, you will create a pipeline in Microsoft Fabric to ingest data into
     - Folder path: **new_data (2)**
     - File name: **sales.csv  (3)**
    
-    ![](./Images2/3/t1-10.png)
+      ![](./Images2/3/t1-10.png)
 
 11. On the **Connect to data destination** page, configure the following file format settings, and then click on **Next (4)**:
 
@@ -80,7 +80,7 @@ In this task, you will create a pipeline in Microsoft Fabric to ingest data into
     - Column delimiter: **Comma (,) (2)**
     - Row delimiter: **Line feed (\n) (3)**
    
-    ![](./Images2/3/t1-11.png)
+      ![](./Images2/3/t1-11.png)
 
 12. On the **Review + save** page, review the copy summary to verify all source and destination settings, and then click on **Save + Run** to initiate the data copy process.
 
@@ -249,6 +249,6 @@ In this exercise, you have completed the following:
 - Developed a notebook to write and test pipeline logic.
 - Modified the pipeline to refine and optimize its functionality.
 
-## You have successfully completed the lab
+## You have successfully completed the Hands-on lab.
 
-By completing this hands-on lab on **How to use Apache Spark in Microsoft Fabric**, you have developed a comprehensive understanding of data engineering workflows within the Fabric environment. You created and managed lakehouses, performed data exploration and transformation using Spark notebooks, ingested data through Dataflows (Gen2), and orchestrated processes using pipelines. This end-to-end experience has equipped you with the practical skills required to build, automate, and optimize scalable data solutions in Microsoft Fabric.
+By completing the **How to use Apache Spark in Microsoft Fabric** hands-on lab, you have developed a comprehensive understanding of data engineering workflows within the Fabric environment. You created and managed lakehouses, performed data exploration and transformation using Spark notebooks, ingested data through Dataflows (Gen2), and orchestrated processes using pipelines. This end-to-end experience has equipped you with the practical skills required to build, automate, and optimize scalable data solutions in Microsoft Fabric.

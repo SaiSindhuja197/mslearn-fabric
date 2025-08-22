@@ -44,7 +44,7 @@ Welcome to your How to use Apache Spark in Microsoft Fabric Workshop! We've prep
  
 ## Accessing Your Lab Environment
  
-Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
+Once you're ready to dive in, your virtual machine and **Guide** will be right at your fingertips within your web browser.
 
  ![08](./Images2/access.png)
  
@@ -78,7 +78,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
 ## Let's Get Started with Fabric Portal
 
-1. In the Lab VM, click on the **Microsoft Edge** browser, which is available on the desktop.
+1. In the LabVM, click on the **Microsoft Edge** browser, which is available on the desktop.
 
    ![08](./Images2/azure2.png)
 
@@ -132,7 +132,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
       ![08](./Images2/newspace.png)
 
-1. In the **Create a workspace** dialog box, enter the name as **fabric-<inject key="DeploymentID" enableCopy="false"/>** **(1)**, then click **Apply (2)** to create the workspace.
+1. In the **Create a workspace** dialog box, enter the name as **fabric-<inject key="DeploymentID" enableCopy="false"/>** **(1)**, then click **Apply (2)** to create the workspace.
 
      ![08](./Images2/namespace.png)
    
@@ -142,7 +142,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
 ## Steps to Proceed with MFA Setup if Ask Later Option is Not Visible
 
-   > **Note:** Continue with the exercises if MFA is already enabled or the option is unavailable.
+> **Note:** Continue with the exercises if MFA is already enabled or the option is unavailable.
 
 1. At the **"More information required"** prompt, select **Next**.
 
@@ -165,8 +165,6 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 1. If prompted to stay signed in, you can click **No**.
 
 1. If a **Welcome to Microsoft Azure** popup window appears, click **Cancel** to skip the tour.
- 
-1. Now, click on the **Next** from the lower right corner to move to the next page.
 
 ## Support Contact
 

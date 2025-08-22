@@ -24,7 +24,7 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
 
     ![](./Images2/2/t1-1p.png)
 
-1. In the New Dataflow Gen2 dialog, enter a **name (1)**, **uncheck** the **Enable Git integration (2)** option, and click **Create (3)** to proceed.
+1. In the New Dataflow Gen2 dialog, enter a **Name (1)**, **uncheck** the **Enable Git integration (2)** option, and click **Create (3)** to proceed.
 
     ![](./Images2/2/t1-2.png)
 
@@ -41,7 +41,7 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
     - **Authentication kind**: Anonymous **(5)**
     - **Privacy level**: None **(6)**
 
-    ![](./Images2/2/t1-4p.png)
+      ![](./Images2/2/t1-4p.png)
 
 1. Click on **Create** from the bottom-right corner to initiate the data source creation. The Power Query editor shows the data source and an initial set of query steps to format the data, as shown below:
 

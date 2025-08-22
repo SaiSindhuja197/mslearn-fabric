@@ -101,11 +101,11 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
 > **Note:** Spark supports multiple coding languages, including Scala, Java, and others. In this exercise, we'll use *PySpark*, which is a Spark-optimized variant of Python. PySpark is one of the most commonly used languages on Spark and is the default language in Fabric notebooks.
 
-1. With the notebook open, expand the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** under **Explorer**, then expand **Files (2)**, select the **orders (3)** folder, click the **ellipsis (...) (4)** menu next to 2019.csv, and choose **Load data (5)** > **Spark (6)**.
+1. With the notebook open, expand the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** under **Explorer**, then expand **Files (2)**, select the **orders (3)** folder, click the **ellipsis (...) (4)** menu next to 2019.csv, and choose **Load data (5)** -> **Spark (6)**.
 
     ![](./Images2/1/t3-2.png)
 
-1. A new code cell with the following code will be added to the notebook:
+1. A **new code** cell with the following code will be added to the notebook:
 
     ```python
    df = spark.read.format("csv").option("header","true").load("Files/orders/2019.csv")
@@ -209,7 +209,7 @@ In this task, you will explore data within a dataframe to gain insights and unde
 
 ### Filter a dataframe
 
-1. Use the **+ Code** icon located below the cell output to add a new code cell to the notebook, then enter the following code into it.
+1. Use the **+ Code** icon located below the cell output to add a **new code** cell to the notebook, then enter the following code into it.
 
     ```Python
    customers = df['CustomerName', 'Email']
@@ -217,9 +217,10 @@ In this task, you will explore data within a dataframe to gain insights and unde
    print(customers.distinct().count())
    display(customers.distinct())
     ```
+
     ![](./Images2/1/t4-1.png)
 
-   >**Note:** You might have to hover your mouse below the output to view the + Code option.
+   > **Note:** You might have to hover your mouse below the output to view the **+ Code** option.
 
 2. **Run (1)** the new code cell, then review the **results (2)**. Observe the following details:
 
@@ -229,7 +230,7 @@ In this task, you will explore data within a dataframe to gain insights and unde
 
     - The `dataframe['Field1', 'Field2', ...]` syntax is a shorthand way of defining a subset of columns. You can also use the **select** method, so the first line of the code above could be written as `customers = df.select("CustomerName", "Email")`
 
-    ![](./Images2/1/t4-2.png)
+      ![](./Images2/1/t4-2.png)
 
 3. Update the code in the cell as follows:
 
@@ -261,7 +262,7 @@ In this task, you will aggregate and group data within a dataframe to summarize 
 
     ![](./Images2/1/t5-2.png)
 
-3. Add a new code cell below the current one, and enter the following code:
+3. Add a **new code** cell below the current one, and enter the following code:
 
     ```Python
    from pyspark.sql.functions import *
@@ -280,7 +281,7 @@ In this task, you will use Spark to transform data files into a desired format f
 
 ### Use dataframe methods and functions to transform data
 
-1. Add a new code cell below the current one in the notebook, and enter the following code:
+1. Add a **new code cell** below the current one in the notebook, and enter the following code:
 
     ```Python
    from pyspark.sql.functions import *
@@ -304,7 +305,7 @@ In this task, you will use Spark to transform data files into a desired format f
     - Add **FirstName** and **LastName** columns based on the **CustomerName** column.
     - Filter and reorder the columns, removing the **CustomerName** column.
 
-    ![](./Images2/1/t6-2aa.png)
+      ![](./Images2/1/t6-2aa.png)
 
 1. Review the output and verify that the transformations have been made to the data.
 
@@ -314,7 +315,7 @@ In this task, you will use Spark to transform data files into a desired format f
 
 ### Save the transformed data
 
-1. Add a new code cell containing the following code to save the transformed DataFrame in Parquet format. This operation will overwrite any existing data at the specified location:
+1. Add a **new code** cell containing the following code to save the transformed DataFrame in Parquet format. This operation will overwrite any existing data at the specified location:
 
     ```python
    transformed_df.write.mode("overwrite").parquet('Files/transformed_data/orders')
@@ -331,7 +332,7 @@ In this task, you will use Spark to transform data files into a desired format f
 
     ![](./Images2/1/t6-3a.png)
 
-1. Add a new code cell and enter the following to load a dataframe from the Parquet files located in the **transformed_orders/orders** folder:
+1. Add a **new code** cell and enter the following to load a dataframe from the Parquet files located in the **transformed_orders/orders** folder:
 
     ```python
    orders_df = spark.read.format("parquet").load("Files/transformed_data/orders")
@@ -344,7 +345,7 @@ In this task, you will use Spark to transform data files into a desired format f
 
 ### Save data in partitioned files
 
-1. Add a new code cell and enter the following code to save the dataframe, partitioned by **Year** and **Month:**
+1. Add a **new code** cell and enter the following code to save the dataframe, partitioned by **Year** and **Month:**
 
     ```python
    orders_df.write.partitionBy("Year","Month").mode("overwrite").parquet("Files/partitioned_data")
@@ -363,7 +364,7 @@ In this task, you will use Spark to transform data files into a desired format f
 
 1. Partitioning data files is a common way to optimize performance when dealing with large volumes of data. This technique can significantly improve performance and make it easier to filter data.
 
-1. Add a new code cell to the notebook, and enter the following code to load a new DataFrame from the **orders.parquet** file:
+1. Add a **new code** cell to the notebook, and enter the following code to load a new DataFrame from the **orders.parquet** file:
 
     ```python
    orders_2021_df = spark.read.format("parquet").load("Files/partitioned_data/Year=2021/Month=*")
@@ -390,7 +391,7 @@ In this task, you will work with tables and SQL in Spark to combine the flexibil
 
 Tables in a Spark metastore are relational abstractions over files in the data lake. Tables can be *managed* (in which case the files are managed by the metastore) or *external* (in which case the table references a file location in the data lake that you manage independently of the metastore).
 
-1. Add a new code cell to the notebook, then enter and execute the following code to save the dataframe containing the sales order data as a managed table named **salesorders**.
+1. Add a **new code** cell to the notebook, then enter and execute the following code to save the dataframe containing the sales order data as a managed table named **salesorders**.
 
     ```Python
    # Create a new table
@@ -414,7 +415,7 @@ Tables in a Spark metastore are relational abstractions over files in the data l
 
     ![](./Images2/1/t7-3p.png)
 
-4. In the left **Explorer** pane, click the **ellipsis (...) (1)** menu next to the **salesorders** table, then select **Load data (2)** > **Spark (3)**. This action will add a new code cell to the notebook with code to load the table data using Spark, similar to the example shown.
+4. In the left **Explorer** pane, click the **ellipsis (...) (1)** menu next to the **salesorders** table, then select **Load data (2)** -> **Spark (3)**. This action will add a new code cell to the notebook with code to load the table data using Spark, similar to the example shown.
 
     ![](./Images2/1/t7-4.png)
 
@@ -431,7 +432,7 @@ Tables in a Spark metastore are relational abstractions over files in the data l
 
 While it's useful to be able to embed SQL statements into a cell containing PySpark code, data analysts often just want to work directly in SQL.
 
-1. Add a new code cell to the notebook and enter the following code:
+1. Add a **new code** cell to the notebook and enter the following code:
 
     ```SQL
    %%sql
@@ -450,7 +451,7 @@ While it's useful to be able to embed SQL statements into a cell containing PySp
 
     - The output from the SQL query is automatically displayed as the result under the cell.
 
-    ![](./Images2/1/t7-11.png)
+      ![](./Images2/1/t7-11.png)
 
     > **Note:** For more information about Spark SQL and dataframes, see the [Spark SQL documentation](https://spark.apache.org/docs/2.2.0/sql-programming-guide.html).
 
@@ -460,7 +461,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
 ### View results as a chart
 
-1. Add a new code cell to the notebook and enter the following code:
+1. Add a **new code** cell to the notebook and enter the following code:
 
     ```SQL
    %%sql
@@ -484,9 +485,9 @@ In this task, you will visualize data using Spark to enhance understanding and i
     - **Chart type:** Bar chart **(1)**
     - **Aggregation:** Sum **(2)**
 
-    ![](./Images2/1/t8-5.png)
+      ![](./Images2/1/t8-5.png)
 
-    ![](./Images2/1/t8-5p.png)
+      ![](./Images2/1/t8-5p.png)
 
 6. Verify that the chart appears similar to the example shown:
 
@@ -494,7 +495,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
 ### Get started with matplotlib
 
-1. Add a new code cell to the notebook and enter the following code:
+1. Add a **new code** cell to the notebook and enter the following code:
 
     ```Python
    sqlQuery = "SELECT CAST(YEAR(OrderDate) AS CHAR(4)) AS OrderYear, \
@@ -512,7 +513,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
 1. To visualize the data as a chart, we will use the **matplotlib** Python library. As a foundational plotting library in Python, matplotlib offers extensive flexibility and control for creating high-quality, customized visualizations.
 
-1. Add a new code cell to the notebook and enter the following code:
+1. Add a **new code** cell to the notebook and enter the following code:
 
    ```Python
    from matplotlib import pyplot as plt
@@ -535,7 +536,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
     - The default settings result in a usable chart, but there's considerable scope to customize it
 
-    ![](./Images2/1/t8-12.png)
+      ![](./Images2/1/t8-12.png)
 
 1. Modify the code to generate the chart:
 
@@ -632,7 +633,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
 While **matplotlib** enables you to create complex charts of multiple types, it can require some complex code to achieve the best results. For this reason, over the years, many new libraries have been built on the basis of matplotlib to abstract its complexity and enhance its capabilities. One such library is **seaborn**.
 
-1. Add a new code cell to the notebook and enter the following code:
+1. Add a **new code** cell to the notebook and enter the following code:
 
     ```Python
    import seaborn as sns
