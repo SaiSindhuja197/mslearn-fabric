@@ -36,7 +36,7 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
     ![](./Images2/1/2.png)
 
-1. From the Explorer pane, under the **Files** section of your lakehouse, select the **ellipses (...) (1)**, choose **Upload (2)**, and then click **Upload folder (3)** to import a folder from your local machine.
+1. From the Explorer pane, click the **ellipsis (...) (1)** next to the **Files** folder, choose **Upload (2)**, and then click **Upload folder (3)** to import a folder from your local machine.
 
     ![](./Images2/1/t1-4.png)
 
@@ -70,11 +70,11 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
 
    > **Note**: After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
 
-1. From the **Explorer** on the left panel, select the **Data items** tab, then from the **Add data items (1)** dropdown, select **Existing data sources (2)**.
+1. From the **Explorer** panel on the left, under the **Data items** tab, open the **Add data items (1)** dropdown and select **Existing data sources (2)**.
 
     ![](./Images2/1/t2-2.png)
 
-1. From the left Explorer pane, check the box next to **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>** **(1)**  and then click **Connect (2)** at the bottom right.
+1. Select the checkbox next to **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>** **(1)**, then click **Connect (2)** in the bottom-right corner.
 
     ![](./Images2/1/t2-3.png)
 
@@ -118,7 +118,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
     > **Note**: You can hide the Lakehouse Explorer panes on the left by using their **<<** icons. Doing so will help you focus on the notebook.
 
-1. Use the **▶ Run** cell button on the left side of the cell to execute it.
+1. Use the **Run** cell button on the left side of the cell to execute it.
 
     ![](./Images2/1/t3-4.png)
 
@@ -356,7 +356,7 @@ In this task, you will use Spark to transform data files into a desired format f
 
     ![](./Images2/1/t6-12.png)
 
-1. In the Explorer pane on the left, click the **ellipsis (...) (1)** menu next to the **Files** and select **Refresh (2)**. Then expand the **partitioned_data (3)** folder to verify that it contains subfolders named by **year (4)** (e.g., Year=2019, Year=2020, Year=2021). Inside each year folder, ensure there are further subfolders named by **month (5)** (e.g., Month=1, Month=2, etc.), each containing **parquet (6)** files representing the orders for that month.
+1. In the Explorer pane on the left, click the **ellipsis (...) (1)** menu next to the **Files** and select **Refresh (2)**. Then expand the **partitioned_data (3)** folder to verify that it contains subfolders named by **Year (4)** (e.g., Year=2019, Year=2020, Year=2021). Inside each year folder, ensure there are further subfolders named by **Month (5)** (e.g., Month=1, Month=2, etc.), each containing **parquet (6)** files representing the orders for that month.
 
     ![](./Images2/1/t6-11.png)
 
@@ -375,19 +375,17 @@ In this task, you will use Spark to transform data files into a desired format f
 
     ![](./Images2/1/t6-15.png)
 
-> **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-      
-   - If you receive an InProgress message, you can hit refresh to see the final status.
-   - If you receive a success message, you can proceed to the next task.
-   - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-   - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
+   > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
+   > - If you receive a success message, you can proceed to the next task.
+   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
+   > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com. We are available 24/7 to help you out.
 
+ <validation step="ca80df5c-5a46-4057-bc33-616462f99925" />
 
-        <validation step="ca80df5c-5a46-4057-bc33-616462f99925" />
 
 ## Task 7: Work with tables and SQL
 
-In this task, you will work with tables and SQL in Spark to combine the flexibility of data lakes with the structured querying capabilities of relational databases. You will create a managed Delta Lake table from a dataframe, explore it using SQL queries both embedded in PySpark code and as standalone SQL cells, and leverage the Spark metastore to organize and query your data efficiently—enabling powerful data lakehouse capabilities within Fabric.
+In this task, you will work with tables and SQL in Spark to combine the flexibility of data lakes with the structured querying capabilities of relational databases. You will create a managed Delta Lake table from a dataframe, explore it using SQL queries both embedded in PySpark code and as standalone SQL cells, and leverage the Spark metastore to organize and query your data efficiently, enabling powerful data lakehouse capabilities within Fabric.
 
 ### Create a table
 
