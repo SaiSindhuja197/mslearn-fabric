@@ -6,13 +6,15 @@
 
 This lab provides an introduction to Dataflows (Gen2) and Data Pipelines in Microsoft Fabric, focusing on their role in data ingestion, transformation, and automation. Participants will explore how Dataflows (Gen2) connect to various data sources, perform transformations using Power Query Online, and integrate with Data Pipelines to load data into a lakehouse or analytical store. The lab will also cover building and orchestrating pipelines using the Fabric user interface, enabling automation of extract, transform, and load (ETL) processes without extensive coding.
 
-## Lab Objectives
+## Objective
 
 By the end of this lab, you will be able to:
 
-- **Analyze data with Apache Spark** : Use Microsoft Fabric to train and track a customer churn prediction model with Scikit-Learn and MLflow. After completing this exercise, you will have set up a lakehouse, uploaded and explored data, used Spark for transformation and visualization, and effectively managed your notebook and Spark session. This will demonstrate your ability to integrate and analyze data through multiple stages using advanced tools and techniques.
-- **Create a Dataflow (Gen2) in Microsoft Fabric** : Master Apache Spark for flexible, distributed data processing and analysis across platforms like Azure HDInsight and Databricks. Successfully created a Dataflow (Gen2) to ingest data, configured its destination, and integrated it into a pipeline. This streamlined the data ingestion and processing workflow within your environment.
-- **Ingest data with a pipeline**: Automate data ingestion by building pipelines to efficiently extract, transform, and load (ETL) data from various sources into a data lake or warehouse in Microsoft Fabric.
+- **Analyze data with Apache Spark** : You will learn how to use Apache Spark within Microsoft Fabric to explore and analyze large datasets. This task will guide you through creating Spark notebooks, running distributed data processing tasks, and performing data transformations to gain meaningful insights.
+
+- **Create a Dataflow (Gen2) in Microsoft Fabric** : You will learn how to create and configure Dataflows (Gen2) to connect to data sources and perform transformations using Power Query Online. This task introduces the core features of Dataflows and demonstrates how they can be used in pipelines or Power BI datasets.
+
+- **Ingest data with a pipeline**: You will learn how to build data pipelines to ingest data from external sources into a lakehouse in Microsoft Fabric. This includes using Apache Spark to apply custom transformations before loading the data for analysis.
 
 ## Pre-requisites
 
@@ -24,81 +26,119 @@ By the end of this lab, you will be able to:
 
 The architecture of this lab revolves around Microsoft Fabric’s Dataflows (Gen2) and Data Pipelines, forming a seamless framework for data ingestion, transformation, and automation. Dataflows (Gen2) serve as the entry point, connecting to diverse data sources and leveraging Power Query Online for data transformation. These transformed datasets integrate with Data Pipelines, which orchestrate data movement into a lakehouse or analytical store. The Fabric user interface facilitates pipeline construction and automation, streamlining extract, transform, and load (ETL) workflows without requiring extensive coding, thereby enhancing efficiency and scalability in data processing.
 
-## Getting Started with the Lab
+## Architecture Diagram
+
+ ![08](./Images2/arch.png)
+
+## Explanation of Components
+
+1. **Analyze data with Apache Spark**: Learning how to use Apache Spark within Microsoft Fabric to explore and analyze large-scale datasets. This includes creating notebooks, executing distributed data operations, and performing transformations to uncover insights.
+
+1. **Create and use Dataflows (Gen2) in Microsoft Fabric**: Understanding how to use Power Query Online to build Dataflows (Gen2), which connect to data sources, perform transformations, and feed downstream components like pipelines or Power BI reports.pipelines or Power BI datasets.
+
+1. **Ingest data with a pipeline**: Building and configuring data pipelines to ingest data from external sources into a Fabric lakehouse. This process includes applying transformations using Apache Spark and automating data loading for analysis.
+
+## Getting Started with Lab
+
 Welcome to your How to use Apache Spark in Microsoft Fabric Workshop! We've prepared a seamless environment for you to explore and learn about the services. Let's begin by making the most of this experience.
  
 ## Accessing Your Lab Environment
  
 Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
 
- ![08](./Images/gs4.png)
+ ![08](./Images2/access.png)
  
+## Virtual Machine & Lab Guide
+
+Your virtual machine is your workhorse throughout the workshop. The lab guide is your roadmap to success.
+
 ## Exploring Your Lab Resources
  
-To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
+To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab. Here, you will find the Azure credentials. Click on the **Environment** option to verify the credentials.
  
-  ![08](./Images/gs5.png)
+  ![08](./Images2/env.png)
  
 ## Utilizing the Split Window Feature
  
-For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
+For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
  
-  ![08](./Images/gs3.png)
-
-## Utilizing the Zoom In/Out Feature
-
-To adjust the zoom level for the environment page, click the A↕ : 100% icon located next to the timer in the lab environment.
-
-   ![08](./Images/march-getting-started-6.png)
+  ![08](./Images2/split.png)
 
 ## Managing Your Virtual Machine
  
-Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
+Feel free to **start, stop**, or **restart** your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
 
-   ![08](./Images/march-getting-started-5.png)
+   ![08](./Images2/resources.png)
 
-## ‎Let's Get Started with Fabric Portal
+## Utilizing the Zoom In/Out Feature
 
-1. Click on **Microsoft Edge** from the desktop.
+To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
 
-1. Navigate to `https://app.fabric.microsoft.com` and sign in using the below credentials:
+   ![08](./Images2/zoom.png)
 
-   - Email: <inject key="AzureAdUserEmail"></inject> and click on **Submit**
-   - Password: <inject key="AzureAdUserPassword"></inject> and click on **Sign in**
+## Let's Get Started with Fabric Portal
 
-1. On the **Stay signed in?** pop-up, click on **No**.
+1. In the Lab VM, click on the **Microsoft Edge** browser, which is available on the desktop.
+
+   ![08](./Images2/azure2.png)
+
+1. Copy the **Fabric link** below and open this link in a new tab on the Microsoft Edge Browser.
+
+   ```
+   https://app.fabric.microsoft.com
+   ```
+   
+1. On the **Enter your email, we'll check if you need to create a new account** tab, you will see the login screen, in that enter the following email/username, and click on **Submit (2)**.
+ 
+   - **Email/Username:** <inject key="AzureAdUserEmail"></inject> **(1)**
+
+     ![04](./Images2/email.png)
+
+1. Now enter the following password and click on **Sign in (2)**.
+ 
+   - **Password:** <inject key="AzureAdUserPassword"></inject> **(1)** 
+
+      ![05](./Images2/pass.png)
+
+1. If you see a pop-up **Stay Signed in?**, click **No**.
+
+   ![05](./Images2/staysignin.png)
 
       > **Note**: If prompted with MFA, please follow the steps highlighted under - [Steps to Proceed with MFA Setup if Ask Later Option is Not Visible](#steps-to-proceed-with-mfa-setup-if-ask-later-option-is-not-visible)
 
-1. Click on the Profile icon from the top right and select **Free Trial**.
+1. You will be navigated to the Fabric Home page.
 
-     ![08](./Images/ap1.png)
+   ![05](./Images2/fabric.png)
 
-1. On the Activate your 60-day free Fabric Trial capacity, click on **Activate**. 
+1. Click the **Profile (1)** icon from the top-right corner, then select **Free trial (2)** to activate your Microsoft Fabric trial license.
 
-      ![08](./Images/ap2.png)
+     ![08](./Images2/freetrial.png)
+
+1. On the **Activate your 60-day free Fabric trial capacity** pop-up, click the **Activate** button to proceed.  
+
+      ![08](./Images2/activate.png)
    
-1. Once your trial capacity is ready, you will receive a confirmation message. Select **Got it** to begin working in Fabric.
+1. Once the trial capacity is ready and the confirmation message appears, click **Got it** to start working in Fabric.
 
-      ![08](./Images/ap3.png)
+      ![08](./Images2/gotit.png)
    
-1. Open your **Account manager** again. Notice that you now have a heading for **Trial status**. Your Account manager keeps track of the number of days remaining in your trial.
+1. Open the **Account Manager** again and observe the new **Trial Status** section, which displays the number of days remaining in your trial.
 
-    ![08](./Images/ap4.png)
+    ![08](./Images2/trialstatus.png)
 
-      > **Note:** You now have a **Fabric (Preview) trial** that includes a **Power BI trial** and a **Fabric (Preview) trial capacity**.
+      > **Note:** You now have a **Fabric (Preview) trial** that includes a **Fabric (Preview) trial capacity**.
 
-1. From the left pane, select **Workspaces (1)** and click on **+ New Workspace (2)**.
+1. From the left pane, select **Workspaces (1)**, then click **+ New workspace (2)** at the bottom.
 
-      ![08](./Images/ap5.png)
+      ![08](./Images2/newspace.png)
 
-1. On the Create a workspace dialog box. provide the name as **fabric-<inject key="DeploymentID" enableCopy="false"/>** **(1)** and click on **Apply (2)**.
+1. In the **Create a workspace** dialog box, enter the name as **fabric-<inject key="DeploymentID" enableCopy="false"/>** **(1)**, then click **Apply (2)** to create the workspace.
 
-     ![08](./Images/ap5-1.png)
+     ![08](./Images2/namespace.png)
    
-1. When your new workspace opens, it should be empty, as shown in the image.
+1. When your new workspace opens, it should appear empty, as shown in the image.
 
-    ![08](./Images/ap5-2.png)
+    ![08](./Images2/emptyspace.png)
 
 ## Steps to Proceed with MFA Setup if Ask Later Option is Not Visible
 
@@ -137,6 +177,8 @@ Learner Support Contacts:
 - Email Support: cloudlabs-support@spektrasystems.com
 - Live Chat Support: https://cloudlabs.ai/labs-support
 
-    Now, click on Next from the lower right corner to move on to the next page.
+Now, click on **Next >>** from the lower right corner to move on to the next page.
+   
+   ![05](./Images2/nextpage.png)
 
 ## Happy Learning!!
