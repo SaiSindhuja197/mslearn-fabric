@@ -80,7 +80,7 @@ To adjust the zoom level for the environment page, click the **A↕ : 100%** ico
 
 1. In the Lab VM, click on the **Microsoft Edge** browser, which is available on the desktop.
 
-   ![08](./Images2/azure.png)
+   ![08](./Images2/azure2.png)
 
 1. Copy the **Fabric link** below and open this link in a new tab on the Microsoft Edge Browser.
 
