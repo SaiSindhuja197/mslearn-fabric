@@ -6,6 +6,8 @@ In the exercise, you'll create a simple data pipeline to bring in customer sales
    
 ## Create New - Dataflow Gen2
 
+In this task, you’ll create a **Dataflow Gen2** in Microsoft Fabric, import a CSV file using Power Query, and use **Copilot** to clean and transform the data. You'll split the "Item" column into Description, Color, and Size fields, and apply logic to increase the quantity of red bikes. The lab highlights the ease of using **Visual Query** for basic tasks and the power of **M-Code** for advanced data transformations.
+
 1. In the left pane, navigate back to your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>**, then click on **+ New item (1)**. Search for **Dataflow Gen2 (2)** and select **Dataflow Gen2 (3)**. Leave the name as default, **Uncheck (4)** the **Enable Git integration, deployment pipelines and Public API scenarios**, and then click on **Create (5)**.
 
    ![New dataflow.](./Images/Inj1.png)

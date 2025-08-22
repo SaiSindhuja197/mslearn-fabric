@@ -154,7 +154,7 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
     - Folder path: **new_data (2)**
     - File name: **sales.csv  (3)**
     - Click **Next (4)**
-        
+    
         ![08](./Images/Lake14.png)
 
 1. Set the following file format options.

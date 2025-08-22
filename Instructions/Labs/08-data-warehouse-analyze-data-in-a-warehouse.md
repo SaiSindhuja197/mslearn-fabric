@@ -6,6 +6,8 @@ In this exercise, you will analyze data in a warehouse using Fabric Copilot by c
 
 ## Analyze Data in a Warehouse
 
+In this task, you’ll explore a **Data Warehouse** in Microsoft Fabric, review table relationships, and understand the **semantic model** used in Power BI. With **Copilot**, you’ll generate a sales report, get insights like **Sales by Region**, and create an **executive summary** demonstrating how AI enhances data analysis and reporting.
+
 1. In the left pane, select the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>**.
 
    ![New dataflow.](./Images/26.png)
