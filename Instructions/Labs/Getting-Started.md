@@ -55,7 +55,7 @@ The architecture for this lab involves several key components of Microsoft Fabri
 - **Apache Spark on Microsoft Fabric:** A distributed computing service for performing large-scale data processing and analytics using Spark clusters.
 - **Dataflow Gen2:** A service for designing and executing advanced data transformation workflows, enabling efficient data integration and processing.
 
-**Fabric trial provides access to most features, but excludes Copilot, private links, and trusted workspace access ([learn more](https://learn.microsoft.com/en-us/fabric/fundamentals/fabric-trial#overview-of-the-trial-capacity)).**
+**In this lab, we will use the Fabric trial within a Fabric workspace. The trial offers access to most Fabric features; however, Copilot, private links, and trusted workspace access are not included. ([learn more](https://learn.microsoft.com/en-us/fabric/fundamentals/fabric-trial#overview-of-the-trial-capacity)).**
 
 
 ## Getting Started with the Lab
@@ -83,8 +83,6 @@ To get the lab environment details, you can select the **Environment** tab. Addi
 Utilizing the Split Window Feature: For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
 
    ![](./Images/split-feature.png)
-
-   >**Note:** You will see the DeploymentID value on the **Environment** tab, use it wherever you see SUFFIX or DeploymentID in lab steps.
 
 ## Managing Your Virtual Machine
  
