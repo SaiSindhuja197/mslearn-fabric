@@ -84,8 +84,6 @@ Utilizing the Split Window Feature: For convenience, you can open the lab guide 
 
    ![](./Images/split-feature.png)
 
-   >**Note:** You will see the DeploymentID value on the **Environment** tab, use it wherever you see SUFFIX or DeploymentID in lab steps.
-
 ## Managing Your Virtual Machine
  
 Feel free to **Start, Stop, or Restart** your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
