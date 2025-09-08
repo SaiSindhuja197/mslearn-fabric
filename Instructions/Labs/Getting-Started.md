@@ -72,7 +72,7 @@ To get the lab environment details, you can select the **Environment** tab. Addi
 
 ## Utilizing the Split Window Feature
 
-Utilizing the Split Window Feature: For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
+For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
 
    ![08](./Images/GS3.png)
 
@@ -80,7 +80,7 @@ Utilizing the Split Window Feature: For convenience, you can open the lab guide 
 
 ## Managing Your Virtual Machine
  
-Feel free to **Start, Stop, or Restart** your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
+Feel free to **Start, Restart, or Stop** your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
 
    ![08](./Images/GS5.png)
 
@@ -102,7 +102,7 @@ To adjust the zoom level for the environment page, click the A↕ : 100% icon lo
    https://powerbi.com
    ```
    
-2. On the **Enter your email, we'll check if you need to create a new account** tab, you will see the login screen, in that enter the following email/username, and click on **Submit (2)**.
+2. On the **Enter your email, we'll check if you need to create a new account** window, you will see the login screen, in that enter the following email/username, and click on **Submit (2)**.
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject> **(1)**
 
