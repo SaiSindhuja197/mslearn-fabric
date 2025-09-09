@@ -56,7 +56,7 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
 1. After the files have been uploaded, expand **Files** and select the **orders** folder; and verify that the CSV files have been uploaded, as shown here:
 
-    ![Screenshot of uploaded files in a lakehouse.](./Images/E5T1S6-1208.png)
+    ![Screenshot of uploaded files in a lakehouse.](./Images/E5T1S6.png)
 
 ## Task 2: Create a notebook
 
@@ -74,7 +74,7 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
 
 1. In the **Explorer** tab, click on **Data items (1)**, then select **Add data items (2)** drop-down and choose **Existing data sources (3)**.
 
-    ![.](./Images/notebooka.png)
+    ![.](./Images/E5T2S3.png)
 
 1. Select **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** from the options and click on **Connect (2)**.
     
@@ -104,7 +104,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
 1. With the notebook open, expand the **Files (1)** list and select the **orders (2)** folder to display the **CSV files (3)** alongside the notebook editor, as shown here:
 
-    ![Screenshot of a notebook with a Files pane.](./Images/E5T3S1-1308.png)
+    ![Screenshot of a notebook with a Files pane.](./Images/E5T3S1.png)
 
 1. In the **orders** folder, right click on the **2019.csv (1)**, then select **Load data (2)** and then select **Spark (3)**.
 
@@ -509,7 +509,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
     - At the core of the **matplotlib** library is the **pyplot** object. This is the foundation for most plotting functionality.
     - The default settings result in a usable chart, but there's considerable scope to customize it
 
-      ![](./Images/E5T8.2S5-1208.png)
+      ![](./Images/E5T8-2S5.png)
 
 1. Modify the code to plot the chart as follows:
 
@@ -535,7 +535,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
 1. Re-run the code cell and view the results. The chart now includes a little more information.
 
-    ![](./Images/E5T8.2S7-1208.png)
+    ![](./Images/E5T8-2S7.png)
 
 1. A plot is technically contained within a **Figure**. In the previous examples, the figure was created implicitly for you, but you can create it explicitly.
 
@@ -566,7 +566,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
 1. Re-run the code cell and view the results. The figure determines the shape and size of the plot. A figure can contain multiple subplots, each on its own *axis*.
 
-    ![](./Images/E5T8.2S10-1208.png)
+    ![](./Images/E5T8-2S10.png)
 
 1. Modify the code to plot the chart as follows:
 
@@ -598,7 +598,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
 1. Re-run the code cell and view the results. The figure contains the subplots specified in the code.
 
-    ![](./Images/E5T8.2S12-1208.png)
+    ![](./Images/E5T8-2S12.png)
 
     > **Note:** To learn more about plotting with matplotlib, see the [matplotlib documentation](https://matplotlib.org/).
 
@@ -621,7 +621,7 @@ While **matplotlib** enables you to create complex charts of multiple types, it 
 
 1. Run the code and observe that it displays a bar chart using the seaborn library.
 
-    ![](./Images/E5T8.3S2-1208.png)
+    ![](./Images/E5T8-3S2.png)
 
 1. Modify the code as follows:
 
