@@ -43,7 +43,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
 1. In the center of the screen, click on **Get data (1)** and then click on **Local file (2)**.
 
-   ![01](./Images/E4T1S4.png)
+   ![01](./Images/E3T1S6.png)
 
 1. Use the wizard to import the data into a new table by selecting the following options:
    
@@ -134,7 +134,7 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
   
       ![](./Images/E3T3S1.1-1208.png)
   
-1. In the report editor, from the **Data** pane, expand **Kusto Query Result** and select the checkboxes of **Item and TotalNet Revenue (1)** fields.
+1. In the report editor, from the **Data** pane, expand **Kusto Query Result** and select the checkboxes of **Item** and **TotalNet Revenue (1)** fields.
 
 1. On the report design canvas, select the table visualization that has been added and then in the **Visualizations** pane, select **Clustered bar chart (2)**.
 

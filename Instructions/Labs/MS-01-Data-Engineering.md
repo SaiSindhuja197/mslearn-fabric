@@ -250,19 +250,6 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
     ![Screenshot of a notebook with a parameters cell and code to transform data.](./Images/E1T5S10-1108.png)
 
-1. (Optional) You can also create **external tables** for which the schema metadata is defined in the metastore for the lakehouse, but the data files are stored in an external location.
-
-    ```python
-    df.write.format("delta").saveAsTable("external_sales", path="<abfs_path>/external_sales")
-
-    #In the Lakehouse explorer pane, in the ... menu for the Files folder, select Copy ABFS path.
-
-    #The ABFS path is the fully qualified path to the Files folder in the OneLake storage for your lakehouse - similar to this:
-
-    #abfss://workspace@tenant-onelake.dfs.fabric.microsoft.com/lakehousename.Lakehouse/Files
-    ```
-    
-    > **Note**: To run the above code, you need to replace the <abfs_path> with your abfs path
 
 1. When the notebook run has completed, click on your  **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** pane on the left, in the **Ellipsis (...) (2)** menu for **Tables** select **Refresh (3)** and verify that a **sales (4)** table has been created.
 
@@ -309,7 +296,7 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
 
 1. On the toolbar under **New SQL query (1)** drop-down select **New visual query (2)**.
 
-    ![](./Images/E1T7S1-1108.png)
+    ![](./Images/E1T7S1.png)
 
 1. In the Lakehouse, navigate to **Schemas**, then to **dbo**, expand the **tables** folder and select the **sales** table. In the sales table, click on **Elipsis &#8230; (1)** and select **Insert into canvas (2)**. It is in the new visual query editor pane that opens to create a Power Query. 
 
@@ -343,23 +330,29 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
 
 In this task, you'll create a report to visualize your data findings. You'll select relevant data, choose appropriate visuals, and organize the report to clearly present insights and support data-driven decisions.
 
-1. At the top of the SQL analytics endpoint page, select the **Model Layouts** tab.
+1. First, we will need to create a Semantic model. At the top of the SQL analytics endpoint page, select the **New semantic model** tab.
     
-    ![](./Images/Lake23.png)
+    ![](./Images/E1T8S1.png)
 
-    >**Note:** You might notice some additional tables appeared as shown below. Please ignore the system tables, which are shown in ignore.
+1. Provide the Direct Lake semantic model name as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and select **sales (2)** table from the list. Click on **Confirm (3)**.
 
-    ![Screenshot of a data model.](./Images/ig.png)
+    ![](./Images/E1T8S2.png)
 
-    > **Note**: In this exercise, the data model consists of a single table. In a real-world scenario, you would likely create multiple tables in your lakehouse, each of which would be included in the model. You could then define relationships between these tables in the model.
+1. Go back to the **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** workspace. Select recently created semantic model named as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (2)**
 
-1. In the top menu bar, select the **Reporting** tab. Then select **New report**.
+    ![](./Images/E1T8S3.png)
 
-    ![](./Images/E2-T7-S2.png)
-   
-1. In the pop-up, click on **Continue** to add data to the default semantic model.
+1. Click on **Open semantic model**. The **sales** table will appear.
 
-    ![](./Images/E2-T7-S3.png)
+    ![](./Images/E1T8S4.png)
+
+
+    ![](./Images/E1T8S5.png)
+
+1. Switch to editing mode. In the top menu bar, select the **File (1)** tab. Then select **Create new report (2)**.
+
+    ![](./Images/E1T8S6.png)
+
 
 1. In the **Data** pane on the right, expand the **sales** table. Then select the following fields:
    
