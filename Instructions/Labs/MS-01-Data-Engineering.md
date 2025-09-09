@@ -343,10 +343,9 @@ In this task, you'll create a report to visualize your data findings. You'll sel
 
 1. Click on **Open semantic model**. The **sales** table will appear.
 
-    ![](./Images/E1T8S4.png)
+   ![](./Images/E1T8S4.png)
 
-
-    ![](./Images/E1T8S5.png)
+   ![](./Images/E1T8S5.png)
 
 1. Switch to editing mode. In the top menu bar, select the **File (1)** tab. Then select **Create new report (2)**.
 
