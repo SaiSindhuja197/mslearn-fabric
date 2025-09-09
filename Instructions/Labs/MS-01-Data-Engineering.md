@@ -359,19 +359,19 @@ In this task, you'll create a report to visualize your data findings. You'll sel
    - **Quantity (2)**
    - Then, a **Table visualization (3)** is added to the report.
 
-      ![Screenshot of a report containing a table.](./Images/E1T8S4-1108.png)
+   ![Screenshot of a report containing a table.](./Images/E1T8S4-1108.png)
    
 8. Hide the **Data** and **Filters** panes to create more space if required. Then, make sure the **Table visualization is selected (1)** and in the **Visualizations** pane, change the visualization to a **Clustered bar chart (2)** and resize it as shown here.
 
-      ![Screenshot of a report containing a clustered bar chart.](./Images/E2-T7-S5.png)
+   ![Screenshot of a report containing a clustered bar chart.](./Images/E2-T7-S5.png)
 
-      ![Screenshot of a report containing a clustered bar chart.](./Images/E2-T7-S5a.png)
+   ![Screenshot of a report containing a clustered bar chart.](./Images/E2-T7-S5a.png)
 
 9. On the **File (1)** menu, select **Save As (2)**. Then, name the Report as **Item Sales Report (3)** and click **Save (4)** in the workspace you created previously.
 
-      ![](./Images/Lake25.png)
+   ![](./Images/Lake25.png)
    
-      ![](./Images/Lake26.png)
+   ![](./Images/Lake26.png)
 
 10. In the hub menu bar on the left, select your workspace to verify that it contains the following items:
     - Your lakehouse.
