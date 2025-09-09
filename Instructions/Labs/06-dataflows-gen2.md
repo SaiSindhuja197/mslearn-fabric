@@ -131,7 +131,7 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 
    >**Note:** You might have to refresh the browser to get the expected output.
 
-### Summary
+## Summary
 
 In this exercise, you:
 

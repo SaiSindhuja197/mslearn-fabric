@@ -357,23 +357,25 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
 
 In this task, you'll create a report to visualize your data findings. You'll select relevant data, choose appropriate visuals, and organize the report to clearly present insights and support data-driven decisions.
 
-1. At the top of the SQL analytics endpoint page, select the **Model Layouts** tab.
+1. From the toolbar at the top, select **New semantic model**.
     
-    ![](./Images/Lake23.png)
+    ![](./Images/newsemanticmodel(1).png)
 
-    >**Note:** You might notice some additional tables appeared as shown below, please ignore the system tables which are shown in ignore.
+1. In the **New semantic model** window, set the name to **Lakehouse\_<inject key="DeploymentID" enableCopy="false"/> (1)**. Then navigate to **dbo > Tables**, choose **sales (2)**, and click **Confirm (3)**.
 
-    ![Screenshot of a data model.](./Images/ig.png)
+    ![](./Images/newsemanticmodel(2).png)
 
-    > **Note**: In this exercise, the data model consists of a single table. In a real-world scenario, you would likely create multiple tables in your lakehouse, each of which would be included in the model. You could then define relationships between these tables in the model.
+1. From the left pane select the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** and then click on **Lakehouse\_<inject key="DeploymentID" enableCopy="false"/> (2)** Semantic model.
 
-1. In the top menu bar, select the **Reporting** tab. Then select **New report**.
+    ![](./Images/newsemanticmodel(3).png)
 
-    ![](./Images/E2-T7-S2.png)
-   
-1. In the pop-up, click on **Continue** to add data to the default semantic model.
+1. From the toolbar on the top, click **Open semantic model**.
 
-    ![](./Images/E2-T7-S3.png)
+    ![](./Images/newsemanticmodel(4)(1).png)
+
+1. From the **File (1)** menu, select **Create new report (2)**.
+
+    ![](./Images/newsemanticmodel(4)(2).png)
 
 1. In the **Data** pane on the right, expand the **sales** table. Then select the following fields:
 
@@ -383,19 +385,17 @@ In this task, you'll create a report to visualize your data findings. You'll sel
 
    Then, a **Table visualization (3)** is added to the report.
 
-     ![Screenshot of a report containing a table.](./Images/E2-T7-S4.png)
+     ![](./Images/newsemanticmodel(7).png)
    
 1. Hide the **Data** and **Filters** panes to create more space if required. Then, make sure the **Table visualization is selected (1)** and in the **Visualizations** pane, change the visualization to a **Clustered bar chart (2)** and resize it as shown here.
 
-      ![Screenshot of a report containing a clustered bar chart.](./Images/E2-T7-S5.png)
-
-      ![Screenshot of a report containing a clustered bar chart.](./Images/E2-T7-S5a.png)
+    ![](./Images/newsemanticmodel(4)(3).png)
 
 1. On the **File (1)** menu, select **Save As (2)**. Then, name the Report as **Item Sales Report (3)** and click **Save (4)** in the workspace you created previously.
 
-      ![](./Images/Lake25.png)
+      ![](./Images/newsemanticmodel(9).png)
    
-      ![](./Images/Lake26.png)
+      ![](./Images/newsemanticmodel(10).png)
 
 1. In the hub menu bar on the left, select your workspace to verify that it contains the following items:
     - Your lakehouse.
@@ -410,7 +410,7 @@ In this task, you'll create a report to visualize your data findings. You'll sel
 
 <validation step="478b8d65-837a-4b29-b792-922fe3c10580" />
 
-### Summary
+## Summary
 
 In this exercise, you:
 

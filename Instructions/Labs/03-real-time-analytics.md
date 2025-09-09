@@ -264,7 +264,7 @@ In this task, you will use Delta tables to handle streaming data, leveraging the
 
     >**Note**: This code stops the stream.
 
-### Summary
+## Summary
 
 In this exercise, you:
 - Created a Lakehouse to store and manage structured data.

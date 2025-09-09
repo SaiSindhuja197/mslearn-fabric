@@ -668,7 +668,7 @@ In this task, you will save your notebook with a meaningful name to preserve you
 
     > **Note:** The stop session icon is present next to the **Standard Session** option.
 
-### Summary
+## Summary
 
 In this exercise, you:
 
