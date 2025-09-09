@@ -333,27 +333,27 @@ In this task, you'll create a report to visualize your data findings. You'll sel
     
     ![](./Images/E1T8S1.png)
 
-1. Provide the Direct Lake semantic model name as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and select **sales (2)** table from the list. Click on **Confirm (3)**.
+2. Provide the Direct Lake semantic model name as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and select **sales (2)** table from the list. Click on **Confirm (3)**.
 
     ![](./Images/E1T8S2.png)
 
-1. Go back to the **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** workspace. Select recently created semantic model named as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (2)**
+3. Go back to the **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** workspace. Select recently created semantic model named as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (2)**
 
     ![](./Images/E1T8S3.png)
 
-1. Click on **Open semantic model** to view the table.
+4. Click on **Open semantic model** to view the table.
 
    ![](./Images/E1T8S4.png)
 
-1. Once the model is opened, the **sales** table will appear.
+5. Once the model is opened, the **sales** table will appear.
 
    ![](./Images/E1T8S5.png)
 
-1. Switch to editing mode. In the top menu bar, select the **File (1)** tab. Then select **Create new report (2)**.
+6. Switch to editing mode. In the top menu bar, select the **File (1)** tab. Then select **Create new report (2)**.
 
     ![](./Images/E1T8S6.png)
 
-1. In the **Data** pane on the right, expand the **sales** table. Then select the following fields:
+7. In the **Data** pane on the right, expand the **sales** table. Then select the following fields:
    
    - **Item (1)**
    - **Quantity (2)**
@@ -361,19 +361,19 @@ In this task, you'll create a report to visualize your data findings. You'll sel
 
       ![Screenshot of a report containing a table.](./Images/E1T8S4-1108.png)
    
-1. Hide the **Data** and **Filters** panes to create more space if required. Then, make sure the **Table visualization is selected (1)** and in the **Visualizations** pane, change the visualization to a **Clustered bar chart (2)** and resize it as shown here.
+8. Hide the **Data** and **Filters** panes to create more space if required. Then, make sure the **Table visualization is selected (1)** and in the **Visualizations** pane, change the visualization to a **Clustered bar chart (2)** and resize it as shown here.
 
       ![Screenshot of a report containing a clustered bar chart.](./Images/E2-T7-S5.png)
 
       ![Screenshot of a report containing a clustered bar chart.](./Images/E2-T7-S5a.png)
 
-1. On the **File (1)** menu, select **Save As (2)**. Then, name the Report as **Item Sales Report (3)** and click **Save (4)** in the workspace you created previously.
+9. On the **File (1)** menu, select **Save As (2)**. Then, name the Report as **Item Sales Report (3)** and click **Save (4)** in the workspace you created previously.
 
       ![](./Images/Lake25.png)
    
       ![](./Images/Lake26.png)
 
-1. In the hub menu bar on the left, select your workspace to verify that it contains the following items:
+10. In the hub menu bar on the left, select your workspace to verify that it contains the following items:
     - Your lakehouse.
     - The SQL endpoint for your lakehouse.
     - A default dataset for the tables in your lakehouse.
