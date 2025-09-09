@@ -25,11 +25,17 @@ In this task, you will create a KQL database to facilitate querying of static or
 
     ![](./Images/Real1.png)
 
-1. Create a new **Eventhouse** with the name **Eventhouse-<inject key="DeploymentID" enableCopy="false"/>**.
+1. Create a new **Eventhouse** with the name **Eventhouse-<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Create (2)**.
+
+    ![](./Images/e3t1p3.png)
+
+1. In the **Welcome to Eventhouse!** pop-up, click **Get started**.
+
+    ![](./Images/e3t1p4.png)
 
 1. Once the Eventhouse is created, in the settings pane, click **+ Database** from the top menu for the **KQL Databases**.
 
-   ![](./Images/database.png)
+   ![](./Images/e3t1p5.png)
 
 1. Enter the following details:
 
@@ -49,20 +55,20 @@ In this task, you will create a KQL database to facilitate querying of static or
         - **Database:** *The database you created is already selected*
         - **Table:** Click on **+ New table**.
         - **Name:**  **sales (1)**.
-        - **Upload files:** Drag or Browse for the file from **C:\LabFiles\Files\sales.csv (2)**
+        - **Upload files:** Drag or Browse for the file from **`C:\LabFiles\Files\sales.csv` (2)**
         - Click **Next (3)**
 
             ![01](./Images/fabric17.png)
 
     - **Inspect:** Preview the data, enable **First row header (1)** and click on **Finish (2)**.
 
-      ![01](./Images/Real3.png)
+        ![](./Images/e3t1p7.png)
     
     - **Summary:**
     
         - Review the preview of the table and close the wizard.
 
-            ![01](./Images/fabric19.png)
+            ![](./Images/e3t1p8.png)
     
     > **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
 
@@ -70,7 +76,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
 In this task, you will use Kusto Query Language (KQL) to query the sales table in your KQL database. With the data now available, you can write KQL code to extract insights and perform analysis on the sales data.
 
-1. Make sure you have the **sales** table highlighted. Click on **sales Elipsis ... (1)** table, select the **Query with code (2)** drop-down, and from there select **Show any 100 records (3)**.
+1. Make sure you have the **sales** table highlighted. Click on **sales Ellipsis (...) (1)** table, select the **Query with code (2)** drop-down, and from there select **Show any 100 records (3)**.
 
     ![](./Images/Real4.png)
 
@@ -83,7 +89,7 @@ In this task, you will use Kusto Query Language (KQL) to query the sales table i
    | where Item == 'Road-250 Black, 48'
     ```
 
-1. Run the query. Then review the results, which should contain only the rows for sales orders for the *Road-250 Black, 48* product.
+1. **Run** the query. Then review the results, which should contain only the rows for sales orders for the *Road-250 Black, 48* product.
 
     ![](./Images/E4-T2-S4.png)
    
@@ -95,7 +101,9 @@ In this task, you will use Kusto Query Language (KQL) to query the sales table i
    | where datetime_part('year', OrderDate) > 2020
     ```
 
-1. Run the query and review the results, which should contain only sales orders for *Road-250 Black, 48* made after 2020.
+1. **Run** the query and review the results, which should contain only sales orders for *Road-250 Black, 48* made after 2020.
+
+    ![](./Images/e3t2p6.png)
 
 1. Modify the query as follows:
 
@@ -106,11 +114,13 @@ In this task, you will use Kusto Query Language (KQL) to query the sales table i
    | sort by Item asc
     ```
 
-1. Run the query and review the results, which should contain the total net revenue for each product between January 1st and December 31st 2020, in ascending order of product name.
+1. **Run** the query and review the results, which should contain the total net revenue for each product between January 1st and December 31st 2020, in ascending order of product name.
+
+    ![](./Images/e3t2p8.png)
 
 1. From the top left corner select the **KQL-Database<inject key="DeploymentID" enableCopy="false"/> (1)** and rename it to **Revenue by Product (2)**.
 
-    ![](./Images/E4-T2-S9.png)
+    ![](./Images/e3t2p9.png)
 
 ## Task 3: Create a Power BI report from a KQL Queryset
 
@@ -128,7 +138,7 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
 
     ![Screenshot of a report from a KQL query.](./Images/update3.png)
 
-1. In the **Power BI** window, in the **File** menu, select **Save**. Then save the report as **Revenue by Item** in the fabric-<inject key="DeploymentID" enableCopy="false"/> where your lakehouse and KQL database are defined using a **Non-Business** sensitivity label from the drop-down. Click on **Continue**
+1. In the **Power BI** window, in the **File** menu, select **Save**. Then save the report as **Revenue by Item** in the **fabric-<inject key="DeploymentID" enableCopy="false"/>** where your lakehouse and KQL database are defined using a **Non-Business** sensitivity label from the drop-down. Click on **Continue**
 
     >**Note:** If you are not getting option to **Save** the report in the **fabric-<inject key="DeploymentID" enableCopy="false"/>** then follow the below steps:
 
@@ -148,7 +158,7 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
        
          ![](./Images/41.png)
 
-    >**Note**: Refresh the Workspace page if necessary to view all of the items it contains.
+        >**Note**: Refresh the Workspace page if necessary to view all of the items it contains.
 
 1. In the list of items in your workspace, note that the **Revenue by Item** report is listed.
 
@@ -195,7 +205,7 @@ In this task, you will use Delta tables to handle streaming data, leveraging the
    print("Source stream created...")
    ```
 
-1. Ensure the message *Source stream created...* is printed. The code you just ran has created a streaming data source based on a folder to which some data has been saved, representing readings from hypothetical IoT devices.
+1. Ensure the message **Source stream created...** is printed. The code you just ran has created a streaming data source based on a folder to which some data has been saved, representing readings from hypothetical IoT devices.
 
 1. Add a new code cell, and run the following code:
 
@@ -264,3 +274,5 @@ In this exercise, you:
 - Used the query set as the data source for a Power BI report to visualize the results.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
+
+![05](./Images/nextpage(1).png)

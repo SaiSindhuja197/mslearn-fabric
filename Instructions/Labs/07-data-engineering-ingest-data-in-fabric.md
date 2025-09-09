@@ -3,8 +3,12 @@
 ### Estimated Duration: 30 Minutes
 
 In the exercise, you'll create a simple data pipeline to bring in customer sales data. You are using the KiZAN Fabric Tenant - where we have Copilot enabled, demonstrate doing the same thing, but by using a new Data Flow Gen2 and leveraging the native integration of Copilot to use natural language to ingest and transform your data.
-   
-## Create New - Dataflow Gen2
+
+## Lab objectives
+
+- Task 1: Create New - Dataflow Gen2
+
+## Task 1: Create New - Dataflow Gen2
 
 In this task, you’ll create a **Dataflow Gen2** in Microsoft Fabric, import a CSV file using Power Query, and use **Copilot** to clean and transform the data. You'll split the "Item" column into Description, Color, and Size fields, and apply logic to increase the quantity of red bikes. The lab highlights the ease of using **Visual Query** for basic tasks and the power of **M-Code** for advanced data transformations.
 
@@ -14,11 +18,11 @@ In this task, you’ll create a **Dataflow Gen2** in Microsoft Fabric, import a 
 
    ![New dataflow.](./Images/Inj2.png)
 
-1. After a few seconds, the Power Query editor for your new dataflow opens as shown below.
+1. After a few seconds, the Power Query editor for your new dataflow will open. From there, select **Import from a Text/CSV file**.
 
-   ![New dataflow.](./Images/new-dataflow.png)
+   ![New dataflow.](./Images/e5t1p2.png)
 
-1. Select **Import from a Text/CSV file**, and create a new data source with the following settings:
+1. Create a new data source with the following settings:
 
    - **Link to file (1):** *Selected*
    - **File path or URL (2):** `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv`
@@ -28,11 +32,11 @@ In this task, you’ll create a **Dataflow Gen2** in Microsoft Fabric, import a 
    - **Authentication kind (6):** Anonymous
    - Click **Next (7)**.
 
-      ![New dataflow.](./Images/Inj3.png)
+      ![New dataflow.](./Images/e5t1p3.png)
 
 1. On **Preview file data** page, Click on **Create**.
 
-   ![New dataflow.](./Images/30.png)
+   ![New dataflow.](./Images/e5t1p4.png)
 
 1. Click **Copilot** button on Ribbon. 
 
@@ -40,25 +44,25 @@ In this task, you’ll create a **Dataflow Gen2** in Microsoft Fabric, import a 
    
    > Note: If you are unable to locate Copilot, click Expand Ribbon in the top-right corner.
    
-   ![New dataflow.](./Images/cop-1.png)
+   ![New dataflow.](./Images/e5t1p5.png)
 
 1. To give you a clearer view of everything Copilot is doing, expand the UI slightly to reveal what’s happening behind the scenes.
 
 1. Expand **Query Settings** (these are the steps in the query that bring in the data)
    
-   ![New dataflow.](./Images/cop-2.png)
+   ![New dataflow.](./Images/e5t1p7.png)
 
 1. **View menu**: Look for the option or menu labeled "View" in the toolbar or menu bar. Click on it to reveal a dropdown menu.
 
-   ![New dataflow.](./Images/cop-3.png)
+   ![New dataflow.](./Images/e5t1p8.png)
 
 1. **Diagram View**: From the dropdown menu, select "Diagram View." This will switch your view to a visual representation of your code.
 
-   ![New dataflow.](./Images/cop-4.png)
+   ![New dataflow.](./Images/e5t1p9.png)
 
 1. **Script View**: Once you're in Script View, you should be able to see the M-Code that Copilot has generated. This is the underlying code representation of the actions or commands depicted in the Diagram View.
 
-   ![New dataflow.](./Images/Inj4.png)
+   ![New dataflow.](./Images/e5t1p9.png)
 
 1. Looking at the data… Notice the Item Column.
 
@@ -125,4 +129,6 @@ In this exercise, you:
 - Built and trained a machine learning model using Scikit-Learn.
 - Utilized MLflow to track experiments, including model parameters, metrics, and performance outcomes.
 
-## You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
+
+![05](./Images/nextpage(1).png)

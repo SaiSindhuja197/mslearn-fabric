@@ -59,6 +59,8 @@ In this task, you will create a Fabric workspace. The workspace will contain all
     - Click **Apply (5)** to create and open the workspace.
  
       ![alt text](image-1.png)
+
+1. In the **Introducing task flows (preview)** window, click **Got it**.
       
 ## Task 3: Create a Lakehouse
 
@@ -84,11 +86,11 @@ In this task, switch to the Data engineering experience and create a new Lakehou
 
 1. Enter the **Name** as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and click on **Create (2)**.
 
-    ![](./Images/Lake3.png)
+    ![](./Images/ex1t3p4.png)
 
 1. On the **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** tab in the left pane, click the **Ellipsis (...) (1)** menu for the **Files** node, click on **New subfolder (2)**.
     
-    ![](./Images/lake4.png)
+    ![](./Images/ex1t3p5.png)
 
 1. Enter a Folder name as **new_data (1)** and click on **Create (2)**.
 
@@ -196,7 +198,7 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
     ![](./Images/E2-T4-S1.png) 
 
-1. In the workspace, click on **+ New Item (1)**. In the New item panel, search for **Notebook (2)** and select **Notebook (3)**.
+1. In the workspace, click on **+ New Item (1)**. In the New item panel, search for **notebook (2)** and select **Notebook (3)**.
 
     ![03](./Images/ex1t5p2.png)
 
@@ -210,7 +212,7 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
  
 1. Select the previously created **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** then click **Continue (2)**.
  
-    ![](./Images/Lake17.png) 
+    ![](./Images/ex1t5p5.png) 
 
 1. Select the existing cell in the notebook, clear the default code, and replace it with the **variable declaration (1)** below. Then click **&#9655; Run (2)** to execute the cell.
 
@@ -419,3 +421,5 @@ In this exercise, you:
 - Observed that these tables are automatically included in a default dataset, enabling seamless data visualization.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
+
+![05](./Images/nextpage(1).png)

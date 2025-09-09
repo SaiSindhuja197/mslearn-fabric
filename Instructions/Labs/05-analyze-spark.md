@@ -42,9 +42,15 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
     ![](./Images/Spark3.png)
 
+    ![](./Images/e7t1p4.png)
+
+    ![](./Images/e7t1p5.png)
+
+    ![](./Images/e7t1p6.png)
+
 1. After the files have been uploaded, expand **Files** and select the **orders** folder; and verify that the CSV files have been uploaded, as shown here:
 
-    ![Screenshot of uploaded files in a lakehouse.](./Images/uploaded-files.png)
+    ![](./Images/e7t1p7.png)
 
 ## Task 2: Create a notebook
 
@@ -79,6 +85,8 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
 
    Use the code in this notebook to explore sales order data.
     ```
+
+    ![](./Images/e7t1p8.png)
 
 1. Click anywhere in the notebook outside of the cell to exit editing mode and view the rendered markdown.
 
@@ -117,6 +125,8 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
     | 1 | SO43704 | 1 | 2019-07-01 | Julio Ruiz | julio1@adventure-works.com | Mountain-100 Black, 48 | 1 | 3374.99 | 269.9992 |
     | 2 | SO43705 | 1 | 2019-07-01 | Curtis Lu | curtis9@adventure-works.com | Mountain-100 Silver, 38 | 1 | 3399.99 | 271.9992 |
     | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+
+    ![](./Images/e7t3p5.png)
 
 1. The output shows the rows and columns of data from the 2019.csv file. However, note that the column headers don't look right. The default code used to load the data into a dataframe assumes that the CSV file includes the column names in the first row, but in this case, the CSV file just includes the data with no header information.
 
@@ -200,6 +210,8 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
 1. Run the modified code cell and review the output, which should now include sales for 2019, 2020, and 2021.
 
+    ![](./Images/e7t3p15.png)
+
     >**Note:** Only a subset of the rows is displayed, so you may not be able to see examples from all years.
 
 ## Task 4: Explore data in a dataframe
@@ -235,6 +247,8 @@ In this task, you will explore data within a dataframe to gain insights and unde
 
 1. Run the modified code to view the customers who have purchased the *Road-250 Red, 52* product. Note that you can "chain" multiple functions together so that the output of one function becomes the input for the next - in this case, the dataframe created by the **select** method is the source dataframe for the **where** method that is used to apply filtering criteria.
 
+    ![](./Images/e7t4p1.png)
+
 ## Task 5: Aggregate and group data in a dataframe
 
 In this task, you will aggregate and group data within a dataframe to summarize information and extract meaningful insights. This process involves applying functions to organize the data based on specific criteria, allowing for easier analysis and reporting.
@@ -259,11 +273,13 @@ In this task, you will aggregate and group data within a dataframe to summarize 
 
 1. Run the code cell you added, and note that the results show the number of sales orders per year. Note that the **select** method includes an SQL **year** function to extract the year component of the *OrderDate* field (which is why the code includes an **import** statement to import functions from the Spark SQL library). It then uses an **alias** method to assign a column name to the extracted year value. The data is then grouped by the derived *Year* column, and the count of rows in each group is calculated before finally the **orderBy** method is used to sort the resulting dataframe.
 
+    ![](./Images/e7t5p4.png)
+
 ## Task 6: Use Spark to transform data files
 
 In this task, you will use Spark to transform data files into a desired format for analysis and processing. This involves ingesting data in specific structures and applying transformations, a common responsibility for data engineers, to prepare the data for downstream applications.
 
-#### Use dataframe methods and functions to transform data
+### Use dataframe methods and functions to transform data
 
 1. Add a new code cell to the notebook, and enter the following code in it:
 
@@ -290,6 +306,8 @@ In this task, you will use Spark to transform data files into a desired format f
 
 1. Review the output and verify that the transformations have been made to the data.
 
+    ![](./Images/e7t6p1.png)
+
 1. You can use the full power of the Spark SQL library to transform the data by filtering rows, deriving, removing, renaming columns, and applying any other required data modifications.
 
     > **Tip:** See the [Spark dataframe documentation](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) to learn more about the methods of the Dataframe object.
@@ -307,7 +325,7 @@ In this task, you will use Spark to transform data files into a desired format f
 
 1. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and select the **transformed_data** folder to verify that it contains a new folder named **orders**, which in turn contains one or more Parquet files.
 
-    ![Screenshot of a folder containing parquet files.](./Images/saved-parquet.png)
+    ![](./Images/e7t6p2.png)
 
 1. Add a new cell with the following code to load a new dataframe from the parquet files in the **transformed_orders/orders** folder:
 
@@ -329,7 +347,7 @@ In this task, you will use Spark to transform data files into a desired format f
 
 1. Run the cell and wait for the message that the data has been saved. Then, in the **Explorer** pane on the left, in the **...** menu for the **Files** node, select **Refresh**; and expand the **partitioned_data** folder to verify that it contains a hierarchy of folders named **Year=*xxxx***, each containing folders named **Month=*xxxx***. Each month's folder contains a parquet file with the orders for that month.
 
-    ![Screenshot of a hierarchy of partitioned data files.](./Images/partitioned-files.png)
+    ![](./Images/e7t6p3.png)
 
 1. Partitioning data files is a common way to optimize performance when dealing with large volumes of data. This technique can significantly improve performance and make it easier to filter data.
 
@@ -375,9 +393,13 @@ Tables in a Spark metastore are relational abstractions over files in the data l
 
 1. In the **Explorer** pane, in the **...** menu for the **Tables** folder, select **Refresh**. Then expand the **Tables** node and verify that the **salesorders** table has been created.
 
-    ![Screenshot of the salesorder table in Explorer.](./Images/table-view.png)
+    ![](./Images/e7t7p1.png)
 
-1. Right click on the **salesorders** table, select **Load data** > **Spark**. A new code cell containing code similar to the following example is added to the notebook:
+1. Right click on the **salesorders (1)** table, select **Load data (2)** > **Spark (3)**.
+
+    ![](./Images/e7t7p2.png)
+
+1. A new code cell containing code similar to the following example is added to the notebook:
 
     ```Python
    df = spark.sql("SELECT * FROM [your_lakehouse].salesorders LIMIT 1000")
@@ -388,7 +410,7 @@ Tables in a Spark metastore are relational abstractions over files in the data l
      
 1. Run the new code, which uses the Spark SQL library to embed a SQL query against the **salesorder** table in PySpark code and load the results of the query into a dataframe.
 
-#### Run SQL code in a cell
+### Run SQL code in a cell
 
 While it's useful to be able to embed SQL statements into a cell containing PySpark code, data analysts often just want to work directly in SQL.
 
@@ -414,7 +436,7 @@ While it's useful to be able to embed SQL statements into a cell containing PySp
 
 In this task, you will visualize data using Spark to enhance understanding and insights through graphical representation. While Fabric notebooks offer a basic chart view for data from dataframes or Spark SQL queries, you can utilize Python graphics libraries like **matplotlib** and **seaborn** for more comprehensive and customized charting.
 
-#### View results as a chart
+### View results as a chart
 
 1. Add a new code cell to the notebook, and enter the following code in it:
 
@@ -427,7 +449,7 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
 1. We need to change the view from table to chart in the results section beneath the cell.  Click on **+ New chart**.
 
-   ![](./Images/updated_chart.png) 
+   ![](./Images/e7t8p1.png) 
 
 1. Use the **Build my own** button at the bottom right of the suggested charts. Then set the options as follows.
     - **Chart type (1):** Bar chart
@@ -436,12 +458,11 @@ In this task, you will visualize data using Spark to enhance understanding and i
     - **Series Group:** *leave blank*
     - **Aggregation (4):** Sum
     - **Stacked:** *Unselected*
+    - Verify that the chart looks similar to this:
 
-    Verify that the chart looks similar to this:
-
-    ![](./Images/Spark6.png)
+        ![](./Images/e7t8p2.png)
     
-    ![](./Images/Spark7.png)
+        ![](./Images/e7t8p3.png)
 
 
 ### Get started with **matplotlib**
@@ -506,6 +527,8 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
 1. Re-run the code cell and view the results. The chart now includes a little more information.
 
+    ![](./Images/e7t8p4.png)
+
 1. A plot is technically contained within a **Figure**. In the previous examples, the figure was created implicitly for you, but you can create it explicitly.
 
 1. Modify the code to plot the chart as follows:
@@ -534,6 +557,8 @@ In this task, you will visualize data using Spark to enhance understanding and i
     ```
 
 1. Re-run the code cell and view the results. The figure determines the shape and size of the plot. A figure can contain multiple subplots, each on its own *axis*.
+
+    ![](./Images/e7t8p5.png)
 
 1. Modify the code to plot the chart as follows:
 
@@ -565,6 +590,8 @@ In this task, you will visualize data using Spark to enhance understanding and i
 
 1. Re-run the code cell and view the results. The figure contains the subplots specified in the code.
 
+    ![](./Images/e7t8p6.png)
+
     > **Note:** To learn more about plotting with matplotlib, see the [matplotlib documentation](https://matplotlib.org/).
 
 ### Use the **seaborn** library
@@ -586,6 +613,8 @@ While **matplotlib** enables you to create complex charts of multiple types, it 
 
 1. Run the code and observe that it displays a bar chart using the seaborn library.
 
+    ![](./Images/e7t8p7.png)
+
 1. Modify the code as follows:
 
     ```Python
@@ -604,6 +633,8 @@ While **matplotlib** enables you to create complex charts of multiple types, it 
 
 1. Run the modified code and note that seaborn enables you to set a consistent color theme for your plots.
 
+    ![](./Images/e7t8p8.png)
+
 1. Modify the code again as follows:
 
     ```Python
@@ -618,6 +649,8 @@ While **matplotlib** enables you to create complex charts of multiple types, it 
     ```
 
 1. Run the modified code to view the yearly revenue as a line chart.
+
+    ![](./Images/e7t8p9.png)
 
     > **Note:** To learn more about plotting with seaborn, see the [seaborn documentation](https://seaborn.pydata.org/index.html).
 
@@ -649,3 +682,5 @@ In this exercise, you:
 - Saved the notebook and ended the Spark session.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
+
+![05](./Images/nextpage(1).png)

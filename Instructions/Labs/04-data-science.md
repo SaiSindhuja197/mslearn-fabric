@@ -21,13 +21,19 @@ You will be able to complete the following tasks:
 
 In this task, you will create a lakehouse and upload files to facilitate data storage and analysis. Using the same workspace, you'll switch to the *Data Science* experience in the portal to manage and utilize the data effectively.
 
-1. In the left pane, navigate back to your lakehouse, and in the **Ellipsis ... (1)** menu for the **Files** node in the **Explorer** pane, select **Upload (2)** and **Upload files (3)**. 
+1. In the left pane, go back to your Lakehouse. In the **Explorer** pane, open the **Ellipsis (…) (1)** menu next to the **Files** node, then choose **Upload (2)** > **Upload files (3)**. 
 
    ![](./Images/Pg6-S1.png)
 
-1. Navigate to **C:\LabFiles\Files\churn.csv (1)**, select the **churn.csv (2)** file and click on **Open (3)** then click on **Upload**.   
+1. Click on the **folder** icon.
 
-   ![](./Images/Pg6-S2.png)
+    ![](./Images/e4t1p2.png)
+
+1. Navigate to **`C:\LabFiles\Files` (1)**, select the **churn.csv (2)** file and click on **Open (3)** and then click on **Upload**.   
+
+    ![](./Images/Pg6-S2.png)
+
+    ![](./Images/e4t1p2(1).png)
 
 1. After the files have been uploaded, expand **Files** and verify that the CSV file has been uploaded.
 
@@ -37,13 +43,13 @@ In this task, you will create a lakehouse and upload files to facilitate data st
 
 In this task, you will create a notebook to facilitate model training and experimentation. Notebooks offer an interactive environment where you can write and execute code in multiple languages, allowing you to conduct experiments effectively.
 
-1. From the left pane, select the workspace **Fabric-<inject key="DeploymentID" enableCopy="false"/>**.
+1. From the left pane, select the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>**.
 
-    ![](./Images/E2-T4-S1.png) 
+    ![](./Images/e4t2p1.png) 
 
 2. In the workspace, click on **+ New Item (1)**. In the New Item panel, search for **Notebook (2)** and select **Notebook (3)**.
 
-    ![](./Images/E2-T4-S2.png) 
+    ![](./Images/e4t2p2.png) 
 
 1. After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
 
@@ -67,21 +73,21 @@ In this task, you will load data into a dataframe to prepare for model training.
 
 1. In the Explorer pane, click **Add data items (1)** drop-down and select **Existing data sources (2)** from the drop-down.
 
-    ![](./Images/adddataitem.png)  
+    ![](./Images/e4t3p1.png) 
 
 1. Select the lakehouse named **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Connect (2)**.
  
-    ![](./Images/Sci1.png) 
+    ![](./Images/e4t3p2.png)
 
 1. Once after connecting to the existing lakehouse, we should be able to see the **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** under **Data Items**.
    
-   ![](./Images/E5T3S3.png)
+   ![](./Images/e4t3p3.png)
 
 1. Click the **Files (1)** folder so that the CSV file is listed next to the notebook editor.
 
 1. Right click on **churn.csv (2)**, and click on **Load data (3)** and then select **Pandas (4)**.
 
-    ![](./Images/E5T3S5.png)
+    ![](./Images/e4t3p4.png)
 
 1.  A new code cell containing the following code should be added to the notebook:
 
@@ -222,9 +228,9 @@ In this task, you will use MLflow to search for and view your experiments relate
 
 In this task, you will explore your experiments in Microsoft Fabric, which tracks all your training activities. The platform allows for visual exploration of these experiments, enabling you to analyze and compare results effectively.
 
-1. In the left pane, navigate to your **Fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, you will see the **experiment-churn (2)** Experiment created.
+1. In the left pane, navigate to your **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**, you will see the **experiment-churn (2)** Experiment created.
 
-   ![](./Images/Pg6-ExpChurn-S1.png)
+    ![](./Images/e4t6p1.png)
 
 1. Select the `experiment-churn` experiment to open it.
 
@@ -271,7 +277,7 @@ In this task, you will save the best-performing machine learning model after com
 
 1. Scroll right to see the Save as model option. Under the **Save run as an ML model (3)** box, select **Save (4)**.
 
-   ![](./Images/Note2.png)
+   ![](./Images/e4t7p3.png)
 
 1. Select **Create a new model (1)** in the newly opened pop-up window.
 
@@ -287,15 +293,17 @@ In this task, you will save the best-performing machine learning model after com
 
 In this task, you will save your notebook with a meaningful name to preserve your work after training and evaluating the models. Additionally, you will end the Spark session to free up resources and finalize your data processing environment.
 
-1. Select the notebook that you created. In the notebook menu bar.
+1. Select the notebook that you created. 
 
    ![](./Images/Note4.png)
 
-2. Click on the ⚙️ **Settings (1)** icon to view the notebook settings, and Set the **Name** of the notebook to **Train and compare models notebook (2)**, and then close the settings pane.
+2. In the notebook menu bar. Click on the ⚙️ **Settings (1)** icon to view the notebook settings, and Set the **Name** of the notebook to **Train and compare models notebook (2)**, and then close the settings pane.
 
-    ![](./Images/nb-2.png)
+    ![](./Images/e4t8p2.png)
 
 1. On the notebook menu, select &#9645;**Stop session** to end the Spark session.
+
+    ![](./Images/Spark9.png)
 
    >**Note:** If you can't see the **Stop Session** option, it means the Spark session has already ended.
 
@@ -308,3 +316,5 @@ In this exercise, you:
 - Used MLflow to track the model’s performance, including metrics and parameters.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
+
+![05](./Images/nextpage(1).png)

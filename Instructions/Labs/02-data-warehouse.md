@@ -32,7 +32,7 @@ In this task, you will design and implement a data warehouse by organizing data 
 
     - Click on **Create (2)**
 
-    ![01](./Images/lab2-image2.png)
+        ![01](./Images/lab2-image2.png)
 
 > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
 > - If you receive a success message, you can proceed to the next task.
@@ -47,7 +47,7 @@ In this task, you will create database tables by defining their structure with a
 
 1. In your new warehouse, under **Build a warehouse** select the **T-SQL** tile.
 
-   ![](./Images/E3-T2-S1.png)
+   ![](./Images/e2t2p1.png)
 
 1. Enter the following **SQL Code (1)** and click the **&#9655; Run (2)** button to run the SQL script, which creates a new table named **DimProduct** in the **dbo** schema of the data warehouse.
 
@@ -63,13 +63,15 @@ In this task, you will create database tables by defining their structure with a
    GO
     ```
 
-   ![](./Images/E3-T2-S2.png)
+   ![](./Images/e2t2p2.png)
 
 1. Use the **Refresh** button on the toolbar to refresh the view. Then, in the **Explorer** pane, expand **Schemas** > **dbo** > **Tables** and verify that the **DimProduct** table has been created.
 
+    ![](./Images/e2t2p3.png)
+
 1. On the **Home** menu tab, use the **New SQL Query** button and from the drop down select **New SQL Query**  to create a new query, and enter the following INSERT statement:
 
-    ![](./Images/Lake20.png)
+    ![](./Images/e2t2p4.png)
 
     ```SQL
    INSERT INTO dbo.DimProduct
@@ -84,23 +86,27 @@ In this task, you will create database tables by defining their structure with a
 
 1. In the **Explorer** pane, select the **DimProduct** table and verify that the three rows have been added to the table.
 
+    ![](./Images/e2t2p6.png)
+
 1. On the Home menu tab, use the **New SQL Query** button to create a new query for the table.
 
-1. Open the **Lab VM** and navigate to the following path: `C:\LabFiles\Files\`
+1. Open the **Lab VM** and navigate to the following path: `C:\LabFiles\Files\`.
+
+    ![](./Images/e2t2p8.png)
 
 1. Open the file **`create-dw-01.txt`** and copy the Transact-SQL code related to the **`DimProduct`** table.
+
+    ![](./Images/e2t2p9.png)
 
 1. Paste the copied code into the new query window.
 
 1. Next, open the files **`create-dw-02.txt`** and **`create-dw-03.txt`**, one after the other, and copy their contents.
 
-   ![01](./Images/02/Pg4-T2-S7.png)
-
 1. Paste the code from both files **below the existing code** in the **same query window**.
 
 1. Once you have combined the code from all three files into a single query window, click **Run** to execute the query. This will create a basic data warehouse schema and populate it with sample data. The execution should take approximately **30 seconds** to complete.
 
-     ![01](./Images/E3-T2-S8.png)
+     ![01](./Images/e2t2p13.png)
 
 1. Use the **Refresh** button on the toolbar to refresh the view. Then in the **Explorer** pane, verify that the **dbo** schema in the data warehouse now contains the following four tables:
    
@@ -111,7 +117,7 @@ In this task, you will create database tables by defining their structure with a
 
         ![01](./Images/02/Pg4-T2-S9.png)
 
-> **Note:** If the schema takes a while to load, just refresh the browser page.
+        > **Note:** If the schema takes a while to load, just refresh the browser page.
 
 ## Task 3: Define a data model
 
@@ -334,3 +340,5 @@ In this exercise, you
 - Used the enhanced dataset as the source for building a report.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
+
+![05](./Images/nextpage(1).png)

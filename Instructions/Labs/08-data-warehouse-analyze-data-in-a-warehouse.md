@@ -4,7 +4,11 @@
 
 In this exercise, you will analyze data in a warehouse using Fabric Copilot by connecting to your data source, running queries, and visualizing insights to drive informed decision-making. 
 
-## Analyze Data in a Warehouse
+## Lab objectives
+
+- Task 1: Analyze Data in a Warehouse
+
+## Task 1: Analyze Data in a Warehouse
 
 In this task, you’ll explore a **Data Warehouse** in Microsoft Fabric, review table relationships, and understand the **semantic model** used in Power BI. With **Copilot**, you’ll generate a sales report, get insights like **Sales by Region**, and create an **executive summary** demonstrating how AI enhances data analysis and reporting.
 
@@ -127,3 +131,5 @@ In this exercise, you:
 - **Collaborated with team members** to review and discuss the results.
 
 ### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
+
+![05](./Images/nextpage(1).png)
