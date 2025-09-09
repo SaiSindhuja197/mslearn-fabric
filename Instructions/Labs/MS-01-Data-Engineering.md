@@ -353,7 +353,6 @@ In this task, you'll create a report to visualize your data findings. You'll sel
 
     ![](./Images/E1T8S6.png)
 
-
 1. In the **Data** pane on the right, expand the **sales** table. Then select the following fields:
    
    - **Item (1)**
