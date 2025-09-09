@@ -341,9 +341,11 @@ In this task, you'll create a report to visualize your data findings. You'll sel
 
     ![](./Images/E1T8S3.png)
 
-1. Click on **Open semantic model**. The **sales** table will appear.
+1. Click on **Open semantic model** to view the table.
 
    ![](./Images/E1T8S4.png)
+
+1. Once the model is opened, the **sales** table will appear.
 
    ![](./Images/E1T8S5.png)
 
