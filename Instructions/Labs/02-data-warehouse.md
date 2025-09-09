@@ -37,7 +37,7 @@ In this task, you will design and implement a data warehouse by organizing data 
 
 ## Task 2: Create tables and insert data
 
-In this task, you will create database tables by defining their structure with appropriate columns and constraints. Afterwards, you'll insert data into the tables, ensuring it is ready for querying and further operations.
+In this task, you’ll set up the foundation of your data warehouse. You’ll create tables with the right structure, load them with sample data, and then build a semantic model on top of those tables. This model provides a business-friendly layer that makes the warehouse data easier to explore and use in reports.
 
 1. In your new warehouse, under **Build a warehouse** select the **T-SQL** tile.
 

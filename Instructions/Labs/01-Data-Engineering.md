@@ -355,7 +355,7 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
 
 ## Task 8: Create a report
 
-In this task, you'll create a report to visualize your data findings. You'll select relevant data, choose appropriate visuals, and organize the report to clearly present insights and support data-driven decisions.
+In this task, you’ll build a report that transforms raw data into insights. You’ll connect to your semantic model, select key fields, apply the right visualizations, and design a clear, well-structured report. The final output will highlight item sales in a way that supports analysis and decision-making.
 
 1. From the toolbar at the top, select **New semantic model**.
     

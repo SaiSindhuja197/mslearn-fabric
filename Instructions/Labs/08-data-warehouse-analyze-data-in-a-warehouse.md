@@ -38,7 +38,7 @@ In this task, you’ll explore a **Data Warehouse** in Microsoft Fabric, review 
 
    ![](./Images/e6t1p2.png)
 
-1. Click on the **Open semantic model** view allows you to view the relationships between different tables within the data warehouse.
+1. Click **Open semantic model** from the top toolbar to view the relationships between the tables in your data warehouse.
 
     ![](./Images/e2t3p4.png)
 
