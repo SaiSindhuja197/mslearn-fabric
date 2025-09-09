@@ -250,7 +250,6 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
     ![Screenshot of a notebook with a parameters cell and code to transform data.](./Images/E1T5S10-1108.png)
 
-
 1. When the notebook run has completed, click on your  **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** pane on the left, in the **Ellipsis (...) (2)** menu for **Tables** select **Refresh (3)** and verify that a **sales (4)** table has been created.
 
     ![.](./Images/E1T5S12-1108.png)
@@ -259,7 +258,7 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
      ![.](./Images/E1T5S13-1208.png)
  
-1. In the hub menu bar on the left, select your **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>**.  
+1. In the hub menu bar on the left, select your **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** 
 
     ![.](./Images/E1T5S14-1108.png)
 
