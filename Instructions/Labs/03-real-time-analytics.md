@@ -21,7 +21,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
     ![](./Images/Lake2.png)
    
-1. In the All items search for **Eventhouse (1)** and select **Eventhouse (2)** from the list.
+1. In the New item search for **Eventhouse (1)** and select **Eventhouse (2)** from the list.
 
     ![](./Images/Real1.png)
 
@@ -39,13 +39,13 @@ In this task, you will create a KQL database to facilitate querying of static or
 
 1. Enter the following details:
 
-   - **Database Name:** Enter **KQL-Database<inject key="DeploymentID" enableCopy="false"/> (1)**.
+   - **Database Name:** **KQL-Database<inject key="DeploymentID" enableCopy="false"/> (1)**.
 
    - Click on **Create (2)**.
 
      ![](./Images/Real2.png)
 
-1. In the center of the screen, click on **Get data (1)** and then click on **Local file (2)**.
+1. In the center of the screen, click on **Get data (1)** and then select **Local file (2)**.
 
    ![01](./Images/E4T1S4.png)
 
@@ -76,7 +76,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
 In this task, you will use Kusto Query Language (KQL) to query the sales table in your KQL database. With the data now available, you can write KQL code to extract insights and perform analysis on the sales data.
 
-1. Make sure you have the **sales** table highlighted. Click on **sales Ellipsis (...) (1)** table, select the **Query with code (2)** drop-down, and from there select **Show any 100 records (3)**.
+1. Make sure you have the **sales** table highlighted. Click on **sales Ellipsis (...) (1)** table, select the **Query with code (2)**, and from there select **Show any 100 records (3)**.
 
     ![](./Images/Real4.png)
 
@@ -150,7 +150,7 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
 
          ![](./Images/39.png)
 
-    - Click **File** > **Save a copy** to duplicate the Power BI report to your workspace.
+    - Click **File (1)** and then select **Save a copy (2)** to duplicate the Power BI report to your workspace.
          
          ![](./Images/40.png)
 
