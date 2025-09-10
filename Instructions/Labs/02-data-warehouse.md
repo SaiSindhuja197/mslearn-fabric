@@ -27,8 +27,10 @@ In this task, you will design and implement a data warehouse by organizing data 
 1. In the search box, search **Warehouse (1)** and select **Warehouse** **(2)** from the list.
     
     ![](./Images/Data1.png)
-   
-   - **Name:** Enter **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/>** **(1)**
+
+1. In the **New warehouse** window, enter the following:
+
+    - Name: **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/>** **(1)**
 
     - Click on **Create (2)**
 
@@ -113,7 +115,7 @@ In this task, you’ll set up the foundation of your data warehouse. You’ll cr
 
         > **Note:** If the schema takes a while to load, just refresh the browser page.
 
-1. Now from the tool bar on the top, click **New semantic model**.
+1. Now from the toolbar on the top, click **New semantic model**.
 
     ![](./Images/e2t3p1.png)
 
@@ -145,7 +147,7 @@ In this task, you will create a relational data warehouse consisting of fact and
 
     ![](./Images/e2t3p4.png)
 
-1. In the top right corner click on **Viewing (1)** drop-down and select **Editing (2)**.
+1. In the top right corner, click on **Viewing (1)** drop-down and select **Editing (2)**.
 
     ![](./Images/e2t3p5.png)
 
@@ -155,14 +157,14 @@ In this task, you will create a relational data warehouse consisting of fact and
 
 1. Drag the **ProductKey** field from the **FactSalesOrder** table and drop it on the **ProductKey** field in the **DimProduct** table. Then confirm the following relationship details.
    
-    - **From table (1)**: FactSalesOrder
-    - **Column (2)**: ProductKey
-    - **To table (3)**: DimProduct
-    - **Column (4)**: ProductKey
-    - **Cardinality (5)**: Many to one (*:1)
-    - **Cross filter direction (6)**: Single
-    - **Make this relationship active (7)**: Selected
-    - **Assume referential integrity (8)**: Unselected
+    - From table: **FactSalesOrder (1)**
+    - Column: **ProductKey (2)**
+    - To table: **DimProduct (3)**
+    - Column: **ProductKey (4)**
+    - Cardinality: **Many to one (*:1) (5)**
+    - Cross filter direction: **Single (6)**
+    - Make this relationship active: **Selected (7)**
+    - Assume referential integrity: **Unselected (8)**
     - Click **Save (9)**.
 
         ![](./Images/e2t3p7.png)
@@ -216,7 +218,7 @@ In this task, you will query data warehouse tables using SQL to retrieve and ana
    ORDER BY CalendarYear, MonthOfYear, SalesRegion;
     ```
 
-1. Run the modified query and review the results, which now include Sales Revenue aggregated by Year, Month and Sales Region.
+1. **Run** the modified query and review the results, which now include Sales Revenue aggregated by Year, Month and Sales Region.
 
     ![](./Images/e2t3p11.png)
 
@@ -241,7 +243,7 @@ In this task, you will create a view in the data warehouse to encapsulate SQL lo
     ```
     ![](./Images/E3-T5-S1.png)
 
-2. Run the query to create the view. Then refresh the data warehouse schema and verify that the new view is listed in the **Explorer** pane.
+2. **Run** the query to create the view. Then refresh the data warehouse schema and verify that the new view is listed in the **Explorer** pane.
 
     ![](./Images/e2t5p1.png)
 
@@ -257,7 +259,7 @@ In this task, you will create a view in the data warehouse to encapsulate SQL lo
 
 In this task, you will create a visual query using the graphical query designer to query data warehouse tables without writing SQL code. Similar to Power Query online, this no-code approach allows you to perform data transformations, and for more complex tasks, you can leverage Power Query's M language.
 
-1. On the **Home** menu, select **New visual query (2)** from the **New SQL Query (1)** drop-down.
+1. On the **Home** menu, from the **New SQL query (1)** drop-down and select **New visual query (2)**.
 
     ![](./Images/Ware7.png)
 
@@ -319,15 +321,13 @@ In this task, you will visualize your data from a single query or your data ware
 
 1. On the **File (1)** tab, select **Create new report (2)**. This will open a new window, where you can create a Power BI report.
 
-    ![03](./Images/e2t7p3.png)
-
-    > **Note:** Click on **Continue** in the pop-up. 
+    ![03](./Images/e2t7p3.png) 
 
 1. In the **Data** pane, expand **DimProduct**. Note that the columns you hide are no longer visible. 
 
     ![](./Images/Data5.png)
 
-1. Select **Category**. This will add the column to the **Report canvas**. Because the column is a numeric value, the default visual is a **column chart**.
+1. Now select **Category**. This will add the column to the **Report canvas**. Because the column is a numeric value, the default visual is a **column chart**.
 
     ![03](./Images/e2t7p4.png)
 
