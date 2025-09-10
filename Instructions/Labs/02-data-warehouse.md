@@ -65,7 +65,7 @@ In this task, you’ll set up the foundation of your data warehouse. You’ll cr
 
     ![](./Images/e2t2p3.png)
 
-1. On the **Home** menu tab, use the **New SQL Query** button and from the drop down select **New SQL Query**  to create a new query, and enter the following INSERT statement:
+1. On the **Home** menu tab, use the **New SQL Query** button and from the drop-down select **New SQL Query**  to create a new query, and enter the following INSERT statement:
 
     ![](./Images/e2t2p4.png)
 
@@ -115,7 +115,7 @@ In this task, you’ll set up the foundation of your data warehouse. You’ll cr
 
         > **Note:** If the schema takes a while to load, just refresh the browser page.
 
-1. Now from the toolbar on the top, click **New semantic model**.
+1. Now, from the toolbar at the top, click **New semantic model**.
 
     ![](./Images/e2t3p1.png)
 
@@ -218,7 +218,7 @@ In this task, you will query data warehouse tables using SQL to retrieve and ana
    ORDER BY CalendarYear, MonthOfYear, SalesRegion;
     ```
 
-1. **Run** the modified query and review the results, which now include Sales Revenue aggregated by Year, Month and Sales Region.
+1. **Run** the modified query and review the results, which now include Sales Revenue aggregated by Year, Month, and Sales Region.
 
     ![](./Images/e2t3p11.png)
 
@@ -363,6 +363,6 @@ In this exercise, you
 - Enhanced the data model for the default dataset in the data warehouse.
 - Used the enhanced dataset as the source for building a report.
 
-### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
 
 ![05](./Images/nextpage(1).png)
