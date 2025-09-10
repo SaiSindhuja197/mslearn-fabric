@@ -40,17 +40,19 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
         ![](./Images/Spark2.png)
 
-1. Once you're in the lakehouse, navigate to the **Files** folder in the **Explorer** pane, click on the **Ellipses (...) (1)** menu for **Files**, and select **Upload (2)** followed by **Upload folder (3)**. Then, select and upload the **orders** folder located at **C:\LabFiles\Files\orders** to the lakehouse.
+1. Once you're in the lakehouse, navigate to the **Files** folder in the **Explorer** pane, click on the **Ellipses (...) (1)** menu for **Files**, and select **Upload (2)** followed by **Upload folder (3)**. 
 
     ![](./Images/Spark3.png)
 
+1. Then navigate to **`C:\LabFiles\Files\orders` (1)** and click **Upload (2)**.
+   
     ![](./Images/e7t1p4.png)
 
 1. In the **Upload 3 files to this site?** window, click **Upload**.
 
     ![](./Images/e7t1p5.png)
 
-1. In the **Upload folder** after adding the **orders** folder, click **Upload**.
+1. In the **Upload folder** window, after adding the **orders** folder, click **Upload**.
 
     ![](./Images/e7t1p6.png)
 
