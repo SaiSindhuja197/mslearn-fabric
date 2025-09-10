@@ -31,9 +31,11 @@ In this task, you will create a lakehouse and upload files to facilitate data st
 
     ![](./Images/e4t1p2.png)
 
-1. Navigate to **`C:\LabFiles\Files` (1)**, select the **churn.csv (2)** file and click on **Open (3)** and then click on **Upload**.   
+1. Navigate to **`C:\LabFiles\Files` (1)**, select the **churn.csv (2)** file and click on **Open (3)**.   
 
     ![](./Images/Pg6-S2.png)
+
+1. In the Upload files window, click **Upload**.
 
     ![](./Images/e4t1p2(1).png)
 
