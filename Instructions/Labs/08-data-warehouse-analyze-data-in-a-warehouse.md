@@ -138,6 +138,6 @@ In this exercise, you:
 - **Compiled findings into reports** for presentation and decision-making.
 - **Collaborated with team members** to review and discuss the results.
 
-### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
 
 ![05](./Images/nextpage(1).png)
