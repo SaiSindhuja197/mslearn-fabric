@@ -2,6 +2,7 @@
 
 ### Estimated Duration: 90 Minutes
 
+## Overview 
 In this exercise, you'll ingest data into a Microsoft Fabric lakehouse using pipelines and Apache Spark. Pipelines allow you to extract data from external sources and load it into OneLake. Spark enables you to transform the data at scale before storing it in lakehouse tables for analysis. Ensure data is successfully loaded into OneLake before applying transformations.
 
 ## Lab objectives
