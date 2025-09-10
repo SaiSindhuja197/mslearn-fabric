@@ -72,7 +72,7 @@ In this task, switch to the Data engineering experience and create a new Lakehou
 
    ![](./Images/E1T1S1-1.png)
    
-1. In the **Welcome to Fabric view** window, click **Cancel**.
+1. In the **Welcome to the Fabric view** window, click **Cancel**.
 
     ![](./Images/ex1t3p2.png)
 
@@ -92,7 +92,7 @@ In this task, switch to the Data engineering experience and create a new Lakehou
     
     ![](./Images/ex1t3p5.png)
 
-1. Enter a Folder name as **new_data (1)** and click on **Create (2)**.
+1. In the New subfolder window, enter the name as **new_data (1)** and click on **Create (2)**.
 
     ![](./Images/Lake5.png)
 
@@ -123,9 +123,9 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
 1. In the **Connection settings** pane, enter the following settings for the connection to your data source:
     
     - URL: Enter the URL Below **(1)**
-    ```
-    https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv
-    ```
+        ```
+        https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv
+        ```
     - Connection: **Create new connection (2)**
     - Connection name: **Connection<inject key="DeploymentID" enableCopy="false"/> (3)**
     - Authentication kind: **Anonymous (4)**
@@ -194,11 +194,11 @@ In this task, you'll create a pipeline to automate data workflows. Using the Cop
 
 In this task, you'll create a Notebook to document your data analysis. You'll set up the environment, import libraries, and structure your code for exploration, visualization, and insights.
 
-1. From the left pane, select the workspace named **Fabric-<inject key="DeploymentID" enableCopy="false"/>**.
+1. From the left pane, select the workspace named **fabric-<inject key="DeploymentID" enableCopy="false"/>**.
 
     ![](./Images/E2-T4-S1.png) 
 
-1. In the workspace, click on **+ New Item (1)**. In the New item panel, search for **notebook (2)** and select **Notebook (3)**.
+1. In the workspace, click on **+ New Item (1)**. In the New item panel, search for **Notebook (2)** and select **Notebook (3)**.
 
     ![03](./Images/ex1t5p2.png)
 
@@ -206,7 +206,7 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
 1. After a few seconds, a new notebook with a single cell opens. Each notebook consists of code or markdown cells used for running code or adding formatted text.
 
-1. Click **Add data items (1)** drop-down under explorer and select **Existing data source (2)** from the drop-down.
+1. Click **Add data items (1)** drop-down under explorer and select **Existing data sources (2)** from the drop-down.
 
     ![](./Images/E2-T4-S4.png) 
  
@@ -298,7 +298,7 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
 In this task, you'll use SQL to query tables in a database. You'll write statements to retrieve, filter, and manipulate data, helping you analyze the dataset and build your SQL skills.
 
-1. At the top-right of the Lakehouse page,  click on drop-down (1) and switch from **Lakehouse** to **SQL analytics endpoint (2)**. Then wait a short time until the SQL query endpoint for your lakehouse opens in a visual interface from which you can query its tables, as shown here:
+1. At the top-right of the Lakehouse page,  click on **drop-down (1)** and switch from **Lakehouse** to **SQL analytics endpoint (2)**. Then wait a short time until the SQL query endpoint for your lakehouse opens in a visual interface from which you can query its tables, as shown here:
 
     ![03](./Images/ex1t6p1.png)
 
@@ -325,7 +325,7 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
 
     ![](./Images/Ware711.png)
 
-1. In the Lakehouse, navigate to **Schemas**, then to **dbo**, expand the **tables** folder and select the **sales** table. In the sales table, click on **Elipsis &#8230; (1)** or **Right click** and select **Insert into canvas (2)**. It is in the new visual query editor pane that opens to create a Power Query. 
+1. In the Lakehouse, navigate to **Schemas**, then to **dbo**, expand the **tables** folder and select the **sales** table. In the sales table, click on **Ellipsis &#8230; (1)** or **Right click** and select **Insert into canvas (2)**. It is in the new visual query editor pane that opens to create a Power Query. 
 
     ![](./Images/Lake21.png)
 
