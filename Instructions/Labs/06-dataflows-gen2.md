@@ -55,7 +55,7 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
 
    ![](./Images/e8t1p6.png)
 
-1. Duplicate the existing tab. In the left pane, go to the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** Lakehouse, click on the **Ellipsis (...) (2)** next to the **orders** file and then select **Delete (3)**.
+1. Duplicate the existing tab. In the left pane, go to the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** Lakehouse, click on the **Ellipsis (...) (2)** next to the **orders** file, and then select **Delete (3)**.
 
    ![](./Images/e8t1p7.png)
 
@@ -79,7 +79,7 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
 1. On the Destination settings page, observe that **MonthNo** is not selected in the Column mapping, and an informational message is displayed.
  
-1. On the Destination settings page, toggle **off (1)** the **Use Automatic Settings** option. Then, for the **MonthNo** column header and change the **Source Type** to **Whole number (2)**. Now, click on **Save settings (3)**.
+1. On the Destination settings page, toggle **off (1)** the **Use Automatic Settings** option. Then, for the **MonthNo** column header, change the **Source Type** to **Whole number (2)**. Now, click on **Save settings (3)**.
    
    ![Data destination settings page.](./Images/e8t2p2.png)
 
@@ -109,7 +109,7 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 
    ![Empty data pipeline.](./Images/e8t3p1.png)
 
-1. With the new **Dataflow1** activity selected, go to the **Settings (1)** tab in the bottom. In the **Workspace** drop-down list, choose **fabric-<inject key="DeploymentID" enableCopy="false"/> (2)** and in **Dataflow** drop-down list, select **Transform Orders Dataflow (3)** (the data flow you created previously).
+1. With the new **Dataflow1** activity selected, go to the **Settings (1)** tab in the bottom. In the **Workspace** drop-down list, choose **fabric-<inject key="DeploymentID" enableCopy="false"/> (2)** and in the **Dataflow** drop-down list, select **Transform Orders Dataflow (3)** (the data flow you created previously).
 
    ![Empty data pipeline.](./Images/e8t3p2.png)
    
