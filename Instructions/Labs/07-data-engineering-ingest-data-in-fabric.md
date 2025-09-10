@@ -6,6 +6,8 @@ In the exercise, you'll create a simple data pipeline to bring in customer sales
 
 ## Lab objectives
 
+You will be able to complete the following task:
+
 - Task 1: Create New - Dataflow Gen2
 
 ## Task 1: Create New - Dataflow Gen2
@@ -48,7 +50,7 @@ In this task, you’ll create a **Dataflow Gen2** in Microsoft Fabric, import a 
 
 1. To give you a clearer view of everything Copilot is doing, expand the UI slightly to reveal what’s happening behind the scenes.
 
-1. Expand **Query Settings** (these are the steps in the query that bring in the data)
+1. Expand **Query settings** (these are the steps in the query that bring in the data)
    
    ![New dataflow.](./Images/e5t1p7.png)
 
@@ -62,7 +64,7 @@ In this task, you’ll create a **Dataflow Gen2** in Microsoft Fabric, import a 
 
 1. **Script View**: Once you're in Script View, you should be able to see the M-Code that Copilot has generated. This is the underlying code representation of the actions or commands depicted in the Diagram View.
 
-   ![New dataflow.](./Images/e5t1p9.png)
+   ![New dataflow.](./Images/e5t1p10.png)
 
 1. Looking at the data… Notice the Item Column.
 
