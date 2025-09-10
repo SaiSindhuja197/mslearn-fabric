@@ -246,8 +246,6 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
     This code loads the data from the sales.csv file that was ingested by the **Copy Data** activity, applies some transformation logic, and saves the transformed data as a **managed table** - appending the data if the table already exists.
 
-
-
 1. Verify that your notebooks look similar to the one shown in the below image, and then use the **&#9655; Run all** button on the toolbar to run all of the cells it contains.
 
     ![Screenshot of a notebook with a parameters cell and code to transform data.](./Images/E1T5S10-1108.png)
@@ -262,7 +260,6 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
  
 
 1. In the hub menu bar on the left, select your **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** 
-
 
     ![.](./Images/E1T5S14-1108.png)
 
@@ -364,11 +361,9 @@ In this task, you'll create a report to visualize your data findings. You'll sel
    - **Quantity (2)**
    - Then, a **Table visualization (3)** is added to the report.
 
-
         ![Screenshot of a report containing a table.](./Images/E1T8S4-1108.png)
 
   
-   
 8. Hide the **Data** and **Filters** panes to create more space if required. Then, make sure the **Table visualization is selected (1)** and in the **Visualizations** pane, change the visualization to a **Clustered bar chart (2)** and resize it as shown here.
 
    ![Screenshot of a report containing a clustered bar chart.](./Images/E2-T7-S5.png)
