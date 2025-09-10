@@ -6,7 +6,7 @@ In this exercise, you'll analyze data in a Microsoft Fabric data warehouse using
 
 ## Objectives
 
-You will be able to complete the following tasks:
+In this exercise, you will be able to complete the following tasks:
 
 - Task 1: Create a data warehouse
 - Task 2: Create tables and insert data
