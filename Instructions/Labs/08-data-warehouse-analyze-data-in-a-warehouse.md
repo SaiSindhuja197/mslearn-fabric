@@ -2,6 +2,8 @@
 
 ### Estimated Duration: 60 Minutes
 
+## Overview
+
 In this exercise, you will analyze data in a warehouse using Fabric Copilot by connecting to your data source, running queries, and visualizing insights to drive informed decision-making. 
 
 ## Lab objectives
