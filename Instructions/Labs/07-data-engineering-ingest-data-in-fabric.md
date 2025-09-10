@@ -2,6 +2,8 @@
 
 ### Estimated Duration: 30 Minutes
 
+## Overview
+
 In the exercise, you'll create a simple data pipeline to bring in customer sales data. You are using the KiZAN Fabric Tenant - where we have Copilot enabled- demonstrate doing the same thing, but by using a new Data Flow Gen2 and leveraging the native integration of Copilot to use natural language to ingest and transform your data.
 
 ## Lab objectives
