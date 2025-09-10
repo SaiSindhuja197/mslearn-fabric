@@ -6,6 +6,8 @@ In this exercise, you will analyze data in a warehouse using Fabric Copilot by c
 
 ## Lab objectives
 
+You will be able to complete the following task:
+
 - Task 1: Analyze Data in a Warehouse
 
 ## Task 1: Analyze Data in a Warehouse
@@ -54,7 +56,7 @@ In this task, you’ll explore a **Data Warehouse** in Microsoft Fabric, review 
 
     - This linkage is crucial for defining the Semantic Model used by Power BI. The Semantic Model essentially acts as a blueprint that outlines how data elements are interconnected and how they should be interpreted within Power BI. By establishing and defining relationships between tables, we're instructing Power BI on how to navigate and analyze the data effectively.
  
-1. From the **File (2)** menu, select **Create new report (1)**. This creates a new report in Power BI using the semantic model built on the relationships defined in the data warehouse.
+1. From the **File (1)** menu, select **Create new report (2)**. This creates a new report in Power BI using the semantic model built on the relationships defined in the data warehouse.
  
    ![](./Images/e2t7p3.png)
 
@@ -64,7 +66,7 @@ In this task, you’ll explore a **Data Warehouse** in Microsoft Fabric, review 
 
    ![](./Images/13.png)
 
-1. If the pop-up titled **Welcome to Copilot in Power BI** appears, proceed by selecting **Get Started**.
+1. If the pop-up titled **Welcome to Copilot in Power BI** appears, proceed by selecting **Get started**.
 
    ![](./Images/14.png)
 
