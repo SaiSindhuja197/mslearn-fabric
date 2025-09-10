@@ -55,9 +55,6 @@ The architecture for this lab involves several key components of Microsoft Fabri
 - **Apache Spark on Microsoft Fabric:** A distributed computing service for performing large-scale data processing and analytics using Spark clusters.
 - **Dataflow Gen2:** A service for designing and executing advanced data transformation workflows, enabling efficient data integration and processing.
 
-**In this lab, we will use the Fabric trial within a Fabric workspace. The trial offers access to most Fabric features; however, Copilot, private links, and trusted workspace access are not included. ([learn more](https://learn.microsoft.com/en-us/fabric/fundamentals/fabric-trial#overview-of-the-trial-capacity)).**
-
-
 ## Getting Started with the Lab
  
 Welcome to your MS Fabric Foundation for Enterprise Analytics workshop! We've prepared a seamless environment for you to explore and learn about Azure services. Let's begin by making the most of this experience:
@@ -100,7 +97,7 @@ To adjust the zoom level for the environment page, click the A↕ : 100% icon lo
 
 1. In the Lab VM, click on the **Microsoft Edge** browser, which is available on the desktop.
 
-   ![04](./Images/open-az-portal-1108.png)
+   ![04](./Images/GSEdge.png)
 
 1. Copy the **Power BI link** below and open this link in a new tab on the Microsoft Edge Browser.
 

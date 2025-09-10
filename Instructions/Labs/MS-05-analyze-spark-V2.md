@@ -6,7 +6,7 @@ In this exercise, you'll explore big data analytics in Microsoft Fabric using Ap
 
 ## Objectives
 
-You will be able to complete the following tasks:
+In this exercise, you will be able to complete the following tasks:
 
 - Task 1: Create a lakehouse and upload files
 - Task 2: Create a notebook
@@ -403,7 +403,7 @@ Tables in a Spark metastore are relational abstractions over files in the data l
 
    ![](./Images/E5T7.1S5-1208.png)
 
-#### Task 7.2: Run SQL code in a cell
+### Task 7.2: Run SQL code in a cell
 
 While it's useful to be able to embed SQL statements into a cell containing PySpark code, data analysts often just want to work directly in SQL.
 
@@ -432,7 +432,7 @@ While it's useful to be able to embed SQL statements into a cell containing PySp
 
 In this task, you will visualize data using Spark to enhance understanding and insights through graphical representation. While Fabric notebooks offer a basic chart view for data from dataframes or Spark SQL queries, you can utilize Python graphics libraries like **matplotlib** and **seaborn** for more comprehensive and customized charting.
 
-#### Task 8.1: View results as a chart
+### Task 8.1: View results as a chart
 
 1. Add a new code cell in the notebook using **+ Code**. Then, in the new cell, add the following code:
 

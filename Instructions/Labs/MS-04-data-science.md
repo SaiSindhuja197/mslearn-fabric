@@ -6,7 +6,7 @@ In this exercise, you'll build a machine learning workflow in Microsoft Fabric u
 
 ## Objectives
 
-You will be able to complete the following tasks:
+In this exercise, you will be able to complete the following tasks:
 
 - Task 1: Upload files into the lakehouse
 - Task 2: Create a notebook

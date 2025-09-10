@@ -6,7 +6,7 @@ In this exercise, you'll explore real-time analytics in Microsoft Fabric using K
 
 ## Objectives
 
-You will be able to complete the following tasks:
+In this exercise, you will be able to complete the following tasks:
 
 - Task 1: Create a KQL database
 - Task 2: Use KQL to query the sales table

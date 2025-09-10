@@ -6,7 +6,7 @@ In this exercise, you'll ingest data into a Microsoft Fabric lakehouse using pip
 
 ## Objectives
 
-You will be able to complete the following tasks:
+In this exercise, you will be able to complete the following tasks:
 
 - Task 1: Sign up for Microsoft Fabric Trial
 - Task 2: Create a workspace
@@ -363,7 +363,7 @@ In this task, you'll create a report to visualize your data findings. You'll sel
    - **Quantity (2)**
    - Then, a **Table visualization (3)** is added to the report.
 
-      ![Screenshot of a report containing a table.](./Images/E1T8S4-1108.png)
+        ![Screenshot of a report containing a table.](./Images/E1T8S4-1108.png)
    
 1. Hide the **Data** and **Filters** panes to create more space if required. Then, make sure the **Table visualization is selected (1)** and in the **Visualizations** pane, change the visualization to a **Clustered bar chart (2)** and resize it as shown here.
 

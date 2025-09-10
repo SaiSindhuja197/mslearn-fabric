@@ -6,7 +6,7 @@ In this exercise, you'll explore data ingestion and transformation in Microsoft 
 
 ## Objectives
 
-You will be able to complete the following tasks:
+In this exercise, you will be able to complete the following tasks:
 
 - Task 1: Create a Dataflow (Gen2) to ingest data
 - Task 2: Add data destination for Dataflow
@@ -29,7 +29,7 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
    - **Name:** Keep as default **(1)**
    - **Enable Git integration, deployment pipelines, and Public API Scenarios:** Uncheck
 
-      ![](./Images/E6T1S3-1208.png)
+      ![](./Images/E6T1S3.png)
 
    After a few seconds, the Power Query editor for your new dataflow will open.
 
@@ -94,8 +94,8 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
    ![](./Images/E6T2S4-1208.png)
  
-1. On the Destination settings page, toggle **off (1)** the **Use Automatic Settings** option. Then, for the **MonthNo** column header and change the **Source Type** to **Whole number (2)**. Now, click on **Save Settings (3)**.
-   
+1. On the Destination settings page, first **toggle off (1)** the **Use Automatic Settings** option. Next, under the **MonthNo** column header, set the **Source Type** to **Whole Number (2)**. Finally, click **Save Settings (3)** to apply the changes.
+
    ![Data destination settings page.](./Images/E6T2S5-1208.png)
 
 1. Select **Publish** to publish the dataflow. Then wait for the **Dataflow** to be created in the workspace.
