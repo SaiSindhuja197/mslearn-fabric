@@ -2,7 +2,7 @@
 
 ### Estimated Duration: 30 Minutes
 
-In the exercise, you'll create a simple data pipeline to bring in customer sales data. You are using the KiZAN Fabric Tenant - where we have Copilot enabled, demonstrate doing the same thing, but by using a new Data Flow Gen2 and leveraging the native integration of Copilot to use natural language to ingest and transform your data.
+In the exercise, you'll create a simple data pipeline to bring in customer sales data. You are using the KiZAN Fabric Tenant - where we have Copilot enabled- demonstrate doing the same thing, but by using a new Data Flow Gen2 and leveraging the native integration of Copilot to use natural language to ingest and transform your data.
 
 ## Lab objectives
 
@@ -58,7 +58,7 @@ In this task, you’ll create a **Dataflow Gen2** in Microsoft Fabric, import a 
 
    ![New dataflow.](./Images/e5t1p8.png)
 
-1. **Diagram View**: From the dropdown menu, select "Diagram View." This will switch your view to a visual representation of your code.
+1. **Diagram View**: From the drop-down menu, select "Diagram View." This will switch your view to a visual representation of your code.
 
    ![New dataflow.](./Images/e5t1p9.png)
 
@@ -102,7 +102,7 @@ In this task, you’ll create a **Dataflow Gen2** in Microsoft Fabric, import a 
  
    >**Note:** Copilot can do more than transform the table; we can actually change data as well.
 
-1. **Scenario:** If you think Red bikes are going to be a big seller, so you increase the quantity in the Inventory Call out that the quantities for all items are 1.
+1. **Scenario:** If you think Red bikes are going to be a big seller, then you increase the quantity in the Inventory Call out that the quantities for all items are 1.
 
 1. Add a step to type the following query into Copilot:
  
@@ -117,7 +117,7 @@ In this task, you’ll create a **Dataflow Gen2** in Microsoft Fabric, import a 
 1. Here is a concise summary highlighting the impacts of Visual Query and M-Query/M-Code scripting:
 
 1. **Visual Query**:
-   - **Streamlines data exploration**: Visual Query tools offer intuitive interfaces, enabling users to interact with data visually, and facilitating quicker insights without extensive coding.
+   - **Streamlines data exploration**: Visual Query tools offer intuitive interfaces, enabling users to interact with data visually and facilitating quicker insights without extensive coding.
    - **Enhances accessibility**: With Visual Query, users with varying technical expertise can extract insights from data, reducing reliance on specialized programming skills and promoting broader data utilization across teams.
 
 1. **M-Query/M-Code scripting**:
@@ -131,6 +131,6 @@ In this exercise, you:
 - Built and trained a machine learning model using Scikit-Learn.
 - Utilized MLflow to track experiments, including model parameters, metrics, and performance outcomes.
 
-### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
 
 ![05](./Images/nextpage(1).png)
