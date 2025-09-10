@@ -70,7 +70,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
             ![](./Images/e3t1p8.png)
     
-    > **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data; including real-time data from a streaming source such as Azure Event Hubs.
+    > **Note:** In this example, you imported a very small amount of static data from a file, which is fine for this exercise. In reality, you can use Kusto to analyze much larger volumes of data, including real-time data from a streaming source such as Azure Event Hubs.
 
 ## Task 2: Use KQL to query the sales table
 
@@ -142,11 +142,11 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
 
     >**Note:** If you are not getting option to **Save** the report in the **fabric-<inject key="DeploymentID" enableCopy="false"/>** then follow the below steps:
 
-    -  Enter the file name **Revenue by Item** and click **Continue** to save the Power BI report to workspace.
+    -  Enter the file name **Revenue by Item** and click **Continue** to save the Power BI report to the workspace.
 
          ![](./Images/38.png)
 
-    -  The report has been saved successfully, now click on **Open the file in Power BI to view, edit, and get a shareable link** to proceed.
+    -  The report has been saved successfully. Now, click on **Open the file in Power BI to view, edit, and get a shareable link** to proceed.
 
          ![](./Images/39.png)
 
@@ -273,6 +273,6 @@ In this exercise, you:
 - Created a query set based on your KQL analysis.
 - Used the query set as the data source for a Power BI report to visualize the results.
 
-### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
 
 ![05](./Images/nextpage(1).png)
