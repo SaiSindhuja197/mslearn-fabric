@@ -281,7 +281,7 @@ In this task, you will save the best-performing machine learning model after com
 
 1. Select **Create a new model (1)** in the newly opened pop-up window.
 
-1. Select the existing folder **Model (2)** and set the name to **model-churn (3)**, and select **Save (4)**. 
+1. Select the existing folder **model (2)** and set the name to **model-churn (3)**, and select **Save (4)**. 
 
     ![](./Images/Note3.png)
 
