@@ -78,7 +78,7 @@ In this task, you’ll explore a **Data Warehouse** in Microsoft Fabric, review 
 
 1. Recognize that Copilot offers functionalities such as providing suggestions, generating code snippets, and offering explanations. However, it's important to note its limitations, which may include the inability to create certain visualizations or directly modify page layouts.
 
-1. Selecting **What's in my data** prompts Copilot to analyze the semantic model or dataset currently in use.
+1. Selecting **What's in my data?** prompts Copilot to analyze the semantic model or dataset currently in use.
 
    ![](./Images/16.png)
 
