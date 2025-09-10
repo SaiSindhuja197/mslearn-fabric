@@ -102,7 +102,7 @@ In this task, you will load data into a dataframe to prepare for model training.
 
 1. Use the **&#9655; Run cell** button on the left of the cell to run it.
 
-    > **Note:** If the Spark session doesn't start or you get an error, click on **Run all** buttom on the ribbon to restart the Spark session.
+    > **Note:** If the Spark session doesn't start or you get an error, click on the **Run all** button on the ribbon to restart the Spark session.
     
     > **Note:** Since this is the first time you've run any Spark code in this session, the Spark pool must be started. This means that the first run in the session can take a minute or so to complete. Subsequent runs will be quicker.
 
@@ -168,7 +168,7 @@ In this task, you will train a machine learning model to predict customer churn 
 
     >**Note:** If the node fails, attempt to re-run the previous node and then execute the existing node.
 
-1. The code trains a classification model using a Decision Tree Classifier. Parameters, metrics, and artifacts, are automatically logged with MLflow. Additionally, you're logging a parameter called `estimator`, with the value `DecisionTreeClassifier`.
+1. The code trains a classification model using a Decision Tree Classifier. Parameters, metrics, and artifacts are automatically logged with MLflow. Additionally, you're logging a parameter called `estimator`, with the value `DecisionTreeClassifier`.
 
 ## Task 5: Use MLflow to search and view your experiments
 
@@ -297,7 +297,7 @@ In this task, you will save your notebook with a meaningful name to preserve you
 
    ![](./Images/Note4.png)
 
-2. In the notebook menu bar. Click on the ⚙️ **Settings (1)** icon to view the notebook settings, and Set the **Name** of the notebook to **Train and compare models notebook (2)**, and then close the settings pane.
+2. In the notebook menu bar. Click on the ⚙️ **Settings (1)** icon to view the notebook settings, and set the **Name** of the notebook to **Train and compare models notebook (2)**, and then close the settings pane.
 
     ![](./Images/e4t8p2.png)
 
@@ -315,6 +315,6 @@ In this exercise, you:
 - Trained a machine learning model using the Scikit-Learn library.
 - Used MLflow to track the model’s performance, including metrics and parameters.
 
-### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
 
 ![05](./Images/nextpage(1).png)
