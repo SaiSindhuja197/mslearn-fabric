@@ -16,11 +16,13 @@ You will be able to complete the following tasks:
 
 In this task, you will create a Dataflow (Gen2) to efficiently ingest and transform data from multiple sources for analysis. This process streamlines data preparation, enabling you to prepare the data for further processing and insights.
 
-1. In the left pane, on **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** Workspace, click on **+ New item (2)**. In the Search box search for **Dataflow Gen2 (3)** and select **Dataflow Gen2 (4)**. Leave the **Name (5)** as default, **Uncheck (6)** the **Enable Git integration, deployment pipelines and Public API Scenarios** and click on **Create (7)**. After a few seconds, the Power Query editor for your new dataflow will open.
+1. In the left pane, on **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)** Workspace, click on **+ New item (2)**. In the Search box search for **Dataflow Gen2 (3)** and select **Dataflow Gen2 (4)**. 
 
    ![](./Images/Flow1.png)
+
+1. Leave the **Name** as default, **Uncheck (1)** the **Enable Git integration, deployment pipelines and Public API Scenarios** and click on **Create (2)**.
    
-   ![](./Images/Inj211.png)
+   ![](./Images/e8t1p1.png)
 
 1. From the center **Get data** pane, select **Import from a Text/CSV file**.
 
@@ -37,55 +39,57 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
     - **Privacy level: (7)** None
     - Click **Next (8)**
 
-      ![Get data](./Images/Flow4.png)
+      ![](./Images/e8t1p2.png)
 
 1. Preview the file data, and then click **Create** the data source. The Power Query editor shows the data source and an initial set of query steps to format the data, as shown below:
 
-   ![Query in the Power Query editor.](./Images/fabric23.png)
+   ![Query in the Power Query editor.](./Images/e8t1p3.png)
 
 1. Select the **Add column  (1)** tab on the toolbar ribbon. Then, choose **Custom column (2)** and create a new column with Name **MonthNo (3)** and enter the formula **Date.Month([OrderDate]) (4)** in the **Custom column formula** box and then click **OK (5)**.
 
-   ![](./Images/Flow5.png)
+   ![](./Images/e8t1p4.png)
 
-   ![](./Images/fabric24.png)
+   ![](./Images/e8t1p5.png)
 
 1. The step to add the custom column is added to the query, and the resulting column is displayed in the data pane:
 
-   ![Query with a custom column step.](./Images/lak4.png)
+   ![](./Images/e8t1p6.png)
 
-1. Duplicate the existing tab. In the left pane, go to the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/>** Lakehouse, and then delete the **orders** file.
+1. Duplicate the existing tab. In the left pane, go to the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** Lakehouse, click on the **Ellipsis (...) (2)** next to the **orders** file, and then select **Delete (3)**.
+
+   ![](./Images/e8t1p7.png)
 
 ## Task 2: Add data destination for Dataflow
 
 In this task, you’ll add a data destination for the Dataflow to determine where the ingested and transformed data will be stored for future use.
 
-1. In the **Query Settings** in the right pane, click on **+** for Data Destination, then choose **Lakehouse** from the drop-down menu.
+1. In the **Query settings** in the right pane, click on **+ (1)** for Data Destination, then choose **Lakehouse (2)** from the drop-down menu.
 
    ![Empty data pipeline.](./Images/Flow6.png)
 
    >**Note:** If this option is greyed out, you may already have a data destination set. Check the data destination at the bottom of the Query settings pane on the right side of the Power Query editor. If a destination is already set, you can change it using the gear.
 
-1. In the **Connect to data destination** dialog box, make sure **Create a new connection** is selected and the **<inject key="AzureAdUserEmail"></inject>** account is signed in. Click on **Next**.
+1. In the **Connect to data destination** dialog box, make sure **Create a new connection (1)** is selected and the **<inject key="AzureAdUserEmail"></inject> (2)** account is signed in. Click on **Next (3)**.
 
    ![](./Images/Flow7.png)
 
-1. Select the **fabric-<inject key="DeploymentID" enableCopy="false"/>** Workspace. Choose the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** then specify the new table name as **orders (2)**, then click **Next (1)**.
+1. Select the **fabric-<inject key="DeploymentID" enableCopy="false"/>** Workspace. Choose the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** then specify the new table name as **orders (2)**, then click **Next (3)**.
 
-   ![Data destination configuration page.](./Images/fabric26.png)
+   ![Data destination configuration page.](./Images/e8t2p1.png)
 
 1. On the Destination settings page, observe that **MonthNo** is not selected in the Column mapping, and an informational message is displayed.
  
-1. On the Destination settings page, toggle **off (1)** the **Use Automatic Settings** option. Then, for the **MonthNo** column header and change the **Source Type** to **Whole number (2)**. Now, click on **Save Settings (3)**.
+1. On the Destination settings page, toggle **off (1)** the **Use Automatic Settings** option. Then, for the **MonthNo** column header, change the **Source Type** to **Whole number (2)**. Now, click on **Save settings (3)**.
    
-   ![Data destination settings page.](./Images/lak2.png)
+   ![Data destination settings page.](./Images/e8t2p2.png)
+
+1. Click on the **Dataflow 2 (1)** on the top left, and rename the dataflow as **Transform Orders Dataflow (2)**.
+
+   ![](./Images/Flow8.png)
 
 1. Select **Publish** to publish the dataflow. Then wait for the **Dataflow** to be created in the workspace.
 
    ![](./Images/Publish.png)
-
-1. Click on the **Dataflow (1)** on the top left, and rename the dataflow as **Transform Orders Dataflow (2)**.
-
-   ![](./Images/Flow8.png)
 
 ## Task 3: Add a dataflow to a pipeline
 
@@ -101,13 +105,13 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 
    > **Note:** If the Copy Data wizard opens automatically, close it!
 
-1. Select **pipeline activity (1)**, and select **Dataflow (2)** activity to the pipeline.
+1. Select **Pipeline activity (1)**, and select **Dataflow (2)** activity to the pipeline.
 
-   ![Empty data pipeline.](./Images/L7T3S2.png)
+   ![Empty data pipeline.](./Images/e8t3p1.png)
 
-1. With the new **Dataflow1** activity selected, go to the **Settings (1)** tab in the bottom. In the **Workspace** drop-down list, choose **fabric-<inject key="DeploymentID" enableCopy="false"/> (2)** and in **Dataflow** drop-down list, select **Transform Orders Dataflow (3)** (the data flow you created previously).
+1. With the new **Dataflow1** activity selected, go to the **Settings (1)** tab in the bottom. In the **Workspace** drop-down list, choose **fabric-<inject key="DeploymentID" enableCopy="false"/> (2)** and in the **Dataflow** drop-down list, select **Transform Orders Dataflow (3)** (the data flow you created previously).
 
-   ![Empty data pipeline.](./Images/L9T3S3.png)
+   ![Empty data pipeline.](./Images/e8t3p2.png)
    
 1. **Save** the pipeline from the top left corner.
 
@@ -127,7 +131,7 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 
    >**Note:** You might have to refresh the browser to get the expected output.
 
-### Summary
+## Summary
 
 In this exercise, you:
 
@@ -139,4 +143,4 @@ In this exercise, you:
 
 Congratulations on completing this lab. By completing this lab, you’ve gained hands-on experience across key components of **Microsoft Fabric**, from setting up collaborative **workspaces** to ingesting, transforming, and analyzing data using tools like **Dataflows**, **Pipelines**, **Notebooks**, **Copilot**, and **Apache Spark**. You explored data in real time with **KQL**, built and queried **Data warehouses**, trained machine learning models, and leveraged **Copilot** for advanced analytics and automation. These exercises collectively strengthen your skills in modern **data engineering**, **analytics**, and **AI-driven workflows**, preparing you to build scalable, efficient, and intelligent data solutions within Microsoft Fabric.
 
-### You have successfully completed the Hands-on lab
+### You have successfully completed the Hands-on lab!

@@ -4,17 +4,23 @@
 
 In this exercise, you will analyze data in a warehouse using Fabric Copilot by connecting to your data source, running queries, and visualizing insights to drive informed decision-making. 
 
-## Analyze Data in a Warehouse
+## Lab objectives
+
+You will be able to complete the following task:
+
+- Task 1: Analyze Data in a Warehouse
+
+## Task 1: Analyze Data in a Warehouse
 
 In this task, you’ll explore a **Data Warehouse** in Microsoft Fabric, review table relationships, and understand the **semantic model** used in Power BI. With **Copilot**, you’ll generate a sales report, get insights like **Sales by Region**, and create an **executive summary** demonstrating how AI enhances data analysis and reporting.
 
-1. In the left pane, select the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>**.
+1. In the left pane, click **Workspaces** and select the workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>**.
 
    ![New dataflow.](./Images/26.png)
  
 1. Select **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/>** from the list.
 
-   ![New dataflow.](./Images/33.png)
+   ![](./Images/e6t1p1.png)
 
 1. In the **Explorer** pane, verify that the **dbo** schema in the data warehouse contains the following four tables:
    
@@ -30,21 +36,29 @@ In this task, you’ll explore a **Data Warehouse** in Microsoft Fabric, review 
 
     > **Note:** If the schema takes a while to load, just refresh the browser page.
  
-1. Clicking on the **Model Layouts** view allows you to view the relationships between different tables within the data warehouse.
+1. Click on **Data Warehouse-<inject key="DeploymentID" enableCopy="false"/>** Semantic model to open it.
 
-    ![](./Images/pg-8.png)
+   ![](./Images/e6t1p2.png)
+
+1. Click **Open semantic model** from the top toolbar to view the relationships between the tables in your data warehouse.
+
+    ![](./Images/e2t3p4.png)
+
+1. In the top-right corner, click the **Viewing (1)** drop-down and select **Editing (2)**.
+
+    ![](./Images/e2t3p5.png)
 
 1. When you click on the **Relationship (1)** between **FactSalesOrder** and **DimCustomer** and access its **Properties (2)** pop-up on the right of the window, you're essentially examining how these two tables are linked together. This relationship defines how data from these tables can be combined or related when querying or visualizing in Power BI.
 
-     ![](./Images/Analyze1.png)
+     ![](./Images/e6t1p3.png)
 
     - This relationship indicates that each record in the "FactSalesOrder" table is associated with a specific customer represented in the "DimCustomer" table. For example, if we have a sales record in "FactSalesOrder" for a particular transaction, we can use this relationship to look up additional details about the corresponding customer from the "DimCustomer" table.
 
     - This linkage is crucial for defining the Semantic Model used by Power BI. The Semantic Model essentially acts as a blueprint that outlines how data elements are interconnected and how they should be interpreted within Power BI. By establishing and defining relationships between tables, we're instructing Power BI on how to navigate and analyze the data effectively.
  
-1. Clicking on **New Report (2)** from the **Reporting  (1)** tab allows you to create a new report within Power BI. This report will utilize the Semantic Model defined by the relationships established in the data warehouse.
+1. From the **File (1)** menu, select **Create new report (2)**. This creates a new report in Power BI using the semantic model built on the relationships defined in the data warehouse.
  
-   ![](./Images/pg-08-1.png)
+   ![](./Images/e2t7p3.png)
 
 1. The Semantic Model, as defined in the data warehouse, is reflected in the Power BI interface. This includes the tables and their respective fields visible in the Data Pane of Power BI, which you can use to build your reports.
 
@@ -52,13 +66,13 @@ In this task, you’ll explore a **Data Warehouse** in Microsoft Fabric, review 
 
    ![](./Images/13.png)
 
-1. If the pop-up titled **Welcome to Copilot in Power BI** appears, proceed by selecting **Get Started**.
+1. If the pop-up titled **Welcome to Copilot in Power BI** appears, proceed by selecting **Get started**.
 
    ![](./Images/14.png)
 
-1. Locate the **Prompt guide** icon , then click on it to access its **Menu**.
+1. Locate the **Prompt guide (1)** icon, then click on it to access its **Menu (2)**.
 
-   ![](./Images/15.png)
+   ![](./Images/e6t1p4.png)
 
 1. Recognize that Copilot offers functionalities such as providing suggestions, generating code snippets, and offering explanations. However, it's important to note its limitations, which may include the inability to create certain visualizations or directly modify page layouts.
 
@@ -70,9 +84,9 @@ In this task, you’ll explore a **Data Warehouse** in Microsoft Fabric, review 
     
    - Copilot represents a significant advancement in AI utilization, showcasing its capability beyond just generating code or manipulating data. Its capacity to assist in analyzing datasets is particularly noteworthy, as it offers intelligent insights and suggestions that enhance the entire data analysis process. By leveraging Copilot, users can gain a deeper understanding and uncover valuable patterns within their datasets, ultimately empowering them to make informed decisions based on the insights derived. This highlights the transformative potential of AI in augmenting human capabilities and driving innovation in data analysis methodologies.
 
-1. Click **Create a report that shows**.
+1. Click on **Prompt guide (1)** icon, select **Create a report that shows ... (2)**.
 
-    ![](./Images/17.png)
+    ![](./Images/e6t1p5.png)
    
 1. At this time, you can only ask for a page or report to be created. You can't ask for specific visuals.
  
@@ -84,7 +98,7 @@ In this task, you’ll explore a **Data Warehouse** in Microsoft Fabric, review 
  
 1. **Execute the command** and let Copilot generate the report. Note that AI-generated results may vary, and you're never entirely sure what you'll get.
 
-    ![](./Images/Analyze2.png)
+    ![](./Images/e6t1p8.png)
 
    - The report provides a comprehensive analysis of total sales across a spectrum of product categories, revealing a consistent pattern of total sales summing up to 19.59 million across all 39 categories. Similarly, the quantity sold uniformly stands at 25.98 thousand units for each category. With an average total sales figure of 4.55 thousand, it suggests an even distribution of sales performance across all categories. This uniformity underscores a balanced sales landscape across diverse product categories, thereby offering valuable insights for informed decision-making in subsequent business strategies.
 
@@ -103,17 +117,15 @@ In this task, you’ll explore a **Data Warehouse** in Microsoft Fabric, review 
 
    ![](./Images/Analyze3.png)
 
-1. **Clear the input box** and select:
-
-    ```
-    Give me an executive summary
-    ```
+1. **Clear the input box** and click **Prompt guide** icon and select **Give me an executive summary**:
     
     ![](./Images/23.png)
 
-1. Click on **File**, then click on **Save**. Enter the name as **Sample (1)** and click on **Save (2)**.
+1. Click on **File (1)** tab from the menu bar, and select **Save (2)**. In the **Save your report** window, enter the name as **Sample (3)** and click on **Save (4)**.
 
-   ![](./Images/Analyze4.png)
+   ![](./Images/e6t1p6.png)
+
+   ![](./Images/e6t1p7.png)
 
 ## Summary
 
@@ -126,4 +138,6 @@ In this exercise, you:
 - **Compiled findings into reports** for presentation and decision-making.
 - **Collaborated with team members** to review and discuss the results.
 
-### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
+
+![05](./Images/nextpage(1).png)
