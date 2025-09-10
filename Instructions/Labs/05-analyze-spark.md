@@ -2,6 +2,8 @@
 
 ### Estimated Duration: 75 Minutes
 
+## Overview
+
 In this exercise, you'll explore big data analytics in Microsoft Fabric using Apache Spark and PySpark. You’ll begin by creating a Lakehouse and uploading sales data files. Then, you’ll build a Spark notebook to load and structure the data using defined schemas. Using Spark dataframe operations, you’ll filter, group, and transform data for deeper insights. You’ll save the processed data in Parquet and partitioned formats for optimized performance. Next, you’ll create Delta tables and use both PySpark and SQL to analyze the data. Finally, you’ll visualize insights using Spark charts, matplotlib, and seaborn, and conclude by saving the notebook and ending the Spark session.
 
 ## Lab objectives
