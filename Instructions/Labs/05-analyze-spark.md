@@ -30,7 +30,7 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
     ![](./Images/Spark1.png)
    
-1. Enter the below-mentioned details to create a Lakehouse. 
+1. Enter the details to create a Lakehouse. 
 
    - **Name:** Enter **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)**
 
@@ -38,7 +38,7 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
         ![](./Images/Spark2.png)
 
-1. Once you're in the lakehouse, navigate to the **Files** folder in the **Explorer** pane, click on the **Ellipses ... (1)** menu for **Files**, and select **Upload (2)** followed by **Upload folder (3)**. Then, select and upload the **orders** folder located at **C:\LabFiles\Files\orders** to the lakehouse.
+1. Once you're in the lakehouse, navigate to the **Files** folder in the **Explorer** pane, click on the **Ellipses (...) (1)** menu for **Files**, and select **Upload (2)** followed by **Upload folder (3)**. Then, select and upload the **orders** folder located at **C:\LabFiles\Files\orders** to the lakehouse.
 
     ![](./Images/Spark3.png)
 
@@ -185,7 +185,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
 1. Now the dataframe includes the correct column names (in addition to the **Index**, which is a built-in column in all dataframes based on the ordinal position of each row). The data types of the columns are specified using a standard set of types defined in the Spark SQL library, which were imported at the beginning of the cell.
 
-1. Confirm that your changes have been applied to the data by viewing the dataframe. Run the following cell by adding a new code cell from **+ Code** button
+1. Confirm that your changes have been applied to the data by viewing the dataframe. Run the following cell by adding a new code cell from the **+ Code** button
 
     ```python
     display(df)
@@ -685,6 +685,6 @@ In this exercise, you:
 - Visualized data using **Spark charts**, **matplotlib**, and **seaborn**.
 - Saved the notebook and ended the Spark session.
 
-### You have successfully completed the exercise. Click on Next >> to proceed with next exercise.
+### You have successfully completed the exercise. Click on Next >> to proceed with the next exercise.
 
 ![05](./Images/nextpage(1).png)
