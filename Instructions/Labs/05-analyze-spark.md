@@ -44,7 +44,11 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
     ![](./Images/e7t1p4.png)
 
+1. In the **Upload 3 files to this site?** window, click **Upload**.
+
     ![](./Images/e7t1p5.png)
+
+1. In the **Upload folder** after adding the **orders** folder, click **Upload**.
 
     ![](./Images/e7t1p6.png)
 
@@ -100,7 +104,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
     ![Screenshot of a notebook with a Files pane.](./Images/notebook-files.png)
 
-1. In the **orders (1)** folder, right click on the **2019.csv (2)**, then select **Load data (3)** and then select **Spark (4)**.
+1. In the **orders (1)** folder, right click on the **2019.csv (2)**, then select **Load data (3)** and select **Spark (4)**.
 
    ![](./Images/Pg7-LoadData-S2.png)
 
@@ -658,7 +662,7 @@ While **matplotlib** enables you to create complex charts of multiple types, it 
 
 In this task, you will save your notebook with a meaningful name to preserve your work after processing the data. Additionally, you will end the Spark session to free up resources and complete your data engineering tasks.
 
-1. In the top left corner, set the **Name** of the notebook from Notebook 1 to **Explore Sales Orders Notebook**.
+1. In the top left corner, set the **Name** of the notebook from **Notebook 1 (1)** to **Explore Sales Orders Notebook (2)**.
 
     ![](./Images/Spark8.png)
 
