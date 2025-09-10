@@ -41,7 +41,7 @@ In this task, you will initiate your 60-day free trial of Microsoft Fabric by si
 
 In this task, you will create a Fabric workspace. The workspace will contain all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, notebooks, Power BI datasets, and reports.
 
-1. On the left-hand pane of Power BI portal, select **Workspaces (1)** and click on **+ New workspace (2)**
+1. On the left-hand pane of the Power BI portal, select **Workspaces (1)** and click on **+ New workspace (2)**
 
     ![New Workspace](./Images/f2.png)
 
@@ -220,7 +220,7 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
    table_name = "sales"
     ```
 
-    > **Note:** If the Spark session doesn't start, try clicking on Run All button on the top menu, this should restart the Spark session.
+    > **Note:** If the Spark session doesn't start, try clicking on the Run All button on the top menu; this should restart the Spark session.
 
    ![11](./Images/01/Pg3-Notebook-S2.png) 
 
@@ -319,7 +319,7 @@ In this task, you'll use SQL to query tables in a database. You'll write stateme
 
 ## Task 7: Create a visual query
 
-In this task, you'll create a visual query in Power BI using Power Query. Start by adding the Sales table to the query editor, select the necessary columns, and apply a Group By transformation to count distinct line items per sales order. Then, review the summarized results.
+In this task, you'll create a visual query in Power BI using Power Query. Start by adding the Sales table to the query editor, selecting the necessary columns, and applying a Group By transformation to count distinct line items per sales order. Then, review the summarized results.
 
 1. On the toolbar, under **New SQL query (1)** drop-down, select **New visual query (2)**.
 
@@ -369,7 +369,7 @@ In this task, you’ll build a report that transforms raw data into insights. Yo
 
     ![](./Images/newsemanticmodel(3).png)
 
-1. From the toolbar on the top, click **Open semantic model**.
+1. From the toolbar at the top, click **Open semantic model**.
 
     ![](./Images/newsemanticmodel(4)(1).png)
 
