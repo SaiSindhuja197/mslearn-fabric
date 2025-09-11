@@ -119,7 +119,7 @@ In this task, you’ll explore a **Data Warehouse** in Microsoft Fabric, review 
 
    ![](./Images/Analyze3.png)
 
-1. **Clear the input box** and click **Prompt guide** icon and select **Give me an executive summary**:
+1. Clear the input box and click **Prompt guide** icon and select **Give me an executive summary**:
     
     ![](./Images/23.png)
 
