@@ -27,7 +27,7 @@ In this task, you will create a lakehouse and upload files to facilitate data st
 
    ![](./Images/Pg6-S1.png)
 
-1. Click on the **folder** icon.
+1. In the **Upload files** section, click on the **folder** icon.
 
     ![](./Images/e4t1p2.png)
 
@@ -35,7 +35,7 @@ In this task, you will create a lakehouse and upload files to facilitate data st
 
     ![](./Images/Pg6-S2.png)
 
-1. In the Upload files window, click **Upload**.
+1. In the **Upload files** section after **churn.csv** file is added, click **Upload**.
 
     ![](./Images/e4t1p2(1).png)
 
@@ -51,7 +51,7 @@ In this task, you will create a notebook to facilitate model training and experi
 
     ![](./Images/e4t2p1.png) 
 
-2. In the workspace, click on **+ New Item (1)**. In the New Item panel, search for **Notebook (2)** and select **Notebook (3)**.
+2. In the workspace, click on **+ New Item (1)**. In the New Item panel, search for **Notebook (2)** and select **Notebook (3)** from the result.
 
     ![](./Images/e4t2p2.png) 
 
@@ -75,7 +75,7 @@ In this task, you will create a notebook to facilitate model training and experi
 
 In this task, you will load data into a dataframe to prepare for model training. Dataframes in Spark, akin to Pandas dataframes in Python, offer a structured way to work with data in rows and columns, enabling efficient data manipulation and analysis.
 
-1. In the Explorer pane, click **Add data items (1)** drop-down and select **Existing data sources (2)** from the drop-down.
+1. In the Explorer pane, click **Add data items (1)** drop-down and select **Existing data sources (2)**.
 
     ![](./Images/e4t3p1.png) 
 
@@ -187,7 +187,7 @@ In this task, you will use MLflow to search for and view your experiments relate
        print(exp.name)
     ```
 
-1. Add a new code cell to the notebook, enter the following code and run it to retrieve a specific experiment. You can get it by its name:
+1. Add a new code cell to the notebook, enter the following code, and run it to retrieve a specific experiment. You can get it by its name:
 
     ```python
    experiment_name = "experiment-churn"
@@ -244,7 +244,7 @@ In this task, you will explore your experiments in Microsoft Fabric, which track
 
 1. Select **Run list (2)**. 
 
-1. Select the **two latest runs (3)** by checking each box. As a result, your two last runs will be compared to each other in the **Performance** pane. By default, the metrics are plotted by run name. 
+1. Select the **two latest runs (3)** by checking each box. As a result, your last two runs will be compared to each other in the **Performance** pane. By default, the metrics are plotted by run name. 
 
 1. Select the **&#128393;** **(Edit) (4)** button of the graph visualizing the accuracy for each run. 
 
@@ -279,7 +279,7 @@ In this task, you will save the best-performing machine learning model after com
 
 1. Select **Run details (2)**. 
 
-1. Scroll right to see the Save as model option. Under the **Save run as an ML model (3)** box, select **Save (4)**.
+1. Scroll right to see the Save as model option. Under the **Save run as an ML model (3)** box, click **Save (4)**.
 
    ![](./Images/e4t7p3.png)
 
