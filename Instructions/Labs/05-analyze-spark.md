@@ -28,13 +28,13 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
     ![](./Images/Lake2.png)
 
-1. In the search box, search **Lakehouse (1)** and select **Lakehouse (2)**.
+1. In the search box, search **Lakehouse (1)** and select **Lakehouse (2)** from the result.
 
     ![](./Images/Spark1.png)
    
 1. Enter the details to create a Lakehouse. 
 
-   - **Name:** Enter **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)**
+   - Name: **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)**
 
     - Click on **Create (2)**
 
@@ -68,7 +68,7 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
 
     ![](./Images/Lake2.png)
 
-1. In the search box, search **Notebook (1)** and select **Notebook (2)**.
+1. In the search box, search **Notebook (1)** and select **Notebook (2)** from the result.
 
     ![](./Images/Spark4.png)
 
@@ -108,7 +108,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
     ![Screenshot of a notebook with a Files pane.](./Images/notebook-files.png)
 
-1. In the **orders (1)** folder, right click on the **2019.csv (2)**, then select **Load data (3)** and select **Spark (4)**.
+1. In the **orders (1)** folder, right click on the **2019.csv (2)**, then go to **Load data (3)** and select **Spark (4)**.
 
    ![](./Images/Pg7-LoadData-S2.png)
 
