@@ -26,13 +26,13 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
    
    ![](./Images/e8t1p1.png)
 
-1. From the center **Get data** pane, select **Import from a Text/CSV file**.
+1. From the **Get data** pane, select **Import from a Text/CSV file**.
 
    ![](./Images/Flow3.png)
 
 1. Create a new data source with the following settings:
 
-    - **Link to file: (1)** *Selected*
+    - **Link to file: (1)** Selected
     - **File path or URL: (2)** `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/orders.csv`
     - **Connection: (3)** Create new connection
     - **Connection Name: (4)** Connection
@@ -65,17 +65,17 @@ In this task, you will create a Dataflow (Gen2) to efficiently ingest and transf
 
 In this task, you’ll add a data destination for the Dataflow to determine where the ingested and transformed data will be stored for future use.
 
-1. In the **Query settings** in the right pane, click on **+ (1)** for Data Destination, then choose **Lakehouse (2)** from the drop-down menu.
+1. In the **Query settings** in the right pane, click on **+ (1)** for Data Destination, then choose **Lakehouse (2)** from the menu.
 
    ![Empty data pipeline.](./Images/Flow6.png)
 
    >**Note:** If this option is greyed out, you may already have a data destination set. Check the data destination at the bottom of the Query settings pane on the right side of the Power Query editor. If a destination is already set, you can change it using the gear.
 
-1. In the **Connect to data destination** dialog box, make sure **Create a new connection (1)** is selected and the **<inject key="AzureAdUserEmail"></inject> (2)** account is signed in. Click on **Next (3)**.
+1. In the **Connect to data destination** dialog box, make sure **Create a new connection (1)** is selected and the **<inject key="AzureAdUserEmail"></inject> (2)** account is signed in and then click on **Next (3)**.
 
    ![](./Images/Flow7.png)
 
-1. Select the **fabric-<inject key="DeploymentID" enableCopy="false"/>** Workspace. Choose the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** then specify the new table name as **orders (2)**, then click **Next (3)**.
+1. In the **Choose destination target** window, select the **fabric-<inject key="DeploymentID" enableCopy="false"/>** Workspace. Select the **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)** then specify the new table name as **orders (2)**, then click **Next (3)**.
 
    ![Data destination configuration page.](./Images/e8t2p1.png)
 
@@ -89,7 +89,7 @@ In this task, you’ll add a data destination for the Dataflow to determine wher
 
    ![](./Images/Flow8.png)
 
-1. Select **Publish** to publish the dataflow. Then wait for the **Dataflow** to be created in the workspace.
+1. Select **Publish** from the bottom right corner to publish the dataflow. Then wait for the **Dataflow** to be created in the workspace.
 
    ![](./Images/Publish.png)
 
@@ -107,7 +107,7 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 
    > **Note:** If the Copy Data wizard opens automatically, close it!
 
-1. Select **Pipeline activity (1)**, and select **Dataflow (2)** activity to the pipeline.
+1. In the **Build a data pipeline to organize and move your data** window, click on **Pipeline activity (1)**, and select **Dataflow (2)** activity to the pipeline.
 
    ![Empty data pipeline.](./Images/e8t3p1.png)
 
@@ -115,7 +115,7 @@ In this task, you’ll add a dataflow to a pipeline to streamline the data proce
 
    ![Empty data pipeline.](./Images/e8t3p2.png)
    
-1. **Save** the pipeline from the top left corner.
+1. Select **Save** from the top-left corner to save the pipeline.
 
    ![](./Images/Flow11.png)
 
