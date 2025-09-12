@@ -2,6 +2,8 @@
 
 ### Estimated Duration: 65 Minutes
 
+## Overview
+
 In this exercise, you'll explore real-time analytics in Microsoft Fabric using Kusto Query Language (KQL). You'll begin by creating a KQL database and importing sales data into a table. Then, you'll run KQL queries to analyze the data and create a query set. Using this query set, you’ll build a Power BI report to visualize results. Finally, you'll simulate real-time data ingestion using Spark Structured Streaming and Delta tables to process and query IoT-like data dynamically.
 
 ## Lab objectives
@@ -21,7 +23,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
     ![](./Images/Lake2.png)
    
-1. In the New item search for **Eventhouse (1)** and select **Eventhouse (2)** from the list.
+1. In the New item section, search for **Eventhouse (1)** and select **Eventhouse (2)** from the list.
 
     ![](./Images/Real1.png)
 
@@ -39,7 +41,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
 1. Enter the following details:
 
-   - **Database Name:** **KQL-Database<inject key="DeploymentID" enableCopy="false"/> (1)**.
+   - Database Name: **KQL-Database<inject key="DeploymentID" enableCopy="false"/> (1)**.
 
    - Click on **Create (2)**.
 
@@ -66,7 +68,7 @@ In this task, you will create a KQL database to facilitate querying of static or
     
     - **Summary:**
     
-        - Review the preview of the table and close the wizard.
+        - Review the preview of the table and click on **Close**.
 
             ![](./Images/e3t1p8.png)
     
@@ -76,7 +78,7 @@ In this task, you will create a KQL database to facilitate querying of static or
 
 In this task, you will use Kusto Query Language (KQL) to query the sales table in your KQL database. With the data now available, you can write KQL code to extract insights and perform analysis on the sales data.
 
-1. Make sure you have the **sales** table highlighted. Click on **sales Ellipsis (...) (1)** table, select the **Query with code (2)**, and from there select **Show any 100 records (3)**.
+1. Make sure you have the **sales** table highlighted. Click on **Ellipsis (...) (1)** next to the **sales** table, select the **Query with code (2)**, and then click on **Show any 100 records (3)**.
 
     ![](./Images/Real4.png)
 
@@ -132,9 +134,9 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
 
     ![Screenshot of a report from a KQL query.](./Images/imagekql.png)
 
-1. In the report editor, in the **Data** pane, expand **Kusto Query Result** and select the checkboxes of **Item** and **TotalNet Revenue** fields.
+1. In the report editor, in the **Data** pane, expand **Kusto Query Result** and select the checkboxes for **Item** and **TotalNet Revenue** fields.
 
-1. On the report design canvas, select the table visualization that has been added and then in the **Visualizations** pane, select **Clustered bar chart**.
+1. On the report design canvas, select the table visualization that has been added, and then in the **Visualizations** pane, select **Clustered bar chart**.
 
     ![Screenshot of a report from a KQL query.](./Images/update3.png)
 
@@ -142,7 +144,7 @@ In this task, you will create a Power BI report using your KQL Queryset as the f
 
     >**Note:** If you are not getting option to **Save** the report in the **fabric-<inject key="DeploymentID" enableCopy="false"/>** then follow the below steps:
 
-    -  Enter the file name **Revenue by Item** and click **Continue** to save the Power BI report to the workspace.
+    -  Enter the file name as **Revenue by Item** and click **Continue** to save the Power BI report to the workspace.
 
          ![](./Images/38.png)
 

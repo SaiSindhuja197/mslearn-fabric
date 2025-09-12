@@ -2,6 +2,8 @@
 
 ### Estimated Duration: 60 Minutes
 
+## Overview
+
 In this exercise, you will analyze data in a warehouse using Fabric Copilot by connecting to your data source, running queries, and visualizing insights to drive informed decision-making. 
 
 ## Lab objectives
@@ -76,7 +78,7 @@ In this task, you’ll explore a **Data Warehouse** in Microsoft Fabric, review 
 
 1. Recognize that Copilot offers functionalities such as providing suggestions, generating code snippets, and offering explanations. However, it's important to note its limitations, which may include the inability to create certain visualizations or directly modify page layouts.
 
-1. Selecting **What's in my data** prompts Copilot to analyze the semantic model or dataset currently in use.
+1. Selecting **What's in my data?** prompts Copilot to analyze the semantic model or dataset currently in use.
 
    ![](./Images/16.png)
 
@@ -117,7 +119,7 @@ In this task, you’ll explore a **Data Warehouse** in Microsoft Fabric, review 
 
    ![](./Images/Analyze3.png)
 
-1. **Clear the input box** and click **Prompt guide** icon and select **Give me an executive summary**:
+1. Clear the input box and click **Prompt guide** icon and select **Give me an executive summary**:
     
     ![](./Images/23.png)
 

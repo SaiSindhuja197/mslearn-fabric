@@ -2,6 +2,7 @@
 
 ### Estimated Duration: 90 Minutes
 
+## Overview 
 In this exercise, you'll ingest data into a Microsoft Fabric lakehouse using pipelines and Apache Spark. Pipelines allow you to extract data from external sources and load it into OneLake. Spark enables you to transform the data at scale before storing it in lakehouse tables for analysis. Ensure data is successfully loaded into OneLake before applying transformations.
 
 ## Lab objectives
@@ -47,7 +48,7 @@ In this task, you will create a Fabric workspace. The workspace will contain all
 
 1. On the **Create a workspace** page, enter the following details:
 
-    - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**
+    - Name: **fabric-<inject key="DeploymentID" enableCopy="false"/> (1)**
     - Expand the **Advanced (2)** section.
 
       ![alt text](image.png)
@@ -84,15 +85,15 @@ In this task, switch to the Data engineering experience and create a new Lakehou
 
     ![](./Images/Lake1.png)
 
-1. Enter the **Name** as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and click on **Create (2)**.
+1. In the **New lakehouse** window, enter the **Name** as **Lakehouse_<inject key="DeploymentID" enableCopy="false"/> (1)** and click on **Create (2)**.
 
     ![](./Images/ex1t3p4.png)
 
-1. On the **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** tab in the left pane, click the **Ellipsis (...) (1)** menu for the **Files** node, click on **New subfolder (2)**.
+1. On the **Lakehouse_<inject key="DeploymentID" enableCopy="false"/>** tab in the left pane, click the **Ellipsis (...) (1)** menu for the **Files** node, select **New subfolder (2)**.
     
     ![](./Images/ex1t3p5.png)
 
-1. In the New subfolder window, enter the name as **new_data (1)** and click on **Create (2)**.
+1. In the **New subfolder** window, enter the name as **new_data (1)** and click on **Create (2)**.
 
     ![](./Images/Lake5.png)
 
@@ -206,7 +207,7 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
 1. After a few seconds, a new notebook with a single cell opens. Each notebook consists of code or markdown cells used for running code or adding formatted text.
 
-1. Click **Add data items (1)** drop-down under explorer and select **Existing data sources (2)** from the drop-down.
+1. Click **Add data items (1)** drop-down under explorer and select **Existing data sources (2)**.
 
     ![](./Images/E2-T4-S4.png) 
  
@@ -290,7 +291,7 @@ In this task, you'll create a Notebook to document your data analysis. You'll se
 
     ![03](./Images/ex1t5p14.png)
 
-1. In the **Explorer** pane, refresh the **view (1)**. Then expand **Tables (2)**, and select the **sales (3)** table to see a preview of the data it contains.
+1. In the **Explorer** pane, **Refresh (1)** the view. Then expand **Tables (2)**, and select the **sales (3)** table to see a preview of the data it contains.
 
     ![03](./Images/ex1t5p15.png)
 
@@ -335,7 +336,7 @@ In this task, you'll create a visual query in Power BI using Power Query. Start 
 
     ![Account-manager-start](./Images/lab1-image23.png)
 
-1. Click on **+ (1)**, in the **Transform table** menu, select **Group by (2)**.
+1. Click on **+ (1)** icon, and from the **Transform table** section, select **Group by (2)**.
 
     ![Screenshot of a Visual query with results.](./Images/Lake22.png)
 

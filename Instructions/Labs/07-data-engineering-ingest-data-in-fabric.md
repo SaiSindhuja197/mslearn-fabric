@@ -2,6 +2,8 @@
 
 ### Estimated Duration: 30 Minutes
 
+## Overview
+
 In the exercise, you'll create a simple data pipeline to bring in customer sales data. You are using the KiZAN Fabric Tenant - where we have Copilot enabled- demonstrate doing the same thing, but by using a new Data Flow Gen2 and leveraging the native integration of Copilot to use natural language to ingest and transform your data.
 
 ## Lab objectives
@@ -26,7 +28,7 @@ In this task, you’ll create a **Dataflow Gen2** in Microsoft Fabric, import a 
 
 1. Create a new data source with the following settings:
 
-   - **Link to file (1):** *Selected*
+   - **Link to file (1):** Selected
    - **File path or URL (2):** `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/sales.csv`
    - **Connection (3):** Create new connection
    - **Connection name (4):** Connection
@@ -36,7 +38,7 @@ In this task, you’ll create a **Dataflow Gen2** in Microsoft Fabric, import a 
 
       ![New dataflow.](./Images/e5t1p3.png)
 
-1. On **Preview file data** page, Click on **Create**.
+1. On **Preview file data** page, click on **Create**.
 
    ![New dataflow.](./Images/e5t1p4.png)
 
@@ -54,7 +56,7 @@ In this task, you’ll create a **Dataflow Gen2** in Microsoft Fabric, import a 
    
    ![New dataflow.](./Images/e5t1p7.png)
 
-1. **View menu**: Look for the option or menu labeled "View" in the toolbar or menu bar. Click on it to reveal a dropdown menu.
+1. **View menu**: Look for the option or menu labeled "View" in the toolbar. Click on it to reveal a dropdown menu.
 
    ![New dataflow.](./Images/e5t1p8.png)
 
@@ -68,7 +70,7 @@ In this task, you’ll create a **Dataflow Gen2** in Microsoft Fabric, import a 
 
 1. Looking at the data… Notice the Item Column.
 
-1. This is really three different fields -- It contains a short description of the item, a color and a size.
+1. This is really three different fields -- It contains a short description of the item, a color, and a size.
 
 1.	The fields are not consistently delimited (' ' and then ',')
 

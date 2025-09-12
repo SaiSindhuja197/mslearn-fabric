@@ -2,6 +2,8 @@
 
 ### Estimated Duration: 75 Minutes
 
+## Overview
+
 In this exercise, you'll analyze data in a Microsoft Fabric data warehouse using SQL and visual tools. You'll begin by creating a data warehouse, designing its schema with fact and dimension tables, and inserting sample data. You’ll then define relationships to build a data model, run SQL queries to analyze data, and create a view for reuse. Finally, you'll use visual query and reporting features to explore and present insights effectively.
 
 ## Lab objectives
@@ -41,7 +43,7 @@ In this task, you will design and implement a data warehouse by organizing data 
 
 In this task, you’ll set up the foundation of your data warehouse. You’ll create tables with the right structure, load them with sample data, and then build a semantic model on top of those tables. This model provides a business-friendly layer that makes the warehouse data easier to explore and use in reports.
 
-1. In your new warehouse, under **Build a warehouse** select the **T-SQL** tile.
+1. In your new warehouse, under **Build a warehouse**, select the **T-SQL** tile.
 
    ![](./Images/e2t2p1.png)
 
@@ -65,7 +67,7 @@ In this task, you’ll set up the foundation of your data warehouse. You’ll cr
 
     ![](./Images/e2t2p3.png)
 
-1. On the **Home** menu tab, use the **New SQL Query** button and from the drop-down select **New SQL Query**  to create a new query, and enter the following INSERT statement:
+1. On the **Home** menu tab, use the **New SQL Query (1)** drop-down button and from the menu select **New SQL Query (2)**  to create a new query, and enter the following INSERT statement:
 
     ![](./Images/e2t2p4.png)
 
@@ -78,7 +80,7 @@ In this task, you’ll set up the foundation of your data warehouse. You’ll cr
    GO
     ```
 
-1. Run the above query to insert three rows into the **DimProduct** table.
+1. **Run** the above query to insert three rows into the **DimProduct** table.
 
 1. In the **Explorer** pane, select the **DimProduct** table and verify that the three rows have been added to the table.
 

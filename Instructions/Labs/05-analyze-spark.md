@@ -2,6 +2,8 @@
 
 ### Estimated Duration: 75 Minutes
 
+## Overview
+
 In this exercise, you'll explore big data analytics in Microsoft Fabric using Apache Spark and PySpark. You’ll begin by creating a Lakehouse and uploading sales data files. Then, you’ll build a Spark notebook to load and structure the data using defined schemas. Using Spark dataframe operations, you’ll filter, group, and transform data for deeper insights. You’ll save the processed data in Parquet and partitioned formats for optimized performance. Next, you’ll create Delta tables and use both PySpark and SQL to analyze the data. Finally, you’ll visualize insights using Spark charts, matplotlib, and seaborn, and conclude by saving the notebook and ending the Spark session.
 
 ## Lab objectives
@@ -26,29 +28,31 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
     ![](./Images/Lake2.png)
 
-1. In the search box, search **Lakehouse (1)** and select **Lakehouse (2)**.
+1. In the search box, search **Lakehouse (1)** and select **Lakehouse (2)** from the result.
 
     ![](./Images/Spark1.png)
    
 1. Enter the details to create a Lakehouse. 
 
-   - **Name:** Enter **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)**
+   - Name: **fabric_lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)**
 
     - Click on **Create (2)**
 
         ![](./Images/Spark2.png)
 
-1. Once you're in the lakehouse, navigate to the **Files** folder in the **Explorer** pane, click on the **Ellipses (...) (1)** menu for **Files**, and select **Upload (2)** followed by **Upload folder (3)**. Then, select and upload the **orders** folder located at **C:\LabFiles\Files\orders** to the lakehouse.
+1. Once you're in the lakehouse, navigate to the **Files** folder in the **Explorer** pane, click on the **Ellipses (...) (1)** menu for **Files**, and select **Upload (2)** followed by **Upload folder (3)**. 
 
     ![](./Images/Spark3.png)
 
+1. Then navigate to **`C:\LabFiles\Files\orders` (1)** and click **Upload (2)**.
+   
     ![](./Images/e7t1p4.png)
 
 1. In the **Upload 3 files to this site?** window, click **Upload**.
 
     ![](./Images/e7t1p5.png)
 
-1. In the **Upload folder** after adding the **orders** folder, click **Upload**.
+1. In the **Upload folder** window, after adding the **orders** folder, click **Upload**.
 
     ![](./Images/e7t1p6.png)
 
@@ -64,7 +68,7 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
 
     ![](./Images/Lake2.png)
 
-1. In the search box, search **Notebook (1)** and select **Notebook (2)**.
+1. In the search box, search **Notebook (1)** and select **Notebook (2)** from the result.
 
     ![](./Images/Spark4.png)
 
@@ -104,7 +108,7 @@ In this task, you will load data into a dataframe to prepare it for analysis. Da
 
     ![Screenshot of a notebook with a Files pane.](./Images/notebook-files.png)
 
-1. In the **orders (1)** folder, right click on the **2019.csv (2)**, then select **Load data (3)** and select **Spark (4)**.
+1. In the **orders (1)** folder, right click on the **2019.csv (2)**, then go to **Load data (3)** and select **Spark (4)**.
 
    ![](./Images/Pg7-LoadData-S2.png)
 
